@@ -1,0 +1,12 @@
+{
+  "name": "jam-library-essentials",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/nhatkha1407/jam-library-essentials.git",
+  "author": "Whoosh <nhatkha1407@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  }
+}
