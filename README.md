@@ -11,7 +11,7 @@
 ```
 npm login --scope=@nhatkha1407 --registry=https://npm.pkg.github.com
 
-> Username: USERNAME
-> Password: [personal access tokens]
-> Email: PUBLIC-EMAIL-ADDRESS
+> Username: [Nhập Username Github]
+> Password: [Nhập Personal Access Token]
+> Email: [Nhập Email Github]
 ```
