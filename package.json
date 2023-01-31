@@ -1,6 +1,6 @@
 {
   "name": "@nhatkha1407/jam-library-essentials",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./src/js/libs/index.js",
   "repository": {
     "type": "git",
