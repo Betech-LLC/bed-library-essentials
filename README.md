@@ -21,3 +21,11 @@ npm login --scope=@nhatkha1407 --registry=https://npm.pkg.github.com
 ```
 yarn add @nhatkha1407/jam-library-essentials@latest
 ```
+
+-------
+
+## Release version mới
+
+1. Đảm bảo code mới đã có trong nhánh `main`
+
+2. Chạy câu lệnh `yarn release`
