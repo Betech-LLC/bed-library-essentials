@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "publish1": "yarn version --new-version $(date \"+%y.%m.%dH%M%S\")"
+    "publish1": "yarn version --new-version \"1.0.$(date \"%y%m%d%H%M%S\")\""
   },
   "name": "@nhatkha1407/jam-library-essentials",
-  "version": "23.02.05H4845",
+  "version": "1.0.23.02.05",
   "main": "./src/js/libs/index.js",
   "repository": {
     "type": "git",
