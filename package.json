@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "publish1": "yarn version --new-version $(date '+%y%m%d%H%M%S')"
+    "publish1": "yarn version --new-version $(date \"+%y.%m.%d\")"
   },
   "name": "@nhatkha1407/jam-library-essentials",
   "version": "23.02.05",
