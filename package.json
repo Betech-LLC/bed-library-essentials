@@ -3,7 +3,7 @@
     "release": "yarn version --new-version \"1.0.$(date \"+%y%m%d%H%M%S\")\" && yarn publish"
   },
   "name": "@nhatkha1407/jam-library-essentials",
-  "version": "1.0.230205115226",
+  "version": "1.0.230205115743",
   "main": "./src/js/libs/index.js",
   "repository": {
     "type": "git",
