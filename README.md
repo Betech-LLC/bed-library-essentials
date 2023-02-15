@@ -18,9 +18,16 @@ npm login --scope=@nhatkha1407 --registry=https://npm.pkg.github.com
 
 ### 3. Cài Package vào dự án
 
+Cặt version cuối cùng
 ```
 yarn add --dev @nhatkha1407/jam-library-essentials@latest
 ```
+
+Cặt version theo nhánh để test
+```
+yarn add --dev "nhatkha1407/jam-library-essentials#structure"
+```
+
 
 -------
 
