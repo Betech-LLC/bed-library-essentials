@@ -1,6 +1,4 @@
 //https://raw.githubusercontent.com/tailwindlabs/tailwindcss/master/stubs/defaultConfig.stub.js
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 const colors = {
   moss: {
     25: "#FAFDF7",
@@ -413,7 +411,23 @@ module.exports = {
 
       fontFamily: {
         display: ["Inter", "sans-serif"],
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        sans: [
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          "Roboto",
+          '"Helvetica Neue"',
+          "Arial",
+          '"Noto Sans"',
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
       },
 
       container: {
