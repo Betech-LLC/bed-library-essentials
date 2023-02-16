@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   components: {
     "dirs": [
       {
-        "path": "~/src/js/components",
+        "path": "../src/js/components",
         "global": true
       },
     ]
@@ -13,12 +13,12 @@ export default defineNuxtConfig({
 
 	tailwindcss: {
 		cssPath: '@/assets/scss/app.scss',
-		configPath: '@/src/tailwind.config.js',
+		configPath: 'tailwind.config.js',
 		viewer: false,
 	},
 
 	alias: {
-		'@core/functions': '/src',
-		'@core/scss': '/src/scss',
+		'@core/functions': '../src',
+		'@core/scss': '.',
 	},
 })
