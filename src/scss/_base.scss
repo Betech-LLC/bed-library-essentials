@@ -1,0 +1,13 @@
+@layer components {
+  .base-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .link {
+    @apply hover:underline hover:text-primary;
+  }
+}
+
+@import "@core/scss/type";
+@import "@core/scss/accordion";
+@import "@core/scss/breadcrumb";
+@import "@core/scss/button";

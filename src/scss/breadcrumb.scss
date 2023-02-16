@@ -1,0 +1,22 @@
+.breadcrumb {
+  @apply flex overflow-x-auto whitespace-pre body-2 py-1 text-blue-500;
+}
+
+.breadcrumb-item {
+  + .breadcrumb-item {
+    @apply pl-2;
+
+    &::before {
+      @apply float-left pr-2 text-gray-700;
+      content: "/";
+    }
+  }
+
+  &:last-child {
+    @apply text-gray-700 pointer-events-none;
+  }
+
+  &:not(:last-child) {
+    @apply link;
+  }
+}

@@ -1,0 +1,31 @@
+.accordion {
+  @apply divide-y;
+}
+
+.accordion-item {
+  @apply overflow-hidden rounded-sm;
+
+  .accordion-header {
+    @apply body-1 text-gray-900;
+  }
+
+  .accordion-header button {
+    @apply flex justify-between items-center w-full p-4;
+  }
+
+  .accordion-icon {
+    @apply text-sm;
+  }
+
+  .accordion-content {
+    @apply base-transition text-gray-500 opacity-100;
+  }
+
+  &:not(.active) .accordion-content {
+    @apply max-h-0 opacity-0 #{!important};
+  }
+
+  .accordion-content-inner {
+    @apply p-4 pt-0;
+  }
+}
