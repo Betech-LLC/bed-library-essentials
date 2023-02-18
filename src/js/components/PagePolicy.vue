@@ -19,7 +19,7 @@
     <div class="container">
       <h1 class="headline-1">Hỗ trợ khách hàng</h1>
       <div class="flex">
-        <div class="w-1/4 px-4 py-6 bg-gray-200">
+        <div class="w-[280px] bg-gray-200 px-4 py-6">
           <ul class="tabs">
             <li class="tab is-active"><a>Pictures</a></li>
             <li class="tab"><a>Pictures</a></li>
