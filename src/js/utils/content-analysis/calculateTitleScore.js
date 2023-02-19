@@ -2,7 +2,6 @@ import { stopWords, WEIGHTS } from "./const";
 import { countSpecialCharacters } from "./utils.js";
 
 function calculateTitleScore(title, keywords) {
-  const titleWords = title.toLowerCase().split(" ");
   let score = 0;
   let factors = {};
 
@@ -33,59 +32,6 @@ function calculateTitleScore(title, keywords) {
 
   return {
     score: parseInt(score),
-    factors,
-  };
-
-  // tính điểm dựa trên số lượng từ khóa xuất hiện trong title
-  // tính điểm dựa trên tính duy nhất của title
-  const uniqueWords = new Set(titleWords);
-  const uniqueRatio = uniqueWords.size / titleWords.length;
-  factors.uniqueness = {
-    score: WEIGHTS.title.uniqueness * uniqueRatio,
-    count: uniqueRatio,
-    advice: uniqueRatio < 0.5 ? "The title is not unique enough" : "",
-  };
-  score += WEIGHTS.title.uniqueness * uniqueRatio;
-
-  // tính điểm dựa trên tính đọc hiểu của title
-  // const readingEaseScore = fleschReadingEase(title);
-  // factors.readability = {
-  //   weight: WEIGHTS.title.readability,
-  //   count: readingEaseScore,
-  //   advice:
-  //     readingEaseScore < 60
-  //       ? "The title is difficult to read and understand"
-  //       : "",
-  // };
-  // score += (WEIGHTS.title.readability * readingEaseScore) / 100;
-
-  // tính điểm dựa trên tính gọi hành động của title
-  factors.callToAction = {
-    weight: WEIGHTS.title.callToAction,
-    count: title.toLowerCase().includes("buy") ? 1 : 0,
-    advice: title.toLowerCase().includes("buy")
-      ? "Include a clear call-to-action in the title"
-      : "",
-  };
-  score += WEIGHTS.title.callToAction * factors.callToAction.count;
-
-  // tính điểm dựa trên tính trùng lặp của title
-  const duplicateWords = titleWords.filter(
-    (word, index) => titleWords.indexOf(word) !== index
-  );
-  const duplicateRatio = duplicateWords.length / titleWords.length;
-  factors.duplication = {
-    weight: WEIGHTS.title.duplication,
-    count: duplicateRatio,
-    advice:
-      duplicateRatio > 0.3
-        ? "The title contains too much duplicated content"
-        : "",
-  };
-  score += WEIGHTS.title.duplication * (1 - duplicateRatio);
-
-  return {
-    score,
     factors,
   };
 }
