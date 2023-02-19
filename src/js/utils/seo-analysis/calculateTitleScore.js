@@ -230,6 +230,13 @@ function calculateSpecialCharactersScore(title) {
 }
 
 function calculateDuplicationScore(title, titles) {
+  // Kiểm tra mảng titles nếu rỗng thì trả về điểm 100
+  if (titles.length === 0) {
+    const message =
+      "Không có title để so sánh, điểm yếu tố Duplication là 100.";
+    return { score: 100, message };
+  }
+
   // Chuyển đổi các từ trong tiêu đề và tiêu đề khác thành chữ thường và loại bỏ các ký tự đặc biệt
   const words = title
     .toLowerCase()

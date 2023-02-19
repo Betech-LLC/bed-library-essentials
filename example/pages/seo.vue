@@ -1,15 +1,23 @@
 <template>
     <div class="container py-10 space-y-10">
-        {{ contentAnalysis }}
+        <SeoAnalysis
+            :data="{
+                url: 'Tối ưu hiệu quả SEO cho website có cấu trúc Jamstack',
+                title: 'Tối ưu hiệu quả SEO cho website có cấu trúc JamstackThe meta description is cut off at ~920 pixels on desktop and at ~980 pixels on mobile. Bing and Yahoo cut off the description at ~980 pixels.',
+                description:
+                    'The meta description is cut off at ~920 pixels on desktop and at ~980 pixels on mobile. Bing and Yahoo cut off the description at ~980 pixels.',
+            }"
+        />
+        {{ seoAnalysis }}
     </div>
 </template>
 
 <script>
-import { contentAnalysis } from '../../src/js/utils';
+import { seoAnalysis } from '../../src/js/utils';
 export default {
     data() {
         return {
-            contentAnalysis: contentAnalysis({
+            seoAnalysis: seoAnalysis({
                 title: 'Tối ưu hiệu quả SEO cho website có cấu trúc Jamstack',
                 description:
                     'Tối ưu hiệu của SEO cho website vẫn được các doanh nghiệp quan tâm hàng đầu trong việc tiếp cận khách hàng mục tiêu của họ. Vậy môi trường SEO đã thay đổi ra sao và việc sử dụng website Jamstack mang lại những lợi điểm gì trong “cuộc chiến” cạnh tranh thứ hạng trên trang tìm kiếm? Theo dõi bài viết dưới đây để tìm hiểu chi tiết!',
