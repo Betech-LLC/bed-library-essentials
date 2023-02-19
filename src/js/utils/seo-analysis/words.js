@@ -1,0 +1,57 @@
+// Define the emotional and stop words
+const emotionalWords = [
+  "tuyệt vời",
+  "ấn tượng",
+  "hứng thú",
+  "tuyệt nhất",
+  "hấp dẫn",
+];
+const stopWords = [
+  "và",
+  "của",
+  "trên",
+  "dưới",
+  "này",
+  "đó",
+  "ở đây",
+  "để",
+  "có thể",
+  "nên",
+  "được",
+  "không",
+  "là",
+  "cũng",
+  "hay",
+  "thì",
+  "nhưng",
+  "vì",
+  "hoặc",
+  "một số",
+  "trong số đó",
+  "chúng ta",
+  "của chúng ta",
+  "bạn",
+  "của bạn",
+  "anh",
+  "của anh",
+  "chị",
+  "của chị",
+  "em",
+  "của em",
+  "họ",
+  "của họ",
+  "cả",
+  "với",
+  "thêm",
+  "lại",
+  "đang",
+  "vẫn",
+  "giờ",
+  "đến",
+  "rồi",
+];
+
+const vowelSounds =
+  "aeiouyăâêôơưáàảãạấầẩẫậắằẳẵặéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữự";
+
+export { emotionalWords, stopWords, vowelSounds };

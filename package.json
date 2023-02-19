@@ -4,7 +4,7 @@
   },
   "name": "@nhatkha1407/jam-library-essentials",
   "version": "1.0.230216232803",
-  "main": "./src/js/functions/index.js",
+  "main": "./src/js/utils/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nhatkha1407/jam-library-essentials.git"

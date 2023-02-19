@@ -1,4 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+
+const path = require('path');
+const parentDir = path.dirname(__dirname);
+const libraryDir = path.join(parentDir, 'src');
+console.log(libraryDir);
+
 export default defineNuxtConfig({
 	modules: ['@nuxtjs/tailwindcss'],
 
@@ -18,7 +25,7 @@ export default defineNuxtConfig({
 	},
 
 	alias: {
-		'@core/functions': '../src',
+		'@core/utils': '../../src',
 		'@core/scss': '.',
 	},
 })
