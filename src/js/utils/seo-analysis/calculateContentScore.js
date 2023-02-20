@@ -2,6 +2,7 @@ import { stopWords, WEIGHTS } from "./const";
 import { countSpecialCharacters } from "./utils.js";
 
 function calculateContentScore(title, keywords) {
+  return;
   let score = 0;
   let factors = {};
 

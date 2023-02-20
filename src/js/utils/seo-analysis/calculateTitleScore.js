@@ -1,4 +1,4 @@
-import { stopWords, WEIGHTS } from "./const";
+import { callToActionKeywords, stopWords, WEIGHTS } from "./const";
 import { countSpecialCharacters } from "./utils.js";
 
 function calculateTitleScore(title, keywords) {
@@ -38,24 +38,34 @@ function calculateTitleScore(title, keywords) {
 
 function calculateLengthScore(title) {
   const actualLength = title.length;
+  const idealLengthMin = 50;
   const idealLength = 55;
-  const score = parseInt(
+
+  let score = parseInt(
     (1 - Math.abs(idealLength - actualLength) / idealLength) * 100
   );
 
-  let message = `Điểm số của tiêu đề: ${score}`;
-
+  let message = `Độ dài của tiêu đề tốt với điểm số ${score}/100`;
   if (actualLength < 30) {
-    message = `Tiêu đề quá ngắn (${actualLength} ký tự)`;
+    message = `Tiêu đề quá ngắn (${actualLength} ký tự), cần tối thiểu ${idealLengthMin} ký tự`;
   } else if (actualLength > 70) {
-    message = `Tiêu đề quá dài (${actualLength} ký tự)`;
+    message = `Tiêu đề quá dài (${actualLength} ký tự), nên giảm xuống tối đa 70 ký tự`;
   }
+
+  score = score < 0 ? 0 : score;
 
   return { score, message };
 }
 
 function calculateRelevanceScore(title, keywords) {
   const keywordList = keywords?.toLowerCase().split(",") || [];
+
+  if (keywordList.length === 0) {
+    return {
+      score: 0,
+      message: "Hãy nhập từ khóa để tính toán độ liên quan với tiêu đề",
+    };
+  }
 
   // Remove stop words and special characters from title
   const words = title
@@ -72,7 +82,7 @@ function calculateRelevanceScore(title, keywords) {
 
   // Calculate keyword score
   let score = 0;
-  let message = "Tiêu đề không có từ khóa nào xuất hiện trong title";
+  let message = "Tiêu đề không có từ khóa nào xuất hiện";
   if (keywordDensity >= 2.5) {
     score = 100;
   } else if (keywordDensity >= 0.5) {
@@ -80,57 +90,35 @@ function calculateRelevanceScore(title, keywords) {
   }
 
   // Return keyword score and details
-  message = `Từ khóa "${keywordList}" xuất hiện ${keywordCount} lần trong title, tỉ lệ xuất hiện là ${keywordDensity.toFixed(
+  message = `Từ khóa "${keywordList}" xuất hiện ${keywordCount} lần trong tiêu đề, tỉ lệ xuất hiện là ${keywordDensity.toFixed(
     2
   )}%.`;
   return { score, message };
 }
 
 function calculateCallToActionScore(title) {
-  const callToActionKeywords = [
-    "mua",
-    "tải xuống",
-    "đăng ký",
-    "đặt hàng",
-    "liên hệ",
-  ];
   const titleWords = title.split(" ");
   const callToActionCount = titleWords.filter((word) =>
     callToActionKeywords.includes(word.toLowerCase())
   ).length;
-  const score = parseInt((callToActionCount / titleWords.length) * 100);
+
+  let score = parseInt((callToActionCount / titleWords.length) * 100);
+  let message = `Mô tả của bạn chứa ${callToActionCount} yếu tố Call-to-Action (${score} điểm). Hoàn hảo!`;
 
   if (callToActionCount === 0) {
-    return {
-      score: 0,
-      message: "Tiêu đề không chứa yếu tố Call to Action",
-    };
+    score = 0;
+    message = "Mô tả của bạn không chứa yếu tố Call-to-Action.";
   } else if (score < 20) {
-    return {
-      score,
-      message: `Tiêu đề chứa ${callToActionCount} yếu tố Call to Action (${score} điểm)`,
-    };
+    message = `Mô tả của bạn chứa ${callToActionCount} yếu tố Call-to-Action (${score} điểm). Hãy cố gắng nhiều hơn!`;
   } else if (score >= 20 && score < 40) {
-    return {
-      score,
-      message: `Tiêu đề chứa ${callToActionCount} yếu tố Call to Action, cần cải thiện (${score} điểm)`,
-    };
+    message = `Mô tả của bạn chứa ${callToActionCount} yếu tố Call-to-Action (${score} điểm). Có thể cải thiện được!`;
   } else if (score >= 40 && score < 60) {
-    return {
-      score,
-      message: `Tiêu đề chứa ${callToActionCount} yếu tố Call to Action, đạt chuẩn (${score} điểm)`,
-    };
+    message = `Mô tả của bạn chứa ${callToActionCount} yếu tố Call-to-Action (${score} điểm). Rất tốt!`;
   } else if (score >= 60 && score < 80) {
-    return {
-      score,
-      message: `Tiêu đề chứa ${callToActionCount} yếu tố Call to Action, tốt (${score} điểm)`,
-    };
-  } else {
-    return {
-      score,
-      message: `Tiêu đề chứa ${callToActionCount} yếu tố Call to Action, tuyệt vời (${score} điểm)`,
-    };
+    message = `Mô tả của bạn chứa ${callToActionCount} yếu tố Call-to-Action (${score} điểm). Tuyệt vời!`;
   }
+
+  return { score, message };
 }
 
 function calculateUniquenessScore(title, previousTitles = []) {
@@ -197,13 +185,30 @@ function calculateReadabilityScore(title) {
 
   const numOfSentences = title.split(/[.!?]/).length;
 
-  const score = parseInt(
+  let score = parseInt(
     206.835 -
       1.015 * (numOfWords / numOfSentences) -
       84.6 * (numOfSyllables / numOfWords)
   );
 
-  const message = `Điểm yếu tố Readability của title là ${score}/100`;
+  let message = `Điểm yếu tố Readability của tiêu đề là ${score}/100. `;
+  if (score >= 90) {
+    message +=
+      "Tiêu đề có độ khó rất thấp, phù hợp cho độc giả từ lớp 1 trở lên.";
+  } else if (score >= 80) {
+    message += "Tiêu đề có độ khó thấp, phù hợp cho độc giả từ lớp 3 trở lên.";
+  } else if (score >= 70) {
+    message +=
+      "Tiêu đề có độ khó trung bình, phù hợp cho độc giả từ lớp 5 trở lên.";
+  } else if (score >= 60) {
+    message += "Tiêu đề có độ khó cao, phù hợp cho độc giả từ lớp 7 trở lên.";
+  } else if (score >= 50) {
+    message +=
+      "Tiêu đề có độ khó rất cao, phù hợp cho độc giả từ lớp 9 trở lên.";
+  } else {
+    message +=
+      "Tiêu đề có độ khó cực cao, chỉ phù hợp cho độc giả có trình độ cao.";
+  }
 
   return { score, message };
 }
@@ -220,21 +225,25 @@ function calculateSpecialCharactersScore(title) {
         : 0)
   );
 
-  return {
-    score,
-    message: `Tiêu đề của bạn có một số ký tự đặc biệt, tính điểm theo yếu tố này sẽ giúp đánh giá khả năng phù hợp với SEO của tiêu đề.
-    Điểm số của tiêu đề của bạn là ${score}/100. Điểm số này được tính dựa trên yếu tố:
-    - Số ký tự đặc biệt: ${score}/100.
-    Một điểm số cao hơn cho thấy tiêu đề của bạn không quá chứa các ký tự đặc biệt.`,
-  };
+  let message;
+  if (score >= 80) {
+    message = `Tuyệt vời! Số lượng ký tự đặc biệt ở tiêu đề của bạn rất ít và rất tốt cho SEO!`;
+  } else if (score >= 60) {
+    message = `Số lượng ký tự đặc biệt ở tiêu đề của bạn khá tốt, cần xóa bỏ để tốt hơn cho SEO!`;
+  } else {
+    message = `Số lượng ký tự đặc biệt ở tiêu đề của bạn chưa tốt, cần xáo bỏ để cải thiện SEO!`;
+  }
+
+  return { score, message };
 }
 
 function calculateDuplicationScore(title, titles) {
   // Kiểm tra mảng titles nếu rỗng thì trả về điểm 100
   if (titles.length === 0) {
-    const message =
-      "Không có title để so sánh, điểm yếu tố Duplication là 100.";
-    return { score: 100, message };
+    return {
+      score: 100,
+      message: "Không có tiêu đề để so sánh, điểm yếu tố Duplication là 100.",
+    };
   }
 
   // Chuyển đổi các từ trong tiêu đề và tiêu đề khác thành chữ thường và loại bỏ các ký tự đặc biệt
@@ -263,8 +272,14 @@ function calculateDuplicationScore(title, titles) {
   // Tính toán điểm Duplication theo thang điểm 100
   const score = parseInt(Math.round((commonWords / words.length) * 100));
 
-  // Tạo thông báo chi tiết cho người dùng
-  const message = `Điểm yếu tố Duplication của title là ${score}.`;
+  let message;
+  if (score >= 80) {
+    message = `Tuyệt vời! Số lượng ký tự đặc biệt ở tiêu đề của bạn rất ít và rất tốt cho SEO!`;
+  } else if (score >= 60) {
+    message = `Số lượng ký tự đặc biệt ở tiêu đề của bạn khá tốt, cần xóa bỏ để tốt hơn cho SEO!`;
+  } else {
+    message = `Số lượng ký tự đặc biệt ở tiêu đề của bạn chưa tốt, cần xóa bỏ để cải thiện SEO!`;
+  }
 
   // Trả về kết quả
   return { score, message };

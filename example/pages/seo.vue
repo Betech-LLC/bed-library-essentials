@@ -6,9 +6,9 @@
                 title: 'Tối ưu hiệu quả SEO cho website có cấu trúc JamstackThe meta description is cut off at ~920 pixels on desktop and at ~980 pixels on mobile. Bing and Yahoo cut off the description at ~980 pixels.',
                 description:
                     'The meta description is cut off at ~920 pixels on desktop and at ~980 pixels on mobile. Bing and Yahoo cut off the description at ~980 pixels.',
+                keywords: 'jamstack, seo',
             }"
         />
-        {{ seoAnalysis }}
     </div>
 </template>
 

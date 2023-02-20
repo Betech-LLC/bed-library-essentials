@@ -27,6 +27,7 @@ const WEIGHTS = {
     links: 4.17,
   },
 };
+
 const emotionalWords = [
   "tuyệt vời",
   "ấn tượng",
@@ -34,6 +35,7 @@ const emotionalWords = [
   "tuyệt nhất",
   "hấp dẫn",
 ];
+
 const stopWords = [
   "và",
   "của",
@@ -82,4 +84,61 @@ const stopWords = [
 const vowelSounds =
   "aeiouyăâêôơưáàảãạấầẩẫậắằẳẵặéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữự";
 
-export { WEIGHTS, emotionalWords, stopWords, vowelSounds };
+const callToActionKeywords = [
+  "mua",
+  "tải xuống",
+  "mua ngay",
+  "tải về",
+  "đăng ký",
+  "tham gia ngay",
+  "xem thêm",
+  "tìm hiểu thêm",
+  "nhận ngay",
+  "đặt hàng",
+  "gửi yêu cầu",
+  "đăng nhập",
+  "đăng ký nhận tin tức",
+  "theo dõi chúng tôi",
+  "chia sẻ",
+  "bình luận",
+  "đánh giá",
+  "trò chuyện",
+  "liên hệ",
+  "truy cập ngay",
+  "tìm kiếm",
+  "tạo tài khoản",
+  "đăng ký tài khoản",
+  "tải ứng dụng",
+  "đặt lịch hẹn",
+  "xem sản phẩm",
+  "đăng ký dịch vụ",
+  "đặt mua sản phẩm",
+  "tìm hiểu sản phẩm",
+  "tìm hiểu dịch vụ",
+  "tìm hiểu thêm về chúng tôi",
+  "tham gia chương trình khuyến mãi",
+  "đăng ký tham gia sự kiện",
+  "đặt vé",
+  "đặt chỗ",
+  "đăng ký học",
+  "tìm kiếm việc làm",
+  "tìm hiểu thêm về công ty",
+  "đăng ký làm đối tác",
+];
+
+const MESSAGE_LEVELS = {
+  ERROR: 1,
+  WARNING: 2,
+  GOOD: 3,
+  PERFECT: 4,
+};
+
+export {
+  WEIGHTS,
+  MESSAGE_LEVELS,
+  emotionalWords,
+  stopWords,
+  vowelSounds,
+  callToActionKeywords,
+};
+
