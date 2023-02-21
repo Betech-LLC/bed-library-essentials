@@ -1,13 +1,17 @@
 .policy {
+    @apply container xl:pt-8 md:pt-6 pt-4 relative;
 }
 
 .policy-head {
+    @apply headline-1 text-gray-700;
 }
 
 .policy-body {
+    @apply xl:mt-6 md:mt-4 mt-3 grid grid-cols-12 xl:gap-x-8 md:gap-x-6 max-lg:gap-y-4 max-md:gap-y-2;
 }
 
 .policy-nav {
+    @apply col-span-3;
     .nav-item {
     }
 
@@ -19,6 +23,7 @@
 }
 
 .policy-content {
+    @apply col-span-9;
 }
 
 .policy-title {
