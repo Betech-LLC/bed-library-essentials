@@ -185,7 +185,7 @@
 </template>
 
 <script>
-import { seoAnalysis } from "../../../../src/js/utils";
+import { seoAnalysis } from "@core/utils";
 export default {
   props: ["data"],
   data() {

@@ -14,4 +14,4 @@ trim_trailing_whitespace = false
 
 [*.ts, *.js]
 indent_style = tab
-indent_size = 4
+indent_size = 2
