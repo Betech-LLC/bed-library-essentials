@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { seoAnalysis } from "@core/utils";
+import { seoAnalysis } from '@core/utils';
 export default {
     data() {
         return {

@@ -1,5 +1,6 @@
 <template>
     <div class="container py-10 space-y-10">
+        <ImageDynamic name="logo" alt="asd" />
         <div class="space-y-2">
             <div class="flex space-x-2">
                 <Button label="Button" class="btn-primary btn-lg" />
