@@ -25,7 +25,6 @@ export default defineNuxtConfig({
         '@core/utils': libraryDir + '/js/utils',
         '@core/scss': libraryDir + '/scss',
         'core-images': libraryDir + '/images',
-        // 'core-images': fileURLToPath(new URL(libraryDir + '/images', import.meta.url)),
     },
 
     vite: {
