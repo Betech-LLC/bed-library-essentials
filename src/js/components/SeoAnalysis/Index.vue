@@ -86,7 +86,7 @@
                         </small>
                         <div class="bar">
                             <div class="line"></div>
-                            <div class="progress" :style="{ width: 100 - seoAnalysis.keywordScore?.score + '%' }"></div>
+                            <div class="progress" :style="{ width: 100 - seoAnalysis.keywordsScore?.score + '%' }"></div>
                             <div class="divide">
                                 <div></div>
                                 <div></div>
@@ -157,13 +157,13 @@
             </div>
             <div class="suggestion">
                 <template v-for="mainFactor of Object.keys(seoAnalysis)">
-                    <li
-                        v-for="(factor, index) in seoAnalysis[mainFactor]?.factors"
-                        :class="[
-                            { 'factor-good': factor.score >= 80 },
-                            { 'factor-warning': factor.score >= 50 && factor.score < 80 },
-                            { 'factor-error': factor.score < 50 },
-                        ]"
+                  <li
+                  v-for="(factor, index) in seoAnalysis[mainFactor]?.factors"
+                  :class="[
+                    { 'factor-good': factor.score >= 80 },
+                    { 'factor-warning': factor.score >= 50 && factor.score < 80 },
+                    { 'factor-error': factor.score < 50 },
+                  ]"
                     >
                         {{ factor.message }}
                     </li>
