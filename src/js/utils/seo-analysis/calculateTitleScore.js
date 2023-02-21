@@ -89,7 +89,7 @@ function calculateRelevanceScore(title, keywords) {
     }
 
     // Return keyword score and details
-    message = `Từ khóa "${keywordList}" xuất hiện ${keywordCount} lần trong tiêu đề, tỉ lệ xuất hiện là ${keywordDensity.toFixed(
+    message = `Từ khóa "${keywords}" xuất hiện ${keywordCount} lần trong tiêu đề, tỉ lệ xuất hiện là ${keywordDensity.toFixed(
         2
     )}%.`
     return { score, message }

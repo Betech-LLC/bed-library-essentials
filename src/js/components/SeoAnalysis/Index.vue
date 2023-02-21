@@ -65,7 +65,7 @@
             <div class="preview-content" :class="currentDevice">
                 <div class="preview">
                     <div class="preview-url">
-                        <span>{{ data.url }}</span>
+                        <span>{{ data.url ?? toSlug(contentData.title) }}</span>
                     </div>
                     <a class="preview-title" @click="scrollToSection('#seo-title')">
                         {{ titlePreview }}
@@ -174,7 +174,7 @@
 </template>
 
 <script>
-import { seoAnalysis } from '@core/utils'
+import { seoAnalysis, toSlug } from '@core/utils'
 export default {
     props: ['data'],
     data() {
@@ -224,6 +224,9 @@ export default {
                 behavior: 'smooth',
             })
             document.querySelector(element + ' .input').focus()
+        },
+        toSlug(value) {
+            return toSlug(value)
         },
     },
 }
