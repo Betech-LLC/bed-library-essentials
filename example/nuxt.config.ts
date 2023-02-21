@@ -1,36 +1,36 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const path = require('path');
-const parentDir = path.dirname(__dirname);
-const libraryDir = path.join(parentDir, 'src');
+const path = require('path')
+const parentDir = path.dirname(__dirname)
+const libraryDir = path.join(parentDir, 'src')
 
 export default defineNuxtConfig({
-	modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss'],
 
   components: {
-    "dirs": [
+    dirs: [
       {
-        "path": libraryDir + "/js/components",
-        "global": true
+        path: libraryDir + '/js/components',
+        global: true,
       },
-    ]
+    ],
   },
 
-	tailwindcss: {
-		cssPath: '@/assets/scss/app.scss',
-		configPath: 'tailwind.config.js',
-		viewer: false,
-	},
+  tailwindcss: {
+    cssPath: '@/assets/scss/app.scss',
+    configPath: 'tailwind.config.js',
+    viewer: false,
+  },
 
-	alias: {
-		'@core/utils': libraryDir + '/js/utils',
-    '@core/scss':  libraryDir + "/scss",
-	},
+  alias: {
+    '@core/utils': libraryDir + '/js/utils',
+    '@core/scss': libraryDir + '/scss',
+  },
 
   vite: {
     build: {
       rollupOptions: {
-        external: ['vue/server-renderer']
+        external: ['vue/server-renderer'],
       },
     },
-  }
+  },
 })
