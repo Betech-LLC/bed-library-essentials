@@ -10,4 +10,5 @@ module.exports = deepMerge(defaultTheme, {
     require("@tailwindcss/typography"),
     require("@tailwindcss/line-clamp"),
   ],
+
 })
