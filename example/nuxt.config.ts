@@ -24,7 +24,6 @@ export default defineNuxtConfig({
     alias: {
         '@core/utils': libraryDir + '/js/utils',
         '@core/scss': libraryDir + '/scss',
-        'core-images': libraryDir + '/images',
     },
 
     vite: {
