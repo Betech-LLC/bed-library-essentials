@@ -1,8 +1,14 @@
+import { WEIGHTS } from './const'
+
 function calculateKeywordsScore(keywords) {
     let score = 0
     let factors = {}
 
-    factors.keywords = calculateKeywordsRatioScore(keywords)
+    factors.count = calculateKeywordsRatioScore(keywords)
+
+    Object.keys(factors).forEach((factor) => {
+        score += factors[factor].score / Object.keys(factors).length
+    })
 
     return {
         score: parseInt(score),
@@ -18,14 +24,15 @@ function calculateKeywordsRatioScore(keywords) {
     }
 
     const score = parseInt((keywordsCount / 5) * 100)
+    console.log(score);
 
     let message
     if (keywordsCount >= 5) {
         message = `Tuyệt vời! Số lượng ký tự đặc biệt ở tiêu đề của bạn rất ít và rất tốt cho SEO!`
     } else if (keywordsCount >= 3) {
         message = `Số lượng ký tự đặc biệt ở tiêu đề của bạn khá tốt, cần xóa bỏ để tốt hơn cho SEO!`
-      } else if (keywordsCount >= 1) {
-          message = `Số lượng ký tự đặc biệt ở tiêu đề của bạn khá tốt, cần xóa bỏ để tốt hơn cho SEO!`
+    } else if (keywordsCount >= 1) {
+        message = `Số lượng ký tự đặc biệt ở tiêu đề của bạn khá tốt, cần xóa bỏ để tốt hơn cho SEO!`
     } else {
         message = `Số lượng ký tự đặc biệt ở tiêu đề của bạn chưa tốt, cần xóa bỏ để cải thiện SEO!`
     }
