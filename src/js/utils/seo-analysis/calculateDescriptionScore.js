@@ -249,7 +249,7 @@ function calculateDuplicationScore(title, titles) {
     if (score >= 80) {
         message = `Tuyệt vời! Số lượng ký tự đặc biệt ở mô tả của bạn rất ít và rất tốt cho SEO!`
     } else if (score >= 60) {
-        message = `Số lượng ký tự đặc biệt ở mô tả của bạn khá tốt, cần xóa bỏ để tốt hơn cho SEO!`
+        message = `Số lượng ký tự đặc biệt ở mô tả của bạn khá tốt, hãy xem xét để tối ưu thêm!`
     } else {
         message = `Số lượng ký tự đặc biệt ở mô tả của bạn chưa tốt, cần xóa bỏ để cải thiện SEO!`
     }
