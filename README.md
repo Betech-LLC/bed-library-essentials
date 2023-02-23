@@ -4,7 +4,8 @@
 
 ### 1. Tạo Personal Access Token (classic)
 - https://github.com/settings/tokens/new
-- Tick chọn: `write:packages`
+- Chọn `No Expiration`
+- Chọn: `write:packages`
 - Click <kbd> <br> Generate token <br> </kbd>
 
 ### 2. Đăng nhập vào npm
