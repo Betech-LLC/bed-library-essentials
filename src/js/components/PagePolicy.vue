@@ -10,9 +10,7 @@
                     </div>
                     <!-- TODO: CHỜ COMPONENT ICON -->
                     <!-- <div class="icon-position">
-                        <div class="icon-scale">
-                            <IconCaretDown />
-                        </div>
+                        <IconCaretDown />
                     </div> -->
                 </div>
             </div>

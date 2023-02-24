@@ -17,11 +17,8 @@
         .box-title {
             @apply w-full relative py-2.5 px-3 md:px-4 flex items-center border-l-4 space-x-2 overflow-hidden text-gray-700 border-blue-600;
         }
-        .icon-position {
+        .box-icon {
             @apply absolute top-0 right-3 md:right-4 flex items-center justify-center h-full;
-            .icon-scale {
-                @apply scale-150 -rotate-90 opacity-50;
-            }
         }
     }
 }
