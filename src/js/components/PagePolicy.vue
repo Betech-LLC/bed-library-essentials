@@ -1,66 +1,81 @@
 <template>
-  <section class="policy">
-    <div class="policy-head">Hỗ trợ khách hàng</div>
+    <section class="policy">
+        <div class="policy-head">Hỗ trợ khách hàng</div>
 
-    <div class="policy-body">
-      <ul class="policy-nav">
-        <li
-          class="nav-item"
-          v-for="(policy, index) in list_sidebar"
-          :key="index"
-        >
-          <a
-            :href="`${policy.slug}`"
-            class="nav-link"
-            :class="{
-              active: checkActive(policy.slug),
-            }"
-          >
-            <div v-if="policy.icon" class="nav-icon" v-html="policy.icon"></div>
-            <IconPolicyDefault v-else />
-            <div>
-              {{ policy.title }}
+        <div class="policy-body">
+            <div class="policy-box">
+                <div @click="togglePolicyMobile" class="box-body">
+                    <div class="box-title title-2">
+                        {{ currentPolicy.title }}
+                    </div>
+                    <!-- TODO: CHỜ COMPONENT ICON -->
+                    <!-- <div class="icon-position">
+                        <div class="icon-scale">
+                            <IconCaretDown />
+                        </div>
+                    </div> -->
+                </div>
             </div>
-          </a>
-        </li>
-      </ul>
+            <div class="policy-nav" :class="isOpenMobile ? '' : 'toggle'">
+                <ul class="nav-list">
+                    <li class="nav-item" v-for="(policy, index) in list_sidebar" :key="index">
+                        <a
+                            :href="`${policy.slug}`"
+                            class="nav-link"
+                            :class="{
+                                active: checkActiveUrl(policy.slug, $route.path),
+                            }"
+                        >
+                            <div v-if="policy.icon" class="nav-icon" v-html="policy.icon"></div>
+                            <!-- TODO: CHỜ COMPONENT ICON -->
+                            <!-- <IconPolicyDefault v-else /> -->
+                            <div class="nav-title">
+                                {{ policy.title }}
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-      <div class="policy-content">
-        <h1 class="policy-title">
-          {{ currentPolicy.title }}
-        </h1>
-        <div v-html="currentPolicy.content" class="policy-prose" />
-      </div>
-    </div>
-  </section>
+            <div v-if="isOpenMobile" class="policy-blank" @click="togglePolicyMobile"></div>
+
+            <div class="policy-content">
+                <h1 class="policy-title">
+                    {{ currentPolicy.title }}
+                </h1>
+                <div v-html="content" class="policy-prose" />
+            </div>
+        </div>
+    </section>
 </template>
 <script>
+import { checkActiveUrl, getCurrentUrlTitle } from '@core/utils'
 export default {
-  props: ["list_sidebar", "full_path"],
-  data() {
-    return {
-      isOpenMobile: false,
-      currentPolicy: "",
-    };
-  },
-  watch: {
-    isOpenMobile: function () {
-      if (this.isOpenMobile) {
-        document.body.classList.add("overflow-hidden");
-      } else {
-        document.body.classList.remove("overflow-hidden");
-      }
+    props: ['list_sidebar', 'content'],
+    data() {
+        return {
+            isOpenMobile: false,
+            currentPolicy: '',
+        }
     },
-  },
-  methods: {
-    togglePolicyMobile() {
-      this.isOpenMobile = !this.isOpenMobile;
+    mounted() {
+        this.currentPolicy = this.getCurrentUrlTitle(this.list_sidebar, this.$route.path)
     },
-    checkActive(url) {
-      const arrPath = this.full_path.split("/");
-      this.currentPolicy = this.list_sidebar[0];
-      return url == arrPath[arrPath.length - 1];
+    watch: {
+        isOpenMobile: function () {
+            if (this.isOpenMobile) {
+                document.body.classList.add('overflow-hidden')
+            } else {
+                document.body.classList.remove('overflow-hidden')
+            }
+        },
     },
-  },
-};
+    methods: {
+        togglePolicyMobile() {
+            this.isOpenMobile = !this.isOpenMobile
+        },
+        checkActiveUrl,
+        getCurrentUrlTitle,
+    },
+}
 </script>

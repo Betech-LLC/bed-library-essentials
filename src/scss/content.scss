@@ -28,13 +28,13 @@
         @apply no-underline text-blue-600;
     }
     ul {
-        @apply list-none mt-0 xl:mb-4 md:mb-3 mb-2;
+        @apply list-none mt-0 xl:mb-4 md:mb-3 mb-2 pl-0;
         li {
             display: list-item;
             @apply pl-4 relative mt-0 xl:mb-4 md:mb-3 mb-2 md:text-[1rem] text-[0.875rem];
             &::before {
                 content: '';
-                @apply w-1 h-1 rounded-full bg-gray-600 absolute left-1;
+                @apply w-1 h-1 rounded-full bg-gray-600 absolute left-1 mt-2.5;
             }
         }
     }
