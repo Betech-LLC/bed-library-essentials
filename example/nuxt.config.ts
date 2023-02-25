@@ -12,6 +12,10 @@ export default defineNuxtConfig({
                 path: libraryDir + '/js/components',
                 global: true,
             },
+            {
+                path: 'components',
+                global: true,
+            },
         ],
     },
 

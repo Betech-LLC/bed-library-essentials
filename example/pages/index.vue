@@ -1,30 +1,32 @@
 <template>
     <div class="container py-10 space-y-10">
-        <ImageDynamic name="logo" alt="asd" />
+        <JImageDynamic name="logo" alt="asd" />
+        <JLink href="/">CoreLink</JLink>
+
         <div class="space-y-2">
             <div class="flex space-x-2">
-                <Button label="Button" class="btn-primary btn-lg" />
-                <Button label="Button" class="btn-secondary btn-lg" />
-                <Button label="Button" class="btn-success btn-lg" />
-                <Button label="Button" class="btn-warning btn-lg" />
-                <Button label="Button" class="btn-danger btn-lg" />
+                <JButton label="Button" class="btn-primary btn-lg" />
+                <JButton label="Button" class="btn-secondary btn-lg" />
+                <JButton label="Button" class="btn-success btn-lg" />
+                <JButton label="Button" class="btn-warning btn-lg" />
+                <JButton label="Button" class="btn-danger btn-lg" />
             </div>
             <div class="flex space-x-2">
-                <Button label="Button" class="btn-primary" />
-                <Button label="Button" class="btn-secondary" />
-                <Button label="Button" class="btn-success" />
-                <Button label="Button" class="btn-warning" />
-                <Button label="Button" class="btn-danger" />
+                <JButton label="Button" class="btn-primary" />
+                <JButton label="Button" class="btn-secondary" />
+                <JButton label="Button" class="btn-success" />
+                <JButton label="Button" class="btn-warning" />
+                <JButton label="Button" class="btn-danger" />
             </div>
             <div class="flex space-x-2">
-                <Button label="Button" class="btn-primary btn-sm" />
-                <Button label="Button" class="btn-secondary btn-sm" />
-                <Button label="Button" class="btn-success btn-sm" />
-                <Button label="Button" class="btn-warning btn-sm" />
-                <Button label="Button" class="btn-danger btn-sm" />
+                <JButton label="Button" class="btn-primary btn-sm" />
+                <JButton label="Button" class="btn-secondary btn-sm" />
+                <JButton label="Button" class="btn-success btn-sm" />
+                <JButton label="Button" class="btn-warning btn-sm" />
+                <JButton label="Button" class="btn-danger btn-sm" />
             </div>
         </div>
-        <Accordion
+        <JAccordion
             :items="[
                 {
                     title: 'Accordion item 1',
@@ -45,7 +47,7 @@
                 },
             ]"
         />
-        <Breadcrumb
+        <JBreadcrumb
             :items="[
                 {
                     title: 'Accordion Item 1',
@@ -62,5 +64,5 @@
             ]"
         />
     </div>
-    <PagePolicy />
+    <JPagePolicy />
 </template>
