@@ -71,7 +71,7 @@
 }
 
 .policy-nav.toggle {
-    @apply transform -translate-x-full;
+    @apply max-lg:transform max-lg:-translate-x-full;
 }
 
 .policy-blank {
