@@ -5,8 +5,10 @@
         </a>
         <div class="card-blog-body">
             <div class="card-blog-meta">
-                <span class="card-blog-badge badge badge-primary badge-sm">SEO Strategy</span>
-                <span class="card-blog-published-date">Thứ Sáu, 17/02/2023</span>
+                <span v-if="item.category" class="card-blog-badge badge badge-primary badge-sm">{{
+                    item.category.title
+                }}</span>
+                <span class="card-blog-published-date">{{ formatDate(item.published_at) }}</span>
             </div>
 
             <h3 v-if="item.title" class="card-blog-title">
@@ -17,11 +19,16 @@
     </div>
 </template>
 <script>
+import { formatDate } from '../utils/format'
 export default {
     props: {
         item: {
             type: Object,
         },
+    },
+
+    methods: {
+        formatDate,
     },
 }
 </script>

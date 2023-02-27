@@ -17,7 +17,7 @@ export default {
                 title: 'Những điều bạn cần biết về tối ưu nội dung SEO trong năm 2023',
                 description:
                     'How do you create compelling presentations that wow your colleagues and impress your managers?',
-                createdAt: 'Thứ Năm, 2/2/2023',
+                published_at: '2023-02-02',
                 image: 'https://via.placeholder.com/600x600',
                 demo: this.$route,
             },
