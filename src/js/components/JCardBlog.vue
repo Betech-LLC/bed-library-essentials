@@ -8,7 +8,7 @@
                 <span v-if="item.category" class="card-blog-badge badge badge-primary badge-sm">{{
                     item.category.title
                 }}</span>
-                <span class="card-blog-published-date">{{ formatDate(item.published_at) }}</span>
+                <span class="card-blog-published-date">{{ formatDate(item.published_at) }}123123123</span>
             </div>
 
             <h3 v-if="item.title" class="card-blog-title">
