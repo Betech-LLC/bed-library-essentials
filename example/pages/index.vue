@@ -30,7 +30,7 @@
                     title: 'Accordion item 1',
                     content:
                         'Yes, you can try us for free for 30 days. If you want, we\’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.',
-                    active: false,
+                    active: true,
                 },
                 {
                     title: 'Accordion item 2',
@@ -41,7 +41,7 @@
                 {
                     title: 'Accordion item 3',
                     content: 'Content of accordion item 3',
-                    active: true,
+                    active: false,
                 },
             ]"
         />
@@ -61,6 +61,27 @@
                 },
             ]"
         />
+
+        <div class="space-x-2">
+            <span class="badge badge-sm badge-gray">Label sm</span>
+            <span class="badge badge-gray">Label md</span>
+            <span class="badge badge-lg badge-gray">Label lg</span>
+        </div>
+
+        <div class="space-x-2 space-y-2">
+            <span class="badge badge-gray">Label gray</span>
+            <span class="badge badge-primary">Label primary</span>
+            <span class="badge badge-error">Label error</span>
+            <span class="badge badge-warning">Label warning</span>
+            <span class="badge badge-success">Label success</span>
+            <span class="badge badge-gray-blue">Label gray-blue</span>
+            <span class="badge badge-blue-light">Label blue-light</span>
+            <span class="badge badge-blue">Label blue</span>
+            <span class="badge badge-indigo">Label indigo</span>
+            <span class="badge badge-purple">Label purple</span>
+            <span class="badge badge-pink">Label pink</span>
+            <span class="badge badge-rose">Label rose</span>
+            <span class="badge badge-orange-dark">Label orange-dark</span>
+        </div>
     </div>
-    <PagePolicy />
 </template>

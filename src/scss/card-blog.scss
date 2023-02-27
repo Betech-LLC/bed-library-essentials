@@ -1,0 +1,27 @@
+.card-blog-image-top {
+    @apply aspect-w-2 aspect-h-1 picture-cover;
+}
+
+.card-blog-body {
+    @apply mt-4;
+}
+
+.card-blog-meta {
+    @apply space-x-3;
+}
+
+.card-blog-published-date {
+    @apply label-2 text-gray-500;
+}
+
+.card-blog-title {
+    @apply mt-1 title-2 text-gray-900 line-clamp-2;
+}
+
+.card-blog-description {
+    @apply mt-2 body-1 text-gray-700 line-clamp-2;
+}
+
+.card-blog-button {
+    @apply mt-4 inline-block text-primary-dark hover:text-primary-darker duration-300 transition;
+}

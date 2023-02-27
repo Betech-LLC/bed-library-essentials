@@ -1,0 +1,13 @@
+.picture-cover {
+    @apply flex w-full;
+    img {
+        @apply object-cover w-full h-full;
+    }
+}
+
+.picture-contain {
+    @apply flex w-full;
+    img {
+        @apply object-contain w-full h-full;
+    }
+}

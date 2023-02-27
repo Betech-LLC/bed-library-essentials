@@ -1,0 +1,56 @@
+.badge {
+    @apply label-2 rounded inline-block whitespace-nowrap;
+}
+.badge {
+    &.badge-sm {
+        @apply py-1 px-2;
+    }
+    &.badge-lg {
+        @apply py-1.5 px-3;
+    }
+
+    &:not(.badge-sm, .badge-lg) {
+        @apply py-1 px-2.5;
+    }
+}
+.badge {
+    &.badge-gray {
+        @apply text-gray-700 bg-gray-100;
+    }
+    &.badge-primary {
+        @apply text-primary-dark bg-primary-50;
+    }
+    &.badge-error {
+        @apply text-error-700 bg-error-50;
+    }
+    &.badge-warning {
+        @apply text-warning-700 bg-warning-50;
+    }
+    &.badge-success {
+        @apply text-success-700 bg-success-50;
+    }
+    &.badge-gray-blue {
+        @apply text-gray-blue-700 bg-gray-blue-50;
+    }
+    &.badge-blue-light {
+        @apply text-blue-light-700 bg-blue-light-50;
+    }
+    &.badge-blue {
+        @apply text-blue-700 bg-blue-50;
+    }
+    &.badge-indigo {
+        @apply text-indigo-700 bg-indigo-50;
+    }
+    &.badge-purple {
+        @apply text-purple-700 bg-purple-50;
+    }
+    &.badge-pink {
+        @apply text-pink-700 bg-pink-50;
+    }
+    &.badge-rose {
+        @apply text-rose-700 bg-rose-50;
+    }
+    &.badge-orange-dark {
+        @apply text-orange-dark-700 bg-orange-dark-50;
+    }
+}
