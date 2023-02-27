@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="content-wrapper">
-            <div class="field-group" id="seo-title">
+            <div class="field-group" id="seo-keywords">
                 <label class="flex items-center">
                     <span>Từ khóa / Keywords</span>
                     <div class="status-bar">
