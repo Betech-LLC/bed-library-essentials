@@ -1,10 +1,10 @@
 <template>
     <section class="container space-y-8">
-        <div class="grid grid-cols-2 gap-x-8">
+        <div class="grid grid-cols-2 xl:gap-x-8 md:gap-x-6 gap-x-4">
             <JCardBlog :item="post" />
             <JCardBlog :item="post" />
         </div>
-        <JCardBlog class="card-blog-row w-[800px]" :item="post" />
+        <JCardBlog class="w-full card-blog-row" :item="post" />
         <JCardBlog class="card-blog-row w-[314px] card-blog-side-bar" :item="post" />
     </section>
 </template>

@@ -5,7 +5,7 @@
         </a>
         <div class="card-blog-body">
             <div class="card-blog-meta">
-                <span class="badge badge-primary badge-sm">SEO Strategy</span>
+                <span class="card-blog-badge badge badge-primary badge-sm">SEO Strategy</span>
                 <span class="card-blog-published-date">Thứ Sáu, 17/02/2023</span>
             </div>
 
