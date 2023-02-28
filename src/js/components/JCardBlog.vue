@@ -24,7 +24,7 @@
     </div>
 </template>
 <script>
-import { formatDate } from '@core/utils/format'
+import { formatDate } from '../utils/format'
 import JPicture from '@core/components/JPicture.vue'
 export default {
     components: { JPicture },
