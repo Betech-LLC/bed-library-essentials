@@ -1,11 +1,9 @@
 <template>
     <div v-if="item" class="card-blog">
         <a href="#">
-            <img
-                class="card-blog-image-top"
-                :src="item.image && item.image.url ? item.image.url : '/cover.jpg'"
-                :alt="item.image.alt"
-            />
+            <picture class="card-blog-image-top">
+                <img :src="item.image && item.image.url ? item.image.url : '/cover.jpg'" :alt="item.image.alt" />
+            </picture>
         </a>
         <div class="card-blog-body">
             <div class="card-blog-meta">

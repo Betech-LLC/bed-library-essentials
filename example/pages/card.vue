@@ -18,7 +18,10 @@ export default {
                 description:
                     'How do you create compelling presentations that wow your colleagues and impress your managers?',
                 published_at: '2023-02-02',
-                image: 'https://via.placeholder.com/600x600',
+                image: {
+                    url: 'https://via.placeholder.com/600x600',
+                    alt: 'Những điều bạn cần biết về tối ưu nội dung SEO trong năm 2023',
+                },
                 demo: this.$route,
             },
         }
