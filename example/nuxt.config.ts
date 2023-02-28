@@ -29,6 +29,7 @@ export default defineNuxtConfig({
         '@core/utils': libraryDir + '/js/utils',
         '@core/scss': libraryDir + '/scss',
         '@core': libraryDir + '/src',
+        '@framework/components': __dirname + '/components',
     },
 
     vite: {
