@@ -20,6 +20,7 @@
 
 // Size
 .card-blog {
+    @apply h-max;
     &.card-blog-xl {
         .card-blog-title {
             @apply title-1;
@@ -71,7 +72,7 @@
         }
 
         .card-blog-body {
-            @apply flex flex-col-reverse;
+            @apply flex flex-col-reverse self-start;
         }
 
         .card-blog-meta {
