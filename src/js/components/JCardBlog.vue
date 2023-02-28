@@ -26,8 +26,9 @@
 <script>
 import { formatDate } from '@core/utils/format'
 import JPicture from '@core/components/JPicture.vue'
+import JLink from '@core/components/JLink.vue'
 export default {
-    components: { JPicture },
+    components: { JPicture, JLink },
     props: {
         item: {
             type: Object,
