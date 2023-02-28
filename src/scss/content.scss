@@ -13,16 +13,22 @@
         @apply mb-0;
     }
     * {
-        @apply font-display text-gray-600 md:text-lg text-base xl:leading-[150%] leading-[140%];
+        @apply font-display text-gray-700 body-1;
     }
     h2 {
-        @apply md:text-[22px] text-xl leading-[150%] font-medium md:mt-6 md:mb-4 mt-3 mb-2.5;
+        @apply headline-2 text-gray-900 md:my-8 my-5;
     }
     h3 {
         @apply headline-3 text-gray-900 md:my-6 my-4;
     }
+    h5 {
+        @apply title-1 text-gray-900 md:my-8 my-5;
+    }
+    h6 {
+        @apply title-2 text-gray-900 md:my-4 my-3;
+    }
     p {
-        @apply text-justify md:text-[1rem] text-[0.875rem] xl:mb-4 md:mb-3 mb-2 mt-0;
+        @apply body-1 md:mt-6 md:mb-8 my-4;
     }
     a {
         @apply border-b border-blue-600 text-blue-600 no-underline font-normal;
@@ -61,14 +67,7 @@
         }
     }
     hr {
-        @apply md:my-4 my-3;
-        color: #dedede;
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
+        @apply md:my-4 my-3 text-[#dedede] w-screen relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw];
         @screen md {
             @apply mx-auto left-0 right-0 w-full;
         }
