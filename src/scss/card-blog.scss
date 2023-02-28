@@ -1,5 +1,8 @@
 .card-blog-image-top {
-    @apply aspect-w-2 aspect-h-1 picture-cover;
+    @apply aspect-w-2 aspect-h-1 picture-cover lg:overflow-hidden;
+    img {
+        @apply lg:hover:scale-105 lg:duration-300;
+    }
 }
 
 .card-blog-meta {
@@ -12,6 +15,10 @@
 
 .card-blog-title {
     @apply xl:mt-1 mt-0.5 text-gray-900 line-clamp-2;
+
+    a {
+        @apply lg:hover:text-primary duration-300;
+    }
 }
 
 .card-blog-description {
