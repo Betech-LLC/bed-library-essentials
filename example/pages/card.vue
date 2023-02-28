@@ -1,11 +1,11 @@
 <template>
     <section class="container space-y-8">
         <div class="grid grid-cols-2 xl:gap-x-8 md:gap-x-6 gap-x-4">
-            <JCardBlog :item="post" />
-            <JCardBlog :item="post" />
+            <JCardBlog :url="post.url" :item="post" />
+            <JCardBlog :url="post.url" :item="post" />
         </div>
-        <JCardBlog class="w-full card-blog-row" :item="post" />
-        <JCardBlog class="card-blog-row w-[314px] card-blog-side-bar" :item="post" />
+        <JCardBlog :url="post.url" class="w-full card-blog-row" :item="post" />
+        <JCardBlog :url="post.url" class="card-blog-row w-[314px] card-blog-side-bar" :item="post" />
     </section>
 </template>
 
@@ -22,7 +22,7 @@ export default {
                     url: 'https://via.placeholder.com/600x600',
                     alt: 'Những điều bạn cần biết về tối ưu nội dung SEO trong năm 2023',
                 },
-                demo: this.$route,
+                url: this.$router.resolve({ name: 'blog-slug', params: { slug: 'demo' } }),
             },
         }
     },

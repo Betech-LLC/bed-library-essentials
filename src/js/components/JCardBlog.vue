@@ -1,13 +1,13 @@
 <template>
     <div v-if="item" class="card-blog">
-        <a href="#">
+        <JLink :href="url">
             <JPicture
                 :src="item.image && item.image.url ? item.image.url : '/cover.jpg'"
                 :alt="item.image.alt"
                 class="card-blog-image-top"
             >
             </JPicture>
-        </a>
+        </JLink>
         <div class="card-blog-body">
             <div class="card-blog-meta">
                 <span v-if="item.category" class="card-blog-badge badge badge-primary badge-sm">{{
@@ -17,20 +17,24 @@
             </div>
 
             <h3 v-if="item.title" class="card-blog-title">
-                <a href="#">{{ item.title }}</a>
+                <JLink :href="url">{{ item.title }}</JLink>
             </h3>
             <p v-if="item.description" class="card-blog-description" v-html="item.description"></p>
         </div>
     </div>
 </template>
 <script>
-import { formatDate } from '../utils/format'
+import { formatDate } from '@core/utils/format'
 import JPicture from '@core/components/JPicture.vue'
 export default {
     components: { JPicture },
     props: {
         item: {
             type: Object,
+        },
+        url: {
+            type: String,
+            default: '#',
         },
     },
 
