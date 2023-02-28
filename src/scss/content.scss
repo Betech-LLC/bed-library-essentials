@@ -13,37 +13,34 @@
         @apply mb-0;
     }
     * {
-        @apply font-display text-gray-700 body-1;
+        @apply text-gray-700 body-1 p-0 m-0;
     }
     h2 {
-        @apply headline-2 text-gray-900 md:my-8 my-5;
+        @apply title-2 text-gray-900 mb-[8px] md:mb-[11px] xl:mb-[16px];
     }
+
     h3 {
-        @apply headline-3 text-gray-900 md:my-6 my-4;
-    }
-    h5 {
-        @apply title-1 text-gray-900 md:my-8 my-5;
-    }
-    h6 {
-        @apply title-2 text-gray-900 md:my-4 my-3;
+        @apply title-3 text-gray-900 mb-[8px] md:mb-[11px] xl:mb-[16px];
     }
     p {
-        @apply body-1 md:mt-6 md:mb-8 my-4;
+        @apply body-1 m-0 p-0 mb-[8px] md:mb-[11px] xl:mb-[16px] text-justify;
     }
     a {
         @apply border-b border-blue-600 text-blue-600 no-underline font-normal;
     }
     ul {
-        @apply list-none pl-[0.25rem] text-gray-700;
+        @apply list-none text-gray-700 pl-[4px] md:pl-[7px]  xl:pl-[10px] space-y-[4px] md:space-y-[6px] xl:space-y-[8px] mb-[8px] md:mb-[11px] xl:mb-[16px];
         li {
             display: list-item;
-            @apply pl-[1.25rem] relative;
+            @apply relative m-0 p-0 pl-[8px] md:pl-[10px] xl:pl-[12px] text-justify;
             &::before {
                 content: '';
-                @apply w-1.5 h-1.5 rounded-full bg-gray-700 absolute left-1 top-[10px];
+                @apply w-1 h-1 rounded-full absolute top-[4px] md:top-[8px] left-0 translate-y-[100%] xl:translate-y-[50%] bg-gray-700;
             }
         }
     }
+
+    // TODO: cần bảng UI mẫu để style chung
     ol {
         @apply list-inside pl-0;
         li {
@@ -55,8 +52,10 @@
     }
     img,
     figure {
-        @apply md:my-6 my-4 w-full h-auto;
+        @apply mb-[16px] md:mb-[24px] xl:mb-[32px] mt-[8px] md:mt-[12px] xl:mt-[16px] w-full h-auto;
     }
+
+    // TODO: cần bảng UI mẫu để style chung
     figure {
         @apply md:rounded-lg rounded overflow-hidden;
         img {
@@ -66,12 +65,15 @@
             @apply text-gray-800 italic xl:py-2.5 md:py-1.5 py-1 bg-gray-100 mt-0 text-center;
         }
     }
+    // TODO: cần bảng UI mẫu để style chung
     hr {
         @apply md:my-4 my-3 text-[#dedede] w-screen relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw];
         @screen md {
             @apply mx-auto left-0 right-0 w-full;
         }
     }
+
+    // TODO: cần bảng UI mẫu để style chung
     table {
         @apply xl:mt-8 md:mt-6 mt-4;
         colgroup {
@@ -102,7 +104,27 @@
             }
         }
     }
+    // TODO: cần bảng UI mẫu để style chung
     iframe {
         @apply w-full h-80 md:h-96;
+    }
+    // TEMPLATE COLS
+    .template-2-cols {
+        @apply h-[156px] md:h-[260px] xl:h-[412px] m-0 mb-[12px] md:mb-[16px] xl:mb-[24px];
+    }
+    .template-3-cols {
+        @apply h-[112px] md:h-[180px] xl:h-[267px] m-0 mb-[8px] md:mb-[12px] xl:mb-[16px];
+    }
+    .template-2-cols,
+    .template-3-cols {
+        @apply flex space-x-[4px] md:space-x-[12px] xl:space-x-[24px] pt-[12px] md:pt-[12px] xl:pt-[16px] mb-[16px] md:mb-[22px] xl:mb-[32px];
+        .template-item {
+            @apply h-full;
+            img {
+                @apply my-0;
+                height: 100% !important;
+                width: 100% !important;
+            }
+        }
     }
 }
