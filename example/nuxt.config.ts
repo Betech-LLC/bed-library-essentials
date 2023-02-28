@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     alias: {
         '@core/utils': libraryDir + '/js/utils',
         '@core/scss': libraryDir + '/scss',
+        '@core/components': libraryDir + '/js/components',
         '@core': libraryDir + '/src',
         '@framework/components': __dirname + '/components',
     },
