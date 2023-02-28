@@ -1,5 +1,21 @@
 <template>
     <div class="container py-10 space-y-10">
+        <JBreadcrumb
+            :items="[
+                {
+                    title: 'Accordion Item 1',
+                    link: 'Accordion Item 1',
+                },
+                {
+                    title: 'Accordion Item 1',
+                    link: 'Accordion Item 1',
+                },
+                {
+                    title: 'Accordion Item 1',
+                    link: 'Accordion Item 1',
+                },
+            ]"
+        />
         <div class="grid grid-cols-12 gap-x-8">
             <div class="lg:col-span-10 lg:col-start-2 col-span-full">
                 <div class="prose">
@@ -87,22 +103,6 @@
                     title: 'Accordion item 3',
                     content: 'Content of accordion item 3',
                     active: true,
-                },
-            ]"
-        />
-        <JBreadcrumb
-            :items="[
-                {
-                    title: 'Accordion Item 1',
-                    link: 'Accordion Item 1',
-                },
-                {
-                    title: 'Accordion Item 1',
-                    link: 'Accordion Item 1',
-                },
-                {
-                    title: 'Accordion Item 1',
-                    link: 'Accordion Item 1',
                 },
             ]"
         />
