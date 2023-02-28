@@ -1,6 +1,6 @@
 <template>
     <div v-if="item" class="card-blog">
-        <JLink :href="url">
+        <JLink :href="item.url">
             <JPicture
                 :src="item.image && item.image.url ? item.image.url : '/cover.jpg'"
                 :alt="item.image.alt"
@@ -10,14 +10,17 @@
         </JLink>
         <div class="card-blog-body">
             <div class="card-blog-meta">
-                <span v-if="item.category" class="card-blog-badge badge badge-primary badge-sm">{{
-                    item.category.title
-                }}</span>
+                <JLink
+                    :href="item.category.url"
+                    v-if="item.category"
+                    class="card-blog-badge badge badge-primary badge-sm"
+                    >{{ item.category.title }}</JLink
+                >
                 <span class="card-blog-published-date">{{ formatDate(item.published_at) }}</span>
             </div>
 
             <h3 v-if="item.title" class="card-blog-title">
-                <JLink :href="url">{{ item.title }}</JLink>
+                <JLink :href="item.url">{{ item.title }}</JLink>
             </h3>
             <p v-if="item.description" class="card-blog-description" v-html="item.description"></p>
         </div>
@@ -32,10 +35,6 @@ export default {
     props: {
         item: {
             type: Object,
-        },
-        url: {
-            type: String,
-            default: '#',
         },
     },
 
