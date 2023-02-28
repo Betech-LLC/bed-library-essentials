@@ -1,8 +1,11 @@
 <template>
     <div v-if="item" class="card-blog">
         <a href="#">
-            <JPicture class="card-blog-image-top">
-                <img :src="item.image && item.image.url ? item.image.url : '/cover.jpg'" :alt="item.image.alt" />
+            <JPicture
+                :src="item.image && item.image.url ? item.image.url : '/cover.jpg'"
+                :alt="item.image.alt"
+                class="card-blog-image-top"
+            >
             </JPicture>
         </a>
         <div class="card-blog-body">
@@ -22,7 +25,7 @@
 </template>
 <script>
 import { formatDate } from '../utils/format'
-import JPicture from '@core/component/JPicture.vue'
+import JPicture from '@core/components/JPicture.vue'
 export default {
     components: { JPicture },
     props: {
