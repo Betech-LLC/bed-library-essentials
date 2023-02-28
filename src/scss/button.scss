@@ -1,5 +1,5 @@
 .btn {
-  @apply inline-flex items-center justify-center space-x-2 transition rounded cursor-pointer disabled:opacity-25 outline-transparent outline outline-offset-2;
+  @apply inline-flex items-center justify-center space-x-2 transition rounded cursor-pointer disabled:opacity-25 outline-none focus:outline-none;
   @media (prefers-reduced-motion: reduce) {
       @apply transition-none;
   }
