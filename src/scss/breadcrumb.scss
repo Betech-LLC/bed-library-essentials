@@ -1,22 +1,29 @@
 .breadcrumb {
-  @apply flex overflow-x-auto whitespace-pre body-2 py-1 text-blue-500;
+    @apply flex  whitespace-pre body-2 py-1 text-blue-500;
 }
 
 .breadcrumb-item {
-  + .breadcrumb-item {
-    @apply pl-2;
+    + .breadcrumb-item {
+        @apply pl-2;
 
-    &::before {
-      @apply float-left pr-2 text-gray-700;
-      content: "/";
+        &::before {
+            @apply content-[''] float-left pr-2 text-gray-700 h-full bg-no-repeat bg-center;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSIxMSIgdmlld0JveD0iMCAwIDYgMTEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01LjM2NjIxIDAuMDQ2ODc1TDEuMjE2OCAxMC44NTQ1SDAuMTI5ODgzTDQuMjg2MTMgMC4wNDY4NzVINS4zNjYyMVoiIGZpbGw9IiMzNDQwNTQiLz4KPC9zdmc+Cg==');
+        }
+
+        &.arrow::before {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgNCA3IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMC43OTI2MjcgNi44NTQ4NEwzLjg5ODYyIDMuNzU4MDZDMy45MzU0OCAzLjcyMTIgMy45NjE1NCAzLjY4MTI2IDMuOTc2NzcgMy42MzgyNUMzLjk5MjI2IDMuNTk1MjQgNCAzLjU0OTE2IDQgMy41QzQgMy40NTA4NSAzLjk5MjI2IDMuNDA0NzYgMy45NzY3NyAzLjM2MTc1QzMuOTYxNTQgMy4zMTg3NCAzLjkzNTQ4IDMuMjc4OCAzLjg5ODYyIDMuMjQxOTRMMC43OTI2MjcgMC4xMzU5NDRDMC43MDY2MDUgMC4wNDk5MjMgMC41OTkwNzggMC4wMDY5MTIyMyAwLjQ3MDA0NiAwLjAwNjkxMjIzQzAuMzQxMDE0IDAuMDA2OTEyMjMgMC4yMzA0MTUgMC4wNTI5OTUyIDAuMTM4MjQ5IDAuMTQ1MTYxQzAuMDQ2MDgzIDAuMjM3MzI3IDAgMC4zNDQ4NTQgMCAwLjQ2Nzc0MkMwIDAuNTkwNjMgMC4wNDYwODMgMC42OTgxNTYgMC4xMzgyNDkgMC43OTAzMjJMMi44NDc5MyAzLjVMMC4xMzgyNDkgNi4yMDk2OEMwLjA1MjIyNzUgNi4yOTU3IDAuMDA5MjE2NTUgNi40MDE2MyAwLjAwOTIxNjU1IDYuNTI3NDdDMC4wMDkyMTY1NSA2LjY1MzU1IDAuMDU1Mjk5NSA2Ljc2MjY3IDAuMTQ3NDY1IDYuODU0ODRDMC4yMzk2MzEgNi45NDcgMC4zNDcxNTggNi45OTMwOSAwLjQ3MDA0NiA2Ljk5MzA5QzAuNTkyOTM0IDYuOTkzMDkgMC43MDA0NjEgNi45NDcgMC43OTI2MjcgNi44NTQ4NFoiIGZpbGw9IiMzNDQwNTQiLz4KPC9zdmc+Cg==');
+        }
+        a {
+            @apply pl-2;
+        }
     }
-  }
 
-  &:last-child {
-    @apply text-gray-700 pointer-events-none;
-  }
+    &:last-child {
+        @apply text-gray-700 pointer-events-none;
+    }
 
-  &:not(:last-child) {
-    @apply link;
-  }
+    &:not(:last-child) {
+        @apply link;
+    }
 }
