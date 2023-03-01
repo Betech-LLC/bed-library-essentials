@@ -1,53 +1,52 @@
 <template>
-    <picture>
-        <source media="(max-width: 767px)" :srcset="srcMbEncode" />
-        <source media="(max-width: 1439px)" :srcset="srcEncode" />
-        <img :class="classCustom" :src="encodeURI(src)" :alt="alt || src || srcMb" :loading="loading" />
+    <picture :class="wrapperClass">
+        <source media="(max-width: 767px)" :srcset="mobileImageSourceSet" />
+        <source media="(max-width: 1439px)" :srcset="originImageSourceSet" />
+        <img v-bind="$attrs" :src="originImageSource" :alt="altImage" :loading="loading" />
     </picture>
 </template>
 
 <script>
+import { removeAccent, toBasename } from '@core/utils'
+
 export default {
+    inheritAttrs: false,
     props: {
         src: {
             type: String,
-            default: '',
+            require: false,
         },
-        srcMb: {
+        mobileSrc: {
             type: String,
-            default: '',
+            require: false,
         },
-        alt: {
+        placeholderSrc: {
             type: String,
-            default: '',
+            default: '/placeholder.png',
+        },
+        wrapperClass: {
+            type: String,
         },
         loading: {
             type: String,
             default: 'lazy',
         },
-        width: {
-            type: Number,
-        },
-        widthMb: {
-            type: Number,
-        },
-        classCustom: {
-            type: String,
-        },
     },
 
     computed: {
-        srcEncode() {
-            const width = this.width ? `?w=${this.width}` : null
-            const src = encodeURI(this.src)
-
-            return width ? src + width : `${src}?w=1000`
+        originImageSource() {
+            return this.src || this.mobileSrc || this.placeholderSrc
         },
-        srcMbEncode() {
-            const width = this.widthMb ? `?w=${this.widthMb}` : this.width ? `?w=${this.width}` : null
-            const src = encodeURI(this.srcMb || this.src)
-
-            return width ? src + width : `${src}?w=500`
+        originImageSourceSet() {
+            const width = this.$attrs['width'] || '1000'
+            return encodeURI(`${this.originImageSource}?w=${width}`)
+        },
+        mobileImageSourceSet() {
+            const width = this.$attrs['mobile-width'] || '500'
+            return encodeURI(`${this.mobileSrc || this.originImageSource}?w=${width}`)
+        },
+        altImage() {
+            return removeAccent(toBasename(this.alt || this.originImageSource))
         },
     },
 }

@@ -58,9 +58,12 @@ function toSlug(str, separator) {
     }
     return str
 }
-
 function removeAccent(str) {
     return toSlug(str, (separator = ' '))
 }
 
-export { toNumber, toDate, toSlug, removeAccent }
+function toBasename(url) {
+    return url?.substring(url?.lastIndexOf('/') + 1)
+}
+
+export { toNumber, toDate, toSlug, removeAccent, toBasename }
