@@ -1,0 +1,105 @@
+.card-blog-image {
+    @apply aspect-w-2 aspect-h-1 picture-cover lg:overflow-hidden;
+    img {
+        @apply scale-transition-sm;
+    }
+}
+
+.card-blog-meta {
+    @apply xl:space-x-3 md:space-x-2 max-md:space-y-1;
+}
+
+.card-blog-badge {
+    @apply badge badge-primary badge-sm;
+}
+
+.card-blog-date {
+    @apply label-2 text-gray-500 max-md:block;
+}
+
+.card-blog-title {
+    @apply xl:mt-1 mt-0.5 text-gray-900 line-clamp-2;
+
+    a {
+        @apply lg:hover:text-primary base-transition;
+    }
+}
+
+.card-blog-description {
+    @apply xl:mt-2 md:mt-1.5 mt-1 body-1 text-gray-700 line-clamp-2 max-md:hidden;
+}
+
+// Size
+.card-blog {
+    @apply h-max;
+    &.card-blog-xl {
+        .card-blog-title {
+            @apply title-1;
+        }
+    }
+    &.card-blog-lg {
+        .card-blog-title {
+            @apply title-2;
+        }
+    }
+    &.card-blog-sm {
+        .card-blog-title {
+            @apply title-3;
+        }
+    }
+
+    &:not(.card-blog-xl, .card-blog-lg, .card-blog-sm) {
+        .card-blog-title {
+            @apply title-2;
+        }
+    }
+}
+
+// Direction
+.card-blog {
+    &:not(.card-blog-row) {
+        .card-blog-body {
+            @apply xl:mt-4 md:mt-3 mt-2;
+        }
+    }
+    &.card-blog-row {
+        @apply grid grid-cols-2 xl:gap-x-4 md:gap-x-3 gap-x-2;
+
+        .card-blog-image {
+            @apply h-max;
+        }
+    }
+}
+
+.card-blog {
+    &.card-blog-xs {
+        @apply grid grid-cols-10 xl:gap-x-3 md:gap-x-2 gap-x-1.5;
+        > :first-child {
+            @apply col-span-3;
+        }
+
+        > :last-child {
+            @apply col-span-7;
+        }
+
+        .card-blog-body {
+            @apply flex flex-col-reverse self-start;
+        }
+
+        .card-blog-meta {
+            @apply xl:mt-1 mt-0.5;
+        }
+
+        .card-blog-title {
+            @apply label-2 mt-0 line-clamp-3;
+        }
+
+        .card-blog-description {
+            @apply hidden;
+        }
+
+        .card-blog-date {
+            @apply hidden;
+        }
+    }
+}
