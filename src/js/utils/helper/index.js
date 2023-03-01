@@ -23,7 +23,7 @@ function toSlug(str, separator) {
 }
 
 function removeAccent(str) {
-    return toSlug(str, separator = ' ')
+    return toSlug(str, ' ')
 }
 
 export { toSlug, removeAccent }

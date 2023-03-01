@@ -30,4 +30,8 @@ function formatDate(input, lang = 'vi') {
     return formattedDate
 }
 
-export { clearNumber, formatDate }
+function toBasename(url) {
+    return url?.substring(url?.lastIndexOf('/') + 1)
+}
+
+export { clearNumber, formatDate, toBasename }

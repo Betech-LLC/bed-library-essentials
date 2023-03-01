@@ -2,9 +2,9 @@
     <div v-if="item" class="card-blog">
         <JLink :href="item.url">
             <JPicture
-                :src="item.image && item.image.url ? item.image.url : '/cover.jpg'"
-                :alt="item.image.alt"
-                class="card-blog-image-top"
+                :src="item.image?.url"
+                :alt="item.image?.alt"
+                wrapperClass="card-blog-image-top"
             >
             </JPicture>
         </JLink>
