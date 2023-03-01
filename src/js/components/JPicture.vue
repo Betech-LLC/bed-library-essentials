@@ -16,6 +16,10 @@ export default {
             type: String,
             require: false,
         },
+        alt: {
+            type: String,
+            require: false,
+        },
         mobileSrc: {
             type: String,
             require: false,
