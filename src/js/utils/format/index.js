@@ -1,33 +1,66 @@
 'use strict'
 
-function clearNumber(number) {
+function toNumber(number) {
     return number.replace(/[^0-9]/g, '')
 }
 
-function formatDate(input, lang = 'vi') {
-    console.log(input)
-    const currentDate = new Date(input)
+function toDate(date, language = 'vi') {
+    const currentDate = new Date(date)
+    if (language === 'vi') {
+        const dayNames = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy']
+        const day = dayNames[currentDate.getDay()]
+        const dayOfMonth = currentDate.getDate().toString().padStart(2, '0')
+        const month = (currentDate.getMonth() + 1).toString().padStart(2, '0')
+        const year = currentDate.getFullYear().toString()
 
-    console.log(currentDate)
+        return `${day}, ${dayOfMonth}/${month}/${year}`
+    } else {
+        const monthNames = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+        ]
+        const month = monthNames[currentDate.getMonth()]
+        const day = currentDate.getDate()
+        const year = currentDate.getFullYear()
 
-    // Lấy tên thứ
-    let days = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy']
-    if (lang === 'en') {
-        days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        return `${month} ${day}, ${year}`
     }
-    const dayName = days[currentDate.getDay()]
-
-    // Lấy ngày và tháng
-    const date = currentDate.getDate()
-    const month = currentDate.getMonth() + 1 // Lưu ý: tháng bắt đầu từ 0
-
-    // Lấy năm
-    const year = currentDate.getFullYear()
-
-    // Format ngày tháng năm theo định dạng
-    const formattedDate = `${dayName}, ${date < 10 ? '0' + date : date}/${month < 10 ? '0' + month : month}/${year}`
-
-    return formattedDate
 }
 
-export { clearNumber, formatDate }
+function toSlug(str, separator) {
+    str = str
+        ?.toLowerCase()
+        ?.trim()
+        .replace(/\t/g, '')
+        .replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, 'a')
+        .replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, 'e')
+        .replace(/ì|í|ị|ỉ|ĩ/g, 'i')
+        .replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, 'o')
+        .replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, 'u')
+        .replace(/ỳ|ý|ỵ|ỷ|ỹ/g, 'y')
+        .replace(/đ/g, 'd')
+        .replace(/\s+/g, '-')
+        .replace(/[^A-Za-z0-9_-]/g, '')
+        .replace(/-+/g, '-')
+
+    if (separator) {
+        return str.replace(/-/g, separator)
+    }
+    return str
+}
+
+function removeAccent(str) {
+    return toSlug(str, (separator = ' '))
+}
+
+export { toNumber, toDate, toSlug, removeAccent }

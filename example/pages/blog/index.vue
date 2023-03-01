@@ -3,18 +3,18 @@
         <div class="headline-1">CARD BLOG COLUMN</div>
         <div class="grid grid-cols-12 gap-4 xl:gap-8 md:gap-6">
             <JCardBlog class="col-span-6 card-blog-xl" :item="post" />
-            <JCardBlog class="col-span-5 card-blog-l" :item="post" />
+            <JCardBlog class="col-span-5 card-blog-lg" :item="post" />
             <JCardBlog class="col-span-4" :item="post" />
-            <JCardBlog class="col-span-3 card-blog-s" :item="post" />
+            <JCardBlog class="col-span-3 card-blog-sm" :item="post" />
         </div>
 
         <div class="headline-1">CARD BLOG ROW</div>
         <div class="grid grid-cols-12 gap-4 xl:gap-8 md:gap-6">
             <JCardBlog class="col-span-12 card-blog-row card-blog-xl" :item="post" />
-            <JCardBlog class="col-span-10 card-blog-row card-blog-l" :item="post" />
+            <JCardBlog class="col-span-10 card-blog-row card-blog-lg" :item="post" />
             <JCardBlog class="col-span-8 card-blog-row" :item="post" />
-            <JCardBlog class="col-span-6 card-blog-row card-blog-s" :item="post" />
-            <JCardBlog class="col-span-4 card-blog-row card-blog-side-bar" :item="post" />
+            <JCardBlog class="col-span-6 card-blog-row card-blog-sm" :item="post" />
+            <JCardBlog class="col-span-4 card-blog-row card-blog-xs" :item="post" />
         </div>
     </section>
 </template>

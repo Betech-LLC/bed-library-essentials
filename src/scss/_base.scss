@@ -2,6 +2,12 @@
     .base-transition {
         @apply transition-all duration-300 ease-in-out;
     }
+    .scale-transition-sm {
+        @apply lg:hover:scale-105 lg:duration-300;
+    }
+    .scale-transition-md {
+        @apply lg:hover:scale-110 lg:duration-300;
+    }
     .link {
         @apply hover:underline hover:text-primary;
     }

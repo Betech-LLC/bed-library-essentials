@@ -4,19 +4,16 @@
             <JPicture
                 :src="item.image && item.image.url ? item.image.url : '/cover.jpg'"
                 :alt="item.image.alt"
-                class="card-blog-image-top"
+                class="card-blog-image"
             >
             </JPicture>
         </JLink>
         <div class="card-blog-body">
             <div class="card-blog-meta">
-                <JLink
-                    :href="item.category.url"
-                    v-if="item.category"
-                    class="card-blog-badge badge badge-primary badge-sm"
-                    >{{ item.category.title }}</JLink
-                >
-                <span class="card-blog-published-date">{{ formatDate(item.published_at) }}</span>
+                <JLink :href="item.category.url" v-if="item.category" class="card-blog-badge">{{
+                    item.category.title
+                }}</JLink>
+                <span class="card-blog-date">{{ toDate(item.published_at) }}</span>
             </div>
 
             <h3 v-if="item.title" class="card-blog-title">
@@ -27,7 +24,7 @@
     </div>
 </template>
 <script>
-import { formatDate } from '@core/utils/format'
+import { toDate } from '@core/utils/format'
 import JPicture from '@core/components/JPicture.vue'
 import JLink from '@core/components/JLink.vue'
 export default {
@@ -39,7 +36,7 @@ export default {
     },
 
     methods: {
-        formatDate,
+        toDate,
     },
 }
 </script>

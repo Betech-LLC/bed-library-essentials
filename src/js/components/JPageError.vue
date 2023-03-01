@@ -9,7 +9,7 @@
             </h1>
             <p class="error-description">
                 {{ description }}
-                <a :href="`tel:${clearNumber(phone)}`"> {{ phone }} </a>
+                <a :href="`tel:${toNumber(phone)}`"> {{ phone }} </a>
             </p>
             <a href="#" class="error-button">
                 {{ button }}
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { clearNumber } from '../utils/format/index'
+import { toNumber } from '@core/utils/format'
 
 export default {
     props: {
@@ -74,7 +74,7 @@ export default {
     },
 
     methods: {
-        clearNumber,
+        toNumber,
     },
 }
 </script>
