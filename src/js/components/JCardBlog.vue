@@ -1,7 +1,8 @@
 <template>
     <div v-if="item" class="card-blog">
         <JLink :href="item.url">
-            <JPicture :src="item.image?.url" :alt="item.image?.alt" wrapperClass="card-blog-image"> </JPicture>
+            <JPicture :src="item.image?.url" :alt="item.image?.alt || item.title" wrapperClass="card-blog-image">
+            </JPicture>
         </JLink>
         <div class="card-blog-body">
             <div class="card-blog-meta">
