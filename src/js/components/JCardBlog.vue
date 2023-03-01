@@ -19,7 +19,7 @@
     </div>
 </template>
 <script>
-import { toDate } from '@core/utils/format'
+import { toDate } from '@core/utils'
 import JPicture from '@core/components/JPicture.vue'
 import JLink from '@core/components/JLink.vue'
 export default {

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { toNumber } from '@core/utils/format'
+import { toNumber } from '@core/utils'
 
 export default {
     props: {
