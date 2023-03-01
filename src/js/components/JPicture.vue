@@ -37,9 +37,6 @@ export default {
         originImageSource() {
             return this.src || this.mobileSrc || this.placeholderSrc
         },
-        altImage() {
-            return removeAccent(toBasename(this.alt || this.originImageSource))
-        },
         originImageSourceSet() {
             const width = this.$attrs['width'] || '1000'
             return encodeURI(`${this.originImageSource}?w=${width}`)
@@ -47,6 +44,9 @@ export default {
         mobileImageSourceSet() {
             const width = this.$attrs['mobile-width'] || '500'
             return encodeURI(`${this.mobileSrc || this.originImageSource}?w=${width}`)
+        },
+        altImage() {
+            return removeAccent(toBasename(this.alt || this.originImageSource))
         },
     },
 }
