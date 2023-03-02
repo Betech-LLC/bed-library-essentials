@@ -1,3 +1,14 @@
+/*
+Heading content -> Typo trong UI KIT
+h2 -> title 1
+h3 -> title 2
+h4 -> title 3
+
+Note:
+1. Typography của các trang trên web khác với content. Content sẽ quy chuẩn từ bản BLog trong UI KIT
+2. Một số trường hợp cần heading lớn hơn, thì sẽ viết CSS riêng.
+*/
+
 .prose {
     @apply max-w-none overflow-hidden;
     > *:first-child {
@@ -13,96 +24,93 @@
         @apply mb-0;
     }
     * {
-        @apply font-display text-gray-700 body-1;
+        @apply text-gray-700 body-1 p-0 m-0;
+    }
+    h2,
+    h3,
+    h4,
+    strong {
+        @apply text-gray-900 my-2 md:my-3 xl:my-4;
     }
     h2 {
-        @apply headline-2 text-gray-900 md:my-8 my-5;
+        @apply title-1;
     }
     h3 {
-        @apply headline-3 text-gray-900 md:my-6 my-4;
+        @apply title-2;
     }
-    h5 {
-        @apply title-1 text-gray-900 md:my-8 my-5;
+    h4,
+    strong {
+        @apply title-3;
     }
-    h6 {
-        @apply title-2 text-gray-900 md:my-4 my-3;
-    }
+
     p {
-        @apply body-1 md:mt-6 md:mb-8 my-4;
+        @apply my-2 md:my-3 xl:my-4;
     }
-    a {
-        @apply border-b border-blue-600 text-blue-600 no-underline font-normal;
-    }
+
     ul {
-        @apply list-none pl-[0.25rem] text-gray-700;
+        @apply list-none pl-1 md:pl-1.5 xl:pl-2.5 space-y-1 md:space-y-1.5 xl:space-y-2 my-2 md:my-3 xl:my-4;
         li {
-            display: list-item;
-            @apply pl-[1.25rem] relative;
+            @apply relative m-0 p-0 pl-2.5 md:pl-3;
             &::before {
                 content: '';
-                @apply w-1.5 h-1.5 rounded-full bg-gray-700 absolute left-1 top-[10px];
+                @apply w-1 h-1 rounded-full absolute top-1 md:top-1.5 xl:top-2 left-0 translate-y-full xl:translate-y-1/2 bg-current;
             }
         }
     }
+
+    p + ul {
+        @apply -translate-y-0.5  md:-translate-y-1 mb-1.5 md:mb-2 xl:mb-3;
+    }
+    ul + p {
+        @apply mt-1.5 md:mt-2 xl:mt-3;
+    }
+
+    // TODO
+    a {
+        @apply text-blue-dark-600 underline;
+    }
+    // TODO
     ol {
-        @apply list-inside pl-0;
         li {
-            @apply pl-0;
-            &::marker {
-                @apply font-sans;
-            }
         }
     }
     img,
     figure {
-        @apply md:my-6 my-4 w-full h-auto;
+        @apply my-4 md:my-6 xl:my-8 w-full h-auto;
     }
+
+    // TODO
     figure {
-        @apply md:rounded-lg rounded overflow-hidden;
         img {
-            @apply my-0 rounded-none;
         }
         figcaption {
-            @apply text-gray-800 italic xl:py-2.5 md:py-1.5 py-1 bg-gray-100 mt-0 text-center;
         }
     }
+    // TODO
     hr {
-        @apply md:my-4 my-3 text-[#dedede] w-screen relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw];
-        @screen md {
-            @apply mx-auto left-0 right-0 w-full;
-        }
     }
+    // TODO
     table {
-        @apply xl:mt-8 md:mt-6 mt-4;
-        colgroup {
-            @apply hidden;
-        }
         tbody {
             tr {
-                &:first-child {
-                    td {
-                        @apply bg-blue-100 text-blue-600 font-medium flex-shrink-0;
-                        &:nth-child(1) {
-                            @apply w-1/12;
-                        }
-                        &:nth-child(2) {
-                            @apply w-4/12;
-                        }
-                        &:nth-child(3) {
-                            @apply w-3/12;
-                        }
-                        &:nth-child(4) {
-                            @apply w-2/12;
-                        }
-                    }
-                }
                 td {
-                    @apply px-2 xl:py-4 md:py-3 py-2 border border-gray-300 text-center text-gray-700 md:text-[1rem] text-[0.875rem] xl:leading-[150%] leading-[140%];
                 }
             }
         }
     }
+    // TODO
     iframe {
-        @apply w-full h-80 md:h-96;
+    }
+
+    // TEMPLATE COLS
+    .template-2-cols,
+    .template-3-cols {
+        @apply flex space-x-1 md:space-x-3 xl:space-x-6 my-4 md:my-6 xl:my-8;
+        .template-item {
+            @apply flex-1;
+            img {
+                @apply my-0 object-cover w-full h-full;
+            }
+        }
     }
 }
