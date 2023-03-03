@@ -6,11 +6,11 @@
 }
 
 .card-blog-meta {
-    @apply flex flex-wrap items-center;
+    @apply flex flex-wrap items-center max-md:flex-col;
 }
 
 .card-blog-badge {
-    @apply badge badge-primary badge-sm  xl:mr-3 md:mr-2 mr-1.5 mb-1;
+    @apply badge badge-primary badge-sm  xl:mr-3 md:mr-2 mb-1;
 }
 
 .card-blog-date {
