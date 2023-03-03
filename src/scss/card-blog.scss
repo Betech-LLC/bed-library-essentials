@@ -6,7 +6,7 @@
 }
 
 .card-blog-meta {
-    @apply flex flex-wrap items-center max-md:flex-col;
+    @apply flex flex-wrap md:items-center max-md:flex-col;
 }
 
 .card-blog-badge {
