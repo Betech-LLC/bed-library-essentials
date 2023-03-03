@@ -1,19 +1,13 @@
 .badge {
-    @apply label-2 rounded whitespace-pre-line line-clamp-1;
+    @apply py-0.5 px-2.5 label-2 rounded inline-block whitespace-nowrap;
 }
 
 .badge-sm {
-    @apply py-0.5 px-2;
+    @apply px-2;
 }
 
 .badge-lg {
-    @apply py-1.5 px-3;
-}
-
-.badge {
-    :not(.badge-sm, .badge-lg) {
-        @apply py-0.5 px-2.5;
-    }
+    @apply py-1 px-3;
 }
 
 .badge-gray {
