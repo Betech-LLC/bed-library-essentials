@@ -91,7 +91,7 @@
                     title: 'Accordion item 1',
                     content:
                         'Yes, you can try us for free for 30 days. If you want, we\’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.',
-                    active: false,
+                    active: true,
                 },
                 {
                     title: 'Accordion item 2',
@@ -102,7 +102,7 @@
                 {
                     title: 'Accordion item 3',
                     content: 'Content of accordion item 3',
-                    active: true,
+                    active: false,
                 },
             ]"
         />
