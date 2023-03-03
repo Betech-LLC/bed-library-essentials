@@ -1,5 +1,5 @@
 .badge {
-    @apply label-2 rounded inline-block whitespace-nowrap;
+    @apply label-2 rounded whitespace-pre-line line-clamp-1;
 }
 
 .badge-sm {
