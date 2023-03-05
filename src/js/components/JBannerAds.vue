@@ -3,8 +3,8 @@
         <JPicture
             wrapperClass="picture-contain"
             :src="item.image.url || item.image || '/placeholder.png'"
-            :mobileSrc="item.image_mobile.url || item.image_mobile || '/placeholder.png'"
-            :alt="item.image.alt || item.alt || item.title"
+            :mobileSrc="item.image_mobile?.url || item.image_mobile"
+            :alt="item.image?.alt || item.alt || item.title"
         />
     </a>
 </template>
