@@ -25,7 +25,7 @@ export default {
                 link: 'https://github.com/nhatkha1407/jam-library-essentials',
                 target: '_self',
                 custom_fields: null,
-                image: '',
+                image: { url: 'https://via.placeholder.com/300x600', alt: 'Demo 1' },
                 image_mobile: { url: 'https://via.placeholder.com/600x600', alt: 'Demo 1' },
             },
             bannerHorizontal: {
