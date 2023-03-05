@@ -10,7 +10,11 @@
 </template>
 
 <script>
+import JPicture from '@core/components/JPicture.vue'
+
 export default {
+    components: { JPicture },
+
     props: {
         item: {
             type: Object,
