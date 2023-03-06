@@ -1,5 +1,5 @@
 <template>
-    <div
+    <nav
         v-if="items.length > 0"
         aria-label="breadcrumb"
         class="breadcrumb"
@@ -9,9 +9,9 @@
             <JLink v-if="item.link" :href="item.link" class="breadcrumb-item">
                 <span>{{ item.title }}</span>
             </JLink>
-            <span v-else class="breadcrumb-item">{{ item.title }}</span>
+            <span v-else class="breadcrumb-item" aria-current="page">{{ item.title }}</span>
         </template>
-    </div>
+    </nav>
 </template>
 
 <script>
