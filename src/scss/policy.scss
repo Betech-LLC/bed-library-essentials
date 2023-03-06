@@ -54,6 +54,12 @@
                 content: '';
                 @apply h-full bg-blue-600 w-1 absolute left-0 top-0;
             }
+            .nav-title {
+                @apply text-blue-600;
+            }
+            .nav-icon {
+                @apply text-blue-600;
+            }
         }
 
         
