@@ -27,11 +27,32 @@
                     link: '/thuc-pham-chuc-nang',
                 },
                 {
-                    title: 'Sinh lực nữ tới',
+                    title: 'Sinh lực nữ giới',
                     link: '/thuc-pham-chuc-nang',
                 },
                 {
                     title: 'Sắt sinh học cho bà bầu Ferrolip',
+                },
+            ]"
+            divider=">"
+        />
+
+        <JBreadcrumb
+            :items="[
+                {
+                    title: 'Trang chủ',
+                    link: '/',
+                },
+                {
+                    title: 'Thực phẩm chức năng',
+                    link: '/thuc-pham-chuc-nang',
+                },
+                {
+                    title: 'Sinh lực nữ giới',
+                    link: '/thuc-pham-chuc-nang',
+                },
+                {
+                    title: '[Mã FATRANG giảm đến 30k đơn 99k] Dép Sục Hà Mã Mắt To Dễ Thương Hot Trend',
                 },
             ]"
             divider=">"
