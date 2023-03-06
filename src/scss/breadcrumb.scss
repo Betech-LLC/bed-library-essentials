@@ -1,5 +1,5 @@
 .breadcrumb {
-    --breadcrumb-divider: '/';
+    --breadcrumb-divider: '';
     @apply flex space-x-5 body-2 line-clamp-1;
     .breadcrumb-item {
         @apply relative opacity-70;
