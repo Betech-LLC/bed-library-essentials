@@ -12,6 +12,10 @@ export default defineNuxtConfig({
                 path: libraryDir + '/js/components',
                 global: true,
             },
+            {
+                path: 'components',
+                global: true,
+            },
         ],
     },
 
@@ -24,7 +28,9 @@ export default defineNuxtConfig({
     alias: {
         '@core/utils': libraryDir + '/js/utils',
         '@core/scss': libraryDir + '/scss',
+        '@core/components': libraryDir + '/js/components',
         '@core': libraryDir + '/src',
+        '@framework/components': __dirname + '/components',
     },
 
     vite: {
