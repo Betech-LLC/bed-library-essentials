@@ -16,6 +16,27 @@
             ]"
         />
 
+        <JBreadcrumb
+            :items="[
+                {
+                    title: 'Trang chủ',
+                    link: '/',
+                },
+                {
+                    title: 'Thực phẩm chức năng',
+                    link: '/thuc-pham-chuc-nang',
+                },
+                {
+                    title: 'Sinh lực nữ tới',
+                    link: '/thuc-pham-chuc-nang',
+                },
+                {
+                    title: 'Sắt sinh học cho bà bầu Ferrolip',
+                },
+            ]"
+            divider=">"
+        />
+
         <div class="grid grid-cols-12 gap-x-8">
             <div class="lg:col-span-10 lg:col-start-2 col-span-full">
                 <div class="prose">
