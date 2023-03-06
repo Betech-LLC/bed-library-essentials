@@ -3,7 +3,7 @@
         class="input"
         :value="modelValue"
         @input="onInput"
-        :type="field.type"
+        :type="field?.type || 'text'"
         :placeholder="field?.placeholder ?? field?.label"
         v-bind="{ ...$attrs }"
     />
