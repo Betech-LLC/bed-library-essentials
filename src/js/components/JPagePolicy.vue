@@ -17,7 +17,7 @@
             <div class="policy-nav" :class="isOpenMobile ? '' : 'toggle'">
                 <ul class="nav-list">
                     <li class="nav-item" v-for="(policy, index) in list_sidebar" :key="index">
-                        <a
+                        <JLink
                             :href="`${policy.slug}`"
                             class="nav-link"
                             :class="{
@@ -30,7 +30,7 @@
                             <div class="nav-title">
                                 {{ policy.title }}
                             </div>
-                        </a>
+                        </JLink>
                     </li>
                 </ul>
             </div>

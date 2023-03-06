@@ -1,5 +1,5 @@
 <template>
-    <PagePolicy :list_sidebar="list_sidebar" :content="content" />
+    <JPagePolicy :list_sidebar="list_sidebar" :content="content" />
 </template>
 
 <script>
