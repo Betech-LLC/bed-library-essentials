@@ -7,7 +7,7 @@
 }
 
 .policy-body {
-    @apply xl:mt-6 md:mt-4 mt-3 grid grid-cols-12 xl:gap-x-8 md:gap-x-6 max-lg:gap-y-4 max-md:gap-y-2;
+    @apply xl:mt-6 md:mt-4 mt-3 grid grid-cols-12 xl:gap-x-8 md:gap-x-6 max-lg:gap-y-4;
 }
 
 .policy-box {
@@ -48,7 +48,7 @@
             }
         }
 
-        .nav-link.active {
+        .nav-link.router-link-exact-active {
             filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.1));
             &::after {
                 content: '';
