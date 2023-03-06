@@ -1,0 +1,16 @@
+.share-list {
+    @apply flex items-center md:space-x-3 space-x-2 xl:space-x-4;
+}
+
+.share-title {
+    @apply body-2 text-gray-500;
+}
+
+.share-item {
+    @apply transition duration-200 ease-in-out hover:opacity-80 cursor-pointer;
+
+    svg,
+    img {
+        @apply w-6 h-6;
+    }
+}
