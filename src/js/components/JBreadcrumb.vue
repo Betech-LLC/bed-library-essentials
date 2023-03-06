@@ -1,15 +1,10 @@
 <template>
-    <nav
-        v-if="items.length > 0 && _divider"
-        aria-label="breadcrumb"
-        class="breadcrumb"
-        :style="`--breadcrumb-divider: ${_divider}`"
-    >
+    <nav v-if="items.length > 0 && _divider" class="breadcrumb" :style="`--breadcrumb-divider: ${_divider}`">
         <template v-for="(item, index) in items" :key="index">
             <JLink v-if="item.link" :href="item.link" class="breadcrumb-item">
                 {{ item.title }}
             </JLink>
-            <span v-else class="breadcrumb-item" aria-current="page">{{ item.title }}</span>
+            <span v-else class="breadcrumb-item">{{ item.title }}</span>
         </template>
     </nav>
 </template>
