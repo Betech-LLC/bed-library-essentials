@@ -1,3 +1,43 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
 .input {
-    @apply block w-full border-none ring-0 focus:ring-0 focus:border-none focus-visible:outline-none;
+    @apply border border-gray-300 text-gray-900  rounded-lg focus:outline-0 focus:ring-blue-400 focus:border-blue-400 block w-full px-2.5 py-2;
+
+    &.has-prefix,
+    &.has-suffix {
+        & + .input {
+        }
+    }
+
+    &.has-suffix {
+        @apply rounded-r-none;
+        + .input {
+        }
+    }
+
+    &.has-prefix {
+        @apply rounded-l-none;
+        + .input {
+            @apply rounded-r-none order-first border-r-0;
+        }
+    }
+}
+
+.input-group {
+    & > *:not(:last-child) {
+        input {
+        }
+    }
+    & > *:not(:first-child) {
+        input {
+        }
+    }
 }
