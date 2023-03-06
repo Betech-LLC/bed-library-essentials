@@ -1,3 +1,3 @@
 <template>
-    <PageError />
+    <JPageError />
 </template>
