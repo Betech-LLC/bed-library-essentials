@@ -6,8 +6,7 @@
         + .breadcrumb-item {
             @apply pl-2;
             &::after {
-                content: var(--breadcrumb-divider);
-                @apply absolute -top-0.5 left-0 w-2 -translate-x-full h-fit pointer-events-none;
+                @apply content-[var(--breadcrumb-divider)] absolute -top-0.5 left-0 w-2 -translate-x-full h-fit pointer-events-none;
             }
         }
         &:not(:last-child) {
