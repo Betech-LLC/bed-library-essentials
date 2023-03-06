@@ -17,7 +17,7 @@
             divider=">"
         />
 
-        <!-- <div class="grid grid-cols-12 gap-x-8">
+        <div class="grid grid-cols-12 gap-x-8">
             <div class="lg:col-span-10 lg:col-start-2 col-span-full">
                 <div class="prose">
                     <h3>Chi nhánh Hải Phòng</h3>
@@ -106,6 +106,6 @@
                     active: false,
                 },
             ]"
-        /> -->
+        />
     </div>
 </template>
