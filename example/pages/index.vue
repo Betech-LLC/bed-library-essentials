@@ -14,7 +14,6 @@
                     title: 'Sắt sinh học cho bà bầu Ferrolip',
                 },
             ]"
-            divider=">"
         />
 
         <div class="grid grid-cols-12 gap-x-8">
