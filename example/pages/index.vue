@@ -79,14 +79,14 @@
             icon="="
         />
 
-        <div class="font-bold heading-2">Breadcrumb Custom Icon '+'</div>
+        <div class="font-bold heading-2">Breadcrumb Custom Icon '~'</div>
         <JBreadcrumb
             :items="[
                 { title: 'Trang chủ', link: '/' },
                 { title: 'Thực phẩm chức năng 2', link: '/thuc-pham-chuc-nang' },
                 { title: 'Sắt sinh học cho bà bầu Ferrolip' },
             ]"
-            icon="+"
+            icon="~"
         />
 
         <div class="grid grid-cols-12 gap-x-8">
