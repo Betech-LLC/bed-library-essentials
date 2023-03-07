@@ -49,7 +49,7 @@ fieldset {
         }
 
         &.is-disabled {
-            @apply bg-gray-100  pointer-events-none;
+            @apply bg-gray-100 pointer-events-none focus-within:shadow-none focus-within:border-gray-300;
         }
     }
 }
