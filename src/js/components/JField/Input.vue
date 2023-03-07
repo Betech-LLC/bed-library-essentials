@@ -1,14 +1,12 @@
 <template>
     <fieldset>
-        <label v-if="field.label" :for="field.name" class="text-gray-700 label-2 mb-1 md:b-1.5">{{
-            field.label
-        }}</label>
+        <label v-if="field.label" :for="field.name" class="label">{{ field.label }}</label>
 
         <div
             class="field"
             :class="{
-                disabled: !!disabled,
-                'is-error': isError,
+                'is-disabled': !!disabled,
+                'is-error': !!isError,
                 'has-prefix': !!$slots.prefix,
                 'has-suffix': !!$slots.suffix,
             }"
@@ -42,15 +40,15 @@
                 <slot name="suffix"></slot>
             </div>
 
-            <small v-if="field.hintText || isError" class="message">
-                {{ isError ? 'This is a error message.' : field.hintText }}
+            <small v-if="field.help || isError" class="message">
+                {{ isError ? 'This is a error message.' : field.help }}
             </small>
         </div>
     </fieldset>
 </template>
 
 <script>
-import { validateField } from '../../lib/validator'
+import { validateField } from '@core/utils/validator'
 export default {
     emits: ['update:modelValue'],
     props: ['modelValue', 'field', 'disabled'],
@@ -60,9 +58,22 @@ export default {
             isError: false,
         }
     },
+    computed: {
+        error() {
+            return this.field.name ? this.field.errors[this.field.name] : ''
+        },
+    },
     watch: {
         modelValue(newVal) {
-            this.isError = !validateField(newVal, this.field.rules[this.field.fieldName])
+            this.isError = !validateField(newVal, this.field.rules[this.field.name])
+        },
+        error() {
+            this.checkValidate()
+        },
+    },
+    methods: {
+        checkValidate() {
+            this.isError = this.field.errors.hasOwnProperty(this.field.fieldName)
         },
     },
 }

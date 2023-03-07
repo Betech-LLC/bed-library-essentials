@@ -3,7 +3,7 @@
         <div class="container pt-16">
             <div class="px-4 py-10 m-auto bg-white border border-blue-300 border-dashed rounded">
                 <!-- ROW 1 -->
-                <div class="grid grid-cols-3 gap-4 mb-10">
+                <div class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFieldInput
                         v-model="user.name"
                         :field="{
@@ -11,8 +11,7 @@
                             errors: errors,
                             type: 'text',
                             label: 'Họ và tên',
-                            name: 'Họ và tên',
-                            fieldName: 'name',
+                            name: 'name',
                             placeholder: 'Nhập họ và tên',
                         }"
                     >
@@ -24,8 +23,7 @@
                             errors: errors,
                             type: 'email',
                             label: 'Email',
-                            name: 'Email',
-                            fieldName: 'email',
+                            name: 'email',
                             placeholder: 'Nhập email',
                         }"
                     >
@@ -38,8 +36,7 @@
                             errors: errors,
                             type: 'number',
                             label: 'Số điện thoại',
-                            name: 'Số điện thoại',
-                            fieldName: 'phone',
+                            name: 'phone',
                             placeholder: 'Nhập số điện thoại',
                         }"
                     >
@@ -50,7 +47,7 @@
                 </div>
 
                 <!-- ROW 2 -->
-                <div class="grid grid-cols-3 gap-4 mb-10">
+                <div class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFieldInput
                         v-model="user_2.name"
                         :field="{
@@ -58,10 +55,10 @@
                             errors: errors,
                             type: 'text',
 
-                            name: 'Họ và tên',
-                            fieldName: 'name',
+                            name: 'phone',
+
                             placeholder: 'Nhập họ và tên',
-                            hintText: 'This is a hint text to help user.',
+                            help: 'This is a hint text to help user.',
                         }"
                     >
                         <template #suffix> <JIconHelp /> </template>
@@ -73,10 +70,10 @@
                             errors: errors,
                             type: 'email',
 
-                            name: 'Email',
-                            fieldName: 'email',
+                            name: 'email',
+
                             placeholder: 'Nhập email',
-                            hintText: 'This is a hint text to help user.',
+                            help: 'This is a hint text to help user.',
                         }"
                     >
                         <template #prefix> <JIconEmail /> </template>
@@ -88,11 +85,9 @@
                             rules: rules,
                             errors: errors,
                             type: 'number',
-
-                            name: 'Số điện thoại',
-                            fieldName: 'phone',
+                            name: 'phone',
                             placeholder: 'Nhập số điện thoại',
-                            hintText: 'This is a hint text to help user.',
+                            help: 'This is a hint text to help user.',
                         }"
                     >
                         <template #prefix> <JIconPhone /> </template>
@@ -101,7 +96,7 @@
                 </div>
 
                 <!-- ROW 3 -->
-                <div class="grid grid-cols-3 gap-4 mb-10">
+                <div class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFieldInput
                         v-model="user_3.name"
                         :field="{
@@ -109,8 +104,7 @@
                             errors: errors,
                             type: 'text',
                             label: 'Họ và tên',
-                            name: 'Họ và tên',
-                            fieldName: 'name',
+                            name: 'name',
                             placeholder: 'Nhập họ và tên',
                         }"
                     >
@@ -123,8 +117,7 @@
                             errors: errors,
                             type: 'email',
                             label: 'Email',
-                            name: 'Email',
-                            fieldName: 'email',
+                            name: 'email',
                             placeholder: 'Nhập email',
                         }"
                     >
@@ -138,8 +131,7 @@
                             errors: errors,
                             type: 'number',
                             label: 'Số điện thoại',
-                            name: 'Số điện thoại',
-                            fieldName: 'phone',
+                            name: 'phone',
                             placeholder: 'Nhập số điện thoại',
                         }"
                     >
@@ -149,7 +141,7 @@
                 </div>
 
                 <!-- ROW 4 -->
-                <div class="grid grid-cols-3 gap-4 mb-10">
+                <div class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFieldInput
                         v-model="user_4.name"
                         :field="{
@@ -157,8 +149,7 @@
                             errors: errors,
                             type: 'text',
                             label: 'Họ và tên',
-                            name: 'Họ và tên',
-                            fieldName: 'name',
+                            name: 'name',
                             placeholder: 'Nhập họ và tên',
                         }"
                         :disabled="true"
@@ -172,8 +163,7 @@
                             errors: errors,
                             type: 'email',
                             label: 'Email',
-                            name: 'Email',
-                            fieldName: 'email',
+                            name: 'email',
                             placeholder: 'Nhập email',
                         }"
                         :disabled="true"
@@ -188,9 +178,7 @@
                             errors: errors,
                             type: 'number',
                             label: 'Số điện thoại',
-                            name: 'Số điện thoại',
-                            fieldName: 'phone',
-
+                            name: 'phone',
                             placeholder: 'Nhập số điện thoại',
                         }"
                         :disabled="true"
@@ -209,8 +197,7 @@
                             errors: errors,
                             type: 'textarea',
                             label: 'Description',
-                            name: 'Description',
-                            fieldName: 'note_1',
+                            name: 'note_1',
                             placeholder: 'Enter a description...',
                         }"
                     />
@@ -223,9 +210,8 @@
                             errors: errors,
                             type: 'textarea',
                             label: 'Description 2',
-                            name: 'Description 2',
-                            fieldName: 'note_2',
-                            hintText: 'This is a hint text to help user.',
+                            name: 'note_2',
+                            help: 'This is a hint text to help user.',
                             placeholder: 'Enter a description 2...',
                         }"
                     />
@@ -237,10 +223,9 @@
                             errors: errors,
                             type: 'textarea',
                             label: 'Description disabled',
-                            name: 'Description disabled',
-                            fieldName: 'note_2',
-                            placeholder: 'Enter a description disabled...',
+                            name: 'note_2',
                         }"
+                        placeholder="Enter a description disabled..."
                         :disabled="true"
                     />
                 </div>

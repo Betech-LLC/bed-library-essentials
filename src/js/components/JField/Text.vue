@@ -3,12 +3,11 @@
         class="input"
         :id="field.name"
         :name="field.name"
-        :value="modelValue"
         @input="onInput"
         :type="field.type ?? 'text'"
         autocomplete="off"
         :readonly="field.readonly ?? false"
-        :placeholder="field.placeholder"
+        :placeholder="field.placeholder || 'Nhập...'"
         v-bind="{ ...$attrs }"
     />
 </template>
