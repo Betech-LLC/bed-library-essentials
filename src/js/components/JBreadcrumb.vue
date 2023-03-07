@@ -1,5 +1,5 @@
 <template>
-    <nav v-if="items.length > 0 && _divider" class="breadcrumb" :style="`--breadcrumb-divider: ${_divider}`">
+    <nav v-if="items.length > 0 && _icon" class="breadcrumb" :style="`--breadcrumb-divider: ${_icon}`">
         <template v-for="(item, index) in items" :key="index">
             <JLink v-if="item.link" :href="item.link" class="breadcrumb-item">
                 {{ item.title }}
@@ -20,16 +20,16 @@ export default {
             type: Array,
             required: true,
         },
-        divider: {
+        icon: {
             type: String,
             default: '/',
         },
     },
     data() {
-        return { _divider: null }
+        return { _icon: null }
     },
     mounted() {
-        this._divider = OPTIONS[this.divider] || `'/'`
+        this._icon = OPTIONS[this.icon] || `'${this.icon}'`
     },
 }
 </script>

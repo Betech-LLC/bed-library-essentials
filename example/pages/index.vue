@@ -1,5 +1,6 @@
 <template>
     <div class="container py-10 space-y-10">
+        <div class="font-bold heading-2">Breadcrumb Default '/'</div>
         <JBreadcrumb
             :items="[
                 {
@@ -15,7 +16,7 @@
                 },
             ]"
         />
-
+        <div class="font-bold heading-2">Breadcrumb Arrow Icon '>'</div>
         <JBreadcrumb
             :items="[
                 {
@@ -34,7 +35,7 @@
                     title: 'Sắt sinh học cho bà bầu Ferrolip',
                 },
             ]"
-            divider=">"
+            icon=">"
         />
 
         <JBreadcrumb
@@ -55,7 +56,27 @@
                     title: '[Mã FATRANG giảm đến 30k đơn 99k] Dép Sục Hà Mã Mắt To Dễ Thương Hot Trend',
                 },
             ]"
-            divider=">"
+            icon=">"
+        />
+
+        <div class="font-bold heading-2">Breadcrumb Custom Icon '$'</div>
+        <JBreadcrumb
+            :items="[
+                { title: 'Trang chủ', link: '/' },
+                { title: 'Thực phẩm chức năng 2', link: '/thuc-pham-chuc-nang' },
+                { title: 'Sắt sinh học cho bà bầu Ferrolip' },
+            ]"
+            icon="$"
+        />
+
+        <div class="font-bold heading-2">Breadcrumb Custom Icon '+'</div>
+        <JBreadcrumb
+            :items="[
+                { title: 'Trang chủ', link: '/' },
+                { title: 'Thực phẩm chức năng 2', link: '/thuc-pham-chuc-nang' },
+                { title: 'Sắt sinh học cho bà bầu Ferrolip' },
+            ]"
+            icon="+"
         />
 
         <div class="grid grid-cols-12 gap-x-8">
