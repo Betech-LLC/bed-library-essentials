@@ -69,6 +69,16 @@
             icon="$"
         />
 
+        <div class="font-bold heading-2">Breadcrumb Custom Icon '='</div>
+        <JBreadcrumb
+            :items="[
+                { title: 'Trang chủ', link: '/' },
+                { title: 'Thực phẩm chức năng 2', link: '/thuc-pham-chuc-nang' },
+                { title: 'Sắt sinh học cho bà bầu Ferrolip' },
+            ]"
+            icon="="
+        />
+
         <div class="font-bold heading-2">Breadcrumb Custom Icon '+'</div>
         <JBreadcrumb
             :items="[

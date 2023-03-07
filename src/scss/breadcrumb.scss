@@ -1,12 +1,12 @@
 .breadcrumb {
     --breadcrumb-divider: '';
-    @apply flex space-x-5 body-2 line-clamp-1;
+    @apply flex  body-2 line-clamp-1;
     .breadcrumb-item {
         @apply relative opacity-70;
         + .breadcrumb-item {
-            @apply pl-2;
+            @apply pl-5;
             &::after {
-                @apply content-[var(--breadcrumb-divider)] absolute -top-0.5 left-0 w-2 -translate-x-full h-fit pointer-events-none;
+                @apply content-[var(--breadcrumb-divider)] text-gray-700 absolute top-1/2 -translate-y-1/2 left-2.5 -translate-x-1/2 w-fit h-fit pointer-events-none;
             }
         }
         &:not(:last-child) {
