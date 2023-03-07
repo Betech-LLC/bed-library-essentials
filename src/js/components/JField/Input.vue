@@ -7,15 +7,15 @@
         <div
             class="field"
             :class="{
-                'has-prefix': !!$slots.prefix,
-                'has-suffix': !!$slots.suffix,
                 disabled: !!disabled,
                 'is-error': isError,
+                'has-prefix': !!$slots.prefix,
+                'has-suffix': !!$slots.suffix,
             }"
         >
-            <template v-if="$slots.prefix">
+            <div v-if="$slots.prefix" class="prefix">
                 <slot name="prefix"></slot>
-            </template>
+            </div>
 
             <JFieldText
                 v-if="!field.type || field.type === 'text' || field.type === 'email' || field.type === 'password'"
