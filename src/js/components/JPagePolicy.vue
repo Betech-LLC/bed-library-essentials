@@ -40,7 +40,7 @@
                     <div v-if="isOpenMobile" class="policy-blank" @click="togglePolicyMobile"></div>
 
                     <div class="policy-content">
-                        <h1 class="policy-title">
+                        <h1 class="policy-title" v-if="currentPolicy.title">
                             {{ currentPolicy.title }}
                         </h1>
                         <div v-html="content" class="policy-prose" />
