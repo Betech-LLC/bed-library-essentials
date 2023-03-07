@@ -1,15 +1,15 @@
 <template>
     <textarea
         class="input"
-        :rows="field.rows || 3"
+        :rows="fieldRows"
         :id="field.name"
         :name="field.name"
         :value="modelValue"
         @input="onInput"
         type="textarea"
         autocomplete="off"
-        :readonly="field.readonly || false"
-        :placeholder="field.placeholder"
+        :readonly="fieldReadonly"
+        :placeholder="fieldPlaceholder"
         v-bind="{ ...$attrs }"
     />
 </template>
@@ -20,6 +20,18 @@ export default {
     methods: {
         onInput(event) {
             this.$emit('update:modelValue', event.target.value)
+        },
+    },
+    computed: {
+        fieldPlaceholder() {
+            const fieldLabel = this.field.label ? `Nhập ${this.field.label.toLowerCase()}` : 'Nhập...'
+            return this.field.placeholder || fieldLabel
+        },
+        fieldReadonly() {
+            return this.field.readonly || false
+        },
+        fieldRows() {
+            return this.field.rows || 3
         },
     },
 }

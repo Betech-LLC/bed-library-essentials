@@ -48,15 +48,21 @@
 </template>
 
 <script>
-import { validateField } from '@core/utils/validator'
+import { validateField } from '@core/utils'
 export default {
     emits: ['update:modelValue'],
-    props: ['field', 'disabled'],
+    props: {
+        field: {
+            type: Object,
+            default: () => {},
+        },
+        disabled: { type: Boolean, default: false },
+    },
     inject: {
+        rules: { default: () => {} },
+        errors: { default: () => {} },
         setValue: { default: () => () => ({}) },
         getValue: { default: () => () => ({}) },
-        errors: { default: () => {} },
-        rules: { default: () => {} },
     },
     data() {
         return {
@@ -65,7 +71,7 @@ export default {
     },
     computed: {
         error() {
-            return this.field.name ? this.errors[this.field.name] : ''
+            return this.errors[this.field.name] || ''
         },
         currentValue() {
             return this.getValue(this.field)
@@ -73,15 +79,10 @@ export default {
     },
     watch: {
         error() {
-            this.checkValidate()
+            this.isError = this.errors[this.field.name]
         },
         currentValue(newVal) {
             this.isError = !validateField(newVal, this.rules[this.field.name])
-        },
-    },
-    methods: {
-        checkValidate() {
-            this.isError = this.errors.hasOwnProperty(this.field.name)
         },
     },
 }

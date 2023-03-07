@@ -20,17 +20,16 @@ export default {
             this.$emit('update:modelValue', event.target.value)
         },
     },
-
     computed: {
         fieldType() {
-            return this.field?.type || 'text'
+            return this.field.type || 'text'
         },
         fieldReadonly() {
-            return this.field?.readonly || false
+            return this.field.readonly || false
         },
-
         fieldPlaceholder() {
-            return this.field?.placeholder || 'Nhập...'
+            const fieldLabel = this.field.label ? `Nhập ${this.field.label.toLowerCase()}` : 'Nhập...'
+            return this.field.placeholder || fieldLabel
         },
     },
 }

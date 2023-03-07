@@ -1,11 +1,10 @@
-<template lang="">
+<template>
     <form>
         <slot />
     </form>
 </template>
 <script>
 export default {
-    name: 'Form',
     props: {
         modelValue: {
             type: Object,

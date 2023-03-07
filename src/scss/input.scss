@@ -14,7 +14,7 @@ fieldset {
         .prefix {
             @apply h-full absolute  top-1/2 -translate-y-1/2 text-gray-500 flex items-center;
             svg {
-                @apply h-[1.2rem] w-[1.2rem];
+                @apply max-h-[1.2rem] max-w-[1.2rem];
             }
         }
 
@@ -42,6 +42,7 @@ fieldset {
 
         &.is-error {
             @apply border-error-300 focus-within:shadow-xs-error-100;
+            // TODO: Confirm có nên cho prefix đổi màu khi error không
             .message,
             .suffix {
                 @apply text-error-500;
@@ -49,7 +50,7 @@ fieldset {
         }
 
         &.is-disabled {
-            @apply bg-gray-100 pointer-events-none focus-within:shadow-none focus-within:border-gray-300;
+            @apply pointer-events-none bg-gray-100 focus-within:shadow-none focus-within:border-gray-300;
         }
     }
 }

@@ -12,18 +12,16 @@
                     <JFormField
                         :field="{
                             type: 'text',
-                            label: 'Họ và tên',
                             name: 'name',
-                            placeholder: 'Nhập họ và tên',
+                            label: 'Họ và tên',
                         }"
                     >
                     </JFormField>
                     <JFormField
                         :field="{
                             type: 'email',
-                            label: 'Email',
                             name: 'email',
-                            placeholder: 'Nhập email',
+                            label: 'Email',
                         }"
                     >
                         <template #prefix> <JIconEmail /> </template>
@@ -31,13 +29,11 @@
                     <JFormField
                         :field="{
                             type: 'number',
-                            label: 'Số điện thoại',
                             name: 'phone',
-                            placeholder: 'Nhập số điện thoại',
+                            label: 'Số điện thoại',
                         }"
                     >
                         <template #prefix> <JIconPhone /> </template>
-
                         ></JFormField
                     >
                 </JForm>
@@ -53,7 +49,7 @@
                         :field="{
                             type: 'text',
                             name: 'name',
-                            placeholder: 'Nhập họ và tên',
+                            label: 'Họ và tên',
                             help: 'This is a hint text to help user.',
                         }"
                     >
@@ -63,7 +59,7 @@
                         :field="{
                             type: 'email',
                             name: 'email',
-                            placeholder: 'Nhập email',
+                            label: 'email',
                             help: 'This is a hint text to help user.',
                         }"
                     >
@@ -74,7 +70,7 @@
                         :field="{
                             type: 'number',
                             name: 'phone',
-                            placeholder: 'Nhập số điện thoại',
+                            label: 'Nhập số điện thoại',
                             help: 'This is a hint text to help user.',
                         }"
                     >
@@ -93,9 +89,8 @@
                     <JFormField
                         :field="{
                             type: 'text',
-                            label: 'Họ và tên',
                             name: 'name',
-                            placeholder: 'Nhập họ và tên',
+                            label: 'Họ và tên',
                         }"
                     >
                         <template #suffix> <JIconHelp /> </template>
@@ -105,7 +100,6 @@
                             type: 'email',
                             label: 'Email',
                             name: 'email',
-                            placeholder: 'Nhập email',
                         }"
                     >
                         <template #prefix> <JIconEmail /> </template>
@@ -116,7 +110,6 @@
                             type: 'number',
                             label: 'Số điện thoại',
                             name: 'phone',
-                            placeholder: 'Nhập số điện thoại',
                         }"
                     >
                         <template #prefix> <JIconPhone /> </template>
@@ -136,7 +129,6 @@
                             type: 'text',
                             label: 'Họ và tên',
                             name: 'name',
-                            placeholder: 'Nhập họ và tên',
                         }"
                         :disabled="true"
                     >
@@ -145,9 +137,8 @@
                     <JFormField
                         :field="{
                             type: 'email',
-                            label: 'Email',
                             name: 'email',
-                            placeholder: 'Nhập email',
+                            label: 'Email',
                         }"
                         :disabled="true"
                     >
@@ -157,9 +148,8 @@
                     <JFormField
                         :field="{
                             type: 'number',
-                            label: 'Số điện thoại',
                             name: 'phone',
-                            placeholder: 'Nhập số điện thoại',
+                            label: 'Số điện thoại',
                         }"
                         :disabled="true"
                     >
@@ -173,30 +163,27 @@
                     <JFormField
                         :field="{
                             type: 'textarea',
-                            label: 'Description',
                             name: 'note_1',
-                            placeholder: 'Enter a description...',
+                            label: 'Description',
                         }"
                     />
 
                     <JFormField
                         :field="{
                             rows: 4,
+                            name: 'note_2',
                             type: 'textarea',
                             label: 'Description 2',
-                            name: 'note_2',
+
                             help: 'This is a hint text to help user.',
-                            placeholder: 'Enter a description 2...',
                         }"
                     />
                     <JFormField
                         :field="{
                             rows: 5,
-
+                            name: 'note_3',
                             type: 'textarea',
                             label: 'Description disabled',
-                            name: 'note_3',
-                            placeholder: 'Enter a description disabled...',
                         }"
                         :disabled="true"
                     />
