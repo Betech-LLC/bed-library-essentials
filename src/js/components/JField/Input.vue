@@ -16,21 +16,19 @@
             <template v-if="$slots.prefix">
                 <slot name="prefix"></slot>
             </template>
-            <!--  -->
+
             <JFieldText
                 v-if="!field.type || field.type === 'text' || field.type === 'email' || field.type === 'password'"
                 :field="field"
                 :modelValue="modelValue"
                 @update:modelValue="$emit('update:modelValue', $event)"
             />
-            <JFieldText
+
+            <JFieldPhone
                 v-if="field.type === 'number'"
                 :field="field"
-                inputmode="numeric"
                 :modelValue="modelValue"
                 @update:modelValue="$emit('update:modelValue', $event)"
-                onkeypress="return event.charCode >= 48 && event.charCode =< 57"
-                onkeydown="return event.keyCode !== 69 && event.keyCode !== 190"
             />
 
             <JFieldTextarea
