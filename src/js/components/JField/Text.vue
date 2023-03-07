@@ -4,10 +4,10 @@
         :id="field.name"
         :name="field.name"
         @input="onInput"
-        :type="field.type ?? 'text'"
+        :type="fieldType"
         autocomplete="off"
-        :readonly="field.readonly ?? false"
-        :placeholder="field.placeholder || 'Nhập...'"
+        :readonly="fieldReadonly"
+        :placeholder="fieldPlaceholder"
         v-bind="{ ...$attrs }"
     />
 </template>
@@ -18,6 +18,19 @@ export default {
     methods: {
         onInput(event) {
             this.$emit('update:modelValue', event.target.value)
+        },
+    },
+
+    computed: {
+        fieldType() {
+            return this.field?.type || 'text'
+        },
+        fieldReadonly() {
+            return this.field?.readonly || false
+        },
+
+        fieldPlaceholder() {
+            return this.field?.placeholder || 'Nhập...'
         },
     },
 }

@@ -3,9 +3,8 @@
         <div class="container pt-16">
             <div class="px-4 py-10 m-auto bg-white border border-blue-300 border-dashed rounded">
                 <!-- ROW 1 -->
-                <div class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFieldInput
-                        v-model="user.name"
+                <JForm v-model="user" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -15,9 +14,8 @@
                             placeholder: 'Nhập họ và tên',
                         }"
                     >
-                    </JFieldInput>
-                    <JFieldInput
-                        v-model="user.email"
+                    </JFormField>
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -28,9 +26,8 @@
                         }"
                     >
                         <template #prefix> <JIconEmail /> </template>
-                    </JFieldInput>
-                    <JFieldInput
-                        v-model="user.phone"
+                    </JFormField>
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -42,14 +39,13 @@
                     >
                         <template #prefix> <JIconPhone /> </template>
 
-                        ></JFieldInput
+                        ></JFormField
                     >
-                </div>
+                </JForm>
 
                 <!-- ROW 2 -->
-                <div class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFieldInput
-                        v-model="user_2.name"
+                <JForm v-model="user_2" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -62,9 +58,8 @@
                         }"
                     >
                         <template #suffix> <JIconHelp /> </template>
-                    </JFieldInput>
-                    <JFieldInput
-                        v-model="user_2.email"
+                    </JFormField>
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -78,9 +73,8 @@
                     >
                         <template #prefix> <JIconEmail /> </template>
                         <template #suffix> <JIconHelp /> </template>
-                    </JFieldInput>
-                    <JFieldInput
-                        v-model="user_2.phone"
+                    </JFormField>
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -92,13 +86,12 @@
                     >
                         <template #prefix> <JIconPhone /> </template>
                         <template #suffix> <JIconHelp /> </template
-                    ></JFieldInput>
-                </div>
+                    ></JFormField>
+                </JForm>
 
                 <!-- ROW 3 -->
-                <div class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFieldInput
-                        v-model="user_3.name"
+                <JForm v-model="user_3" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -109,9 +102,8 @@
                         }"
                     >
                         <template #suffix> <JIconHelp /> </template>
-                    </JFieldInput>
-                    <JFieldInput
-                        v-model="user_3.email"
+                    </JFormField>
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -123,9 +115,8 @@
                     >
                         <template #prefix> <JIconEmail /> </template>
                         <template #suffix> <JIconHelp /> </template>
-                    </JFieldInput>
-                    <JFieldInput
-                        v-model="user_3.phone"
+                    </JFormField>
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -137,13 +128,12 @@
                     >
                         <template #prefix> <JIconPhone /> </template>
                         <template #suffix> <JIconHelp /> </template
-                    ></JFieldInput>
-                </div>
+                    ></JFormField>
+                </JForm>
 
                 <!-- ROW 4 -->
-                <div class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFieldInput
-                        v-model="user_4.name"
+                <JForm v-model="user_4" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -155,9 +145,8 @@
                         :disabled="true"
                     >
                         <template #suffix> <JIconHelp /> </template>
-                    </JFieldInput>
-                    <JFieldInput
-                        v-model="user_4.email"
+                    </JFormField>
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -170,9 +159,8 @@
                     >
                         <template #prefix> <JIconEmail /> </template>
                         <template #suffix> <JIconHelp /> </template>
-                    </JFieldInput>
-                    <JFieldInput
-                        v-model="user_4.phone"
+                    </JFormField>
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -185,13 +173,12 @@
                     >
                         <template #prefix> <JIconPhone /> </template>
                         <template #suffix> <JIconHelp /> </template
-                    ></JFieldInput>
-                </div>
+                    ></JFormField>
+                </JForm>
 
                 <!-- ROW 5 -->
-                <div class="grid grid-cols-3 gap-4 mb-10">
-                    <JFieldInput
-                        v-model="note_1"
+                <JForm v-model="user_5" class="grid grid-cols-3 gap-4 mb-10">
+                    <JFormField
                         :field="{
                             rules: rules,
                             errors: errors,
@@ -202,8 +189,7 @@
                         }"
                     />
 
-                    <JFieldInput
-                        v-model="note_2"
+                    <JFormField
                         :field="{
                             rules: rules,
                             rows: 4,
@@ -215,20 +201,19 @@
                             placeholder: 'Enter a description 2...',
                         }"
                     />
-                    <JFieldInput
-                        v-model="note_2"
+                    <JFormField
                         :field="{
                             rules: rules,
                             rows: 5,
                             errors: errors,
                             type: 'textarea',
                             label: 'Description disabled',
-                            name: 'note_2',
+                            name: 'note_3',
+                            placeholder: 'Enter a description disabled...',
                         }"
-                        placeholder="Enter a description disabled..."
                         :disabled="true"
                     />
-                </div>
+                </JForm>
             </div>
         </div>
     </main>
@@ -259,8 +244,12 @@ export default {
                 phone: '',
                 email: '',
             },
-            note_1: '',
-            note_2: '',
+            user_5: {
+                note_1: '',
+                note_2: '',
+                note_3: '',
+            },
+
             errors: {},
             rules: {
                 name: 'required',
@@ -269,6 +258,14 @@ export default {
             },
         }
     },
+
+    provide() {
+        return {
+            user: this.user,
+            user_2: this.user_2,
+            user_3: this.user_3,
+            user_4: this.user_4,
+        }
+    },
 }
 </script>
-<style lang=""></style>

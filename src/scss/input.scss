@@ -12,7 +12,10 @@ fieldset {
 
         .suffix,
         .prefix {
-            @apply absolute  top-1/2 -translate-y-1/2 text-gray-500;
+            @apply h-full absolute  top-1/2 -translate-y-1/2 text-gray-500 flex items-center;
+            svg {
+                @apply h-[1.2rem] w-[1.2rem];
+            }
         }
 
         .suffix {
