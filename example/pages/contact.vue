@@ -190,6 +190,7 @@
                             label: 'Số điện thoại',
                             name: 'Số điện thoại',
                             fieldName: 'phone',
+
                             placeholder: 'Nhập số điện thoại',
                         }"
                         :disabled="true"
@@ -224,6 +225,7 @@
                             label: 'Description 2',
                             name: 'Description 2',
                             fieldName: 'note_2',
+                            hintText: 'This is a hint text to help user.',
                             placeholder: 'Enter a description 2...',
                         }"
                     />
