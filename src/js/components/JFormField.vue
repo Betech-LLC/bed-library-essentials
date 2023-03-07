@@ -55,6 +55,8 @@ export default {
     inject: {
         setValue: { default: () => () => ({}) },
         getValue: { default: () => () => ({}) },
+        errors: { default: () => {} },
+        rules: { default: () => {} },
     },
     data() {
         return {
@@ -63,7 +65,7 @@ export default {
     },
     computed: {
         error() {
-            return this.field.name ? this.field.errors[this.field.name] : ''
+            return this.field.name ? this.errors[this.field.name] : ''
         },
         currentValue() {
             return this.getValue(this.field)
@@ -74,12 +76,12 @@ export default {
             this.checkValidate()
         },
         currentValue(newVal) {
-            this.isError = !validateField(newVal, this.field.rules[this.field.name])
+            this.isError = !validateField(newVal, this.rules[this.field.name])
         },
     },
     methods: {
         checkValidate() {
-            this.isError = this.field.errors.hasOwnProperty(this.field.fieldName)
+            this.isError = this.errors.hasOwnProperty(this.field.name)
         },
     },
 }

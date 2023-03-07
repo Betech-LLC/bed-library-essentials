@@ -4,7 +4,6 @@
     </form>
 </template>
 <script>
-import { reactive } from 'vue'
 export default {
     name: 'Form',
     props: {
@@ -12,20 +11,26 @@ export default {
             type: Object,
             default: () => ({}),
         },
-        config: {
+        rules: {
+            type: Object,
+            default: () => ({}),
+        },
+        errors: {
             type: Object,
             default: () => ({}),
         },
     },
     provide() {
         return {
+            form: this.form,
+            rules: this.rules,
+            errors: this.errors,
             setValue: (field, value) => {
                 this.form[field.name] = value
             },
-            getValue: (field) => {
+            getValue: (field = {}) => {
                 return this.form[field.name]
             },
-            form: reactive(this.form),
         }
     },
     data() {
@@ -36,8 +41,8 @@ export default {
     watch: {
         form: {
             deep: true,
-            handler(value) {
-                this.$emit('update:modelValue', value)
+            handler(newForm) {
+                this.$emit('update:modelValue', newForm)
             },
         },
     },

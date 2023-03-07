@@ -3,11 +3,14 @@
         <div class="container pt-16">
             <div class="px-4 py-10 m-auto bg-white border border-blue-300 border-dashed rounded">
                 <!-- ROW 1 -->
-                <JForm v-model="user" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <JForm
+                    v-model="user"
+                    :rules="rules"
+                    :errors="errors"
+                    class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3"
+                >
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'text',
                             label: 'Họ và tên',
                             name: 'name',
@@ -17,8 +20,6 @@
                     </JFormField>
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'email',
                             label: 'Email',
                             name: 'email',
@@ -29,8 +30,6 @@
                     </JFormField>
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'number',
                             label: 'Số điện thoại',
                             name: 'phone',
@@ -44,15 +43,16 @@
                 </JForm>
 
                 <!-- ROW 2 -->
-                <JForm v-model="user_2" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <JForm
+                    v-model="user_2"
+                    :rules="rules"
+                    :errors="errors"
+                    class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3"
+                >
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'text',
-
-                            name: 'phone',
-
+                            name: 'name',
                             placeholder: 'Nhập họ và tên',
                             help: 'This is a hint text to help user.',
                         }"
@@ -61,12 +61,8 @@
                     </JFormField>
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'email',
-
                             name: 'email',
-
                             placeholder: 'Nhập email',
                             help: 'This is a hint text to help user.',
                         }"
@@ -76,8 +72,6 @@
                     </JFormField>
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'number',
                             name: 'phone',
                             placeholder: 'Nhập số điện thoại',
@@ -90,11 +84,14 @@
                 </JForm>
 
                 <!-- ROW 3 -->
-                <JForm v-model="user_3" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <JForm
+                    v-model="user_3"
+                    :rules="rules"
+                    :errors="errors"
+                    class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3"
+                >
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'text',
                             label: 'Họ và tên',
                             name: 'name',
@@ -105,8 +102,6 @@
                     </JFormField>
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'email',
                             label: 'Email',
                             name: 'email',
@@ -118,8 +113,6 @@
                     </JFormField>
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'number',
                             label: 'Số điện thoại',
                             name: 'phone',
@@ -132,11 +125,14 @@
                 </JForm>
 
                 <!-- ROW 4 -->
-                <JForm v-model="user_4" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <JForm
+                    v-model="user_4"
+                    :rules="rules"
+                    :errors="errors"
+                    class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3"
+                >
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'text',
                             label: 'Họ và tên',
                             name: 'name',
@@ -148,8 +144,6 @@
                     </JFormField>
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'email',
                             label: 'Email',
                             name: 'email',
@@ -162,8 +156,6 @@
                     </JFormField>
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'number',
                             label: 'Số điện thoại',
                             name: 'phone',
@@ -177,11 +169,9 @@
                 </JForm>
 
                 <!-- ROW 5 -->
-                <JForm v-model="user_5" class="grid grid-cols-3 gap-4 mb-10">
+                <JForm v-model="user_5" :rules="rules" :errors="errors" class="grid grid-cols-3 gap-4 mb-10">
                     <JFormField
                         :field="{
-                            rules: rules,
-                            errors: errors,
                             type: 'textarea',
                             label: 'Description',
                             name: 'note_1',
@@ -191,9 +181,7 @@
 
                     <JFormField
                         :field="{
-                            rules: rules,
                             rows: 4,
-                            errors: errors,
                             type: 'textarea',
                             label: 'Description 2',
                             name: 'note_2',
@@ -203,9 +191,8 @@
                     />
                     <JFormField
                         :field="{
-                            rules: rules,
                             rows: 5,
-                            errors: errors,
+
                             type: 'textarea',
                             label: 'Description disabled',
                             name: 'note_3',
