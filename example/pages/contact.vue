@@ -37,7 +37,7 @@
                         :field="{
                             rules: rules,
                             errors: errors,
-                            type: 'phone',
+                            type: 'number',
                             label: 'Số điện thoại',
                             name: 'Số điện thoại',
                             fieldName: 'phone',
@@ -87,7 +87,7 @@
                         :field="{
                             rules: rules,
                             errors: errors,
-                            type: 'phone',
+                            type: 'number',
                             label: 'Số điện thoại',
                             name: 'Số điện thoại',
                             fieldName: 'phone',
@@ -136,7 +136,7 @@
                         :field="{
                             rules: rules,
                             errors: errors,
-                            type: 'phone',
+                            type: 'number',
                             label: 'Số điện thoại',
                             name: 'Số điện thoại',
                             fieldName: 'phone',
