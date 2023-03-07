@@ -1,6 +1,5 @@
 <template>
     <div class="container py-10 space-y-10">
-        <div class="py-10"><JInputText v-model="fullName" placeholder="Nhập họ và tên" /></div>
         <div class="grid grid-cols-12 gap-x-8">
             <div class="lg:col-span-10 lg:col-start-2 col-span-full">
                 <div class="prose">
