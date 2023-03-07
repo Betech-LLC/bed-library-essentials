@@ -17,8 +17,8 @@
     }
 
     .message {
-        @apply absolute left-0  text-gray-500 translate-y-full -bottom-1 body-3;
-        .error {
+        @apply absolute left-0 text-gray-500 translate-y-full -bottom-1 body-3;
+        &.is-error {
             @apply text-error-500;
         }
     }

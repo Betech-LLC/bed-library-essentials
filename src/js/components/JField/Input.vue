@@ -4,7 +4,6 @@
         :class="{
             'has-prefix': !!$slots.prefix,
             'has-suffix': !!$slots.suffix,
-            'has-hint': !!field.hintText,
         }"
     >
         <template v-if="$slots.prefix">
@@ -21,14 +20,15 @@
         <template v-if="$slots.suffix">
             <slot name="suffix"></slot>
         </template>
-
-        <small class="message" :class="{ error: isError }">
-            {{ field.hintText }}
+        <!-- TODO: Chưa chuẩn hóa nội dung content cho từng field -->
+        <small v-if="field.hintText || isError" class="message" :class="{ 'is-error': isError }">
+            {{ isError ? 'This is a error message.' : field.hintText }}
         </small>
     </div>
 </template>
 
 <script>
+import { validateField } from '../../lib/validator'
 export default {
     emits: ['update:modelValue'],
     props: ['modelValue', 'field'],
@@ -37,6 +37,12 @@ export default {
         return {
             isError: false,
         }
+    },
+
+    watch: {
+        modelValue(newVal) {
+            this.isError = !validateField(newVal, this.field.rules[this.field.fieldName])
+        },
     },
     methods: {
         onInput(event) {
