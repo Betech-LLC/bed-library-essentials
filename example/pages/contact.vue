@@ -198,6 +198,50 @@
                         <template #suffix> <JIconHelp /> </template
                     ></JFieldInput>
                 </div>
+
+                <!-- ROW 5 -->
+                <div class="grid grid-cols-3 gap-4 mb-10">
+                    <JFieldInput
+                        v-model="note_1"
+                        :field="{
+                            rules: rules,
+                            errors: errors,
+                            type: 'textarea',
+                            label: 'Description',
+                            name: 'Description',
+                            fieldName: 'note_1',
+                            placeholder: 'Enter a description...',
+                        }"
+                    />
+
+                    <JFieldInput
+                        v-model="note_2"
+                        :field="{
+                            rules: rules,
+                            rows: 4,
+                            errors: errors,
+                            type: 'textarea',
+                            label: 'Description 2',
+                            name: 'Description 2',
+                            fieldName: 'note_2',
+                            placeholder: 'Enter a description 2...',
+                        }"
+                    />
+                    <JFieldInput
+                        v-model="note_2"
+                        :field="{
+                            rules: rules,
+                            rows: 5,
+                            errors: errors,
+                            type: 'textarea',
+                            label: 'Description disabled',
+                            name: 'Description disabled',
+                            fieldName: 'note_2',
+                            placeholder: 'Enter a description disabled...',
+                        }"
+                        :disabled="true"
+                    />
+                </div>
             </div>
         </div>
     </main>
@@ -228,7 +272,8 @@ export default {
                 phone: '',
                 email: '',
             },
-
+            note_1: '',
+            note_2: '',
             errors: {},
             rules: {
                 name: 'required',

@@ -1,6 +1,6 @@
 /* INPUT BASE */
 .field {
-    @apply relative flex items-center bg-white border border-gray-300 rounded-lg py-2 px-3 shadow-xs duration-150;
+    @apply relative flex items-center bg-white border border-gray-300 rounded-lg py-2 px-3 shadow-xs duration-150  focus-within:border-primary-300 focus-within:shadow-xs-primary-100;
 
     .input {
         @apply focus:outline-0 block w-full;
