@@ -1,48 +1,54 @@
 <template>
-    <div
-        class="field"
-        :class="{
-            'has-prefix': !!$slots.prefix,
-            'has-suffix': !!$slots.suffix,
-        }"
-    >
-        <template v-if="$slots.prefix">
-            <slot name="prefix"></slot>
-        </template>
+    <fieldset>
+        <label v-if="field.label" :for="field.name" class="text-gray-700 label-2 mb-1 md:b-1.5">{{
+            field.label
+        }}</label>
 
-        <JFieldInit
-            v-if="!field.type || field.type === 'text' || field.type === 'email' || field.type === 'password'"
-            :field="field"
-            :modelValue="modelValue"
-            @update:modelValue="$emit('update:modelValue', $event)"
-        />
+        <div
+            class="field"
+            :class="{
+                'has-prefix': !!$slots.prefix,
+                'has-suffix': !!$slots.suffix,
+                disabled: !!disabled,
+                'is-error': isError,
+            }"
+        >
+            <template v-if="$slots.prefix">
+                <slot name="prefix"></slot>
+            </template>
 
-        <JFieldInit
-            v-if="field.type === 'number'"
-            :field="field"
-            inputmode="numeric"
-            :modelValue="modelValue"
-            @update:modelValue="$emit('update:modelValue', $event)"
-            onkeypress="return event.charCode >= 48 && event.charCode =< 57"
-            onkeydown="return event.keyCode !== 69 && event.keyCode !== 190"
-        />
+            <JFieldInit
+                v-if="!field.type || field.type === 'text' || field.type === 'email' || field.type === 'password'"
+                :field="field"
+                :modelValue="modelValue"
+                @update:modelValue="$emit('update:modelValue', $event)"
+            />
+            <JFieldInit
+                v-if="field.type === 'number'"
+                :field="field"
+                inputmode="numeric"
+                :modelValue="modelValue"
+                @update:modelValue="$emit('update:modelValue', $event)"
+                onkeypress="return event.charCode >= 48 && event.charCode =< 57"
+                onkeydown="return event.keyCode !== 69 && event.keyCode !== 190"
+            />
 
-        <template v-if="$slots.suffix">
-            <slot name="suffix"></slot>
-        </template>
+            <div v-if="$slots.suffix" class="suffix">
+                <slot name="suffix"></slot>
+            </div>
 
-        <!-- Message -->
-        <small v-if="field.hintText || isError" class="message" :class="{ 'is-error': isError }">
-            {{ isError ? 'This is a error message.' : field.hintText }}
-        </small>
-    </div>
+            <small v-if="field.hintText || isError" class="message">
+                {{ isError ? 'This is a error message.' : field.hintText }}
+            </small>
+        </div>
+    </fieldset>
 </template>
 
 <script>
 import { validateField } from '../../lib/validator'
 export default {
     emits: ['update:modelValue'],
-    props: ['modelValue', 'field'],
+    props: ['modelValue', 'field', 'disabled'],
 
     data() {
         return {

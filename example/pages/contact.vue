@@ -1,8 +1,9 @@
 <template>
     <main class="bg-gray-200 min-h-[100vh]">
         <div class="container pt-16">
-            <div class="border border-blue-300 border-dashed rounded h-[70vh] bg-white m-auto p-4 space-y-[30px]">
-                <div class="grid grid-cols-3 gap-4">
+            <div class="px-4 py-10 m-auto bg-white border border-blue-300 border-dashed rounded">
+                <!-- ROW 1 -->
+                <div class="grid grid-cols-3 gap-4 mb-10">
                     <JFieldInput
                         v-model="user.name"
                         :field="{
@@ -15,7 +16,6 @@
                             placeholder: 'Nhập họ và tên',
                         }"
                     >
-                        <template #suffix> <JIconHelp /> </template>
                     </JFieldInput>
                     <JFieldInput
                         v-model="user.email"
@@ -30,7 +30,6 @@
                         }"
                     >
                         <template #prefix> <JIconEmail /> </template>
-                        <template #suffix> <JIconHelp /> </template>
                     </JFieldInput>
                     <JFieldInput
                         v-model="user.phone"
@@ -45,19 +44,20 @@
                         }"
                     >
                         <template #prefix> <JIconPhone /> </template>
-                        <template #suffix> <JIconHelp /> </template
-                    ></JFieldInput>
+
+                        ></JFieldInput
+                    >
                 </div>
 
                 <!-- ROW 2 -->
-                <div class="grid grid-cols-3 gap-4">
+                <div class="grid grid-cols-3 gap-4 mb-10">
                     <JFieldInput
                         v-model="user_2.name"
                         :field="{
                             rules: rules,
                             errors: errors,
                             type: 'text',
-                            label: 'Họ và tên',
+
                             name: 'Họ và tên',
                             fieldName: 'name',
                             placeholder: 'Nhập họ và tên',
@@ -72,7 +72,7 @@
                             rules: rules,
                             errors: errors,
                             type: 'email',
-                            label: 'Email',
+
                             name: 'Email',
                             fieldName: 'email',
                             placeholder: 'Nhập email',
@@ -88,7 +88,7 @@
                             rules: rules,
                             errors: errors,
                             type: 'number',
-                            label: 'Số điện thoại',
+
                             name: 'Số điện thoại',
                             fieldName: 'phone',
                             placeholder: 'Nhập số điện thoại',
@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- ROW 3 -->
-                <div class="grid grid-cols-3 gap-4">
+                <div class="grid grid-cols-3 gap-4 mb-10">
                     <JFieldInput
                         v-model="user_3.name"
                         :field="{
@@ -147,6 +147,57 @@
                         <template #suffix> <JIconHelp /> </template
                     ></JFieldInput>
                 </div>
+
+                <!-- ROW 4 -->
+                <div class="grid grid-cols-3 gap-4 mb-10">
+                    <JFieldInput
+                        v-model="user_4.name"
+                        :field="{
+                            rules: rules,
+                            errors: errors,
+                            type: 'text',
+                            label: 'Họ và tên',
+                            name: 'Họ và tên',
+                            fieldName: 'name',
+                            placeholder: 'Nhập họ và tên',
+                        }"
+                        :disabled="true"
+                    >
+                        <template #suffix> <JIconHelp /> </template>
+                    </JFieldInput>
+                    <JFieldInput
+                        v-model="user_4.email"
+                        :field="{
+                            rules: rules,
+                            errors: errors,
+                            type: 'email',
+                            label: 'Email',
+                            name: 'Email',
+                            fieldName: 'email',
+                            placeholder: 'Nhập email',
+                        }"
+                        :disabled="true"
+                    >
+                        <template #prefix> <JIconEmail /> </template>
+                        <template #suffix> <JIconHelp /> </template>
+                    </JFieldInput>
+                    <JFieldInput
+                        v-model="user_4.phone"
+                        :field="{
+                            rules: rules,
+                            errors: errors,
+                            type: 'number',
+                            label: 'Số điện thoại',
+                            name: 'Số điện thoại',
+                            fieldName: 'phone',
+                            placeholder: 'Nhập số điện thoại',
+                        }"
+                        :disabled="true"
+                    >
+                        <template #prefix> <JIconPhone /> </template>
+                        <template #suffix> <JIconHelp /> </template
+                    ></JFieldInput>
+                </div>
             </div>
         </div>
     </main>
@@ -168,6 +219,11 @@ export default {
             },
 
             user_3: {
+                name: '',
+                phone: '',
+                email: '',
+            },
+            user_4: {
                 name: '',
                 phone: '',
                 email: '',

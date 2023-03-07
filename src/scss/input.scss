@@ -1,8 +1,17 @@
 /* INPUT BASE */
 .field {
-    @apply relative flex items-center border border-gray-300 rounded-lg py-2 px-3 shadow-xs;
+    @apply relative flex items-center bg-white border border-gray-300 rounded-lg py-2 px-3 shadow-xs duration-150;
+
     .input {
         @apply focus:outline-0 block w-full;
+    }
+
+    .suffix {
+        @apply text-gray-500;
+    }
+
+    .message {
+        @apply absolute left-0 text-gray-500 translate-y-full -bottom-1 body-3;
     }
 
     &.has-prefix {
@@ -16,10 +25,18 @@
         }
     }
 
-    .message {
-        @apply absolute left-0 text-gray-500 translate-y-full -bottom-1 body-3;
-        &.is-error {
+    &.is-error {
+        @apply border-error-300 focus-within:shadow-xs-error-100;
+        .message,
+        .suffix {
             @apply text-error-500;
+        }
+    }
+
+    &.disabled {
+        @apply bg-gray-100 pointer-events-none;
+        .input {
+            @apply bg-gray-100;
         }
     }
 }
