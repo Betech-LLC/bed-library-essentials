@@ -49,7 +49,6 @@ export default {
             isError: false,
         }
     },
-
     watch: {
         modelValue(newVal) {
             this.isError = !validateField(newVal, this.field.rules[this.field.fieldName])

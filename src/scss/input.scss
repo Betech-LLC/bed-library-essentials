@@ -1,6 +1,6 @@
 /* INPUT BASE */
 .field {
-    @apply relative flex items-center  border border-gray-300 rounded-lg py-2 px-3 shadow-xs;
+    @apply relative flex items-center border border-gray-300 rounded-lg py-2 px-3 shadow-xs;
     .input {
         @apply focus:outline-0 block w-full;
     }
@@ -20,18 +20,6 @@
         @apply absolute left-0 text-gray-500 translate-y-full -bottom-1 body-3;
         &.is-error {
             @apply text-error-500;
-        }
-    }
-}
-
-/* INPUT GROUP */
-.input-group {
-    & > *:not(:last-child) {
-        input {
-        }
-    }
-    & > *:not(:first-child) {
-        input {
         }
     }
 }
