@@ -31,7 +31,7 @@
             <slot name="suffix"></slot>
         </template>
 
-        <!-- TODO: Chưa chuẩn hóa nội dung content cho từng field -->
+        <!-- Message -->
         <small v-if="field.hintText || isError" class="message" :class="{ 'is-error': isError }">
             {{ isError ? 'This is a error message.' : field.hintText }}
         </small>
