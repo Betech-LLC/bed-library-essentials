@@ -62,7 +62,10 @@
 </template>
 
 <script>
+import JImageDynamic from '@core/components/JImageDynamic.vue'
 export default {
+    components: { JImageDynamic },
+
     props: {
         listSocial: {
             type: Array,
