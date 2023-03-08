@@ -71,9 +71,7 @@ export default {
         submit() {
             const isValidForm = this.$.provides.checkValidForm()
             if (!isValidForm) return
-
             alert(`Submit Success ${JSON.stringify(this.form)}`)
-            //  SUCCESS
             this.$.provides.resetForm()
         },
     },

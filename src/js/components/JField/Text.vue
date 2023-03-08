@@ -5,6 +5,7 @@
         :name="field.name"
         @input="onInput"
         :type="fieldType"
+        :value="modelValue"
         autocomplete="off"
         :readonly="fieldReadonly"
         :placeholder="fieldPlaceholder"
