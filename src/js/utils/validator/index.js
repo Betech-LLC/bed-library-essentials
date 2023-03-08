@@ -12,10 +12,8 @@ function validate(value, rule) {
             return !!value
         case 'email':
             const regEx = /^[\w.!?#$%&'=~|{}`+*^][\w\-.!?#$%&'=~|{}`+*^]*@((xn--)?[\w]+([-][\w]+)*\.)+[a-z]{2,}$/i
-            const validDomain = !value.includes('@gnail') && !value.includes('@gmail.con') && !value.includes('@gmai.')
+            const isValidGmailDomain = value && !value.includes('@gnail') && !value.includes('@gmai.')
             const isValidEmailFormat = value && regEx.test(value)
-            const isValidGmailDomain = value && validDomain
-
             return isValidEmailFormat && isValidGmailDomain
 
         case 'date':

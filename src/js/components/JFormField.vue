@@ -18,22 +18,22 @@
             <JFieldText
                 v-if="!field.type || field.type === 'text' || field.type === 'email' || field.type === 'password'"
                 :field="field"
-                :modelValue="getValue(field)"
-                @update:modelValue="setValue(field, $event)"
+                :modelValue="form[field.name]"
+                @update:modelValue="onChangeField"
             />
 
             <JFieldPhone
                 v-if="field.type === 'number'"
                 :field="field"
-                :modelValue="getValue(field)"
-                @update:modelValue="setValue(field, $event)"
+                :modelValue="form[field.name]"
+                @update:modelValue="onChangeField"
             />
 
             <JFieldTextarea
                 v-if="field.type === 'textarea'"
                 :field="field"
-                :modelValue="getValue(field)"
-                @update:modelValue="setValue(field, $event)"
+                :modelValue="form[field.name]"
+                @update:modelValue="onChangeField"
             />
 
             <div v-if="$slots.suffix" class="suffix">
@@ -48,7 +48,6 @@
 </template>
 
 <script>
-import { validateField } from '@core/utils'
 export default {
     emits: ['update:modelValue'],
     props: {
@@ -59,30 +58,23 @@ export default {
         disabled: { type: Boolean, default: false },
     },
     inject: {
-        rules: { default: () => {} },
+        form: { default: () => {} },
         errors: { default: () => {} },
         setValue: { default: () => () => ({}) },
         getValue: { default: () => () => ({}) },
+        setErrors: { default: () => () => ({}) },
     },
-    data() {
-        return {
-            isError: false,
-        }
-    },
+
     computed: {
-        error() {
-            return this.errors[this.field.name] || ''
-        },
-        currentValue() {
-            return this.getValue(this.field)
+        isError() {
+            return this.errors.hasOwnProperty(this.field.name)
         },
     },
-    watch: {
-        error() {
-            this.isError = this.errors[this.field.name]
-        },
-        currentValue(newVal) {
-            this.isError = !validateField(newVal, this.rules[this.field.name])
+
+    methods: {
+        onChangeField(fieldValue) {
+            this.setValue(this.field, fieldValue)
+            this.setErrors(this.field.name, fieldValue)
         },
     },
 }

@@ -3,12 +3,7 @@
         <div class="container pt-16">
             <div class="px-4 py-10 m-auto bg-white border border-blue-300 border-dashed rounded">
                 <!-- ROW 1 -->
-                <JForm
-                    v-model="user"
-                    :rules="rules"
-                    :errors="errors"
-                    class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3"
-                >
+                <JForm v-model="user" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
                             type: 'text',
@@ -36,15 +31,13 @@
                         <template #prefix> <JIconPhone /> </template>
                         ></JFormField
                     >
+                    <div class="flex justify-center my-4 col-span-full">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </JForm>
 
                 <!-- ROW 2 -->
-                <JForm
-                    v-model="user_2"
-                    :rules="rules"
-                    :errors="errors"
-                    class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3"
-                >
+                <JForm v-model="user_2" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
                             type: 'text',
@@ -80,12 +73,7 @@
                 </JForm>
 
                 <!-- ROW 3 -->
-                <JForm
-                    v-model="user_3"
-                    :rules="rules"
-                    :errors="errors"
-                    class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3"
-                >
+                <JForm v-model="user_3" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
                             type: 'text',
@@ -118,12 +106,7 @@
                 </JForm>
 
                 <!-- ROW 4 -->
-                <JForm
-                    v-model="user_4"
-                    :rules="rules"
-                    :errors="errors"
-                    class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3"
-                >
+                <JForm v-model="user_4" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
                             type: 'text',
@@ -159,7 +142,7 @@
                 </JForm>
 
                 <!-- ROW 5 -->
-                <JForm v-model="user_5" :rules="rules" :errors="errors" class="grid grid-cols-3 gap-4 mb-10">
+                <JForm v-model="user_5" :rules="rules" class="grid grid-cols-3 gap-4 mb-10">
                     <JFormField
                         :field="{
                             type: 'textarea',
@@ -224,7 +207,6 @@ export default {
                 note_3: '',
             },
 
-            errors: {},
             rules: {
                 name: 'required',
                 phone: 'phone|required|min:10|max:10',
@@ -232,7 +214,6 @@ export default {
             },
         }
     },
-
     provide() {
         return {
             user: this.user,
