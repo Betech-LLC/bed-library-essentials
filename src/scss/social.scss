@@ -1,5 +1,5 @@
 .share-list {
-    @apply flex items-center md:space-x-3 space-x-2 xl:space-x-4;
+    @apply flex items-center space-x-3 xl:space-x-4;
 }
 
 .share-title {
@@ -7,10 +7,19 @@
 }
 
 .share-item {
-    @apply transition duration-200 ease-in-out hover:opacity-80 cursor-pointer;
-
     svg,
     img {
         @apply w-6 h-6;
+    }
+}
+
+.copy-link {
+    @apply relative inline-block cursor-pointer;
+    .noti {
+        @apply absolute top-1/2 -translate-y-1/2 duration-300 left-[150%] opacity-0 invisible badge badge-primary;
+
+        &.active {
+            @apply opacity-100 visible;
+        }
     }
 }
