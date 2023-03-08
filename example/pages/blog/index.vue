@@ -1,6 +1,14 @@
 <template>
     <section class="container py-20 space-y-8">
-        <JSocialList :appId="598149141976442" :oaId="1111640952861619960" />
+        <JSocialShare
+            class="social-share-col"
+            :facebookAppId="598149141976442"
+            :zaloOAId="1111640952861619960"
+            :facebook="true"
+            :pinterest="true"
+            :twitter="true"
+            :linkedin="true"
+        />
 
         <div class="headline-1">CARD BLOG COLUMN</div>
         <div class="grid grid-cols-12 gap-4 xl:gap-8 md:gap-6">
