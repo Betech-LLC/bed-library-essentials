@@ -71,11 +71,11 @@ export default {
     props: {
         messenger: {
             type: Boolean,
-            default: true,
+            default: false,
         },
         facebook: {
             type: Boolean,
-            default: false,
+            default: true,
         },
         zalo: {
             type: Boolean,

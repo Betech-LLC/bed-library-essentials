@@ -4,7 +4,7 @@
             class="social-share-col"
             :facebookAppId="598149141976442"
             :zaloOAId="1111640952861619960"
-            :facebook="true"
+            :messenger="true"
             :pinterest="true"
             :twitter="true"
             :linkedin="true"
