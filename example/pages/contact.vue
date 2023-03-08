@@ -180,31 +180,31 @@ export default {
     data() {
         return {
             user: {
-                name: '',
-                phone: '',
-                email: '',
+                name: null,
+                phone: null,
+                email: null,
             },
 
             user_2: {
-                name: '',
-                phone: '',
-                email: '',
+                name: null,
+                phone: null,
+                email: null,
             },
 
             user_3: {
-                name: '',
-                phone: '',
-                email: '',
+                name: null,
+                phone: null,
+                email: null,
             },
             user_4: {
-                name: '',
-                phone: '',
-                email: '',
+                name: null,
+                phone: null,
+                email: null,
             },
             user_5: {
-                note_1: '',
-                note_2: '',
-                note_3: '',
+                note_1: null,
+                note_2: null,
+                note_3: null,
             },
 
             rules: {
@@ -212,14 +212,6 @@ export default {
                 phone: 'phone|required|min:10|max:10',
                 email: 'required|email',
             },
-        }
-    },
-    provide() {
-        return {
-            user: this.user,
-            user_2: this.user_2,
-            user_3: this.user_3,
-            user_4: this.user_4,
         }
     },
 }
