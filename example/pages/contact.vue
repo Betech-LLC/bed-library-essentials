@@ -52,7 +52,7 @@
                         :field="{
                             type: 'email',
                             name: 'email',
-                            label: 'email',
+                            label: 'Email',
                             help: 'This is a hint text to help user.',
                         }"
                     >
