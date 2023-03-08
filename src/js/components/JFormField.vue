@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import { validateField } from '@core/utils'
 export default {
     emits: ['update:modelValue'],
     props: {
@@ -59,22 +60,26 @@ export default {
     },
     inject: {
         form: { default: () => {} },
+        rules: { default: () => {} },
         errors: { default: () => {} },
-        setValue: { default: () => () => ({}) },
-        getValue: { default: () => () => ({}) },
-        setErrors: { default: () => () => ({}) },
     },
-
     computed: {
         isError() {
             return this.errors.hasOwnProperty(this.field.name)
         },
     },
-
     methods: {
         onChangeField(fieldValue) {
-            this.setValue(this.field, fieldValue)
-            this.setErrors(this.field.name, fieldValue)
+            this.form[this.field.name] = fieldValue
+            this.validateField(fieldValue)
+        },
+        validateField(fieldValue) {
+            const isValidField = validateField(fieldValue, this.rules[this.field.name])
+            if (isValidField) {
+                delete this.errors[this.field.name]
+            } else {
+                this.errors[this.field.name] = null
+            }
         },
     },
 }

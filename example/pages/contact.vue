@@ -63,7 +63,7 @@
                         :field="{
                             type: 'number',
                             name: 'phone',
-                            label: 'Nhập số điện thoại',
+                            label: 'Số điện thoại',
                             help: 'This is a hint text to help user.',
                         }"
                     >

@@ -29,8 +29,7 @@ export default {
             return this.field.readonly || false
         },
         fieldPlaceholder() {
-            const fieldLabel = this.field.label ? `Nhập ${this.field.label.toLowerCase()}` : 'Nhập...'
-            return this.field.placeholder || fieldLabel
+            return this.field.placeholder || `Nhập ${this.field.label.toLowerCase()}`
         },
     },
 }
