@@ -31,6 +31,12 @@
     @apply xl:mt-2 md:mt-1.5 mt-1 body-1 text-gray-700 line-clamp-2 max-md:hidden;
 }
 
+.card-blog-no-description {
+    .card-blog-description {
+        @apply hidden;
+    }
+}
+
 // Size
 .card-blog {
     @apply h-max;
