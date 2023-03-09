@@ -1,13 +1,7 @@
 <template>
     <section class="banner">
         <div class="banner-image">
-            <JPicture
-                v-if="image && image.url"
-                :src="image.url"
-                :alt="image.alt"
-                loading="eager"
-                wrapperClass="picture-cover"
-            />
+            <JPicture :src="image.url" :alt="image.alt" loading="eager" wrapperClass="picture-cover" />
             <slot />
         </div>
     </section>

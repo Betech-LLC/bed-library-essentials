@@ -211,7 +211,7 @@ export default {
 
             bannerTop: {
                 image: {
-                    url: 'https://via.placeholder.com/900x300',
+                    // url: 'https://via.placeholder.com/900x300',
                     alt: 'banner blog category',
                 },
             },
