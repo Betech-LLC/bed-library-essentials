@@ -2,16 +2,16 @@
     @apply flex body-2 line-clamp-1;
     .breadcrumb-item {
         &:not(:last-child) {
-            @apply text-blue-700 inline-flex items-center space-x-2 mr-2 hover:underline hover:opacity-70 duration-150;
+            @apply text-blue-700 hover:underline hover:opacity-70 duration-150;
         }
         &:last-child {
-            @apply mr-0;
+            @apply text-gray-900;
         }
-        .icon {
-            @apply text-gray-700;
-        }
-        .icon svg {
-            @apply max-w-[0.5rem];
-        }
+    }
+    .icon {
+        @apply text-gray-700 mx-2 max-w-fit;
+    }
+    .icon svg {
+        @apply max-w-[0.5rem] inline;
     }
 }

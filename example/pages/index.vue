@@ -1,108 +1,115 @@
 <template>
     <div class="container py-10 space-y-10">
-        <div class="space-y-2">
-            <div>Default</div>
-            <JBreadcrumb
-                :items="[
-                    {
-                        title: 'Trang chủ',
-                        link: '/',
-                    },
-                    {
-                        title: 'Thực phẩm chức năng',
-                        link: '/thuc-pham-chuc-nang',
-                    },
-                    {
-                        title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng, dép Hà Mã quai ngang siêu dễ thương',
-                    },
-                ]"
-            />
+        <div>
+            <div class="mb-4 display-3">Breadcrumb</div>
+            <div class="p-4 space-y-4 border border-gray-400 border-dashed rounded-lg">
+                <div class="body-2">Default</div>
+                <JBreadcrumb
+                    :items="[
+                        {
+                            title: 'Trang chủ',
+                            link: '/',
+                        },
+                        {
+                            title: 'Thực phẩm chức năng',
+                            link: '/thuc-pham-chuc-nang',
+                        },
+                        {
+                            title: 'Dép Cá Sấu cho người lớn',
+                        },
+                    ]"
+                />
+                <hr />
+                <div class="body-2">Arrow ICON</div>
+                <JBreadcrumb
+                    :items="[
+                        {
+                            title: 'Trang chủ',
+                            link: '/',
+                        },
+                        {
+                            title: 'Thực phẩm chức năng',
+                            link: '/thuc-pham-chuc-nang',
+                        },
+                        {
+                            title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to',
+                        },
+                    ]"
+                >
+                    <template #icon>
+                        <JIconArrowRight />
+                    </template>
+                </JBreadcrumb>
+                <hr />
+                <div class="body-2">Tick ICON - Nhúng Code SVG trực tiếp</div>
+                <JBreadcrumb
+                    :items="[
+                        {
+                            title: 'Trang chủ',
+                            link: '/',
+                        },
+                        {
+                            title: 'Thực phẩm chức năng',
+                            link: '/thuc-pham-chuc-nang',
+                        },
+                        {
+                            title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng',
+                        },
+                    ]"
+                >
+                    <template #icon>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13" fill="none">
+                            <path
+                                d="M17 1L6 12L1 7"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </template>
+                </JBreadcrumb>
+                <hr />
+                <div class="body-2">Ký tự Dollar</div>
+                <JBreadcrumb
+                    :items="[
+                        {
+                            title: 'Trang chủ',
+                            link: '/',
+                        },
+                        {
+                            title: 'Thực phẩm chức năng',
+                            link: '/thuc-pham-chuc-nang',
+                        },
+                        {
+                            title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng, dép Hà Mã quai ngang siêu dễ thương',
+                        },
+                    ]"
+                >
+                    <template #icon> $ </template>
+                </JBreadcrumb>
 
-            <div>Arrow ICON</div>
-            <JBreadcrumb
-                :items="[
-                    {
-                        title: 'Trang chủ',
-                        link: '/',
-                    },
-                    {
-                        title: 'Thực phẩm chức năng',
-                        link: '/thuc-pham-chuc-nang',
-                    },
-                    {
-                        title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng, dép Hà Mã quai ngang siêu dễ thương',
-                    },
-                ]"
-            >
-                <template #icon>
-                    <JIconArrowRight />
-                </template>
-            </JBreadcrumb>
-            <div>Tick ICON - Nhúng Code SVG trực tiếp</div>
-            <JBreadcrumb
-                :items="[
-                    {
-                        title: 'Trang chủ',
-                        link: '/',
-                    },
-                    {
-                        title: 'Thực phẩm chức năng',
-                        link: '/thuc-pham-chuc-nang',
-                    },
-                    {
-                        title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng, dép Hà Mã quai ngang siêu dễ thương',
-                    },
-                ]"
-            >
-                <template #icon>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13" fill="none">
-                        <path
-                            d="M17 1L6 12L1 7"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
-                </template>
-            </JBreadcrumb>
+                <hr />
 
-            <div>Ký tự Dollar</div>
-            <JBreadcrumb
-                :items="[
-                    {
-                        title: 'Trang chủ',
-                        link: '/',
-                    },
-                    {
-                        title: 'Thực phẩm chức năng',
-                        link: '/thuc-pham-chuc-nang',
-                    },
-                    {
-                        title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng, dép Hà Mã quai ngang siêu dễ thương',
-                    },
-                ]"
-            >
-                <template #icon> $ </template>
-            </JBreadcrumb>
-            <div>Ký tự +</div>
-            <JBreadcrumb
-                :items="[
-                    {
-                        title: 'Trang chủ',
-                        link: '/',
-                    },
-                    {
-                        title: 'Thực phẩm chức năng',
-                        link: '/thuc-pham-chuc-nang',
-                    },
-                    {
-                        title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng, dép Hà Mã quai ngang siêu dễ thương',
-                    },
-                ]"
-            >
-                <template #icon> + </template>
-            </JBreadcrumb>
+                <div class="body-2">Ký tự +</div>
+                <JBreadcrumb
+                    :items="[
+                        {
+                            title: 'Trang chủ',
+                            link: '/',
+                        },
+                        {
+                            title: 'Thực phẩm chức năng',
+                            link: '/thuc-pham-chuc-nang',
+                        },
+                        {
+                            title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng, dép Hà Mã quai ngang siêu dễ thương',
+                        },
+                    ]"
+                >
+                    <template #icon> + </template>
+                </JBreadcrumb>
+            </div>
         </div>
 
         <div class="grid grid-cols-12 gap-x-8">
