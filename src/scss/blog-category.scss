@@ -1,1 +1,45 @@
+.blog-category {
+    @apply py-16;
+}
 
+.blog-category-wrap {
+    @apply container;
+}
+
+.blog-category-top-posts {
+    @apply grid grid-cols-2 pb-8 border-b border-gray-200 gap-x-8;
+
+    .right {
+        @apply space-y-5;
+        .card-item {
+            @apply pb-5 border-b border-gray-200  last:pb-0 last:border-none;
+        }
+    }
+}
+
+.blog-category-body {
+    @apply grid grid-cols-7 mt-8 gap-x-8;
+    .left {
+        @apply col-span-5 space-y-8;
+    }
+    .right {
+        @apply col-span-2  xl:space-y-12 lg:space-y-8;
+        .banner-ads-wrap {
+            @apply max-lg:hidden;
+        }
+    }
+}
+
+.top-view {
+    @apply space-y-2  xl:space-y-4 md:space-y-3;
+    .title {
+        @apply pb-1 text-gray-700 border-b border-gray-500 title-2;
+    }
+    .body {
+        @apply max-lg:grid max-lg:grid-cols-2 max-md:grid-cols-1  max-md:gap-0 space-y-2 xl:space-y-4 md:space-y-3;
+
+        .card-item {
+            @apply pb-4 border-b border-gray-200 last:border-none last:pb-0 max-lg:border-none;
+        }
+    }
+}

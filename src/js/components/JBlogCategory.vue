@@ -7,49 +7,46 @@
             </div>
         </JBanner>
 
-        <section class="py-16">
-            <div class="container">
-                <div
-                    v-if="top_posts && top_posts.length"
-                    class="grid grid-cols-2 pb-8 border-b border-gray-200 gap-x-8"
-                >
-                    <JCardBlog :item="top_posts[0]" />
+        <section class="blog-category">
+            <div class="blog-category-wrap">
+                <div v-if="top_posts && top_posts.length" class="blog-category-top-posts">
+                    <div class="left">
+                        <JCardBlog class="card-item" :item="top_posts[0]" />
+                    </div>
 
-                    <div class="space-y-5">
+                    <div class="right">
                         <JCardBlog
                             v-for="(post, index) in top_posts.slice(1, 4)"
                             :key="index"
-                            class="pb-5 border-b border-gray-200 card-blog-sm card-blog-row card-blog-no-description last:pb-0 last:border-none"
+                            class="card-item card-blog-sm card-blog-row card-blog-no-description"
                             :item="post"
                         />
                     </div>
                 </div>
 
-                <div class="grid grid-cols-7 mt-8 gap-x-8">
-                    <div class="col-span-5 space-y-8">
+                <div class="blog-category-body">
+                    <div class="left">
                         <JCardBlog
                             v-for="(post, index) in posts_data"
                             :key="index"
-                            class="card-blog-md card-blog-row"
+                            class="card-item card-blog-md card-blog-row"
                             :item="post"
                         />
                     </div>
-                    <div class="col-span-2 xl:space-y-12 lg:space-y-8">
-                        <div class="space-y-2 xl:space-y-4 md:space-y-3">
-                            <h2 class="pb-1 text-gray-700 border-b border-gray-500 title-2">Lượt xem nhiều nhất</h2>
-                            <div
-                                class="max-lg:grid max-lg:grid-cols-2 max-md:grid-cols-1 max-lg:gap-[22px] max-md:gap-0 space-y-2 xl:space-y-4 md:space-y-3"
-                            >
+                    <div class="right">
+                        <div class="top-view">
+                            <h2 class="title">Lượt xem nhiều nhất</h2>
+                            <div class="body">
                                 <JCardBlog
                                     v-for="(item, index) in top_views"
                                     :key="index"
-                                    class="pb-4 border-b border-gray-200 card-blog-xs card-blog-row custom-image last:border-none last:pb-0 max-lg:border-none"
+                                    class="card-blog-xs card-blog-row card-item"
                                     :item="item"
                                 />
                             </div>
                         </div>
 
-                        <div class="max-lg:hidden">
+                        <div class="banner-ads-wrap">
                             <JBannerAds :item="banner" />
                         </div>
                     </div>
