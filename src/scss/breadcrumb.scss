@@ -1,8 +1,6 @@
 .breadcrumb {
     @apply flex body-2 line-clamp-1;
     .breadcrumb-item {
-        @apply relative opacity-70;
-
         &:not(:last-child) {
             @apply text-blue-700 inline-flex items-center space-x-2 mr-2;
         }
