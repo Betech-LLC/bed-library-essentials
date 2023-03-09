@@ -1,9 +1,9 @@
 <template>
     <main>
         <JBanner class="banner-sm" v-if="bannerTop && bannerTop.image" :image="bannerTop.image">
-            <div class="container pt-8">
+            <div class="banner-body">
                 <div>Breadcrumb</div>
-                <h1 class="mt-6 text-white display-2">Tin tức</h1>
+                <h1 class="banner-title">Tin tức</h1>
             </div>
         </JBanner>
 
