@@ -1,6 +1,6 @@
 <template>
     <div class="container py-10 space-y-10">
-        <div class="display-2">Default</div>
+        <div class="display-3">Default</div>
         <JBreadcrumb
             :items="[
                 {
@@ -17,7 +17,7 @@
             ]"
         />
 
-        <div class="display-2">Arrow ICON</div>
+        <div class="display-3">Arrow ICON</div>
         <JBreadcrumb
             :items="[
                 {
@@ -37,7 +37,7 @@
                 <JIconArrowRight />
             </template>
         </JBreadcrumb>
-        <div class="display-2">Tick ICON - Nhúng Code SVG trực tiếp</div>
+        <div class="display-3">Tick ICON - Nhúng Code SVG trực tiếp</div>
         <JBreadcrumb
             :items="[
                 {
@@ -66,7 +66,7 @@
             </template>
         </JBreadcrumb>
 
-        <div class="display-2">Ký tự Dollar</div>
+        <div class="display-3">Ký tự Dollar</div>
         <JBreadcrumb
             :items="[
                 {
@@ -84,7 +84,7 @@
         >
             <template #icon> $ </template>
         </JBreadcrumb>
-        <div class="display-2">Ký tự +</div>
+        <div class="display-3">Ký tự +</div>
         <JBreadcrumb
             :items="[
                 {
