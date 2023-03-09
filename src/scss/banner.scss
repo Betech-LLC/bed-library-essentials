@@ -43,3 +43,11 @@
         @apply absolute h-full -z-10;
     }
 }
+
+.banner-body {
+    @apply container pt-8;
+}
+
+.banner-title {
+    @apply mt-6 text-white display-2;
+}
