@@ -66,6 +66,6 @@ import JBannerAds from '@core/components/JBannerAds.vue'
 
 export default {
     components: { JBanner, JCardBlog, JBannerAds },
-    props: ['bannerTop', 'banner', 'top_posts', 'posts_data'],
+    props: ['bannerTop', 'banner', 'top_posts', 'top_views', 'posts_data'],
 }
 </script>
