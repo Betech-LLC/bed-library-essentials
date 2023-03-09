@@ -1,6 +1,6 @@
 <template>
     <div class="container py-10 space-y-10">
-        <div class="font-bold heading-2">Breadcrumb Default '/'</div>
+        <div class="display-2">Default Slash ICON</div>
         <JBreadcrumb
             :items="[
                 {
@@ -12,11 +12,12 @@
                     link: '/thuc-pham-chuc-nang',
                 },
                 {
-                    title: 'Sắt sinh học cho bà bầu Ferrolip',
+                    title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng, dép Hà Mã quai ngang siêu dễ thương',
                 },
             ]"
         />
-        <div class="font-bold heading-2">Breadcrumb Arrow Icon '>'</div>
+
+        <div class="display-2">Arrow ICON</div>
         <JBreadcrumb
             :items="[
                 {
@@ -28,16 +29,16 @@
                     link: '/thuc-pham-chuc-nang',
                 },
                 {
-                    title: 'Sinh lực nữ giới',
-                    link: '/thuc-pham-chuc-nang',
-                },
-                {
-                    title: 'Sắt sinh học cho bà bầu Ferrolip',
+                    title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng, dép Hà Mã quai ngang siêu dễ thương',
                 },
             ]"
-            icon=">"
-        />
+        >
+            <template #icon>
+                <JIconArrowRight />
+            </template>
+        </JBreadcrumb>
 
+        <div class="display-2">Dollar Money - $ Character</div>
         <JBreadcrumb
             :items="[
                 {
@@ -49,45 +50,30 @@
                     link: '/thuc-pham-chuc-nang',
                 },
                 {
-                    title: 'Sinh lực nữ giới',
+                    title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng, dép Hà Mã quai ngang siêu dễ thương',
+                },
+            ]"
+        >
+            <template #icon> $ </template>
+        </JBreadcrumb>
+        <div class="display-2">Dollar Money - + Character</div>
+        <JBreadcrumb
+            :items="[
+                {
+                    title: 'Trang chủ',
+                    link: '/',
+                },
+                {
+                    title: 'Thực phẩm chức năng',
                     link: '/thuc-pham-chuc-nang',
                 },
                 {
-                    title: '[Mã FATRANG giảm đến 30k đơn 99k] Dép Sục Hà Mã Mắt To Dễ Thương Hot Trend',
+                    title: 'Dép Cá Sấu cho người lớn, dép Khủng Long Mắt to, dép Cá Sấu há miệng, dép Hà Mã quai ngang siêu dễ thương',
                 },
             ]"
-            icon=">"
-        />
-
-        <div class="font-bold heading-2">Breadcrumb Custom Icon '$'</div>
-        <JBreadcrumb
-            :items="[
-                { title: 'Trang chủ', link: '/' },
-                { title: 'Thực phẩm chức năng 2', link: '/thuc-pham-chuc-nang' },
-                { title: 'Sắt sinh học cho bà bầu Ferrolip' },
-            ]"
-            icon="$"
-        />
-
-        <div class="font-bold heading-2">Breadcrumb Custom Icon '='</div>
-        <JBreadcrumb
-            :items="[
-                { title: 'Trang chủ', link: '/' },
-                { title: 'Thực phẩm chức năng 2', link: '/thuc-pham-chuc-nang' },
-                { title: 'Sắt sinh học cho bà bầu Ferrolip' },
-            ]"
-            icon="="
-        />
-
-        <div class="font-bold heading-2">Breadcrumb Custom Icon '~'</div>
-        <JBreadcrumb
-            :items="[
-                { title: 'Trang chủ', link: '/' },
-                { title: 'Thực phẩm chức năng 2', link: '/thuc-pham-chuc-nang' },
-                { title: 'Sắt sinh học cho bà bầu Ferrolip' },
-            ]"
-            icon="~"
-        />
+        >
+            <template #icon> + </template>
+        </JBreadcrumb>
 
         <div class="grid grid-cols-12 gap-x-8">
             <div class="lg:col-span-10 lg:col-start-2 col-span-full">

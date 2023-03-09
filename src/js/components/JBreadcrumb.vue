@@ -2,7 +2,13 @@
     <nav v-if="items.length > 0 && _icon" class="breadcrumb" :style="`--breadcrumb-divider: ${_icon}`">
         <template v-for="(item, index) in items" :key="index">
             <JLink v-if="item.link" :href="item.link" class="breadcrumb-item">
-                {{ item.title }}
+                <span> {{ item.title }}</span>
+                <span class="icon" v-if="$slots.icon">
+                    <slot name="icon"></slot>
+                </span>
+                <span class="icon" v-else>
+                    <JIconSlash />
+                </span>
             </JLink>
             <span v-else class="breadcrumb-item">{{ item.title }}</span>
         </template>
