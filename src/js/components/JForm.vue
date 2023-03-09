@@ -48,7 +48,6 @@ export default {
                 this.form[keyField] = null
             })
         },
-
         validateForm() {
             const errors = validateForm(this.form, this.rules)
             const invalidFields = Object.keys(errors)
