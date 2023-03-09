@@ -1,5 +1,36 @@
 <template>
+<<<<<<< HEAD
     <JBlogCategory :bannerTop="bannerTop" :top_posts="top_posts" :posts_data="posts_data" :banner="banner" />
+=======
+    <section class="container py-20 space-y-8">
+        <JSocialShare
+            class="social-share-col"
+            :facebookAppId="598149141976442"
+            :zaloOAId="1111640952861619960"
+            :messenger="true"
+            :pinterest="true"
+            :twitter="true"
+            :linkedin="true"
+        />
+
+        <div class="headline-1">CARD BLOG COLUMN</div>
+        <div class="grid grid-cols-12 gap-4 xl:gap-8 md:gap-6">
+            <JCardBlog class="col-span-6 card-blog-xl" :item="post" />
+            <JCardBlog class="col-span-5 card-blog-lg" :item="post" />
+            <JCardBlog class="col-span-4" :item="post" />
+            <JCardBlog class="col-span-3 card-blog-sm" :item="post" />
+        </div>
+
+        <div class="headline-1">CARD BLOG ROW</div>
+        <div class="grid grid-cols-12 gap-4 xl:gap-8 md:gap-6">
+            <JCardBlog class="col-span-12 card-blog-row card-blog-xl" :item="post" />
+            <JCardBlog class="col-span-10 card-blog-row card-blog-lg" :item="post" />
+            <JCardBlog class="col-span-8 card-blog-row" :item="post" />
+            <JCardBlog class="col-span-6 card-blog-row card-blog-sm" :item="post" />
+            <JCardBlog class="col-span-4 card-blog-row card-blog-xs" :item="post" />
+        </div>
+    </section>
+>>>>>>> main
 </template>
 
 <script>
