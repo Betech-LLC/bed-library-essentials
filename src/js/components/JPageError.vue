@@ -1,5 +1,5 @@
 <template>
-    <section class="error">
+    <section class="error error-col">
         <div class="error-body">
             <div class="error-status">
                 {{ status }}
@@ -30,7 +30,7 @@ export default {
         },
         title: {
             type: String,
-            default: 'KHÔNG TÌM THẤY TRANG',
+            default: 'Không tìm thấy trang',
         },
         description: {
             type: String,
@@ -45,32 +45,6 @@ export default {
             type: String,
             default: 'QUAY LẠI TRANG CHỦ',
         },
-    },
-    data() {
-        return {
-            types: [
-                {
-                    type: 'page',
-                    image: '../../images/error/image-page.webp',
-                },
-                {
-                    type: 'folder',
-                    image: '../../images/error/image-folder.webp',
-                },
-                {
-                    type: 'house',
-                    image: '../../images/error/image-house-location.webp',
-                },
-                {
-                    type: 'messenger',
-                    image: '../../images/error/image-no-messenger.webp',
-                },
-                {
-                    type: 'search',
-                    image: '../../images/error/image-not-found.webp',
-                },
-            ],
-        }
     },
 
     methods: {
