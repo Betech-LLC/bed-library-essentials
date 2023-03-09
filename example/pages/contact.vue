@@ -209,7 +209,7 @@ export default {
 
             rules: {
                 name: 'required',
-                phone: 'phone|required|min:10|max:10',
+                phone: 'phone|required',
                 email: 'required|email',
             },
         }
