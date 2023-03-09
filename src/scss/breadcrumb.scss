@@ -9,10 +9,11 @@
         &:last-child {
             @apply mr-0;
         }
-        svg,
-        .icon,
+        .icon {
+            @apply text-gray-700;
+        }
         .icon svg {
-            @apply text-gray-700 max-w-[0.375rem];
+            @apply max-w-[0.5rem];
         }
     }
 }
