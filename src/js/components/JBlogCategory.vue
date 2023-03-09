@@ -41,7 +41,7 @@
                                 class="max-lg:grid max-lg:grid-cols-2 max-md:grid-cols-1 max-lg:gap-[22px] max-md:gap-0 space-y-2 xl:space-y-4 md:space-y-3"
                             >
                                 <JCardBlog
-                                    v-for="(item, index) in top_posts"
+                                    v-for="(item, index) in top_views"
                                     :key="index"
                                     class="pb-4 border-b border-gray-200 card-blog-xs card-blog-row custom-image last:border-none last:pb-0 max-lg:border-none"
                                     :item="item"
