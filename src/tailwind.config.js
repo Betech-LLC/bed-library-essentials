@@ -388,17 +388,11 @@ module.exports = {
             colors: {
                 ...colors,
                 primary: {
-                    25: colors.blue[25],
                     50: colors.blue[50],
-                    100: colors.blue[100],
-                    200: colors.blue[200],
                     300: colors.blue[300],
-                    400: colors.blue[400],
                     DEFAULT: colors.blue[500],
                     dark: colors.blue[600],
                     darker: colors.blue[700],
-                    800: colors.blue[800],
-                    900: colors.blue[900],
                 },
             },
             boxShadow: {
