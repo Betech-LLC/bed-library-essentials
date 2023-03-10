@@ -64,8 +64,11 @@
             @apply xl:mt-4 md:mt-3;
         }
     }
-    .card-blog-body {
-        @apply max-md:mt-2;
+
+    &:not(.card-blog-mobile-row) {
+        .card-blog-body {
+            @apply max-md:mt-2;
+        }
     }
     &.card-blog-row {
         @apply md:grid-cols-10;
