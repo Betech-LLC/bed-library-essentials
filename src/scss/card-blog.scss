@@ -23,7 +23,7 @@
     @apply text-gray-900 line-clamp-2;
 
     a {
-        // @apply lg:hover:text-primary base-transition;
+        @apply lg:hover:text-primary base-transition;
     }
 }
 
