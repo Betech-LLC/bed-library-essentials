@@ -26,12 +26,18 @@
 
                 <div class="blog-category-body">
                     <div class="left">
-                        <JCardBlog
-                            v-for="(post, index) in posts_data"
-                            :key="index"
-                            class="card-item card-blog-md card-blog-row"
-                            :item="post"
-                        />
+                        <div class="card-items">
+                            <JCardBlog
+                                v-for="(post, index) in posts_data"
+                                :key="index"
+                                class="card-item card-blog-md card-blog-row"
+                                :item="post"
+                            />
+                        </div>
+
+                        <div class="blog-category-button">
+                            <button class="button-see-more">Xem thêm 16 bài viết</button>
+                        </div>
                     </div>
                     <div class="right">
                         <div class="top-view">
