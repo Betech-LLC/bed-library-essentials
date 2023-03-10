@@ -15,7 +15,9 @@
                 {{ button }}
             </a>
         </div>
-        <img src="../../images/error/image-page.webp" class="error-image" alt="Error" />
+        <slot>
+            <img src="../../images/error/image-page.webp" class="error-image" alt="Error" />
+        </slot>
     </section>
 </template>
 
