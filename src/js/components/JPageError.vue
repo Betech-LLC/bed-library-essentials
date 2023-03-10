@@ -11,9 +11,7 @@
                 {{ description }}
                 <a :href="`tel:${toNumber(phone)}`"> {{ phone }} </a>
             </p>
-            <a href="#" class="error-button">
-                {{ button }}
-            </a>
+            <JLink class="error-button" :href="link">{{ button }}</JLink>
         </div>
         <slot>
             <img src="../../images/error/image-page.webp" class="error-image" alt="Error" />
@@ -46,6 +44,10 @@ export default {
         button: {
             type: String,
             default: 'QUAY LẠI TRANG CHỦ',
+        },
+        link: {
+            type: String,
+            default: '/',
         },
     },
 
