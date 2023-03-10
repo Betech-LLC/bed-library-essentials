@@ -64,9 +64,9 @@ export default {
         errors: { default: () => {} },
     },
     computed: {
-        // isError() {
-        //     return this.errors.hasOwnProperty(this.field.name)
-        // },
+        isError() {
+            return this.errors.hasOwnProperty(this.field.name)
+        },
     },
     methods: {
         onChangeField(fieldValue) {
