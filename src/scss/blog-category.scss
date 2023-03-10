@@ -10,9 +10,9 @@
     @apply grid md:grid-cols-2 xl:pb-8	md:pb-6	pb-4 border-b border-gray-200 xl:gap-x-8 md:gap-x-6	max-md:gap-y-4;
 
     .right {
-        @apply xl:space-y-5	md:space-y-4	space-y-3;
+        @apply xl:space-y-5	md:space-y-4 space-y-3;
         .card-item {
-            @apply xl:pb-5 lg:pb-4 lg:border-b lg:border-gray-200  last:pb-0 last:border-none;
+            @apply xl:pb-5 lg:pb-4 lg:border-b lg:border-gray-200 last:pb-0 last:border-none;
         }
     }
 }
@@ -20,7 +20,7 @@
 .blog-category-body {
     @apply grid grid-cols-7 xl:mt-8	md:mt-6	mt-4 xl:gap-x-8	lg:gap-x-6	max-lg:gap-y-6 max-md:gap-y-4;
     .left {
-        @apply lg:col-span-5 col-span-full xl:space-y-8 md:space-y-6 space-y-4;
+        @apply lg:col-span-5 col-span-full xl:space-y-8 md:space-y-6  max-md:grid max-md:grid-cols-2 max-md:gap-2;
     }
     .right {
         @apply lg:col-span-2 col-span-full  xl:space-y-12 lg:space-y-8 space-y-6;

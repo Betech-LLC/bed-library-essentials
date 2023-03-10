@@ -18,7 +18,7 @@
                         <JCardBlog
                             v-for="(post, index) in top_posts.slice(1, 4)"
                             :key="index"
-                            class="card-item card-blog-sm card-blog-row card-blog-no-description"
+                            class="card-item card-blog-sm card-blog-row card-blog-no-description card-blog-mobile-row"
                             :item="post"
                         />
                     </div>
