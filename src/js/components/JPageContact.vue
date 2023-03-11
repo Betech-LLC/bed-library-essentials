@@ -60,11 +60,13 @@
                     </div>
 
                     <div class="flex justify-center my-4 col-span-full">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="w-full btn btn-primary btn-lg">Submit</button>
                     </div>
                 </JForm>
             </div>
-            <div class="flex-1"></div>
+            <div class="flex-1">
+                <div class="h-[800px]"></div>
+            </div>
         </div>
     </div>
 </template>
