@@ -3,7 +3,7 @@
         <template v-for="item in items">
             <template v-if="item.link">
                 <JLink :href="item.link" class="breadcrumb-item">
-                    <span> {{ item.title }}</span>
+                    {{ item.title }}
                 </JLink>
                 <span v-if="$slots.icon" class="icon">
                     <slot name="icon"></slot>
