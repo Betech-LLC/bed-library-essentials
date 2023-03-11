@@ -367,7 +367,11 @@ const colors = {
 }
 
 module.exports = {
-    content: ['./resources/Frontend/js/**/*.blade.php', './resources/Frontend/js/**/*.vue'],
+    content: [
+        './resources/Frontend/js/**/*.blade.php',
+        './resources/Frontend/js/**/*.vue',
+        './node_modules/@nhatkha1407/jam-library-essentials/src/components/**/*.vue',
+    ],
     theme: {
         screens: {
             sm: '640px',
