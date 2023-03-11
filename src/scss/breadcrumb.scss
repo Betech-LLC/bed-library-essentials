@@ -2,7 +2,7 @@
     @apply flex body-2 line-clamp-1;
     .breadcrumb-item {
         &:not(:last-child) {
-            @apply text-blue-700 hover:underline hover:opacity-70 duration-150;
+            @apply text-blue-700 hover:underline hover:opacity-80 duration-150;
         }
         &:last-child {
             @apply text-gray-900;
