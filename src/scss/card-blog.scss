@@ -18,7 +18,7 @@
 }
 
 .card-blog-date {
-    @apply label-2 text-gray-500 max-md:block mb-1;
+    @apply label-2 text-gray-500 max-md:block md:mb-1;
 }
 
 .card-blog-title {
@@ -55,6 +55,8 @@
     &:not(.card-blog-xl, .card-blog-lg, .card-blog-sm, .card-blog-xs) {
         .card-blog-title {
             @apply title-2;
+
+            line-height: 120%;
         }
     }
 }
@@ -69,7 +71,7 @@
 
     &:not(.card-blog-mobile-row) {
         .card-blog-body {
-            @apply max-md:mt-2;
+            @apply max-md:mt-1;
         }
     }
     &.card-blog-row {

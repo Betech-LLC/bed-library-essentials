@@ -35,7 +35,7 @@
         @apply lg:col-span-5 col-span-full;
 
         .card-items {
-            @apply xl:space-y-8 md:space-y-6  max-md:grid max-md:grid-cols-2 max-md:gap-2;
+            @apply xl:space-y-8 md:space-y-6  max-md:grid max-md:grid-cols-2 max-md:gap-x-2 max-md:gap-y-3;
         }
     }
     .right {
