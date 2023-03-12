@@ -1,0 +1,50 @@
+.error {
+    @apply flex flex-col-reverse lg:flex-row items-center justify-between container text-center lg:text-left;
+
+    &.error-col {
+        @apply flex-col-reverse text-center;
+    }
+}
+
+.error-body {
+    @apply w-full md:w-10/12 lg:w-5/12;
+}
+
+.error-status {
+    @apply title-3 text-blue-700 mb-3 max-lg:hidden;
+}
+
+.error-title {
+    @apply headline-1 text-gray-700 mb-4 lg:mb-6;
+}
+
+.error-description {
+    @apply body-1  text-gray-700 mb-5 md:mb-8 lg:mb-12;
+    a {
+        @apply label-1  text-blue-600;
+    }
+}
+
+.error-button {
+    @apply btn btn-primary btn-xl label-1;
+}
+
+.error-col .error-status {
+    @apply hidden;
+}
+.error-col .error-image {
+    @apply mb-4 lg:mb-6;
+}
+.error-col .error-title {
+    @apply mb-1 md:mb-2 lg:mb-3;
+}
+.error-image {
+    @apply max-lg:mb-4;
+    width: 480px;
+}
+
+@screen md {
+    .error-image {
+        width: 480px;
+    }
+}

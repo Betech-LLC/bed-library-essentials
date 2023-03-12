@@ -1,0 +1,45 @@
+:root {
+    --banner-height: 0.75;
+}
+
+@screen md {
+    :root {
+        --banner-height: 0.825;
+    }
+}
+@screen lg {
+    :root {
+        --banner-height: 1;
+    }
+}
+
+.banner {
+    &.banner-sm {
+        .banner-image {
+            height: calc(240px * var(--banner-height));
+        }
+    }
+    &.banner-lg {
+        .banner-image {
+            height: calc(400px * var(--banner-height));
+        }
+    }
+    &.banner-xl {
+        .banner-image {
+            height: calc(540px * var(--banner-height));
+        }
+    }
+
+    &:not(.banner-sm, .banner-lg, .banner-xl) {
+        .banner-image {
+            height: calc(360px * var(--banner-height));
+        }
+    }
+}
+
+.banner-image {
+    @apply relative;
+    picture {
+        @apply absolute h-full -z-10;
+    }
+}
