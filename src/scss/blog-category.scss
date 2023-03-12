@@ -9,10 +9,22 @@
 .blog-category-top-posts {
     @apply grid md:grid-cols-2 xl:pb-8	md:pb-6	pb-4 border-b border-gray-200 xl:gap-x-8 md:gap-x-6	max-md:gap-y-4;
 
-    .right {
-        @apply xl:space-y-5	md:space-y-4 space-y-3;
+    .left {
         .card-item {
-            @apply xl:pb-5 lg:pb-4 lg:border-b lg:border-gray-200 last:pb-0 last:border-none;
+            .card-blog-description {
+                display: -webkit-box;
+                @apply line-clamp-3;
+            }
+        }
+    }
+
+    .right {
+        @apply xl:space-y-5	md:space-y-4 space-y-3 max-md:p-3 max-md:rounded max-md:bg-gray-100;
+        .card-item {
+            @apply xl:pb-5 md:pb-4 pb-3 border-b border-gray-200 last:pb-0 last:border-none max-md:grid-cols-none;
+            .card-blog-image {
+                @apply max-md:hidden;
+            }
         }
     }
 }

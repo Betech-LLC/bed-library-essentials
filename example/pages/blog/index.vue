@@ -361,11 +361,11 @@ export default {
             top_posts: [
                 {
                     id: 191,
-                    title: 'Dolorem non.',
+                    title: 'Những điều bạn cần biết về tối ưu nội dung SEO trong năm 2023',
                     slug: 'dolorem-non',
                     published_at: '2023-03-08',
                     description:
-                        'Explicabo reprehenderit temporibus nihil velit qui omnis amet. Vel id consequatur facilis sint unde. Aut officiis natus quia quia nisi similique. Voluptates est culpa dolore aut.',
+                        'Sự ra đời của ChatGPT đang gây bão trong khoảng thời gian gần đây chắc chắn sẽ gây ảnh hưởng không nhỏ đến hoạt động của các chỉ số danh giá SEO.',
                     category: {
                         id: 4,
                         title: 'Dolorem cumque.',
@@ -397,7 +397,7 @@ export default {
                 },
                 {
                     id: 162,
-                    title: 'Inventore id ad.',
+                    title: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack3',
                     slug: 'inventore-id-ad',
                     published_at: '2023-03-08',
                     description:
@@ -425,7 +425,7 @@ export default {
                 },
                 {
                     id: 117,
-                    title: 'Officiis.',
+                    title: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack3',
                     slug: 'officiis',
                     published_at: '2023-03-08',
                     description:
@@ -461,7 +461,7 @@ export default {
                 },
                 {
                     id: 102,
-                    title: 'Voluptas est maiores.',
+                    title: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack3',
                     slug: 'voluptas-est-maiores',
                     published_at: '2023-03-08',
                     description:
