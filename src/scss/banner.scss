@@ -1,38 +1,38 @@
 :root {
-    --height-banner: 0.75;
+    --banner-height: 0.75;
 }
 
 @screen md {
     :root {
-        --height-banner: 0.825;
+        --banner-height: 0.825;
     }
 }
 @screen lg {
     :root {
-        --height-banner: 1;
+        --banner-height: 1;
     }
 }
 
 .banner {
     &.banner-sm {
         .banner-image {
-            height: calc(240px * var(--height-banner));
+            height: calc(240px * var(--banner-height));
         }
     }
     &.banner-lg {
         .banner-image {
-            height: calc(400px * var(--height-banner));
+            height: calc(400px * var(--banner-height));
         }
     }
     &.banner-xl {
         .banner-image {
-            height: calc(540px * var(--height-banner));
+            height: calc(540px * var(--banner-height));
         }
     }
 
     &:not(.banner-sm, .banner-lg, .banner-xl) {
         .banner-image {
-            height: calc(360px * var(--height-banner));
+            height: calc(360px * var(--banner-height));
         }
     }
 }
@@ -42,12 +42,4 @@
     picture {
         @apply absolute h-full -z-10;
     }
-}
-
-.banner-body {
-    @apply container pt-8;
-}
-
-.banner-title {
-    @apply mt-6 text-white display-2;
 }

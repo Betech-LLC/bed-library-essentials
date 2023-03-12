@@ -1,6 +1,7 @@
 <template>
-    <JBlogCategory
+    <JPageBlogCategory
         :bannerTop="bannerTop"
+        :breadcrumb="breadcrumb"
         :top_posts="top_posts"
         :top_views="top_views"
         :posts_data="posts_data"
@@ -12,6 +13,15 @@
 export default {
     data() {
         return {
+            breadcrumb: [
+                {
+                    title: 'Trang chủ',
+                    link: '/',
+                },
+                {
+                    title: 'Tin tức',
+                },
+            ],
             posts_data: [
                 {
                     id: 85,

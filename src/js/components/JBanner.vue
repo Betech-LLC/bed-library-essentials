@@ -1,7 +1,13 @@
 <template>
     <section class="banner">
         <div class="banner-image">
-            <JPicture :src="image.url" :alt="image.alt" loading="eager" wrapperClass="picture-cover" />
+            <JPicture
+                :src="item.image?.url || item.image_url"
+                :mobileSrc="item.image_mobile?.url || item.image_mobile_url"
+                :alt="item.image?.alt || item.alt || item.title"
+                loading="eager"
+                wrapperClass="picture-cover"
+            />
             <slot />
         </div>
     </section>
@@ -11,7 +17,7 @@ import JPicture from '@core/components/JPicture.vue'
 export default {
     components: { JPicture },
     props: {
-        image: {
+        item: {
             type: Object,
             default: () => {
                 return {}

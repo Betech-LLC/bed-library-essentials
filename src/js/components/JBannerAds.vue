@@ -2,7 +2,7 @@
     <a class="banner-ads" v-if="item" :href="item.link" :target="item.target || '_blank'">
         <JPicture
             wrapperClass="picture-contain"
-            :src="item.image?.url || item.image_url || '/placeholder.png'"
+            :src="item.image?.url || item.image_url"
             :mobileSrc="item.image_mobile?.url || item.image_mobile_url"
             :alt="item.image?.alt || item.alt || item.title"
         />

@@ -1,9 +1,13 @@
 <template>
     <main>
-        <JBanner class="banner-sm" v-if="bannerTop && bannerTop.image" :image="bannerTop.image">
-            <div class="banner-body">
-                <div>Breadcrumb</div>
-                <h1 class="banner-title">Tin tức</h1>
+        <JBanner class="banner-sm" v-if="bannerTop" :item="bannerTop">
+            <div class="blog-category-banner-body">
+                <JBreadcrumb :items="breadcrumb">
+                    <template #icon>
+                        <JIconArrowRight />
+                    </template>
+                </JBreadcrumb>
+                <h1 class="blog-category-banner-title">Tin tức</h1>
             </div>
         </JBanner>
 
@@ -36,11 +40,11 @@
                         </div>
 
                         <div class="blog-category-button">
-                            <button class="button-see-more">Xem thêm 16 bài viết</button>
+                            <button class="btn-see-more">Xem thêm 16 bài viết</button>
                         </div>
                     </div>
                     <div class="right">
-                        <div class="top-view">
+                        <div class="blog-category-top-view">
                             <h2 class="title">Lượt xem nhiều nhất</h2>
                             <div class="body">
                                 <JCardBlog
@@ -52,7 +56,7 @@
                             </div>
                         </div>
 
-                        <div class="banner-ads-wrap">
+                        <div v-if="banner" class="banner-ads-wrap">
                             <JBannerAds :item="banner" />
                         </div>
                     </div>
@@ -69,6 +73,6 @@ import JBannerAds from '@core/components/JBannerAds.vue'
 
 export default {
     components: { JBanner, JCardBlog, JBannerAds },
-    props: ['bannerTop', 'banner', 'top_posts', 'top_views', 'posts_data'],
+    props: ['bannerTop', 'breadcrumb', 'banner', 'top_posts', 'top_views', 'posts_data'],
 }
 </script>
