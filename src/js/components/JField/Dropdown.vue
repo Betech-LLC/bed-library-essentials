@@ -1,6 +1,6 @@
 <template>
     <input
-        class="input"
+        class="input dropdown"
         :id="field.name"
         :name="field.name"
         @input="onInput"
