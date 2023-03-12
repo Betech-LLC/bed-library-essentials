@@ -29,6 +29,12 @@
                 @update:modelValue="onChangeField"
             />
 
+            <JFieldDropdown
+                v-if="field.type === 'dropdown'"
+                :field="field"
+                :modelValue="form[field.name]"
+                @update:modelValue="onChangeField"
+            />
             <JFieldTextarea
                 v-if="field.type === 'textarea'"
                 :field="field"

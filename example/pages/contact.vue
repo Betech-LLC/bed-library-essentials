@@ -40,13 +40,30 @@
                 <JForm v-model="user_2" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
-                            type: 'text',
-                            name: 'name',
-                            label: 'Họ và tên',
+                            type: 'dropdown',
+                            name: 'options_name',
+                            label: 'Select team member',
                             help: 'This is a hint text to help user.',
                         }"
+                        class="z-50"
                     >
-                        <template #suffix> <JIconHelp /> </template>
+                        <template #suffix>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="8"
+                                viewBox="0 0 12 8"
+                                fill="none"
+                            >
+                                <path
+                                    d="M1 1.5L6 6.5L11 1.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.66667"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </template>
                     </JFormField>
                     <JFormField
                         :field="{
