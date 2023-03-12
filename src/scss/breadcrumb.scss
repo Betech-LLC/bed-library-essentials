@@ -1,22 +1,17 @@
 .breadcrumb {
-  @apply flex overflow-x-auto whitespace-pre body-2 py-1 text-blue-500;
-}
-
-.breadcrumb-item {
-  + .breadcrumb-item {
-    @apply pl-2;
-
-    &::before {
-      @apply float-left pr-2 text-gray-700;
-      content: "/";
+    @apply flex body-2 line-clamp-1;
+    .breadcrumb-item {
+        &:not(:last-child) {
+            @apply text-blue-700 hover:underline hover:opacity-80 duration-150;
+        }
+        &:last-child {
+            @apply text-gray-900;
+        }
     }
-  }
-
-  &:last-child {
-    @apply text-gray-700 pointer-events-none;
-  }
-
-  &:not(:last-child) {
-    @apply link;
-  }
+    .icon {
+        @apply text-gray-700 mx-2 max-w-fit;
+    }
+    .icon svg {
+        @apply max-w-[0.5rem] inline;
+    }
 }

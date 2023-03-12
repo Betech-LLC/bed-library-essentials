@@ -28,7 +28,7 @@
                             label: 'Số điện thoại',
                         }"
                     >
-                        <template #prefix> <JIconPhone /> </template>
+                        <template #prefix> <JIconMobilePhone /> </template>
                         ></JFormField
                     >
                     <div class="flex justify-center my-4 col-span-full">
@@ -67,7 +67,7 @@
                             help: 'This is a hint text to help user.',
                         }"
                     >
-                        <template #prefix> <JIconPhone /> </template>
+                        <template #prefix> <JIconMobilePhone /> </template>
                         <template #suffix> <JIconHelp /> </template
                     ></JFormField>
                 </JForm>
@@ -100,7 +100,7 @@
                             name: 'phone',
                         }"
                     >
-                        <template #prefix> <JIconPhone /> </template>
+                        <template #prefix> <JIconMobilePhone /> </template>
                         <template #suffix> <JIconHelp /> </template
                     ></JFormField>
                 </JForm>
@@ -136,7 +136,7 @@
                         }"
                         :disabled="true"
                     >
-                        <template #prefix> <JIconPhone /> </template>
+                        <template #prefix> <JIconMobilePhone /> </template>
                         <template #suffix> <JIconHelp /> </template
                     ></JFormField>
                 </JForm>
