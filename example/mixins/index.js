@@ -5,5 +5,4 @@ const mixinContact = {
         },
     },
 }
-
 export { mixinContact }
