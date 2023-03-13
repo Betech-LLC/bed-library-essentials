@@ -12,7 +12,7 @@
             v-bind="{ ...$attrs }"
         />
         <!-- Dropdown menu -->
-        <div v-show="isFocus" class="dropdown-wrapper">
+        <div v-show="isShow" class="dropdown-wrapper">
             <ul class="dropdown-menu max-h-[320px] overflow-y-auto">
                 <li
                     v-for="option in field.options"
@@ -55,18 +55,18 @@ export default {
         document.removeEventListener('click', this.onClickOutSide)
     },
     data() {
-        return { isFocus: false }
+        return { isShow: false }
     },
     methods: {
         onToggle() {
-            this.isFocus = !this.isFocus
+            this.isShow = !this.isShow
         },
         onSelect(value) {
             this.$emit('update:modelValue', value)
-            this.isFocus = false
+            this.isShow = false
         },
         onClickOutSide() {
-            this.isFocus = false
+            this.isShow = false
         },
     },
 }
