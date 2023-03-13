@@ -5,7 +5,7 @@
             :id="field.name"
             :name="field.name"
             type="text"
-            :value="labelActive"
+            :value="selectedOption"
             autocomplete="off"
             :readonly="true"
             @focus="isFocus = true"
@@ -22,7 +22,6 @@
                     :class="{ active: modelValue === option[keyBy] }"
                 >
                     {{ option[labelBy] }}
-                    <JIconTick v-if="modelValue === option[keyBy]" class="text-blue-600" />
                 </li>
             </ul>
         </div>
@@ -40,11 +39,11 @@ export default {
         labelBy() {
             return this.field.labelBy || 'name'
         },
-        labelActive() {
+        selectedOption() {
             const option = this.field.options.find((o) => {
                 return this.modelValue === o[this.keyBy]
             })
-            return option && option[this.labelBy]
+            return option ? option[this.labelBy] : null
         },
         fieldPlaceholder() {
             return this.field.placeholder || `Chọn ${this.field.label.toLowerCase()}`
