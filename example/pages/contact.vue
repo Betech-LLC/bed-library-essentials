@@ -9,7 +9,6 @@
                             type: 'dropdown',
                             name: 'member',
                             placeholder: 'Select team member',
-                            help: 'This is a hint text to help user.',
                             options: members,
                         }"
                         class="z-100"
