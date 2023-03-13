@@ -14,14 +14,6 @@ fieldset {
         /* DROPDOWN*/
         .input.dropdown {
             @apply cursor-pointer;
-            // + .dropdown-menu {
-            //     @apply hidden;
-            // }
-            // &:focus {
-            //     + .dropdown-menu {
-            //         @apply block;
-            //     }
-            // }
         }
 
         .suffix,
