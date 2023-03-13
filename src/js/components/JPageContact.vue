@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container pt-8 pb-12 md:pt-11 xl:pt-16 md:pb-16 xl:pb-24">
         <div class="flex flex-col lg:flex-row lg:space-x-10 xl:space-x-16">
             <div class="flex-1">
                 <div class="mb-6 md:mb-8 xl:mb-12">
@@ -61,7 +61,7 @@
                     </div>
                 </JForm>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 mt-4 lg:mt-0">
                 <template v-if="$slots.banner">
                     <slot name="banner" />
                 </template>

@@ -1,5 +1,5 @@
 <template>
     <main>
-        <JPageContact title="Nhando" />
+        <JPageContact title="JAMstack Vietnam" />
     </main>
 </template>
