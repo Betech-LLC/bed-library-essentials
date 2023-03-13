@@ -1,13 +1,13 @@
 <template>
     <div @click="$event.stopPropagation()" class="dropdown">
         <input
+            type="text"
             class="input"
+            :readonly="true"
             :id="field.name"
             :name="field.name"
-            type="text"
+            @focus="onToggle"
             :value="selectedOption"
-            :readonly="true"
-            @focus="isFocus = true"
             :placeholder="fieldPlaceholder"
             v-bind="{ ...$attrs }"
         />
@@ -58,6 +58,9 @@ export default {
         return { isFocus: false }
     },
     methods: {
+        onToggle() {
+            this.isFocus = !this.isFocus
+        },
         onSelect(value) {
             this.$emit('update:modelValue', value)
             this.isFocus = false
