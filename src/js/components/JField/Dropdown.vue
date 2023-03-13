@@ -16,7 +16,7 @@
                     class="dropdown-item"
                     v-for="option in field.options"
                     @click="onSelect(option[keyBy])"
-                    :class="{ active: modelValue?.toString() === option[keyBy]?.toString() }"
+                    :class="{ active: modelValue && modelValue.toString() === option[keyBy].toString() }"
                 >
                     {{ option[labelBy] }}
                 </li>
