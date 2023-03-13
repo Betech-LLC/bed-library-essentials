@@ -20,7 +20,15 @@
         @apply bg-gray-200 rounded-lg;
     }
     .jam-menu-item {
-        @apply block px-3.5 py-2.5 cursor-pointer text-gray-900 hover:bg-gray-50 duration-150;
+        @apply flex items-center px-3.5 py-2.5 cursor-pointer text-gray-900 hover:bg-gray-50 duration-150;
+        &.active {
+            @apply bg-gray-50;
+        }
+        * {
+            &:last-child {
+                @apply ml-auto;
+            }
+        }
     }
 }
 </style>

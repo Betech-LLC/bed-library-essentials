@@ -15,7 +15,14 @@
         <!-- Dropdown menu -->
         <div v-show="isFocus" class="dropdown-menu">
             <JMenu class="max-h-[320px] overflow-y-auto">
-                <JMenuItem v-for="option in field.options" @click="onSelect(option.name)"> {{ option.name }}</JMenuItem>
+                <JMenuItem
+                    v-for="option in field.options"
+                    @click="onSelect(option.name)"
+                    :isActive="modelValue === option.name"
+                >
+                    {{ option.name }}
+                    <JIconTick v-if="modelValue === option.name" class="text-blue-600" />
+                </JMenuItem>
             </JMenu>
         </div>
     </div>
@@ -36,11 +43,9 @@ export default {
     unmounted() {
         document.removeEventListener('click', this.onClickOutSide)
     },
-
     data() {
         return { isFocus: false }
     },
-
     methods: {
         onSelect(value) {
             this.$emit('update:modelValue', value)
