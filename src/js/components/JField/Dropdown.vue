@@ -6,7 +6,6 @@
             :name="field.name"
             type="text"
             :value="selectedOption"
-            autocomplete="off"
             :readonly="true"
             @focus="isFocus = true"
             :placeholder="fieldPlaceholder"
