@@ -6,7 +6,7 @@
             :readonly="true"
             :id="field.name"
             :name="field.name"
-            @focus="onToggle"
+            @click="onToggle"
             :value="selectedOption"
             :placeholder="fieldPlaceholder"
             v-bind="{ ...$attrs }"
