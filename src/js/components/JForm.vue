@@ -40,10 +40,10 @@ export default {
         },
     },
     methods: {
-        submit() {
+        async submit() {
             const isValidForm = this.validateForm()
             if (!isValidForm) return
-            this.submitForm(this.form)
+            await this.submitForm(this.form)
             this.resetForm()
         },
         resetForm() {
