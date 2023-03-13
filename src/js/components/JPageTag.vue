@@ -15,7 +15,9 @@
         </section>
 
         <section class="tag-page-body">
-            <div class="tag-page-title">Bài viết</div>
+            <div class="tag-page-title">
+                <slot name="title"> Bài viết </slot>
+            </div>
             <div class="tag-page-wrap">
                 <div class="left">
                     <div class="card-items">
@@ -28,7 +30,9 @@
                     </div>
 
                     <div class="tag-page-button">
-                        <button class="btn-see-more">Xem thêm 16 bài viết</button>
+                        <button class="btn-see-more">
+                            <slot name="button"> Xem thêm 16 bài viết </slot>
+                        </button>
                     </div>
                 </div>
 
