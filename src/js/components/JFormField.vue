@@ -23,14 +23,20 @@
             />
 
             <JFieldPhone
-                v-if="field.type === 'number'"
+                v-else-if="field.type === 'number'"
                 :field="field"
                 :modelValue="form[field.name]"
                 @update:modelValue="onChangeField"
             />
 
+            <JFieldDropdown
+                v-else-if="field.type === 'dropdown'"
+                :field="field"
+                :modelValue="form[field.name]"
+                @update:modelValue="onChangeField"
+            />
             <JFieldTextarea
-                v-if="field.type === 'textarea'"
+                v-else-if="field.type === 'textarea'"
                 :field="field"
                 :modelValue="form[field.name]"
                 @update:modelValue="onChangeField"

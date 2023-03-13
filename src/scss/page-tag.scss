@@ -1,0 +1,46 @@
+.tag-page-banner {
+    @apply border-b border-gray-300;
+    .content {
+        @apply container xl:py-3 md:py-2 py-1.5 xl:space-y-6 md:space-y-4 space-y-3;
+        .head {
+            @apply flex items-center xl:space-x-4 md:space-x-3 space-x-2;
+            .icon {
+                @apply bg-primary-100 rounded-full xl:p-2.5 md:p-2 p-1.5;
+                svg {
+                    @apply xl:w-5 xl:h-5 w-4 h-4 text-primary-dark;
+                }
+            }
+            .title {
+                @apply text-gray-900 title-1;
+            }
+        }
+    }
+}
+
+.tag-page-body {
+    @apply container xl:pt-8 md:pt-6 pt-4 xl:pb-16	md:pb-11 pb-8;
+}
+
+.tag-page-wrap {
+    @apply grid grid-cols-7;
+    .left {
+        @apply lg:col-span-5 col-span-full;
+        .card-items {
+            @apply xl:space-y-8 md:space-y-6  max-md:grid max-md:grid-cols-2 max-md:gap-x-2 max-md:gap-y-3;
+        }
+    }
+    .right {
+        @apply lg:col-span-2 col-span-full max-lg:hidden;
+        .banner-ads {
+            @apply sticky top-0;
+        }
+    }
+}
+
+.tag-page-button {
+    @apply md:mt-6 mt-4 flex justify-center;
+
+    .btn-see-more {
+        @apply btn btn-md;
+    }
+}
