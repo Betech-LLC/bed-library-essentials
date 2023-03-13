@@ -10,6 +10,7 @@
                             name: 'member',
                             label: 'Select team member',
                             help: 'This is a hint text to help user.',
+                            options: members,
                         }"
                         class="z-100"
                     >
@@ -227,6 +228,40 @@ export default {
     data() {
         return {
             team: { member: null },
+            members: [
+                {
+                    id: 1,
+                    name: 'Phoenix Baker 1',
+                },
+                {
+                    id: 2,
+                    name: 'Phoenix Baker 2',
+                },
+                {
+                    id: 3,
+                    name: 'Phoenix Baker 3',
+                },
+                {
+                    id: 4,
+                    name: 'Phoenix Baker 4',
+                },
+                {
+                    id: 5,
+                    name: 'Phoenix Baker 5',
+                },
+                {
+                    id: 6,
+                    name: 'Phoenix Baker 6',
+                },
+                {
+                    id: 7,
+                    name: 'Phoenix Baker 7',
+                },
+                {
+                    id: 8,
+                    name: 'Phoenix Baker 8',
+                },
+            ],
             user: {
                 name: null,
                 phone: null,

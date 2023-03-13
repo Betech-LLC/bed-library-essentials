@@ -15,14 +15,7 @@
         <!-- Dropdown menu -->
         <div v-show="isFocus" class="dropdown-menu">
             <JMenu class="max-h-[320px] overflow-y-auto">
-                <JMenuItem @click="onSelect('Phoenix Baker 1')"> Phoenix Baker 1</JMenuItem>
-                <JMenuItem @click="onSelect('Phoenix Baker 2')"> Phoenix Baker 2</JMenuItem>
-                <JMenuItem @click="onSelect('Phoenix Baker 3')">Phoenix Baker 3</JMenuItem>
-                <JMenuItem @click="onSelect('Phoenix Baker 4')"> Phoenix Baker 4</JMenuItem>
-                <JMenuItem @click="onSelect('Phoenix Baker 5')"> Phoenix Baker 5</JMenuItem>
-                <JMenuItem @click="onSelect('Phoenix Baker 6')"> Phoenix Baker 6</JMenuItem>
-                <JMenuItem @click="onSelect('Phoenix Baker 7')"> Phoenix Baker 7</JMenuItem>
-                <JMenuItem @click="onSelect('Phoenix Baker 8')"> Phoenix Baker 8</JMenuItem>
+                <JMenuItem v-for="option in field.options" @click="onSelect(option.name)"> {{ option.name }}</JMenuItem>
             </JMenu>
         </div>
     </div>
