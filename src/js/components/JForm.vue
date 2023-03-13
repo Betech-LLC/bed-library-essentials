@@ -26,7 +26,6 @@ export default {
             errors: reactive(this.errors),
         }
     },
-
     mixins: [mixinContact],
     data() {
         return { form: this.modelValue, errors: {} }
