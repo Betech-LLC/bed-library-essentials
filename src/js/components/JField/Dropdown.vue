@@ -13,12 +13,12 @@
         />
         <!-- Dropdown menu -->
         <div v-show="isShow" class="dropdown-wrapper">
-            <ul class="dropdown-menu max-h-[320px] overflow-y-auto">
+            <ul class="dropdown-items max-h-[320px] overflow-y-auto">
                 <li
                     v-for="option in field.options"
                     @click="onSelect(option[keyBy])"
-                    class="dropdown-menu-item"
-                    :class="{ active: modelValue === option[keyBy] }"
+                    class="dropdown-item"
+                    :class="{ active: modelValue.toString() === option[keyBy].toString() }"
                 >
                     {{ option[labelBy] }}
                 </li>
@@ -39,8 +39,8 @@ export default {
             return this.field.labelBy || 'name'
         },
         selectedOption() {
-            const option = this.field.options.find((o) => {
-                return this.modelValue === o[this.keyBy]
+            const option = this.field.options.find((option) => {
+                return this.modelValue === option[this.keyBy]
             })
             return option ? option[this.labelBy] : null
         },

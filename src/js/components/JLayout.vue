@@ -510,7 +510,7 @@ export default {
                 name: null,
                 phone: null,
                 email: null,
-                options_name: null,
+
             },
 
             user_3: {
