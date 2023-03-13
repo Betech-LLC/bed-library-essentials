@@ -61,7 +61,7 @@ fieldset {
     }
 
     .dropdown-menu {
-        @apply absolute left-0 z-20 w-full translate-y-full bottom-[-4px] bg-white rounded-lg border border-gray-100 py-1 pr-1;
+        @apply absolute left-0 z-20 w-full translate-y-full bottom-[-4px] bg-white rounded-lg border border-gray-100 py-1 pr-1 shadow-lg;
     }
 }
 
