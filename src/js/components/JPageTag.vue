@@ -8,7 +8,7 @@
                     </template>
                 </JBreadcrumb>
                 <div class="head">
-                    <JIconHash />
+                    <JIconHash class="icon" />
                     <h1 class="title">{{ tag.title }}</h1>
                 </div>
             </div>
