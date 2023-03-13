@@ -31,6 +31,7 @@ export default defineNuxtConfig({
         '@core/components': libraryDir + '/js/components',
         '@core': libraryDir + '/src',
         '@framework/components': __dirname + '/components',
+        '@framework/mixins': __dirname + '/mixins',
     },
 
     vite: {

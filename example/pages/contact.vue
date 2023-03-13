@@ -190,13 +190,11 @@ export default {
                 phone: null,
                 email: null,
             },
-
             user_2: {
                 name: null,
                 phone: null,
                 email: null,
             },
-
             user_3: {
                 name: null,
                 phone: null,
