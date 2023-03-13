@@ -9,7 +9,6 @@
             @click="onToggle"
             :value="selectedOption"
             :placeholder="fieldPlaceholder"
-            v-bind="{ ...$attrs }"
         />
         <!-- Dropdown menu -->
         <div v-show="isShow" class="dropdown-wrapper">
@@ -18,7 +17,7 @@
                     v-for="option in field.options"
                     @click="onSelect(option[keyBy])"
                     class="dropdown-item"
-                    :class="{ active: modelValue.toString() === option[keyBy].toString() }"
+                    :class="{ active: modelValue?.toString() === option[keyBy]?.toString() }"
                 >
                     {{ option[labelBy] }}
                 </li>
