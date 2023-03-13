@@ -10,13 +10,12 @@
             :value="selectedOption"
             :placeholder="fieldPlaceholder"
         />
-        <!-- Dropdown menu -->
-        <div v-show="isShow" class="dropdown-wrapper">
+        <div v-show="isShow" class="dropdown-content">
             <ul class="dropdown-items max-h-[320px] overflow-y-auto">
                 <li
+                    class="dropdown-item"
                     v-for="option in field.options"
                     @click="onSelect(option[keyBy])"
-                    class="dropdown-item"
                     :class="{ active: modelValue?.toString() === option[keyBy]?.toString() }"
                 >
                     {{ option[labelBy] }}
@@ -48,10 +47,10 @@ export default {
         },
     },
     mounted() {
-        document.addEventListener('click', this.onClickOutSide)
+        document.addEventListener('click', this.closeMenuDropdown)
     },
     unmounted() {
-        document.removeEventListener('click', this.onClickOutSide)
+        document.removeEventListener('click', this.closeMenuDropdown)
     },
     data() {
         return { isShow: false }
@@ -64,7 +63,7 @@ export default {
             this.$emit('update:modelValue', value)
             this.isShow = false
         },
-        onClickOutSide() {
+        closeMenuDropdown() {
             this.isShow = false
         },
     },
