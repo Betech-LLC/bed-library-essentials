@@ -6,8 +6,8 @@
                     <h1 class="mb-2.5 md:mb-3.5 xl:mb-5 display-3">Kết nối với {{ title }}</h1>
                     <p>Chúng tôi sẵn sàng ghi nhận đóng góp và cung cấp dịch vụ tốt nhất đến khách hàng.</p>
                 </div>
-                <JForm v-model="form" :rules="rules" class="grid grid-cols-2 md:gap-x-6 xl:gap-x-8 gap-y-4 xl:gap-y-6">
-                    <div class="md:col-span-1 col-span-full">
+                <JForm v-model="form" :rules="rules">
+                    <div class="grid grid-cols-2 md:gap-x-6 xl:gap-x-8 gap-y-4 xl:gap-y-6">
                         <JFormField
                             :field="{
                                 type: 'text',
@@ -15,10 +15,8 @@
                                 label: 'Tên *',
                                 placeholder: 'Nhập tên của bạn',
                             }"
+                            class="md:col-span-1 col-span-full"
                         />
-                    </div>
-
-                    <div class="md:col-span-1 col-span-full">
                         <JFormField
                             :field="{
                                 type: 'text',
@@ -26,10 +24,8 @@
                                 label: 'Họ *',
                                 placeholder: 'Nhập họ của bạn',
                             }"
+                            class="md:col-span-1 col-span-full"
                         />
-                    </div>
-
-                    <div class="col-span-full">
                         <JFormField
                             :field="{
                                 type: 'email',
@@ -37,9 +33,8 @@
                                 label: 'Email *',
                                 placeholder: 'Nhập email',
                             }"
+                            class="col-span-full"
                         />
-                    </div>
-                    <div class="col-span-full">
                         <JFormField
                             :field="{
                                 type: 'number',
@@ -47,9 +42,8 @@
                                 label: 'Số điện thoại *',
                                 placeholder: 'Nhập số điện thoại',
                             }"
+                            class="col-span-full"
                         />
-                    </div>
-                    <div class="col-span-full">
                         <JFormField
                             :field="{
                                 type: 'textarea',
@@ -58,10 +52,11 @@
                                 label: 'Lời nhắn',
                                 placeholder: 'Nhập nội dung cần hỗ trợ',
                             }"
+                            class="col-span-full"
                         />
                     </div>
 
-                    <div class="flex justify-center my-4 col-span-full">
+                    <div class="mt-4 md:mt-6 xl:mt-8">
                         <button type="submit" class="w-full btn btn-primary btn-lg">Submit</button>
                     </div>
                 </JForm>
