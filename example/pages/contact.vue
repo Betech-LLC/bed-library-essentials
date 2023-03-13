@@ -3,7 +3,7 @@
         <div class="container pt-16">
             <div class="px-4 py-10 m-auto bg-white border border-blue-300 border-dashed rounded">
                 <!-- DROPDOWN -->
-                <JForm v-model="team" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <JForm v-model="team" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
                             type: 'dropdown',
@@ -13,25 +13,7 @@
                             options: members,
                         }"
                         class="z-100"
-                    >
-                        <template #suffix>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="12"
-                                height="8"
-                                viewBox="0 0 12 8"
-                                fill="none"
-                            >
-                                <path
-                                    d="M1 1.5L6 6.5L11 1.5"
-                                    stroke="currentColor"
-                                    stroke-width="1.66667"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </template>
-                    </JFormField>
+                    />
                 </JForm>
 
                 <!-- ROW 1 -->
