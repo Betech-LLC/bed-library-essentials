@@ -1,7 +1,7 @@
 <template>
     <main class="">
         <div class="py-10">
-            <JPageContact />
+            <JPageContact title="RangDong" />
         </div>
 
         <div class="bg-gray-100">
