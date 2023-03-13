@@ -8,16 +8,15 @@
                     </template>
                 </JBreadcrumb>
                 <div class="head">
-                    <JIconHash class="icon" />
+                    <div class="icon">
+                        <JIconHash />
+                    </div>
                     <h1 class="title">{{ tag.title }}</h1>
                 </div>
             </div>
         </section>
 
         <section class="tag-page-body">
-            <div class="tag-page-title">
-                <slot name="title"> Bài viết </slot>
-            </div>
             <div class="tag-page-wrap">
                 <div class="left">
                     <div class="card-items">

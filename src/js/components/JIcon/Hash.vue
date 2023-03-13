@@ -1,9 +1,8 @@
 <template>
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="40" height="40" rx="20" fill="#D1E9FF" />
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
-            d="M17.9166 12.5L15.4166 27.5M24.5833 12.5L22.0833 27.5M27.0833 16.6667H12.9166M26.25 23.3333H12.0833"
-            stroke="#1570EF"
+            d="M7.91663 2.5L5.41663 17.5M14.5833 2.5L12.0833 17.5M17.0833 6.66667H2.91665M16.25 13.3333H2.08331"
+            stroke="currentColor"
             stroke-width="1.66667"
             stroke-linecap="round"
             stroke-linejoin="round"

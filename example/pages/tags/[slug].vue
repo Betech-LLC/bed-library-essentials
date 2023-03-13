@@ -12,7 +12,7 @@ export default {
                     link: '/',
                 },
                 {
-                    title: 'Jamstack VietNam',
+                    title: 'JAMstack Vietnam',
                 },
             ],
 
@@ -356,7 +356,7 @@ export default {
             ],
 
             tag: {
-                title: 'Jamstack VietNam',
+                title: 'JAMstack Vietnam',
             },
 
             banner: {
