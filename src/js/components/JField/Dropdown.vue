@@ -1,11 +1,11 @@
 <template>
-    <div @click="$event.stopPropagation()">
+    <div @click="$event.stopPropagation()" class="dropdown">
         <input
-            class="input dropdown"
+            class="input"
             :id="field.name"
             :name="field.name"
             type="text"
-            :value="modelValue"
+            :value="labelActive"
             autocomplete="off"
             :readonly="true"
             @focus="isFocus = true"
@@ -13,17 +13,18 @@
             v-bind="{ ...$attrs }"
         />
         <!-- Dropdown menu -->
-        <div v-show="isFocus" class="dropdown-menu">
-            <JMenu class="max-h-[320px] overflow-y-auto">
-                <JMenuItem
+        <div v-show="isFocus" class="dropdown-wrapper">
+            <ul class="dropdown-menu max-h-[320px] overflow-y-auto">
+                <li
                     v-for="option in field.options"
-                    @click="onSelect(option.name)"
-                    :isActive="modelValue === option.name"
+                    @click="onSelect(option[keyBy])"
+                    class="dropdown-menu-item"
+                    :class="{ active: modelValue === option[keyBy] }"
                 >
-                    {{ option.name }}
-                    <JIconTick v-if="modelValue === option.name" class="text-blue-600" />
-                </JMenuItem>
-            </JMenu>
+                    {{ option[labelBy] }}
+                    <JIconTick v-if="modelValue === option[keyBy]" class="text-blue-600" />
+                </li>
+            </ul>
         </div>
     </div>
 </template>
@@ -33,6 +34,18 @@ export default {
     props: ['modelValue', 'field'],
 
     computed: {
+        keyBy() {
+            return this.field.keyBy || 'id'
+        },
+        labelBy() {
+            return this.field.labelBy || 'name'
+        },
+        labelActive() {
+            const option = this.field.options.find((o) => {
+                return this.modelValue === o[this.keyBy]
+            })
+            return option && option[this.labelBy]
+        },
         fieldPlaceholder() {
             return this.field.placeholder || `Chọn ${this.field.label.toLowerCase()}`
         },

@@ -59,10 +59,6 @@ fieldset {
             @apply pointer-events-none bg-gray-100 focus-within:shadow-none focus-within:border-gray-300;
         }
     }
-
-    .dropdown-menu {
-        @apply absolute left-0 z-20 w-full translate-y-full bottom-[-4px] bg-white rounded-lg border border-gray-100 py-1 pr-1 shadow-lg;
-    }
 }
 
 /* CONFIG DEFAULT */

@@ -8,7 +8,7 @@
                         :field="{
                             type: 'dropdown',
                             name: 'member',
-                            label: 'Select team member',
+                            placeholder: 'Select team member',
                             help: 'This is a hint text to help user.',
                             options: members,
                         }"
