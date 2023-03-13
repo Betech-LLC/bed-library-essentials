@@ -23,9 +23,8 @@ function validate(value, rule) {
             return typeof value === 'string'
 
         case 'phone':
-            const regex = /^(84|19|0[2|3|5|7|8|9])+([0-9]{6,10})\b/g
+            const regex = /^(84|19|0[2|3|5|7|8|9])\d{8}$/g
             return regex.test(value)
-
         case 'in':
             const conditions = condition.split(',')
             if (Array.isArray(value)) {
