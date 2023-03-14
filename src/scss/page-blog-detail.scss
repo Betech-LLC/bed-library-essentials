@@ -1,5 +1,5 @@
 .blog-detail-page {
-    @apply container py-8 grid grid-cols-7 xl:gap-x-8 lg:gap-x-6;
+    @apply container xl:py-8 md:py-6 py-4 grid grid-cols-7 xl:gap-x-8 lg:gap-x-6 max-lg:gap-y-6;
     .left {
         @apply lg:col-span-5 col-span-full xl:space-y-8 md:space-y-6 space-y-4;
     }
@@ -32,14 +32,18 @@
 }
 
 .blog-detail-page-toc {
-    @apply py-6 px-8 bg-gray-50 rounded-lg;
+    @apply xl:py-6 md:py-4 py-3 xl:px-8 md:px-6	px-4 bg-gray-50 rounded-lg;
     .head {
         @apply flex items-center justify-between cursor-pointer;
         .title {
             @apply title-2 text-gray-900;
         }
         .icon {
-            @apply w-6 h-6 base-transition;
+            @apply base-transition;
+
+            svg {
+                @apply md:w-6 w-5 md:h-6 h-5;
+            }
 
             &:not(.show) {
                 @apply transform rotate-180;
@@ -73,11 +77,11 @@
 }
 
 .blog-detail-page-bottom {
-    @apply pt-8 border-t border-gray-200 border-solid flex justify-between items-baseline space-x-2;
+    @apply xl:pt-8 md:pt-6 pt-4 border-t border-gray-200 border-solid flex justify-between items-baseline md:space-x-2 max-md:flex-col max-md:space-y-2;
     .tags {
         @apply flex flex-wrap;
         .tag {
-            @apply badge badge-lg badge-gray mr-2 mb-2;
+            @apply badge badge-lg badge-gray md:mr-2 mr-1 md:mb-2 mb-1;
         }
     }
 
