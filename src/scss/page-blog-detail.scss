@@ -59,7 +59,7 @@
             @apply title-3 text-gray-700;
         }
         .toc-2 {
-            @apply ml-4;
+            @apply xl:ml-4 md:ml-3 ml-2;
         }
         .toc-2-link {
             @apply body-1 text-gray-700;

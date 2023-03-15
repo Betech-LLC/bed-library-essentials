@@ -78,7 +78,7 @@ import { useTransformContent } from '@core/utils'
 
 export default {
     components: { JCardBlog, JBlogSideBar, JBannerAds, JBreadcrumb, JIconChevron, JSocialShare },
-    props: ['breadcrumb', 'posts_data', 'tag', 'banner', 'post', 'isOpenToc', 'top_posts'],
+    props: ['breadcrumb', 'posts_data', 'tag', 'banner', 'post', 'top_posts', 'language'],
 
     data() {
         return {
