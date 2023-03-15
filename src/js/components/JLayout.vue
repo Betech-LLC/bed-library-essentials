@@ -1,5 +1,13 @@
 <template>
     <div class="container py-10 space-y-10">
+        <div id="jam-checkbox">
+            <div class="mb-4 display-3">Checkbox</div>
+            <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
+                <JFieldCheckbox />
+                <JFieldCheckbox />
+                <JFieldCheckbox />
+            </div>
+        </div>
         <!-- Dropdown  -->
         <div id="jam-dropdown">
             <div class="mb-4 display-3">Dropdown</div>

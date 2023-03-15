@@ -22,6 +22,8 @@
                 @update:modelValue="onChangeField"
             />
 
+            <JFieldCheckbox v-else-if="field.type === 'checkbox'" />
+
             <JFieldPhone
                 v-else-if="field.type === 'number'"
                 :field="field"
