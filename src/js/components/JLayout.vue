@@ -3,9 +3,11 @@
         <div id="jam-checkbox">
             <div class="mb-4 display-3">Checkbox</div>
             <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
-                <JFieldCheckbox />
-                <JFieldCheckbox />
-                <JFieldCheckbox />
+                <JFieldCheckbox
+                    v-for="option in options"
+                    v-model="option.active"
+                    :field="{ label: option.name, hint: 'Save my login details for next time.' }"
+                />
             </div>
         </div>
         <!-- Dropdown  -->
@@ -474,6 +476,24 @@ export default {
     data() {
         return {
             team: { member: null },
+            options: [
+                {
+                    name: 'Apple',
+                    active: false,
+                },
+                {
+                    name: 'Samsung',
+                    active: false,
+                },
+                {
+                    name: 'Xiaomi',
+                    active: false,
+                },
+                {
+                    name: 'Oppo',
+                    active: false,
+                },
+            ],
             members: [
                 {
                     id: 1,
