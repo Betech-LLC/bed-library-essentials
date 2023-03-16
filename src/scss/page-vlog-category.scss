@@ -18,9 +18,10 @@
 
 .page-vlog-category {
     @apply xl:py-16	md:py-11 py-8;
-    &.tree-column {
-        .page-vlog-category-items {
-            @apply grid-cols-3;
-        }
+}
+
+.tree-column {
+    .page-vlog-category-items {
+        @apply md:grid-cols-3;
     }
 }

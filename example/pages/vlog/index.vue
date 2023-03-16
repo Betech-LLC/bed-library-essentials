@@ -1,12 +1,13 @@
 <template>
-    <JPageVlogCategory :vlog="vlog" />
+    <JPageVlogCategory class="tree-column" :vlogs="vlogs" />
+    <!-- <JVideo src="https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s" /> -->
 </template>
 
 <script>
 export default {
     data() {
         return {
-            vlog: [
+            vlogs: [
                 {
                     id: 1,
                     title: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
