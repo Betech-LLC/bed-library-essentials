@@ -44,17 +44,7 @@
                         </div>
                     </div>
                     <div class="right">
-                        <div class="blog-category-top-view">
-                            <h2 class="title">Lượt xem nhiều nhất</h2>
-                            <div class="body">
-                                <JCardBlog
-                                    v-for="(item, index) in top_views"
-                                    :key="index"
-                                    class="card-blog-xs card-blog-row card-item"
-                                    :item="item"
-                                />
-                            </div>
-                        </div>
+                        <JBlogSideBar :items="top_views" />
 
                         <div v-if="banner" class="banner-ads-wrap">
                             <JBannerAds :item="banner" />
@@ -70,9 +60,10 @@
 import JBanner from '@core/components/JBanner.vue'
 import JCardBlog from '@core/components/JCardBlog.vue'
 import JBannerAds from '@core/components/JBannerAds.vue'
+import JBlogSideBar from '@core/components/JBlogSideBar.vue'
 
 export default {
-    components: { JBanner, JCardBlog, JBannerAds },
+    components: { JBanner, JCardBlog, JBannerAds, JBlogSideBar },
     props: ['bannerTop', 'breadcrumb', 'banner', 'top_posts', 'top_views', 'posts_data'],
 }
 </script>
