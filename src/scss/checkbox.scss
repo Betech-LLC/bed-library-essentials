@@ -1,12 +1,12 @@
 .checkbox {
     label {
-        @apply pl-6 relative cursor-pointer;
+        @apply pl-6 relative cursor-pointer text-gray-700;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
         .checkmark {
-            @apply absolute w-4 h-4 left-0 top-1/2 transform -translate-y-1/2 border border-gray-300 rounded bg-white duration-150 flex justify-center items-center text-[#1570EF];
+            @apply absolute w-4 h-4 left-0 top-1/2 transform -translate-y-1/2 border border-gray-300 rounded bg-white duration-150 flex justify-center items-center text-blue-600;
             > * {
                 @apply hidden;
             }
@@ -14,23 +14,23 @@
         input {
             @apply absolute opacity-0 cursor-pointer h-0 w-0;
             &:checked ~ .checkmark {
-                @apply bg-[#EFF8FF] border-[#1570EF];
+                @apply bg-blue-100 border-blue-600;
                 > * {
                     @apply block;
                 }
             }
 
             &:focus ~ .checkmark {
-                @apply bg-[#EFF8FF] border-[#1570EF];
+                @apply bg-blue-50 border-blue-600;
                 box-shadow: 0px 0px 0px 4px #d1e9ff;
             }
         }
 
         &:hover input ~ .checkmark {
-            @apply bg-[#D1E9FF] border-[#1570EF];
+            @apply bg-blue-100 border-blue-600;
         }
     }
     .hint {
-        @apply pl-[24px] body-2;
+        @apply pl-[24px] body-2 text-gray-500;
     }
 }
