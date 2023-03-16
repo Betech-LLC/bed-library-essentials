@@ -51,7 +51,7 @@
             </a>
 
             <div v-if="copyLink" class="social-share-item copy-link">
-                <div @click="copyLink()">
+                <div @click="copyCurrentLink()">
                     <slot name="copy-link">
                         <JImageDynamic name="copy-link" />
                     </slot>
@@ -136,7 +136,7 @@ export default {
         this.linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`
     },
     methods: {
-        copyLink() {
+        copyCurrentLink() {
             const input = document.querySelector('#input-copy')
             input.value = window.location.href
             input.setAttribute('type', 'text')

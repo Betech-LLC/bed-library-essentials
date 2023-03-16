@@ -22,7 +22,7 @@
 }
 
 .tag-page-wrap {
-    @apply grid grid-cols-7;
+    @apply grid grid-cols-7 xl:gap-x-8 lg:gap-x-6;
     .left {
         @apply lg:col-span-5 col-span-full;
         .card-items {
