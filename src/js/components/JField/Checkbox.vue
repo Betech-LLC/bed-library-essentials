@@ -1,7 +1,7 @@
 <template>
     <div v-if="field" class="checkbox">
         <label class="font-medium label-2" :for="field.name">
-            <input type="checkbox" :name="field.name" :id="field.name" :value="modelValue" @change="onchange" />
+            <input type="checkbox" :name="field.name" :id="field.name" :value="modelValue" @input="onchange" />
             <div class="checkmark">
                 <template v-if="$slots.icon">
                     <slot name="icon" />
@@ -10,7 +10,7 @@
             </div>
             {{ field.label }}
         </label>
-        <p v-if="field.hint" class="hint">{{ field.hint }}</p>
+        <p v-if="field.help" class="hint">{{ field.help }}</p>
     </div>
 </template>
 <script>
@@ -20,6 +20,7 @@ export default {
 
     methods: {
         onchange(e) {
+            console.log('e.target.checked = ', e.target.checked)
             this.$emit('update:modelValue', e.target.checked)
             this.$emit('pushToUrl')
         },

@@ -6,7 +6,7 @@
                 <JFieldCheckbox
                     v-for="option in options"
                     v-model="option.active"
-                    :field="{ label: option.name, hint: 'Save my login details for next time.' }"
+                    :field="{ label: option.name, help: 'This is a hint text to help user.' }"
                 />
             </div>
         </div>
