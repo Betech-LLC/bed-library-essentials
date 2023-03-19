@@ -1,0 +1,87 @@
+.blog-category {
+    @apply xl:py-16	md:py-11 py-8;
+}
+
+.blog-category-wrap {
+    @apply container;
+}
+
+.blog-category-top-posts {
+    @apply grid md:grid-cols-2 xl:pb-8	md:pb-6	pb-4 border-b border-gray-200 xl:gap-x-8 md:gap-x-6	max-md:gap-y-4;
+
+    .left {
+        .card-item {
+            .card-blog-description {
+                display: -webkit-box;
+                @apply line-clamp-3;
+            }
+        }
+    }
+
+    .right {
+        @apply xl:space-y-5	md:space-y-4 space-y-3 max-md:p-3 max-md:rounded max-md:bg-gray-100;
+        .card-item {
+            @apply xl:pb-5 md:pb-4 pb-3 border-b border-gray-200 last:pb-0 last:border-none max-md:grid-cols-none;
+            .card-blog-image {
+                @apply max-md:hidden;
+            }
+        }
+    }
+}
+
+.blog-category-body {
+    @apply grid grid-cols-7 xl:mt-8	md:mt-6	mt-4 xl:gap-x-8	lg:gap-x-6	max-lg:gap-y-6 max-md:gap-y-4;
+    .left {
+        @apply lg:col-span-5 col-span-full;
+
+        .card-items {
+            @apply xl:space-y-8 md:space-y-6  max-md:grid max-md:grid-cols-2 max-md:gap-x-2 max-md:gap-y-3;
+        }
+    }
+    .right {
+        @apply lg:col-span-2 col-span-full  xl:space-y-12 lg:space-y-8 space-y-6;
+        .banner-ads-wrap {
+            @apply max-lg:hidden;
+        }
+    }
+}
+
+.blog-category-top-view {
+    @apply space-y-2 xl:space-y-4 md:space-y-3 max-md:hidden;
+    .title {
+        @apply pb-1 text-gray-700 border-b border-gray-500 title-2;
+    }
+    .body {
+        @apply grid max-lg:grid-cols-2 max-lg:gap-3 max-md:grid-cols-1  max-md:gap-0 xl:gap-y-4 lg:gap-y-3;
+
+        .card-item {
+            @apply xl:pb-4 lg:pb-3 border-b border-gray-200 last:border-none last:pb-0 max-lg:border-none;
+        }
+    }
+}
+
+.blog-category-button {
+    @apply md:mt-6 mt-4 flex justify-center;
+
+    .btn-see-more {
+        @apply btn btn-md;
+    }
+}
+
+.blog-category-banner-body {
+    @apply container h-full flex flex-col justify-center;
+    .breadcrumb {
+        .breadcrumb-item,
+        .icon {
+            @apply text-white;
+        }
+
+        span.breadcrumb-item {
+            @apply opacity-70;
+        }
+    }
+}
+
+.blog-category-banner-title {
+    @apply xl:mt-6 md:mt-4 mt-3 text-white display-2;
+}

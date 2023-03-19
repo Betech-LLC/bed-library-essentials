@@ -1,3 +1,0 @@
-<template>
-    <JPageError />
-</template>

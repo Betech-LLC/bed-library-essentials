@@ -1,5 +1,5 @@
 <template>
-    <section class="error">
+    <section class="error error-col">
         <div class="error-body">
             <div class="error-status">
                 {{ status }}
@@ -11,11 +11,11 @@
                 {{ description }}
                 <a :href="`tel:${toNumber(phone)}`"> {{ phone }} </a>
             </p>
-            <a href="#" class="error-button">
-                {{ button }}
-            </a>
+            <JLink class="error-button" :href="link">{{ button }}</JLink>
         </div>
-        <img src="../../images/error/image-page.webp" class="error-image" alt="Error" />
+        <slot>
+            <img src="../../images/error/image-page.webp" class="error-image" alt="Error" />
+        </slot>
     </section>
 </template>
 
@@ -30,7 +30,7 @@ export default {
         },
         title: {
             type: String,
-            default: 'KHÔNG TÌM THẤY TRANG',
+            default: 'Không tìm thấy trang',
         },
         description: {
             type: String,
@@ -45,32 +45,10 @@ export default {
             type: String,
             default: 'QUAY LẠI TRANG CHỦ',
         },
-    },
-    data() {
-        return {
-            types: [
-                {
-                    type: 'page',
-                    image: '../../images/error/image-page.webp',
-                },
-                {
-                    type: 'folder',
-                    image: '../../images/error/image-folder.webp',
-                },
-                {
-                    type: 'house',
-                    image: '../../images/error/image-house-location.webp',
-                },
-                {
-                    type: 'messenger',
-                    image: '../../images/error/image-no-messenger.webp',
-                },
-                {
-                    type: 'search',
-                    image: '../../images/error/image-not-found.webp',
-                },
-            ],
-        }
+        link: {
+            type: String,
+            default: '/',
+        },
     },
 
     methods: {

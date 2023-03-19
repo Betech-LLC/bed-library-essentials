@@ -11,15 +11,33 @@
     .link {
         @apply hover:underline hover:text-primary;
     }
+    .custom-scrollbar {
+        &::-webkit-scrollbar {
+            @apply w-2;
+        }
+        &::-webkit-scrollbar-track {
+            @apply bg-white;
+        }
+        &::-webkit-scrollbar-thumb {
+            @apply bg-gray-200 rounded-lg;
+        }
+    }
 }
 
 @import '@core/scss/type';
 @import '@core/scss/accordion';
 @import '@core/scss/badge';
+@import '@core/scss/banner';
 @import '@core/scss/breadcrumb';
 @import '@core/scss/button';
-@import '@core/scss/content';
 @import '@core/scss/card-blog';
-@import '@core/scss/error';
+@import '@core/scss/content';
+@import '@core/scss/dropdown';
+@import '@core/scss/input';
+@import '@core/scss/page-blog-category';
+@import '@core/scss/page-blog-detail';
+@import '@core/scss/page-error';
+@import '@core/scss/page-tag';
 @import '@core/scss/picture';
 @import '@core/scss/policy';
+@import '@core/scss/social-share';

@@ -1,0 +1,28 @@
+.social-share-items,
+.social-share {
+    @apply flex items-center space-x-3 xl:space-x-4;
+}
+
+.social-share {
+    .copy-link {
+        @apply relative inline-block cursor-pointer;
+        .message {
+            @apply absolute top-1/2 -translate-y-1/2 duration-300 left-[150%] opacity-0 invisible badge badge-primary max-lg:hidden;
+
+            &.active {
+                @apply opacity-100 visible;
+            }
+        }
+    }
+}
+
+.social-share-title {
+    @apply body-2 text-gray-500;
+}
+
+.social-share-item {
+    svg,
+    img {
+        @apply w-6 h-6;
+    }
+}

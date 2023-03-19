@@ -1,85 +1,76 @@
-"use strict";
+'use strict'
 
 function validate(value, rule) {
-    const type = rule.split(":")[0];
-    const condition = rule.split(":")[1] ?? null;
+    const type = rule.split(':')[0]
+    const condition = rule.split(':')[1] ?? null
 
     switch (type) {
-        case "array":
-            return Array.isArray(value);
+        case 'array':
+            return Array.isArray(value)
 
-        case "required":
-            return !!value;
-        case "email":
-            const regEx =
-                /^[\w.!?#$%&'=~|{}`+*^][\w\-.!?#$%&'=~|{}`+*^]*@((xn--)?[\w]+([-][\w]+)*\.)+[a-z]{2,}$/i;
-            const validDomain =
-                !value.includes("@gnail.") &&
-                !value.includes("@gmail.con") &&
-                !value.includes("@gmai.");
+        case 'required':
+            return !!value
+        case 'email':
+            const regEx = /^[\w.!?#$%&'=~|{}`+*^][\w\-.!?#$%&'=~|{}`+*^]*@((xn--)?[\w]+([-][\w]+)*\.)+[a-z]{2,}$/i
+            const isValidGmailDomain = value && !value.includes('@gnail') && !value.includes('@gmai.')
+            const isValidEmailFormat = value && regEx.test(value)
+            return isValidEmailFormat && isValidGmailDomain
 
-            return value ? regEx.test(value) && validDomain : true;
+        case 'date':
+            return new Date(value) !== 'Invalid Date' && !isNaN(new Date(value))
 
-        case "date":
-            return (
-                new Date(value) !== "Invalid Date" && !isNaN(new Date(value))
-            );
+        case 'string':
+            return typeof value === 'string'
 
-        case "string":
-            return typeof value === "string";
-
-        case "phone":
-            const regex = /^(84|19|0[2|3|5|7|8|9])+([0-9]{6,10})\b/g;
-            return regex.test(value);
-
-        case "in":
-            const conditions = condition.split(",");
+        case 'phone':
+            const regex = /^(84|19|0[2|3|5|7|8|9])\d{8}$/g
+            return regex.test(value)
+        case 'in':
+            const conditions = condition.split(',')
             if (Array.isArray(value)) {
-                return value.every((element) =>
-                    conditions.includes(element.toString())
-                );
+                return value.every((element) => conditions.includes(element.toString()))
             } else {
-                return value && conditions.includes(value.toString());
+                return value && conditions.includes(value.toString())
             }
 
-        case "integer":
-            return !isNaN(value);
+        case 'integer':
+            return !isNaN(value)
 
-        case "min":
-            return value.length >= parseInt(condition);
+        case 'min':
+            return value.length >= parseInt(condition)
 
-        case "max":
-            return value.length <= parseInt(condition);
+        case 'max':
+            return value.length <= parseInt(condition)
 
         default:
-            return true;
+            return true
     }
 }
 
 function validateForm(formFields, rules) {
-    let errors = {};
+    let errors = {}
     for (const field of Object.entries(formFields)) {
         if (!validateField(field[1], rules[field[0]])) {
-            errors[field[0]] = "";
+            errors[field[0]] = ''
         }
     }
-    return errors;
+    return errors
 }
 
 function validateField(value, rules) {
-    if (rules === undefined) return true;
+    if (rules === undefined) return true
 
-    let fieldIsValid = true;
+    let fieldIsValid = true
 
-    for (const rule of rules.split("|")) {
-        const valid = validate(value, rule);
+    for (const rule of rules.split('|')) {
+        const valid = validate(value, rule)
         if (!valid) {
-            fieldIsValid = false;
-            break;
+            fieldIsValid = false
+            break
         }
     }
 
-    return fieldIsValid;
+    return fieldIsValid
 }
 
-export { validateForm, validateField };
+export { validateForm, validateField }
