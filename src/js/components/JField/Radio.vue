@@ -1,13 +1,13 @@
 <template>
     <div v-if="field" class="radio" :class="{ 'is-disabled': disabled }">
-        <label class="label" :for="`radio-${field.name}`">
+        <label class="label" :for="keyID">
             <input
                 class="input"
                 type="radio"
-                :name="field.name"
-                :id="`radio-${field.name}`"
-                :value="modelValue"
-                @input="onchange"
+                :id="keyID"
+                :value="field.value"
+                :checked="isChecked"
+                @input="$emit('update:modelValue', $event.target.value)"
             />
             <div class="checkmark"></div>
             {{ field.label }}
@@ -20,10 +20,12 @@
 export default {
     props: ['field', 'modelValue', 'disabled'],
     emits: ['update:modelValue'],
-
-    methods: {
-        onchange(e) {
-            this.$emit('update:modelValue', e.target.checked)
+    computed: {
+        isChecked() {
+            return this.modelValue?.toString() === this.field.value?.toString()
+        },
+        keyID() {
+            return `radio-${this.field.label}`
         },
     },
 }

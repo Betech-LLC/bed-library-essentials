@@ -2,27 +2,46 @@
     <div class="container py-10 space-y-10">
         <div id="jam-checkbox">
             <div class="mb-4 display-3">Checkbox</div>
-            <div class="grid grid-cols-3 gap-2 p-4 py-10 border-dashed rounded-lg">
-                <div class="space-y-4">
-                    <div class="label-1">Checked brands: {{ checkedBrands }}</div>
-                    <JFieldCheckbox
-                        v-for="option in optionBrands"
-                        v-model="option.active"
-                        :field="{ label: option.name, help: 'This is a hint text to help user.' }"
-                    />
-                    <JFieldCheckbox
-                        :field="{ label: 'Realme', help: 'This is a hint text to help user.' }"
-                        :disabled="true"
-                    />
-                </div>
+            <div class="p-4 py-10 border border-dashed rounded-lg">
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="space-y-4">
+                        <div class="label-1">Checked brands: {{ checkedBrands }}</div>
+                        <JFieldCheckbox
+                            v-for="option in optionBrands"
+                            v-model="option.active"
+                            :field="{
+                                label: option.name,
+                                help: 'This is a hint text to help user.',
+                            }"
+                        />
+                        <JFieldCheckbox
+                            :field="{ label: 'Realme', help: 'This is a hint text to help user.' }"
+                            :disabled="true"
+                        />
+                    </div>
 
-                <div class="space-y-4">
-                    <div class="label-1">Checked: []</div>
-                    <JFieldRadio
-                        v-for="option in optionLaptops"
-                        v-model="activeLaptop"
-                        :field="{ label: option.name, help: 'This is a hint text to help user.' }"
-                    />
+                    <div class="space-y-4">
+                        <div class="label-1">Checked: "{{ activeLaptop }}"</div>
+                        <JFieldRadio
+                            v-for="option in optionLaptops"
+                            v-model="activeLaptop"
+                            :field="{
+                                label: option.name,
+                                value: option.name,
+                                help: 'This is a hint text to help user.',
+                            }"
+                        />
+
+                        <JFieldRadio
+                            v-model="activeLaptop"
+                            :field="{
+                                label: 'Lenovo',
+                                value: 'Lenovo',
+                                help: 'This is a hint text to help user.',
+                            }"
+                            :disabled="true"
+                        />
+                    </div>
                 </div>
             </div>
         </div>

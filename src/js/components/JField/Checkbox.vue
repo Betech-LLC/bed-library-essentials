@@ -1,13 +1,12 @@
 <template>
     <div v-if="field" class="checkbox" :class="{ 'is-disabled': disabled }">
-        <label class="label" :for="`checkbox-${field.name}`">
+        <label class="label" :for="keyID">
             <input
                 type="checkbox"
                 class="input"
-                :name="field.name"
-                :id="`checkbox-${field.name}`"
+                :id="keyID"
                 :value="modelValue"
-                @input="onchange"
+                @input="$emit('update:modelValue', $event.target.checked)"
             />
             <div class="checkmark">
                 <template v-if="$slots.icon">
@@ -26,9 +25,9 @@ export default {
     props: ['field', 'modelValue', 'disabled'],
     emits: ['update:modelValue'],
 
-    methods: {
-        onchange(e) {
-            this.$emit('update:modelValue', e.target.checked)
+    computed: {
+        keyID() {
+            return `checkbox-${this.field.label}`
         },
     },
 }
