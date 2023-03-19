@@ -10,7 +10,8 @@
             </div>
             {{ field.label }}
         </label>
-        <p v-if="field.help" class="hint">{{ field.help }}</p>
+
+        <p v-if="field.help" class="help">{{ field.help }}</p>
     </div>
 </template>
 <script>
