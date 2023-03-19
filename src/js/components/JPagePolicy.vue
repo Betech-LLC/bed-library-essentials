@@ -1,11 +1,11 @@
 <template>
     <main>
-        <section class="policy">
-            <div class="policy-container">
-                <div class="policy-head">Hỗ trợ khách hàng</div>
+        <section class="page-policy">
+            <div class="page-policy-container">
+                <div class="page-policy-head">Hỗ trợ khách hàng</div>
 
-                <div class="policy-body">
-                    <div class="policy-box">
+                <div class="page-policy-body">
+                    <div class="page-policy-box">
                         <div @click="togglePolicyMobile" class="box-body">
                             <div class="box-title title-2">
                                 {{ currentPolicy.title }}
@@ -16,7 +16,7 @@
                     </div> -->
                         </div>
                     </div>
-                    <div class="policy-nav" :class="isOpenMobile ? '' : 'toggle'">
+                    <div class="page-policy-nav" :class="isOpenMobile ? '' : 'toggle'">
                         <ul class="nav-list">
                             <li class="nav-item" v-for="(policy, index) in list_sidebar" :key="index">
                                 <JLink
@@ -37,13 +37,13 @@
                         </ul>
                     </div>
 
-                    <div v-if="isOpenMobile" class="policy-blank" @click="togglePolicyMobile"></div>
+                    <div v-if="isOpenMobile" class="page-policy-blank" @click="togglePolicyMobile"></div>
 
-                    <div class="policy-content">
-                        <h1 class="policy-title" v-if="currentPolicy.title">
+                    <div class="page-policy-content">
+                        <h1 class="page-policy-title" v-if="currentPolicy.title">
                             {{ currentPolicy.title }}
                         </h1>
-                        <div v-html="content" class="policy-prose" />
+                        <div v-html="content" class="page-policy-prose" />
                     </div>
                 </div>
             </div>

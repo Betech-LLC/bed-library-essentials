@@ -1,20 +1,20 @@
-.policy {
+.page-policy {
     @apply xl:pt-8 md:pt-6 pt-4 bg-gray-50;
 }
 
-.policy-container {
+.page-policy-container {
     @apply container relative;
 }
 
-.policy-head {
+.page-policy-head {
     @apply headline-1 text-gray-700;
 }
 
-.policy-body {
+.page-policy-body {
     @apply xl:mt-6 md:mt-4 mt-3 grid grid-cols-12 xl:gap-x-8 md:gap-x-6 max-lg:gap-y-4;
 }
 
-.policy-box {
+.page-policy-box {
     @apply col-span-full lg:hidden;
     .box-body {
         @apply relative overflow-hidden bg-white shadow-xs;
@@ -27,7 +27,7 @@
     }
 }
 
-.policy-nav {
+.page-policy-nav {
     @apply relative lg:col-span-3 max-lg:fixed max-lg:h-screen max-lg:top-0 max-lg:left-0 max-lg:duration-200 max-lg:w-4/12 max-md:w-8/12 max-lg:bg-white max-lg:shadow-sm max-lg:p-2 max-lg:z-50;
 
     .nav-list {
@@ -68,18 +68,18 @@
         }
 
         .nav-link {
-            &:not(.router-link-exact-active){
+            &:not(.router-link-exact-active) {
                 @apply bg-transparent;
             }
         }
 
-        
         @screen lg {
             .nav-link {
                 &:hover {
                     @apply bg-white;
                     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.1));
-                    .nav-icon,.nav-title {
+                    .nav-icon,
+                    .nav-title {
                         @apply lg:text-blue-600;
                     }
                 }
@@ -88,22 +88,22 @@
     }
 }
 
-.policy-nav.toggle {
+.page-policy-nav.toggle {
     @apply max-lg:transform max-lg:-translate-x-full;
 }
 
-.policy-blank {
+.page-policy-blank {
     @apply fixed inset-0 duration-200 bg-black lg:hidden opacity-70 z-40;
 }
 
-.policy-content {
+.page-policy-content {
     @apply lg:col-span-9 col-span-full bg-white xl:py-8 md:py-6 py-4 xl:px-12 md:px-8 px-4;
 }
 
-.policy-title {
+.page-policy-title {
     @apply title-1 text-gray-900 font-semibold xl:mb-8 md:mb-6 mb-4;
 }
 
-.policy-prose {
+.page-policy-prose {
     @apply prose;
 }
