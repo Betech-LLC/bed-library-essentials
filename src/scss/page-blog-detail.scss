@@ -1,0 +1,91 @@
+.blog-detail-page {
+    @apply container xl:py-8 md:py-6 py-4 grid grid-cols-7 xl:gap-x-8 lg:gap-x-6 max-lg:gap-y-6;
+    .left {
+        @apply lg:col-span-5 col-span-full xl:space-y-8 md:space-y-6 space-y-4;
+    }
+    .right {
+        @apply lg:col-span-2 col-span-full xl:space-y-12 lg:space-y-8 space-y-6;
+        .banner-ads-wrap {
+            @apply max-lg:hidden;
+        }
+    }
+}
+
+.blog-detail-page-title {
+    @apply title-1 text-gray-900;
+}
+
+.blog-detail-page-meta {
+    @apply xl:mt-1 mt-0.5 flex flex-wrap items-center;
+}
+
+.blog-detail-page-badge {
+    @apply badge badge-primary badge-sm xl:mr-3 md:mr-2 mr-1;
+}
+
+.blog-detail-page-date {
+    @apply label-2 text-gray-500;
+}
+
+.blog-detail-page-description {
+    @apply xl:p-4 md:p-3 p-2 body-1 text-gray-700 bg-gray-50 border border-solid border-gray-300 rounded-lg;
+}
+
+.blog-detail-page-toc {
+    @apply xl:py-6 md:py-4 py-3 xl:px-8 md:px-6	px-4 bg-gray-50 rounded-lg;
+    .head {
+        @apply flex items-center justify-between cursor-pointer;
+        .title {
+            @apply title-2 text-gray-900;
+        }
+        .icon {
+            @apply base-transition;
+
+            svg {
+                @apply md:w-6 w-5 md:h-6 h-5;
+            }
+
+            &:not(.show) {
+                @apply transform rotate-180;
+            }
+        }
+    }
+    .body {
+        @apply mt-2 pt-2 border-t border-gray-300 border-solid space-y-2;
+        .toc-1 {
+            @apply space-y-1;
+        }
+        .toc-1-link {
+            @apply title-3 text-gray-700;
+        }
+        .toc-2 {
+            @apply xl:ml-4 md:ml-3 ml-2;
+        }
+        .toc-2-link {
+            @apply body-1 text-gray-700;
+        }
+
+        .toc-1-link,
+        .toc-2-link {
+            @apply hover:text-primary-dark;
+        }
+    }
+}
+
+.blog-detail-page-content {
+    @apply prose;
+}
+
+.blog-detail-page-bottom {
+    @apply xl:pt-8 md:pt-6 pt-4 border-t border-gray-200 border-solid flex justify-between items-baseline md:space-x-2 max-md:flex-col max-md:space-y-2;
+    .tags {
+        @apply flex flex-wrap;
+        .tag {
+            @apply badge badge-lg badge-gray md:mr-2 mr-1 md:mb-2 mb-1;
+        }
+    }
+
+    .social-share {
+        @apply flex-none;
+    }
+}
