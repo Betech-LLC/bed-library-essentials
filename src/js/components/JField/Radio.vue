@@ -1,20 +1,15 @@
 <template>
-    <div v-if="field" class="checkbox" :class="{ 'is-disabled': disabled }">
-        <label class="label" :for="`checkbox-${field.name}`">
+    <div v-if="field" class="radio" :class="{ 'is-disabled': disabled }">
+        <label class="label" :for="`radio-${field.name}`">
             <input
-                type="checkbox"
                 class="input"
+                type="radio"
                 :name="field.name"
-                :id="`checkbox-${field.name}`"
+                :id="`radio-${field.name}`"
                 :value="modelValue"
                 @input="onchange"
             />
-            <div class="checkmark">
-                <template v-if="$slots.icon">
-                    <slot name="icon" />
-                </template>
-                <JIconTickCheckbox v-else />
-            </div>
+            <div class="checkmark"></div>
             {{ field.label }}
         </label>
 

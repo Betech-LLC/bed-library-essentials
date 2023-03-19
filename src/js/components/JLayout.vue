@@ -2,12 +2,28 @@
     <div class="container py-10 space-y-10">
         <div id="jam-checkbox">
             <div class="mb-4 display-3">Checkbox</div>
-            <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
-                <JFieldCheckbox
-                    v-for="option in options"
-                    v-model="option.active"
-                    :field="{ label: option.name, help: 'This is a hint text to help user.' }"
-                />
+            <div class="grid grid-cols-3 gap-2 p-4 py-10 border-dashed rounded-lg">
+                <div class="space-y-4">
+                    <div class="label-1">Checked brands: {{ checkedBrands }}</div>
+                    <JFieldCheckbox
+                        v-for="option in optionBrands"
+                        v-model="option.active"
+                        :field="{ label: option.name, help: 'This is a hint text to help user.' }"
+                    />
+                    <JFieldCheckbox
+                        :field="{ label: 'Realme', help: 'This is a hint text to help user.' }"
+                        :disabled="true"
+                    />
+                </div>
+
+                <div class="space-y-4">
+                    <div class="label-1">Checked: []</div>
+                    <JFieldRadio
+                        v-for="option in optionLaptops"
+                        v-model="activeLaptop"
+                        :field="{ label: option.name, help: 'This is a hint text to help user.' }"
+                    />
+                </div>
             </div>
         </div>
 
@@ -477,7 +493,26 @@ export default {
     data() {
         return {
             team: { member: null },
-            options: [
+            optionLaptops: [
+                {
+                    name: 'Mac',
+                    active: false,
+                },
+                {
+                    name: 'Dell',
+                    active: false,
+                },
+                {
+                    name: 'Asus',
+                    active: false,
+                },
+                {
+                    name: 'Acer',
+                    active: false,
+                },
+            ],
+            activeLaptop: null,
+            optionBrands: [
                 {
                     name: 'Apple',
                     active: false,
@@ -534,13 +569,11 @@ export default {
                 phone: null,
                 email: null,
             },
-
             user_2: {
                 name: null,
                 phone: null,
                 email: null,
             },
-
             user_3: {
                 name: null,
                 phone: null,
@@ -556,13 +589,24 @@ export default {
                 note_2: null,
                 note_3: null,
             },
-
             rules: {
                 name: 'required',
                 phone: 'phone|required',
                 email: 'required|email',
             },
         }
+    },
+
+    computed: {
+        checkedBrands() {
+            const brands = []
+            this.optionBrands.forEach((brand) => {
+                if (!!brand.active) {
+                    brands.push(brand.name)
+                }
+            })
+            return brands
+        },
     },
 }
 </script>
