@@ -405,7 +405,9 @@
                         },
                     ]"
                 >
-                    <template #icon> + </template>
+                    <template #icon>
+                        <div>+</div>
+                    </template>
                 </JBreadcrumb>
             </div>
         </div>

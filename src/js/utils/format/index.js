@@ -63,4 +63,11 @@ function toBasename(url) {
     return url?.substring(url?.lastIndexOf('/') + 1)
 }
 
-export { toNumber, toDate, toSlug, toBasename }
+function addLeadingZero(number) {
+    if (number < 10) {
+        return ('0' + number).slice(-2)
+    }
+    return number
+}
+
+export { toNumber, toDate, toSlug, toBasename, addLeadingZero }
