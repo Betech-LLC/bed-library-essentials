@@ -17,7 +17,7 @@ export default {
             type: Array,
             default: () => [],
         },
-        modelBy: { type: String, default: 'id' },
+        keyBy: { type: String, default: 'id' },
         labelBy: { type: String, default: 'name' },
     },
     data() {
@@ -28,9 +28,9 @@ export default {
 
     methods: {
         onChange(active, option) {
-            const keyField = option[this.modelBy]
+            const keyField = option[this.keyBy]
             if (active) {
-                this.items[keyField] = option[this.modelBy]
+                this.items[keyField] = option[this.keyBy]
             } else {
                 delete this.items[keyField]
             }

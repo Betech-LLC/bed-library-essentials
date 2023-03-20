@@ -6,18 +6,18 @@
                 <div class="grid grid-cols-3 gap-x-2">
                     <div class="space-y-3">
                         <div class="mb-1">Multiple Checkbox <code>modelBy="name"</code>: {{ multiCheckboxItems }}</div>
-                        <MultiCheckbox :options="optionBrands" modelBy="name" v-model="multiCheckboxItems" />
+                        <MultiCheckbox :options="optionBrands" keyBy="name" v-model="multiCheckboxItems" />
                     </div>
                     <div class="space-y-3">
                         <div class="mb-1">Multiple Checkbox <code>modelBy="id"</code>: {{ multiCheckboxItemsID }}</div>
-                        <MultiCheckbox :options="optionBrands" modelBy="id" v-model="multiCheckboxItemsID" />
+                        <MultiCheckbox :options="optionBrands" keyBy="id" v-model="multiCheckboxItemsID" />
                     </div>
 
                     <div class="space-y-3">
                         <div class="mb-1">
                             Multiple Checkbox <code>modelBy="active"</code>: {{ multiCheckboxItemsActive }}
                         </div>
-                        <MultiCheckbox :options="optionBrands" modelBy="active" v-model="multiCheckboxItemsActive" />
+                        <MultiCheckbox :options="optionBrands" keyBy="active" v-model="multiCheckboxItemsActive" />
                     </div>
                 </div>
             </div>
