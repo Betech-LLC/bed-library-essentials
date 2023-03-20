@@ -1,5 +1,5 @@
 .breadcrumb {
-    @apply flex body-2 line-clamp-1;
+    @apply body-2 line-clamp-1;
     .breadcrumb-item {
         &:not(:last-child) {
             @apply text-blue-700 hover:underline hover:opacity-80 duration-150;
@@ -9,9 +9,9 @@
         }
     }
     .icon {
-        @apply text-gray-700 mx-2 max-w-fit;
+        @apply pointer-events-none text-gray-700 mx-2 max-w-fit inline;
         *:first-child {
-            @apply max-w-[0.5rem];
+            max-width: 6px;
         }
         * {
             @apply inline;
