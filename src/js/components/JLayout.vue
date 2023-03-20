@@ -5,19 +5,22 @@
             <div class="p-4 py-10 border border-dashed rounded-lg">
                 <div class="grid grid-cols-3 gap-x-2">
                     <div class="space-y-3">
-                        <div class="mb-1">Multiple Checkbox <code>modelBy="name"</code>: {{ multiCheckboxItems }}</div>
-                        <MultiCheckbox :options="optionBrands" keyBy="name" v-model="multiCheckboxItems" />
+                        <div class="mb-1">Multiple Checkbox <code>modelBy="name"</div>
+                        <MultiCheckbox :options="optionBrandsMultiCheckbox" keyBy="name" v-model="multiCheckboxItems" />
                     </div>
                     <div class="space-y-3">
-                        <div class="mb-1">Multiple Checkbox <code>modelBy="id"</code>: {{ multiCheckboxItemsID }}</div>
-                        <MultiCheckbox :options="optionBrands" keyBy="id" v-model="multiCheckboxItemsID" />
+                        <div class="mb-1">Multiple Checkbox <code>modelBy="id"</code></div>
+                        <MultiCheckbox
+                            :options="optionBrandsMultiCheckboxV2"
+                            keyBy="id"
+                            v-model="multiCheckboxItemsID"
+                        />
                     </div>
 
                     <div class="space-y-3">
-                        <div class="mb-1">
-                            Multiple Checkbox <code>modelBy="active"</code>: {{ multiCheckboxItemsActive }}
-                        </div>
-                        <MultiCheckbox :options="optionBrands" keyBy="active" v-model="multiCheckboxItemsActive" />
+                        <div><code>modelBy="name"</code>: {{ multiCheckboxItems }}</div>
+                        <div><code>modelBy="id"</code>: {{ multiCheckboxItemsID }}</div>
+
                     </div>
                 </div>
             </div>
@@ -567,6 +570,26 @@ export default {
             multiCheckboxItems: [],
             multiCheckboxItemsActive: [],
             multiCheckboxItemsID: [],
+            optionBrandsMultiCheckboxV2: [
+                {
+                    id: 1111,
+                    name: 'Apple',
+                    active: false,
+                },
+                { id: 2222, name: 'Samsung', active: false },
+                { id: 3333, name: 'Xiaomi', active: false },
+                { id: 4444, name: 'Oppo', active: false },
+            ],
+            optionBrandsMultiCheckbox: [
+                {
+                    id: 1111,
+                    name: 'Apple',
+                    active: false,
+                },
+                { id: 2222, name: 'Samsung', active: false },
+                { id: 3333, name: 'Xiaomi', active: false },
+                { id: 4444, name: 'Oppo', active: false },
+            ],
             team: { member: null },
             nameJobs: [],
             optionJobs: [
