@@ -1,6 +1,6 @@
 .radio {
     .label {
-        @apply font-medium label-2 pl-6 relative cursor-pointer text-gray-700;
+        @apply font-medium label-2 pl-8 relative cursor-pointer text-gray-700;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -32,7 +32,7 @@
         }
     }
     .help {
-        @apply pl-[24px] body-2 text-gray-500;
+        @apply pl-8 body-2 text-gray-500;
     }
 
     &.is-disabled {

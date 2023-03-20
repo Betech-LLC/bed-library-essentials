@@ -1,14 +1,15 @@
 .checkbox {
     .label {
-        @apply font-medium label-2 pl-6 relative cursor-pointer text-gray-700;
+        @apply font-medium label-2 pl-8 relative cursor-pointer text-gray-700;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+
         .checkmark {
-            @apply absolute w-4 h-4 left-0 top-1/2 transform -translate-y-1/2 border border-gray-300 rounded bg-white duration-150 flex justify-center items-center text-blue-600;
+            @apply absolute w-5 h-5 left-0 top-1/2 transform -translate-y-1/2 border border-gray-300 rounded bg-white duration-150 flex justify-center items-center text-blue-600 text-xl;
             > * {
-                @apply hidden;
+                @apply hidden max-w-[0.8em] w-full;
             }
         }
         .input {
@@ -31,7 +32,7 @@
         }
     }
     .help {
-        @apply pl-[24px] body-2 text-gray-500;
+        @apply pl-8 body-2 text-gray-500;
     }
 
     &.is-disabled {

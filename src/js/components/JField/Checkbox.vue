@@ -1,20 +1,20 @@
 <template>
     <div v-if="field" class="checkbox" :class="{ 'is-disabled': disabled }">
         <label class="label" :for="keyID">
-            <input
-                type="checkbox"
-                class="input"
-                :id="keyID"
-                :value="modelValue"
-                @input="$emit('update:modelValue', $event.target.checked)"
-            />
-            <div class="checkmark">
-                <template v-if="$slots.icon">
-                    <slot name="icon" />
-                </template>
-                <JIconTickCheckbox v-else />
+            <div v-if="$slots.checkmark">
+                <slot name="checkmark" :label="field.label" />
             </div>
-            {{ field.label }}
+
+            <template v-else>
+                <div class="checkmark">
+                    <JIconTickCheckbox />
+                </div>
+                <span>
+                    {{ field.label }}
+                </span>
+            </template>
+
+            <input type="checkbox" class="input" :id="keyID" :value="modelValue" @input="onInput" />
         </label>
 
         <p v-if="field.help" class="help">{{ field.help }}</p>
@@ -28,6 +28,13 @@ export default {
     computed: {
         keyID() {
             return `checkbox-${this.field.label}`
+        },
+    },
+
+    methods: {
+        onInput(e) {
+            console.log('onInput', e)
+            this.$emit('update:modelValue', e.target.checked)
         },
     },
 }

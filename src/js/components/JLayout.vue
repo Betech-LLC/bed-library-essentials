@@ -1,11 +1,11 @@
 <template>
     <div class="container py-10 space-y-10">
         <div id="jam-checkbox">
-            <div class="mb-4 display-3">Checkbox</div>
+            <div class="mb-4 display-3">Checkbox / Radio</div>
             <div class="p-4 py-10 border border-dashed rounded-lg">
                 <div class="grid grid-cols-3 gap-2">
                     <div class="space-y-4">
-                        <div class="label-1">Checked brands: {{ checkedBrands }}</div>
+                        <div class="label-1">Checked: {{ checkedBrands }}</div>
                         <JFieldCheckbox
                             v-for="option in optionBrands"
                             v-model="option.active"
@@ -41,6 +41,31 @@
                             }"
                             :disabled="true"
                         />
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="label-1">Checked: {{ optionJobs }}</div>
+                        <JFieldCheckbox
+                            v-for="option in optionJobs"
+                            v-model="option.active"
+                            :field="{
+                                label: option.name,
+                            }"
+                            class="checkbox-button"
+                        >
+                            <template #checkmark="{ label }">
+                                <div
+                                    class="text-gray-700 border rounded-lg px-4 py-2.5 inline-block"
+                                    :class="
+                                        option.active
+                                            ? 'border-blue-700 bg-blue-50 text-blue-700'
+                                            : 'bg-white hover:bg-gray-100 border-gray-300'
+                                    "
+                                >
+                                    {{ label }}
+                                </div>
+                            </template>
+                        </JFieldCheckbox>
                     </div>
                 </div>
             </div>
@@ -512,6 +537,24 @@ export default {
     data() {
         return {
             team: { member: null },
+            optionJobs: [
+                {
+                    name: 'Frontend',
+                    active: false,
+                },
+                {
+                    name: 'Backend',
+                    active: false,
+                },
+                {
+                    name: 'Accounting',
+                    active: false,
+                },
+                {
+                    name: 'Management roles',
+                    active: false,
+                },
+            ],
             optionLaptops: [
                 {
                     name: 'Mac',
@@ -629,4 +672,13 @@ export default {
     },
 }
 </script>
-<style lang=""></style>
+<style lang="scss">
+.checkbox-button {
+    .label {
+        @apply pl-0;
+    }
+    &.active {
+        @apply text-blue-700 bg-blue-50;
+    }
+}
+</style>
