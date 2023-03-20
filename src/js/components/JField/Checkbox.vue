@@ -23,6 +23,9 @@
 export default {
     props: ['field', 'modelValue', 'disabled'],
     emits: ['update:modelValue'],
+    data() {
+        return {}
+    },
 
     computed: {
         keyID() {
@@ -33,7 +36,7 @@ export default {
     methods: {
         onInput(e) {
             let value = e.target.value
-            if (value.toString() === 'false' || value.toString() === 'true') {
+            if (value.toString() === 'false' || value.toString() === 'true' || typeof this.modelValue === 'undefined') {
                 value = e.target.checked
             }
             this.$emit('update:modelValue', value)

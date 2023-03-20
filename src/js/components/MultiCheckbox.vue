@@ -30,10 +30,13 @@ export default {
         onChange(active, option) {
             const keyField = option[this.keyBy]
             if (active) {
+                console.log('this.items[keyField] = ', active)
                 this.items[keyField] = option[this.keyBy]
             } else {
                 delete this.items[keyField]
             }
+
+            console.log('items = ', this.items)
             this.$emit('update:modelValue', Object.keys(this.items))
         },
     },
