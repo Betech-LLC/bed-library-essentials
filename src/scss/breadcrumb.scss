@@ -10,7 +10,7 @@
     }
     .icon {
         @apply text-gray-700 mx-2 max-w-fit;
-        * {
+        *:first-child {
             @apply max-w-[0.5rem] inline;
         }
     }
