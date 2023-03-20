@@ -1,9 +1,32 @@
 <template>
     <div class="container py-10 space-y-10">
-        <div id="jam-checkbox">
-            <div class="mb-4 display-3">Checkbox / Radio</div>
+        <div id="jam-muilti-checkbox">
+            <div class="mb-4 display-3">Muilti-Checkbox</div>
             <div class="p-4 py-10 border border-dashed rounded-lg">
-                <div class="grid grid-cols-3 gap-2">
+                <div class="grid grid-cols-3 gap-x-2">
+                    <div class="space-y-3">
+                        <div class="mb-1">Multiple Checkbox <code>modelBy="name"</code>: {{ multiCheckboxItems }}</div>
+                        <MultiCheckbox :options="optionBrands" modelBy="name" v-model="multiCheckboxItems" />
+                    </div>
+                    <div class="space-y-3">
+                        <div class="mb-1">Multiple Checkbox <code>modelBy="id"</code>: {{ multiCheckboxItemsID }}</div>
+                        <MultiCheckbox :options="optionBrands" modelBy="id" v-model="multiCheckboxItemsID" />
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="mb-1">
+                            Multiple Checkbox <code>modelBy="active"</code>: {{ multiCheckboxItemsActive }}
+                        </div>
+                        <MultiCheckbox :options="optionBrands" modelBy="active" v-model="multiCheckboxItemsActive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="jam-checkbox">
+            <div class="mb-4 display-3">Checkbox / Radio / Muilti-Checkbox</div>
+            <div class="p-4 py-10 border border-dashed rounded-lg">
+                <div class="grid grid-cols-3 gap-x-2 gap-y-4">
                     <div class="space-y-4">
                         <div class="label-1">Checked: {{ checkedBrands }}</div>
                         <JFieldCheckbox
@@ -47,7 +70,7 @@
                         <div class="label-1">Checked: {{ checkedJobs }}</div>
                         <JFieldCheckbox
                             v-for="option in optionJobs"
-                            v-model="nameJobs"
+                            v-model="option.active"
                             :field="{
                                 label: option.name,
                                 value: option.name,
@@ -536,9 +559,14 @@
 </template>
 
 <script>
+import MultiChecbox from './MultiCheckbox.vue'
+
 export default {
     data() {
         return {
+            multiCheckboxItems: [],
+            multiCheckboxItemsActive: [],
+            multiCheckboxItemsID: [],
             team: { member: null },
             nameJobs: [],
             optionJobs: [
@@ -576,21 +604,13 @@ export default {
             activeLaptop: null,
             optionBrands: [
                 {
+                    id: 1111,
                     name: 'Apple',
                     active: false,
                 },
-                {
-                    name: 'Samsung',
-                    active: false,
-                },
-                {
-                    name: 'Xiaomi',
-                    active: false,
-                },
-                {
-                    name: 'Oppo',
-                    active: false,
-                },
+                { id: 2222, name: 'Samsung', active: false },
+                { id: 3333, name: 'Xiaomi', active: false },
+                { id: 4444, name: 'Oppo', active: false },
             ],
             members: [
                 {
@@ -658,7 +678,6 @@ export default {
             },
         }
     },
-
     computed: {
         checkedBrands() {
             const brands = []
@@ -679,6 +698,7 @@ export default {
             return jobs
         },
     },
+    components: { MultiChecbox },
 }
 </script>
 <style lang="scss">
