@@ -22,7 +22,7 @@
                         <li class="flex-none">
                             <label class="text-gray-700 body-1">Hạn nộp</label>
                             <p class="mt-0.5 title-3 text-primary-dark">
-                                {{ toDate(job.expected_time) }}
+                                {{ toDate(job.expected_time, 'vi', false) }}
                             </p>
                         </li>
                     </ul>
