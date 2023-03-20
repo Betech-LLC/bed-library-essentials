@@ -37,7 +37,12 @@
                         <JSocialShare zaloOAId="1111640952861619960" />
                     </div>
                 </div>
-                <div class="col-span-4"></div>
+                <div class="col-span-4">
+                    <h2 class="my-4 text-black title-1">Vị trí khác</h2>
+                    <div class="space-y-2">
+                        <JCardJob class="card-job-col" v-for="(job, index) in relatedJobs" :key="index" :item="job" />
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -49,7 +54,7 @@ import JSocialShare from '@core/components/JSocialShare.vue'
 export default {
     components: { JSocialShare },
 
-    props: ['job', 'breadcrumb'],
+    props: ['job', 'relatedJobs', 'breadcrumb'],
 }
 </script>
 

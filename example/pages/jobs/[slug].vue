@@ -1,8 +1,22 @@
-<template><JPageJobDetail :job="job" :breadcrumb="breadcrumb" /></template>
+<template><JPageJobDetail :job="job" :relatedJobs="relatedJobs" :breadcrumb="breadcrumb" /></template>
 <script>
 export default {
     data() {
         return {
+            breadcrumb: [
+                {
+                    title: 'Trang chủ',
+                    link: '/',
+                },
+                {
+                    title: 'Tuyển dụng',
+                    link: '/jobs',
+                },
+                {
+                    title: 'Tuyển dụng chi tiết',
+                },
+            ],
+
             job: {
                 id: 18,
                 title: 'Chuyên viên khảo sát rủi ro/ Risk Surveyor',
@@ -48,17 +62,41 @@ export default {
                         <li>Nắm r&otilde; thị trường lao động, c&oacute; những mối quan hệ đặc biệt với những nh&agrave; cung cấp nh&acirc;n sự</li>
                         </ul>`,
             },
-            breadcrumb: [
+
+            relatedJobs: [
                 {
-                    title: 'Trang chủ',
-                    link: '/',
+                    id: 18,
+                    title: 'Principal Python Engineer',
+                    slug: 'principal-python-engineer',
+                    is_urgent: 1,
+                    is_bonus: 1,
+                    is_available: 1,
+                    category: 'Tech/Engineer',
+                    location: 'Ho Chi Minh',
+                    quantity: 1,
+                    url: '/jobs/job-detail',
                 },
                 {
-                    title: 'Tuyển dụng',
-                    link: '/jobs',
+                    id: 20,
+                    title: 'Principal Ruby on Rails Engineer',
+                    slug: 'principal-ruby-on-rails-engineer',
+                    is_urgent: 1,
+                    is_bonus: 0,
+                    category: 'Tech/Engineer',
+                    location: 'Ho Chi Minh',
+                    quantity: 1,
+                    url: '/jobs/job-detail',
                 },
                 {
-                    title: 'Tuyển dụng chi tiết',
+                    id: 26,
+                    title: 'Middle/Senior Ruby on Rails Engineer',
+                    slug: 'middlesenior-ruby-on-rails-engineer',
+                    is_urgent: 1,
+                    is_bonus: 0,
+                    category: 'Tech/Engineer',
+                    location: 'Ho Chi Minh',
+                    quantity: 1,
+                    url: '/jobs/job-detail',
                 },
             ],
         }

@@ -3,7 +3,7 @@
 }
 
 .card-job-wrap {
-    @apply grid grid-cols-7 md:grid-cols-10 overflow-hidden base-transition bg-white border xl:gap-x-8 max-lg:gap-y-4 rounded-lg border-gray-200 px-4 xl:px-8 md:px-6 xl:py-6 md:py-4 py-6;
+    @apply grid overflow-hidden base-transition bg-white border xl:gap-x-8 lg:gap-x-6 max-lg:gap-y-4 rounded-lg border-gray-200 p-4 xl:px-8 md:px-6 xl:py-6 md:py-4;
 
     @screen lg {
         &:hover {
@@ -43,8 +43,8 @@
     }
 }
 
-.card-job-category-wrap {
-    @apply col-span-2 max-lg:hidden;
+.card-job-category-location-wrap {
+    @apply col-span-full max-lg:flex max-lg:space-x-4;
 }
 
 .card-job-category-label {
@@ -56,7 +56,7 @@
 }
 
 .card-job-location-wrap {
-    @apply col-span-2 max-lg:hidden;
+    @apply flex-none;
 }
 
 .card-job-location-label {
@@ -83,14 +83,6 @@
     @apply label-1 text-gray-900;
 }
 
-.card-job-category-location-mobile {
-    @apply lg:hidden col-span-full flex space-x-8;
-}
-
-.card-job-location-mobile-wrap {
-    @apply flex-none;
-}
-
 .card-job-share {
     @apply absolute z-10 transform -translate-y-1/2 top-1/2 xl:right-8 md:right-6 right-4 max-lg:hidden;
 }
@@ -109,6 +101,14 @@
 
 .card-job {
     &:not(.card-job-col) {
+        .card-job-wrap {
+            @apply grid-cols-7 md:grid-cols-10;
+        }
+
+        .card-job-category-location-wrap {
+            @apply lg:col-span-4 lg:grid lg:grid-cols-2 xl:gap-x-8 lg:gap-x-6;
+        }
+
         .card-job-quantity-mobile-wrap {
             @apply lg:hidden;
         }
@@ -120,11 +120,15 @@
 
     &.card-job-col {
         .card-job-wrap {
-            @apply gap-y-4;
+            @apply gap-y-4 xl:py-6 md:p-4 xl:px-4 border-primary-dark;
         }
 
         .card-job-title-wrap {
             @apply col-span-full;
+        }
+
+        .card-job-category-location-wrap {
+            @apply flex xl:space-x-8 md:space-x-6;
         }
 
         .card-job-quantity-wrap {

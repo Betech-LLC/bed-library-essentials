@@ -17,37 +17,24 @@
                     <span v-if="item.is_urgent" class="urgent">Urgent</span>
                 </div>
             </div>
-            <div class="card-job-category-wrap">
-                <div class="card-job-category-label">Ngành nghề</div>
-                <div class="card-job-category-title">
-                    {{ item.category }}
+            <div class="card-job-category-location-wrap">
+                <div class="card-job-category-wrap">
+                    <div class="card-job-category-label">Ngành nghề</div>
+                    <div class="card-job-category-title">
+                        {{ item.category }}
+                    </div>
                 </div>
-            </div>
-            <div class="card-job-location-wrap">
-                <div class="card-job-location-label">Nơi làm việc</div>
-                <div class="card-job-location-title">
-                    {{ item.location }}
+                <div class="card-job-location-wrap">
+                    <div class="card-job-location-label">Nơi làm việc</div>
+                    <div class="card-job-location-title">
+                        {{ item.location }}
+                    </div>
                 </div>
             </div>
             <div class="card-job-quantity-wrap">
                 <div class="card-job-quantity-label">Số lượng</div>
                 <div class="card-job-quantity-title">
                     {{ addLeadingZero(item.quantity) }}
-                </div>
-            </div>
-
-            <div class="card-job-category-location-mobile">
-                <div class="card-job-category-mobile-wrap">
-                    <div class="card-job-category-label">Ngành nghề</div>
-                    <div class="card-job-category-title">
-                        {{ item.category }}
-                    </div>
-                </div>
-                <div class="card-job-location-mobile-wrap">
-                    <div class="card-job-location-label">Nơi làm việc</div>
-                    <div class="card-job-location-title">
-                        {{ item.location }}
-                    </div>
                 </div>
             </div>
         </JLink>

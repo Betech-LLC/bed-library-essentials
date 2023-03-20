@@ -14,7 +14,6 @@
 
                     <div class="jobs-list">
                         <JCardJob v-for="(job, index) in jobs" :key="index" :item="job" />
-                        <JCardJob class="card-job-col" v-for="(job, index) in jobs" :key="index" :item="job" />
                     </div>
 
                     <div class="jobs-button">
