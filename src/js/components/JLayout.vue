@@ -47,9 +47,10 @@
                         <div class="label-1">Checked: {{ checkedJobs }}</div>
                         <JFieldCheckbox
                             v-for="option in optionJobs"
-                            v-model="option.active"
+                            v-model="nameJobs"
                             :field="{
                                 label: option.name,
+                                value: option.name,
                             }"
                             class="checkbox-button"
                         >
@@ -537,22 +538,19 @@ export default {
     data() {
         return {
             team: { member: null },
+            nameJobs: [],
             optionJobs: [
                 {
                     name: 'Frontend',
-                    active: false,
                 },
                 {
                     name: 'Backend',
-                    active: false,
                 },
                 {
                     name: 'Accounting',
-                    active: false,
                 },
                 {
                     name: 'Management roles',
-                    active: false,
                 },
             ],
             optionLaptops: [
