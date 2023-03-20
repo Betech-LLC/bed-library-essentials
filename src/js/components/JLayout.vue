@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="space-y-4">
-                        <div class="label-1">Checked: {{ optionJobs }}</div>
+                        <div class="label-1">Checked: {{ checkedJobs }}</div>
                         <JFieldCheckbox
                             v-for="option in optionJobs"
                             v-model="option.active"
@@ -55,11 +55,11 @@
                         >
                             <template #checkmark="{ label }">
                                 <div
-                                    class="text-gray-700 border rounded-lg px-4 py-2.5 inline-block"
+                                    class="border rounded-lg px-4 py-2.5 inline-block"
                                     :class="
                                         option.active
                                             ? 'border-blue-700 bg-blue-50 text-blue-700'
-                                            : 'bg-white hover:bg-gray-100 border-gray-300'
+                                            : 'bg-white hover:bg-gray-100 border-gray-300 text-gray-700'
                                     "
                                 >
                                     {{ label }}
@@ -668,6 +668,15 @@ export default {
                 }
             })
             return brands
+        },
+        checkedJobs() {
+            const jobs = []
+            this.optionJobs.forEach((job) => {
+                if (!!job.active) {
+                    jobs.push(job.name)
+                }
+            })
+            return jobs
         },
     },
 }
