@@ -11,7 +11,7 @@
 }
 
 .card-job-title {
-    @apply label-1 text-gray-900 max-lg:flex max-lg:space-x-4 max-lg:justify-between max-lg:items-baseline;
+    @apply label-1 text-gray-900 flex space-x-4 justify-between items-baseline;
 }
 
 .card-job-badge {
@@ -63,7 +63,7 @@
 }
 
 .card-job-quantity-mobile-wrap {
-    @apply flex space-x-2 flex-none lg:hidden items-center;
+    @apply flex space-x-2 flex-none items-center;
 }
 
 .card-job-quantity-label {
@@ -71,7 +71,7 @@
 }
 
 .card-job-quantity-title {
-    @apply xl:mt-2 md:mt-1.5 label-1 text-gray-900;
+    @apply label-1 text-gray-900;
 }
 
 .card-job-category-location-mobile {
@@ -96,4 +96,34 @@
 
 .share-list {
     @apply absolute right-0 xl:px-6 md:px-4 px-3 xl:py-3 md:py-2.5 py-2 transform translate-y-full bg-white rounded-lg -bottom-2 shadow-lg w-max;
+}
+
+.card-job {
+    &:not(.card-job-col) {
+        .card-job-quantity-mobile-wrap {
+            @apply lg:hidden;
+        }
+
+        .card-job-quantity-title {
+            @apply xl:mt-2 md:mt-1.5;
+        }
+    }
+
+    &.card-job-col {
+        .card-job-wrap {
+            @apply gap-y-4;
+        }
+
+        .card-job-title-wrap {
+            @apply col-span-full;
+        }
+
+        .card-job-quantity-wrap {
+            @apply hidden;
+        }
+
+        .card-job-share {
+            @apply hidden;
+        }
+    }
 }
