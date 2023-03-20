@@ -13,6 +13,7 @@
                     <div class="absolute inset-0 bg-black opacity-60"></div>
                 </div>
             </transition>
+            <slot name="close"></slot>
 
             <transition
                 enter-active-class="ease-out lg:duration-300"
@@ -54,11 +55,19 @@ export default {
             return {
                 sm: 'sm:max-w-sm',
                 md: 'sm:max-w-md',
-                lg: 'sm:max-w-lg max-md:w-full',
+                lg: 'sm:max-w-lg',
                 xl: 'sm:max-w-xl',
-                '2xl': 'sm:max-w-[700px]',
-                register: 'xl:max-w-[1140px] lg:max-w-[900px] md:max-w-[600px] max-md:w-full',
-                screen: 'max-w-screen max-h-screen w-full',
+                '2xl': 'sm:max-w-2xl',
+                '3xl': 'sm:max-w-3xl',
+                '4xl': 'sm:max-w-4xl',
+                '5xl': 'sm:max-w-5xl',
+                '6xl': 'sm:max-w-6xl',
+                '7xl': 'sm:max-w-7xl',
+                '60vw': 'sm:max-w-60vw',
+                '70vw': 'sm:max-w-70vw',
+                '80vw': 'sm:max-w-80vw',
+                '90vw': 'sm:max-w-90vw',
+                screen: 'max-w-screen max-h-screen',
             }[this.maxWidth]
         },
     },

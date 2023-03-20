@@ -1,7 +1,7 @@
 <template>
     <div v-if="item" class="card-vlog">
         <div class="card-vlog-head">
-            <JLink class="card-vlog-image" :href="item.url">
+            <JLink @click="viewDetail" class="card-vlog-image" :href="item.url">
                 <JPicture :src="item.image?.url" :alt="item.image?.alt || item.title"> </JPicture>
             </JLink>
             <JLink :href="item.url" class="card-vlog-time">
@@ -28,6 +28,15 @@ export default {
     props: {
         item: {
             type: Object,
+        },
+    },
+
+    methods: {
+        viewDetail(e) {
+            e.preventDefault()
+
+            window.history.pushState({}, '', this.item.url)
+            this.$emit('changeUrl', this.item.url)
         },
     },
 }
