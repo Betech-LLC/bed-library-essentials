@@ -10,8 +10,8 @@
     }
     .icon {
         @apply text-gray-700 mx-2 max-w-fit;
-    }
-    .icon svg {
-        @apply max-w-[0.5rem] inline;
+        * {
+            @apply max-w-[0.5rem] inline;
+        }
     }
 }
