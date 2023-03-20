@@ -17,11 +17,13 @@
                         </li>
                         <li class="flex-none">
                             <label class="text-gray-700 body-1">Số lượng</label>
-                            <p class="mt-0.5 title-3 text-primary-dark">{{ job.quantity }}</p>
+                            <p class="mt-0.5 title-3 text-primary-dark">{{ addLeadingZero(job.quantity) }}</p>
                         </li>
                         <li class="flex-none">
                             <label class="text-gray-700 body-1">Hạn nộp</label>
-                            <p class="mt-0.5 title-3 text-primary-dark">{{ job.expected_time }}</p>
+                            <p class="mt-0.5 title-3 text-primary-dark">
+                                {{ toDate(job.expected_time) }}
+                            </p>
                         </li>
                     </ul>
                 </div>
@@ -50,11 +52,17 @@
 
 <script>
 import JSocialShare from '@core/components/JSocialShare.vue'
+import { addLeadingZero, toDate } from '@core/utils'
 
 export default {
     components: { JSocialShare },
 
     props: ['job', 'relatedJobs', 'breadcrumb'],
+
+    methods: {
+        addLeadingZero,
+        toDate,
+    },
 }
 </script>
 

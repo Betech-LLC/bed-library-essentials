@@ -27,7 +27,7 @@ export default {
                 category: 'Tech/Engineer',
                 location: 'Thành phố Hồ Chí Minh',
                 quantity: 1,
-                expected_time: '2023-03-22',
+                expected_time: '2023-03-02',
                 url: '/jobs/job-detail',
                 content: `<h3>1. M&ocirc; tả c&ocirc;ng việc</h3>
                         <ul>

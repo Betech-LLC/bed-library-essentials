@@ -6,6 +6,9 @@ function toNumber(number) {
 
 function toDate(date, language = 'vi') {
     const currentDate = new Date(date)
+    // const day = currentDate.getDate()
+    // const month = currentDate.getMonth()
+    // const year = currentDate.getFullYear()
     if (language === 'vi') {
         const dayNames = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy']
         const day = dayNames[currentDate.getDay()]
