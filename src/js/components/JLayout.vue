@@ -5,7 +5,7 @@
             <div class="p-4 py-10 border border-dashed rounded-lg">
                 <div class="grid grid-cols-3 gap-x-2">
                     <div class="space-y-3">
-                        <div class="mb-1">Multiple Checkbox <code>modelBy="name"</div>
+                        <div class="mb-1">Multiple Checkbox <code>modelBy="name"</code></div>
                         <MultiCheckbox :options="optionBrandsMultiCheckbox" keyBy="name" v-model="multiCheckboxItems" />
                     </div>
                     <div class="space-y-3">
@@ -20,7 +20,6 @@
                     <div class="space-y-3">
                         <div><code>modelBy="name"</code>: {{ multiCheckboxItems }}</div>
                         <div><code>modelBy="id"</code>: {{ multiCheckboxItemsID }}</div>
-
                     </div>
                 </div>
             </div>
@@ -572,13 +571,12 @@ export default {
             multiCheckboxItemsID: [],
             optionBrandsMultiCheckboxV2: [
                 {
-                    id: 1111,
-                    name: 'Apple',
-                    active: false,
+                    id: 23,
+                    name: 'Frontend',
                 },
-                { id: 2222, name: 'Samsung', active: false },
-                { id: 3333, name: 'Xiaomi', active: false },
-                { id: 4444, name: 'Oppo', active: false },
+                { id: 333, name: 'Backend' },
+                { id: 3545, name: 'Accounting' },
+                { id: 997, name: 'Management roles' },
             ],
             optionBrandsMultiCheckbox: [
                 {
