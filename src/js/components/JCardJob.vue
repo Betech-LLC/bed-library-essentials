@@ -12,9 +12,9 @@
                     </div>
                 </div>
                 <div v-if="item.is_urgent || item.is_bonus || item.is_available" class="card-job-badge">
-                    <Tag v-if="item.is_bonus" class="bonus">Bonus</Tag>
-                    <Tag v-if="item.is_available" class="available">Available</Tag>
-                    <Tag v-if="item.is_urgent" class="urgent">Urgent</Tag>
+                    <span v-if="item.is_bonus" class="bonus">Bonus</span>
+                    <span v-if="item.is_available" class="available">Available</span>
+                    <span v-if="item.is_urgent" class="urgent">Urgent</span>
                 </div>
             </div>
             <div class="card-job-category-wrap">
