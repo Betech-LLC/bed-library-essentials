@@ -1,0 +1,107 @@
+.card-job {
+    @apply relative rounded-lg;
+}
+
+.card-job-wrap {
+    @apply grid grid-cols-7 md:grid-cols-10 overflow-hidden base-transition bg-white border xl:gap-x-8 max-lg:gap-y-4 rounded-lg border-gray-200 px-4 xl:px-8 md:px-6 xl:py-6 md:py-4 py-6;
+
+    @screen lg {
+        &:hover {
+            @apply border-primary-dark;
+            .card-job-title {
+                @apply text-primary-dark;
+            }
+        }
+    }
+}
+
+.card-job-title-wrap {
+    @apply col-span-full lg:col-span-4;
+}
+
+.card-job-title {
+    @apply label-1 text-gray-900 max-lg:flex max-lg:space-x-4 max-lg:justify-between max-lg:items-baseline base-transition;
+}
+
+.card-job-badge {
+    @apply xl:space-x-2 md:space-x-1.5 space-x-2 xl:mt-3 md:mt-2.5 mt-2;
+
+    .bonus,
+    .available,
+    .urgent {
+        @apply badge badge-sm;
+    }
+
+    .bonus {
+        @apply badge-blue;
+    }
+    .available {
+        @apply badge-success;
+    }
+    .urgent {
+        @apply badge-error;
+    }
+}
+
+.card-job-category-wrap {
+    @apply col-span-2 max-lg:hidden;
+}
+
+.card-job-category-label {
+    @apply body-2 text-gray-700;
+}
+
+.card-job-category-title {
+    @apply xl:mt-2 md:mt-1.5 mt-2 label-1 text-gray-900;
+}
+
+.card-job-location-wrap {
+    @apply col-span-2 max-lg:hidden;
+}
+
+.card-job-location-label {
+    @apply body-2 text-gray-700;
+}
+
+.card-job-location-title {
+    @apply xl:mt-2 md:mt-1.5 mt-2 label-1 text-gray-900;
+}
+
+.card-job-quantity-wrap {
+    @apply col-span-1 text-right max-lg:hidden;
+}
+
+.card-job-quantity-mobile-wrap {
+    @apply flex space-x-2 flex-none lg:hidden items-center;
+}
+
+.card-job-quantity-label {
+    @apply body-2 text-gray-700;
+}
+
+.card-job-quantity-title {
+    @apply xl:mt-2 md:mt-1.5 label-1 text-gray-900;
+}
+
+.card-job-category-location-mobile {
+    @apply lg:hidden col-span-full flex space-x-8;
+}
+
+.card-job-location-mobile-wrap {
+    @apply flex-none;
+}
+
+.card-job-share {
+    @apply absolute z-10 transform -translate-y-1/2 top-1/2 xl:right-8 md:right-6 right-4 max-lg:hidden;
+    .icon {
+        @apply flex items-center justify-center cursor-pointer hover:text-primary-dark base-transition;
+
+        svg {
+            @apply w-3 h-3 xl:w-6 md:w-4 xl:h-6 md:h-4;
+        }
+    }
+}
+
+.share-list {
+    @apply absolute right-0 xl:px-6 md:px-4 px-3 xl:py-3 md:py-2.5 py-2 transform translate-y-full bg-white rounded-lg -bottom-2 shadow-lg w-max;
+}
