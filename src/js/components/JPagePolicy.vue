@@ -1,7 +1,7 @@
 <template>
     <main>
         <section class="page-policy">
-            <div class="page-policy-container">
+            <div class="page-policy-wrap">
                 <div class="page-policy-head">Hỗ trợ khách hàng</div>
 
                 <div class="page-policy-body">
