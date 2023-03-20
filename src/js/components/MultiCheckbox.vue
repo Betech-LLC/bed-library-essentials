@@ -34,8 +34,6 @@ export default {
             } else {
                 delete this.items[keyField]
             }
-
-            console.log('items = ', this.items)
             this.$emit('update:modelValue', Object.keys(this.items))
         },
     },
