@@ -3,7 +3,16 @@
 }
 
 .card-job-wrap {
-    @apply grid grid-cols-7 md:grid-cols-10 overflow-hidden base-transition bg-white border xl:gap-x-8 max-lg:gap-y-4 rounded-lg border-gray-200 px-4 xl:px-8 md:px-6 xl:py-6 md:py-4 py-6 lg:hover:border-primary-dark;
+    @apply grid grid-cols-7 md:grid-cols-10 overflow-hidden base-transition bg-white border xl:gap-x-8 max-lg:gap-y-4 rounded-lg border-gray-200 px-4 xl:px-8 md:px-6 xl:py-6 md:py-4 py-6;
+
+    @screen lg {
+        &:hover {
+            @apply border-primary-dark;
+            .card-job-title {
+                @apply text-primary-dark;
+            }
+        }
+    }
 }
 
 .card-job-title-wrap {
@@ -11,7 +20,7 @@
 }
 
 .card-job-title {
-    @apply label-1 text-gray-900 flex space-x-4 justify-between items-baseline;
+    @apply label-1 text-gray-900 flex space-x-4 justify-between items-baseline base-transition;
 }
 
 .card-job-badge {

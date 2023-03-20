@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="jobs-button">
-                        <button class="btn-see-more">Xem thêm</button>
+                        <button class="btn-see-more">Xem thêm 12 việc làm</button>
                     </div>
                 </div>
             </div>
