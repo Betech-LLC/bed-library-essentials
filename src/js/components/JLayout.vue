@@ -26,7 +26,7 @@
         </div>
 
         <div id="jam-checkbox">
-            <div class="mb-4 display-3">Checkbox / Radio / Muilti-Checkbox</div>
+            <div class="mb-4 display-3">Checkbox / Radio</div>
             <div class="p-4 py-10 border border-dashed rounded-lg">
                 <div class="grid grid-cols-3 gap-x-2 gap-y-4">
                     <div class="space-y-4">
