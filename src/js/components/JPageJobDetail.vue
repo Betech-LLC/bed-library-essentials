@@ -1,6 +1,6 @@
 <template>
-    <main class="py-6">
-        <section class="container">
+    <main>
+        <section class="container py-6">
             <JBreadcrumb :items="breadcrumb">
                 <template #icon>
                     <JIconArrowRight />
