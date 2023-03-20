@@ -9,7 +9,7 @@
         }
     }
     .icon {
-        @apply text-gray-700 mx-2 max-w-fit inline pointer-events-none;
+        @apply pointer-events-none text-gray-700 mx-2 max-w-fit inline;
         *:first-child {
             @apply max-w-[0.4rem];
         }
