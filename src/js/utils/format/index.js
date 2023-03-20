@@ -9,6 +9,8 @@ function toDate(date, language = 'vi', weekday = true) {
 
     let options = {}
 
+    !language ? (language = 'vi') : false
+
     if (language === 'vi') {
         options = { year: 'numeric', month: '2-digit', day: '2-digit' }
         weekday ? (options.weekday = 'long') : false
