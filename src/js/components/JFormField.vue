@@ -55,7 +55,13 @@
 
 <script>
 import { validateField } from '@core/utils'
+import JFieldText from '@core/components/JField/JFieldText.vue'
+import JFieldPhone from '@core/components/JField/JFieldPhone.vue'
+import JFieldDropdown from '@core/components/JField/JFieldDropdown.vue'
+import JFieldTextarea from '@core/components/JField/JFieldTextarea.vue'
+
 export default {
+    components: { JFieldText, JFieldPhone, JFieldDropdown, JFieldTextarea },
     emits: ['update:modelValue'],
     props: {
         field: {
