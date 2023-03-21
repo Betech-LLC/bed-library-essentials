@@ -96,7 +96,7 @@ export default {
             return this.field.label + ` ${this.rules[this.field.name].includes('required') ? '*' : ''}`
         },
         messageError() {
-            return this.errors[this.field.name] || `Vui lòng nhập ${this.field.label.toLowerCase()}`
+            return this.errors[this.field.name] || `${this.field.label} không hợp lệ`
         },
 
         isError() {
