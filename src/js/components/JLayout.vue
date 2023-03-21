@@ -1,14 +1,5 @@
 <template>
     <div class="container py-10 space-y-10">
-        <div class="p-6">
-            <div class="mb-4">
-                {{ isBill }}
-            </div>
-            <JFieldCheckbox
-                v-model="isBill"
-                :field="{ label: 'Xuất hóa đơn công ty', help: 'This is a hint text to help user.' }"
-            />
-        </div>
         <div id="jam-muilti-checkbox">
             <div class="mb-4 display-3">Muilti-Checkbox</div>
             <div class="p-4 py-10 border border-dashed rounded-lg">
@@ -16,10 +7,19 @@
                     <div class="space-y-3">
                         <div class="mb-1">Multiple Checkbox <code>modelBy="name"</code></div>
                         <JFieldCheckboxMultiple
+                            v-model="multiCheckboxItems"
                             :options="optionBrandsMultiCheckbox"
                             keyBy="name"
-                            v-model="multiCheckboxItems"
                         />
+
+                        <!-- <JFormField
+                            v-model="multiCheckboxItems"
+                            :field="{
+                                type: 'checkbox_multiple',
+                            }"
+                            keyBy="name"
+                            :options="optionBrandsMultiCheckbox"
+                        /> -->
                     </div>
                     <div class="space-y-3">
                         <div class="mb-1">Multiple Checkbox <code>modelBy="id"</code></div>

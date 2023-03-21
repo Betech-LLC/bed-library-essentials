@@ -1,8 +1,9 @@
 /* INPUT BASE */
+.label {
+    @apply text-gray-700 font-medium relative cursor-pointer label-2;
+}
 fieldset {
-    .label {
-        @apply text-gray-700 label-2 mb-1 md:mb-1.5;
-    }
+    @apply relative;
     .field {
         @apply relative;
 

@@ -1,10 +1,6 @@
 .radio {
     .label {
-        @apply font-medium label-2 pl-8 relative cursor-pointer text-gray-700;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+        @apply pl-8;
         .checkmark {
             @apply absolute w-5 h-5 rounded-full left-0 top-1/2 transform -translate-y-1/2 border border-gray-300  bg-white duration-150 flex justify-center items-center text-blue-600;
 
@@ -20,7 +16,6 @@
                     @apply opacity-100;
                 }
             }
-
             &:focus ~ .checkmark {
                 @apply bg-blue-50 border-blue-600;
                 box-shadow: 0px 0px 0px 4px #d1e9ff;
