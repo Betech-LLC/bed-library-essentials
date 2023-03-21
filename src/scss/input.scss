@@ -1,7 +1,11 @@
-/* INPUT BASE */
 .label {
     @apply text-gray-700 font-medium relative cursor-pointer label-2;
 }
+.help {
+    @apply text-gray-500;
+}
+
+/* INPUT BASE */
 fieldset {
     @apply relative;
     .field {
@@ -26,7 +30,7 @@ fieldset {
         }
 
         .help {
-            @apply absolute left-0 text-gray-500 translate-y-full -bottom-1 body-3;
+            @apply absolute left-0 translate-y-full -bottom-1 body-3;
         }
 
         &.has-prefix {
