@@ -25,7 +25,7 @@ export default {
                 is_bonus: 1,
                 is_available: 1,
                 category: 'Tech/Engineer',
-                location: 'Thành phố Hồ Chí Minh',
+                location: 'Hồ Chí Minh',
                 quantity: 1,
                 expected_time: '2023-03-02',
                 url: '/jobs/job-detail',
