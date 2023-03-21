@@ -55,10 +55,10 @@
 
 <script>
 import { validateField } from '@core/utils'
-import JFieldText from '@core/components/JField/JFieldText.vue'
-import JFieldPhone from '@core/components/JField/JFieldPhone.vue'
-import JFieldDropdown from '@core/components/JField/JFieldDropdown.vue'
-import JFieldTextarea from '@core/components/JField/JFieldTextarea.vue'
+import JFieldText from '@core/components/JField/Text.vue'
+import JFieldPhone from '@core/components/JField/Phone.vue'
+import JFieldDropdown from '@core/components/JField/Dropdown.vue'
+import JFieldTextarea from '@core/components/JField/Textarea.vue'
 
 export default {
     components: { JFieldText, JFieldPhone, JFieldDropdown, JFieldTextarea },
