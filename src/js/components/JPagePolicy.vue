@@ -8,15 +8,12 @@
                     <div class="page-policy-box">
                         <div @click="togglePolicyMobile" class="box-body">
                             <div class="box-title title-2">
-                                {{ currentPolicy.title }}
+                                {{ currentPolicy.title || 'Chính sách' }}
                             </div>
-                            <!-- TODO: CHỜ COMPONENT ICON -->
-                            <!-- <div class="icon-position">
-                        <IconCaretDown />
-                    </div> -->
+                            <JIconArrowRight class="box-icon" :class="{ active: isOpenMobile }" />
                         </div>
                     </div>
-                    <div class="page-policy-nav" :class="isOpenMobile ? '' : 'toggle'">
+                    <div class="page-policy-nav" :class="{ toggle: !isOpenMobile }">
                         <ul class="nav-list">
                             <li class="nav-item" v-for="(policy, index) in list_sidebar" :key="index">
                                 <JLink
@@ -27,8 +24,9 @@
                                     }"
                                 >
                                     <div v-if="policy.icon" class="nav-icon" v-html="policy.icon"></div>
-                                    <!-- TODO: CHỜ COMPONENT ICON -->
-                                    <!-- <IconPolicyDefault v-else /> -->
+                                    <div class="nav-icon" v-else>
+                                        <JIconPolicyDefault />
+                                    </div>
                                     <div class="nav-title">
                                         {{ policy.title }}
                                     </div>
@@ -51,8 +49,11 @@
     </main>
 </template>
 <script>
-import { checkActiveUrl, getCurrentUrlTitle } from '@core/utils'
+import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
+import JIconPolicyDefault from '@core/components/JIcon/PolicyDefault.vue'
+
 export default {
+    comments: { JIconArrowRight, JIconPolicyDefault },
     props: ['list_sidebar', 'content'],
     data() {
         return {
@@ -76,8 +77,15 @@ export default {
         togglePolicyMobile() {
             this.isOpenMobile = !this.isOpenMobile
         },
-        checkActiveUrl,
-        getCurrentUrlTitle,
+        checkActiveUrl(url, route_path) {
+            const arrPath = route_path.split('/')
+            return url == arrPath[arrPath.length - 1]
+        },
+        getCurrentUrlTitle(arr, route_path) {
+            const arrPath = route_path.split('/')
+            console.log(arr)
+            return arr.find((item) => item.slug.params.slug === arrPath[arrPath.length - 1])
+        },
     },
 }
 </script>

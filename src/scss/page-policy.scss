@@ -17,12 +17,16 @@
 .page-policy-box {
     @apply col-span-full lg:hidden;
     .box-body {
-        @apply relative overflow-hidden bg-white shadow-xs;
+        @apply relative overflow-hidden bg-white shadow-xs flex justify-between items-center py-2.5 px-3 md:px-4 border-l-4 border-blue-600;
         .box-title {
-            @apply w-full relative py-2.5 px-3 md:px-4 flex items-center border-l-4 space-x-2 overflow-hidden text-gray-700 border-blue-600;
+            @apply w-full relative flex items-center  space-x-2 overflow-hidden text-gray-700;
         }
         .box-icon {
-            @apply absolute top-0 right-3 md:right-4 flex items-center justify-center h-full;
+            @apply md:w-3.5 w-3 md:h-3.5 h-3 base-transition;
+
+            &.active {
+                @apply transform rotate-180;
+            }
         }
     }
 }
@@ -101,7 +105,7 @@
 }
 
 .page-policy-title {
-    @apply title-1 text-gray-900 font-semibold xl:mb-8 md:mb-6 mb-4;
+    @apply title-1 text-gray-900 xl:mb-8 md:mb-6 mb-4;
 }
 
 .page-policy-prose {
