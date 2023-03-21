@@ -8,6 +8,8 @@
         onkeydown="return event.keyCode !== 69 && event.keyCode !== 190"
     />
 </template>
+
 <script>
-export default { emits: ['update:modelValue'], props: ['modelValue', 'field'] }
+import JFieldText from '@core/components/JField/Text.vue'
+export default { emits: ['update:modelValue'], props: ['modelValue', 'field'], components: { JFieldText } }
 </script>

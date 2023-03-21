@@ -34,7 +34,12 @@
                 :field="field"
                 @update:modelValue="onChangeField"
             />
-            <JFieldPhone v-else-if="field.type === 'number'" :field="field" @update:modelValue="onChangeField" />
+            <JFieldPhone
+                v-else-if="field.type === 'number'"
+                :modelValue="form[field.name]"
+                :field="field"
+                @update:modelValue="onChangeField"
+            />
 
             <JFieldDropdown
                 v-else-if="field.type === 'dropdown'"
