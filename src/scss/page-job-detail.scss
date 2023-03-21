@@ -1,0 +1,82 @@
+.page-job-detail {
+    @apply container py-3 xl:py-6 md:py-4;
+}
+
+.page-job-detail-title {
+    @apply mt-3 text-gray-900 lg:col-span-8 col-span-full headline-2 xl:mt-6 md:mt-4;
+}
+
+.page-job-detail-body {
+    @apply grid grid-cols-12 xl:mt-2 md:mt-1.5 mt-1 xl:gap-x-8 lg:gap-x-6 max-lg:gap-y-4;
+
+    .left {
+        @apply lg:col-span-8 col-span-full;
+    }
+    .right {
+        @apply xl:space-y-6 md:space-y-4 space-y-3 lg:col-span-4 col-span-full;
+    }
+}
+
+.page-job-detail-content {
+    @apply prose xl:p-4 lg:p-3;
+}
+
+.prose {
+    h3 {
+        @apply xl:mt-8 md:mt-6 mt-4;
+    }
+}
+
+.page-job-detail-share {
+    @apply flex justify-between xl:pt-8 md:pt-6 pt-4 border-t border-solid border-zinc-300 xl:mt-8 md:mt-6 mt-4;
+
+    .button {
+        @apply btn btn-primary btn-lg;
+    }
+}
+
+.page-job-detail-information {
+    @apply xl:pb-6 lg:pb-4 lg:space-y-2 max-md:space-y-1.5 lg:border-b lg:border-gray-200 max-lg:py-4 max-md:py-3 max-lg:grid max-lg:grid-cols-2 max-lg:gap-3 max-md:grid-cols-none max-md:gap-y-0;
+
+    .information-item {
+        @apply flex items-center xl:px-6 md:px-4 px-3 py-3 xl:space-x-4 md:space-x-3 space-x-2 border border-gray-200 rounded-xl;
+    }
+
+    .information-item-icon {
+        @apply p-2;
+
+        svg {
+            @apply lg:w-6 w-5 lg:h-6 h-5;
+        }
+    }
+
+    .information-item-content {
+        @apply md:space-y-1 space-y-0.5;
+
+        .label {
+            @apply text-gray-700 body-2;
+        }
+
+        .title {
+            @apply text-gray-900 label-1;
+        }
+    }
+
+    &.mobile {
+        @apply lg:hidden;
+    }
+
+    &:not(.mobile) {
+        @apply max-lg:hidden;
+    }
+}
+
+.page-job-detail-other-jobs {
+    .title {
+        @apply my-2 text-black xl:my-4 md:my-3 title-1;
+    }
+
+    .list-card {
+        @apply max-md:space-y-2 xl:space-y-4 lg:space-y-3 max-lg:grid max-lg:grid-cols-2 max-lg:gap-x-3 max-md:grid-cols-none;
+    }
+}

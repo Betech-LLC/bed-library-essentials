@@ -87,17 +87,6 @@ export default {
                     quantity: 1,
                     url: '/jobs/job-detail',
                 },
-                {
-                    id: 26,
-                    title: 'Middle/Senior Ruby on Rails Engineer',
-                    slug: 'middlesenior-ruby-on-rails-engineer',
-                    is_urgent: 1,
-                    is_bonus: 0,
-                    category: 'Tech/Engineer',
-                    location: 'Ho Chi Minh',
-                    quantity: 1,
-                    url: '/jobs/job-detail',
-                },
             ],
         }
     },

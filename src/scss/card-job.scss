@@ -3,7 +3,7 @@
 }
 
 .card-job-wrap {
-    @apply grid overflow-hidden base-transition bg-white border xl:gap-x-8 lg:gap-x-6 max-lg:gap-y-4 rounded-lg border-gray-200 p-4 xl:px-8 md:px-6 xl:py-6 md:py-4;
+    @apply grid overflow-hidden base-transition bg-white border xl:gap-x-8 lg:gap-x-6 max-lg:gap-y-4 rounded-lg border-gray-200 p-4 xl:px-8 md:px-6 xl:py-6 md:py-4 h-full;
 
     @screen lg {
         &:hover {
