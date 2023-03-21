@@ -86,7 +86,7 @@ export default {
             rules: {
                 firstName: 'required',
                 lastName: 'required',
-                phone: 'phone|required',
+                phone: 'required|phone',
                 email: 'required|email',
                 note: '',
             },
