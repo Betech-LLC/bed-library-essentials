@@ -1,11 +1,6 @@
 .checkbox {
     .label {
         @apply pl-8;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-
         .checkmark {
             @apply absolute w-5 h-5 left-0 top-1/2 transform -translate-y-1/2 border border-gray-300 rounded bg-white duration-150 flex justify-center items-center text-blue-600 text-xl;
             > * {

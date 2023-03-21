@@ -11,15 +11,6 @@
                             :options="optionBrandsMultiCheckbox"
                             keyBy="name"
                         />
-
-                        <!-- <JFormField
-                            v-model="multiCheckboxItems"
-                            :field="{
-                                type: 'checkbox_multiple',
-                            }"
-                            keyBy="name"
-                            :options="optionBrandsMultiCheckbox"
-                        /> -->
                     </div>
                     <div class="space-y-3">
                         <div class="mb-1">Multiple Checkbox <code>modelBy="id"</code></div>
