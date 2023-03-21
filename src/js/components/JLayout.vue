@@ -1,5 +1,110 @@
 <template>
     <div class="container py-10 space-y-10">
+        <div id="jam-muilti-checkbox">
+            <div class="mb-4 display-3">Muilti-Checkbox</div>
+            <div class="p-4 py-10 border border-dashed rounded-lg">
+                <div class="grid grid-cols-3 gap-x-2">
+                    <div class="space-y-3">
+                        <div class="mb-1">Multiple Checkbox <code>modelBy="name"</code></div>
+                        <JFieldCheckboxMultiple
+                            v-model="multiCheckboxItems"
+                            :field="{
+                                options: optionBrandsMultiCheckbox,
+                                keyBy: 'name',
+                            }"
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <div class="mb-1">Multiple Checkbox <code>modelBy="id"</code></div>
+                        <JFieldCheckboxMultiple
+                            v-model="multiCheckboxItemsID"
+                            :field="{
+                                options: optionBrandsMultiCheckboxV2,
+                                keyBy: 'id',
+                            }"
+                        />
+                    </div>
+
+                    <div class="space-y-3">
+                        <div><code>modelBy="name"</code>: {{ multiCheckboxItems }}</div>
+                        <div><code>modelBy="id"</code>: {{ multiCheckboxItemsID }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="jam-checkbox">
+            <div class="mb-4 display-3">Checkbox / Radio</div>
+            <div class="p-4 py-10 border border-dashed rounded-lg">
+                <div class="grid grid-cols-3 gap-x-2 gap-y-4">
+                    <div class="space-y-4">
+                        <div class="label-1">Checked: {{ checkedBrands }}</div>
+                        <JFieldCheckbox
+                            v-for="option in optionBrands"
+                            v-model="option.active"
+                            :field="{
+                                label: option.name,
+                                help: 'This is a hint text to help user.',
+                            }"
+                        />
+                        <JFieldCheckbox
+                            :field="{ label: 'Realme', help: 'This is a hint text to help user.' }"
+                            :disabled="true"
+                        />
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="label-1">Checked: "{{ activeLaptop }}"</div>
+                        <JFieldRadio
+                            v-for="option in optionLaptops"
+                            v-model="activeLaptop"
+                            :field="{
+                                label: option.name,
+                                value: option.name,
+                                help: 'This is a hint text to help user.',
+                            }"
+                        />
+
+                        <JFieldRadio
+                            v-model="activeLaptop"
+                            :field="{
+                                label: 'Lenovo',
+                                value: 'Lenovo',
+                                help: 'This is a hint text to help user.',
+                            }"
+                            :disabled="true"
+                        />
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="label-1">Checked: {{ checkedJobs }}</div>
+                        <JFieldCheckbox
+                            v-for="option in optionJobs"
+                            v-model="option.active"
+                            :field="{
+                                label: option.name,
+                                value: option.name,
+                            }"
+                            class="checkbox-button"
+                        >
+                            <template #checkmark="{ label }">
+                                <div
+                                    class="border rounded-lg px-4 py-2.5 inline-block"
+                                    :class="
+                                        option.active
+                                            ? 'border-blue-700 bg-blue-50 text-blue-700'
+                                            : 'bg-white hover:bg-gray-100 border-gray-300 text-gray-700'
+                                    "
+                                >
+                                    {{ label }}
+                                </div>
+                            </template>
+                        </JFieldCheckbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Dropdown  -->
         <div id="jam-dropdown">
             <div class="mb-4 display-3">Dropdown</div>
@@ -41,14 +146,35 @@
             <div class="p-4 space-y-4 border border-gray-400 border-dashed rounded-lg">
                 <!-- ROW 1 -->
                 <JForm v-model="user" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFormField
-                        :field="{
-                            type: 'text',
-                            name: 'name',
-                            label: 'Họ và tên',
-                        }"
-                    >
-                    </JFormField>
+                    <div class="space-y-4">
+                        <JFormField
+                            :field="{
+                                type: 'checkbox',
+                                name: 'isBill',
+                                label: 'Xuất hóa đơn công ty',
+                            }"
+                        />
+
+                        <JFormField
+                            :field="{
+                                type: 'checkbox_multiple',
+                                name: 'list',
+                                label: 'Thương hiệu',
+                                keyBy: 'name',
+                                options: optionBrandsMultiCheckbox,
+                            }"
+                        />
+
+                        <JFormField
+                            :field="{
+                                type: 'text',
+                                name: 'name',
+                                label: 'Họ và tên',
+                            }"
+                        >
+                        </JFormField>
+                    </div>
+
                     <JFormField
                         :field="{
                             type: 'email',
@@ -467,7 +593,74 @@
 export default {
     data() {
         return {
+            isBill: false,
+            multiCheckboxItems: [],
+            multiCheckboxItemsActive: [],
+            multiCheckboxItemsID: [],
+            optionBrandsMultiCheckboxV2: [
+                {
+                    id: 23,
+                    name: 'Frontend 2',
+                },
+                { id: 333, name: 'Backend 2' },
+                { id: 3545, name: 'Accounting 2' },
+                { id: 997, name: 'Management roles 2' },
+            ],
+            optionBrandsMultiCheckbox: [
+                {
+                    id: 1111,
+                    name: 'Apple 2',
+                    active: false,
+                },
+                { id: 2222, name: 'Samsung 2', active: false },
+                { id: 3333, name: 'Xiaomi 2', active: false },
+                { id: 4444, name: 'Oppo 2', active: false },
+            ],
             team: { member: null },
+            nameJobs: [],
+            optionJobs: [
+                {
+                    name: 'Frontend',
+                },
+                {
+                    name: 'Backend',
+                },
+                {
+                    name: 'Accounting',
+                },
+                {
+                    name: 'Management roles',
+                },
+            ],
+            optionLaptops: [
+                {
+                    name: 'Mac',
+                    active: false,
+                },
+                {
+                    name: 'Dell',
+                    active: false,
+                },
+                {
+                    name: 'Asus',
+                    active: false,
+                },
+                {
+                    name: 'Acer',
+                    active: false,
+                },
+            ],
+            activeLaptop: null,
+            optionBrands: [
+                {
+                    id: 1111,
+                    name: 'Apple',
+                    active: false,
+                },
+                { id: 2222, name: 'Samsung', active: false },
+                { id: 3333, name: 'Xiaomi', active: false },
+                { id: 4444, name: 'Oppo', active: false },
+            ],
             members: [
                 {
                     id: 1,
@@ -506,14 +699,14 @@ export default {
                 name: null,
                 phone: null,
                 email: null,
+                isBill: null,
+                list: [],
             },
-
             user_2: {
                 name: null,
                 phone: null,
                 email: null,
             },
-
             user_3: {
                 name: null,
                 phone: null,
@@ -529,7 +722,6 @@ export default {
                 note_2: null,
                 note_3: null,
             },
-
             rules: {
                 name: 'required',
                 phone: 'phone|required',
@@ -537,6 +729,29 @@ export default {
             },
         }
     },
+    computed: {
+        checkedBrands() {
+            return this.optionBrands.filter((brand) => brand.active).map((brand) => brand.name)
+        },
+        checkedJobs() {
+            const jobs = []
+            this.optionJobs.forEach((job) => {
+                if (!!job.active) {
+                    jobs.push(job.name)
+                }
+            })
+            return jobs
+        },
+    },
 }
 </script>
-<style lang=""></style>
+<style lang="scss">
+.checkbox-button {
+    .label {
+        @apply pl-0;
+    }
+    &.active {
+        @apply text-blue-700 bg-blue-50;
+    }
+}
+</style>

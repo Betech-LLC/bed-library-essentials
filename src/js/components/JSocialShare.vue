@@ -57,7 +57,7 @@
                     </slot>
                 </div>
                 <input id="input-copy" type="hidden" />
-                <div class="message" :class="{ active: copySuccess }">Link copied!</div>
+                <div class="help" :class="{ active: copySuccess }">Link copied!</div>
             </div>
         </div>
     </div>

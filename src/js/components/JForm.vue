@@ -39,7 +39,6 @@ export default {
         submit() {
             const isValidForm = this.validateForm()
             if (!isValidForm) return
-            console.log('Submit Success', this.form)
             this.resetForm()
         },
         resetForm() {
