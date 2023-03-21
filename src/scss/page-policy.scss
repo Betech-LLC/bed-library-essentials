@@ -1,5 +1,5 @@
 .page-policy {
-    @apply xl:pt-8 md:pt-6 pt-4 bg-gray-50;
+    @apply bg-gray-50 xl:py-12 md:py-8 py-6;
 }
 
 .page-policy-wrap {
@@ -7,7 +7,7 @@
 }
 
 .page-policy-head {
-    @apply headline-1 text-gray-700;
+    @apply headline-1 text-gray-700 xl:mt-8 md:mt-6 mt-4;
 }
 
 .page-policy-body {

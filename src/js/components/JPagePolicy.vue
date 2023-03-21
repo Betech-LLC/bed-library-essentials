@@ -2,6 +2,11 @@
     <main>
         <section class="page-policy">
             <div class="page-policy-wrap">
+                <JBreadcrumb :items="breadcrumb">
+                    <template #icon>
+                        <JIconArrowRight />
+                    </template>
+                </JBreadcrumb>
                 <div class="page-policy-head">Hỗ trợ khách hàng</div>
 
                 <div class="page-policy-body">
@@ -51,18 +56,20 @@
 <script>
 import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import JIconPolicyDefault from '@core/components/JIcon/PolicyDefault.vue'
+import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 
 export default {
-    comments: { JIconArrowRight, JIconPolicyDefault },
-    props: ['list_sidebar', 'content'],
+    comments: { JIconArrowRight, JIconPolicyDefault, JBreadcrumb },
+    props: ['list_sidebar', 'content', 'breadcrumb'],
     data() {
         return {
             isOpenMobile: false,
             currentPolicy: '',
         }
     },
-    mounted() {
+    created() {
         this.currentPolicy = this.getCurrentUrlTitle(this.list_sidebar, this.$route.path)
+        this.breadcrumb.push({ title: this.currentPolicy.title })
     },
     watch: {
         isOpenMobile: function () {
@@ -83,7 +90,6 @@ export default {
         },
         getCurrentUrlTitle(arr, route_path) {
             const arrPath = route_path.split('/')
-            console.log(arr)
             return arr.find((item) => item.slug.params.slug === arrPath[arrPath.length - 1])
         },
     },
