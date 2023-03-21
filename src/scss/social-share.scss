@@ -7,7 +7,7 @@
     .copy-link {
         @apply relative inline-block cursor-pointer;
         .message {
-            @apply absolute top-1/2 -translate-y-1/2 duration-300 left-[150%] opacity-0 invisible badge badge-primary;
+            @apply absolute top-1/2 -translate-y-1/2 duration-300 left-[150%] opacity-0 invisible badge badge-primary max-lg:hidden;
 
             &.active {
                 @apply opacity-100 visible;

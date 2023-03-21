@@ -51,13 +51,13 @@
             </a>
 
             <div v-if="copyLink" class="social-share-item copy-link">
-                <div @click="copyLink()">
+                <div @click="copyCurrentLink()">
                     <slot name="copy-link">
                         <JImageDynamic name="copy-link" />
                     </slot>
                 </div>
                 <input id="input-copy" type="hidden" />
-                <div class="message" :class="{ active: copySuccess }">Link copied!</div>
+                <div class="help" :class="{ active: copySuccess }">Link copied!</div>
             </div>
         </div>
     </div>
@@ -92,6 +92,10 @@ export default {
         copyLink: {
             type: Boolean,
             default: true,
+        },
+        link: {
+            type: String,
+            default: null,
         },
         linkedin: {
             type: Boolean,
@@ -136,9 +140,9 @@ export default {
         this.linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`
     },
     methods: {
-        copyLink() {
+        copyCurrentLink() {
             const input = document.querySelector('#input-copy')
-            input.value = window.location.href
+            input.value = this.link ? this.link : window.location.href
             input.setAttribute('type', 'text')
             input.select()
             input.setSelectionRange(0, 99999)

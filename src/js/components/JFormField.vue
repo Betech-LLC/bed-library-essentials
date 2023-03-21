@@ -1,7 +1,6 @@
 <template>
     <fieldset>
-        <label v-if="field.label" :for="field.name" class="label">{{ field.label }}</label>
-
+        <label v-if="showLabel" :for="field.name" class="label">{{ field.label }}</label>
         <div
             class="field"
             :class="{
@@ -22,12 +21,20 @@
                 @update:modelValue="onChangeField"
             />
 
-            <JFieldPhone
-                v-else-if="field.type === 'number'"
+            <JFieldCheckbox
+                v-else-if="field.type === 'checkbox'"
+                :modelValue="fieldValue"
                 :field="field"
-                :modelValue="form[field.name]"
                 @update:modelValue="onChangeField"
             />
+
+            <JFieldCheckboxMultiple
+                v-else-if="field.type === 'checkbox_multiple'"
+                :modelValue="fieldValue"
+                :field="field"
+                @update:modelValue="onChangeField"
+            />
+            <JFieldPhone v-else-if="field.type === 'number'" :field="field" @update:modelValue="onChangeField" />
 
             <JFieldDropdown
                 v-else-if="field.type === 'dropdown'"
@@ -35,6 +42,7 @@
                 :modelValue="form[field.name]"
                 @update:modelValue="onChangeField"
             />
+
             <JFieldTextarea
                 v-else-if="field.type === 'textarea'"
                 :field="field"
@@ -46,8 +54,8 @@
                 <slot name="suffix"></slot>
             </div>
 
-            <small v-if="field.help || isError" class="message">
-                {{ isError ? 'This is a error message.' : field.help }}
+            <small v-if="field.help || isError" class="help">
+                {{ isError ? errors[field.name] : field.help }}
             </small>
         </div>
     </fieldset>
@@ -55,8 +63,14 @@
 
 <script>
 import { validateField } from '@core/utils'
+import JFieldText from '@core/components/JField/Text.vue'
+import JFieldPhone from '@core/components/JField/Phone.vue'
+import JFieldDropdown from '@core/components/JField/Dropdown.vue'
+import JFieldTextarea from '@core/components/JField/Textarea.vue'
+
 export default {
-    emits: ['update:modelValue'],
+    components: { JFieldText, JFieldPhone, JFieldDropdown, JFieldTextarea },
+    emits: ['update:modelValue', 'modelValue'],
     props: {
         field: {
             type: Object,
@@ -70,8 +84,15 @@ export default {
         errors: { default: () => {} },
     },
     computed: {
+        showLabel() {
+            return this.field.label && this.field.type !== 'checkbox' && this.field.type !== 'checkbox_multiple'
+        },
+
         isError() {
             return this.errors.hasOwnProperty(this.field.name)
+        },
+        fieldValue() {
+            return this.modelValue || this.form[this.field.name]
         },
     },
     methods: {

@@ -46,10 +46,11 @@
 <script>
 import JCardBlog from '@core/components/JCardBlog.vue'
 import JBannerAds from '@core/components/JBannerAds.vue'
+import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JIconHash from '@core/components/JIcon/Hash.vue'
 
 export default {
-    components: { JCardBlog, JBannerAds, JIconHash },
+    components: { JCardBlog, JBannerAds, JBreadcrumb, JIconHash },
     props: ['breadcrumb', 'posts_data', 'tag', 'banner'],
 }
 </script>

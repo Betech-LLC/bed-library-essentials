@@ -4,37 +4,23 @@ function toNumber(number) {
     return number.replace(/[^0-9]/g, '')
 }
 
-function toDate(date, language = 'vi') {
+function toDate(date, language = 'vi', weekday = true) {
     const currentDate = new Date(date)
+
+    let options = {}
+
+    !language ? (language = 'vi') : false
+
     if (language === 'vi') {
-        const dayNames = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy']
-        const day = dayNames[currentDate.getDay()]
-        const dayOfMonth = currentDate.getDate().toString().padStart(2, '0')
-        const month = (currentDate.getMonth() + 1).toString().padStart(2, '0')
-        const year = currentDate.getFullYear().toString()
-
-        return `${day}, ${dayOfMonth}/${month}/${year}`
+        options = { year: 'numeric', month: '2-digit', day: '2-digit' }
+        weekday ? (options.weekday = 'long') : false
     } else {
-        const monthNames = [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-            'July',
-            'August',
-            'September',
-            'October',
-            'November',
-            'December',
-        ]
-        const month = monthNames[currentDate.getMonth()]
-        const day = currentDate.getDate()
-        const year = currentDate.getFullYear()
-
-        return `${month} ${day}, ${year}`
+        options = { year: 'numeric', month: 'long', day: 'numeric' }
+        weekday ? (options.weekday = 'short') : false
     }
+
+    const formattedDate = currentDate.toLocaleDateString(language, options)
+    return formattedDate
 }
 
 function toSlug(str, separator) {
@@ -63,4 +49,11 @@ function toBasename(url) {
     return url?.substring(url?.lastIndexOf('/') + 1)
 }
 
-export { toNumber, toDate, toSlug, toBasename }
+function addLeadingZero(number) {
+    if (number < 10) {
+        return ('0' + number).slice(-2)
+    }
+    return number
+}
+
+export { toNumber, toDate, toSlug, toBasename, addLeadingZero }
