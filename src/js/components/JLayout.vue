@@ -736,13 +736,7 @@ export default {
     },
     computed: {
         checkedBrands() {
-            const brands = []
-            this.optionBrands.forEach((brand) => {
-                if (!!brand.active) {
-                    brands.push(brand.name)
-                }
-            })
-            return brands
+            return this.optionBrands.filter((brand) => brand.active).map((brand) => brand.name)
         },
         checkedJobs() {
             const jobs = []

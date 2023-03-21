@@ -56,7 +56,7 @@
                 <slot name="suffix"></slot>
             </div>
 
-            <small v-if="field.help || isError" class="message">
+            <small v-if="field.help || isError" class="help">
                 {{ isError ? 'This is a error message.' : field.help }}
             </small>
         </div>

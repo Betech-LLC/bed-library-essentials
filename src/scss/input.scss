@@ -24,7 +24,7 @@ fieldset {
             @apply left-3;
         }
 
-        .message {
+        .help {
             @apply absolute left-0 text-gray-500 translate-y-full -bottom-1 body-3;
         }
 
@@ -45,7 +45,7 @@ fieldset {
             }
 
             .suffix,
-            .message {
+            .help {
                 @apply text-error-500;
             }
         }
