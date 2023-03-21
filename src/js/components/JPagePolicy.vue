@@ -22,10 +22,10 @@
                         <ul class="nav-list">
                             <li class="nav-item" v-for="(policy, index) in list_sidebar" :key="index">
                                 <JLink
-                                    :href="policy.slug"
+                                    :href="policy.url"
                                     class="nav-link"
                                     :class="{
-                                        active: checkActiveUrl(policy.slug, $route.path),
+                                        active: currentPolicy.url === policy.url,
                                     }"
                                 >
                                     <div v-if="policy.icon" class="nav-icon" v-html="policy.icon"></div>
@@ -67,8 +67,8 @@ export default {
             currentPolicy: '',
         }
     },
-    created() {
-        this.currentPolicy = this.getCurrentUrlTitle(this.list_sidebar, this.$route.path)
+    mounted() {
+        this.getCurrentUrlTitle()
         this.breadcrumb.push({ title: this.currentPolicy.title })
     },
     watch: {
@@ -84,13 +84,8 @@ export default {
         togglePolicyMobile() {
             this.isOpenMobile = !this.isOpenMobile
         },
-        checkActiveUrl(url, route_path) {
-            const arrPath = route_path.split('/')
-            return url == arrPath[arrPath.length - 1]
-        },
-        getCurrentUrlTitle(arr, route_path) {
-            const arrPath = route_path.split('/')
-            return arr.find((item) => item.slug.params.slug === arrPath[arrPath.length - 1])
+        getCurrentUrlTitle() {
+            this.currentPolicy = this.list_sidebar.find((x) => x.url === window.location.href) || this.list_sidebar[0]
         },
     },
 }
