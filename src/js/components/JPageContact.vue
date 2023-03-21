@@ -12,7 +12,7 @@
                             :field="{
                                 type: 'text',
                                 name: 'firstName',
-                                label: 'Tên *',
+                                label: 'Tên',
                                 placeholder: 'Nhập tên của bạn',
                             }"
                             class="md:col-span-1 col-span-full"
@@ -21,7 +21,7 @@
                             :field="{
                                 type: 'text',
                                 name: 'lastName',
-                                label: 'Họ *',
+                                label: 'Họ',
                                 placeholder: 'Nhập họ của bạn',
                             }"
                             class="md:col-span-1 col-span-full"
@@ -30,7 +30,7 @@
                             :field="{
                                 type: 'email',
                                 name: 'email',
-                                label: 'Email *',
+                                label: 'Email',
                                 placeholder: 'Nhập email',
                             }"
                             class="col-span-full"
@@ -39,7 +39,7 @@
                             :field="{
                                 type: 'number',
                                 name: 'phone',
-                                label: 'Số điện thoại *',
+                                label: 'Số điện thoại',
                                 placeholder: 'Nhập số điện thoại',
                             }"
                             class="col-span-full"
