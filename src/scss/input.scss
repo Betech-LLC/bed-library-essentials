@@ -1,8 +1,8 @@
 .label {
-    @apply text-gray-700 font-medium relative cursor-pointer label-2;
+    @apply text-gray-700 font-medium relative cursor-pointer label-2 inline-block;
 }
 .help {
-    @apply text-gray-500;
+    @apply text-gray-500 body-3;
 }
 
 /* INPUT BASE */

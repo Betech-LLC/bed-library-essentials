@@ -11,9 +11,8 @@
             />
             <div class="checkmark"></div>
             {{ field.label }}
+            <p v-if="field.help" class="help">{{ field.help }}</p>
         </label>
-
-        <p v-if="field.help" class="help">{{ field.help }}</p>
     </div>
 </template>
 <script>

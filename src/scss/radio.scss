@@ -2,7 +2,7 @@
     .label {
         @apply pl-8;
         .checkmark {
-            @apply absolute w-5 h-5 rounded-full left-0 top-1/2 transform -translate-y-1/2 border border-gray-300  bg-white duration-150 flex justify-center items-center text-blue-600;
+            @apply absolute w-5 h-5 rounded-full left-0 top-0 transform  border border-gray-300  bg-white duration-150 flex justify-center items-center text-blue-600;
 
             &:after {
                 @apply content-[''] opacity-0 w-3 h-3 rounded-full bg-current absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 duration-150;
@@ -21,9 +21,6 @@
                 box-shadow: 0px 0px 0px 4px #d1e9ff;
             }
         }
-    }
-    .help {
-        @apply pl-8 body-2;
     }
 
     &.is-disabled {
