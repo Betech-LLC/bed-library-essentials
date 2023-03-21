@@ -4,7 +4,7 @@
             <JLink @click="viewDetail" class="card-vlog-image" :href="item.url">
                 <JPicture :src="item.image?.url" :alt="item.image?.alt || item.title"> </JPicture>
             </JLink>
-            <JLink :href="item.url" class="card-vlog-time">
+            <JLink @click="viewDetail" :href="item.url" class="card-vlog-time">
                 <div class="icon">
                     <JIconPlay />
                 </div>
@@ -13,7 +13,7 @@
         </div>
         <div class="card-vlog-body">
             <h3 v-if="item.title" class="card-vlog-title">
-                <JLink :href="item.url">{{ item.title }}</JLink>
+                <JLink @click="viewDetail" :href="item.url">{{ item.title }}</JLink>
             </h3>
             <p v-if="item.description" class="card-vlog-description" v-html="item.description"></p>
         </div>
@@ -37,7 +37,7 @@ export default {
 
             window.history.pushState({}, '', this.item.url)
 
-            this.$emit('changeUrl', this.item.url)
+            this.$emit('viewVideo', this.item)
         },
     },
 }

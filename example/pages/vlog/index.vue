@@ -34,7 +34,7 @@ export default {
                         url: 'https://via.placeholder.com/1600x900',
                         alt: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                     },
-                    video: 'https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s',
+                    video: 'https://www.youtube.com/watch?v=--nUELePmog',
                     url: 'http://localhost:3000/vlog/microservices-trong-website-jamstack',
                 },
                 {
@@ -49,7 +49,7 @@ export default {
                         url: 'https://via.placeholder.com/1600x900',
                         alt: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                     },
-                    video: 'https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s',
+                    video: 'https://www.youtube.com/watch?v=--nUELePmog',
                     url: 'http://localhost:3000/vlog/kha-nang-tuong-tac-tren-website',
                 },
                 {
@@ -79,7 +79,7 @@ export default {
                         url: 'https://via.placeholder.com/1600x900',
                         alt: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                     },
-                    video: 'https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s',
+                    video: 'https://www.youtube.com/watch?v=--nUELePmog',
                     url: 'http://localhost:3000/vlog/toi-uu-hieu-qua-seo-website-jamstack',
                 },
                 {

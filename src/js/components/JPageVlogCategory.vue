@@ -4,7 +4,7 @@
             <div class="page-vlog-category-body">
                 <div class="page-vlog-category-items">
                     <JCardVlog
-                        @changeUrl="changeUrl"
+                        @viewVideo="viewVideo"
                         class="item"
                         :item="item"
                         v-for="(item, index) in vlogs"
@@ -17,7 +17,7 @@
             </div>
         </section>
 
-        <JPopupVlog @close="close" :items="vlogs" :isShow="isShow" />
+        <JPopupVlog @viewVideo="viewVideo" @close="close" :items="vlogs" :isShow="isShow" :currentItem="currentItem" />
     </main>
 </template>
 
@@ -32,12 +32,14 @@ export default {
     data() {
         return {
             isShow: false,
+            currentItem: null,
         }
     },
 
     methods: {
-        changeUrl() {
+        viewVideo(currentItem) {
             this.isShow = true
+            this.currentItem = currentItem
         },
 
         close() {

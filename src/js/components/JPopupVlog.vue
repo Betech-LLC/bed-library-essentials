@@ -1,9 +1,9 @@
 <template>
     <JModal @close="close" maxWidth="80vw" :show="isShow" id="modal-vlog">
         <template v-slot:close>
-            <div class="fixed top-0 text-white">Close</div>
+            <div class="fixed text-white left-4 top-6">Close</div>
         </template>
-        <div class="p-8 bg-white rounded-lg">
+        <div v-if="currentItem" class="p-8 bg-white rounded-lg">
             <div class="text-gray-700 title-2">{{ currentItem.title }}</div>
             <div class="flex space-x-6">
                 <div>
@@ -16,19 +16,21 @@
                 </div>
             </div>
             <div class="mt-6">
-                <JVideo src="https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s" />
+                <JVideo :src="currentItem.video" />
             </div>
 
             <div class="mt-16 space-y-8">
                 <div class="text-gray-900 uppercase title-1">Có thể bạn sẽ thích</div>
                 <div class="page-vlog-category-items">
-                    <JCardVlog
-                        @changeUrl="changeUrl"
-                        class="item"
-                        :item="item"
-                        v-for="(item, index) in items"
-                        :key="index"
-                    />
+                    <template v-for="(item, index) in items">
+                        <JCardVlog
+                            :key="index"
+                            v-if="item.slug !== currentItem.slug"
+                            @viewVideo="viewVideo"
+                            class="item"
+                            :item="item"
+                        />
+                    </template>
                 </div>
             </div>
         </div>
@@ -46,31 +48,27 @@ export default {
             type: Boolean,
             default: false,
         },
-    },
 
-    data() {
-        return {
-            currentItem: {},
-        }
-    },
-
-    computed: {
-        test() {
-            return window.location.href
+        currentItem: {
+            type: Object,
         },
     },
 
     watch: {
-        isShow(value) {
-            if (!value) return
-            console.log(window.location.href)
-            this.currentItem = this.items.find((x) => x.url === window.location.href)
+        currentItem() {
+            const section = document.querySelector('#modal-vlog')
+
+            if (section && section.scrollTop > 0) section.scrollTop = 0
         },
     },
 
     methods: {
         close() {
             this.$emit('close')
+        },
+
+        viewVideo(item) {
+            this.$emit('viewVideo', item)
         },
     },
 }
