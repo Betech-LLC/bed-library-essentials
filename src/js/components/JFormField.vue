@@ -1,7 +1,6 @@
 <template>
     <fieldset>
         <label v-if="showLabel" :for="field.name" class="label">{{ field.label }}</label>
-
         <div
             class="field"
             :class="{
