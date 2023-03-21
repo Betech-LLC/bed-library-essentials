@@ -1,7 +1,7 @@
 <template>
     <div class="multi-checkbox">
         <JFieldCheckbox
-            v-for="option in options"
+            v-for="option in field.options"
             v-model="option.active"
             @update:modelValue="onChange($event, option)"
             :field="{
@@ -12,18 +12,21 @@
 </template>
 <script>
 export default {
-    props: {
-        options: {
-            type: Array,
-            default: () => [],
-        },
-        keyBy: { type: String, default: 'id' },
-        labelBy: { type: String, default: 'name' },
-    },
+    props: ['field'],
+
     data() {
         return {
             items: {},
         }
+    },
+
+    computed: {
+        labelBy() {
+            return this.field.labelBy || 'name'
+        },
+        keyBy() {
+            return this.field.keyBy || 'id'
+        },
     },
 
     methods: {

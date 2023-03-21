@@ -8,16 +8,20 @@
                         <div class="mb-1">Multiple Checkbox <code>modelBy="name"</code></div>
                         <JFieldCheckboxMultiple
                             v-model="multiCheckboxItems"
-                            :options="optionBrandsMultiCheckbox"
-                            keyBy="name"
+                            :field="{
+                                options: optionBrandsMultiCheckbox,
+                                keyBy: 'name',
+                            }"
                         />
                     </div>
                     <div class="space-y-3">
                         <div class="mb-1">Multiple Checkbox <code>modelBy="id"</code></div>
                         <JFieldCheckboxMultiple
-                            :options="optionBrandsMultiCheckboxV2"
-                            keyBy="id"
                             v-model="multiCheckboxItemsID"
+                            :field="{
+                                options: optionBrandsMultiCheckboxV2,
+                                keyBy: 'id',
+                            }"
                         />
                     </div>
 
@@ -156,9 +160,9 @@
                                 type: 'checkbox_multiple',
                                 name: 'list',
                                 label: 'Thương hiệu',
+                                keyBy: 'name',
+                                options: optionBrandsMultiCheckbox,
                             }"
-                            keyBy="name"
-                            :options="optionBrandsMultiCheckbox"
                         />
 
                         <JFormField
