@@ -1,10 +1,10 @@
 <template>
-    <div v-if="field" class="radio" :class="{ 'is-disabled': disabled }">
-        <label class="label" :for="keyID">
+    <div class="radio" :class="{ 'is-disabled': disabled }">
+        <label class="label" :for="fieldId">
             <input
                 class="input"
                 type="radio"
-                :id="keyID"
+                :id="fieldId"
                 :value="field.value"
                 :checked="isChecked"
                 @input="$emit('update:modelValue', $event.target.value)"
@@ -24,8 +24,9 @@ export default {
         isChecked() {
             return this.modelValue?.toString() === this.field.value?.toString()
         },
-        keyID() {
-            return `radio-${this.field.label}`
+
+        fieldId() {
+            return 'ID' + Math.random().toString(36).substr(2, 9).toUpperCase()
         },
     },
 }

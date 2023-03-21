@@ -1,7 +1,7 @@
 <template>
-    <div v-if="field" class="checkbox" :class="{ 'is-disabled': disabled }">
-        <label class="label" :for="keyID">
-            <input type="checkbox" class="input" :id="keyID" :value="modelValue" @input="onInput" />
+    <div class="checkbox" :class="{ 'is-disabled': disabled }">
+        <label class="label" :for="fieldId">
+            <input type="checkbox" class="input" :id="fieldId" :value="modelValue" @input="onInput" />
             <template v-if="$slots.checkmark">
                 <slot name="checkmark" :label="field.label" />
             </template>
@@ -15,7 +15,6 @@
                 </span>
             </template>
         </label>
-
         <p v-if="field.help" class="help">{{ field.help }}</p>
     </div>
 </template>
@@ -23,21 +22,16 @@
 export default {
     props: ['field', 'modelValue', 'disabled'],
     emits: ['update:modelValue'],
-    data() {
-        return {}
-    },
-
     computed: {
-        keyID() {
-            return `checkbox-${this.field.label}`
+        fieldId() {
+            return 'ID' + Math.random().toString(36).substr(2, 9).toUpperCase()
         },
     },
-
     methods: {
-        onInput(e) {
-            let value = e.target.value
+        onInput(event) {
+            let value = event.target.value
             if (value.toString() === 'false' || value.toString() === 'true' || typeof this.modelValue === 'undefined') {
-                value = e.target.checked
+                value = event.target.checked
             }
             this.$emit('update:modelValue', value)
         },
