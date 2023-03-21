@@ -36,6 +36,7 @@ export default {
             e.preventDefault()
 
             window.history.pushState({}, '', this.item.url)
+
             this.$emit('changeUrl', this.item.url)
         },
     },

@@ -2,7 +2,13 @@
     <div>
         <vue-plyr class="flex w-full h-full" :options="playerOptions" ref="player">
             <div v-if="checkIsVideo(src)" class="plyr__video-embed">
-                <iframe :src="getLinkVideo(src)" allowfullscreen allowtransparency allow="autoplay"></iframe>
+                <iframe
+                    class="w-full h-auto"
+                    :src="getLinkVideo(src)"
+                    allowfullscreen
+                    allowtransparency
+                    allow="autoplay"
+                ></iframe>
             </div>
 
             <video v-else :id="randomId" v-bind="{ ...$attrs }">
@@ -17,6 +23,7 @@ const defaultOptions = {
     autoplay: true,
     controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
 }
+
 export default {
     props: ['change'],
     props: {
@@ -101,7 +108,7 @@ export default {
 }
 </script>
 <style>
-.plyr {
-    @apply m-auto w-full;
+.plyr__video-embed {
+    @apply m-auto w-full aspect-w-16 aspect-h-9;
 }
 </style>
