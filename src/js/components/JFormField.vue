@@ -55,7 +55,7 @@
             </div>
 
             <small v-if="field.help || isError" class="help">
-                {{ isError ? 'This is a error message.' : field.help }}
+                {{ isError ? errors[field.name] : field.help }}
             </small>
         </div>
     </fieldset>
