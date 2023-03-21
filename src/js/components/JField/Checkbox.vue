@@ -30,7 +30,12 @@ export default {
     methods: {
         onInput(event) {
             let value = event.target.value
-            if (value.toString() === 'false' || value.toString() === 'true' || typeof this.modelValue === 'undefined') {
+            if (
+                value.toString() === 'false' ||
+                value.toString() === 'true' ||
+                this.modelValue === undefined ||
+                this.modelValue === null
+            ) {
                 value = event.target.checked
             }
             this.$emit('update:modelValue', value)

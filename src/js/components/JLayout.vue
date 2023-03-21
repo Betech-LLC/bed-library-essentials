@@ -1,16 +1,29 @@
 <template>
     <div class="container py-10 space-y-10">
+        <div class="p-6">
+            <div class="mb-4">
+                {{ isBill }}
+            </div>
+            <JFieldCheckbox
+                v-model="isBill"
+                :field="{ label: 'Xuất hóa đơn công ty', help: 'This is a hint text to help user.' }"
+            />
+        </div>
         <div id="jam-muilti-checkbox">
             <div class="mb-4 display-3">Muilti-Checkbox</div>
             <div class="p-4 py-10 border border-dashed rounded-lg">
                 <div class="grid grid-cols-3 gap-x-2">
                     <div class="space-y-3">
                         <div class="mb-1">Multiple Checkbox <code>modelBy="name"</code></div>
-                        <MultiCheckbox :options="optionBrandsMultiCheckbox" keyBy="name" v-model="multiCheckboxItems" />
+                        <JFieldCheckboxMultiple
+                            :options="optionBrandsMultiCheckbox"
+                            keyBy="name"
+                            v-model="multiCheckboxItems"
+                        />
                     </div>
                     <div class="space-y-3">
                         <div class="mb-1">Multiple Checkbox <code>modelBy="id"</code></div>
-                        <MultiCheckbox
+                        <JFieldCheckboxMultiple
                             :options="optionBrandsMultiCheckboxV2"
                             keyBy="id"
                             v-model="multiCheckboxItemsID"
@@ -138,14 +151,35 @@
             <div class="p-4 space-y-4 border border-gray-400 border-dashed rounded-lg">
                 <!-- ROW 1 -->
                 <JForm v-model="user" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFormField
-                        :field="{
-                            type: 'text',
-                            name: 'name',
-                            label: 'Họ và tên',
-                        }"
-                    >
-                    </JFormField>
+                    <div class="space-y-4">
+                        <JFormField
+                            :field="{
+                                type: 'checkbox',
+                                name: 'isBill',
+                                label: 'Xuất hóa đơn công ty',
+                            }"
+                        />
+
+                        <JFormField
+                            :field="{
+                                type: 'checkbox_multiple',
+                                name: 'list',
+                                label: 'Thương hiệu',
+                            }"
+                            keyBy="name"
+                            :options="optionBrandsMultiCheckbox"
+                        />
+
+                        <JFormField
+                            :field="{
+                                type: 'text',
+                                name: 'name',
+                                label: 'Họ và tên',
+                            }"
+                        >
+                        </JFormField>
+                    </div>
+
                     <JFormField
                         :field="{
                             type: 'email',
@@ -561,11 +595,10 @@
 </template>
 
 <script>
-import MultiChecbox from './MultiCheckbox.vue'
-
 export default {
     data() {
         return {
+            isBill: false,
             multiCheckboxItems: [],
             multiCheckboxItemsActive: [],
             multiCheckboxItemsID: [],
@@ -671,6 +704,8 @@ export default {
                 name: null,
                 phone: null,
                 email: null,
+                isBill: null,
+                list: [],
             },
             user_2: {
                 name: null,
@@ -719,7 +754,6 @@ export default {
             return jobs
         },
     },
-    components: { MultiChecbox },
 }
 </script>
 <style lang="scss">

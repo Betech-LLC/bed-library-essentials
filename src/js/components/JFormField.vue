@@ -1,6 +1,6 @@
 <template>
     <fieldset>
-        <label v-if="field.label" :for="field.name" class="label">{{ field.label }}</label>
+        <label v-if="showLabel" :for="field.name" class="label">{{ field.label }}</label>
 
         <div
             class="field"
@@ -22,14 +22,21 @@
                 @update:modelValue="onChangeField"
             />
 
-            <JFieldCheckbox v-else-if="field.type === 'checkbox'" />
-
-            <JFieldPhone
-                v-else-if="field.type === 'number'"
+            <JFieldCheckbox
+                v-else-if="field.type === 'checkbox'"
+                :modelValue="fieldValue"
                 :field="field"
-                :modelValue="form[field.name]"
                 @update:modelValue="onChangeField"
             />
+
+            <JFieldCheckboxMultiple
+                v-else-if="field.type === 'checkbox_multiple'"
+                :modelValue="fieldValue"
+                :field="field"
+                @update:modelValue="onChangeField"
+                v-bind="{ ...$attrs }"
+            />
+            <JFieldPhone v-else-if="field.type === 'number'" :field="field" @update:modelValue="onChangeField" />
 
             <JFieldDropdown
                 v-else-if="field.type === 'dropdown'"
@@ -37,6 +44,7 @@
                 :modelValue="form[field.name]"
                 @update:modelValue="onChangeField"
             />
+
             <JFieldTextarea
                 v-else-if="field.type === 'textarea'"
                 :field="field"
@@ -58,7 +66,7 @@
 <script>
 import { validateField } from '@core/utils'
 export default {
-    emits: ['update:modelValue'],
+    emits: ['update:modelValue', 'modelValue'],
     props: {
         field: {
             type: Object,
@@ -72,8 +80,15 @@ export default {
         errors: { default: () => {} },
     },
     computed: {
+        showLabel() {
+            return this.field.label && this.field.type !== 'checkbox' && this.field.type !== 'checkbox_multiple'
+        },
+
         isError() {
             return this.errors.hasOwnProperty(this.field.name)
+        },
+        fieldValue() {
+            return this.modelValue || this.form[this.field.name]
         },
     },
     methods: {
