@@ -33,8 +33,8 @@
                 v-else-if="field.type === 'checkbox_multiple'"
                 :modelValue="fieldValue"
                 :field="field"
+                :options="$attrs.options"
                 @update:modelValue="onChangeField"
-                v-bind="{ ...$attrs }"
             />
             <JFieldPhone v-else-if="field.type === 'number'" :field="field" @update:modelValue="onChangeField" />
 
