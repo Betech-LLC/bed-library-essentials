@@ -1,15 +1,15 @@
 .btn {
-    @apply inline-flex items-center justify-center space-x-2 transition rounded cursor-pointer disabled:opacity-25 outline-none focus:outline-none;
-    @media (prefers-reduced-motion: reduce) {
-        @apply transition-none;
-    }
-
-    // style
-    @apply bg-white border hover:border-gray-400;
+    @apply inline-flex items-center justify-center outline-none focus:outline-none;
 }
 
 .btn-primary {
-    @apply border-none text-white bg-primary hover:bg-primary-dark active:bg-primary-darker;
+    @apply border-blue-600 bg-blue-600 focus:bg-blue-600 focus:border-blue-600 hover:bg-blue-700 hover:border-blue-700 text-white;
+    &:focus {
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #d1e9ff;
+    }
+    &.disable {
+        @apply pointer-events-none border-blue-200 bg-blue-200;
+    }
 }
 .btn-secondary {
     @apply border-gray-200 bg-gray-100 hover:bg-gray-200;
@@ -21,29 +21,29 @@
     @apply border-yellow-500 bg-yellow-100 hover:bg-yellow-200 text-yellow-500;
 }
 .btn-danger {
-    @apply border-orange-600 bg-orange-100 hover:bg-orange-200 text-orange-600;
+    @apply border-error-600 bg-error-600 focus:bg-error-600 focus:border-error-600 hover:bg-error-700 hover:border-error-700 text-white;
+    &:focus {
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #fee4e2;
+    }
+    &.disable {
+        @apply pointer-events-none border-error-200 bg-error-200;
+    }
 }
 
 .btn {
     &.btn-sm {
-        @apply button-2 h-9 px-4;
+        @apply label-2 h-9 px-3.5;
     }
     &.btn-md {
-        @apply button-1 h-10 px-4;
+        @apply label-2 h-10 px-4;
     }
     &.btn-lg {
         @apply button-1 h-11 px-4;
     }
     &.btn-xl {
-        @apply button-1 h-12 px-4;
+        @apply button-1 h-12 px-5;
     }
     &.btn-2xl {
-        @apply button-1 h-14 px-4;
-    }
-    &:not(.btn-sm, .btn-lg) {
-        @apply button-2 h-9 px-4;
-    }
-    &:not(.btn-sm, .btn-icon) {
-        @apply min-w-[6rem];
+        @apply button-1 h-14 px-7;
     }
 }

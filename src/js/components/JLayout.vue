@@ -1,5 +1,34 @@
 <template>
     <div class="container py-10 space-y-10">
+        <!-- Button -->
+        <div id="jam-button">
+            <div class="mb-4 display-3">Button 123</div>
+            <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
+                <div class="space-y-2">
+                    <div class="flex space-x-2">
+                        <JButton label="Button" class="btn-primary btn-lg" />
+                        <JButton label="Button" class="btn-secondary btn-lg" />
+                        <JButton label="Button" class="btn-success btn-lg" />
+                        <JButton label="Button" class="btn-warning btn-lg" />
+                        <JButton label="Button" class="btn-danger btn-lg" />
+                    </div>
+                    <div class="flex space-x-2">
+                        <JButton label="Button" class="btn-primary" />
+                        <JButton label="Button" class="btn-secondary" />
+                        <JButton label="Button" class="btn-success" />
+                        <JButton label="Button" class="btn-warning" />
+                        <JButton label="Button" class="btn-danger" />
+                    </div>
+                    <div class="flex space-x-2">
+                        <JButton label="Button" class="btn-primary btn-sm" />
+                        <JButton label="Button" class="btn-secondary btn-sm" />
+                        <JButton label="Button" class="btn-success btn-sm" />
+                        <JButton label="Button" class="btn-warning btn-sm" />
+                        <JButton label="Button" class="btn-danger btn-sm" />
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="jam-muilti-checkbox">
             <div class="mb-4 display-3">Muilti-Checkbox</div>
             <div class="p-4 py-10 border border-dashed rounded-lg">
@@ -465,35 +494,7 @@
                 </JBreadcrumb>
             </div>
         </div>
-        <!-- Button -->
-        <div id="jam-button">
-            <div class="mb-4 display-3">Button</div>
-            <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
-                <div class="space-y-2">
-                    <div class="flex space-x-2">
-                        <JButton label="Button" class="btn-primary btn-lg" />
-                        <JButton label="Button" class="btn-secondary btn-lg" />
-                        <JButton label="Button" class="btn-success btn-lg" />
-                        <JButton label="Button" class="btn-warning btn-lg" />
-                        <JButton label="Button" class="btn-danger btn-lg" />
-                    </div>
-                    <div class="flex space-x-2">
-                        <JButton label="Button" class="btn-primary" />
-                        <JButton label="Button" class="btn-secondary" />
-                        <JButton label="Button" class="btn-success" />
-                        <JButton label="Button" class="btn-warning" />
-                        <JButton label="Button" class="btn-danger" />
-                    </div>
-                    <div class="flex space-x-2">
-                        <JButton label="Button" class="btn-primary btn-sm" />
-                        <JButton label="Button" class="btn-secondary btn-sm" />
-                        <JButton label="Button" class="btn-success btn-sm" />
-                        <JButton label="Button" class="btn-warning btn-sm" />
-                        <JButton label="Button" class="btn-danger btn-sm" />
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- Accordion -->
         <div id="jam-accordion">
             <div class="mb-4 display-3">Accordion</div>
