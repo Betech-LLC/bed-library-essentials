@@ -1,5 +1,5 @@
 <template>
-    <JPageVlogCategory class="tree-column" :vlogs="vlogs" />
+    <JPageVlogCategory class="page-vlog-category-tree" :vlogs="vlogs" />
 </template>
 
 <script>

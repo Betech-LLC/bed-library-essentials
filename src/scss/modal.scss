@@ -1,0 +1,15 @@
+.modal-popup {
+    @apply fixed inset-0 flex px-4 py-6 overflow-y-auto sm:px-0 z-50;
+}
+
+.modal-popup-layer {
+    @apply fixed inset-0 transition-all transform;
+}
+
+.modal-popup-shape {
+    @apply absolute inset-0 bg-black opacity-60;
+}
+
+.modal-popup-body {
+    @apply my-auto overflow-hidden transform shadow-xl lg:transition-all sm:w-full sm:mx-auto;
+}

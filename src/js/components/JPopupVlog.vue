@@ -1,34 +1,34 @@
 <template>
-    <JModal @close="close" maxWidth="80vw" :show="isShow" id="modal-vlog">
+    <JModal @close="close" maxWidth="80vw" :show="isShow" id="modal-vlog" class="popup-vlog">
         <template v-slot:close>
-            <div @click="close" class="fixed text-center text-white cursor-pointer right-6 top-6 body-1">
-                <div class="p-2.5">
-                    <JIconXClose class="w-6 h-6 mx-auto" />
+            <div @click="close" class="popup-vlog-close">
+                <div class="icon">
+                    <JIconXClose />
                 </div>
-                <div>Đóng</div>
+                <div class="title">Đóng</div>
             </div>
         </template>
-        <div v-if="currentItem" class="p-8 bg-white rounded-lg">
-            <div class="text-gray-700 title-2">{{ currentItem.title }}</div>
-            <div class="flex space-x-6">
-                <div>
-                    <span class="text-gray-700 body-2">Ngày đăng: </span>
-                    <span class="text-gray-900 label-2">{{ currentItem.published_at }}</span>
+        <div v-if="currentItem" class="popup-vlog-body">
+            <div class="popup-vlog-title">{{ currentItem.title }}</div>
+            <div class="popup-vlog-information">
+                <div class="item">
+                    <span class="label">Ngày đăng: </span>
+                    <span class="title">{{ currentItem.published_at }}</span>
                 </div>
-                <div>
-                    <span class="text-gray-700 body-2">Thời lượng: </span>
-                    <span class="text-gray-900 label-2">{{ currentItem.time }}</span>
+                <div class="item">
+                    <span class="label">Thời lượng: </span>
+                    <span class="title">{{ currentItem.time }}</span>
                 </div>
             </div>
-            <div class="mt-6">
+            <div class="popup-vlog-video">
                 <JClientOnly>
                     <JVideo :src="currentItem.video" />
                 </JClientOnly>
             </div>
 
-            <div class="mt-12 space-y-8">
-                <div class="text-gray-900 uppercase title-1">Có thể bạn sẽ thích</div>
-                <div class="page-vlog-category-items">
+            <div class="popup-vlog-related">
+                <div class="title">Có thể bạn sẽ thích</div>
+                <div class="items">
                     <template v-for="(item, index) in items">
                         <JCardVlog
                             :key="index"

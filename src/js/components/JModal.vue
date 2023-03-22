@@ -1,6 +1,6 @@
 <template>
     <transition leave-active-class="lg:duration-200">
-        <div v-show="show" class="fixed inset-0 flex px-4 py-6 overflow-y-auto sm:px-0 modal-popup">
+        <div v-show="show" class="modal-popup">
             <transition
                 enter-active-class="ease-out lg:duration-300"
                 enter-from-class="opacity-0"
@@ -9,11 +9,11 @@
                 leave-from-class="opacity-100"
                 leave-to-class="opacity-0"
             >
-                <div v-show="show" class="fixed inset-0 transition-all transform" @click="close">
-                    <div class="absolute inset-0 bg-black opacity-60"></div>
+                <div v-show="show" class="modal-popup-layer" @click="close">
+                    <div class="modal-popup-shape"></div>
                 </div>
             </transition>
-            <slot name="close"></slot>
+            <slot class="modal-popup-close" name="close"></slot>
 
             <transition
                 enter-active-class="ease-out lg:duration-300"
@@ -23,11 +23,7 @@
                 leave-from-class="translate-y-0 opacity-100 sm:scale-100"
                 leave-to-class="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
             >
-                <div
-                    v-show="show"
-                    class="my-auto overflow-hidden transform shadow-xl lg:transition-all sm:w-full sm:mx-auto"
-                    :class="[modalClass, maxWidthClass]"
-                >
+                <div v-show="show" class="modal-popup-body" :class="[modalClass, maxWidthClass]">
                     <slot />
                 </div>
             </transition>
@@ -102,9 +98,3 @@ export default {
     },
 }
 </script>
-
-<style lang="scss" scoped>
-.modal-popup {
-    z-index: 100;
-}
-</style>
