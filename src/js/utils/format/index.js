@@ -63,4 +63,25 @@ function toBasename(url) {
     return url?.substring(url?.lastIndexOf('/') + 1)
 }
 
-export { toNumber, toDate, toSlug, toBasename }
+function toMoney(value, language = 'vi') {
+    let options = {}
+    if (language === 'vi') {
+        options = {
+            minimumFractionDigits: 0,
+            style: 'currency',
+            currency: 'VND',
+        }
+    } else if (language === 'en') {
+        options = {
+            minimumFractionDigits: 0,
+            style: 'currency',
+            currency: 'USD',
+        }
+    }
+
+    const formatter = new Intl.NumberFormat(locale, options)
+
+    return formatter.format(value ?? 0)
+}
+
+export { toNumber, toDate, toSlug, toBasename, toMoney }
