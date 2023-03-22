@@ -5,6 +5,7 @@
     @apply label-2 h-9 px-3.5;
 }
 
+// VARIANTS
 .btn-primary {
     @apply border-blue-600 bg-blue-600 focus:bg-blue-600 focus:border-blue-600 hover:bg-blue-700 hover:border-blue-700 text-white;
     &:focus {
@@ -32,21 +33,19 @@
         @apply pointer-events-none border-error-200 bg-error-200;
     }
 }
-
-.btn {
-    &.btn-sm {
-        @apply label-2 h-9 px-3.5;
-    }
-    &.btn-md {
-        @apply label-2 h-10 px-4;
-    }
-    &.btn-lg {
-        @apply label-1 h-11 px-4;
-    }
-    &.btn-xl {
-        @apply label-1 h-12 px-5;
-    }
-    &.btn-2xl {
-        @apply label-1 h-14 px-7;
-    }
+//  SIZE
+.btn-sm {
+    @apply label-2 h-9 px-3.5;
+}
+.btn-md {
+    @apply label-2 h-10 px-4;
+}
+.btn-lg {
+    @apply label-1 h-11 px-4;
+}
+.btn-xl {
+    @apply label-1 h-12 px-5;
+}
+.btn-2xl {
+    @apply label-1 h-14 px-7;
 }
