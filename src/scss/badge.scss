@@ -1,5 +1,5 @@
 .badge {
-    @apply py-0.5 px-2.5 label-2 rounded inline-block whitespace-nowrap;
+    @apply inline-flex items-center justify-center py-0.5 px-2.5 label-2 rounded  whitespace-nowrap;
 }
 
 .badge-sm {
