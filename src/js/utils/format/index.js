@@ -72,7 +72,7 @@ function toMoney(value, language = 'vi') {
         }
     }
 
-    const formatter = new Intl.NumberFormat(locale, options)
+    const formatter = new Intl.NumberFormat(language, options)
 
     return formatter.format(value ?? 0)
 }

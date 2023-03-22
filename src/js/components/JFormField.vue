@@ -1,6 +1,6 @@
 <template>
     <fieldset>
-        <label v-if="showLabel" :for="field.name" class="label">{{ field.label }}</label>
+        <label v-if="showLabel" :for="field.name" class="label">{{ fieldLabel }}</label>
         <div
             class="field"
             :class="{
@@ -34,7 +34,12 @@
                 :field="field"
                 @update:modelValue="onChangeField"
             />
-            <JFieldPhone v-else-if="field.type === 'number'" :field="field" @update:modelValue="onChangeField" />
+            <JFieldPhone
+                v-else-if="field.type === 'number'"
+                :modelValue="form[field.name]"
+                :field="field"
+                @update:modelValue="onChangeField"
+            />
 
             <JFieldDropdown
                 v-else-if="field.type === 'dropdown'"
@@ -55,7 +60,7 @@
             </div>
 
             <small v-if="field.help || isError" class="help">
-                {{ isError ? errors[field.name] : field.help }}
+                {{ isError ? messageError : field.help }}
             </small>
         </div>
     </fieldset>
@@ -86,6 +91,12 @@ export default {
     computed: {
         showLabel() {
             return this.field.label && this.field.type !== 'checkbox' && this.field.type !== 'checkbox_multiple'
+        },
+        fieldLabel() {
+            return this.field.label + ` ${this.rules[this.field.name].includes('required') ? '*' : ''}`
+        },
+        messageError() {
+            return this.errors[this.field.name] || `${this.field.label} không hợp lệ`
         },
 
         isError() {
