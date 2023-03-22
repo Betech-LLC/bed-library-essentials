@@ -1,10 +1,9 @@
 .page-vlog-category-body {
     @apply container;
-}
-
-.page-vlog-category-items {
-    @apply grid md:grid-cols-2 xl:gap-8 md:gap-6 max-md:gap-y-6;
-    .item {
+    .vlog-items {
+        @apply grid md:grid-cols-2 xl:gap-8 md:gap-6 max-md:gap-y-6;
+        .item {
+        }
     }
 }
 
@@ -21,7 +20,7 @@
 }
 
 .page-vlog-category-tree {
-    .page-vlog-category-items {
+    .vlog-items {
         @apply lg:grid-cols-3;
     }
 }
@@ -76,5 +75,5 @@
 }
 
 .popup-vlog-related-items {
-    @apply page-vlog-category-items;
+    @apply vlog-items;
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="page-vlog-category-items">
+    <div class="vlog-items">
         <JCardVlog @viewVideo="viewVideo" class="item" :item="item" v-for="(item, index) in vlogs" :key="index" />
     </div>
 </template>
