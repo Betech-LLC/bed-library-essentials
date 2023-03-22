@@ -77,7 +77,7 @@ export default {
     props: {
         title: {
             type: String,
-            default: '...',
+            default: null,
         },
     },
     data() {
