@@ -56,4 +56,25 @@ function addLeadingZero(number) {
     return number
 }
 
-export { toNumber, toDate, toSlug, toBasename, addLeadingZero }
+function toMoney(value, language = 'vi') {
+    let options = {}
+    if (language === 'vi') {
+        options = {
+            minimumFractionDigits: 0,
+            style: 'currency',
+            currency: 'VND',
+        }
+    } else if (language === 'en') {
+        options = {
+            minimumFractionDigits: 0,
+            style: 'currency',
+            currency: 'USD',
+        }
+    }
+
+    const formatter = new Intl.NumberFormat(locale, options)
+
+    return formatter.format(value ?? 0)
+}
+
+export { toNumber, toDate, toSlug, toBasename, addLeadingZero, toMoney }
