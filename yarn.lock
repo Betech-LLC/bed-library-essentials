@@ -2,9 +2,10 @@
 # yarn lockfile v1
 
 
-"@nhatkha1407/jam-library-essentials@nhatkha1407/jam-library-essentials#card-blog":
-  version "1.0.230227084851"
-  resolved "git+ssh://git@github.com/nhatkha1407/jam-library-essentials.git#81fd7c84fcf3829b21b7400918de77fdf3e84c20"
+"@nhatkha1407/jam-library-essentials@^1.0.230313163715":
+  version "1.0.230313163715"
+  resolved "https://npm.pkg.github.com/download/@nhatkha1407/jam-library-essentials/1.0.230313163715/c07a862e53b49b3b8520b92c0f0a2ef47a483562#c07a862e53b49b3b8520b92c0f0a2ef47a483562"
+  integrity sha512-xrI7arVeuHPXGf883/DWq83kqDU3gBB71m/9/vbPLct7/2uirlqfwsaW4Jv/Y8GtWn4IF747E3gvVQRTo6cXTg==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
