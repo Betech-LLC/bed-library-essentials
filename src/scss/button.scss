@@ -1,5 +1,8 @@
 .btn {
-    @apply inline-flex items-center justify-center outline-none focus:outline-none;
+    @apply inline-flex items-center justify-center outline-none focus:outline-none rounded-lg;
+
+    // DEFAULT MD
+    @apply label-2 h-9 px-3.5;
 }
 
 .btn-primary {
@@ -38,12 +41,12 @@
         @apply label-2 h-10 px-4;
     }
     &.btn-lg {
-        @apply button-1 h-11 px-4;
+        @apply label-1 h-11 px-4;
     }
     &.btn-xl {
-        @apply button-1 h-12 px-5;
+        @apply label-1 h-12 px-5;
     }
     &.btn-2xl {
-        @apply button-1 h-14 px-7;
+        @apply label-1 h-14 px-7;
     }
 }

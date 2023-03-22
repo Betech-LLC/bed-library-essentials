@@ -6,25 +6,11 @@
             <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
                 <div class="space-y-2">
                     <div class="flex space-x-2">
-                        <JButton label="Button" class="btn-primary btn-lg" />
-                        <JButton label="Button" class="btn-secondary btn-lg" />
-                        <JButton label="Button" class="btn-success btn-lg" />
-                        <JButton label="Button" class="btn-warning btn-lg" />
-                        <JButton label="Button" class="btn-danger btn-lg" />
-                    </div>
-                    <div class="flex space-x-2">
-                        <JButton label="Button" class="btn-primary" />
-                        <JButton label="Button" class="btn-secondary" />
-                        <JButton label="Button" class="btn-success" />
-                        <JButton label="Button" class="btn-warning" />
-                        <JButton label="Button" class="btn-danger" />
-                    </div>
-                    <div class="flex space-x-2">
-                        <JButton label="Button" class="btn-primary btn-sm" />
-                        <JButton label="Button" class="btn-secondary btn-sm" />
-                        <JButton label="Button" class="btn-success btn-sm" />
-                        <JButton label="Button" class="btn-warning btn-sm" />
-                        <JButton label="Button" class="btn-danger btn-sm" />
+                        <JButton class="btn-primary btn-sm">Áp dụng</JButton>
+
+                        <div class="w-1/4">
+                            <JButton class="w-full btn-danger btn-lg"> Đặt hàng</JButton>
+                        </div>
                     </div>
                 </div>
             </div>
