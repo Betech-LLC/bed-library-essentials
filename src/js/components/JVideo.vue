@@ -29,7 +29,7 @@ const defaultOptions = {
 export default {
     components: {
         JClientOnly,
-        VuePlyr: defineAsyncComponent(() => import('vue-plyr') /* Важно */),
+        VuePlyr: defineAsyncComponent(() => import('vue-plyr')),
     },
     props: ['change'],
     props: {
