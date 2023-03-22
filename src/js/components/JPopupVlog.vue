@@ -27,17 +27,15 @@
             </div>
 
             <div class="popup-vlog-related">
-                <div class="title">Có thể bạn sẽ thích</div>
-                <div class="items">
-                    <template v-for="(item, index) in items">
-                        <JCardVlog
-                            :key="index"
-                            v-if="item.slug !== currentItem.slug"
-                            @viewVideo="viewVideo"
-                            class="item"
-                            :item="item"
-                        />
-                    </template>
+                <div class="popup-vlog-related-title">Có thể bạn sẽ thích</div>
+                <div class="popup-vlog-related-items">
+                    <JCardVlog
+                        v-for="(item, index) in items"
+                        :key="index"
+                        @viewVideo="viewVideo"
+                        class="item"
+                        :item="item"
+                    />
                 </div>
             </div>
         </div>

@@ -27,8 +27,7 @@
 }
 
 .modal-popup {
-    padding: 0px !important;
-    display: block;
+    @apply max-md:block max-md:p-0;
 }
 
 .popup-vlog-close {
@@ -70,11 +69,12 @@
 
 .popup-vlog-related {
     @apply xl:mt-12 md:mt-8 mt-6 xl:space-y-8 md:space-y-6 space-y-4;
-    .title {
-        @apply text-gray-900 uppercase title-1;
-    }
+}
 
-    .items {
-        @apply page-vlog-category-items;
-    }
+.popup-vlog-related-title {
+    @apply text-gray-900 uppercase title-1;
+}
+
+.popup-vlog-related-items {
+    @apply page-vlog-category-items;
 }

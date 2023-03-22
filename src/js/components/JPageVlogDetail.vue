@@ -2,6 +2,23 @@
     <main>
         <section class="page-vlog-category">
             <div class="page-vlog-category-body">
+                <div class="popup-vlog-title">{{ vlog.title }}</div>
+                <div class="popup-vlog-information">
+                    <div class="item">
+                        <span class="label">Ngày đăng: </span>
+                        <span class="title">{{ vlog.published_at }}</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">Thời lượng: </span>
+                        <span class="title">{{ vlog.time }}</span>
+                    </div>
+                </div>
+                <div class="popup-vlog-video">
+                    <JClientOnly>
+                        <JVideo :src="vlog.video" />
+                    </JClientOnly>
+                </div>
+
                 <div class="page-vlog-category-items">
                     <JCardVlog
                         @viewVideo="viewVideo"
