@@ -23,8 +23,11 @@ const defaultOptions = {
     autoplay: true,
     controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
 }
+import VuePlyr from 'vue-plyr'
+import 'vue-plyr/dist/vue-plyr.css'
 
 export default {
+    components: { VuePlyr },
     props: ['change'],
     props: {
         src: {
@@ -63,6 +66,12 @@ export default {
     //         this.$emit('change', event.detail.plyr.playing)
     //     })
     // },
+
+    watch: {
+        src(value) {
+            console.log(value)
+        },
+    },
 
     methods: {
         play() {

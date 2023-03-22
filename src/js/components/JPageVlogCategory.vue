@@ -44,6 +44,7 @@ export default {
 
         close() {
             this.isShow = false
+            window.history.pushState({}, '', '/vlog')
         },
     },
 }

@@ -1,7 +1,12 @@
 <template>
     <JModal @close="close" maxWidth="80vw" :show="isShow" id="modal-vlog">
         <template v-slot:close>
-            <div class="fixed text-white left-4 top-6">Close</div>
+            <div @click="close" class="fixed text-center text-white cursor-pointer right-6 top-6 body-1">
+                <div class="p-2.5">
+                    <JIconXClose class="w-6 h-6 mx-auto" />
+                </div>
+                <div>Đóng</div>
+            </div>
         </template>
         <div v-if="currentItem" class="p-8 bg-white rounded-lg">
             <div class="text-gray-700 title-2">{{ currentItem.title }}</div>
@@ -16,10 +21,12 @@
                 </div>
             </div>
             <div class="mt-6">
-                <JVideo :src="currentItem.video" />
+                <JClientOnly>
+                    <JVideo :src="currentItem.video" />
+                </JClientOnly>
             </div>
 
-            <div class="mt-16 space-y-8">
+            <div class="mt-12 space-y-8">
                 <div class="text-gray-900 uppercase title-1">Có thể bạn sẽ thích</div>
                 <div class="page-vlog-category-items">
                     <template v-for="(item, index) in items">
@@ -38,7 +45,9 @@
 </template>
 
 <script>
+import JIconXClose from '@core/components/JIcon/XClose.vue'
 export default {
+    components: { JIconXClose },
     props: {
         items: {
             type: Array,
