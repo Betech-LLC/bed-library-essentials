@@ -46,8 +46,9 @@
 
 <script>
 import JIconXClose from '@core/components/JIcon/XClose.vue'
+import JClientOnly from '@core/components/JClientOnly.vue'
 export default {
-    components: { JIconXClose },
+    components: { JIconXClose, JClientOnly },
     props: {
         items: {
             type: Array,
