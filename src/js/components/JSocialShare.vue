@@ -57,7 +57,7 @@
                     </slot>
                 </div>
                 <input id="input-copy" type="hidden" />
-                <div class="message" :class="{ active: copySuccess }">Link copied!</div>
+                <div class="help" :class="{ active: copySuccess }">Link copied!</div>
             </div>
         </div>
     </div>
@@ -92,6 +92,10 @@ export default {
         copyLink: {
             type: Boolean,
             default: true,
+        },
+        link: {
+            type: String,
+            default: null,
         },
         linkedin: {
             type: Boolean,
@@ -138,7 +142,7 @@ export default {
     methods: {
         copyCurrentLink() {
             const input = document.querySelector('#input-copy')
-            input.value = window.location.href
+            input.value = this.link ? this.link : window.location.href
             input.setAttribute('type', 'text')
             input.select()
             input.setSelectionRange(0, 99999)
