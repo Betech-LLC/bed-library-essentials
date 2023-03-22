@@ -1,7 +1,7 @@
 <template>
-    <JModal @close="close" maxWidth="80vw" :show="isShow" id="modal-vlog" class="popup-vlog">
+    <JModal maxWidth="80vw" :show="isShow" id="modal-vlog" class="popup-vlog">
         <template v-slot:close>
-            <div @click="close" class="popup-vlog-close">
+            <div class="popup-vlog-close">
                 <div class="icon">
                     <JIconXClose />
                 </div>
@@ -9,34 +9,10 @@
             </div>
         </template>
         <div v-if="currentItem" class="popup-vlog-body">
-            <div class="popup-vlog-title">{{ currentItem.title }}</div>
-            <div class="popup-vlog-information">
-                <div class="item">
-                    <span class="label">Ngày đăng: </span>
-                    <span class="title">{{ currentItem.published_at }}</span>
-                </div>
-                <div class="item">
-                    <span class="label">Thời lượng: </span>
-                    <span class="title">{{ currentItem.time }}</span>
-                </div>
-            </div>
-            <div class="popup-vlog-video">
-                <JClientOnly>
-                    <JVideo :src="currentItem.video" />
-                </JClientOnly>
-            </div>
+            <JVlogDetail :item="currentItem" />
 
             <div class="popup-vlog-related">
-                <div class="popup-vlog-related-title">Có thể bạn sẽ thích</div>
-                <div class="popup-vlog-related-items">
-                    <JCardVlog
-                        v-for="(item, index) in items"
-                        :key="index"
-                        @viewVideo="viewVideo"
-                        class="item"
-                        :item="item"
-                    />
-                </div>
+                <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" />
             </div>
         </div>
     </JModal>
@@ -45,10 +21,12 @@
 <script>
 import JIconXClose from '@core/components/JIcon/XClose.vue'
 import JClientOnly from '@core/components/JClientOnly.vue'
+import JListCardVlog from '@core/components/JListCardVlog.vue'
+import JVlogDetail from '@core/components/JVlogDetail.vue'
 export default {
-    components: { JIconXClose, JClientOnly },
+    components: { JIconXClose, JClientOnly, JListCardVlog, JVlogDetail },
     props: {
-        items: {
+        vlogs: {
             type: Array,
         },
 
@@ -71,10 +49,6 @@ export default {
     },
 
     methods: {
-        close() {
-            this.$emit('close')
-        },
-
         viewVideo(item) {
             this.$emit('viewVideo', item)
         },

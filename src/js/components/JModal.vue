@@ -13,7 +13,9 @@
                     <div class="modal-popup-shape"></div>
                 </div>
             </transition>
-            <slot class="modal-popup-close" name="close"></slot>
+            <div @click="close" class="modal-popup-close">
+                <slot name="close"></slot>
+            </div>
 
             <transition
                 enter-active-class="ease-out lg:duration-300"

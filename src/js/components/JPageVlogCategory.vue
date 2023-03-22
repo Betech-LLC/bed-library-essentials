@@ -9,7 +9,7 @@
             </div>
         </section>
 
-        <JPopupVlog @viewVideo="viewVideo" @close="close" :items="vlogs" :isShow="isShow" :currentItem="currentItem" />
+        <JPopupVlog @viewVideo="viewVideo" @close="close" :vlogs="vlogs" :isShow="isShow" :currentItem="currentItem" />
     </main>
 </template>
 
@@ -25,7 +25,12 @@ export default {
         return {
             isShow: false,
             currentItem: null,
+            currentUrl: null,
         }
+    },
+
+    mounted() {
+        this.currentUrl = window.location.href
     },
 
     methods: {
@@ -36,7 +41,7 @@ export default {
 
         close() {
             this.isShow = false
-            window.history.pushState({}, '', '/vlog')
+            window.history.pushState({}, '', this.currentUrl)
         },
     },
 }

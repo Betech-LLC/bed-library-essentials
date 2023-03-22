@@ -1,56 +1,37 @@
 <template>
     <main>
-        <section class="page-vlog-category">
-            <div class="page-vlog-category-body">
-                <div class="popup-vlog-title">{{ vlog.title }}</div>
-                <div class="popup-vlog-information">
-                    <div class="item">
-                        <span class="label">Ngày đăng: </span>
-                        <span class="title">{{ vlog.published_at }}</span>
-                    </div>
-                    <div class="item">
-                        <span class="label">Thời lượng: </span>
-                        <span class="title">{{ vlog.time }}</span>
-                    </div>
-                </div>
-                <div class="popup-vlog-video">
-                    <JClientOnly>
-                        <JVideo :src="vlog.video" />
-                    </JClientOnly>
-                </div>
+        <section class="page-vlog-detail">
+            <JVlogDetail :item="vlog" />
 
-                <div class="page-vlog-category-items">
-                    <JCardVlog
-                        @viewVideo="viewVideo"
-                        class="item"
-                        :item="item"
-                        v-for="(item, index) in vlogs"
-                        :key="index"
-                    />
-                </div>
-                <div class="page-vlog-category-button">
-                    <button class="btn-see-more">Xem thêm 16 bài viết</button>
-                </div>
+            <div class="page-vlog-detail-related">
+                <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" />
             </div>
         </section>
 
-        <JPopupVlog @viewVideo="viewVideo" @close="close" :items="vlogs" :isShow="isShow" :currentItem="currentItem" />
+        <JPopupVlog @viewVideo="viewVideo" @close="close" :vlogs="vlogs" :isShow="isShow" :currentItem="currentItem" />
     </main>
 </template>
 
 <script>
 import JCardVlog from '@core/components/JCardVlog.vue'
 import JPopupVlog from '@core/components/JPopupVlog.vue'
+import JVlogDetail from '@core/components/JVlogDetail.vue'
+import JListCardVlog from '@core/components/JListCardVlog.vue'
 
 export default {
-    components: { JCardVlog, JPopupVlog },
+    components: { JCardVlog, JPopupVlog, JVlogDetail, JListCardVlog },
     props: ['vlog', 'vlogs'],
 
     data() {
         return {
             isShow: false,
             currentItem: null,
+            currentUrl: null,
         }
+    },
+
+    mounted() {
+        this.currentUrl = window.location.href
     },
 
     methods: {
@@ -61,7 +42,7 @@ export default {
 
         close() {
             this.isShow = false
-            window.history.pushState({}, '', '/vlog')
+            window.history.pushState({}, '', this.currentUrl)
         },
     },
 }

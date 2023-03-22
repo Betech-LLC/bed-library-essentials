@@ -1,0 +1,11 @@
+.page-vlog-detail {
+    @apply container xl:py-16 md:py-11 py-8;
+}
+
+.page-vlog-detail-related {
+    @apply xl:mt-12 md:mt-8 mt-6;
+
+    .list-card-vlog-title {
+        @apply block;
+    }
+}
