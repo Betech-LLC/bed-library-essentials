@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <JClientOnly>
         <vue-plyr class="flex w-full h-full" :options="playerOptions" ref="player">
             <div v-if="checkIsVideo(src)" class="plyr__video-embed">
                 <iframe
@@ -16,18 +16,21 @@
             </video>
         </vue-plyr>
         <!-- <HomeButtonPlayVideo @click="play()" v-show="!playAlwayHide && (playAlwayShow || !playing)" :uid="randomId" /> -->
-    </div>
+    </JClientOnly>
 </template>
 <script>
+import 'vue-plyr/dist/vue-plyr.css'
+import JClientOnly from '@core/components/JClientOnly.vue'
 const defaultOptions = {
     autoplay: true,
     controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
 }
-// import VuePlyr from 'vue-plyr'
-// import 'vue-plyr/dist/vue-plyr.css'
 
 export default {
-    // components: { VuePlyr },
+    components: {
+        JClientOnly,
+        VuePlyr: defineAsyncComponent(() => import('vue-plyr') /* Важно */),
+    },
     props: ['change'],
     props: {
         src: {

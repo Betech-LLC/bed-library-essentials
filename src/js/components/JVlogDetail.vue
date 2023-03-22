@@ -12,9 +12,7 @@
             </div>
         </div>
         <div class="vlog-detail-video">
-            <JClientOnly>
-                <JVideo :src="item.video" />
-            </JClientOnly>
+            <JVideo :src="item.video" />
         </div>
     </div>
 </template>
