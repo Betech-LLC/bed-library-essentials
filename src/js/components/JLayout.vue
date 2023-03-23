@@ -67,6 +67,69 @@
             <div class="mb-4 display-3">Checkbox / Radio</div>
             <div class="p-4 py-10 border border-dashed rounded-lg">
                 <div class="grid grid-cols-3 gap-x-2 gap-y-4">
+                    <div class="space-y-4 col-span-full">
+                        <div>paymentActive: {{ paymentActive }}</div>
+                        <JFieldRadio
+                            v-model="paymentActive"
+                            :field="{
+                                label: 'Thanh toán tiền mặt khi nhận hàng (COD)',
+                                value: 1,
+                                help: 'Quý khách vui lòng giữ liên lạc để shipper liên hệ khi giao hàng nhé!',
+                            }"
+                        />
+                        <JFieldRadio
+                            v-model="paymentActive"
+                            :field="{
+                                value: 2,
+                            }"
+                        >
+                            <div class="flex space-x-2">
+                                <div class="w-6 h-6">
+                                    <img src="../../images/vnpay.png" alt="" />
+                                </div>
+                                <div class="space-y-0.5">
+                                    <div>Thanh toán bằng VNPAY</div>
+                                    <div class="cursor-default">Quét mã QR từ ứng dụng ngân hàng</div>
+                                </div>
+                            </div>
+                        </JFieldRadio>
+
+                        <JFieldRadio
+                            v-model="paymentActive"
+                            :field="{
+                                value: 3,
+                            }"
+                        >
+                            <div class="">
+                                <div class="flex space-x-2">
+                                    <div class="flex-none w-6 h-6">
+                                        <img src="../../images/vnpay.png" alt="" />
+                                    </div>
+                                    <div class="label-1">Chuyển khoản</div>
+                                </div>
+
+                                <div v-if="paymentActive == 3" class="px-6 py-3 mt-1 ml-8 bg-gray-100 cursor-default">
+                                    <div class="text-gray-700">
+                                        Quý khách vui lòng chuyển khoản vào số tài khoản dưới đây:
+                                    </div>
+
+                                    <div>
+                                        <div class="mb-2 font-semibold text-gray-900 title-3">
+                                            1. Miền Bắc & Miền Trung
+                                        </div>
+
+                                        <div class="flex flex-wrap fl md:flex-row">
+                                            <div>Tên tài khoản:</div>
+                                            <div>Nguyễn Văn A</div>
+                                        </div>
+                                        <div>Tên ngân hàng: Ngân hàng Ngoại Thương Việt Nam (VietcomBank)</div>
+                                        <div>Số tài khoản: 0021006888888</div>
+                                        <div>Nội dung: Tên - Số điện thoại - Sản phẩm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </JFieldRadio>
+                    </div>
                     <div class="space-y-4">
                         <div class="label-1">Checked: {{ checkedBrands }}</div>
                         <JFieldCheckbox
@@ -85,6 +148,7 @@
 
                     <div class="space-y-4">
                         <div class="label-1">Checked: "{{ activeLaptop }}"</div>
+
                         <JFieldRadio
                             v-for="option in optionLaptops"
                             v-model="activeLaptop"
@@ -595,6 +659,22 @@
 export default {
     data() {
         return {
+            paymentActive: 1,
+            payments: [
+                {
+                    id: 1,
+                    title: 'Thanh toán tiền mặt khi nhận hàng (COD)',
+                    desc: 'Quý khách vui lòng giữ liên lạc để shipper liên hệ khi giao hàng nhé!',
+                    image: '../../images/vnpay.png',
+                },
+                { id: 2, title: 'Chuyển khoản', desc: '', image: '../../images/vnpay.png' },
+                {
+                    id: 3,
+                    title: 'Thanh toán bằng VNPAY',
+                    desc: 'Quét mã QR từ ứng dụng ngân hàng',
+                    image: '../../images/vnpay.png',
+                },
+            ],
             isBill: false,
             multiCheckboxItems: [],
             multiCheckboxItemsActive: [],

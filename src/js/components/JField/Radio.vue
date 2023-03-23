@@ -10,8 +10,11 @@
                 @input="$emit('update:modelValue', $event.target.value)"
             />
             <div class="checkmark"></div>
-            {{ field.label }}
-            <p v-if="field.help" class="help">{{ field.help }}</p>
+            <template v-if="$slots.default"> <slot /> </template>
+            <template v-else>
+                {{ field.label }}
+                <p v-if="field.help" class="help">{{ field.help }}</p>
+            </template>
         </label>
     </div>
 </template>
