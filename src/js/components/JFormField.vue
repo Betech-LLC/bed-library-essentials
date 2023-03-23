@@ -60,7 +60,7 @@
             </div>
 
             <small v-if="field.help || isError" class="help">
-                {{ isError ? messageError : field.help }}
+                {{ isError ? message : field.help }}
             </small>
         </div>
     </fieldset>
@@ -93,12 +93,11 @@ export default {
             return this.field.label && this.field.type !== 'checkbox' && this.field.type !== 'checkbox_multiple'
         },
         fieldLabel() {
-            return this.field.label + ` ${this.rules[this.field.name].includes('required') ? '*' : ''}`
+            return this.field.label + ` ${this.rules[this.field.name]?.includes('required') ? '*' : ''}`
         },
-        messageError() {
-            return this.errors[this.field.name] || `${this.field.label} không hợp lệ`
+        message() {
+            return this.field.error || `${this.field.label} không hợp lệ`
         },
-
         isError() {
             return this.errors.hasOwnProperty(this.field.name)
         },
