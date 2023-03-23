@@ -93,7 +93,7 @@ export default {
             return this.field.label && this.field.type !== 'checkbox' && this.field.type !== 'checkbox_multiple'
         },
         fieldLabel() {
-            return this.field.label + ` ${this.rules[this.field.name].includes('required') ? '*' : ''}`
+            return this.field.label + ` ${this.rules[this.field.name]?.includes('required') ? '*' : ''}`
         },
         messageError() {
             return this.errors[this.field.name] || `${this.field.label} không hợp lệ`

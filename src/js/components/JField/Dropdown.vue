@@ -10,8 +10,8 @@
             :value="selectedOption"
             :placeholder="fieldPlaceholder"
         />
-        <div v-show="isShow" class="dropdown-content">
-            <ul class="dropdown-items max-h-[320px] overflow-y-auto">
+        <div v-show="isShow" class="dropdown-content max-h-[320px] overflow-y-auto">
+            <ul class="dropdown-items">
                 <li
                     class="dropdown-item"
                     v-for="option in field.options"

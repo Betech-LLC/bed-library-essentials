@@ -19,7 +19,9 @@
     </div>
 </template>
 <script>
+import JIconTickCheckbox from '../JIcon/TickCheckbox.vue'
 export default {
+    components: { JIconTickCheckbox },
     props: ['field', 'modelValue', 'disabled'],
     emits: ['update:modelValue'],
     computed: {
