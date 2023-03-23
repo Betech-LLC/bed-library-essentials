@@ -1,7 +1,14 @@
 <template>
     <div class="checkbox" :class="{ 'is-disabled': disabled }">
         <label class="label" :for="fieldId">
-            <input type="checkbox" class="input" :id="fieldId" :value="modelValue" @input="onInput" />
+            <input
+                type="checkbox"
+                class="input"
+                :id="fieldId"
+                :value="modelValue"
+                @input="onInput"
+                :checked="modelValue"
+            />
             <template v-if="$slots.checkmark">
                 <slot name="checkmark" :label="field.label" />
             </template>
@@ -19,7 +26,9 @@
     </div>
 </template>
 <script>
+import JIconTickCheckbox from '../JIcon/TickCheckbox.vue'
 export default {
+    components: { JIconTickCheckbox },
     props: ['field', 'modelValue', 'disabled'],
     emits: ['update:modelValue'],
     computed: {

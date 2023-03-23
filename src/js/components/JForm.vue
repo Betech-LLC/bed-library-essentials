@@ -6,7 +6,7 @@
 <script>
 import { reactive } from 'vue'
 import { validateForm } from '@core/utils'
-import { mixinContact } from '@framework/mixins'
+// import { mixinContact } from '@framework/mixins'
 export default {
     props: {
         modelValue: {
@@ -26,7 +26,7 @@ export default {
             errors: reactive(this.errors),
         }
     },
-    mixins: [mixinContact],
+    // mixins: [mixinContact],
     data() {
         return { form: this.modelValue, errors: {} }
     },
@@ -42,8 +42,7 @@ export default {
         async submit() {
             const isValidForm = this.validateForm()
             if (!isValidForm) return
-            await this.submitForm(this.form)
-            this.resetForm()
+            this.$emit('submit')
         },
         resetForm() {
             const keyFields = Object.keys(this.form)
