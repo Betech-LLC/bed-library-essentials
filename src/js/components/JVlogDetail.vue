@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="vlog-detail-video">
-            <JVideo :isPlay="isPlay" @change="change" :options="{ controls: [] }" :src="item.video" />
+            <JVideo :isPlay="isPlay" @change="change" :src="item.video" />
         </div>
     </div>
 </template>
