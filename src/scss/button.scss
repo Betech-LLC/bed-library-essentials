@@ -41,13 +41,13 @@
 }
 //  SIZE
 .btn-sm {
-    @apply label-2 h-8 md:h-9 px-3.5;
+    @apply label-2 h-8 xl:h-9 px-3.5;
 }
 .btn-md {
-    @apply label-2 h-10 px-4;
+    @apply label-2 h-9 md:h-10 px-4;
 }
 .btn-lg {
-    @apply label-1 h-11 px-4;
+    @apply label-1 h-10 md:h-11 px-4;
 }
 .btn-xl {
     @apply label-1 h-12 px-5;
