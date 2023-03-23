@@ -1,0 +1,62 @@
+.card-project {
+    @apply xl:space-y-4 md:space-y-3 space-y-2;
+}
+
+.card-project-image {
+    @apply aspect-w-2 aspect-h-1 picture-cover lg:overflow-hidden;
+    img {
+        @apply scale-transition-sm;
+    }
+}
+
+.card-project-body {
+    @apply xl:space-y-2 md:space-y-1.5 space-y-1;
+}
+
+.card-project-meta {
+    @apply flex items-center xl:space-x-6 lg:space-x-4 max-lg:flex-col max-lg:space-y-0.5 max-lg:items-start max-md:flex-row max-md:items-center max-md:space-x-3;
+    .item-location,
+    .item-progress {
+        @apply flex items-center xl:space-x-2 md:space-x-1.5 space-x-1;
+    }
+
+    .label-location,
+    .label-progress {
+        @apply label-2 text-gray-500;
+    }
+    .title-location,
+    .title-progress {
+        @apply badge badge-sm;
+    }
+    .title-location {
+        @apply badge-gray;
+    }
+
+    .title-progress {
+        &.success {
+            @apply badge-success;
+        }
+        &.error {
+            @apply badge-error;
+        }
+    }
+}
+
+.card-project-title {
+    @apply title-2 text-gray-900 line-clamp-1;
+
+    a {
+        @apply lg:hover:text-primary base-transition;
+    }
+}
+
+.card-project-description {
+    @apply body-2 text-gray-700 line-clamp-2;
+}
+
+.card-project-button {
+    @apply max-lg:hidden flex space-x-2 items-center label-2 text-gray-500 lg:hover:text-primary base-transition;
+    svg {
+        @apply w-5 h-5;
+    }
+}

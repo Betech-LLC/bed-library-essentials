@@ -1,20 +1,20 @@
 <template>
-    <section class="error error-col">
-        <div class="error-body">
-            <div class="error-status">
+    <section class="page-error page-error-col">
+        <div class="page-error-body">
+            <div class="page-error-status">
                 {{ status }}
             </div>
-            <h1 class="error-title">
+            <h1 class="page-error-title">
                 {{ title }}
             </h1>
-            <p class="error-description">
+            <p class="page-error-description">
                 {{ description }}
                 <a :href="`tel:${toNumber(phone)}`"> {{ phone }} </a>
             </p>
-            <JLink class="error-button" :href="link">{{ button }}</JLink>
+            <JLink class="page-error-button" :href="link">{{ button }}</JLink>
         </div>
         <slot>
-            <img src="../../images/error/image-page.webp" class="error-image" alt="Error" />
+            <img src="../../images/error/image-page.webp" class="page-error-image" alt="Error" />
         </slot>
     </section>
 </template>
