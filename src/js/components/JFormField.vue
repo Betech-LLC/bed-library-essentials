@@ -76,6 +76,11 @@ import JFieldTextarea from '@core/components/JField/Textarea.vue'
 export default {
     components: { JFieldText, JFieldPhone, JFieldDropdown, JFieldTextarea },
     emits: ['update:modelValue', 'modelValue'],
+    data() {
+        return {
+            isError: false,
+        }
+    },
     props: {
         field: {
             type: Object,
@@ -98,11 +103,17 @@ export default {
         message() {
             return this.field.error || `${this.field.label} không hợp lệ`
         },
-        isError() {
-            return this.errors.hasOwnProperty(this.field.name)
-        },
+
         fieldValue() {
             return this.modelValue || this.form[this.field.name]
+        },
+    },
+    watch: {
+        errors: {
+            handler() {
+                this.errors = this.errors.hasOwnProperty(this.field.name)
+            },
+            deep: true,
         },
     },
     methods: {
