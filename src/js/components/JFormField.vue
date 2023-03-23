@@ -76,17 +76,17 @@ import JFieldTextarea from '@core/components/JField/Textarea.vue'
 export default {
     components: { JFieldText, JFieldPhone, JFieldDropdown, JFieldTextarea },
     emits: ['update:modelValue', 'modelValue'],
-    data() {
-        return {
-            isError: false,
-        }
-    },
     props: {
         field: {
             type: Object,
             default: () => {},
         },
         disabled: { type: Boolean, default: false },
+    },
+    data() {
+        return {
+            isError: false,
+        }
     },
     inject: {
         form: { default: () => {} },
@@ -110,8 +110,8 @@ export default {
     },
     watch: {
         errors: {
-            handler() {
-                this.errors = this.errors.hasOwnProperty(this.field.name)
+            handler(newErrors) {
+                this.isError = newErrors.hasOwnProperty(this.field.name)
             },
             deep: true,
         },
