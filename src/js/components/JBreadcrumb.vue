@@ -20,12 +20,16 @@
 </template>
 
 <script>
+import JLink from '@core/components/JLink.vue'
 export default {
     props: {
         items: {
             type: Array,
             required: true,
         },
+    },
+    components: {
+        JLink,
     },
 }
 </script>
