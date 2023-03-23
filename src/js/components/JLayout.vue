@@ -11,6 +11,8 @@
                         <div class="w-1/4">
                             <JButton class="w-full btn-danger btn-lg"> Đặt hàng</JButton>
                         </div>
+
+                        <JButton class="btn-secondary">Sửa giỏ hàng</JButton>
                     </div>
                 </div>
                 <div class="space-x-2 space-y-2">
