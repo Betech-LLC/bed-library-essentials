@@ -603,6 +603,7 @@ export default {
                 {
                     id: 23,
                     name: 'Frontend 2',
+                    active: true,
                 },
                 { id: 333, name: 'Backend 2' },
                 { id: 3545, name: 'Accounting 2' },
@@ -612,7 +613,7 @@ export default {
                 {
                     id: 1111,
                     name: 'Apple 2',
-                    active: false,
+                    active: true,
                 },
                 { id: 2222, name: 'Samsung 2', active: false },
                 { id: 3333, name: 'Xiaomi 2', active: false },
