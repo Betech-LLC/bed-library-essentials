@@ -10,10 +10,7 @@
             :value="selectedOption"
             :placeholder="fieldPlaceholder"
         />
-        <div
-            v-show="isShow && field.options && field.options.length > 0"
-            class="dropdown-content max-h-[320px] overflow-y-auto custom-scrollbar"
-        >
+        <div v-show="isShow && field.options && field.options.length > 0" class="dropdown-content">
             <ul class="dropdown-items">
                 <li
                     class="dropdown-item"

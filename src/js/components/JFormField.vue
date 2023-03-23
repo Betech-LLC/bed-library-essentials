@@ -17,7 +17,7 @@
             <JFieldText
                 v-if="!field.type || field.type === 'text' || field.type === 'email' || field.type === 'password'"
                 :field="field"
-                :modelValue="form[field.name]"
+                :modelValue="fieldValue"
                 @update:modelValue="onChangeField"
             />
 
@@ -36,7 +36,7 @@
             />
             <JFieldPhone
                 v-else-if="field.type === 'number'"
-                :modelValue="form[field.name]"
+                :modelValue="fieldValue"
                 :field="field"
                 @update:modelValue="onChangeField"
             />
@@ -44,14 +44,14 @@
             <JFieldDropdown
                 v-else-if="field.type === 'dropdown'"
                 :field="field"
-                :modelValue="form[field.name]"
+                :modelValue="fieldValue"
                 @update:modelValue="onChangeField"
             />
 
             <JFieldTextarea
                 v-else-if="field.type === 'textarea'"
                 :field="field"
-                :modelValue="form[field.name]"
+                :modelValue="fieldValue"
                 @update:modelValue="onChangeField"
             />
 
@@ -83,6 +83,11 @@ export default {
         },
         disabled: { type: Boolean, default: false },
     },
+    data() {
+        return {
+            isError: false,
+        }
+    },
     inject: {
         form: { default: () => {} },
         rules: { default: () => {} },
@@ -98,11 +103,17 @@ export default {
         message() {
             return this.field.error || `${this.field.label} không hợp lệ`
         },
-        isError() {
-            return this.errors.hasOwnProperty(this.field.name)
-        },
+
         fieldValue() {
             return this.modelValue || this.form[this.field.name]
+        },
+    },
+    watch: {
+        errors: {
+            handler(newErrors) {
+                this.isError = newErrors.hasOwnProperty(this.field.name)
+            },
+            deep: true,
         },
     },
     methods: {
