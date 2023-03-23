@@ -13,3 +13,7 @@
 .modal-popup-body {
     @apply my-auto overflow-hidden transform shadow-xl lg:transition-all sm:w-full sm:mx-auto;
 }
+
+.modal-popup-close {
+    @apply max-md:sticky max-md:top-0;
+}
