@@ -1,7 +1,7 @@
 <template>
     <main>
         <section class="page-vlog-detail">
-            <JVlogDetail :item="vlog" />
+            <JVlogDetail :item="item" />
 
             <div class="page-vlog-detail-related">
                 <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" />
@@ -20,7 +20,7 @@ import JListCardVlog from '@core/components/JListCardVlog.vue'
 
 export default {
     components: { JCardVlog, JPopupVlog, JVlogDetail, JListCardVlog },
-    props: ['vlog', 'vlogs'],
+    props: ['item', 'vlogs'],
 
     data() {
         return {

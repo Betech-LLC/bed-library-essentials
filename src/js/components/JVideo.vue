@@ -1,6 +1,6 @@
 <template>
     <JClientOnly>
-        <vue-plyr class="flex w-full h-full" :options="playerOptions" ref="player">
+        <vue-plyr v-if="renderComponent" :options="playerOptions" :id="randomId" ref="player">
             <div v-if="checkIsVideo(src)" class="plyr__video-embed">
                 <iframe
                     class="w-full h-auto"
@@ -15,7 +15,6 @@
                 <source :src="src" type="video/mp4" />
             </video>
         </vue-plyr>
-        <!-- <HomeButtonPlayVideo @click="play()" v-show="!playAlwayHide && (playAlwayShow || !playing)" :uid="randomId" /> -->
     </JClientOnly>
 </template>
 <script>
@@ -56,29 +55,34 @@ export default {
             playing: false,
             playerOptions: { ...defaultOptions, ...this.options },
             randomId: 'id-' + Math.random().toString(36).substr(2, 9).toLowerCase(),
+            renderComponent: true,
         }
     },
 
-    // mounted() {
-    //     this.$refs.player.player.on('playing', (event) => {
-    //         this.playing = event.detail.plyr.playing
-    //         this.$emit('change', event.detail.plyr.playing)
-    //     })
-    //     this.$refs.player.player.on('pause', (event) => {
-    //         this.playing = event.detail.plyr.playing
-    //         this.$emit('change', event.detail.plyr.playing)
-    //     })
-    // },
+    mounted() {
+        console.log(this.$refs.player)
+        // this.$refs.player.player.on('playing', (event) => {
+        //     this.playing = event.detail.plyr.playing
+        //     this.$emit('change', event.detail.plyr.playing)
+        // })
+        // this.$refs.player.player.on('pause', (event) => {
+        //     this.playing = event.detail.plyr.playing
+        //     this.$emit('change', event.detail.plyr.playing)
+        // })
+    },
 
     watch: {
-        src(value) {
-            console.log(value)
+        src() {
+            const element = document.getElementById(this.randomId)
+            element.remove()
+
+            this.forceRerender()
         },
     },
 
     methods: {
         play() {
-            this.$refs.player.player.play()
+            this.$refs.player?.player.play()
         },
         pause() {
             this.$refs.player?.player.pause()
@@ -115,6 +119,17 @@ export default {
                     return 'https://player.vimeo.com/video/' + video_id
                 }
             }
+        },
+
+        async forceRerender() {
+            // Remove MyComponent from the DOM
+            this.renderComponent = false
+
+            // Wait for the change to get flushed to the DOM
+            await this.$nextTick()
+
+            // Add the component back in
+            this.renderComponent = true
         },
     },
 }

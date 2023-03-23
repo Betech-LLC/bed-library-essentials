@@ -18,9 +18,7 @@
 </template>
 
 <script>
-import JClientOnly from '@core/components/JClientOnly.vue'
 export default {
-    components: { JClientOnly },
     props: {
         item: {
             type: Object,
