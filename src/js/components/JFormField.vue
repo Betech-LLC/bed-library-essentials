@@ -17,7 +17,7 @@
             <JFieldText
                 v-if="!field.type || field.type === 'text' || field.type === 'email' || field.type === 'password'"
                 :field="field"
-                :modelValue="form[field.name]"
+                :modelValue="fieldValue"
                 @update:modelValue="onChangeField"
             />
 
@@ -36,7 +36,7 @@
             />
             <JFieldPhone
                 v-else-if="field.type === 'number'"
-                :modelValue="form[field.name]"
+                :modelValue="fieldValue"
                 :field="field"
                 @update:modelValue="onChangeField"
             />
@@ -44,14 +44,14 @@
             <JFieldDropdown
                 v-else-if="field.type === 'dropdown'"
                 :field="field"
-                :modelValue="form[field.name]"
+                :modelValue="fieldValue"
                 @update:modelValue="onChangeField"
             />
 
             <JFieldTextarea
                 v-else-if="field.type === 'textarea'"
                 :field="field"
-                :modelValue="form[field.name]"
+                :modelValue="fieldValue"
                 @update:modelValue="onChangeField"
             />
 
