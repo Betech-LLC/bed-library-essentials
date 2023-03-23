@@ -42,8 +42,9 @@ export default {
         async submit() {
             const isValidForm = this.validateForm()
             if (!isValidForm) return
-            await this.submitForm(this.form)
-            this.resetForm()
+            this.$emit('onSubmit')
+            // await this.submitForm(this.form)
+            // this.resetForm()
         },
         resetForm() {
             const keyFields = Object.keys(this.form)
