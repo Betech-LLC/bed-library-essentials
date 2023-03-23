@@ -98,7 +98,6 @@ export default {
         messageError() {
             return this.errors[this.field.name] || `${this.field.label} không hợp lệ`
         },
-
         isError() {
             return this.errors.hasOwnProperty(this.field.name)
         },
