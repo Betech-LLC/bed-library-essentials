@@ -3,7 +3,12 @@
         <!-- Button -->
         <div id="jam-button">
             <div class="mb-4 display-3">Button 123</div>
+
             <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
+                <div>
+                    <div>value: {{ quantity }}</div>
+                    <JFieldQuantity v-model="quantity" />
+                </div>
                 <div class="space-y-2">
                     <div class="flex space-x-2">
                         <JButton class="btn-primary btn-sm">Áp dụng</JButton>
@@ -717,6 +722,7 @@ export default {
                     name: 'Management roles',
                 },
             ],
+            quantity: 1,
             optionLaptops: [
                 {
                     name: 'Mac',
