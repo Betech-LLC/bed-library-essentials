@@ -45,7 +45,7 @@
             </div>
 
             <div class="page-project-detail-image" :href="item.url">
-                <JPicture :src="item.image?.url" :alt="item.image?.alt || item.title"> </JPicture>
+                <JPicture :src="item.image?.url" :alt="item.image?.alt || item.title" />
             </div>
 
             <div class="page-project-detail-body">
