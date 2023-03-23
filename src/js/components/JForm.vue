@@ -42,7 +42,7 @@ export default {
         async submit() {
             const isValidForm = this.validateForm()
             if (!isValidForm) return
-            this.$emit('onSubmit')
+            this.$emit('submit')
             // await this.submitForm(this.form)
             // this.resetForm()
         },

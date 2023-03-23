@@ -1,8 +1,6 @@
 const mixinContact = {
     methods: {
-        async submitForm(form) {
-            console.log('submitForm = ', form)
-        },
+        async submitForm(form) {},
     },
 }
 export { mixinContact }
