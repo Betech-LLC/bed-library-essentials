@@ -9,7 +9,15 @@
             </div>
         </section>
 
-        <JPopupVlog @viewVideo="viewVideo" @close="close" :vlogs="vlogs" :isShow="isShow" :currentItem="currentItem" />
+        <JPopupVlog
+            @change="change"
+            @viewVideo="viewVideo"
+            @close="close"
+            :isPlay="isPlay"
+            :vlogs="vlogs"
+            :isShow="isShow"
+            :currentItem="currentItem"
+        />
     </main>
 </template>
 
@@ -26,6 +34,7 @@ export default {
             isShow: false,
             currentItem: null,
             currentUrl: null,
+            isPlay: false,
         }
     },
 
@@ -41,7 +50,12 @@ export default {
 
         close() {
             this.isShow = false
+            this.isPlay = false
             window.history.pushState({}, '', this.currentUrl)
+        },
+
+        change(play) {
+            this.isPlay = play
         },
     },
 }

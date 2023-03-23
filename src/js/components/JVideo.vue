@@ -1,6 +1,6 @@
 <template>
     <JClientOnly>
-        <vue-plyr v-if="renderComponent" :options="playerOptions" :id="randomId" ref="player">
+        <vue-plyr v-if="renderComponent" @ready="onPlayerReady" :options="playerOptions" :id="randomId" ref="player">
             <div v-if="checkIsVideo(src)" class="plyr__video-embed">
                 <iframe
                     class="w-full h-auto"
@@ -8,6 +8,7 @@
                     allowfullscreen
                     allowtransparency
                     allow="autoplay"
+                    autoplay="false"
                 ></iframe>
             </div>
 
@@ -48,27 +49,19 @@ export default {
             type: Boolean,
             default: false,
         },
+        isPlay: {
+            type: Boolean,
+            default: false,
+        },
     },
 
     data() {
         return {
-            playing: false,
+            playing: this.isPlay,
             playerOptions: { ...defaultOptions, ...this.options },
             randomId: 'id-' + Math.random().toString(36).substr(2, 9).toLowerCase(),
             renderComponent: true,
         }
-    },
-
-    mounted() {
-        console.log(this.$refs.player)
-        // this.$refs.player.player.on('playing', (event) => {
-        //     this.playing = event.detail.plyr.playing
-        //     this.$emit('change', event.detail.plyr.playing)
-        // })
-        // this.$refs.player.player.on('pause', (event) => {
-        //     this.playing = event.detail.plyr.playing
-        //     this.$emit('change', event.detail.plyr.playing)
-        // })
     },
 
     watch: {
@@ -77,6 +70,10 @@ export default {
             element.remove()
 
             this.forceRerender()
+        },
+
+        isPlay(value) {
+            if (!value) this.pause()
         },
     },
 
@@ -130,6 +127,17 @@ export default {
 
             // Add the component back in
             this.renderComponent = true
+        },
+
+        onPlayerReady() {
+            this.$refs.player.player.on('playing', (event) => {
+                this.playing = event.detail.plyr.playing
+                this.$emit('change', event.detail.plyr.playing)
+            })
+            this.$refs.player.player.on('pause', (event) => {
+                this.playing = event.detail.plyr.playing
+                this.$emit('change', event.detail.plyr.playing)
+            })
         },
     },
 }

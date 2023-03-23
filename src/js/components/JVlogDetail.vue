@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="vlog-detail-video">
-            <JVideo :src="item.video" />
+            <JVideo :isPlay="isPlay" @change="change" :options="{ controls: [] }" :src="item.video" />
         </div>
     </div>
 </template>
@@ -22,6 +22,17 @@ export default {
     props: {
         item: {
             type: Object,
+        },
+
+        isPlay: {
+            type: Boolean,
+            default: false,
+        },
+    },
+
+    methods: {
+        change(play) {
+            this.$emit('change', play)
         },
     },
 }

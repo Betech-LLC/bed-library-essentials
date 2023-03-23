@@ -1,14 +1,22 @@
 <template>
     <main>
         <section class="page-vlog-detail">
-            <JVlogDetail :item="item" />
+            <JVlogDetail @change="changeOnPage" :isPlay="isPlayOnPage" :item="item" />
 
             <div class="page-vlog-detail-related">
                 <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" />
             </div>
         </section>
 
-        <JPopupVlog @viewVideo="viewVideo" @close="close" :vlogs="vlogs" :isShow="isShow" :currentItem="currentItem" />
+        <JPopupVlog
+            @change="change"
+            @viewVideo="viewVideo"
+            @close="close"
+            :vlogs="vlogs"
+            :isShow="isShow"
+            :isPlay="isPlay"
+            :currentItem="currentItem"
+        />
     </main>
 </template>
 
@@ -27,6 +35,8 @@ export default {
             isShow: false,
             currentItem: null,
             currentUrl: null,
+            isPlay: false,
+            isPlayOnPage: false,
         }
     },
 
@@ -37,12 +47,22 @@ export default {
     methods: {
         viewVideo(currentItem) {
             this.isShow = true
+            this.isPlayOnPage = false
             this.currentItem = currentItem
         },
 
         close() {
             this.isShow = false
+            this.isPlay = false
             window.history.pushState({}, '', this.currentUrl)
+        },
+
+        change(play) {
+            this.isPlay = play
+        },
+
+        changeOnPage(play) {
+            this.isPlayOnPage = play
         },
     },
 }

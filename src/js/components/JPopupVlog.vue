@@ -9,7 +9,7 @@
             </div>
         </template>
         <div v-if="currentItem" class="popup-vlog-body">
-            <JVlogDetail :item="currentItem" />
+            <JVlogDetail :isPlay="isPlay" @change="change" :item="currentItem" />
 
             <div class="popup-vlog-related">
                 <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" />
@@ -35,6 +35,11 @@ export default {
             default: false,
         },
 
+        isPlay: {
+            type: Boolean,
+            default: false,
+        },
+
         currentItem: {
             type: Object,
         },
@@ -51,6 +56,9 @@ export default {
     methods: {
         viewVideo(item) {
             this.$emit('viewVideo', item)
+        },
+        change(play) {
+            this.$emit('change', play)
         },
     },
 }
