@@ -1,3 +1,4 @@
+A
 <template>
     <div v-if="item" class="card-vlog">
         <div class="card-vlog-head">
@@ -21,10 +22,9 @@
 </template>
 <script>
 import JPicture from '@core/components/JPicture.vue'
-import JLink from '@core/components/JLink.vue'
 import JIconPlay from '@core/components/JIcon/Play.vue'
 export default {
-    components: { JPicture, JLink, JIconPlay },
+    components: { JPicture, JIconPlay },
     props: {
         item: {
             type: Object,
