@@ -19,14 +19,7 @@ export default {
                         key: 'success',
                         value: 'Hoàn thành',
                     },
-                    category: {
-                        id: 24,
-                        title: 'Hic earum vel facilis.',
-                        slug: 'project-detail',
-                        image: { url: null, alt: 'Hic earum vel facilis.' },
-                        icon: null,
-                        url: '/project/project-detail',
-                    },
+
                     categories: [
                         {
                             id: 24,
@@ -52,14 +45,7 @@ export default {
                         key: 'error',
                         value: 'Chưa hoàn thành',
                     },
-                    category: {
-                        id: 24,
-                        title: 'Hic earum vel facilis.',
-                        slug: 'project-detail',
-                        image: { url: null, alt: 'Hic earum vel facilis.' },
-                        icon: null,
-                        url: '/project/project-detail',
-                    },
+
                     categories: [
                         {
                             id: 24,
@@ -85,14 +71,7 @@ export default {
                         key: 'success',
                         value: 'Hoàn thành',
                     },
-                    category: {
-                        id: 24,
-                        title: 'Hic earum vel facilis.',
-                        slug: 'project-detail',
-                        image: { url: null, alt: 'Hic earum vel facilis.' },
-                        icon: null,
-                        url: '/project/project-detail',
-                    },
+
                     categories: [
                         {
                             id: 24,
@@ -118,14 +97,7 @@ export default {
                         key: 'success',
                         value: 'Hoàn thành',
                     },
-                    category: {
-                        id: 24,
-                        title: 'Hic earum vel facilis.',
-                        slug: 'project-detail',
-                        image: { url: null, alt: 'Hic earum vel facilis.' },
-                        icon: null,
-                        url: '/project/project-detail',
-                    },
+
                     categories: [
                         {
                             id: 24,
@@ -151,14 +123,7 @@ export default {
                         key: 'success',
                         value: 'Hoàn thành',
                     },
-                    category: {
-                        id: 24,
-                        title: 'Hic earum vel facilis.',
-                        slug: 'project-detail',
-                        image: { url: null, alt: 'Hic earum vel facilis.' },
-                        icon: null,
-                        url: '/project/project-detail',
-                    },
+
                     categories: [
                         {
                             id: 24,
@@ -184,14 +149,7 @@ export default {
                         key: 'success',
                         value: 'Hoàn thành',
                     },
-                    category: {
-                        id: 24,
-                        title: 'Hic earum vel facilis.',
-                        slug: 'project-detail',
-                        image: { url: null, alt: 'Hic earum vel facilis.' },
-                        icon: null,
-                        url: '/project/project-detail',
-                    },
+
                     categories: [
                         {
                             id: 24,
@@ -217,14 +175,7 @@ export default {
                         key: 'success',
                         value: 'Hoàn thành',
                     },
-                    category: {
-                        id: 24,
-                        title: 'Hic earum vel facilis.',
-                        slug: 'project-detail',
-                        image: { url: null, alt: 'Hic earum vel facilis.' },
-                        icon: null,
-                        url: '/project/project-detail',
-                    },
+
                     categories: [
                         {
                             id: 24,
@@ -250,14 +201,7 @@ export default {
                         key: 'success',
                         value: 'Hoàn thành',
                     },
-                    category: {
-                        id: 24,
-                        title: 'Hic earum vel facilis.',
-                        slug: 'project-detail',
-                        image: { url: null, alt: 'Hic earum vel facilis.' },
-                        icon: null,
-                        url: '/project/project-detail',
-                    },
+
                     categories: [
                         {
                             id: 24,
