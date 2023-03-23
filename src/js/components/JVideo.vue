@@ -33,7 +33,6 @@ export default {
         JClientOnly,
         VuePlyr: defineAsyncComponent(() => import('vue-plyr')),
     },
-    props: ['change'],
     props: {
         src: {
             type: String,
