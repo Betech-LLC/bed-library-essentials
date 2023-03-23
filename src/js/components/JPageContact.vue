@@ -32,6 +32,7 @@
                                 name: 'email',
                                 label: 'Email',
                                 placeholder: 'Nhập email',
+                                error: 'Địa chỉ email hợp lệ theo cấu trúc hello@example.com',
                             }"
                             class="col-span-full"
                         />

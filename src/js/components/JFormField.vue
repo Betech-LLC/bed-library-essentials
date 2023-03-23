@@ -96,7 +96,7 @@ export default {
             return this.field.label + ` ${this.rules[this.field.name]?.includes('required') ? '*' : ''}`
         },
         message() {
-            return this.errors[this.field.error] || `${this.field.label} không hợp lệ`
+            return this.field.error || `${this.field.label} không hợp lệ`
         },
         isError() {
             return this.errors.hasOwnProperty(this.field.name)
