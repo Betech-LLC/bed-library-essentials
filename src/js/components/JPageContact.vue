@@ -6,7 +6,7 @@
                     <h1 class="mb-2.5 md:mb-3.5 xl:mb-5 display-3">Kết nối với {{ title }}</h1>
                     <p>Chúng tôi sẵn sàng ghi nhận đóng góp và cung cấp dịch vụ tốt nhất đến khách hàng.</p>
                 </div>
-                <JForm v-model="form" :rules="rules" @submit="onSubmit">
+                <JForm v-model="form" :rules="rules" @onSubmit="onSubmit">
                     <div class="grid grid-cols-2 md:gap-x-6 xl:gap-x-8 gap-y-4 xl:gap-y-6">
                         <JFormField
                             :field="{
