@@ -1,12 +1,13 @@
 <template>
-    <JPagePolicy :list_sidebar="list_sidebar" :content="content" :breadcrumb="breadcrumb" :heading="heading" />
+    <JPagePolicy :list_sidebar="list_sidebar" :content="content" :breadcrumb="breadcrumb" :heading="heading">
+        <h1 class="page-policy-head">Hỗ trợ khách hàng</h1>
+    </JPagePolicy>
 </template>
 
 <script>
 export default {
     data() {
         return {
-            heading: 'Hỗ trợ khách hàng',
             breadcrumb: [
                 {
                     title: 'Trang chủ',

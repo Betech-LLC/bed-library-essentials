@@ -7,7 +7,7 @@
                         <JIconArrowRight />
                     </template>
                 </JBreadcrumb>
-                <h1 class="page-policy-head" v-if="heading">{{ heading }}</h1>
+                <slot />
 
                 <div class="page-policy-body">
                     <div class="page-policy-box">
