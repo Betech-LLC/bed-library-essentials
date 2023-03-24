@@ -7,13 +7,13 @@
                         <JIconArrowRight />
                     </template>
                 </JBreadcrumb>
-                <div class="page-policy-head">Hỗ trợ khách hàng</div>
+                <h1 class="page-policy-head"><slot /></h1>
 
                 <div class="page-policy-body">
                     <div class="page-policy-box">
                         <div @click="togglePolicyMobile" class="box-body">
                             <div class="box-title title-2">
-                                {{ currentPolicy.title || 'Chính sách' }}
+                                {{ currentPolicy.title }}
                             </div>
                             <JIconArrowRight class="box-icon" :class="{ active: isOpenMobile }" />
                         </div>
@@ -57,10 +57,11 @@
 import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import JIconPolicyDefault from '@core/components/JIcon/PolicyDefault.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
+import JLink from '@core/components/JLink.vue'
 
 export default {
-    components: { JIconArrowRight, JIconPolicyDefault, JBreadcrumb },
-    props: ['list_sidebar', 'content', 'breadcrumb'],
+    comments: { JIconArrowRight, JIconPolicyDefault, JBreadcrumb, JLink },
+    props: ['list_sidebar', 'content', 'breadcrumb', 'heading'],
     data() {
         return {
             isOpenMobile: false,

@@ -1,5 +1,7 @@
 <template>
-    <JPagePolicy :list_sidebar="list_sidebar" :content="content" :breadcrumb="breadcrumb" />
+    <JPagePolicy :list_sidebar="list_sidebar" :content="content" :breadcrumb="breadcrumb">
+        Hỗ trợ khách hàng
+    </JPagePolicy>
 </template>
 
 <script>
