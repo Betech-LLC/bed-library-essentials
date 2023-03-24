@@ -1,12 +1,11 @@
 <template>
     <div class="container py-10 space-y-10">
-        <!-- Button -->
         <div id="jam-button">
             <div class="mb-4 display-3">Button 123</div>
 
             <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
                 <div>
-                    <div>value: {{ quantity }}</div>
+                    <div>Số lượng bugs: {{ quantity }}</div>
                     <JFieldQuantity v-model="quantity" />
                 </div>
                 <div class="space-y-2">
