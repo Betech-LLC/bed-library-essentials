@@ -4,10 +4,20 @@
         @apply cursor-pointer;
     }
     .dropdown-content {
-        @apply absolute left-0 z-20 w-full translate-y-full bottom-[-4px] bg-white rounded-lg border border-gray-100 py-1 pr-1 shadow-lg;
+        @apply absolute left-0 z-20 w-full translate-y-full bottom-[-4px] bg-white rounded-lg border border-gray-100 py-1 pr-1 shadow-lg overflow-y-auto;
+        max-height: 320px;
+        &::-webkit-scrollbar {
+            @apply w-2;
+        }
+        &::-webkit-scrollbar-track {
+            @apply bg-white;
+        }
+        &::-webkit-scrollbar-thumb {
+            @apply bg-gray-200 rounded-lg;
+        }
     }
     .dropdown-items {
-        @apply bg-white custom-scrollbar;
+        @apply bg-white;
 
         .dropdown-item {
             @apply flex items-center px-3.5 py-2.5 cursor-pointer text-gray-900 hover:bg-gray-50 duration-150;

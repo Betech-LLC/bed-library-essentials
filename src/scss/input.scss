@@ -59,6 +59,19 @@ fieldset {
             @apply pointer-events-none bg-gray-100 focus-within:shadow-none focus-within:border-gray-300;
         }
     }
+
+    &.quantity {
+        @apply inline-flex items-center h-8 bg-white border border-gray-300 rounded-lg shadow-xs md:h-10;
+        .quantity-btn {
+            @apply inline-flex items-center justify-center w-8 h-full md:w-11;
+            &.disable {
+                @apply pointer-events-none opacity-40;
+            }
+        }
+        .quantity-input {
+            @apply block w-10 h-full text-center text-gray-700 md:w-12 border-x-gray-300 border-x focus:outline-0 label-2;
+        }
+    }
 }
 
 /* CONFIG DEFAULT */

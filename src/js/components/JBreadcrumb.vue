@@ -21,6 +21,7 @@
 
 <script>
 import JIconSlash from '@core/components/JIcon/Slash.vue'
+import JLink from '@core/components/JLink.vue'
 export default {
     components: { JIconSlash },
     props: {
@@ -28,6 +29,9 @@ export default {
             type: Array,
             required: true,
         },
+    },
+    components: {
+        JLink,
     },
 }
 </script>
