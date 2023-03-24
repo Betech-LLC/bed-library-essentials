@@ -60,7 +60,7 @@ import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JLink from '@core/components/JLink.vue'
 
 export default {
-    comments: { JIconArrowRight, JIconPolicyDefault, JBreadcrumb, JLink },
+    components: { JIconArrowRight, JIconPolicyDefault, JBreadcrumb, JLink },
     props: ['list_sidebar', 'content', 'breadcrumb', 'staticContent'],
     data() {
         return {
