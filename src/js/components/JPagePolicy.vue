@@ -13,7 +13,7 @@
                     <div class="page-policy-box">
                         <div @click="togglePolicyMobile" class="box-body">
                             <div class="box-title title-2">
-                                {{ currentPolicy.title || 'Chính sách' }}
+                                {{ currentPolicy.title }}
                             </div>
                             <JIconArrowRight class="box-icon" :class="{ active: isOpenMobile }" />
                         </div>
