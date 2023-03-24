@@ -37,11 +37,7 @@ export default defineNuxtConfig({
     vite: {
         build: {
             rollupOptions: {
-                external: [
-                  'vue/server-renderer',
-                  'vue-plyr'
-                  // 'vue-plyr/dist/vue-plyr.css'
-              ],
+                external: ['vue/server-renderer'],
             },
         },
     },
