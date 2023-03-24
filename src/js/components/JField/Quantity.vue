@@ -1,9 +1,9 @@
 <template>
-    <div class="field-quantity">
+    <fieldset class="quantity">
         <button
             @click="decrease"
             :class="modelValue === 1 && 'disable'"
-            class="field-quantity-btn"
+            class="quantity-btn"
             aria-label="button-decrease"
         >
             <JIconMinus />
@@ -17,12 +17,12 @@
             @blur="onBlur($event.target.value)"
             onkeypress="return event.charCode >= 48 && event.charCode =< 57"
             onkeydown="return event.keyCode !== 69 && event.keyCode !== 190"
-            class="field-quantity-input"
+            class="quantity-input"
         />
-        <button @click="increase" class="field-quantity-btn" aria-label="button-increase">
+        <button @click="increase" class="quantity-btn" aria-label="button-increase">
             <JIconPlus />
         </button>
-    </div>
+    </fieldset>
 </template>
 <script>
 import JIconPlus from '@core/components/JIcon/Plus.vue'
