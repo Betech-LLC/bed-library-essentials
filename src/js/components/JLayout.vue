@@ -7,6 +7,7 @@
                 <div>
                     <div>Số lượng bugs: {{ quantity }}</div>
                     <JFieldQuantity v-model="quantity" />
+                    <div class="italic">(nhập số 0 hoặc số âm thì auto trả về 1)</div>
                 </div>
                 <div class="space-y-2">
                     <div class="flex space-x-2">
