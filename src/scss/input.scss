@@ -65,7 +65,7 @@ fieldset {
         .quantity-btn {
             @apply inline-flex items-center justify-center w-8 h-full md:w-11;
             &.disable {
-                @apply pointer-events-none opacity-50;
+                @apply pointer-events-none opacity-40;
             }
         }
         .quantity-input {
