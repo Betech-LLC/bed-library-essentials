@@ -33,14 +33,14 @@
 import JIconPlus from '@core/components/JIcon/Plus.vue'
 import JIconMinus from '@core/components/JIcon/Minus.vue'
 export default {
-    emits: ['update:modelValue'],
     props: ['modelValue'],
+    emits: ['update:modelValue'],
+    components: { JIconPlus, JIconMinus },
     data() {
         return {
             max: this.$attrs.max || 99,
         }
     },
-
     methods: {
         increase() {
             if (this.modelValue >= this.max) return

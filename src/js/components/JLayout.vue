@@ -136,7 +136,7 @@
                             </div>
                         </JFieldRadio>
                     </div>
-                    <div class="space-y-4">
+                    <div class="space-y-4 md:col-span-1 col-span-full">
                         <div class="label-1">Checked: {{ checkedBrands }}</div>
                         <JFieldCheckbox
                             v-for="option in optionBrands"
@@ -152,7 +152,7 @@
                         />
                     </div>
 
-                    <div class="space-y-4">
+                    <div class="space-y-4 md:col-span-1 col-span-full">
                         <div class="label-1">Checked: "{{ activeLaptop }}"</div>
 
                         <JFieldRadio
@@ -176,7 +176,7 @@
                         />
                     </div>
 
-                    <div class="space-y-4">
+                    <div class="space-y-4 md:col-span-1 col-span-full">
                         <div class="label-1">Checked: {{ checkedJobs }}</div>
                         <JFieldCheckbox
                             v-for="option in optionJobs"
@@ -597,7 +597,7 @@
         <div id="jam-prose">
             <div class="mb-4 display-3">Prose Content</div>
             <div class="p-4 space-y-4 border border-gray-400 border-dashed rounded-lg">
-                <div class="grid grid-cols-12 gap-x-8">
+                <div class="grid grid-cols-12">
                     <div class="lg:col-span-10 lg:col-start-2 col-span-full">
                         <div class="prose">
                             <h3>Chi nhánh Hải Phòng</h3>
