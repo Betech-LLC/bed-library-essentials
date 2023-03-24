@@ -1,6 +1,6 @@
 <template>
-    <JPagePolicy :list_sidebar="list_sidebar" :content="content" :breadcrumb="breadcrumb" :heading="heading">
-        <h1 class="page-policy-head">Hỗ trợ khách hàng</h1>
+    <JPagePolicy :list_sidebar="list_sidebar" :content="content" :breadcrumb="breadcrumb">
+        Hỗ trợ khách hàng
     </JPagePolicy>
 </template>
 

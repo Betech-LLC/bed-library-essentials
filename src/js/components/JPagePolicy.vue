@@ -7,7 +7,7 @@
                         <JIconArrowRight />
                     </template>
                 </JBreadcrumb>
-                <slot />
+                <h1 class="page-policy-head"><slot /></h1>
 
                 <div class="page-policy-body">
                     <div class="page-policy-box">
