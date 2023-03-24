@@ -39,7 +39,8 @@ export default defineNuxtConfig({
             rollupOptions: {
                 external: [
                   'vue/server-renderer',
-                  'vue-plyr'
+                  'vue-plyr',
+                  'vue-plyr/dist/vue-plyr.css'
               ],
             },
         },
