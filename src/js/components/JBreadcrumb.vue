@@ -20,7 +20,9 @@
 </template>
 
 <script>
+import JIconSlash from '@core/components/JIcon/Slash.vue'
 export default {
+    components: { JIconSlash },
     props: {
         items: {
             type: Array,
