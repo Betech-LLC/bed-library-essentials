@@ -7,7 +7,7 @@
                         <JIconArrowRight />
                     </template>
                 </JBreadcrumb>
-                <h1 class="page-policy-head">{{ staticContent.title }}</h1>
+                <h1 class="page-policy-head" v-if="staticContent">{{ staticContent.title }}</h1>
 
                 <div class="page-policy-body">
                     <div class="page-policy-box">
