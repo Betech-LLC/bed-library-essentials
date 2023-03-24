@@ -1,13 +1,17 @@
 <template>
-    <JPagePolicy :list_sidebar="list_sidebar" :content="content" :breadcrumb="breadcrumb">
-        Hỗ trợ khách hàng
-    </JPagePolicy>
+    <JPagePolicy
+        :list_sidebar="list_sidebar"
+        :content="content"
+        :breadcrumb="breadcrumb"
+        :static_content="static_content"
+    />
 </template>
 
 <script>
 export default {
     data() {
         return {
+            static_content: 'Hỗ trợ khách hàng',
             breadcrumb: [
                 {
                     title: 'Trang chủ',

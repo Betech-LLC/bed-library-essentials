@@ -7,7 +7,7 @@
                         <JIconArrowRight />
                     </template>
                 </JBreadcrumb>
-                <h1 class="page-policy-head"><slot /></h1>
+                <h1 class="page-policy-head">{{ static_content }}</h1>
 
                 <div class="page-policy-body">
                     <div class="page-policy-box">
@@ -61,7 +61,7 @@ import JLink from '@core/components/JLink.vue'
 
 export default {
     comments: { JIconArrowRight, JIconPolicyDefault, JBreadcrumb, JLink },
-    props: ['list_sidebar', 'content', 'breadcrumb', 'heading'],
+    props: ['list_sidebar', 'content', 'breadcrumb', 'static_content'],
     data() {
         return {
             isOpenMobile: false,
