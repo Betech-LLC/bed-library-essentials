@@ -1,6 +1,11 @@
 <template>
-    <div class="quantity">
-        <button @click="decrease" :class="modelValue === 1 && 'disable'" class="quantity-btn">
+    <div class="field-quantity">
+        <button
+            @click="decrease"
+            :class="modelValue === 1 && 'disable'"
+            class="field-quantity-btn"
+            aria-label="button-decrease"
+        >
             <JIconMinus />
         </button>
         <input
@@ -12,9 +17,9 @@
             @blur="onBlur($event.target.value)"
             onkeypress="return event.charCode >= 48 && event.charCode =< 57"
             onkeydown="return event.keyCode !== 69 && event.keyCode !== 190"
-            class="quantity-input"
+            class="field-quantity-input"
         />
-        <button @click="increase" class="quantity-btn">
+        <button @click="increase" class="field-quantity-btn" aria-label="button-increase">
             <JIconPlus />
         </button>
     </div>
