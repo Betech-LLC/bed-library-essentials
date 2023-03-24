@@ -21,8 +21,6 @@
 <script>
 // Cái package vue-plyr: yarn add vue-plyr
 
-import 'vue-plyr/dist/vue-plyr.css'
-
 import JClientOnly from '@core/components/JClientOnly.vue'
 const defaultOptions = {
     autoplay: true,
