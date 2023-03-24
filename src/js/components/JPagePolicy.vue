@@ -59,7 +59,7 @@ import JIconPolicyDefault from '@core/components/JIcon/PolicyDefault.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 
 export default {
-    comments: { JIconArrowRight, JIconPolicyDefault, JBreadcrumb },
+    components: { JIconArrowRight, JIconPolicyDefault, JBreadcrumb },
     props: ['list_sidebar', 'content', 'breadcrumb'],
     data() {
         return {
