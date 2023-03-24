@@ -3,7 +3,7 @@
         :list_sidebar="list_sidebar"
         :content="content"
         :breadcrumb="breadcrumb"
-        :static_content="static_content"
+        :staticContent="staticContent"
     />
 </template>
 
@@ -11,7 +11,9 @@
 export default {
     data() {
         return {
-            static_content: 'Hỗ trợ khách hàng',
+            staticContent: {
+                title: 'Hỗ trợ khách hàng',
+            },
             breadcrumb: [
                 {
                     title: 'Trang chủ',
