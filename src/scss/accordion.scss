@@ -3,10 +3,10 @@
 }
 
 .accordion-item {
-    @apply overflow-hidden rounded-sm xl:py-3 md:py-2 py-1.5;
+    @apply overflow-hidden rounded-sm xl:py-6 md:py-5 py-4;
 
     .accordion-header {
-        @apply body-1 text-gray-900;
+        @apply title-2 text-gray-900;
     }
 
     .accordion-header button {
@@ -15,6 +15,9 @@
 
     .accordion-icon {
         @apply text-sm base-transition;
+        svg {
+            @apply xl:w-6 w-5 xl:h-6 h-5;
+        }
     }
 
     &.active .accordion-icon {
@@ -22,7 +25,7 @@
     }
 
     .accordion-content {
-        @apply base-transition text-gray-500 opacity-100;
+        @apply body-1 base-transition text-gray-500 opacity-100;
     }
 
     &:not(.active) .accordion-content {
@@ -30,6 +33,6 @@
     }
 
     .accordion-content-inner {
-        @apply xl:pt-3 md:pt-2 pt-1.5;
+        @apply xl:pt-2 md:pt-1.5 pt-1;
     }
 }
