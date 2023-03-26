@@ -591,6 +591,47 @@
                         },
                     ]"
                 />
+                <JAccordion>
+                    <JAccordionItem
+                        :item="{
+                            title: 'Accordion item 1',
+                        }"
+                        @toggleItem="toggleItem"
+                        :index="1"
+                        :isActive="currentActive === 1"
+                    >
+                        <ul class="p-4 pt-0">
+                            <li>Subitem 1</li>
+                            <li>Subitem 2</li>
+                        </ul>
+                    </JAccordionItem>
+                    <JAccordionItem
+                        :item="{
+                            title: 'Accordion item 2',
+                        }"
+                        @toggleItem="toggleItem"
+                        :index="2"
+                        :isActive="currentActive === 2"
+                    >
+                        <ul class="p-4 pt-0">
+                            <li>Subitem 1</li>
+                            <li>Subitem 2</li>
+                        </ul>
+                    </JAccordionItem>
+                    <JAccordionItem
+                        :item="{
+                            title: 'Accordion item 1',
+                        }"
+                        :index="3"
+                        @toggleItem="toggleItem"
+                        :isActive="currentActive === 3"
+                    >
+                        <ul class="p-4 pt-0">
+                            <li>Subitem 1</li>
+                            <li>Subitem 2</li>
+                        </ul>
+                    </JAccordionItem>
+                </JAccordion>
             </div>
         </div>
         <!-- Prose Content -->
@@ -817,6 +858,8 @@ export default {
                 phone: 'phone|required',
                 email: 'required|email',
             },
+
+            currentActive: 1,
         }
     },
     computed: {
@@ -831,6 +874,12 @@ export default {
                 }
             })
             return jobs
+        },
+    },
+
+    methods: {
+        toggleItem(index) {
+            this.currentActive = this.currentActive !== index ? index : null
         },
     },
 }
