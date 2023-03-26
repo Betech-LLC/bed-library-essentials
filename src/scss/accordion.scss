@@ -3,14 +3,14 @@
 }
 
 .accordion-item {
-    @apply overflow-hidden rounded-sm;
+    @apply overflow-hidden rounded-sm xl:py-3 md:py-2 py-1.5;
 
     .accordion-header {
         @apply body-1 text-gray-900;
     }
 
     .accordion-header button {
-        @apply flex justify-between items-center w-full py-4;
+        @apply flex justify-between items-center w-full;
     }
 
     .accordion-icon {
@@ -30,6 +30,6 @@
     }
 
     .accordion-content-inner {
-        @apply p-4 pt-0;
+        @apply xl:pt-3 md:pt-2 pt-1.5;
     }
 }

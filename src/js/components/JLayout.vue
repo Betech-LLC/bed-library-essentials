@@ -600,7 +600,7 @@
                         :index="1"
                         :isActive="currentActive === 1"
                     >
-                        <ul class="p-4 pt-0">
+                        <ul class="xl:pt-3 md:pt-2 pt-1.5">
                             <li>Subitem 1</li>
                             <li>Subitem 2</li>
                         </ul>
@@ -613,7 +613,7 @@
                         :index="2"
                         :isActive="currentActive === 2"
                     >
-                        <ul class="p-4 pt-0">
+                        <ul class="xl:pt-3 md:pt-2 pt-1.5">
                             <li>Subitem 1</li>
                             <li>Subitem 2</li>
                         </ul>
@@ -626,7 +626,7 @@
                         @toggleItem="toggleItem"
                         :isActive="currentActive === 3"
                     >
-                        <ul class="p-4 pt-0">
+                        <ul class="xl:pt-3 md:pt-2 pt-1.5">
                             <li>Subitem 1</li>
                             <li>Subitem 2</li>
                         </ul>
