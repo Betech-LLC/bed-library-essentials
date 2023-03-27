@@ -445,6 +445,13 @@ module.exports = {
                 ],
             },
 
+            maxWidth: {
+                '60vw': '60vw',
+                '70vw': '70vw',
+                '80vw': '80vw',
+                '90vw': '90vw',
+            },
+
             container: {
                 center: true,
                 padding: {
