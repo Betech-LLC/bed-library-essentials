@@ -13,6 +13,10 @@
     }
 }
 
+:root {
+    --plyr-color-main: theme('colors.primary.DEFAULT');
+}
+
 @import '@core/scss/type';
 @import '@core/scss/accordion';
 @import '@core/scss/badge';
@@ -40,7 +44,6 @@
 @import '@core/scss/page-vlog-category';
 @import '@core/scss/page-vlog-detail';
 @import '@core/scss/picture';
-
 @import '@core/scss/radio';
 @import '@core/scss/social-share';
 @import '@core/scss/tab';
