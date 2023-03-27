@@ -19,9 +19,12 @@
     </JClientOnly>
 </template>
 <script>
-// Cái package vue-plyr: yarn add vue-plyr
+// Cài package vue-plyr: yarn add vue-plyr
+// yarn add vue-plyr
 
 import JClientOnly from '@core/components/JClientOnly.vue'
+import { getLinkVideo, checkIsVideo } from '@core/utils'
+
 const defaultOptions = {
     autoplay: true,
     controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
@@ -39,14 +42,6 @@ export default {
         options: {
             type: Object,
             default: () => defaultOptions,
-        },
-        playAlwayShow: {
-            type: Boolean,
-            default: false,
-        },
-        playAlwayHide: {
-            type: Boolean,
-            default: false,
         },
         isPlay: {
             type: Boolean,
@@ -77,6 +72,9 @@ export default {
     },
 
     methods: {
+        checkIsVideo,
+        getLinkVideo,
+
         play() {
             this.$refs.player?.player.play()
         },
@@ -85,36 +83,6 @@ export default {
         },
         toggle() {
             this.playing ? this.pause() : this.play()
-        },
-
-        checkIsVideo(url) {
-            return url.includes('https://www.youtube.com') || url.includes('https://vimeo.com/')
-        },
-
-        getLinkVideo(link) {
-            if (link) {
-                let video_id = ''
-                if (link.includes('https://www.youtube.com')) {
-                    if (link.includes('?v=')) {
-                        video_id = link.split('?v=').pop()
-                        let ampersandPosition = video_id.indexOf('&')
-                        if (ampersandPosition != -1) {
-                            video_id = video_id.substring(0, ampersandPosition)
-                        }
-                    }
-                    if (link.includes('embed')) {
-                        video_id = link.split('/').pop()
-                    }
-                    return (
-                        'https://www.youtube.com/embed/' +
-                        video_id +
-                        '?amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1&amp;autoplay=1'
-                    )
-                } else {
-                    video_id = link.split('/').pop()
-                    return 'https://player.vimeo.com/video/' + video_id
-                }
-            }
         },
 
         async forceRerender() {

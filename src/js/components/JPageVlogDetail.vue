@@ -1,6 +1,12 @@
 <template>
     <main>
         <section class="page-vlog-detail">
+            <JBreadcrumb :items="breadcrumb">
+                <template #icon>
+                    <JIconArrowRight />
+                </template>
+            </JBreadcrumb>
+
             <JVlogDetail @change="changeOnPage" :isPlay="isPlayOnPage" :item="item" />
 
             <div class="page-vlog-detail-related">
@@ -25,10 +31,12 @@ import JCardVlog from '@core/components/JCardVlog.vue'
 import JPopupVlog from '@core/components/JPopupVlog.vue'
 import JVlogDetail from '@core/components/JVlogDetail.vue'
 import JListCardVlog from '@core/components/JListCardVlog.vue'
+import JBreadcrumb from '@core/components/JBreadcrumb.vue'
+import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 
 export default {
-    components: { JCardVlog, JPopupVlog, JVlogDetail, JListCardVlog },
-    props: ['item', 'vlogs'],
+    components: { JCardVlog, JPopupVlog, JVlogDetail, JListCardVlog, JBreadcrumb, JIconArrowRight },
+    props: ['item', 'vlogs', 'breadcrumb'],
 
     data() {
         return {

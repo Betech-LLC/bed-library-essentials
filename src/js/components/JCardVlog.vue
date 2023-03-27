@@ -1,11 +1,10 @@
-A
 <template>
     <div v-if="item" class="card-vlog">
         <div class="card-vlog-head">
-            <a @click="viewDetail" class="card-vlog-image" :href="item.url">
+            <a @click.prevent="viewDetail" class="card-vlog-image" :href="item.url">
                 <JPicture :src="item.image?.url" :alt="item.image?.alt || item.title"> </JPicture>
             </a>
-            <a @click="viewDetail" :href="item.url" class="card-vlog-time">
+            <a @click.prevent="viewDetail" :href="item.url" class="card-vlog-time">
                 <div class="icon">
                     <JIconPlay />
                 </div>
@@ -14,7 +13,7 @@ A
         </div>
         <div class="card-vlog-body">
             <h3 v-if="item.title" class="card-vlog-title">
-                <a @click="viewDetail" :href="item.url">{{ item.title }}</a>
+                <a @click.prevent="viewDetail" :href="item.url">{{ item.title }}</a>
             </h3>
             <p v-if="item.description" class="card-vlog-description" v-html="item.description"></p>
         </div>
@@ -32,9 +31,7 @@ export default {
     },
 
     methods: {
-        viewDetail(e) {
-            e.preventDefault()
-
+        viewDetail() {
             window.history.pushState({}, '', this.item.url)
 
             this.$emit('viewVideo', this.item)

@@ -1,5 +1,5 @@
 <template>
-    <JPageVlogCategory class="page-vlog-category-tree" :vlogs="vlogs" />
+    <JPageVlogCategory class="page-vlog-category-tree" :vlogs="vlogs" :breadcrumb="breadcrumb" :bannerTop="bannerTop" />
 </template>
 
 <script>
@@ -98,6 +98,23 @@ export default {
                     url: '/vlog/nhung-dieu-can-biet-de-tro-thanh-ux-writer',
                 },
             ],
+
+            breadcrumb: [
+                {
+                    title: 'Trang chủ',
+                    link: '/',
+                },
+                {
+                    title: 'Vlog',
+                },
+            ],
+
+            bannerTop: {
+                image: {
+                    url: 'https://via.placeholder.com/900x300',
+                    alt: 'banner vlog category',
+                },
+            },
         }
     },
 }

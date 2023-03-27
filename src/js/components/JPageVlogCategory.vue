@@ -1,5 +1,15 @@
 <template>
     <main>
+        <JBanner class="banner-sm" v-if="bannerTop" :item="bannerTop">
+            <div class="blog-category-banner-body">
+                <JBreadcrumb :items="breadcrumb">
+                    <template #icon>
+                        <JIconArrowRight />
+                    </template>
+                </JBreadcrumb>
+                <h1 class="blog-category-banner-title">Vlog</h1>
+            </div>
+        </JBanner>
         <section class="page-vlog-category">
             <div class="page-vlog-category-body">
                 <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" />
@@ -24,10 +34,13 @@
 <script>
 import JPopupVlog from '@core/components/JPopupVlog.vue'
 import JListCardVlog from '@core/components/JListCardVlog.vue'
+import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
+import JBreadcrumb from '@core/components/JBreadcrumb.vue'
+import JBanner from '@core/components/JBanner.vue'
 
 export default {
-    components: { JListCardVlog, JPopupVlog },
-    props: ['vlogs'],
+    components: { JListCardVlog, JPopupVlog, JIconArrowRight, JBreadcrumb, JBanner },
+    props: ['vlogs', 'breadcrumb', 'bannerTop'],
 
     data() {
         return {
