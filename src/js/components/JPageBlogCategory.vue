@@ -40,7 +40,9 @@
                         </div>
 
                         <div class="blog-category-button">
-                            <button class="btn-see-more">Xem thêm 16 bài viết</button>
+                            <button @click.prevent="$emit('seeMore', posts.next_page_url)" class="btn-see-more">
+                                <a :href="posts.next_page_url"> Xem thêm {{ posts.total - posts.to }} bài viết </a>
+                            </button>
                         </div>
                     </div>
                     <div class="right">
@@ -66,6 +68,6 @@ import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 
 export default {
     components: { JBanner, JCardBlog, JBannerAds, JBlogSideBar, JBreadcrumb, JIconArrowRight },
-    props: ['bannerTop', 'breadcrumb', 'banner', 'top_posts', 'top_views', 'posts_data'],
+    props: ['bannerTop', 'breadcrumb', 'banner', 'top_posts', 'top_views', 'posts_data', 'posts'],
 }
 </script>
