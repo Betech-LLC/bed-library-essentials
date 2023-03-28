@@ -61,9 +61,10 @@ import JBanner from '@core/components/JBanner.vue'
 import JCardBlog from '@core/components/JCardBlog.vue'
 import JBannerAds from '@core/components/JBannerAds.vue'
 import JBlogSideBar from '@core/components/JBlogSideBar.vue'
+import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 
 export default {
-    components: { JBanner, JCardBlog, JBannerAds, JBlogSideBar },
+    components: { JBanner, JCardBlog, JBannerAds, JBlogSideBar, JBreadcrumb },
     props: ['bannerTop', 'breadcrumb', 'banner', 'top_posts', 'top_views', 'posts_data'],
 }
 </script>
