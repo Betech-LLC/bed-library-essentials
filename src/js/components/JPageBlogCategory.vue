@@ -62,9 +62,10 @@ import JCardBlog from '@core/components/JCardBlog.vue'
 import JBannerAds from '@core/components/JBannerAds.vue'
 import JBlogSideBar from '@core/components/JBlogSideBar.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
+import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 
 export default {
-    components: { JBanner, JCardBlog, JBannerAds, JBlogSideBar, JBreadcrumb },
+    components: { JBanner, JCardBlog, JBannerAds, JBlogSideBar, JBreadcrumb, JIconArrowRight },
     props: ['bannerTop', 'breadcrumb', 'banner', 'top_posts', 'top_views', 'posts_data'],
 }
 </script>

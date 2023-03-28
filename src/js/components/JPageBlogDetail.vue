@@ -73,11 +73,12 @@ import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JBlogSideBar from '@core/components/JBlogSideBar.vue'
 import JSocialShare from '@core/components/JSocialShare.vue'
 import JIconChevron from '@core/components/JIcon/ChevronDown.vue'
+import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import { toDate } from '@core/utils'
 import { useTransformContent } from '@core/utils'
 
 export default {
-    components: { JCardBlog, JBlogSideBar, JBannerAds, JBreadcrumb, JIconChevron, JSocialShare },
+    components: { JCardBlog, JBlogSideBar, JBannerAds, JBreadcrumb, JIconChevron, JSocialShare, JIconArrowRight },
     props: ['breadcrumb', 'posts_data', 'tag', 'banner', 'post', 'top_posts', 'language'],
 
     data() {

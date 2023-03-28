@@ -15,7 +15,10 @@
 </template>
 
 <script>
+import JCardBlog from '@core/components/JCardBlog.vue'
+
 export default {
+    components: { JCardBlog },
     props: ['items', 'title'],
 }
 </script>
