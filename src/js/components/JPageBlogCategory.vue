@@ -39,7 +39,7 @@
                             />
                         </div>
 
-                        <div class="blog-category-button">
+                        <div v-if="posts.current_page < posts.last_page" class="blog-category-button">
                             <button @click.prevent="$emit('seeMore', posts.next_page_url)" class="btn-see-more">
                                 <a :href="posts.next_page_url"> Xem thêm {{ posts.total - posts.to }} bài viết </a>
                             </button>
