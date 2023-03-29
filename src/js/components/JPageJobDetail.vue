@@ -43,7 +43,10 @@
 </template>
 
 <script>
+import JBreadcrumb from '@core/components/JBreadcrumb.vue'
+import JCardJob from '@core/components/JCardJob.vue'
 import JSocialShare from '@core/components/JSocialShare.vue'
+import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import JIconHomeLine from '@core/components/JIcon/HomeLine.vue'
 import JIconCalendar from '@core/components/JIcon/Calendar.vue'
 import JIconBriefcase02 from '@core/components/JIcon/Briefcase02.vue'
@@ -51,7 +54,17 @@ import JIconUsers03 from '@core/components/JIcon/Users03.vue'
 import JInformationJob from '@core/components/JInformationJob.vue'
 
 export default {
-    components: { JSocialShare, JIconHomeLine, JIconCalendar, JIconBriefcase02, JIconUsers03, JInformationJob },
+    components: {
+        JBreadcrumb,
+        JCardJob,
+        JSocialShare,
+        JIconArrowRight,
+        JIconHomeLine,
+        JIconCalendar,
+        JIconBriefcase02,
+        JIconUsers03,
+        JInformationJob,
+    },
 
     props: ['job', 'relatedJobs', 'breadcrumb'],
 }

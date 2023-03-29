@@ -21,11 +21,9 @@
                 </div>
             </div>
             <div class="card-job-category-location-wrap">
-                <div v-if="item.working_position" class="card-job-category-wrap">
+                <div class="card-job-category-wrap">
                     <div class="card-job-category-label">Ngành nghề</div>
-                    <div class="card-job-category-title">
-                        {{ item.working_position }}
-                    </div>
+                    <div class="card-job-category-title">Ngành gì đó</div>
                 </div>
                 <div v-if="item.work_address" class="card-job-location-wrap">
                     <div class="card-job-location-label">Nơi làm việc</div>

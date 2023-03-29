@@ -19,7 +19,7 @@ export default {
                         work_address: 'Qui error.',
                         working_time: 'Consectetur nihil.',
                         expected_time: '2023-03-31',
-                        quantity: null,
+                        quantity: 11,
                         url: 'http://localhost:8000/tuyen-dung/dolorem-vel-eum-qui-sunt',
                         tags: [
                             {
