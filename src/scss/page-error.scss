@@ -1,5 +1,5 @@
 .page-error {
-    @apply flex flex-col-reverse lg:flex-row items-center justify-between container text-center lg:text-left;
+    @apply py-8 my-auto flex flex-col-reverse lg:flex-row items-center justify-between container text-center lg:text-left;
 
     &.page-error-col {
         @apply flex-col-reverse text-center;
