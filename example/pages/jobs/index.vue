@@ -1,5 +1,11 @@
 <template>
-    <JPageJobs :jobs_data="jobs_data" :jobs="jobs" />
+    <JPageJobs
+        @pushToUrl="pushToUrl"
+        :jobs_data="jobs_data"
+        :jobs="jobs"
+        :options="options"
+        :currentQuery="currentQuery"
+    />
 </template>
 <script>
 export default {
@@ -131,11 +137,50 @@ export default {
                 to: 5,
                 total: 17,
             },
+
+            options: [
+                {
+                    id: 1,
+                    title: 'Ngành nghề',
+                    slug: 'nganh-nghe',
+                    nodes: [
+                        { id: 2, title: 'Job 1', slug: 'job-1' },
+                        { id: 3, title: 'Job 2', slug: 'job-2' },
+                        { id: 4, title: 'Job 3', slug: 'job-3' },
+                        { id: 5, title: 'Job 4', slug: 'job-4' },
+                        { id: 6, title: 'Job 5', slug: 'job-5' },
+                        { id: 7, title: 'Job 6', slug: 'job-6' },
+                        { id: 8, title: 'Job 7', slug: 'job-7' },
+                        { id: 9, title: 'Job 8', slug: 'job-8' },
+                    ],
+                },
+                {
+                    id: 10,
+                    title: 'Nơi làm việc',
+                    slug: 'noi-lam-viec',
+                    nodes: [
+                        { id: 11, title: 'Hồ Chí Minh', slug: 'ho-chi-minh' },
+                        { id: 12, title: 'Hà Nội', slug: 'ha-noi' },
+                        { id: 13, title: 'Đà Nẵng', slug: 'da-nang' },
+                    ],
+                },
+            ],
+
+            currentQuery: this.$route.query,
         }
     },
 
     created() {
         this.jobs_data = this.jobs.data
+    },
+
+    methods: {
+        pushToUrl(params) {
+            this.$router.push({
+                name: 'jobs',
+                query: { ...params },
+            })
+        },
     },
 }
 </script>

@@ -3,8 +3,21 @@
         <section class="jobs">
             <div class="jobs-wrap">
                 <div class="jobs-filters">
-                    <div class="filter">
-                        <p class="title">Ngành nghề</p>
+                    <div class="jobs-filter" v-for="(option, index) in options" :key="index">
+                        <p class="jobs-filter-title">{{ option.title }}</p>
+                        <div class="jobs-filter-items">
+                            <JFieldCheckboxCustom
+                                v-for="(node, subIndex) in option.nodes"
+                                :key="subIndex"
+                                v-model="node.active"
+                                class="checkbox-button"
+                                @update:modelValue="pushToUrl"
+                            >
+                                <span :class="{ active: node.active }" class="jobs-filter-item">
+                                    {{ node.title }}
+                                </span>
+                            </JFieldCheckboxCustom>
+                        </div>
                     </div>
                 </div>
 
@@ -29,9 +42,33 @@
 
 <script>
 import JCardJob from '@core/components/JCardJob.vue'
+import { serializeQuery, mappingOptions } from '@core/utils/filter-key'
 
 export default {
     components: { JCardJob },
-    props: ['jobs_data', 'jobs'],
+    props: ['jobs_data', 'jobs', 'options'],
+
+    data() {
+        return {
+            currentQuery: {},
+        }
+    },
+
+    mounted() {
+        for (const [key, value] of new URLSearchParams(window.location.search).entries()) {
+            this.currentQuery[key] = value
+        }
+        this.mappingOptions(this.options, this.currentQuery)
+    },
+
+    methods: {
+        serializeQuery,
+        mappingOptions,
+        pushToUrl() {
+            const filters = this.serializeQuery(this.currentQuery, this.options)
+
+            this.$emit('pushToUrl', filters)
+        },
+    },
 }
 </script>
