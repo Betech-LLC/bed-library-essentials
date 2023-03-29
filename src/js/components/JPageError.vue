@@ -1,5 +1,5 @@
 <template>
-    <section class="page-error page-error-col">
+    <section class="page-error">
         <div class="page-error-body">
             <div class="page-error-status">
                 {{ status }}
@@ -21,8 +21,11 @@
 
 <script>
 import { toNumber } from '@core/utils'
+import JLink from '@core/components/JLink.vue'
 
 export default {
+    components: { JLink },
+
     props: {
         status: {
             type: String,
