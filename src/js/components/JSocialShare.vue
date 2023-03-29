@@ -5,19 +5,19 @@
         <div class="social-share-items">
             <a v-if="messenger && facebookAppId" :href="messageUrl" target="_blank" class="social-share-item messenger">
                 <slot name="messenger">
-                    <JImageDynamic name="messenger" />
+                    <img src="../../images/messenger.png" />
                 </slot>
             </a>
 
             <a v-if="linkedin" :href="linkedinUrl" target="_blank" class="social-share-item linkedin">
                 <slot name="linkedin">
-                    <JImageDynamic name="linkedin" />
+                    <img src="../../images/linkedin.png" />
                 </slot>
             </a>
 
             <a v-if="facebook" :href="facebookUrl" target="_blank" class="social-share-item facebook">
                 <slot name="facebook">
-                    <JImageDynamic name="facebook" />
+                    <img src="../../images/facebook.png" />
                 </slot>
             </a>
 
@@ -32,28 +32,26 @@
                         data-customize="true"
                     >
                         <slot name="zalo">
-                            <JImageDynamic name="zalo" />
+                            <img src="../../images/zalo.png" />
                         </slot>
                     </div>
                 </client-only>
             </div>
 
             <a v-if="pinterest" :href="pinterestUrl" target="_blank" class="social-share-item pinterest">
-                <slot name="pinterest">
-                    <JImageDynamic name="pinterest" />
-                </slot>
+                <slot name="pinterest"> <img src="../../images/pinterest.png" /> </slot>
             </a>
 
             <a v-if="twitter" :href="twitterUrl" target="_blank" class="social-share-item twitter">
                 <slot name="twitter">
-                    <JImageDynamic name="twitter" />
+                    <img src="../../images/twitter.png" />
                 </slot>
             </a>
 
             <div v-if="copyLink" class="social-share-item copy-link">
                 <div @click="copyCurrentLink()">
                     <slot name="copy-link">
-                        <JImageDynamic name="copy-link" />
+                        <img src="../../images/copy-link.png" />
                     </slot>
                 </div>
                 <input id="input-copy" type="hidden" />
@@ -64,10 +62,7 @@
 </template>
 
 <script>
-import JImageDynamic from '@core/components/JImageDynamic.vue'
 export default {
-    components: { JImageDynamic },
-
     props: {
         messenger: {
             type: Boolean,
