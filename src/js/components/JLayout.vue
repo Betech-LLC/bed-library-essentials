@@ -178,28 +178,22 @@
 
                     <div class="space-y-4 md:col-span-1 col-span-full">
                         <div class="label-1">Checked: {{ checkedJobs }}</div>
-                        <JFieldCheckbox
-                            v-for="option in optionJobs"
-                            v-model="option.active"
-                            :field="{
-                                label: option.name,
-                                value: option.name,
-                            }"
-                            class="checkbox-button"
-                        >
-                            <template #checkmark="{ label }">
-                                <div
-                                    class="border rounded-lg px-4 py-2.5 inline-block"
-                                    :class="
-                                        option.active
-                                            ? 'border-blue-700 bg-blue-50 text-blue-700'
-                                            : 'bg-white hover:bg-gray-100 border-gray-300 text-gray-700'
-                                    "
-                                >
-                                    {{ label }}
-                                </div>
-                            </template>
-                        </JFieldCheckbox>
+
+                        <div class="flex space-x-2">
+                            <JFieldCheckboxCustom
+                                v-for="option in optionJobs"
+                                v-model="option.active"
+                                @update:modelValue="
+                                    () => {
+                                        console.log('hello world')
+                                    }
+                                "
+                            >
+                                <span class="badge" :class="option.active ? 'badge-primary' : 'badge-gray'">
+                                    {{ option.name }}
+                                </span>
+                            </JFieldCheckboxCustom>
+                        </div>
                     </div>
                 </div>
             </div>
