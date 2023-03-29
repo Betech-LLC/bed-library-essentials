@@ -49,13 +49,6 @@ function toBasename(url) {
     return url?.substring(url?.lastIndexOf('/') + 1)
 }
 
-function addLeadingZero(number) {
-    if (number < 10) {
-        return ('0' + number).slice(-2)
-    }
-    return number
-}
-
 function toMoney(value, language = 'vi') {
     let options = {}
     if (language === 'vi') {
@@ -77,4 +70,19 @@ function toMoney(value, language = 'vi') {
     return formatter.format(value ?? 0)
 }
 
-export { toNumber, toDate, toSlug, toBasename, addLeadingZero, toMoney }
+function addLeadingZero(number) {
+    if (number < 10) {
+        return ('0' + number).slice(-2)
+    }
+    return number
+}
+
+function toUrl(arr) {
+    const params = []
+    for (const [field, value] of Object.entries(arr)) {
+        params.push(`${field}=${value}`)
+    }
+    return params.join('&')
+}
+
+export { toNumber, toDate, toSlug, toBasename, addLeadingZero, toMoney, toUrl }

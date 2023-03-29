@@ -67,6 +67,7 @@ export default {
     methods: {
         serializeQuery,
         mappingOptions,
+        toUrl,
         pushToUrl() {
             const filters = this.serializeQuery(this.currentQuery, this.options)
 
