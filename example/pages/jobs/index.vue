@@ -1,11 +1,5 @@
 <template>
-    <JPageJobs
-        @pushToUrl="pushToUrl"
-        :jobs_data="jobs_data"
-        :jobs="jobs"
-        :options="options"
-        :currentQuery="currentQuery"
-    />
+    <JPageJobs @pushToUrl="pushToUrl" :jobs_data="jobs_data" :jobs="jobs" :options="options" />
 </template>
 <script>
 export default {

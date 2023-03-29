@@ -42,10 +42,11 @@
 
 <script>
 import JCardJob from '@core/components/JCardJob.vue'
+import JFieldCheckboxCustom from '@core/components/JField/CheckboxCustom.vue'
 import { serializeQuery, mappingOptions } from '@core/utils/filter-key'
 
 export default {
-    components: { JCardJob },
+    components: { JCardJob, JFieldCheckboxCustom },
     props: ['jobs_data', 'jobs', 'options'],
 
     data() {
