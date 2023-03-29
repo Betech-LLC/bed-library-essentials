@@ -6,60 +6,68 @@
                     <h1 class="mb-2.5 md:mb-3.5 xl:mb-5 display-3">Kết nối với {{ title }}</h1>
                     <p>Chúng tôi sẵn sàng ghi nhận đóng góp và cung cấp dịch vụ tốt nhất đến khách hàng.</p>
                 </div>
-                <JForm v-model="form" :rules="rules" @onSubmit="onSubmit">
-                    <div class="grid grid-cols-2 md:gap-x-6 xl:gap-x-8 gap-y-4 xl:gap-y-6">
-                        <JFormField
-                            :field="{
-                                type: 'text',
-                                name: 'firstName',
-                                label: 'Tên',
-                                placeholder: 'Nhập tên của bạn',
-                            }"
-                            class="md:col-span-1 col-span-full"
-                        />
-                        <JFormField
-                            :field="{
-                                type: 'text',
-                                name: 'lastName',
-                                label: 'Họ',
-                                placeholder: 'Nhập họ của bạn',
-                            }"
-                            class="md:col-span-1 col-span-full"
-                        />
-                        <JFormField
-                            :field="{
-                                type: 'email',
-                                name: 'email',
-                                label: 'Email',
-                                placeholder: 'Nhập email',
-                                error: 'Địa chỉ email hợp lệ theo cấu trúc hello@example.com',
-                            }"
-                            class="col-span-full"
-                        />
-                        <JFormField
-                            :field="{
-                                type: 'number',
-                                name: 'phone',
-                                label: 'Số điện thoại',
-                                placeholder: 'Nhập số điện thoại',
-                            }"
-                            class="col-span-full"
-                        />
-                        <JFormField
-                            :field="{
-                                type: 'textarea',
-                                name: 'note',
-                                rows: 5,
-                                label: 'Lời nhắn',
-                                placeholder: 'Nhập nội dung cần hỗ trợ',
-                            }"
-                            class="col-span-full"
-                        />
-                    </div>
-                    <div class="mt-4 md:mt-6 xl:mt-8">
-                        <button type="submit" class="w-full btn btn-primary btn-lg">Submit</button>
-                    </div>
-                </JForm>
+                <div class="grid grid-cols-2 md:gap-x-6 xl:gap-x-8 gap-y-4 xl:gap-y-6">
+                    <JFormField
+                        v-model="form.firstName"
+                        :field="{
+                            type: 'text',
+                            name: 'firstName',
+                            label: 'Tên',
+                            placeholder: 'Nhập tên của bạn',
+                        }"
+                        :rules="rules"
+                        class="md:col-span-1 col-span-full"
+                    />
+                    <JFormField
+                        v-model="form.lastName"
+                        :field="{
+                            type: 'text',
+                            name: 'lastName',
+                            label: 'Họ',
+                            placeholder: 'Nhập họ của bạn',
+                        }"
+                        :rules="rules"
+                        class="md:col-span-1 col-span-full"
+                    />
+                    <JFormField
+                        v-model="form.email"
+                        :field="{
+                            type: 'email',
+                            name: 'email',
+                            label: 'Email',
+                            placeholder: 'Nhập email',
+                            error: 'Địa chỉ email hợp lệ theo cấu trúc hello@example.com',
+                        }"
+                        :rules="rules"
+                        class="col-span-full"
+                    />
+                    <JFormField
+                        v-model="form.phone"
+                        :field="{
+                            type: 'number',
+                            name: 'phone',
+                            label: 'Số điện thoại',
+                            placeholder: 'Nhập số điện thoại',
+                        }"
+                        :rules="rules"
+                        class="col-span-full"
+                    />
+                    <JFormField
+                        v-model="form.note"
+                        :field="{
+                            type: 'textarea',
+                            name: 'note',
+                            rows: 5,
+                            label: 'Lời nhắn',
+                            placeholder: 'Nhập nội dung cần hỗ trợ',
+                        }"
+                        :rules="rules"
+                        class="col-span-full"
+                    />
+                </div>
+                <div class="mt-4 md:mt-6 xl:mt-8">
+                    <button type="button" class="w-full btn btn-primary btn-lg">Submit</button>
+                </div>
             </div>
             <div class="flex-1 mt-4 lg:mt-0">
                 <template v-if="$slots.banner">

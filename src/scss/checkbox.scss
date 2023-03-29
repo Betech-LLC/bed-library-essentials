@@ -23,6 +23,12 @@
         }
     }
 
+    &.checkbox-custom {
+        .label {
+            @apply pl-0;
+        }
+    }
+
     &.is-disabled {
         .label {
             @apply pointer-events-none;
