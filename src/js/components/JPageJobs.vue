@@ -2,7 +2,7 @@
     <main>
         <section class="jobs">
             <div class="jobs-wrap">
-                <div class="jobs-filters">
+                <div v-if="options && options.length" class="jobs-filters">
                     <div class="jobs-filter" v-for="(option, index) in options" :key="index">
                         <p class="jobs-filter-title">{{ option.title }}</p>
                         <div class="jobs-filter-items">
@@ -55,10 +55,12 @@ export default {
     },
 
     mounted() {
-        for (const [key, value] of new URLSearchParams(window.location.search).entries()) {
-            this.currentQuery[key] = value
+        if (this.options && this.options.length) {
+            for (const [key, value] of new URLSearchParams(window.location.search).entries()) {
+                this.currentQuery[key] = value
+            }
+            this.mappingOptions(this.options, this.currentQuery)
         }
-        this.mappingOptions(this.options, this.currentQuery)
     },
 
     methods: {
