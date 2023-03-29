@@ -1,37 +1,40 @@
 <template>
-    <div class="card-job">
+    <div v-if="item" class="card-job">
         <JLink :href="item.url" class="card-job-wrap">
             <div class="card-job-title-wrap">
                 <div class="card-job-title">
                     <h3>{{ item.title }}</h3>
-                    <div class="card-job-quantity-mobile-wrap">
+                    <div v-if="item.quantity" class="card-job-quantity-mobile-wrap">
                         <div class="card-job-quantity-label">Số lượng:</div>
                         <div class="card-job-quantity-title">
                             {{ addLeadingZero(item.quantity) }}
                         </div>
                     </div>
                 </div>
-                <div v-if="item.is_urgent || item.is_bonus || item.is_available" class="card-job-badge">
-                    <span v-if="item.is_bonus" class="bonus">Bonus</span>
-                    <span v-if="item.is_available" class="available">Available</span>
-                    <span v-if="item.is_urgent" class="urgent">Urgent</span>
+                <div v-if="item.tags && item.tags.length" class="card-job-badge">
+                    <span
+                        v-for="(tag, index) in item.tags"
+                        :key="index"
+                        :style="{ color: tag.text_color, backgroundColor: tag.background_color }"
+                        >{{ tag.title }}</span
+                    >
                 </div>
             </div>
             <div class="card-job-category-location-wrap">
-                <div class="card-job-category-wrap">
+                <div v-if="item.working_position" class="card-job-category-wrap">
                     <div class="card-job-category-label">Ngành nghề</div>
                     <div class="card-job-category-title">
-                        {{ item.category }}
+                        {{ item.working_position }}
                     </div>
                 </div>
-                <div class="card-job-location-wrap">
+                <div v-if="item.work_address" class="card-job-location-wrap">
                     <div class="card-job-location-label">Nơi làm việc</div>
                     <div class="card-job-location-title">
-                        {{ item.location }}
+                        {{ item.work_address }}
                     </div>
                 </div>
             </div>
-            <div class="card-job-quantity-wrap">
+            <div v-if="item.quantity" class="card-job-quantity-wrap">
                 <div class="card-job-quantity-label">Số lượng</div>
                 <div class="card-job-quantity-title">
                     {{ addLeadingZero(item.quantity) }}

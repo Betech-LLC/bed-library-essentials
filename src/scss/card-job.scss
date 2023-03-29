@@ -26,20 +26,8 @@
 .card-job-badge {
     @apply xl:space-x-2 md:space-x-1.5 space-x-2 xl:mt-3 md:mt-2.5 mt-2;
 
-    .bonus,
-    .available,
-    .urgent {
+    span {
         @apply badge badge-sm;
-    }
-
-    .bonus {
-        @apply badge-blue;
-    }
-    .available {
-        @apply badge-success;
-    }
-    .urgent {
-        @apply badge-error;
     }
 }
 
