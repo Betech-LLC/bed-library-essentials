@@ -33,10 +33,10 @@
     }
 
     .title-progress {
-        &.success {
+        &.complete {
             @apply badge-success;
         }
-        &.error {
+        &.incomplete {
             @apply badge-error;
         }
     }

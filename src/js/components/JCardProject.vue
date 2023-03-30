@@ -1,7 +1,7 @@
 <template>
     <div v-if="item" class="card-project">
         <JLink class="card-project-image" :href="item.url">
-            <JPicture :src="item.image?.url || item.image" :alt="item.image?.alt || item.title" />
+            <JPicture :src="item.image?.url || item.image_url" :alt="item.image?.alt || item.title" />
         </JLink>
         <div class="card-project-body">
             <div class="card-project-meta">
@@ -9,9 +9,11 @@
                     <p class="label-location">Địa điểm:</p>
                     <span class="title-location">{{ item.location }}</span>
                 </div>
-                <div v-if="item.progress" class="item-progress">
+                <div v-if="item.construction_progress" class="item-progress">
                     <p class="label-progress">Tiến độ:</p>
-                    <span :class="item.progress.key" class="title-progress">{{ item.progress.value }}</span>
+                    <span :class="item.construction_progress" class="title-progress">{{
+                        constructionProgress[item.construction_progress]
+                    }}</span>
                 </div>
             </div>
 
@@ -40,6 +42,15 @@ export default {
         language: {
             type: String,
             default: null,
+        },
+        constructionProgress: {
+            type: Object,
+            default: () => {
+                return {
+                    complete: 'Hoàn thành',
+                    incomplete: 'Chưa hoàn thành',
+                }
+            },
         },
     },
 }

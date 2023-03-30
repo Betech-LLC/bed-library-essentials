@@ -15,8 +15,10 @@
                             :item="project"
                         />
                     </div>
-                    <div class="page-project-category-button">
-                        <button class="btn-see-more">Xem thêm 16 bài viết</button>
+                    <div v-if="projects.current_page < projects.last_page" class="page-project-category-button">
+                        <button @click.prevent="$emit('seeMore', projects.next_page_url)" class="btn-see-more">
+                            <a :href="projects.next_page_url"> Xem thêm {{ projects.total - projects.to }} dự án </a>
+                        </button>
                     </div>
                 </div>
             </div>
