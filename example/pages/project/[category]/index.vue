@@ -4,6 +4,7 @@
         :projects="projects"
         :categories="categories"
         :category="category"
+        :currentPath="currentPath"
     />
 </template>
 
@@ -192,6 +193,8 @@ export default {
             ],
 
             category: { title: 'Danh mục 4', slug: 'danh-muc-4', description: null, url: null },
+
+            currentPath: this.$route.path,
         }
     },
 

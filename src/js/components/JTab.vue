@@ -5,7 +5,7 @@
             :key="index"
             :href="category.url"
             class="tab"
-            :class="{ active: checkActive(category.url) }"
+            :class="{ active: checkActiveUrl(category.url) }"
         >
             {{ category.title }}
         </JLink>
@@ -14,49 +14,19 @@
 <script>
 import JLink from '@core/components/JLink.vue'
 
+import { scrollCenter, checkActiveUrl } from '@core/utils'
+
 export default {
-    props: ['categories'],
+    props: ['categories', 'currentPath'],
     components: { JLink },
 
     mounted() {
-        this.scrollTab()
+        this.scrollCenter('.scroll-wrap')
     },
 
     methods: {
-        checkActive(url) {
-            let currentPathname = window.location.pathname
-            currentPathname = currentPathname.endsWith('/') ? currentPathname.slice(0, -1) : currentPathname
-
-            try {
-                new URL(url)
-                if (currentPathname === new URL(url).pathname) {
-                    return true
-                }
-            } catch (err) {
-                if (currentPathname === url) {
-                    return true
-                }
-            }
-
-            return false
-        },
-
-        scrollTab() {
-            const scrollWrap = document.querySelector('.scroll-wrap')
-            const curItem = document.querySelector('.scroll-wrap .active')
-
-            if (curItem && curItem.offsetLeft + curItem.clientWidth / 2 > window.innerWidth / 2) {
-                const distance = curItem.offsetLeft - window.innerWidth / 2
-
-                if (distance < scrollWrap.scrollWidth) {
-                    scrollWrap.scrollLeft = distance + curItem.clientWidth / 2
-                } else {
-                    scrollWrap.scrollLeft = scrollWrap.scrollWidth
-                }
-            } else {
-                scrollWrap.scrollLeft = 0
-            }
-        },
+        checkActiveUrl,
+        scrollCenter,
     },
 }
 </script>

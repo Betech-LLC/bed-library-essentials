@@ -62,10 +62,15 @@
 import JCardProject from '@core/components/JCardProject.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JSocialShare from '@core/components/JSocialShare.vue'
+import JPicture from '@core/components/JPicture.vue'
 
 export default {
-    components: { JCardProject, JBreadcrumb, JSocialShare },
+    components: { JCardProject, JBreadcrumb, JSocialShare, JPicture },
 
     props: ['item', 'breadcrumb'],
+
+    created() {
+        this.breadcrumb.push({ title: this.item.title })
+    },
 }
 </script>

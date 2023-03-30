@@ -13,7 +13,7 @@
                     <div class="page-policy-box">
                         <div @click="togglePolicyMobile" class="box-body">
                             <div class="box-title title-2">
-                                {{ currentPolicy.title }}
+                                {{ content.title }}
                             </div>
                             <JIconArrowRight class="box-icon" :class="{ active: isOpenMobile }" />
                         </div>
@@ -25,7 +25,7 @@
                                     :href="policy.url"
                                     class="nav-link"
                                     :class="{
-                                        active: currentPolicy.url === policy.url,
+                                        active: content.url === policy.url,
                                     }"
                                 >
                                     <div v-if="policy.icon" class="nav-icon" v-html="policy.icon"></div>
@@ -65,12 +65,10 @@ export default {
     data() {
         return {
             isOpenMobile: false,
-            currentPolicy: '',
         }
     },
-    mounted() {
-        this.getCurrentUrlTitle()
-        this.breadcrumb.push({ title: this.currentPolicy.title })
+    created() {
+        this.breadcrumb.push({ title: this.content.title })
     },
     watch: {
         isOpenMobile: function () {
@@ -84,9 +82,6 @@ export default {
     methods: {
         togglePolicyMobile() {
             this.isOpenMobile = !this.isOpenMobile
-        },
-        getCurrentUrlTitle() {
-            this.currentPolicy = this.list_sidebar.find((x) => x.url === window.location.href) || this.list_sidebar[0]
         },
     },
 }

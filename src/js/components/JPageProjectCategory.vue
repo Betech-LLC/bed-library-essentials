@@ -3,7 +3,7 @@
         <section class="page-project-category">
             <div class="page-project-category-wrap">
                 <div v-if="categories && categories.length" class="page-project-category-head">
-                    <JTab :categories="categories" />
+                    <JTab :currentPath="currentPath" :categories="categories" />
                 </div>
 
                 <div class="page-project-category-body">
@@ -33,6 +33,6 @@ import JTab from '@core/components/JTab.vue'
 export default {
     components: { JCardProject, JTab },
 
-    props: ['projects', 'projects_data', 'categories', 'category'],
+    props: ['projects', 'projects_data', 'categories', 'category', 'currentPath'],
 }
 </script>
