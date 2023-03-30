@@ -15,9 +15,6 @@ export default {
                     title: 'Tin tức',
                     link: '/blog',
                 },
-                {
-                    title: 'Cách CDN làm tăng tốc độ tải trang trên website',
-                },
             ],
 
             top_posts: [
@@ -191,7 +188,7 @@ export default {
                 title: 'Cách CDN làm tăng tốc độ tải trang trên website',
                 slug: 'cach-cdn-lam-tang-toc-do-tai-trang-tren-website',
                 published_at: '2023-03-08',
-                isToc: true,
+                show_table_of_contents: true,
                 description:
                     'CDN là một mạng lưới phân phối nội dung giúp thông tin được tải lên website một cách nhanh chóng hơn. Dù bạn đã từng nghe về CDN và hiểu về cách thức hoạt động của chúng hay chưa biết gì và đang muốn tìm hiểu thêm về thuật ngữ này, bài viết sau chắc chắn sẽ giúp ích rất nhiều cho bạn. Cùng tìm hiểu nhé!',
                 category: {

@@ -20,7 +20,7 @@
 
                 <div class="blog-detail-page-description" v-html="post.description"></div>
 
-                <div class="blog-detail-page-toc" v-if="post.isToc">
+                <div class="blog-detail-page-toc" v-if="post.show_table_of_contents">
                     <div class="head" @click="isOpenToc = !isOpenToc">
                         <span class="title"> Nội dung bài viết </span>
                         <span class="icon" :class="{ show: isOpenToc }">
@@ -68,6 +68,7 @@
 
 <script>
 import JCardBlog from '@core/components/JCardBlog.vue'
+import JLink from '@core/components/JLink.vue'
 import JBannerAds from '@core/components/JBannerAds.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JBlogSideBar from '@core/components/JBlogSideBar.vue'
@@ -78,14 +79,27 @@ import { toDate } from '@core/utils'
 import { useTransformContent } from '@core/utils'
 
 export default {
-    components: { JCardBlog, JBlogSideBar, JBannerAds, JBreadcrumb, JIconChevron, JSocialShare, JIconArrowRight },
-    props: ['breadcrumb', 'posts_data', 'tag', 'banner', 'post', 'top_posts', 'language'],
+    components: {
+        JCardBlog,
+        JBlogSideBar,
+        JBannerAds,
+        JBreadcrumb,
+        JIconChevron,
+        JSocialShare,
+        JIconArrowRight,
+        JLink,
+    },
+    props: ['breadcrumb', 'banner', 'post', 'top_posts', 'language'],
 
     data() {
         return {
             content: this.useTransformContent(this.post.content, ['h3', 'h4']),
             isOpenToc: true,
         }
+    },
+
+    created() {
+        this.breadcrumb.push({ title: this.post.title })
     },
 
     methods: {
