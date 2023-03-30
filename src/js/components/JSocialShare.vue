@@ -1,6 +1,6 @@
 <template>
     <div class="social-share">
-        <div class="social-share-title">Chia sẻ</div>
+        <div class="social-share-title">{{ staticContent.title }}</div>
 
         <div class="social-share-items">
             <a v-if="messenger && facebookAppId" :href="messageUrl" target="_blank" class="social-share-item messenger">
@@ -103,6 +103,14 @@ export default {
         zaloOAId: {
             type: String,
             default: null,
+        },
+        staticContent: {
+            type: Object,
+            default: () => {
+                return {
+                    title: 'Chia sẻ',
+                }
+            },
         },
     },
 
