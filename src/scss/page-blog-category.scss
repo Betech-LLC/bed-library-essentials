@@ -14,7 +14,7 @@
     @apply container absolute inset-0;
 
     .tabs {
-        @apply transform -translate-y-1/2;
+        @apply transform -translate-y-1/2 w-full;
     }
 }
 

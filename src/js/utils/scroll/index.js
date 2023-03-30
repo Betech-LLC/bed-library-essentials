@@ -13,6 +13,7 @@ function scrollToSection(id, spaceTop = 0) {
 function scrollCenter(wrapperClass) {
     const scrollWrap = document.querySelector(wrapperClass)
     if (!scrollWrap) return
+    console.log(scrollWrap)
     const curItem = document.querySelector(`${wrapperClass} .active`)
 
     if (curItem && curItem.offsetLeft + curItem.clientWidth / 2 > window.innerWidth / 2) {
