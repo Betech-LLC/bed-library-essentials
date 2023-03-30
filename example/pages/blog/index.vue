@@ -16,7 +16,7 @@
 export default {
     data() {
         return {
-            currentPath: this.$route.path,
+            currentPath: '/blog/itaque-modi-quia-qui',
             breadcrumb: [
                 {
                     title: 'Trang chủ',

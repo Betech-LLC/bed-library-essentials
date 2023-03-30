@@ -1,5 +1,5 @@
 .page-blog-category {
-    @apply xl:py-16	md:py-11 py-8;
+    @apply xl:pb-16	md:pb-11 pb-8;
 }
 
 .page-blog-category-wrap {
@@ -7,15 +7,11 @@
 }
 
 .page-blog-category-tab {
-    @apply relative;
+    @apply -translate-y-1/2;
 }
 
 .page-blog-category-tab-wrap {
-    @apply absolute container inset-0;
-
-    .tabs {
-        @apply -translate-y-1/2;
-    }
+    @apply container;
 }
 
 .page-blog-category-top-posts {
