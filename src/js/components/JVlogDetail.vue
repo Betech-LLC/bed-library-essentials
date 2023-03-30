@@ -19,8 +19,11 @@
 
 <script>
 import { toDate } from '@core/utils'
+import JVideo from '@core/components/JVideo.vue'
 
 export default {
+    components: { JVideo },
+
     props: {
         item: {
             type: Object,
