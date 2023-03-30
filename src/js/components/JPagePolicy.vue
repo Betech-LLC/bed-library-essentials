@@ -7,7 +7,7 @@
                         <JIconArrowRight />
                     </template>
                 </JBreadcrumb>
-                <h1 class="page-policy-head" v-if="staticContent">{{ staticContent.title }}</h1>
+                <div class="page-policy-head" v-if="staticContent">{{ staticContent.title }}</div>
 
                 <div class="page-policy-body">
                     <div class="page-policy-box">
@@ -42,11 +42,11 @@
 
                     <div v-if="isOpenMobile" class="page-policy-blank" @click="togglePolicyMobile"></div>
 
-                    <div class="page-policy-content">
-                        <h1 class="page-policy-title" v-if="currentPolicy.title">
-                            {{ currentPolicy.title }}
+                    <div v-if="content" class="page-policy-content">
+                        <h1 class="page-policy-title" v-if="content.title">
+                            {{ content.title }}
                         </h1>
-                        <div v-html="content" class="page-policy-prose" />
+                        <div v-html="content.content" class="page-policy-prose" />
                     </div>
                 </div>
             </div>
