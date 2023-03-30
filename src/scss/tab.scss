@@ -1,5 +1,11 @@
 .tabs {
     @apply flex justify-between xl:px-3 md:px-2 px-1.5 xl:py-2 md:py-1.5 py-1 xl:space-x-2 md:space-x-1.5 space-x-1 overflow-auto bg-white md:rounded-lg rounded shadow-md flex-nowrap;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .tab {
