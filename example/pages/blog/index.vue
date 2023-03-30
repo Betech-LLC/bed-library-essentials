@@ -7,6 +7,8 @@
         :posts_data="posts_data"
         :posts="posts"
         :banner="banner"
+        :categories="categories"
+        :currentPath="currentPath"
     />
 </template>
 
@@ -14,6 +16,7 @@
 export default {
     data() {
         return {
+            currentPath: this.$route.path,
             breadcrumb: [
                 {
                     title: 'Trang chủ',
@@ -987,7 +990,86 @@ export default {
                 to: 10,
                 total: 58,
             },
+
+            categories: [
+                {
+                    id: 20,
+                    title: 'Qui nisi libero ut.',
+                    slug: 'qui-nisi-libero-ut',
+                    image: { url: null, alt: 'Qui nisi libero ut.' },
+                    icon: null,
+                    url: '/blog/qui-nisi-libero-ut',
+                },
+                {
+                    id: 18,
+                    title: 'Quis delectus natus.',
+                    slug: 'quis-delectus-natus',
+                    image: { url: null, alt: 'Quis delectus natus.' },
+                    icon: null,
+                    url: '/blog/quis-delectus-natus',
+                },
+                {
+                    id: 14,
+                    title: 'Enim.',
+                    slug: 'enim',
+                    image: { url: null, alt: 'Enim.' },
+                    icon: null,
+                    url: '/blog/enim',
+                },
+                {
+                    id: 12,
+                    title: 'Itaque modi quia qui.',
+                    slug: 'itaque-modi-quia-qui',
+                    image: { url: null, alt: 'Itaque modi quia qui.' },
+                    icon: null,
+                    url: '/blog/itaque-modi-quia-qui',
+                },
+                {
+                    id: 11,
+                    title: 'Exercitationem enim.',
+                    slug: 'exercitationem-enim',
+                    image: { url: null, alt: 'Exercitationem enim.' },
+                    icon: null,
+                    url: '/blog/exercitationem-enim',
+                },
+                {
+                    id: 10,
+                    title: 'Qui quia officiis odio.',
+                    slug: 'qui-quia-officiis-odio',
+                    image: { url: null, alt: 'Qui quia officiis odio.' },
+                    icon: null,
+                    url: '/blog/qui-quia-officiis-odio',
+                },
+                {
+                    id: 9,
+                    title: 'Omnis ad rerum.',
+                    slug: 'omnis-ad-rerum',
+                    image: { url: null, alt: 'Omnis ad rerum.' },
+                    icon: null,
+                    url: '/blog/omnis-ad-rerum',
+                },
+                {
+                    id: 7,
+                    title: 'Et atque.',
+                    slug: 'et-atque',
+                    image: { url: null, alt: 'Et atque.' },
+                    icon: null,
+                    url: '/blog/et-atque',
+                },
+                {
+                    id: 4,
+                    title: 'Nihil debitis officia quam.',
+                    slug: 'nihil-debitis-officia-quam',
+                    image: { url: null, alt: 'Nihil debitis officia quam.' },
+                    icon: null,
+                    url: '/blog/nihil-debitis-officia-quam',
+                },
+            ],
         }
+    },
+
+    created() {
+        this.categories.unshift({ title: 'Tất cả', url: this.$router.resolve({ name: 'blog' }).fullPath })
     },
 }
 </script>

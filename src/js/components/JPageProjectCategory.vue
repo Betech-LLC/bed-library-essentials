@@ -1,11 +1,12 @@
 <template>
     <main>
+        <section class="page-project-category-tab">
+            <div v-if="categories && categories.length" class="page-project-category-tab-wrap">
+                <JTabs :currentPath="currentPath" :categories="categories" />
+            </div>
+        </section>
         <section class="page-project-category">
             <div class="page-project-category-wrap">
-                <div v-if="categories && categories.length" class="page-project-category-head">
-                    <JTab :currentPath="currentPath" :categories="categories" />
-                </div>
-
                 <div class="page-project-category-body">
                     <div class="page-project-category-card-items">
                         <JCardProject
@@ -28,10 +29,10 @@
 
 <script>
 import JCardProject from '@core/components/JCardProject.vue'
-import JTab from '@core/components/JTab.vue'
+import JTabs from '@core/components/JTabs.vue'
 
 export default {
-    components: { JCardProject, JTab },
+    components: { JCardProject, JTabs },
 
     props: ['projects', 'projects_data', 'categories', 'category', 'currentPath'],
 }

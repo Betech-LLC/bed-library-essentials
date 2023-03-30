@@ -1,11 +1,11 @@
 <template>
     <main>
-        <section class="jobs">
-            <div class="jobs-wrap">
-                <div v-if="options && options.length" class="jobs-filters">
-                    <div class="jobs-filter" v-for="(option, index) in options" :key="index">
-                        <p class="jobs-filter-title">{{ option.title }}</p>
-                        <div class="jobs-filter-items">
+        <section class="page-jobs">
+            <div class="page-jobs-wrap">
+                <div v-if="options && options.length" class="page-jobs-filters">
+                    <div class="page-jobs-filter" v-for="(option, index) in options" :key="index">
+                        <p class="page-jobs-filter-title">{{ option.title }}</p>
+                        <div class="page-jobs-filter-items">
                             <JFieldCheckboxCustom
                                 v-for="(node, subIndex) in option.nodes"
                                 :key="subIndex"
@@ -13,7 +13,7 @@
                                 class="checkbox-button"
                                 @update:modelValue="pushToUrl"
                             >
-                                <span :class="{ active: node.active }" class="jobs-filter-item">
+                                <span :class="{ active: node.active }" class="page-jobs-filter-item">
                                     {{ node.title }}
                                 </span>
                             </JFieldCheckboxCustom>
@@ -21,15 +21,15 @@
                     </div>
                 </div>
 
-                <div class="jobs-body">
-                    <h2 class="jobs-title">Khám phá cơ hội việc làm</h2>
-                    <p class="jobs-count">{{ jobs.total }} công việc</p>
+                <div class="page-jobs-body">
+                    <h2 class="page-jobs-title">Khám phá cơ hội việc làm</h2>
+                    <p class="page-jobs-count">{{ jobs.total }} công việc</p>
 
-                    <div class="jobs-list">
+                    <div class="page-jobs-list">
                         <JCardJob v-for="(job, index) in jobs_data" :key="index" :item="job" />
                     </div>
 
-                    <div v-if="jobs.current_page < jobs.last_page" class="jobs-button">
+                    <div v-if="jobs.current_page < jobs.last_page" class="page-jobs-button">
                         <button @click.prevent="$emit('seeMore', jobs.next_page_url)" class="btn-see-more">
                             <a :href="jobs.next_page_url"> Xem thêm {{ jobs.total - jobs.to }} việc làm </a>
                         </button>

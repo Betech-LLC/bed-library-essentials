@@ -1,19 +1,25 @@
 <template>
     <main>
         <JBanner class="banner-sm" v-if="bannerTop" :item="bannerTop">
-            <div class="blog-category-banner-body">
+            <div class="page-blog-category-banner-body">
                 <JBreadcrumb :items="breadcrumb">
                     <template #icon>
                         <JIconArrowRight />
                     </template>
                 </JBreadcrumb>
-                <h1 class="blog-category-banner-title">Tin tức</h1>
+                <h1 class="page-blog-category-banner-title">Tin tức</h1>
             </div>
         </JBanner>
 
-        <section class="blog-category">
-            <div class="blog-category-wrap">
-                <div v-if="top_posts && top_posts.length" class="blog-category-top-posts">
+        <section class="page-blog-category-tab">
+            <div v-if="categories && categories.length" class="page-blog-category-tab-wrap">
+                <JTabs :currentPath="currentPath" :categories="categories" />
+            </div>
+        </section>
+
+        <section class="page-blog-category">
+            <div class="page-blog-category-wrap">
+                <div v-if="top_posts && top_posts.length" class="page-blog-category-top-posts">
                     <div class="left">
                         <JCardBlog class="card-item" :item="top_posts[0]" />
                     </div>
@@ -28,7 +34,7 @@
                     </div>
                 </div>
 
-                <div class="blog-category-body">
+                <div class="page-blog-category-body">
                     <div class="left">
                         <div class="card-items">
                             <JCardBlog
@@ -39,7 +45,7 @@
                             />
                         </div>
 
-                        <div v-if="posts.current_page < posts.last_page" class="blog-category-button">
+                        <div v-if="posts.current_page < posts.last_page" class="page-blog-category-button">
                             <button @click.prevent="$emit('seeMore', posts.next_page_url)" class="btn-see-more">
                                 <a :href="posts.next_page_url"> Xem thêm {{ posts.total - posts.to }} bài viết </a>
                             </button>
@@ -65,9 +71,20 @@ import JBannerAds from '@core/components/JBannerAds.vue'
 import JBlogSideBar from '@core/components/JBlogSideBar.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
+import JTabs from '@core/components/JTabs.vue'
 
 export default {
-    components: { JBanner, JCardBlog, JBannerAds, JBlogSideBar, JBreadcrumb, JIconArrowRight },
-    props: ['bannerTop', 'breadcrumb', 'banner', 'top_posts', 'top_views', 'posts_data', 'posts'],
+    components: { JBanner, JCardBlog, JBannerAds, JBlogSideBar, JBreadcrumb, JIconArrowRight, JTabs },
+    props: [
+        'bannerTop',
+        'breadcrumb',
+        'banner',
+        'top_posts',
+        'top_views',
+        'posts_data',
+        'posts',
+        'categories',
+        'currentPath',
+    ],
 }
 </script>

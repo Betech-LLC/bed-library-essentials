@@ -6,8 +6,12 @@
     @apply container;
 }
 
-.page-project-category-head {
-    @apply xl:py-3 md:py-2 py-1.5;
+.page-project-category-tab {
+    @apply bg-gray-50;
+}
+
+.page-project-category-tab-wrap {
+    @apply xl:py-3 md:py-2 py-1.5 container;
 }
 
 .page-project-category-body {
