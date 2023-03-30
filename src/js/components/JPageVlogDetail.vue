@@ -48,6 +48,10 @@ export default {
         }
     },
 
+    created() {
+        this.breadcrumb.push({ title: this.item.title })
+    },
+
     mounted() {
         this.currentUrl = window.location.href
     },

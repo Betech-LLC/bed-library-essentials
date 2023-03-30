@@ -18,7 +18,7 @@ export default {
                     url: 'https://via.placeholder.com/1600x900',
                     alt: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                 },
-                video: 'https://youtu.be/0xAgOv6u4nI&t=103s',
+                video_url: 'https://youtu.be/0xAgOv6u4nI&t=103s',
                 url: '/vlog/static-site-generator-trinh-tao-trang-tinh-duoc-ung-dung-trong-kien-truc-website-jamstack',
             },
             vlogs: [
@@ -34,7 +34,7 @@ export default {
                         url: 'https://via.placeholder.com/1600x900',
                         alt: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                     },
-                    video: 'https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s',
+                    video_url: 'https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s',
                     url: '/vlog/static-site-generator-trinh-tao-trang-tinh-duoc-ung-dung-trong-kien-truc-website-jamstack',
                 },
                 {
@@ -49,7 +49,7 @@ export default {
                         url: 'https://via.placeholder.com/1600x900',
                         alt: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                     },
-                    video: 'https://www.youtube.com/watch?v=--nUELePmog',
+                    video_url: 'https://www.youtube.com/watch?v=--nUELePmog',
                     url: '/vlog/microservices-trong-website-jamstack',
                 },
                 {
@@ -64,7 +64,7 @@ export default {
                         url: 'https://via.placeholder.com/1600x900',
                         alt: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                     },
-                    video: 'https://www.youtube.com/watch?v=--nUELePmog',
+                    video_url: 'https://www.youtube.com/watch?v=--nUELePmog',
                     url: '/vlog/kha-nang-tuong-tac-tren-website',
                 },
                 {
@@ -79,7 +79,7 @@ export default {
                         url: 'https://via.placeholder.com/1600x900',
                         alt: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                     },
-                    video: 'https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s',
+                    video_url: 'https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s',
                     url: '/vlog/api-trong-kien-truc-website-jamstack',
                 },
                 {
@@ -94,7 +94,7 @@ export default {
                         url: 'https://via.placeholder.com/1600x900',
                         alt: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                     },
-                    video: 'https://www.youtube.com/watch?v=--nUELePmog',
+                    video_url: 'https://www.youtube.com/watch?v=--nUELePmog',
                     url: '/vlog/toi-uu-hieu-qua-seo-website-jamstack',
                 },
                 {
@@ -109,7 +109,7 @@ export default {
                         url: 'https://via.placeholder.com/1600x900',
                         alt: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                     },
-                    video: 'https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s',
+                    video_url: 'https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s',
                     url: '/vlog/nhung-dieu-can-biet-de-tro-thanh-ux-writer',
                 },
             ],
@@ -122,9 +122,6 @@ export default {
                 {
                     title: 'Vlog',
                     link: '/vlog',
-                },
-                {
-                    title: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                 },
             ],
         }
