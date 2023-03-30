@@ -16,21 +16,21 @@
                             <div class="page-project-detail-information-items">
                                 <div class="item">
                                     <div class="label">Tiến độ:</div>
-                                    <div class="title">Hoàn thành</div>
+                                    <div class="title">{{ constructionProgress[item.construction_progress] }}</div>
                                 </div>
                                 <div class="item">
                                     <div class="label">Loại hình:</div>
-                                    <div class="title">Tòa nhà chọc trời (skyscraper)</div>
+                                    <div class="title">{{ item.type }}</div>
                                 </div>
                             </div>
                             <div class="page-project-detail-information-items">
                                 <div class="item">
                                     <div class="label">Sản phẩm sử dụng:</div>
-                                    <div class="title">Apollo Silicone, Dowsil</div>
+                                    <div class="title">{{ item.used }}</div>
                                 </div>
                                 <div class="item">
                                     <div class="label">Địa điểm:</div>
-                                    <div class="title">TP.HCM, Việt Nam</div>
+                                    <div class="title">{{ item.location }}</div>
                                 </div>
                             </div>
                         </div>
@@ -39,13 +39,15 @@
             </div>
 
             <div class="page-project-detail-description">
-                Landmark 81 - tòa nhà chọc trời cao nhất Việt Nam, đẳng cấp và hiện đại, trang bị nhiều tiện ích cao cấp
-                và tọa lạc tại vị trí đắc địa. Đây là biểu tượng của sự phát triển đô thị Việt Nam và điểm đến hấp dẫn
-                cho du khách.
+                {{ item.description }}
             </div>
 
-            <div class="page-project-detail-image" :href="item.url">
-                <JPicture :src="item.image?.url" :alt="item.image?.alt || item.title" />
+            <div v-if="item.banner_desktop && item.banner_desktop.url" class="page-project-detail-image">
+                <JPicture
+                    :src="item.banner_desktop.url"
+                    :mobileSrc="item.banner_mobile.url"
+                    :alt="item.banner_desktop?.alt || item.title"
+                />
             </div>
 
             <div class="page-project-detail-body">
@@ -69,6 +71,23 @@ export default {
     components: { JCardProject, JBreadcrumb, JSocialShare, JPicture, JIconArrowRight },
 
     props: ['item', 'breadcrumb'],
+    props: {
+        item: {
+            type: Object,
+        },
+        breadcrumb: {
+            type: Array,
+        },
+        constructionProgress: {
+            type: Object,
+            default: () => {
+                return {
+                    complete: 'Hoàn thành',
+                    incomplete: 'Chưa hoàn thành',
+                }
+            },
+        },
+    },
 
     created() {
         this.breadcrumb.push({ title: this.item.title })

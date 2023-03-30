@@ -24,8 +24,8 @@ export default {
                 location: 'Sed ut aut.',
                 construction_progress: 'incomplete',
                 image: { url: null, alt: 'Praesentium quod velit.' },
-                banner_desktop: { url: null, alt: 'Praesentium quod velit.' },
-                banner_mobile: { url: null, alt: 'Praesentium quod velit.' },
+                banner_desktop: { url: 'https://via.placeholder.com/600x600', alt: 'Praesentium quod velit.' },
+                banner_mobile: { url: 'https://via.placeholder.com/600x300', alt: 'Praesentium quod velit.' },
             },
 
             breadcrumb: [
