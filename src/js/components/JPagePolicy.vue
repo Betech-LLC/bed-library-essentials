@@ -7,7 +7,7 @@
                         <JIconArrowRight />
                     </template>
                 </JBreadcrumb>
-                <div class="page-policy-head" v-if="staticContent">{{ staticContent.title }}</div>
+                <div class="page-policy-head" v-if="staticContent.title">{{ staticContent.title }}</div>
 
                 <div class="page-policy-body">
                     <div class="page-policy-box">
@@ -25,7 +25,7 @@
                                     :href="policy.url"
                                     class="nav-link"
                                     :class="{
-                                        active: content.url === policy.url,
+                                        active: checkActiveUrl(policy.url, currentPath),
                                     }"
                                 >
                                     <div v-if="policy.icon" class="nav-icon" v-html="policy.icon"></div>
@@ -58,10 +58,32 @@ import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import JIconPolicyDefault from '@core/components/JIcon/PolicyDefault.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JLink from '@core/components/JLink.vue'
+import { checkActiveUrl } from '@core/utils'
 
 export default {
     components: { JIconArrowRight, JIconPolicyDefault, JBreadcrumb, JLink },
-    props: ['list_sidebar', 'content', 'breadcrumb', 'staticContent'],
+    props: {
+        list_sidebar: {
+            type: Array,
+        },
+        content: {
+            type: Object,
+        },
+        breadcrumb: {
+            type: Array,
+        },
+        staticContent: {
+            type: Object,
+            default: () => {
+                return {
+                    title: 'Hỗ trợ khách hàng',
+                }
+            },
+        },
+        currentPath: {
+            type: String,
+        },
+    },
     data() {
         return {
             isOpenMobile: false,
@@ -80,6 +102,7 @@ export default {
         },
     },
     methods: {
+        checkActiveUrl,
         togglePolicyMobile() {
             this.isOpenMobile = !this.isOpenMobile
         },

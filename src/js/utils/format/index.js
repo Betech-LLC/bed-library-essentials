@@ -86,6 +86,8 @@ function addLeadingZero(number) {
 }
 
 function removeSlash(str) {
+    if (!str) return
+
     if (str.endsWith('/')) {
         str = str.slice(0, -1)
     }
