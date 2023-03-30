@@ -1,7 +1,7 @@
 <template>
     <div class="vlog-detail">
         <div class="vlog-detail-video">
-            <JVideo :isPlay="isPlay" @change="change" :src="item.video" />
+            <JVideo :isPlay="isPlay" @change="change" :src="item.video_url" />
         </div>
         <div class="vlog-detail-title">{{ item.title }}</div>
         <div class="vlog-detail-information">
