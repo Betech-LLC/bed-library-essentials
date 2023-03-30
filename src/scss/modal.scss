@@ -12,6 +12,52 @@
 
 .modal-popup-body {
     @apply my-auto overflow-hidden transform shadow-xl lg:transition-all sm:w-full sm:mx-auto;
+
+    &.max-width-sm {
+        @apply sm:max-w-sm;
+    }
+    &.max-width-md {
+        @apply sm:max-w-md;
+    }
+    &.max-width-lg {
+        @apply sm:max-w-lg;
+    }
+    &.max-width-xl {
+        @apply sm:max-w-xl;
+    }
+    &.max-width-2xl {
+        @apply sm:max-w-2xl;
+    }
+    &.max-width-3xl {
+        @apply sm:max-w-3xl;
+    }
+    &.max-width-4xl {
+        @apply sm:max-w-4xl;
+    }
+    &.max-width-5xl {
+        @apply sm:max-w-5xl;
+    }
+    &.max-width-6xl {
+        @apply sm:max-w-6xl;
+    }
+    &.max-width-7xl {
+        @apply sm:max-w-7xl;
+    }
+    &.max-width-60vw {
+        @apply sm:max-w-60vw;
+    }
+    &.max-width-70vw {
+        @apply sm:max-w-70vw;
+    }
+    &.max-width-80vw {
+        @apply sm:max-w-80vw;
+    }
+    &.max-width-90vw {
+        @apply sm:max-w-90vw;
+    }
+    &.max-screen {
+        @apply w-screen max-h-screen;
+    }
 }
 
 .modal-popup-close {

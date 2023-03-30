@@ -20,7 +20,6 @@
 </template>
 <script>
 // Cài package vue-plyr: yarn add vue-plyr
-// yarn add vue-plyr
 
 import JClientOnly from '@core/components/JClientOnly.vue'
 import { getLinkVideo, checkIsVideo } from '@core/utils'
