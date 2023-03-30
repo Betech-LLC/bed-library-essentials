@@ -5,7 +5,7 @@
             :key="index"
             :href="category.url"
             class="tab"
-            :class="{ active: checkActiveUrl(category.url) }"
+            :class="{ active: checkActiveUrl(category.url, currentPath) }"
         >
             {{ category.title }}
         </JLink>

@@ -1,5 +1,5 @@
-export * from './deep-merge'
 export * from './check'
+export * from './deep-merge'
 export * from './filter'
 export * from './format'
 export * from './helper'
