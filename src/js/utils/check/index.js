@@ -1,18 +1,19 @@
 'use strict'
 
+import { removeSlash } from '../format'
+
 function checkActiveUrl(url, currentPath) {
     if (!currentPath || !url) return false
-    const currentPathClear = currentPath.endsWith('/') ? currentPath.slice(0, -1) : currentPath
+
+    currentPath = removeSlash(currentPath)
 
     try {
-        new URL(url)
-        console.log(currentPathClear)
-        console.log(new URL(url))
-        if (currentPathClear === new URL(url).pathname) {
+        let path = removeSlash(new URL(url).pathname)
+        if (currentPath === path) {
             return true
         }
     } catch (err) {
-        if (currentPathClear === url) {
+        if (currentPath === removeSlash(url)) {
             return true
         }
     }

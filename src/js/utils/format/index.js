@@ -70,13 +70,6 @@ function toMoney(value, language = 'vi') {
     return formatter.format(value ?? 0)
 }
 
-function addLeadingZero(number) {
-    if (number < 10) {
-        return ('0' + number).slice(-2)
-    }
-    return number
-}
-
 function toUrl(arr) {
     const params = []
     for (const [field, value] of Object.entries(arr)) {
@@ -85,4 +78,21 @@ function toUrl(arr) {
     return params.join('&')
 }
 
-export { toNumber, toDate, toSlug, toBasename, addLeadingZero, toMoney, toUrl }
+function addLeadingZero(number) {
+    if (number < 10) {
+        return ('0' + number).slice(-2)
+    }
+    return number
+}
+
+function removeSlash(str) {
+    if (str.endsWith('/')) {
+        str = str.slice(0, -1)
+    }
+    if (str.startsWith('/')) {
+        str = str.slice(1)
+    }
+    return str
+}
+
+export { toNumber, toDate, toSlug, toBasename, toMoney, toUrl, addLeadingZero, removeSlash }
