@@ -1,13 +1,13 @@
 <template>
     <main>
         <JBanner class="banner-sm" v-if="bannerTop" :item="bannerTop">
-            <div class="blog-category-banner-body">
+            <div class="page-blog-category-banner-body">
                 <JBreadcrumb :items="breadcrumb">
                     <template #icon>
                         <JIconArrowRight />
                     </template>
                 </JBreadcrumb>
-                <h1 class="blog-category-banner-title">Vlog</h1>
+                <h1 class="page-blog-category-banner-title">Vlog</h1>
             </div>
         </JBanner>
         <section class="page-vlog-category">

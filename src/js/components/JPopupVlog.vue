@@ -23,8 +23,9 @@ import JIconXClose from '@core/components/JIcon/XClose.vue'
 import JClientOnly from '@core/components/JClientOnly.vue'
 import JListCardVlog from '@core/components/JListCardVlog.vue'
 import JVlogDetail from '@core/components/JVlogDetail.vue'
+import JModal from '@core/components/JModal.vue'
 export default {
-    components: { JIconXClose, JClientOnly, JListCardVlog, JVlogDetail },
+    components: { JIconXClose, JClientOnly, JListCardVlog, JVlogDetail, JModal },
     props: {
         vlogs: {
             type: Array,
