@@ -11,10 +11,10 @@
 }
 
 .page-blog-category-tab-wrap {
-    @apply container absolute inset-0;
+    @apply absolute container inset-0;
 
     .tabs {
-        @apply transform -translate-y-1/2 w-full;
+        @apply -translate-y-1/2;
     }
 }
 
