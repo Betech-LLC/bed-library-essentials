@@ -6,6 +6,7 @@ function checkActiveUrl(url, currentPath) {
 
     try {
         new URL(url)
+        console.log(currentPathClear)
         console.log(new URL(url))
         if (currentPathClear === new URL(url).pathname) {
             return true
