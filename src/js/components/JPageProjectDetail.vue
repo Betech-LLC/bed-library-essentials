@@ -62,10 +62,11 @@
 import JCardProject from '@core/components/JCardProject.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JSocialShare from '@core/components/JSocialShare.vue'
+import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import JPicture from '@core/components/JPicture.vue'
 
 export default {
-    components: { JCardProject, JBreadcrumb, JSocialShare, JPicture },
+    components: { JCardProject, JBreadcrumb, JSocialShare, JPicture, JIconArrowRight },
 
     props: ['item', 'breadcrumb'],
 
