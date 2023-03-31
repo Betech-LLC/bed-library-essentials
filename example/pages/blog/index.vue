@@ -365,13 +365,12 @@ export default {
                 },
             ],
 
-            // bannerTop: {
-            //     image: {
-            //         url: 'https://via.placeholder.com/900x300',
-            //         alt: 'banner blog category',
-            //     },
-            // },
-            bannerTop: null,
+            bannerTop: {
+                image: {
+                    url: 'https://via.placeholder.com/900x300',
+                    alt: 'banner blog category',
+                },
+            },
 
             top_posts: [
                 {

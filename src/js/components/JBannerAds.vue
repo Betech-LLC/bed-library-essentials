@@ -3,7 +3,7 @@
         class="banner-ads"
         v-if="item"
         :href="item.link"
-        :ref="item.target === '_blank' ? 'nofollow noreferrer' : ''"
+        :rel="item.target === '_blank' ? 'nofollow noreferrer' : ''"
         :target="item.target || '_blank'"
     >
         <JPicture
