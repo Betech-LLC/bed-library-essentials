@@ -1,5 +1,5 @@
 <template>
-    <div v-if="items" class="page-blog-category-top-view">
+    <div v-if="items && items.length" class="page-blog-category-top-view">
         <h2 class="title">
             <slot> Lượt xem nhiều nhất </slot>
         </h2>
