@@ -1,7 +1,7 @@
 <template>
     <div v-if="items && items.length" class="page-blog-category-top-view">
         <h2 class="title">
-            <slot> Lượt xem nhiều nhất </slot>
+            <slot name="title"> Lượt xem nhiều nhất </slot>
         </h2>
         <div class="body">
             <JCardBlog

@@ -56,7 +56,9 @@
                 </div>
             </div>
             <div class="right">
-                <JBlogSideBar :items="top_posts">Tin nổi bật</JBlogSideBar>
+                <JBlogSideBar :items="top_posts">
+                    <template #title>Tin nổi bật</template>
+                </JBlogSideBar>
 
                 <div v-if="banner" class="banner-ads-wrap">
                     <JBannerAds :item="banner" />

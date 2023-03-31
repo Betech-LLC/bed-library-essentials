@@ -4,10 +4,12 @@
             <div class="page-blog-category-banner-body">
                 <JBreadcrumb :items="breadcrumb">
                     <template #icon>
-                        <JIconArrowRight />
+                        <slot name="icon">
+                            <JIconArrowRight />
+                        </slot>
                     </template>
                 </JBreadcrumb>
-                <h1 class="page-blog-category-banner-title">Tin tức</h1>
+                <h1 class="page-blog-category-banner-title">{{ staticContent.title }}</h1>
             </div>
         </JBanner>
 
@@ -47,12 +49,17 @@
 
                         <div v-if="posts.current_page < posts.last_page" class="page-blog-category-button">
                             <button @click.prevent="$emit('seeMore', posts.next_page_url)" class="btn-see-more">
-                                <a :href="posts.next_page_url"> Xem thêm {{ posts.total - posts.to }} bài viết </a>
+                                <a :href="posts.next_page_url">
+                                    {{ staticContent.seeMore }} {{ posts.total - posts.to }}
+                                    {{ staticContent.type }}
+                                </a>
                             </button>
                         </div>
                     </div>
                     <div class="right">
-                        <JBlogSideBar :items="top_views" />
+                        <JBlogSideBar :items="top_views">
+                            <template #title>{{ staticContent.mostView }}</template></JBlogSideBar
+                        >
 
                         <div v-if="banner" class="banner-ads-wrap">
                             <JBannerAds :item="banner" />
@@ -75,16 +82,27 @@ import JTabs from '@core/components/JTabs.vue'
 
 export default {
     components: { JBanner, JCardBlog, JBannerAds, JBlogSideBar, JBreadcrumb, JIconArrowRight, JTabs },
-    props: [
-        'bannerTop',
-        'breadcrumb',
-        'banner',
-        'top_posts',
-        'top_views',
-        'posts_data',
-        'posts',
-        'categories',
-        'currentPath',
-    ],
+    props: {
+        bannerTop: Object,
+        breadcrumb: Array,
+        banner: Object,
+        top_posts: Array,
+        top_views: Array,
+        posts_data: Array,
+        posts: Object,
+        categories: Array,
+        currentPath: String,
+        staticContent: {
+            type: Object,
+            default: () => {
+                return {
+                    title: 'Tin tức',
+                    seeMore: 'Xem thêm',
+                    type: 'bài viết',
+                    mostView: 'Lượt xem nhiều nhất',
+                }
+            },
+        },
+    },
 }
 </script>

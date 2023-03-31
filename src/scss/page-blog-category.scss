@@ -3,7 +3,7 @@
 }
 
 .page-blog-category-wrap {
-    @apply container;
+    @apply container xl:space-y-8 md:space-y-6 space-y-4;
 }
 
 .page-blog-category-tab {
@@ -38,7 +38,7 @@
 }
 
 .page-blog-category-body {
-    @apply grid grid-cols-7 xl:mt-8	md:mt-6	mt-4 xl:gap-x-8	lg:gap-x-6	max-lg:gap-y-6 max-md:gap-y-4;
+    @apply grid grid-cols-7 xl:gap-x-8 lg:gap-x-6 max-lg:gap-y-6 max-md:gap-y-4;
     .left {
         @apply lg:col-span-5 col-span-full;
 
