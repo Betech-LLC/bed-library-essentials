@@ -4,17 +4,24 @@
             <div class="page-blog-category-banner-body">
                 <JBreadcrumb :items="breadcrumb">
                     <template #icon>
-                        <JIconArrowRight />
+                        <slot name="icon">
+                            <JIconArrowRight />
+                        </slot>
                     </template>
                 </JBreadcrumb>
-                <h1 class="page-blog-category-banner-title">Vlog</h1>
+                <h1 class="page-blog-category-banner-title">{{ staticContent.title }}</h1>
             </div>
         </JBanner>
         <section class="page-vlog-category">
             <div class="page-vlog-category-body">
-                <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" />
-                <div class="page-vlog-category-button">
-                    <button class="btn-see-more">Xem thêm 16 bài viết</button>
+                <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs_data" />
+                <div v-if="vlogs.current_page < vlogs.last_page" class="page-vlog-category-button">
+                    <button @click.prevent="$emit('seeMore', vlogs.next_page_url)" class="btn-see-more">
+                        <a :href="vlogs.next_page_url">
+                            {{ staticContent.seeMore }} {{ vlogs.total - vlogs.to }}
+                            {{ staticContent.type }}
+                        </a>
+                    </button>
                 </div>
             </div>
         </section>
@@ -24,9 +31,10 @@
             @viewVideo="viewVideo"
             @close="close"
             :isPlay="isPlay"
-            :vlogs="vlogs"
+            :vlogs="vlogs_data"
             :isShow="isShow"
             :currentItem="currentItem"
+            :staticContent="staticContent"
         />
     </main>
 </template>
@@ -40,7 +48,28 @@ import JBanner from '@core/components/JBanner.vue'
 
 export default {
     components: { JListCardVlog, JPopupVlog, JIconArrowRight, JBreadcrumb, JBanner },
-    props: ['vlogs', 'breadcrumb', 'bannerTop'],
+    props: ['vlogs', 'vlogs_data', 'breadcrumb', 'bannerTop'],
+
+    props: {
+        vlogs: Object,
+        vlogs_data: Array,
+        breadcrumb: Array,
+        bannerTop: Object,
+        staticContent: {
+            type: Object,
+            default: () => {
+                return {
+                    title: 'Vlog',
+                    seeMore: 'Xem thêm',
+                    type: 'bài viết',
+                    publishedAt: 'Ngày đăng:',
+                    time: 'Thời lượng:',
+                    youWillLike: 'Có thể bạn sẽ thích',
+                    close: 'Đóng',
+                }
+            },
+        },
+    },
 
     data() {
         return {

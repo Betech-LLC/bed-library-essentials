@@ -5,14 +5,14 @@
                 <div class="icon">
                     <JIconXClose />
                 </div>
-                <div class="title">Đóng</div>
+                <div class="title">{{ staticContent.close }}</div>
             </div>
         </template>
         <div v-if="currentItem" class="popup-vlog-body">
-            <JVlogDetail :isPlay="isPlay" @change="change" :item="currentItem" />
+            <JVlogDetail :staticContent="staticContent" :isPlay="isPlay" @change="change" :item="currentItem" />
 
             <div class="popup-vlog-related">
-                <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" />
+                <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" :staticContent="staticContent" />
             </div>
         </div>
     </JModal>
@@ -43,6 +43,21 @@ export default {
 
         currentItem: {
             type: Object,
+        },
+
+        staticContent: {
+            type: Object,
+            default: () => {
+                return {
+                    title: 'Vlog',
+                    seeMore: 'Xem thêm',
+                    type: 'bài viết',
+                    publishedAt: 'Ngày đăng:',
+                    time: 'Thời lượng:',
+                    youWillLike: 'Có thể bạn sẽ thích',
+                    close: 'Đóng',
+                }
+            },
         },
     },
 
