@@ -14,7 +14,7 @@
                 <JIconCalendar />
             </div>
             <div class="information-item-content">
-                <div class="label">Hạn nộp hồ sơ</div>
+                <div class="label">Hạn nộp đơn</div>
                 <div class="title">
                     {{ toDate(item.expected_time, 'vi', false) }}
                 </div>

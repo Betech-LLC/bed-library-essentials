@@ -22,8 +22,8 @@
             </div>
             <div class="card-job-category-location-wrap">
                 <div class="card-job-category-wrap">
-                    <div class="card-job-category-label">Ngành nghề</div>
-                    <div class="card-job-category-title">Ngành gì đó</div>
+                    <div class="card-job-category-label">Hạn nộp đơn</div>
+                    <div class="card-job-category-title">{{ toDate(item.expected_time, 'vi', false) }}</div>
                 </div>
                 <div v-if="item.work_address" class="card-job-location-wrap">
                     <div class="card-job-location-label">Nơi làm việc</div>
@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { addLeadingZero } from '@core/utils'
+import { addLeadingZero, toDate } from '@core/utils'
 import JLink from '@core/components/JLink.vue'
 import JIconShare from '@core/components/JIcon/Share.vue'
 import JSocialShare from '@core/components/JSocialShare.vue'
@@ -89,6 +89,7 @@ export default {
             this.isShare = false
         },
         addLeadingZero,
+        toDate,
     },
 }
 </script>
