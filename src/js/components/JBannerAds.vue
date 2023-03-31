@@ -1,5 +1,11 @@
 <template>
-    <a class="banner-ads" v-if="item" :href="item.link" :target="item.target || '_blank'">
+    <a
+        class="banner-ads"
+        v-if="item"
+        :href="item.link"
+        :ref="item.target === '_blank' ? 'nofollow noreferrer' : ''"
+        :target="item.target || '_blank'"
+    >
         <JPicture
             wrapperClass="picture-contain"
             :src="item.image?.url || item.image_url"
