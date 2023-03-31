@@ -51,9 +51,10 @@ import JCardBlog from '@core/components/JCardBlog.vue'
 import JBannerAds from '@core/components/JBannerAds.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JIconHash from '@core/components/JIcon/Hash.vue'
+import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 
 export default {
-    components: { JCardBlog, JBannerAds, JBreadcrumb, JIconHash },
+    components: { JCardBlog, JBannerAds, JBreadcrumb, JIconHash, JIconArrowRight },
 
     props: {
         breadcrumb: Object,
