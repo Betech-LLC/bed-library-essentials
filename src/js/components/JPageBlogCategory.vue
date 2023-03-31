@@ -1,6 +1,6 @@
 <template>
     <main>
-        <JBanner class="banner-sm" v-if="bannerTop" :item="bannerTop">
+        <JBanner class="banner-sm" :item="bannerTop">
             <div class="page-blog-category-banner-body">
                 <JBreadcrumb :items="breadcrumb">
                     <template #icon>
