@@ -82,8 +82,14 @@ export default {
         }
     },
 
+    watch: {
+        vlogs_data() {
+            this.getCurrentUrl()
+        },
+    },
+
     mounted() {
-        this.currentUrl = window.location.href
+        this.getCurrentUrl()
     },
 
     methods: {
@@ -100,6 +106,10 @@ export default {
 
         change(play) {
             this.isPlay = play
+        },
+
+        getCurrentUrl() {
+            this.currentUrl = window.location.href
         },
     },
 }
