@@ -9,6 +9,7 @@
         :bannerTop="bannerTop"
         @seeMoreWithApi="seeMoreWithApi"
         @seeMore="seeMore"
+        @viewVideo="viewVideo"
     />
 </template>
 
@@ -406,7 +407,12 @@ export default {
         },
 
         seeMore(url) {
+            console.log(url)
             this.vlogs_data.push(...this.vlogs.data)
+        },
+
+        viewVideo(item) {
+            console.log(item)
         },
     },
 }

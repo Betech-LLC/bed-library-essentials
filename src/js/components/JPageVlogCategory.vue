@@ -101,6 +101,7 @@ export default {
         viewVideo(currentItem) {
             this.isShow = true
             this.currentItem = currentItem
+            this.$emit('viewVideo', currentItem)
         },
 
         close() {
