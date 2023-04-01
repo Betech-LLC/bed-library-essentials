@@ -32,8 +32,8 @@
             @close="close"
             @seeMoreWithApi="(next_page_url) => $emit('seeMoreWithApi', next_page_url)"
             :isPlay="isPlay"
-            :vlogs="vlogs"
-            :vlogs_data="vlogs_data"
+            :vlogs="relatedVlogs"
+            :vlogs_data="relatedVlogs_data"
             :isShow="isShow"
             :currentItem="currentItem"
             :staticContent="staticContent"
@@ -55,6 +55,8 @@ export default {
     props: {
         vlogs: Object,
         vlogs_data: Array,
+        relatedVlogs: Object,
+        relatedVlogs_data: Array,
         breadcrumb: Array,
         bannerTop: Object,
         staticContent: {
