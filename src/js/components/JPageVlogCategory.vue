@@ -83,8 +83,11 @@ export default {
     },
 
     watch: {
-        vlogs_data() {
-            this.getCurrentUrl()
+        vlogs_data: {
+            deep: true,
+            handler() {
+                this.getCurrentUrl()
+            },
         },
     },
 

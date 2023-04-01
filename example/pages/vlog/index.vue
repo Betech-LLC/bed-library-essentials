@@ -6,6 +6,7 @@
         :breadcrumb="breadcrumb"
         :bannerTop="bannerTop"
         @seeMoreWithApi="seeMoreWithApi"
+        @seeMore="seeMore"
     />
 </template>
 
@@ -220,6 +221,10 @@ export default {
     methods: {
         seeMoreWithApi(url) {
             console.log(url)
+        },
+
+        seeMore(url) {
+            this.vlogs_data.push(...this.vlogs.data)
         },
     },
 }
