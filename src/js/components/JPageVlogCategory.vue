@@ -14,7 +14,7 @@
         </JBanner>
         <section class="page-vlog-category">
             <div class="page-vlog-category-body">
-                <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs_data" />
+                <JListCardVlog @viewVideo="viewVideo" :items="vlogs_data" />
                 <div v-if="vlogs.current_page < vlogs.last_page" class="page-vlog-category-button">
                     <button @click.prevent="$emit('seeMore', vlogs.next_page_url)" class="btn-see-more">
                         <a :href="vlogs.next_page_url">
@@ -30,8 +30,10 @@
             @change="change"
             @viewVideo="viewVideo"
             @close="close"
+            @seeMoreWithApi="(next_page_url) => $emit('seeMoreWithApi', next_page_url)"
             :isPlay="isPlay"
-            :vlogs="vlogs_data"
+            :vlogs="vlogs"
+            :vlogs_data="vlogs_data"
             :isShow="isShow"
             :currentItem="currentItem"
             :staticContent="staticContent"

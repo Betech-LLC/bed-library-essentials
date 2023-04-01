@@ -12,7 +12,16 @@
             <JVlogDetail :staticContent="staticContent" :isPlay="isPlay" @change="change" :item="currentItem" />
 
             <div class="popup-vlog-related">
-                <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" :staticContent="staticContent" />
+                <JListCardVlog @viewVideo="viewVideo" :items="vlogs_data" :staticContent="staticContent" />
+
+                <div v-if="vlogs.current_page < vlogs.last_page" class="page-vlog-category-button">
+                    <button @click.prevent="$emit('seeMoreWithApi', vlogs.next_page_url)" class="btn-see-more">
+                        <a :href="vlogs.next_page_url">
+                            {{ staticContent.seeMore }} {{ vlogs.total - vlogs.to }}
+                            {{ staticContent.type }}
+                        </a>
+                    </button>
+                </div>
             </div>
         </div>
     </JModal>
@@ -28,8 +37,10 @@ export default {
     components: { JIconXClose, JClientOnly, JListCardVlog, JVlogDetail, JModal },
     props: {
         vlogs: {
-            type: Array,
+            type: Object,
         },
+
+        vlogs_data: Array,
 
         isShow: {
             type: Boolean,

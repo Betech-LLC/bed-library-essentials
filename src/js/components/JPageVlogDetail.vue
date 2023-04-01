@@ -10,7 +10,15 @@
             <JVlogDetail @change="changeOnPage" :isPlay="isPlayOnPage" :item="item" />
 
             <div class="page-vlog-detail-related">
-                <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" />
+                <JListCardVlog @viewVideo="viewVideo" :items="relatedVlogs" />
+                <div v-if="vlogs.current_page < vlogs.last_page" class="page-vlog-category-button">
+                    <button @click.prevent="$emit('seeMore', vlogs.next_page_url)" class="btn-see-more">
+                        <a :href="vlogs.next_page_url">
+                            {{ staticContent.seeMore }} {{ vlogs.total - vlogs.to }}
+                            {{ staticContent.type }}
+                        </a>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -18,7 +26,7 @@
             @change="change"
             @viewVideo="viewVideo"
             @close="close"
-            :vlogs="vlogs"
+            :vlogs="relatedVlogs"
             :isShow="isShow"
             :isPlay="isPlay"
             :currentItem="currentItem"
@@ -36,7 +44,26 @@ import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 
 export default {
     components: { JCardVlog, JPopupVlog, JVlogDetail, JListCardVlog, JBreadcrumb, JIconArrowRight },
-    props: ['item', 'vlogs', 'breadcrumb'],
+
+    props: {
+        item: Object,
+        vlogs: Object,
+        relatedVlogs: Array,
+        breadcrumb: Array,
+        staticContent: {
+            type: Object,
+            default: () => {
+                return {
+                    seeMore: 'Xem thêm',
+                    type: 'bài viết',
+                    publishedAt: 'Ngày đăng:',
+                    time: 'Thời lượng:',
+                    youWillLike: 'Có thể bạn sẽ thích',
+                    close: 'Đóng',
+                }
+            },
+        },
+    },
 
     data() {
         return {

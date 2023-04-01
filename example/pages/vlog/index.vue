@@ -5,6 +5,7 @@
         :vlogs_data="vlogs_data"
         :breadcrumb="breadcrumb"
         :bannerTop="bannerTop"
+        @seeMoreWithApi="seeMoreWithApi"
     />
 </template>
 
@@ -30,7 +31,7 @@ export default {
                             alt: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack',
                         },
                         video_url: 'https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s',
-                        url: '/vlogs/static-site-generator-trinh-tao-trang-tinh-duoc-ung-dung-trong-kien-truc-website-jamstack-b-1',
+                        url: '/vlog/static-site-generator-trinh-tao-trang-tinh-duoc-ung-dung-trong-kien-truc-website-jamstack-b-1',
                         time: '10:00',
                         tags: [],
                     },
@@ -49,7 +50,7 @@ export default {
                             alt: 'Microservices: Lợi ích và thách thức khi sử dụng trong website Jamstack',
                         },
                         video_url: 'https://www.youtube.com/watch?v=--nUELePmog',
-                        url: '/vlogs/microservices-loi-ich-va-thach-thuc-khi-su-dung-trong-website-jamstack-b-2',
+                        url: '/vlog/microservices-loi-ich-va-thach-thuc-khi-su-dung-trong-website-jamstack-b-2',
                         time: '02:00',
                         tags: [],
                     },
@@ -68,7 +69,7 @@ export default {
                             alt: 'Khả năng tương tác trên website tác động thế nào đến UX và cách tối ưu',
                         },
                         video_url: 'https://www.youtube.com/watch?v=--nUELePmog',
-                        url: '/vlogs/kha-nang-tuong-tac-tren-website-tac-dong-the-nao-den-ux-va-cach-toi-uu-b-3',
+                        url: '/vlog/kha-nang-tuong-tac-tren-website-tac-dong-the-nao-den-ux-va-cach-toi-uu-b-3',
                         time: null,
                         tags: [],
                     },
@@ -84,7 +85,7 @@ export default {
                         },
                         video: { url: null, alt: 'API trong kiến trúc website Jamstack: Kết nối dữ liệu và tối ưu UX' },
                         video_url: 'https://www.youtube.com/watch?v=0xAgOv6u4nI&t=103s',
-                        url: '/vlogs/api-trong-kien-truc-website-jamstack-ket-noi-du-lieu-va-toi-uu-ux-b-4',
+                        url: '/vlog/api-trong-kien-truc-website-jamstack-ket-noi-du-lieu-va-toi-uu-ux-b-4',
                         time: null,
                         tags: [],
                     },
@@ -103,7 +104,7 @@ export default {
                             alt: 'Jamstack SEO Guide: Tối ưu hiệu quả SEO cho website có kiến trúc Jamstack',
                         },
                         video_url: 'https://www.youtube.com/watch?v=--nUELePmog',
-                        url: '/vlogs/jamstack-seo-guide-toi-uu-hieu-qua-seo-cho-website-co-kien-truc-jamstack-b-5',
+                        url: '/vlog/jamstack-seo-guide-toi-uu-hieu-qua-seo-cho-website-co-kien-truc-jamstack-b-5',
                         time: null,
                         tags: [],
                     },
@@ -116,7 +117,7 @@ export default {
                         image: { url: null, alt: 'Những điều cần biết để trở thành UX Writer' },
                         video: { url: null, alt: 'Những điều cần biết để trở thành UX Writer' },
                         video_url: null,
-                        url: '/vlogs/nhung-dieu-can-biet-de-tro-thanh-ux-writer-b-6',
+                        url: '/vlog/nhung-dieu-can-biet-de-tro-thanh-ux-writer-b-6',
                         time: null,
                         tags: [],
                     },
@@ -129,7 +130,7 @@ export default {
                         image: { url: null, alt: 'Demo' },
                         video: { url: null, alt: 'Demo' },
                         video_url: null,
-                        url: '/vlogs/demo-b-7',
+                        url: '/vlog/demo-b-7',
                         time: null,
                         tags: [],
                     },
@@ -142,7 +143,7 @@ export default {
                         image: { url: null, alt: 'Demo 1' },
                         video: { url: null, alt: 'Demo 1' },
                         video_url: null,
-                        url: '/vlogs/demo-1-b-8',
+                        url: '/vlog/demo-1-b-8',
                         time: null,
                         tags: [],
                     },
@@ -155,7 +156,7 @@ export default {
                         image: { url: null, alt: 'Demo 2' },
                         video: { url: null, alt: 'Demo 2' },
                         video_url: null,
-                        url: '/vlogs/demo-2-b-9',
+                        url: '/vlog/demo-2-b-9',
                         time: null,
                         tags: [],
                     },
@@ -168,7 +169,7 @@ export default {
                         image: { url: null, alt: 'Demo 3' },
                         video: { url: null, alt: 'Demo 3' },
                         video_url: null,
-                        url: '/vlogs/demo-3-b-10',
+                        url: '/vlog/demo-3-b-10',
                         time: null,
                         tags: [],
                     },
@@ -214,6 +215,12 @@ export default {
 
     created() {
         this.vlogs_data = this.vlogs.data
+    },
+
+    methods: {
+        seeMoreWithApi(url) {
+            console.log(url)
+        },
     },
 }
 </script>
