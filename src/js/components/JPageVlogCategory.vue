@@ -32,9 +32,9 @@
             @close="close"
             @seeMoreWithApi="(next_page_url) => $emit('seeMoreWithApi', next_page_url)"
             :isPlay="isPlay"
+            :isShow="isShow"
             :vlogs="relatedVlogs"
             :vlogs_data="relatedVlogs_data"
-            :isShow="isShow"
             :currentItem="currentItem"
             :staticContent="staticContent"
         />
@@ -78,9 +78,9 @@ export default {
     data() {
         return {
             isShow: false,
+            isPlay: false,
             currentItem: null,
             currentUrl: null,
-            isPlay: false,
         }
     },
 

@@ -10,7 +10,7 @@
             <JVlogDetail @change="changeOnPage" :isPlay="isPlayOnPage" :item="item" />
 
             <div class="page-vlog-detail-related">
-                <JListCardVlog @viewVideo="viewVideo" :items="relatedVlogs" />
+                <JListCardVlog @viewVideo="viewVideo" :items="vlogs_data" />
                 <div v-if="vlogs.current_page < vlogs.last_page" class="page-vlog-category-button">
                     <button @click.prevent="$emit('seeMore', vlogs.next_page_url)" class="btn-see-more">
                         <a :href="vlogs.next_page_url">
@@ -26,10 +26,13 @@
             @change="change"
             @viewVideo="viewVideo"
             @close="close"
-            :vlogs="relatedVlogs"
+            @seeMoreWithApi="(next_page_url) => $emit('seeMoreWithApi', next_page_url)"
             :isShow="isShow"
             :isPlay="isPlay"
+            :vlogs="relatedVlogs"
+            :vlogs_data="relatedVlogs_data"
             :currentItem="currentItem"
+            :staticContent="staticContent"
         />
     </main>
 </template>
@@ -48,7 +51,9 @@ export default {
     props: {
         item: Object,
         vlogs: Object,
-        relatedVlogs: Array,
+        vlogs_data: Array,
+        relatedVlogs: Object,
+        relatedVlogs_data: Array,
         breadcrumb: Array,
         staticContent: {
             type: Object,
@@ -88,6 +93,7 @@ export default {
             this.isShow = true
             this.isPlayOnPage = false
             this.currentItem = currentItem
+            this.$emit('viewVideo', currentItem)
         },
 
         close() {

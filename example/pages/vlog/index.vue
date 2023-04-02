@@ -7,8 +7,8 @@
         :relatedVlogs_data="relatedVlogs_data"
         :breadcrumb="breadcrumb"
         :bannerTop="bannerTop"
-        @seeMoreWithApi="seeMoreWithApi"
         @seeMore="seeMore"
+        @seeMoreWithApi="seeMoreWithApi"
         @viewVideo="viewVideo"
     />
 </template>
@@ -398,21 +398,22 @@ export default {
 
     created() {
         this.vlogs_data = this.vlogs.data
-        this.relatedVlogs_data = this.relatedVlogs.data
     },
 
     methods: {
-        seeMoreWithApi(url) {
-            console.log(url)
-        },
-
         seeMore(url) {
-            console.log(url)
+            console.log(`Xem thêm bài viết, url = ${url}`)
             this.vlogs_data.push(...this.vlogs.data)
         },
 
+        seeMoreWithApi(url) {
+            console.log(`Xem thêm bài viết trong popup, url = ${url}`)
+            this.relatedVlogs_data.push(...this.relatedVlogs.data)
+        },
+
         viewVideo(item) {
-            console.log(item)
+            console.log(`Lấy danh sách video liên quan với video có id ${item.id}`)
+            this.relatedVlogs_data = this.relatedVlogs.data
         },
     },
 }
