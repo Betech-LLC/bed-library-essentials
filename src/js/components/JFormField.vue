@@ -72,9 +72,11 @@ import JFieldText from '@core/components/JField/Text.vue'
 import JFieldPhone from '@core/components/JField/Phone.vue'
 import JFieldDropdown from '@core/components/JField/Dropdown.vue'
 import JFieldTextarea from '@core/components/JField/Textarea.vue'
+import JFieldCheckbox from '@core/components/JField/JFieldCheckbox.vue'
+import JFieldCheckboxMultiple from '@core/components/JField/JFieldCheckboxMultiple'
 const { useValidateField } = useForm()
 export default {
-    components: { JFieldText, JFieldPhone, JFieldDropdown, JFieldTextarea },
+    components: { JFieldText, JFieldPhone, JFieldDropdown, JFieldTextarea, JFieldCheckbox, JFieldCheckboxMultiple },
     emits: ['update:modelValue'],
     props: {
         modelValue: { type: Object, required: true },
