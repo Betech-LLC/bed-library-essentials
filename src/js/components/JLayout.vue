@@ -203,7 +203,8 @@
         <div id="jam-dropdown">
             <div class="mb-4 display-3">Dropdown</div>
             <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
-                <JForm v-model="team" class="max-w-[400px] w-full mx-auto">
+                <!-- TODO -->
+                <!-- <JForm v-model="team" class="max-w-[400px] w-full mx-auto">
                     <JFormField
                         :field="{
                             type: 'dropdown',
@@ -231,7 +232,7 @@
                             </svg>
                         </template>
                     </JFormField>
-                </JForm>
+                </JForm> -->
             </div>
         </div>
         <!-- Fieldset Input -->
@@ -239,7 +240,7 @@
             <div class="mb-4 display-3">Fieldset Input</div>
             <div class="p-4 space-y-4 border border-gray-400 border-dashed rounded-lg">
                 <!-- ROW 1 -->
-                <JForm v-model="user" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <!-- <JForm v-model="user" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <div class="space-y-4">
                         <JFormField
                             :field="{
@@ -291,10 +292,10 @@
                     <div class="flex justify-center my-4 col-span-full">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                </JForm>
+                </JForm> -->
 
                 <!-- ROW 2 -->
-                <JForm v-model="user_2" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <!-- <JForm v-model="user_2" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
                             type: 'text',
@@ -343,10 +344,10 @@
                         <template #prefix> <JIconMobilePhone /> </template>
                         <template #suffix> <JIconHelp /> </template
                     ></JFormField>
-                </JForm>
+                </JForm> -->
 
                 <!-- ROW 3 -->
-                <JForm v-model="user_3" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <!-- <JForm v-model="user_3" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
                             type: 'text',
@@ -376,10 +377,10 @@
                         <template #prefix> <JIconMobilePhone /> </template>
                         <template #suffix> <JIconHelp /> </template
                     ></JFormField>
-                </JForm>
+                </JForm> -->
 
                 <!-- ROW 4 -->
-                <JForm v-model="user_4" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <!-- <JForm v-model="user_4" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
                             type: 'text',
@@ -412,9 +413,9 @@
                         <template #prefix> <JIconMobilePhone /> </template>
                         <template #suffix> <JIconHelp /> </template
                     ></JFormField>
-                </JForm>
+                </JForm> -->
                 <!-- ROW 5 -->
-                <JForm v-model="user_5" :rules="rules" class="grid grid-cols-3 gap-4 mb-10">
+                <!-- <JForm v-model="user_5" :rules="rules" class="grid grid-cols-3 gap-4 mb-10">
                     <JFormField
                         :field="{
                             type: 'textarea',
@@ -442,7 +443,7 @@
                         }"
                         :disabled="true"
                     />
-                </JForm>
+                </JForm> -->
             </div>
         </div>
         <!-- Breadcrumb -->

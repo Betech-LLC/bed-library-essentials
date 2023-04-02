@@ -17,42 +17,42 @@
             <JFieldText
                 v-if="!field.type || field.type === 'text' || field.type === 'email' || field.type === 'password'"
                 :field="field"
-                :modelValue="fieldValue"
-                @update:modelValue="onChangeField"
+                :modelValue="modelValue"
+                @update:modelValue="onInput"
             />
 
             <JFieldCheckbox
                 v-else-if="field.type === 'checkbox'"
-                :modelValue="fieldValue"
+                :modelValue="modelValue"
                 :field="field"
-                @update:modelValue="onChangeField"
+                @update:modelValue="onInput"
             />
 
             <JFieldCheckboxMultiple
                 v-else-if="field.type === 'checkbox_multiple'"
-                :modelValue="fieldValue"
+                :modelValue="modelValue"
                 :field="field"
-                @update:modelValue="onChangeField"
+                @update:modelValue="onInput"
             />
             <JFieldPhone
                 v-else-if="field.type === 'number'"
-                :modelValue="fieldValue"
+                :modelValue="modelValue"
                 :field="field"
-                @update:modelValue="onChangeField"
+                @update:modelValue="onInput"
             />
 
             <JFieldDropdown
                 v-else-if="field.type === 'dropdown'"
                 :field="field"
-                :modelValue="fieldValue"
-                @update:modelValue="onChangeField"
+                :modelValue="modelValue"
+                @update:modelValue="onInput"
             />
 
             <JFieldTextarea
                 v-else-if="field.type === 'textarea'"
                 :field="field"
-                :modelValue="fieldValue"
-                @update:modelValue="onChangeField"
+                :modelValue="modelValue"
+                @update:modelValue="onInput"
             />
 
             <div v-if="$slots.suffix" class="suffix">
@@ -67,20 +67,22 @@
 </template>
 
 <script>
-import { validateField } from '@core/utils'
+import { useForm } from '@core/composables/index'
 import JFieldText from '@core/components/JField/Text.vue'
 import JFieldPhone from '@core/components/JField/Phone.vue'
 import JFieldDropdown from '@core/components/JField/Dropdown.vue'
 import JFieldTextarea from '@core/components/JField/Textarea.vue'
 
+const { useValidateField } = useForm()
+
 export default {
     components: { JFieldText, JFieldPhone, JFieldDropdown, JFieldTextarea },
-    emits: ['update:modelValue', 'modelValue'],
+    emits: ['update:modelValue'],
     props: {
-        field: {
-            type: Object,
-            default: () => {},
-        },
+        modelValue: { type: [String, Object] },
+        field: { type: Object, default: () => {} },
+        rules: { type: Object, default: () => {} },
+        errors: { type: Object, default: () => {} },
         disabled: { type: Boolean, default: false },
     },
     data() {
@@ -88,11 +90,7 @@ export default {
             isError: false,
         }
     },
-    inject: {
-        form: { default: () => {} },
-        rules: { default: () => {} },
-        errors: { default: () => {} },
-    },
+
     computed: {
         showLabel() {
             return this.field.label && this.field.type !== 'checkbox' && this.field.type !== 'checkbox_multiple'
@@ -103,31 +101,17 @@ export default {
         message() {
             return this.field.error || `${this.field.label} không hợp lệ`
         },
-
-        fieldValue() {
-            return this.modelValue || this.form[this.field.name]
-        },
     },
     watch: {
-        errors: {
-            handler(newErrors) {
-                this.isError = newErrors.hasOwnProperty(this.field.name)
-            },
-            deep: true,
+        errors(newErrors) {
+            this.isError = newErrors.hasOwnProperty(this.field.name)
         },
     },
     methods: {
-        onChangeField(fieldValue) {
-            this.form[this.field.name] = fieldValue
-            this.validateField(fieldValue)
-        },
-        validateField(fieldValue) {
-            const isValidField = validateField(fieldValue, this.rules[this.field.name])
-            if (isValidField) {
-                delete this.errors[this.field.name]
-            } else {
-                this.errors[this.field.name] = null
-            }
+        onInput(fieldValue) {
+            this.$emit('update:modelValue', fieldValue)
+            const isValid = useValidateField({ value: fieldValue, rule: this.rules[this.field.name] })
+            this.isError = !isValid
         },
     },
 }
