@@ -19,6 +19,7 @@
                         :errors="errors"
                         class="md:col-span-1 col-span-full"
                     />
+
                     <JFormField
                         v-model="form.lastName"
                         :field="{
@@ -44,6 +45,21 @@
                         :errors="errors"
                         class="col-span-full"
                     />
+
+                    <JFormField
+                        v-model="form.fileCV"
+                        :field="{
+                            type: 'upload_file',
+                            name: 'fileCV',
+                            label: 'Chọn file',
+                            placeholder: 'Bấm vào đây để tải lên Hồ sơ/CV từ máy tính của bạn.',
+                            help: 'File tải lên có định dạng .doc, .docx, .pdf, và dung lượng tối đa 5MB',
+                        }"
+                        :rules="rules"
+                        :errors="errors"
+                        class="col-span-full"
+                    />
+
                     <JFormField
                         v-model="form.phone"
                         :field="{
@@ -97,7 +113,7 @@ export default {
     },
     data() {
         return {
-            form: { firstName: null, lastName: null, email: null, phone: null, note: null },
+            form: { fileCV: null, firstName: null, lastName: null, email: null, phone: null, note: null },
             rules: {
                 note: '',
                 lastName: 'required',
