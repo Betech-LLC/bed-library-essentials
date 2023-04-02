@@ -87,7 +87,7 @@
 </template>
 <script>
 import { useForm } from '@core/composables/index'
-const { useSubmitForm } = useForm()
+const { useSubmitForm, useValidateForm, useResetForm } = useForm()
 export default {
     props: {
         title: {
@@ -110,19 +110,17 @@ export default {
     },
     methods: {
         async onSubmit() {
+            this.errors = useValidateForm({ form: this.form, rules: this.rules })
+            if (Object.keys(this.errors).length > 0) {
+                return
+            }
             const res = await useSubmitForm(() => {
                 return {
                     success: true,
                 }
             })
-            console.log('res = ', res)
-        },
 
-        resetForm() {
-            const keyFields = Object.keys(this.form)
-            keyFields.forEach((keyField) => {
-                this.form[keyField] = null
-            })
+            this.form = useResetForm(this.form)
         },
     },
 }

@@ -1,17 +1,33 @@
 import { validateForm, validateField } from '@core/utils'
+
 export default function useForm() {
-    async function useSubmitForm(callbackAsync) {
+    async function useSubmitForm(callback) {
         try {
-            return await callbackAsync()
+            return await callback()
         } catch (error) {
             return error
         }
     }
-
     function useValidateField({ value, rule }) {
-        const isValidField = validateField(value, rule)
-        return isValidField
+        const isValid = validateField(value, rule)
+        return isValid
+    }
+    function useValidateForm({ form = {}, rules = {} } = {}) {
+        const errors = validateForm(form, rules)
+        return errors
     }
 
-    return { useSubmitForm, useValidateField }
+    function useResetForm(form = {}) {
+        const keyFields = Object.keys(form)
+        keyFields.forEach((keyField) => {
+            if (typeof form[keyField] === 'object' && Object.keys(form[keyField]).length > 0) {
+                form[keyField] = useResetForm(form[keyField])
+            } else {
+                form[keyField] = null
+            }
+        })
+        return form
+    }
+
+    return { useSubmitForm, useResetForm, useValidateForm, useValidateField }
 }

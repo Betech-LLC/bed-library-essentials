@@ -67,22 +67,35 @@
 </template>
 
 <script>
-import { useForm } from '@core/composables/index'
+import { useForm } from '@core/composables'
 import JFieldText from '@core/components/JField/Text.vue'
 import JFieldPhone from '@core/components/JField/Phone.vue'
 import JFieldDropdown from '@core/components/JField/Dropdown.vue'
 import JFieldTextarea from '@core/components/JField/Textarea.vue'
-
 const { useValidateField } = useForm()
-
 export default {
     components: { JFieldText, JFieldPhone, JFieldDropdown, JFieldTextarea },
     emits: ['update:modelValue'],
     props: {
-        modelValue: { type: [String, Object] },
-        field: { type: Object, default: () => {} },
-        rules: { type: Object, default: () => {} },
-        errors: { type: Object, default: () => {} },
+        modelValue: { type: Object, required: true },
+        field: {
+            type: Object,
+            default: () => {
+                return {}
+            },
+        },
+        rules: {
+            type: Object,
+            default: () => {
+                return {}
+            },
+        },
+        errors: {
+            type: Object,
+            default: () => {
+                return {}
+            },
+        },
         disabled: { type: Boolean, default: false },
     },
     data() {
@@ -110,7 +123,10 @@ export default {
     methods: {
         onInput(fieldValue) {
             this.$emit('update:modelValue', fieldValue)
-            const isValid = useValidateField({ value: fieldValue, rule: this.rules[this.field.name] })
+            const isValid = useValidateField({
+                value: fieldValue,
+                rule: this.rules[this.field.name] || '',
+            })
             this.isError = !isValid
         },
     },
