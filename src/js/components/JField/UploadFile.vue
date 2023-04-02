@@ -28,13 +28,10 @@ export default {
                 exactSize.includes('Bytes') || exactSize.includes('KB') || (exactSize.includes('MB') && sizeCalc <= 5)
 
             if (!isTypeCorrect || !isSizeCorrect) {
-                console.log('file error')
                 alert(this.field.help)
                 this.$emit('update:modelValue', null)
                 return
             }
-
-            console.log('file success')
             this.$emit('update:modelValue', file)
         },
     },
