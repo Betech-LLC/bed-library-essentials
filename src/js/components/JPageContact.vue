@@ -58,7 +58,9 @@
                         class="col-span-full"
                         :rules="rules"
                         :errors="errors"
-                    />
+                    >
+                        <template #prefix> <JIconUploadCloud /> </template>
+                    </JFormField>
 
                     <JFormField
                         v-model="form.phone"
