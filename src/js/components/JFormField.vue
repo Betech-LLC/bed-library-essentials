@@ -1,85 +1,120 @@
 <template>
     <fieldset>
-        <label v-if="showLabel" :for="field.name" class="label">{{ fieldLabel }}</label>
-        <div
-            class="field"
-            :class="{
-                'is-disabled': !!disabled,
-                'is-error': !!isError,
-                'has-prefix': !!$slots.prefix,
-                'has-suffix': !!$slots.suffix,
-            }"
-        >
-            <div v-if="$slots.prefix" class="prefix">
-                <slot name="prefix"></slot>
+        <label :for="field.name">
+            <span v-if="field.label" class="label"> {{ field.label }}</span>
+            <div
+                class="field"
+                :class="{
+                    'is-disabled': !!disabled,
+                    'is-error': !!isError,
+                    'has-prefix': !!$slots.prefix,
+                    'has-suffix': !!$slots.suffix,
+                }"
+            >
+                <div v-if="$slots.prefix" class="prefix">
+                    <slot name="prefix"></slot>
+                </div>
+
+                <JFieldText
+                    v-if="!field.type || field.type === 'text' || field.type === 'email' || field.type === 'password'"
+                    :field="field"
+                    :modelValue="modelValue"
+                    @update:modelValue="onInput"
+                />
+
+                <JFieldCheckbox
+                    v-else-if="field.type === 'checkbox'"
+                    :modelValue="modelValue"
+                    :field="field"
+                    @update:modelValue="onInput"
+                />
+
+                <JFieldUploadFile
+                    v-else-if="field.type === 'upload_file'"
+                    :modelValue="modelValue"
+                    :field="field"
+                    @update:modelValue="onInput"
+                />
+
+                <JFieldCheckboxMultiple
+                    v-else-if="field.type === 'checkbox_multiple'"
+                    :modelValue="modelValue"
+                    :field="field"
+                    @update:modelValue="onInput"
+                />
+                <JFieldPhone
+                    v-else-if="field.type === 'number'"
+                    :modelValue="modelValue"
+                    :field="field"
+                    @update:modelValue="onInput"
+                />
+
+                <JFieldDropdown
+                    v-else-if="field.type === 'dropdown'"
+                    :field="field"
+                    :modelValue="modelValue"
+                    @update:modelValue="onInput"
+                />
+
+                <JFieldTextarea
+                    v-else-if="field.type === 'textarea'"
+                    :field="field"
+                    :modelValue="modelValue"
+                    @update:modelValue="onInput"
+                />
+
+                <div v-if="$slots.suffix" class="suffix">
+                    <slot name="suffix"></slot>
+                </div>
+
+                <small v-if="field.help || isError" class="help">
+                    {{ isError ? message : field.help }}
+                </small>
             </div>
-
-            <JFieldText
-                v-if="!field.type || field.type === 'text' || field.type === 'email' || field.type === 'password'"
-                :field="field"
-                :modelValue="fieldValue"
-                @update:modelValue="onChangeField"
-            />
-
-            <JFieldCheckbox
-                v-else-if="field.type === 'checkbox'"
-                :modelValue="fieldValue"
-                :field="field"
-                @update:modelValue="onChangeField"
-            />
-
-            <JFieldCheckboxMultiple
-                v-else-if="field.type === 'checkbox_multiple'"
-                :modelValue="fieldValue"
-                :field="field"
-                @update:modelValue="onChangeField"
-            />
-            <JFieldPhone
-                v-else-if="field.type === 'number'"
-                :modelValue="fieldValue"
-                :field="field"
-                @update:modelValue="onChangeField"
-            />
-
-            <JFieldDropdown
-                v-else-if="field.type === 'dropdown'"
-                :field="field"
-                :modelValue="fieldValue"
-                @update:modelValue="onChangeField"
-            />
-
-            <JFieldTextarea
-                v-else-if="field.type === 'textarea'"
-                :field="field"
-                :modelValue="fieldValue"
-                @update:modelValue="onChangeField"
-            />
-
-            <div v-if="$slots.suffix" class="suffix">
-                <slot name="suffix"></slot>
-            </div>
-
-            <small v-if="field.help || isError" class="help">
-                {{ isError ? message : field.help }}
-            </small>
-        </div>
+        </label>
     </fieldset>
 </template>
 
 <script>
-import { validateField } from '@core/utils'
+import { useForm } from '@core/composables'
 import JFieldText from '@core/components/JField/Text.vue'
 import JFieldPhone from '@core/components/JField/Phone.vue'
 import JFieldDropdown from '@core/components/JField/Dropdown.vue'
 import JFieldTextarea from '@core/components/JField/Textarea.vue'
-
+import JFieldCheckbox from '@core/components/JField/Checkbox.vue'
+import JFieldCheckboxMultiple from '@core/components/JField/CheckboxMultiple.vue'
+import JFieldUploadFile from '@core/components/JField/UploadFile.vue'
+const { useValidateField } = useForm()
 export default {
-    components: { JFieldText, JFieldPhone, JFieldDropdown, JFieldTextarea },
-    emits: ['update:modelValue', 'modelValue'],
+    components: {
+        JFieldText,
+        JFieldPhone,
+        JFieldDropdown,
+        JFieldTextarea,
+        JFieldUploadFile,
+        JFieldCheckbox,
+        JFieldCheckboxMultiple,
+    },
+    emits: ['update:modelValue'],
     props: {
+        modelValue: { type: Object },
         field: {
             type: Object,
-            default: () => {},
+            default: () => {
+                return {}
+            },
+        },
+        rules: {
+            type: Object,
+            default: () => {
+                return {}
+            },
+        },
+        errors: {
+            type: Object,
+            default: () => {
+                return {}
+            },
         },
         disabled: { type: Boolean, default: false },
     },
@@ -88,46 +123,28 @@ export default {
             isError: false,
         }
     },
-    inject: {
-        form: { default: () => {} },
-        rules: { default: () => {} },
-        errors: { default: () => {} },
-    },
+
     computed: {
-        showLabel() {
-            return this.field.label && this.field.type !== 'checkbox' && this.field.type !== 'checkbox_multiple'
-        },
         fieldLabel() {
             return this.field.label + ` ${this.rules[this.field.name]?.includes('required') ? '*' : ''}`
         },
         message() {
             return this.field.error || `${this.field.label} không hợp lệ`
         },
-
-        fieldValue() {
-            return this.modelValue || this.form[this.field.name]
-        },
     },
     watch: {
-        errors: {
-            handler(newErrors) {
-                this.isError = newErrors.hasOwnProperty(this.field.name)
-            },
-            deep: true,
+        errors(newErrors) {
+            this.isError = newErrors.hasOwnProperty(this.field.name)
         },
     },
     methods: {
-        onChangeField(fieldValue) {
-            this.form[this.field.name] = fieldValue
-            this.validateField(fieldValue)
-        },
-        validateField(fieldValue) {
-            const isValidField = validateField(fieldValue, this.rules[this.field.name])
-            if (isValidField) {
-                delete this.errors[this.field.name]
-            } else {
-                this.errors[this.field.name] = null
-            }
+        onInput(fieldValue) {
+            this.$emit('update:modelValue', fieldValue)
+            const isValid = useValidateField({
+                value: fieldValue,
+                rule: this.rules[this.field.name] || '',
+            })
+            this.isError = !isValid
         },
     },
 }
