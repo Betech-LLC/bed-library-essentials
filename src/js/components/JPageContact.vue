@@ -104,8 +104,7 @@
     </div>
 </template>
 <script>
-import { useForm } from '@core/composables/index'
-const { useSubmitForm, useValidateForm, useResetForm } = useForm()
+import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 export default {
     props: {
         title: {
@@ -128,6 +127,9 @@ export default {
         }
     },
     methods: {
+        useSubmitForm,
+        useValidateForm,
+        useResetForm,
         async onSubmit() {
             this.errors = useValidateForm({ form: this.form, rules: this.rules })
             if (Object.keys(this.errors).length > 0) {

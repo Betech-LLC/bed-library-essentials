@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import { useForm } from '@core/composables'
+import { useValidateField } from '@core/composables'
 import JFieldText from '@core/components/JField/Text.vue'
 import JFieldPhone from '@core/components/JField/Phone.vue'
 import JFieldDropdown from '@core/components/JField/Dropdown.vue'
@@ -84,7 +84,6 @@ import JFieldTextarea from '@core/components/JField/Textarea.vue'
 import JFieldCheckbox from '@core/components/JField/Checkbox.vue'
 import JFieldCheckboxMultiple from '@core/components/JField/CheckboxMultiple.vue'
 import JFieldUploadFile from '@core/components/JField/UploadFile.vue'
-const { useValidateField } = useForm()
 export default {
     components: {
         JFieldText,
