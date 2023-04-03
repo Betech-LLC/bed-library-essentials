@@ -22,7 +22,7 @@
 
                 <div class="blog-detail-page-toc" v-if="post.show_table_of_contents">
                     <div class="head" @click="isOpenToc = !isOpenToc">
-                        <span class="title"> Nội dung bài viết </span>
+                        <span class="title"> {{ staticContent.toc }} </span>
                         <span class="icon" :class="{ show: isOpenToc }">
                             <JIconChevron />
                         </span>
@@ -52,12 +52,16 @@
                             tag.title
                         }}</a>
                     </div>
-                    <JSocialShare zaloOAId="1111640952861619960" />
+                    <JSocialShare zaloOAId="1111640952861619960">
+                        <template #title>
+                            {{ staticContent.share }}
+                        </template>
+                    </JSocialShare>
                 </div>
             </div>
             <div class="right">
                 <JBlogSideBar :items="top_posts">
-                    <template #title>Tin nổi bật</template>
+                    <template #title>{{ staticContent.topPosts }}</template>
                 </JBlogSideBar>
 
                 <div v-if="banner" class="banner-ads-wrap">
@@ -91,7 +95,24 @@ export default {
         JIconArrowRight,
         JLink,
     },
-    props: ['breadcrumb', 'banner', 'post', 'top_posts', 'language'],
+
+    props: {
+        breadcrumb: Object,
+        banner: Object,
+        post: Object,
+        top_posts: Array,
+        language: String,
+        staticContent: {
+            type: Object,
+            default: () => {
+                return {
+                    toc: 'Nội dung bài viết',
+                    share: 'Chia sẻ',
+                    topPosts: 'Tin nổi bật',
+                }
+            },
+        },
+    },
 
     data() {
         return {

@@ -4,17 +4,24 @@
             <div class="page-blog-category-banner-body">
                 <JBreadcrumb :items="breadcrumb">
                     <template #icon>
-                        <JIconArrowRight />
+                        <slot name="icon">
+                            <JIconArrowRight />
+                        </slot>
                     </template>
                 </JBreadcrumb>
-                <h1 class="page-blog-category-banner-title">Vlog</h1>
+                <h1 class="page-blog-category-banner-title">{{ staticContent.title }}</h1>
             </div>
         </JBanner>
         <section class="page-vlog-category">
             <div class="page-vlog-category-body">
-                <JListCardVlog @viewVideo="viewVideo" :vlogs="vlogs" />
-                <div class="page-vlog-category-button">
-                    <button class="btn-see-more">Xem thêm 16 bài viết</button>
+                <JListCardVlog @viewVideo="viewVideo" :items="vlogs_data" />
+                <div v-if="vlogs.current_page < vlogs.last_page" class="page-vlog-category-button">
+                    <button @click.prevent="$emit('seeMore', vlogs.next_page_url)" class="btn-see-more">
+                        <a :href="vlogs.next_page_url">
+                            {{ staticContent.seeMore }} {{ vlogs.total - vlogs.to }}
+                            {{ staticContent.type }}
+                        </a>
+                    </button>
                 </div>
             </div>
         </section>
@@ -23,10 +30,13 @@
             @change="change"
             @viewVideo="viewVideo"
             @close="close"
+            @seeMoreWithApi="(next_page_url) => $emit('seeMoreWithApi', next_page_url)"
             :isPlay="isPlay"
-            :vlogs="vlogs"
             :isShow="isShow"
+            :vlogs="relatedVlogs"
+            :vlogs_data="relatedVlogs_data"
             :currentItem="currentItem"
+            :staticContent="staticContent"
         />
     </main>
 </template>
@@ -40,25 +50,58 @@ import JBanner from '@core/components/JBanner.vue'
 
 export default {
     components: { JListCardVlog, JPopupVlog, JIconArrowRight, JBreadcrumb, JBanner },
-    props: ['vlogs', 'breadcrumb', 'bannerTop'],
+    props: ['vlogs', 'vlogs_data', 'breadcrumb', 'bannerTop'],
+
+    props: {
+        vlogs: Object,
+        vlogs_data: Array,
+        relatedVlogs: Object,
+        relatedVlogs_data: Array,
+        breadcrumb: Array,
+        bannerTop: Object,
+        staticContent: {
+            type: Object,
+            default: () => {
+                return {
+                    title: 'Vlog',
+                    seeMore: 'Xem thêm',
+                    type: 'bài viết',
+                    publishedAt: 'Ngày đăng:',
+                    time: 'Thời lượng:',
+                    youWillLike: 'Có thể bạn sẽ thích',
+                    close: 'Đóng',
+                }
+            },
+        },
+    },
 
     data() {
         return {
             isShow: false,
+            isPlay: false,
             currentItem: null,
             currentUrl: null,
-            isPlay: false,
         }
     },
 
+    watch: {
+        vlogs_data: {
+            deep: true,
+            handler() {
+                this.getCurrentUrl()
+            },
+        },
+    },
+
     mounted() {
-        this.currentUrl = window.location.href
+        this.getCurrentUrl()
     },
 
     methods: {
         viewVideo(currentItem) {
             this.isShow = true
             this.currentItem = currentItem
+            this.$emit('viewVideo', currentItem)
         },
 
         close() {
@@ -69,6 +112,10 @@ export default {
 
         change(play) {
             this.isPlay = play
+        },
+
+        getCurrentUrl() {
+            this.currentUrl = window.location.href
         },
     },
 }

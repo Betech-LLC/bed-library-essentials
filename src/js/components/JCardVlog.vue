@@ -4,7 +4,7 @@
             <a @click.prevent="viewDetail" class="card-vlog-image" :href="item.url">
                 <JPicture :src="item.image?.url" :alt="item.image?.alt || item.title"> </JPicture>
             </a>
-            <a @click.prevent="viewDetail" :href="item.url" class="card-vlog-time">
+            <a v-if="item.time" @click.prevent="viewDetail" :href="item.url" class="card-vlog-time">
                 <div class="icon">
                     <JIconPlay />
                 </div>

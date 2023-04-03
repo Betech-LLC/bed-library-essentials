@@ -1,5 +1,5 @@
 <template>
-    <JPageTag :breadcrumb="breadcrumb" :posts_data="posts_data" :tag="tag" :banner="banner" />
+    <JPageTag :breadcrumb="breadcrumb" :posts="posts" :posts_data="posts_data" :tag="tag" :banner="banner" />
 </template>
 
 <script>
@@ -11,349 +11,342 @@ export default {
                     title: 'Trang chủ',
                     link: '/',
                 },
-                {
-                    title: 'JAMstack Vietnam',
-                },
             ],
 
-            posts_data: [
-                {
-                    id: 85,
-                    title: 'Quae rerum non aut tenetur.',
-                    slug: 'quae-rerum-non-aut-tenetur',
-                    published_at: '2023-03-08',
-                    description:
-                        'A harum velit fugit culpa facilis repellat. Dolore ut quia placeat aspernatur sapiente in distinctio. Quia est voluptatem provident id.',
-                    category: {
-                        id: 24,
-                        title: 'Hic earum vel facilis.',
-                        slug: 'hic-earum-vel-facilis',
-                        image: { url: null, alt: 'Hic earum vel facilis.' },
-                        icon: null,
-                        url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+            posts: {
+                current_page: 1,
+                data: [
+                    {
+                        id: 158,
+                        title: 'Eos deleniti.',
+                        slug: 'eos-deleniti',
+                        published_at: '2023-03-30',
+                        description:
+                            'Vero exercitationem ut qui sit id id sint. Provident animi quia qui explicabo dolor.',
+                        category: {
+                            id: 4,
+                            title: 'Nihil debitis officia quam.',
+                            slug: 'nihil-debitis-officia-quam',
+                            image: { url: null, alt: 'Nihil debitis officia quam.' },
+                            icon: null,
+                            url: '/bai-viet/nihil-debitis-officia-quam',
+                        },
+                        categories: [
+                            {
+                                id: 4,
+                                title: 'Nihil debitis officia quam.',
+                                slug: 'nihil-debitis-officia-quam',
+                                image: { url: null, alt: 'Nihil debitis officia quam.' },
+                                icon: null,
+                                url: '/bai-viet/nihil-debitis-officia-quam',
+                            },
+                            {
+                                id: 20,
+                                title: 'Qui nisi libero ut.',
+                                slug: 'qui-nisi-libero-ut',
+                                image: { url: null, alt: 'Qui nisi libero ut.' },
+                                icon: null,
+                                url: '/bai-viet/qui-nisi-libero-ut',
+                            },
+                        ],
+                        image: { url: null, alt: 'Eos deleniti.' },
+                        url: '/bai-viet/nihil-debitis-officia-quam/eos-deleniti',
                     },
-                    categories: [
-                        {
-                            id: 24,
-                            title: 'Hic earum vel facilis.',
-                            slug: 'hic-earum-vel-facilis',
-                            image: { url: null, alt: 'Hic earum vel facilis.' },
+                    {
+                        id: 148,
+                        title: 'Et qui.',
+                        slug: 'et-qui',
+                        published_at: '2023-03-30',
+                        description:
+                            'Harum est possimus dignissimos adipisci sunt. Ut qui maxime officiis animi dolore veniam voluptates. Corrupti aut nostrum aut aut autem laborum magni.',
+                        category: {
+                            id: 18,
+                            title: 'Quis delectus natus.',
+                            slug: 'quis-delectus-natus',
+                            image: { url: null, alt: 'Quis delectus natus.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/bai-viet/quis-delectus-natus',
                         },
-                    ],
-                    image: { url: null, alt: 'Quae rerum non aut tenetur.' },
-                    url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis/quae-rerum-non-aut-tenetur',
-                },
-                {
-                    id: 77,
-                    title: 'Nam laboriosam.',
-                    slug: 'nam-laboriosam',
-                    published_at: '2023-03-08',
-                    description:
-                        'Eveniet maxime velit modi rerum molestiae. Accusantium qui sequi sunt commodi doloribus cum.',
-                    category: {
-                        id: 3,
-                        title: 'Sit non.',
-                        slug: 'sit-non',
-                        image: { url: null, alt: 'Sit non.' },
-                        icon: null,
-                        url: 'http://localhost:8000/tin-tuc/sit-non',
+                        categories: [
+                            {
+                                id: 18,
+                                title: 'Quis delectus natus.',
+                                slug: 'quis-delectus-natus',
+                                image: { url: null, alt: 'Quis delectus natus.' },
+                                icon: null,
+                                url: '/bai-viet/quis-delectus-natus',
+                            },
+                        ],
+                        image: { url: null, alt: 'Et qui.' },
+                        url: '/bai-viet/quis-delectus-natus/et-qui',
                     },
-                    categories: [
-                        {
-                            id: 3,
-                            title: 'Sit non.',
-                            slug: 'sit-non',
-                            image: { url: null, alt: 'Sit non.' },
+                    {
+                        id: 147,
+                        title: 'Vitae.',
+                        slug: 'vitae',
+                        published_at: '2023-03-30',
+                        description:
+                            'Nobis dolorem qui accusamus veniam ut quia asperiores. Aut accusantium ad libero consectetur. Dignissimos unde facere in reprehenderit laboriosam accusamus. Dignissimos dolorum sequi dolor at cumque.',
+                        category: {
+                            id: 14,
+                            title: 'Enim.',
+                            slug: 'enim',
+                            image: { url: null, alt: 'Enim.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/sit-non',
+                            url: '/bai-viet/enim',
                         },
-                        {
-                            id: 24,
-                            title: 'Hic earum vel facilis.',
-                            slug: 'hic-earum-vel-facilis',
-                            image: { url: null, alt: 'Hic earum vel facilis.' },
-                            icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
-                        },
-                    ],
-                    image: { url: null, alt: 'Nam laboriosam.' },
-                    url: 'http://localhost:8000/tin-tuc/sit-non/nam-laboriosam',
-                },
-                {
-                    id: 44,
-                    title: 'Sit omnis sint vel.',
-                    slug: 'sit-omnis-sint-vel',
-                    published_at: '2023-03-08',
-                    description:
-                        'Ex quae explicabo et porro eveniet. Molestiae nulla quae accusantium necessitatibus sequi et beatae. Quas molestiae laboriosam in quis saepe dolores. Exercitationem tenetur totam voluptas similique.',
-                    category: {
-                        id: 16,
-                        title: 'Odit alias pariatur.',
-                        slug: 'odit-alias-pariatur',
-                        image: { url: null, alt: 'Odit alias pariatur.' },
-                        icon: null,
-                        url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                        categories: [
+                            {
+                                id: 14,
+                                title: 'Enim.',
+                                slug: 'enim',
+                                image: { url: null, alt: 'Enim.' },
+                                icon: null,
+                                url: '/bai-viet/enim',
+                            },
+                        ],
+                        image: { url: null, alt: 'Vitae.' },
+                        url: '/bai-viet/enim/vitae',
                     },
-                    categories: [
-                        {
-                            id: 16,
-                            title: 'Odit alias pariatur.',
-                            slug: 'odit-alias-pariatur',
-                            image: { url: null, alt: 'Odit alias pariatur.' },
+                    {
+                        id: 145,
+                        title: 'Natus pariatur.',
+                        slug: 'natus-pariatur',
+                        published_at: '2023-03-30',
+                        description:
+                            'Quis dignissimos nisi fuga. Qui esse rem distinctio nulla qui. Animi cupiditate et qui nihil tempore provident autem. Sit harum sint enim qui.',
+                        category: {
+                            id: 4,
+                            title: 'Nihil debitis officia quam.',
+                            slug: 'nihil-debitis-officia-quam',
+                            image: { url: null, alt: 'Nihil debitis officia quam.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                            url: '/bai-viet/nihil-debitis-officia-quam',
                         },
-                        {
-                            id: 24,
-                            title: 'Hic earum vel facilis.',
-                            slug: 'hic-earum-vel-facilis',
-                            image: { url: null, alt: 'Hic earum vel facilis.' },
-                            icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
-                        },
-                    ],
-                    image: { url: null, alt: 'Sit omnis sint vel.' },
-                    url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur/sit-omnis-sint-vel',
-                },
-                {
-                    id: 85,
-                    title: 'Quae rerum non aut tenetur.',
-                    slug: 'quae-rerum-non-aut-tenetur',
-                    published_at: '2023-03-08',
-                    description:
-                        'A harum velit fugit culpa facilis repellat. Dolore ut quia placeat aspernatur sapiente in distinctio. Quia est voluptatem provident id.',
-                    category: {
-                        id: 24,
-                        title: 'Hic earum vel facilis.',
-                        slug: 'hic-earum-vel-facilis',
-                        image: { url: null, alt: 'Hic earum vel facilis.' },
-                        icon: null,
-                        url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                        categories: [
+                            {
+                                id: 4,
+                                title: 'Nihil debitis officia quam.',
+                                slug: 'nihil-debitis-officia-quam',
+                                image: { url: null, alt: 'Nihil debitis officia quam.' },
+                                icon: null,
+                                url: '/bai-viet/nihil-debitis-officia-quam',
+                            },
+                        ],
+                        image: { url: null, alt: 'Natus pariatur.' },
+                        url: '/bai-viet/nihil-debitis-officia-quam/natus-pariatur',
                     },
-                    categories: [
-                        {
-                            id: 24,
-                            title: 'Hic earum vel facilis.',
-                            slug: 'hic-earum-vel-facilis',
-                            image: { url: null, alt: 'Hic earum vel facilis.' },
+                    {
+                        id: 140,
+                        title: 'Nobis itaque aut quo.',
+                        slug: 'nobis-itaque-aut-quo',
+                        published_at: '2023-03-30',
+                        description:
+                            'Ut beatae vero enim sit voluptatem. Laudantium qui eos qui quam nobis enim iusto quisquam. Nihil et voluptas enim doloribus eum. A ad repellat eos.',
+                        category: {
+                            id: 10,
+                            title: 'Qui quia officiis odio.',
+                            slug: 'qui-quia-officiis-odio',
+                            image: { url: null, alt: 'Qui quia officiis odio.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/bai-viet/qui-quia-officiis-odio',
                         },
-                    ],
-                    image: { url: null, alt: 'Quae rerum non aut tenetur.' },
-                    url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis/quae-rerum-non-aut-tenetur',
-                },
-                {
-                    id: 77,
-                    title: 'Nam laboriosam.',
-                    slug: 'nam-laboriosam',
-                    published_at: '2023-03-08',
-                    description:
-                        'Eveniet maxime velit modi rerum molestiae. Accusantium qui sequi sunt commodi doloribus cum.',
-                    category: {
-                        id: 3,
-                        title: 'Sit non.',
-                        slug: 'sit-non',
-                        image: { url: null, alt: 'Sit non.' },
-                        icon: null,
-                        url: 'http://localhost:8000/tin-tuc/sit-non',
+                        categories: [
+                            {
+                                id: 10,
+                                title: 'Qui quia officiis odio.',
+                                slug: 'qui-quia-officiis-odio',
+                                image: { url: null, alt: 'Qui quia officiis odio.' },
+                                icon: null,
+                                url: '/bai-viet/qui-quia-officiis-odio',
+                            },
+                            {
+                                id: 11,
+                                title: 'Exercitationem enim.',
+                                slug: 'exercitationem-enim',
+                                image: { url: null, alt: 'Exercitationem enim.' },
+                                icon: null,
+                                url: '/bai-viet/exercitationem-enim',
+                            },
+                        ],
+                        image: { url: null, alt: 'Nobis itaque aut quo.' },
+                        url: '/bai-viet/qui-quia-officiis-odio/nobis-itaque-aut-quo',
                     },
-                    categories: [
-                        {
-                            id: 3,
-                            title: 'Sit non.',
-                            slug: 'sit-non',
-                            image: { url: null, alt: 'Sit non.' },
+                    {
+                        id: 137,
+                        title: 'Aut et rerum ut qui et.',
+                        slug: 'aut-et-rerum-ut-qui-et',
+                        published_at: '2023-03-30',
+                        description: 'Et ab numquam aut et consequatur doloribus. Aperiam at hic et voluptatum et.',
+                        category: {
+                            id: 11,
+                            title: 'Exercitationem enim.',
+                            slug: 'exercitationem-enim',
+                            image: { url: null, alt: 'Exercitationem enim.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/sit-non',
+                            url: '/bai-viet/exercitationem-enim',
                         },
-                        {
-                            id: 24,
-                            title: 'Hic earum vel facilis.',
-                            slug: 'hic-earum-vel-facilis',
-                            image: { url: null, alt: 'Hic earum vel facilis.' },
-                            icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
-                        },
-                    ],
-                    image: { url: null, alt: 'Nam laboriosam.' },
-                    url: 'http://localhost:8000/tin-tuc/sit-non/nam-laboriosam',
-                },
-                {
-                    id: 44,
-                    title: 'Sit omnis sint vel.',
-                    slug: 'sit-omnis-sint-vel',
-                    published_at: '2023-03-08',
-                    description:
-                        'Ex quae explicabo et porro eveniet. Molestiae nulla quae accusantium necessitatibus sequi et beatae. Quas molestiae laboriosam in quis saepe dolores. Exercitationem tenetur totam voluptas similique.',
-                    category: {
-                        id: 16,
-                        title: 'Odit alias pariatur.',
-                        slug: 'odit-alias-pariatur',
-                        image: { url: null, alt: 'Odit alias pariatur.' },
-                        icon: null,
-                        url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                        categories: [
+                            {
+                                id: 11,
+                                title: 'Exercitationem enim.',
+                                slug: 'exercitationem-enim',
+                                image: { url: null, alt: 'Exercitationem enim.' },
+                                icon: null,
+                                url: '/bai-viet/exercitationem-enim',
+                            },
+                        ],
+                        image: { url: null, alt: 'Aut et rerum ut qui et.' },
+                        url: '/bai-viet/exercitationem-enim/aut-et-rerum-ut-qui-et',
                     },
-                    categories: [
-                        {
-                            id: 16,
-                            title: 'Odit alias pariatur.',
-                            slug: 'odit-alias-pariatur',
-                            image: { url: null, alt: 'Odit alias pariatur.' },
+                    {
+                        id: 134,
+                        title: 'Molestiae quam saepe.',
+                        slug: 'molestiae-quam-saepe',
+                        published_at: '2023-03-30',
+                        description:
+                            'Id porro fugit nemo culpa qui delectus. Sit voluptatem dolores qui nesciunt fugit. Suscipit quasi optio quam.',
+                        category: {
+                            id: 9,
+                            title: 'Omnis ad rerum.',
+                            slug: 'omnis-ad-rerum',
+                            image: { url: null, alt: 'Omnis ad rerum.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                            url: '/bai-viet/omnis-ad-rerum',
                         },
-                        {
-                            id: 24,
-                            title: 'Hic earum vel facilis.',
-                            slug: 'hic-earum-vel-facilis',
-                            image: { url: null, alt: 'Hic earum vel facilis.' },
-                            icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
-                        },
-                    ],
-                    image: { url: null, alt: 'Sit omnis sint vel.' },
-                    url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur/sit-omnis-sint-vel',
-                },
-                {
-                    id: 44,
-                    title: 'Sit omnis sint vel.',
-                    slug: 'sit-omnis-sint-vel',
-                    published_at: '2023-03-08',
-                    description:
-                        'Ex quae explicabo et porro eveniet. Molestiae nulla quae accusantium necessitatibus sequi et beatae. Quas molestiae laboriosam in quis saepe dolores. Exercitationem tenetur totam voluptas similique.',
-                    category: {
-                        id: 16,
-                        title: 'Odit alias pariatur.',
-                        slug: 'odit-alias-pariatur',
-                        image: { url: null, alt: 'Odit alias pariatur.' },
-                        icon: null,
-                        url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                        categories: [
+                            {
+                                id: 9,
+                                title: 'Omnis ad rerum.',
+                                slug: 'omnis-ad-rerum',
+                                image: { url: null, alt: 'Omnis ad rerum.' },
+                                icon: null,
+                                url: '/bai-viet/omnis-ad-rerum',
+                            },
+                        ],
+                        image: { url: null, alt: 'Molestiae quam saepe.' },
+                        url: '/bai-viet/omnis-ad-rerum/molestiae-quam-saepe',
                     },
-                    categories: [
-                        {
-                            id: 16,
-                            title: 'Odit alias pariatur.',
-                            slug: 'odit-alias-pariatur',
-                            image: { url: null, alt: 'Odit alias pariatur.' },
+                    {
+                        id: 131,
+                        title: 'Voluptatem sapiente.',
+                        slug: 'voluptatem-sapiente',
+                        published_at: '2023-03-30',
+                        description:
+                            'Et velit amet expedita aspernatur dolor autem. Illo quaerat sint alias. Dolores ut harum qui ea delectus possimus possimus eum. Molestias in recusandae eum est.',
+                        category: {
+                            id: 7,
+                            title: 'Et atque.',
+                            slug: 'et-atque',
+                            image: { url: null, alt: 'Et atque.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                            url: '/bai-viet/et-atque',
                         },
-                        {
-                            id: 24,
-                            title: 'Hic earum vel facilis.',
-                            slug: 'hic-earum-vel-facilis',
-                            image: { url: null, alt: 'Hic earum vel facilis.' },
-                            icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
-                        },
-                    ],
-                    image: { url: null, alt: 'Sit omnis sint vel.' },
-                    url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur/sit-omnis-sint-vel',
-                },
-                {
-                    id: 85,
-                    title: 'Quae rerum non aut tenetur.',
-                    slug: 'quae-rerum-non-aut-tenetur',
-                    published_at: '2023-03-08',
-                    description:
-                        'A harum velit fugit culpa facilis repellat. Dolore ut quia placeat aspernatur sapiente in distinctio. Quia est voluptatem provident id.',
-                    category: {
-                        id: 24,
-                        title: 'Hic earum vel facilis.',
-                        slug: 'hic-earum-vel-facilis',
-                        image: { url: null, alt: 'Hic earum vel facilis.' },
-                        icon: null,
-                        url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                        categories: [
+                            {
+                                id: 7,
+                                title: 'Et atque.',
+                                slug: 'et-atque',
+                                image: { url: null, alt: 'Et atque.' },
+                                icon: null,
+                                url: '/bai-viet/et-atque',
+                            },
+                        ],
+                        image: { url: null, alt: 'Voluptatem sapiente.' },
+                        url: '/bai-viet/et-atque/voluptatem-sapiente',
                     },
-                    categories: [
-                        {
-                            id: 24,
-                            title: 'Hic earum vel facilis.',
-                            slug: 'hic-earum-vel-facilis',
-                            image: { url: null, alt: 'Hic earum vel facilis.' },
+                    {
+                        id: 88,
+                        title: 'Et id non omnis rerum.',
+                        slug: 'et-id-non-omnis-rerum',
+                        published_at: '2023-03-30',
+                        description:
+                            'Quibusdam modi ipsum et libero voluptas tempora. Sequi hic quia aut nulla dolor placeat. Ducimus eligendi et nam eum.',
+                        category: {
+                            id: 7,
+                            title: 'Et atque.',
+                            slug: 'et-atque',
+                            image: { url: null, alt: 'Et atque.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/bai-viet/et-atque',
                         },
-                    ],
-                    image: { url: null, alt: 'Quae rerum non aut tenetur.' },
-                    url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis/quae-rerum-non-aut-tenetur',
-                },
-                {
-                    id: 77,
-                    title: 'Nam laboriosam.',
-                    slug: 'nam-laboriosam',
-                    published_at: '2023-03-08',
-                    description:
-                        'Eveniet maxime velit modi rerum molestiae. Accusantium qui sequi sunt commodi doloribus cum.',
-                    category: {
-                        id: 3,
-                        title: 'Sit non.',
-                        slug: 'sit-non',
-                        image: { url: null, alt: 'Sit non.' },
-                        icon: null,
-                        url: 'http://localhost:8000/tin-tuc/sit-non',
+                        categories: [
+                            {
+                                id: 7,
+                                title: 'Et atque.',
+                                slug: 'et-atque',
+                                image: { url: null, alt: 'Et atque.' },
+                                icon: null,
+                                url: '/bai-viet/et-atque',
+                            },
+                            {
+                                id: 20,
+                                title: 'Qui nisi libero ut.',
+                                slug: 'qui-nisi-libero-ut',
+                                image: { url: null, alt: 'Qui nisi libero ut.' },
+                                icon: null,
+                                url: '/bai-viet/qui-nisi-libero-ut',
+                            },
+                        ],
+                        image: { url: null, alt: 'Et id non omnis rerum.' },
+                        url: '/bai-viet/et-atque/et-id-non-omnis-rerum',
                     },
-                    categories: [
-                        {
-                            id: 3,
-                            title: 'Sit non.',
-                            slug: 'sit-non',
-                            image: { url: null, alt: 'Sit non.' },
+                    {
+                        id: 61,
+                        title: 'Nesciunt molestias.',
+                        slug: 'nesciunt-molestias',
+                        published_at: '2023-03-30',
+                        description:
+                            'Vel quia quasi voluptate nostrum numquam. Tempore et dignissimos optio eos. In tenetur reprehenderit unde magni et reiciendis. Tenetur ullam ratione illum distinctio.',
+                        category: {
+                            id: 14,
+                            title: 'Enim.',
+                            slug: 'enim',
+                            image: { url: null, alt: 'Enim.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/sit-non',
+                            url: '/bai-viet/enim',
                         },
-                        {
-                            id: 24,
-                            title: 'Hic earum vel facilis.',
-                            slug: 'hic-earum-vel-facilis',
-                            image: { url: null, alt: 'Hic earum vel facilis.' },
-                            icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
-                        },
-                    ],
-                    image: { url: null, alt: 'Nam laboriosam.' },
-                    url: 'http://localhost:8000/tin-tuc/sit-non/nam-laboriosam',
-                },
-                {
-                    id: 44,
-                    title: 'Sit omnis sint vel.',
-                    slug: 'sit-omnis-sint-vel',
-                    published_at: '2023-03-08',
-                    description:
-                        'Ex quae explicabo et porro eveniet. Molestiae nulla quae accusantium necessitatibus sequi et beatae. Quas molestiae laboriosam in quis saepe dolores. Exercitationem tenetur totam voluptas similique.',
-                    category: {
-                        id: 16,
-                        title: 'Odit alias pariatur.',
-                        slug: 'odit-alias-pariatur',
-                        image: { url: null, alt: 'Odit alias pariatur.' },
-                        icon: null,
-                        url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                        categories: [
+                            {
+                                id: 14,
+                                title: 'Enim.',
+                                slug: 'enim',
+                                image: { url: null, alt: 'Enim.' },
+                                icon: null,
+                                url: '/bai-viet/enim',
+                            },
+                            {
+                                id: 18,
+                                title: 'Quis delectus natus.',
+                                slug: 'quis-delectus-natus',
+                                image: { url: null, alt: 'Quis delectus natus.' },
+                                icon: null,
+                                url: '/bai-viet/quis-delectus-natus',
+                            },
+                        ],
+                        image: { url: null, alt: 'Nesciunt molestias.' },
+                        url: '/bai-viet/enim/nesciunt-molestias',
                     },
-                    categories: [
-                        {
-                            id: 16,
-                            title: 'Odit alias pariatur.',
-                            slug: 'odit-alias-pariatur',
-                            image: { url: null, alt: 'Odit alias pariatur.' },
-                            icon: null,
-                            url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
-                        },
-                        {
-                            id: 24,
-                            title: 'Hic earum vel facilis.',
-                            slug: 'hic-earum-vel-facilis',
-                            image: { url: null, alt: 'Hic earum vel facilis.' },
-                            icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
-                        },
-                    ],
-                    image: { url: null, alt: 'Sit omnis sint vel.' },
-                    url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur/sit-omnis-sint-vel',
-                },
-            ],
+                ],
+                first_page_url: '/tags/ex-est?page=1',
+                from: 1,
+                last_page: 2,
+                last_page_url: '/tags/ex-est?page=2',
+                links: [
+                    { url: null, label: '<', active: false },
+                    { url: '/tags/ex-est?page=1', label: '1', active: true },
+                    { url: '/tags/ex-est?page=2', label: '2', active: false },
+                    { url: '/tags/ex-est?page=2', label: '>', active: false },
+                ],
+                next_page_url: '/tags/ex-est?page=2',
+                path: '/tags/ex-est',
+                per_page: 10,
+                prev_page_url: null,
+                to: 10,
+                total: 14,
+            },
+
+            posts_data: [],
 
             tag: {
                 title: 'JAMstack Vietnam',
@@ -370,6 +363,10 @@ export default {
                 image_mobile: { url: null, alt: 'Demo' },
             },
         }
+    },
+
+    created() {
+        this.posts_data = this.posts.data
     },
 }
 </script>

@@ -28,9 +28,12 @@
                         />
                     </div>
 
-                    <div class="tag-page-button">
-                        <button class="btn-see-more">
-                            <slot name="button"> Xem thêm 16 bài viết </slot>
+                    <div v-if="posts.current_page < posts.last_page" class="tag-page-button">
+                        <button @click.prevent="$emit('seeMore', posts.next_page_url)" class="btn-see-more">
+                            <a :href="posts.next_page_url">
+                                {{ staticContent.seeMore }} {{ posts.total - posts.to }}
+                                {{ staticContent.type }}
+                            </a>
                         </button>
                     </div>
                 </div>
@@ -48,9 +51,34 @@ import JCardBlog from '@core/components/JCardBlog.vue'
 import JBannerAds from '@core/components/JBannerAds.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JIconHash from '@core/components/JIcon/Hash.vue'
+import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 
 export default {
-    components: { JCardBlog, JBannerAds, JBreadcrumb, JIconHash },
-    props: ['breadcrumb', 'posts_data', 'tag', 'banner'],
+    components: { JCardBlog, JBannerAds, JBreadcrumb, JIconHash, JIconArrowRight },
+
+    props: {
+        breadcrumb: Object,
+        posts: Object,
+        posts_data: Array,
+        tag: Object,
+        banner: Object,
+        staticContent: {
+            type: Object,
+            default: () => {
+                return {
+                    seeMore: 'Xem thêm',
+                    type: 'bài viết',
+                }
+            },
+        },
+    },
+
+    data() {
+        return {}
+    },
+
+    created() {
+        this.breadcrumb.push({ title: this.tag.title })
+    },
 }
 </script>
