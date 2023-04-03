@@ -1,0 +1,38 @@
+.page-faqs {
+    .accordion-faqs {
+        .accordion-item {
+            @apply py-4 md:py-6 xl:py-8;
+
+            &:first-child {
+                @apply pt-0;
+            }
+            .accordion-icon {
+                @apply text-gray-400;
+            }
+
+            .accordion-title {
+                @apply text-left;
+            }
+            .accordion-icon {
+                @apply self-start;
+            }
+        }
+    }
+
+    .page-policy-head {
+        @apply hidden;
+    }
+
+    .nav-list .nav-item .nav-link {
+        .nav-icon {
+            @apply hidden;
+        }
+        .nav-title {
+            margin-left: 0 !important;
+        }
+    }
+
+    .page-policy-content {
+        @apply bg-gray-50;
+    }
+}

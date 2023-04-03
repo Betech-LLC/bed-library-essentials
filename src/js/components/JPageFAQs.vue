@@ -1,7 +1,50 @@
-<template lang="">
-    <div>câu hỏi thường gặp</div>
+<template>
+    <div class="page-faqs">
+        <JPagePolicy
+            :list_sidebar="list_sidebar"
+            :content="content"
+            :breadcrumb="breadcrumb"
+            :currentPath="currentPath"
+        >
+            <template #content>
+                <JAccordion v-if="content" class="accordion-faqs">
+                    <JAccordionItem
+                        v-for="(item, index) in content.questions"
+                        :key="index"
+                        :item="{
+                            title: `${index + 1}. ${item.question}`,
+                        }"
+                        :index="item.id"
+                    >
+                        <div>
+                            {{ item.answer }}
+                        </div>
+                    </JAccordionItem>
+                </JAccordion></template
+            >
+        </JPagePolicy>
+    </div>
 </template>
 <script>
-export default {}
+import JAccordion from '@core/components/JAccordion/index.vue'
+import JPagePolicy from '@core/components/JPagePolicy.vue'
+import JAccordionItem from '@core/components/JAccordion/Item.vue'
+export default {
+    props: {
+        list_sidebar: {
+            type: Array,
+        },
+        content: {
+            type: Object,
+        },
+        breadcrumb: {
+            type: Array,
+        },
+
+        currentPath: {
+            type: String,
+        },
+    },
+    components: { JAccordion, JAccordionItem, JPagePolicy },
+}
 </script>
-<style lang=""></style>

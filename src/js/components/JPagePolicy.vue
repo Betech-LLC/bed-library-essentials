@@ -42,7 +42,7 @@
 
                     <div v-if="isOpenMobile" class="page-policy-blank" @click="togglePolicyMobile"></div>
                     <div class="page-policy-content">
-                        <slot>
+                        <slot name="content">
                             <template v-if="content">
                                 <h1 class="page-policy-title" v-if="content.title">
                                     {{ content.title }}
@@ -78,9 +78,8 @@ export default {
         staticContent: {
             type: Object,
             default: () => {
-                // TODO: xóa giá trị default Hỗ trợ khách hàng
                 return {
-                    title: '',
+                    title: 'Hỗ trợ khách hàng',
                 }
             },
         },

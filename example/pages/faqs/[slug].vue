@@ -1,19 +1,5 @@
 <template>
-    <JPagePolicy :list_sidebar="list_sidebar" :content="currentFAQ" :breadcrumb="breadcrumb" :currentPath="currentPath">
-        <JAccordion v-if="currentFAQ" class="accordion-faqs">
-            <JAccordionItem
-                v-for="(item, index) in currentFAQ.questions"
-                :key="index"
-                :item="{
-                    title: `${index + 1}. ${item.question}`,
-                }"
-            >
-                <div>
-                    {{ item.answer }}
-                </div>
-            </JAccordionItem>
-        </JAccordion></JPagePolicy
-    >
+    <JPageFAQs :list_sidebar="list_sidebar" :content="currentFAQ" :breadcrumb="breadcrumb" :currentPath="currentPath" />
 </template>
 
 <script>

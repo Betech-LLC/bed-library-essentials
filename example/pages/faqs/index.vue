@@ -1,20 +1,5 @@
 <template>
-    <JPagePolicy :list_sidebar="list_sidebar" :content="currentFAQ" :breadcrumb="breadcrumb" :currentPath="currentPath">
-        <JAccordion v-if="currentFAQ" class="accordion-faqs">
-            <JAccordionItem
-                v-for="(item, index) in currentFAQ.questions"
-                :key="index"
-                :item="{
-                    title: `${index + 1}. ${item.question}`,
-                }"
-                :index="item.id"
-            >
-                <div>
-                    {{ item.answer }}
-                </div>
-            </JAccordionItem>
-        </JAccordion>
-    </JPagePolicy>
+    <JPageFAQs :list_sidebar="list_sidebar" :content="currentFAQ" :breadcrumb="breadcrumb" :currentPath="currentPath" />
 </template>
 
 <script>
@@ -106,24 +91,3 @@ export default {
     },
 }
 </script>
-<style lang="scss">
-.accordion-faqs {
-    .accordion-item {
-        @apply py-4 md:py-6 xl:py-8;
-
-        &:first-child {
-            @apply pt-0;
-        }
-        .accordion-icon {
-            @apply text-gray-400;
-        }
-
-        .accordion-title {
-            @apply text-left;
-        }
-        .accordion-icon {
-            @apply self-start;
-        }
-    }
-}
-</style>
