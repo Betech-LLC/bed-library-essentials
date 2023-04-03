@@ -4,7 +4,6 @@
             type="text"
             class="input"
             :readonly="true"
-            :id="field.name"
             :name="field.name"
             @click="onToggle"
             :value="selectedOption"

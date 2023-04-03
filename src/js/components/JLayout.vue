@@ -203,8 +203,11 @@
         <div id="jam-dropdown">
             <div class="mb-4 display-3">Dropdown</div>
             <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
-                <JForm v-model="team" class="max-w-[400px] w-full mx-auto">
+                <!-- TODO -->
+
+                <div class="max-w-[400px] w-full mx-auto">
                     <JFormField
+                        v-model="memberActive"
                         :field="{
                             type: 'dropdown',
                             name: 'member',
@@ -231,7 +234,7 @@
                             </svg>
                         </template>
                     </JFormField>
-                </JForm>
+                </div>
             </div>
         </div>
         <!-- Fieldset Input -->
@@ -239,17 +242,33 @@
             <div class="mb-4 display-3">Fieldset Input</div>
             <div class="p-4 space-y-4 border border-gray-400 border-dashed rounded-lg">
                 <!-- ROW 1 -->
-                <JForm v-model="user" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <div class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <div class="space-y-4">
                         <JFormField
+                            v-model="user.isBill"
                             :field="{
                                 type: 'checkbox',
                                 name: 'isBill',
                                 label: 'Xuất hóa đơn công ty',
                             }"
+                            :rules="rules"
                         />
 
+                        <div>
+                            <JFormField
+                                v-model="user.company_name"
+                                :field="{
+                                    type: 'text',
+                                    name: 'company_name',
+                                    label: 'Tên công ty',
+                                }"
+                                :rules="rules"
+                            >
+                            </JFormField>
+                        </div>
+
                         <JFormField
+                            v-model="user.list"
                             :field="{
                                 type: 'checkbox_multiple',
                                 name: 'list',
@@ -257,44 +276,51 @@
                                 keyBy: 'name',
                                 options: optionBrandsMultiCheckbox,
                             }"
+                            :rules="rules"
                         />
 
                         <JFormField
+                            v-model="user.name"
                             :field="{
                                 type: 'text',
                                 name: 'name',
                                 label: 'Họ và tên',
                             }"
+                            :rules="rules"
                         >
                         </JFormField>
                     </div>
 
                     <JFormField
+                        v-model="user.email"
                         :field="{
                             type: 'email',
                             name: 'email',
                             label: 'Email',
                         }"
+                        :rules="rules"
                     >
                         <template #prefix> <JIconEmail /> </template>
                     </JFormField>
                     <JFormField
+                        v-model="user.phone"
                         :field="{
                             type: 'number',
                             name: 'phone',
                             label: 'Số điện thoại',
                         }"
+                        :rules="rules"
                     >
                         <template #prefix> <JIconMobilePhone /> </template>
                         ></JFormField
                     >
                     <div class="flex justify-center my-4 col-span-full">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button @click="onSubmitUser" class="btn btn-primary">Submit</button>
                     </div>
-                </JForm>
+                </div>
 
                 <!-- ROW 2 -->
-                <JForm v-model="user_2" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <!-- <JForm v-model="user_2" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
                             type: 'text',
@@ -343,10 +369,10 @@
                         <template #prefix> <JIconMobilePhone /> </template>
                         <template #suffix> <JIconHelp /> </template
                     ></JFormField>
-                </JForm>
+                </JForm> -->
 
                 <!-- ROW 3 -->
-                <JForm v-model="user_3" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <!-- <JForm v-model="user_3" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
                             type: 'text',
@@ -376,10 +402,10 @@
                         <template #prefix> <JIconMobilePhone /> </template>
                         <template #suffix> <JIconHelp /> </template
                     ></JFormField>
-                </JForm>
+                </JForm> -->
 
                 <!-- ROW 4 -->
-                <JForm v-model="user_4" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
+                <!-- <JForm v-model="user_4" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
                     <JFormField
                         :field="{
                             type: 'text',
@@ -412,9 +438,9 @@
                         <template #prefix> <JIconMobilePhone /> </template>
                         <template #suffix> <JIconHelp /> </template
                     ></JFormField>
-                </JForm>
+                </JForm> -->
                 <!-- ROW 5 -->
-                <JForm v-model="user_5" :rules="rules" class="grid grid-cols-3 gap-4 mb-10">
+                <!-- <JForm v-model="user_5" :rules="rules" class="grid grid-cols-3 gap-4 mb-10">
                     <JFormField
                         :field="{
                             type: 'textarea',
@@ -442,7 +468,7 @@
                         }"
                         :disabled="true"
                     />
-                </JForm>
+                </JForm> -->
             </div>
         </div>
         <!-- Breadcrumb -->
@@ -700,6 +726,7 @@
 export default {
     data() {
         return {
+            memberActive: null,
             paymentActive: 1,
             payments: [
                 {
@@ -826,6 +853,7 @@ export default {
                 email: null,
                 isBill: null,
                 list: [],
+                company_name: null,
             },
             user_2: {
                 name: null,
@@ -851,6 +879,7 @@ export default {
                 name: 'required',
                 phone: 'phone|required',
                 email: 'required|email',
+                company_name: '',
             },
 
             currentActive: 1,
@@ -870,8 +899,26 @@ export default {
             return jobs
         },
     },
+    watch: {
+        'user.isBill'(newVal) {
+            if (newVal) {
+                this.rules = {
+                    ...this.rules,
+                    company_name: 'required',
+                }
+            } else {
+                this.rules = {
+                    ...this.rules,
+                    company_name: '',
+                }
+            }
+        },
+    },
 
     methods: {
+        onSubmitUser() {
+            console.log('onSubmitUser')
+        },
         toggleItem(index) {
             this.currentActive = this.currentActive !== index ? index : null
         },

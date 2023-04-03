@@ -25,7 +25,7 @@
                 <div class="right">
                     <JInformationJob :item="job" />
 
-                    <div class="page-job-detail-other-jobs">
+                    <div v-if="relatedJobs && relatedJobs.length" class="page-job-detail-other-jobs">
                         <h2 class="title">Vị trí khác</h2>
                         <div class="list-card">
                             <JCardJob

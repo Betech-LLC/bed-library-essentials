@@ -16,8 +16,10 @@
                             placeholder: 'Nhập tên của bạn',
                         }"
                         :rules="rules"
+                        :errors="errors"
                         class="md:col-span-1 col-span-full"
                     />
+
                     <JFormField
                         v-model="form.lastName"
                         :field="{
@@ -27,6 +29,7 @@
                             placeholder: 'Nhập họ của bạn',
                         }"
                         :rules="rules"
+                        :errors="errors"
                         class="md:col-span-1 col-span-full"
                     />
                     <JFormField
@@ -39,8 +42,26 @@
                             error: 'Địa chỉ email hợp lệ theo cấu trúc hello@example.com',
                         }"
                         :rules="rules"
+                        :errors="errors"
                         class="col-span-full"
                     />
+
+                    <JFormField
+                        v-model="form.fileCV"
+                        :field="{
+                            type: 'upload_file',
+                            name: 'fileCV',
+                            label: 'Chọn file',
+                            placeholder: 'Bấm vào đây để tải lên Hồ sơ/CV từ máy tính của bạn.',
+                            help: 'File tải lên có định dạng .doc, .docx, .pdf, và dung lượng tối đa 5MB',
+                        }"
+                        class="col-span-full"
+                        :rules="rules"
+                        :errors="errors"
+                    >
+                        <template #prefix> <JIconUploadCloud /> </template>
+                    </JFormField>
+
                     <JFormField
                         v-model="form.phone"
                         :field="{
@@ -50,6 +71,7 @@
                             placeholder: 'Nhập số điện thoại',
                         }"
                         :rules="rules"
+                        :errors="errors"
                         class="col-span-full"
                     />
                     <JFormField
@@ -62,11 +84,12 @@
                             placeholder: 'Nhập nội dung cần hỗ trợ',
                         }"
                         :rules="rules"
+                        :errors="errors"
                         class="col-span-full"
                     />
                 </div>
                 <div class="mt-4 md:mt-6 xl:mt-8">
-                    <button type="button" class="w-full btn btn-primary btn-lg">Submit</button>
+                    <button @click="onSubmit" class="w-full btn btn-primary btn-lg">Submit</button>
                 </div>
             </div>
             <div class="flex-1 mt-4 lg:mt-0">
@@ -81,6 +104,7 @@
     </div>
 </template>
 <script>
+import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 export default {
     props: {
         title: {
@@ -90,26 +114,34 @@ export default {
     },
     data() {
         return {
-            form: { firstName: null, lastName: null, email: null, phone: null, note: null },
+            form: { fileCV: null, firstName: null, lastName: null, email: null, phone: null, note: null },
             rules: {
-                firstName: 'required',
+                note: '',
                 lastName: 'required',
+                firstName: 'required',
                 phone: 'required|phone',
                 email: 'required|email',
-                note: '',
+                fileCV: 'required',
             },
+            errors: {},
         }
     },
     methods: {
-        onSubmit() {
-            this.resetForm(this.form)
-        },
-
-        resetForm() {
-            const keyFields = Object.keys(this.form)
-            keyFields.forEach((keyField) => {
-                this.form[keyField] = null
+        useSubmitForm,
+        useValidateForm,
+        useResetForm,
+        async onSubmit() {
+            this.errors = useValidateForm({ form: this.form, rules: this.rules })
+            if (Object.keys(this.errors).length > 0) {
+                return
+            }
+            const res = await useSubmitForm(() => {
+                return {
+                    success: true,
+                }
             })
+
+            this.form = useResetForm(this.form)
         },
     },
 }
