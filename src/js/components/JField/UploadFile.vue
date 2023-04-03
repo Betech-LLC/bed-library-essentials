@@ -29,7 +29,6 @@ export default {
 
             if (!isTypeCorrect || !isSizeCorrect) {
                 alert(this.field.help)
-                this.$emit('update:modelValue', null)
                 return
             }
             this.$emit('update:modelValue', file)
