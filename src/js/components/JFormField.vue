@@ -1,7 +1,7 @@
 <template>
     <fieldset>
         <label :for="field.name">
-            <span v-if="field.label" class="label"> {{ field.label }}</span>
+            <span v-if="field.label" class="label"> {{ fieldLabel }}</span>
             <div
                 class="field"
                 :class="{
