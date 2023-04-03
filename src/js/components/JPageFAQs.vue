@@ -26,10 +26,11 @@
     </div>
 </template>
 <script>
-import JAccordion from '@core/components/JAccordion/index.vue'
 import JPagePolicy from '@core/components/JPagePolicy.vue'
+import JAccordion from '@core/components/JAccordion/index.vue'
 import JAccordionItem from '@core/components/JAccordion/Item.vue'
 export default {
+    components: { JAccordion, JAccordionItem, JPagePolicy },
     props: {
         list_sidebar: {
             type: Array,
@@ -40,11 +41,9 @@ export default {
         breadcrumb: {
             type: Array,
         },
-
         currentPath: {
             type: String,
         },
     },
-    components: { JAccordion, JAccordionItem, JPagePolicy },
 }
 </script>

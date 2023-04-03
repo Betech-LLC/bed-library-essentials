@@ -21,7 +21,7 @@ export default {
                     id: 4,
                     title: 'Mua hàng',
                     slug: 'mua-hang',
-                    url: this.$router.resolve({ name: 'faqs-slug', params: { slug: 'huong-dan-su-dung' } }).path,
+                    url: this.$router.resolve({ name: 'faqs-slug', params: { slug: 'mua-hang' } }).path,
 
                     questions: [
                         {
@@ -41,14 +41,14 @@ export default {
                     title: 'Dịch vụ',
                     slug: 'dich-vu',
                     questions: [],
-                    url: this.$router.resolve({ name: 'faqs-slug', params: { slug: 'chinh-sach-van-chuyen' } }).path,
+                    url: this.$router.resolve({ name: 'faqs-slug', params: { slug: 'dich-vu' } }).path,
                 },
                 {
                     id: 2,
                     title: 'Sản phẩm',
                     slug: 'san-pham',
                     questions: [],
-                    url: this.$router.resolve({ name: 'faqs-slug', params: { slug: 'chinh-sach-bao-hanh' } }).path,
+                    url: this.$router.resolve({ name: 'faqs-slug', params: { slug: 'san-pham' } }).path,
 
                     questions: [],
                 },
@@ -56,7 +56,7 @@ export default {
                     id: 1,
                     title: 'Thương hiệu',
                     slug: 'thuong-hieu',
-                    url: this.$router.resolve({ name: 'faqs-slug', params: { slug: 'chinh-sach-thanh-toan' } }).path,
+                    url: this.$router.resolve({ name: 'faqs-slug', params: { slug: 'thuong-hieu' } }).path,
                     questions: [
                         {
                             id: 1,
@@ -71,7 +71,7 @@ export default {
                 id: 4,
                 title: 'Mua hàng',
                 slug: 'mua-hang',
-                url: this.$router.resolve({ name: 'faqs-slug', params: { slug: 'huong-dan-su-dung' } }).path,
+                url: this.$router.resolve({ name: 'faqs-slug', params: { slug: 'mua-hang' } }).path,
                 questions: [
                     {
                         id: 3,
