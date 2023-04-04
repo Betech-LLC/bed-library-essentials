@@ -22,7 +22,7 @@
                         <JSocialShare class="social-share" zaloOAId="1111640952861619960" />
                     </div>
 
-                    <JFormApplyJob :item="job" @onSuccess="() => {}" @onError="() => {}" url_api="/" />
+                    <JFormApplyJob :item="job" @onSuccess="() => {}" @onError="() => {}" :urlApi="urlApi" />
                 </div>
                 <div class="right">
                     <JInformationJob :item="job" />
@@ -69,6 +69,6 @@ export default {
         JFormApplyJob,
     },
 
-    props: ['job', 'relatedJobs', 'breadcrumb'],
+    props: ['job', 'relatedJobs', 'breadcrumb', 'urlApi'],
 }
 </script>

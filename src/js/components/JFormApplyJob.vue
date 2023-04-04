@@ -68,7 +68,7 @@ export default {
             type: Object,
             default: null,
         },
-        url_api: {
+        urlApi: {
             type: String,
             required: true,
         },
@@ -89,12 +89,12 @@ export default {
     methods: {
         async onSubmit() {
             this.errors = useValidateForm({ form: this.form, rules: this.rules })
-            if (Object.keys(this.errors).length > 0 || this.isLoading) {
+            if (Object.keys(this.errors).length > 0 || this.isLoading || !this.urlApi) {
                 return
             }
             this.isLoading = true
             try {
-                const { data } = await useSubmitForm(this.url_api, this.form)
+                const { data } = await useSubmitForm(this.urlApi, this.form)
                 if (data) {
                     this.$emit('onSuccess')
                     this.form = useResetForm(this.form)
