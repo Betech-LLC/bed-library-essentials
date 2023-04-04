@@ -68,6 +68,9 @@ export default {
             type: Object,
             default: null,
         },
+        url_api: {
+            type: String,
+        },
     },
     data() {
         return {
@@ -90,10 +93,15 @@ export default {
             }
             this.isLoading = true
             try {
-                const data = await useSubmitForm(' https://api.github.com/users', this.form)
-                this.$emit('onSuccess')
+                const { data } = await useSubmitForm(this.url_api, this.form)
+                if (data) {
+                    this.$emit('onSuccess')
+                    this.form = useResetForm(this.form)
+                } else {
+                    this.$emit('onError')
+                }
+
                 this.isLoading = false
-                this.form = useResetForm(this.form)
             } catch (error) {
                 this.$emit('onError')
                 this.isLoading = false
