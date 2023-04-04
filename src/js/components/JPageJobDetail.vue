@@ -22,7 +22,7 @@
                         <JSocialShare class="social-share" zaloOAId="1111640952861619960" />
                     </div>
 
-                    <JFormApplyJob :item="job" @onSuccess="() => {}" @onError="() => {}" />
+                    <JFormApplyJob :item="job" @onSuccess="() => {}" @onError="() => {}" url_api="/" />
                 </div>
                 <div class="right">
                     <JInformationJob :item="job" />
@@ -38,8 +38,6 @@
                             />
                         </div>
                     </div>
-
-                    <JFormApplyJob :item="job" @onSuccess="() => {}" @onError="() => {}" class="full-column" />
                 </div>
             </div>
         </section>
