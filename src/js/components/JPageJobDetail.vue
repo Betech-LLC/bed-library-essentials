@@ -13,14 +13,17 @@
 
             <div class="page-job-detail-body">
                 <div class="left">
-                    <JInformationJob class="mobile" :item="job" />
-                    <div class="page-job-detail-content" v-html="job.content"></div>
+                    <!-- TODO -->
+                    <!-- <JInformationJob class="mobile" :item="job" />
+                    <div class="page-job-detail-content" v-html="job.content"></div> -->
 
                     <div class="page-job-detail-share">
                         <button class="button">Nộp hồ sơ</button>
 
                         <JSocialShare class="social-share" zaloOAId="1111640952861619960" />
                     </div>
+
+                    <JFormApplyJob :item="job" @onSuccess="() => {}" @onError="() => {}" />
                 </div>
                 <div class="right">
                     <JInformationJob :item="job" />
@@ -52,7 +55,7 @@ import JIconCalendar from '@core/components/JIcon/Calendar.vue'
 import JIconBriefcase02 from '@core/components/JIcon/Briefcase02.vue'
 import JIconUsers03 from '@core/components/JIcon/Users03.vue'
 import JInformationJob from '@core/components/JInformationJob.vue'
-
+import JFormApplyJob from '@core/components/JFormApplyJob.vue'
 export default {
     components: {
         JBreadcrumb,
@@ -64,6 +67,7 @@ export default {
         JIconBriefcase02,
         JIconUsers03,
         JInformationJob,
+        JFormApplyJob,
     },
 
     props: ['job', 'relatedJobs', 'breadcrumb'],

@@ -77,3 +77,45 @@
         @apply max-md:space-y-2 xl:space-y-4 lg:space-y-3 max-lg:grid max-lg:grid-cols-2 max-lg:gap-x-3 max-md:grid-cols-none;
     }
 }
+
+// FORM
+.form-apply-job {
+    @apply mt-3 px-2 md:px-4 py-2 md:py-3 bg-gray-100 rounded-lg;
+}
+
+.form-apply-job-title {
+    @apply mb-2 title-3 md:mb-3 xl:mb-4;
+}
+
+.form-apply-job-field {
+    @apply grid grid-cols-2 gap-3 md:gap-4;
+}
+
+.form-apply-job-field-name,
+.form-apply-job-field-file {
+    @apply col-span-full;
+}
+
+.form-apply-job-field-email,
+.form-apply-job-field-phone {
+    @apply col-span-full md:col-span-1;
+}
+
+.form-apply-job-field-name,
+.form-apply-job-field-file,
+.form-apply-job-field-email,
+.form-apply-job-field-phone {
+    .field {
+        .input {
+            @apply bg-white;
+        }
+
+        .help {
+            @apply bottom-0;
+        }
+    }
+}
+.form-apply-job-button {
+    @apply btn btn-primary btn-lg label-1 w-44 mt-8 xl:mt-12;
+    font-weight: 400;
+}
