@@ -41,12 +41,15 @@
                     </div>
 
                     <div v-if="isOpenMobile" class="page-policy-blank" @click="togglePolicyMobile"></div>
-
-                    <div v-if="content" class="page-policy-content">
-                        <h1 class="page-policy-title" v-if="content.title">
-                            {{ content.title }}
-                        </h1>
-                        <div v-html="content.content" class="page-policy-prose" />
+                    <div class="page-policy-content">
+                        <slot name="content">
+                            <template v-if="content">
+                                <h1 class="page-policy-title" v-if="content.title">
+                                    {{ content.title }}
+                                </h1>
+                                <div v-html="content.content" class="page-policy-prose" />
+                            </template>
+                        </slot>
                     </div>
                 </div>
             </div>
