@@ -45,8 +45,8 @@
                     type: 'upload_file',
                     name: 'file',
                     label: 'Chọn file',
-                    placeholder: 'Bấm vào đây để tải lên Hồ sơ/CV từ máy tính của bạn.',
-                    help: 'File tải lên có định dạng .doc, .docx, .pdf, và dung lượng tối đa 5MB',
+                    placeholder: 'Tải lên Hồ sơ/CV từ máy tính của bạn.',
+                    help: 'File có định dạng .doc, .docx, .pdf và dung lượng tối đa 5MB',
                     error: 'File tải lên không hợp lệ',
                 }"
                 :rules="rules"

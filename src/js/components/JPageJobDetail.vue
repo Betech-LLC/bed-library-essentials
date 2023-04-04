@@ -13,9 +13,8 @@
 
             <div class="page-job-detail-body">
                 <div class="left">
-                    <!-- TODO -->
-                    <!-- <JInformationJob class="mobile" :item="job" />
-                    <div class="page-job-detail-content" v-html="job.content"></div> -->
+                    <JInformationJob class="mobile" :item="job" />
+                    <div class="page-job-detail-content" v-html="job.content"></div>
 
                     <div class="page-job-detail-share">
                         <button class="button">Nộp hồ sơ</button>
@@ -39,6 +38,8 @@
                             />
                         </div>
                     </div>
+
+                    <JFormApplyJob :item="job" @onSuccess="() => {}" @onError="() => {}" class="full-column" />
                 </div>
             </div>
         </section>
