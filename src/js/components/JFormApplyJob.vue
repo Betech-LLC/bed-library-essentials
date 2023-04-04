@@ -70,6 +70,7 @@ export default {
         },
         url_api: {
             type: String,
+            required: true,
         },
     },
     data() {
