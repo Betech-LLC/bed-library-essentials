@@ -90,13 +90,9 @@ export default {
             }
             this.isLoading = true
             try {
-                const res = await useSubmitForm(() => {
-                    return {
-                        success: true,
-                    }
-                })
-                this.isLoading = false
+                const data = await useSubmitForm(' https://api.github.com/users', this.form)
                 this.$emit('onSuccess')
+                this.isLoading = false
                 this.form = useResetForm(this.form)
             } catch (error) {
                 this.$emit('onError')

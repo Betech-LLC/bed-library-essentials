@@ -135,11 +135,8 @@ export default {
             if (Object.keys(this.errors).length > 0) {
                 return
             }
-            const res = await useSubmitForm(() => {
-                return {
-                    success: true,
-                }
-            })
+
+            const res = await useSubmitForm(' https://api.github.com/users', this.form)
 
             this.form = useResetForm(this.form)
         },

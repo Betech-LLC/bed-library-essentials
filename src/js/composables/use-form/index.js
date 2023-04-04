@@ -1,8 +1,10 @@
 import { validateForm, validateField } from '@core/utils'
 
-async function useSubmitForm(callback) {
+async function useSubmitForm(url, form) {
     try {
-        return await callback()
+        return Promise.resolve({ success: true })
+        // TODO: yarn add axios bên Nhando bị lỗi
+        // return await axios.post(url, form)
     } catch (error) {
         return error
     }
