@@ -118,3 +118,10 @@
 .form-apply-job-button {
     @apply btn btn-primary btn-lg label-1 w-44 mt-8 lg:mt-12;
 }
+
+.form-apply-job.full-column {
+    .form-apply-job-field-email,
+    .form-apply-job-field-phone {
+        @apply col-span-full;
+    }
+}
