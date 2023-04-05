@@ -38,7 +38,6 @@
                 :errors="errors"
                 class="form-apply-job-field-email"
             />
-
             <JFormField
                 v-model="form.file"
                 :field="{
@@ -72,16 +71,15 @@ export default {
             type: String,
             required: true,
         },
+        formRules: {
+            type: Object,
+            default: { name: 'required', phone: 'required|phone', email: 'required|email', file: 'required' },
+        },
     },
     data() {
         return {
             form: { file: null, name: null, email: null, phone: null },
-            rules: {
-                name: 'required',
-                phone: 'required|phone',
-                email: 'required|email',
-                file: 'required',
-            },
+            rules: { ...this.formRules },
             errors: {},
             isLoading: false,
         }
