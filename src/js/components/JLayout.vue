@@ -1,50 +1,5 @@
 <template>
     <div class="container py-10 space-y-10">
-        <ClientOnly>
-            <JSlider
-                :config="{
-                    cols: '1.5',
-                    gutter: '8px',
-                    total: 10,
-                    align: 'center',
-                }"
-                :breakpoints="{
-                    md: {
-                        cols: '2.5',
-                        gutter: '10px',
-                        align: 'center',
-                    },
-                    lg: {
-                        cols: '3',
-                        gutter: '10px',
-                        align: 'center',
-                    },
-                    xl: {
-                        cols: '3',
-                        gutter: '16px',
-                        align: 'center',
-                    },
-                }"
-                class="relative"
-            >
-                <JSlide v-for="(slide, index) in 10" :key="index">
-                    <div class="p-3 py-8 bg-whit">
-                        {{ slide }}
-                    </div>
-                </JSlide>
-
-                <template #arrows="{ navigate }">
-                    <button
-                        class="absolute left-0 w-10 h-10 rounded-full bg-primary"
-                        @click="navigate('prev')"
-                    ></button>
-                    <button
-                        class="absolute right-0 w-10 h-10 rounded-full bg-primary"
-                        @click="navigate('next')"
-                    ></button>
-                </template> </JSlider
-        ></ClientOnly>
-
         <div id="jam-button">
             <div class="mb-4 display-3">Button</div>
             <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
