@@ -135,7 +135,7 @@ export default {
                 return
             }
 
-            // const res = await useSubmitForm(' https://api.github.com/users', this.form)
+            // const res = await useSubmitForm('/api', this.form)
 
             this.form = useResetForm(this.form)
         },
