@@ -7,7 +7,6 @@ function extractHtml(html) {
     let headings = []
     tags.forEach(function (tag) {
         const regexp = findTag(tag)
-        console.log(html)
         const matches = html.matchAll(regexp)
 
         for (const match of matches) {
