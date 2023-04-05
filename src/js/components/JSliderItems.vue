@@ -41,7 +41,7 @@ export default {
         },
         config: {
             type: Object,
-            default: { cols: '1.5', gutter: '8px' },
+            default: { cols: '1.5', gutter: '8px', align: 'start' },
         },
         breakpoints: {
             type: Object,
