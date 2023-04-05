@@ -69,7 +69,6 @@ export default {
         },
         apiURL: {
             type: String,
-            required: true,
         },
     },
     data() {
