@@ -45,7 +45,6 @@
                         :errors="errors"
                         class="col-span-full"
                     />
-
                     <JFormField
                         v-model="form.fileCV"
                         :field="{
