@@ -107,9 +107,6 @@ export default {
                 return
             }
             this.isLoading = true
-
-            this.form.contact.data = useResetForm(this.form.contact.data)
-
             try {
                 const { data } = await useSubmitForm(this.apiURL, this.form)
                 if (data && data.status === 200) {

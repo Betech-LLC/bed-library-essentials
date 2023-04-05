@@ -46,10 +46,18 @@
                 </div>
             </div>
         </section>
+
+        <JModal :show="isShow" @close="isShow = false">
+            <JNotify
+                title="Ứng tuyển thành công"
+                description="Chúng tôi đã nhận hồ sơ ứng tuyển. Phòng Nhân sự sẽ liên hệ đến bạn trong thời gian sớm nhất."
+            />
+        </JModal>
     </main>
 </template>
 
 <script>
+import JModal from '@core/components/JModal.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JCardJob from '@core/components/JCardJob.vue'
 import JSocialShare from '@core/components/JSocialShare.vue'
@@ -60,8 +68,12 @@ import JIconBriefcase02 from '@core/components/JIcon/Briefcase02.vue'
 import JIconUsers03 from '@core/components/JIcon/Users03.vue'
 import JInformationJob from '@core/components/JInformationJob.vue'
 import JFormApplyJob from '@core/components/JFormApplyJob.vue'
+import JNotify from '@core/components/JNotify.vue'
+
 export default {
     components: {
+        JModal,
+        JNotify,
         JBreadcrumb,
         JCardJob,
         JSocialShare,
@@ -75,13 +87,20 @@ export default {
     },
 
     props: ['job', 'relatedJobs', 'breadcrumb', 'apiURL'],
-
+    data() {
+        return {
+            isShow: false,
+        }
+    },
     methods: {
         onSuccessApply() {
-            console.log('onSuccessApply run')
+            this.isShow = true
+            setTimeout(() => {
+                this.isShow = false
+            }, 2000)
         },
         onErrorApply() {
-            console.log('onSuccessApply run')
+            console.log('error')
         },
     },
 }

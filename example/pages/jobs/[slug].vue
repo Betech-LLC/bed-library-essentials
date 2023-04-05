@@ -1,5 +1,5 @@
 <template>
-    <JPageJobDetail :job="job" :relatedJobs="relatedJobs" :breadcrumb="breadcrumb" :formJobAPI="''" />
+    <JPageJobDetail :job="job" :relatedJobs="relatedJobs" :breadcrumb="breadcrumb" apiURL="" />
 </template>
 <script>
 export default {
