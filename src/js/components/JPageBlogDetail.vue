@@ -18,9 +18,12 @@
                     </div>
                 </div>
 
-                <div class="blog-detail-page-description" v-html="post.description"></div>
+                <div v-if="post.description" class="blog-detail-page-description" v-html="post.description"></div>
 
-                <div class="blog-detail-page-toc" v-if="post.show_table_of_contents">
+                <div
+                    class="blog-detail-page-toc"
+                    v-if="post.show_table_of_contents && content.toc && content.toc.length"
+                >
                     <div class="head" @click="isOpenToc = !isOpenToc">
                         <span class="title"> {{ staticContent.toc }} </span>
                         <span class="icon" :class="{ show: isOpenToc }">
@@ -44,7 +47,7 @@
                     </div>
                 </div>
 
-                <div class="blog-detail-page-content" v-html="content.html"></div>
+                <div v-if="content.html" class="blog-detail-page-content" v-html="content.html"></div>
 
                 <div class="blog-detail-page-bottom">
                     <div class="tags">
