@@ -60,7 +60,6 @@
     </div>
 </template>
 <script>
-import axios from 'axios'
 import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 export default {
     props: {
@@ -108,7 +107,7 @@ export default {
             }
             this.isLoading = true
             try {
-                const { data } = await axios.post(this.apiURL, this.form)
+                const { data } = await useSubmitForm(this.apiURL, this.form)
                 if (data && data.status === 200) {
                     this.$emit('onSuccess')
                     this.form = useResetForm(this.form.contact.data)
