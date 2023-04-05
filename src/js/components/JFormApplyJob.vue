@@ -58,10 +58,20 @@
 
         <button @click="onSubmit" class="form-apply-job-button">Gửi</button>
     </div>
+
+    <JModal :show="isShow" @close="isShow = false">
+        <JNotify
+            title="Ứng tuyển thành công"
+            description="Chúng tôi đã nhận hồ sơ ứng tuyển. Phòng Nhân sự sẽ liên hệ đến bạn trong thời gian sớm nhất."
+        />
+    </JModal>
 </template>
 <script>
+import JNotify from '@core/components/JNotify.vue'
+import JModal from '@core/components/JModal.vue'
 import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 export default {
+    components: { JModal, JNotify },
     props: {
         job: {
             type: Object,
@@ -73,6 +83,7 @@ export default {
     },
     data() {
         return {
+            isShow: false,
             form: {
                 contact: {
                     data: {
@@ -109,16 +120,26 @@ export default {
             try {
                 const { data } = await useSubmitForm(this.apiURL, this.form)
                 if (data && data.status === 200) {
-                    this.$emit('onSuccess')
+                    this.onSuccessApply()
                     this.form = useResetForm(this.form.contact.data)
                 } else {
-                    this.$emit('onError')
+                    this.onSuccessApply()
                 }
                 this.isLoading = false
             } catch (error) {
-                this.$emit('onError')
+                this.onErrorApply()
                 this.isLoading = false
             }
+        },
+
+        onSuccessApply() {
+            this.isShow = true
+            setTimeout(() => {
+                this.isShow = false
+            }, 2000)
+        },
+        onErrorApply() {
+            console.log('error')
         },
     },
 }
