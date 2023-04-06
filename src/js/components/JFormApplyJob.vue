@@ -69,9 +69,10 @@
 <script>
 import JNotify from '@core/components/JNotify.vue'
 import JModal from '@core/components/JModal.vue'
+import JIconUploadCloud from '@core/components/JIcon/UploadCloud.vue'
 import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 export default {
-    components: { JModal, JNotify },
+    components: { JModal, JNotify, JIconUploadCloud },
     props: {
         job: {
             type: Object,
@@ -119,9 +120,9 @@ export default {
             this.isLoading = true
             try {
                 const { data } = await useSubmitForm(this.apiURL, this.form)
-                if (data && data.status === 200) {
+                if (data && data.success) {
                     this.onSuccessApply()
-                    this.form = useResetForm(this.form.contact.data)
+                    this.form.contact.data = useResetForm(this.form.contact.data)
                 } else {
                     this.onSuccessApply()
                 }
