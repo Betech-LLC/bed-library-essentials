@@ -1,5 +1,8 @@
 .page-contact {
     @apply container pt-8 pb-12  md:pt-11 xl:pt-16 md:pb-16 xl:pb-24;
+    .breadcrumb {
+        @apply mb-4 md:mb-6 xl:mb-8;
+    }
 }
 
 .page-contact-wrap {
