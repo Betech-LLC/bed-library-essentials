@@ -18,13 +18,6 @@
         @apply right-0  md:translate-x-1/3 xl:translate-x-1/2;
     }
 
-    &.btn-prev.sub-banner {
-        @apply left-0 md:-translate-x-1/3;
-    }
-    &.btn-next.sub-banner {
-        @apply right-0 md:translate-x-1/3;
-    }
-
     @media screen and (min-width: 1440px) {
         &.btn-prev {
             @apply -left-4 -translate-x-full;
