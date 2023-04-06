@@ -80,11 +80,10 @@ export default {
                 return
             }
             this.isLoading = true
-            this.form = useResetForm(this.form.contact.data)
 
             try {
                 const { data } = await useSubmitForm(this.urlApiForm, this.form)
-                if (data && data.status === 200) {
+                if (data && data.success) {
                     this.form.contact.data = useResetForm(this.form.contact.data)
                     this.onSuccessApply()
                 } else {
