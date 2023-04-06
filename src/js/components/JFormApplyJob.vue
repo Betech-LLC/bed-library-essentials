@@ -70,9 +70,10 @@
 import JNotify from '@core/components/JNotify.vue'
 import JModal from '@core/components/JModal.vue'
 import JIconUploadCloud from '@core/components/JIcon/UploadCloud.vue'
+import JFormField from '@core/components/JFormField.vue'
 import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 export default {
-    components: { JModal, JNotify, JIconUploadCloud },
+    components: { JModal, JNotify, JIconUploadCloud, JFormField },
     props: {
         job: {
             type: Object,
