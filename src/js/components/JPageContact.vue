@@ -45,7 +45,6 @@
                         :errors="errors"
                         class="col-span-full"
                     />
-
                     <JFormField
                         v-model="form.fileCV"
                         :field="{
@@ -135,11 +134,8 @@ export default {
             if (Object.keys(this.errors).length > 0) {
                 return
             }
-            const res = await useSubmitForm(() => {
-                return {
-                    success: true,
-                }
-            })
+
+            // const res = await useSubmitForm('/api', this.form)
 
             this.form = useResetForm(this.form)
         },

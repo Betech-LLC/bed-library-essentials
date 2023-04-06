@@ -21,6 +21,8 @@
 
                         <JSocialShare class="social-share" zaloOAId="1111640952861619960" />
                     </div>
+
+                    <JFormApplyJob :job="job" :apiURL="apiURL" />
                 </div>
                 <div class="right">
                     <JInformationJob :item="job" />
@@ -52,6 +54,7 @@ import JIconCalendar from '@core/components/JIcon/Calendar.vue'
 import JIconBriefcase02 from '@core/components/JIcon/Briefcase02.vue'
 import JIconUsers03 from '@core/components/JIcon/Users03.vue'
 import JInformationJob from '@core/components/JInformationJob.vue'
+import JFormApplyJob from '@core/components/JFormApplyJob.vue'
 
 export default {
     components: {
@@ -64,8 +67,9 @@ export default {
         JIconBriefcase02,
         JIconUsers03,
         JInformationJob,
+        JFormApplyJob,
     },
 
-    props: ['job', 'relatedJobs', 'breadcrumb'],
+    props: ['job', 'relatedJobs', 'breadcrumb', 'apiURL'],
 }
 </script>

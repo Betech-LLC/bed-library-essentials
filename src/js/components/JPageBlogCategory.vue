@@ -67,21 +67,32 @@
                     </div>
                 </div>
             </div>
+            <!-- FORM CONTACT -->
+            <JFormNotification :urlApiForm="urlApiForm" />
         </section>
     </main>
 </template>
 
 <script>
+import JTabs from '@core/components/JTabs.vue'
 import JBanner from '@core/components/JBanner.vue'
 import JCardBlog from '@core/components/JCardBlog.vue'
 import JBannerAds from '@core/components/JBannerAds.vue'
 import JBlogSideBar from '@core/components/JBlogSideBar.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
-import JTabs from '@core/components/JTabs.vue'
-
+import JFormNotification from '@core/components/JFormNotification.vue'
 export default {
-    components: { JBanner, JCardBlog, JBannerAds, JBlogSideBar, JBreadcrumb, JIconArrowRight, JTabs },
+    components: {
+        JTabs,
+        JBanner,
+        JCardBlog,
+        JBannerAds,
+        JBlogSideBar,
+        JBreadcrumb,
+        JIconArrowRight,
+        JFormNotification,
+    },
     props: {
         bannerTop: Object,
         breadcrumb: Array,
@@ -92,6 +103,8 @@ export default {
         posts: Object,
         categories: Array,
         currentPath: String,
+        urlApiForm: String,
+
         staticContent: {
             type: Object,
             default: () => {

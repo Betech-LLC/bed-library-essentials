@@ -1,0 +1,9 @@
+.notify {
+    @apply flex flex-col items-center justify-center p-6 text-center bg-white rounded-xl;
+    .notify-title {
+        @apply mt-5 mb-2 text-gray-900 title-1;
+    }
+    .notify-desc {
+        @apply text-gray-700;
+    }
+}

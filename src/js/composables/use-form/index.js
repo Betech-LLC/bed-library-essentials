@@ -1,8 +1,9 @@
+import axios from 'axios'
 import { validateForm, validateField } from '@core/utils'
 
-async function useSubmitForm(callback) {
+async function useSubmitForm(url, form) {
     try {
-        return await callback()
+        return await axios.post(url, form)
     } catch (error) {
         return error
     }
@@ -15,7 +16,6 @@ function useValidateForm({ form = {}, rules = {} } = {}) {
     const errors = validateForm(form, rules)
     return errors
 }
-
 function useResetForm(form = {}) {
     const keyFields = Object.keys(form)
     keyFields.forEach((keyField) => {
@@ -27,5 +27,4 @@ function useResetForm(form = {}) {
     })
     return form
 }
-
 export { useSubmitForm, useResetForm, useValidateForm, useValidateField }

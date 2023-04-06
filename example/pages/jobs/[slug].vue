@@ -1,4 +1,6 @@
-<template><JPageJobDetail :job="job" :relatedJobs="relatedJobs" :breadcrumb="breadcrumb" /></template>
+<template>
+    <JPageJobDetail :job="job" :relatedJobs="relatedJobs" :breadcrumb="breadcrumb" apiURL="/" />
+</template>
 <script>
 export default {
     data() {
