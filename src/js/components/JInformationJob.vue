@@ -42,8 +42,13 @@
 </template>
 
 <script>
+import JIconHomeLine from '@core/components/JIcon/HomeLine.vue'
+import JIconCalendar from '@core/components/JIcon/Calendar.vue'
+import JIconBriefcase02 from '@core/components/JIcon/Briefcase02.vue'
+import JIconUsers03 from '@core/components/JIcon/Users03.vue'
 import { addLeadingZero, toDate } from '@core/utils'
 export default {
+    components: { JIconHomeLine, JIconCalendar, JIconBriefcase02, JIconUsers03 },
     props: ['item'],
     methods: {
         addLeadingZero,
