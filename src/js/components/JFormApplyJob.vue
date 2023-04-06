@@ -120,9 +120,9 @@ export default {
             this.isLoading = true
             try {
                 const { data } = await useSubmitForm(this.apiURL, this.form)
-                if (data && data.status === 200) {
+                if (data && data.success) {
                     this.onSuccessApply()
-                    this.form = useResetForm(this.form.contact.data)
+                    this.form.contact.data = useResetForm(this.form.contact.data)
                 } else {
                     this.onSuccessApply()
                 }
