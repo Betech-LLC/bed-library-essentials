@@ -46,10 +46,11 @@
 import JPicture from '@core/components/JPicture.vue'
 import JNotify from '@core/components/JNotify.vue'
 import JModal from '@core/components/JModal.vue'
+import JFormField from '@core/components/JFormField.vue'
 import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 
 export default {
-    components: { JPicture, JModal, JNotify },
+    components: { JPicture, JModal, JNotify, JFormField },
     props: ['urlApiForm'],
     data() {
         return {
@@ -84,7 +85,7 @@ export default {
             try {
                 const { data } = await useSubmitForm(this.urlApiForm, this.form)
                 if (data && data.status === 200) {
-                    this.form = useResetForm(this.form.contact.data)
+                    this.form.contact.data = useResetForm(this.form.contact.data)
                     this.onSuccessApply()
                 } else {
                     this.onErrorApply()
