@@ -5,11 +5,11 @@
         </div>
         <div class="vlog-detail-title">{{ item.title }}</div>
         <div class="vlog-detail-information">
-            <div class="item">
+            <div v-if="item.published_at" class="item">
                 <span class="label">{{ staticContent.publishedAt }} </span>
                 <span class="title">{{ toDate(item.published_at, 'vi', false) }}</span>
             </div>
-            <div class="item">
+            <div v-if="item.time" class="item">
                 <span class="label">{{ staticContent.time }} </span>
                 <span class="title">{{ item.time }}</span>
             </div>
