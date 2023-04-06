@@ -3,7 +3,7 @@
         "release": "yarn version --new-version \"1.0.$(date \"+%y%m%d%H%M%S\")\" && yarn publish"
     },
     "name": "@nhatkha1407/jam-library-essentials",
-    "version": "1.0.230405130821",
+    "version": "1.0.230406101209",
     "main": "./src/js/utils/index.js",
     "repository": {
         "type": "git",
@@ -18,6 +18,7 @@
         "@tailwindcss/aspect-ratio": "^0.4.2",
         "@tailwindcss/line-clamp": "^0.4.2",
         "@tailwindcss/typography": "^0.5.9",
+        "axios": "^1.3.5",
         "tailwindcss": "^3.2.6"
     },
     "dependencies": {
