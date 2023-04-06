@@ -41,7 +41,7 @@ export default {
         },
         config: {
             type: Object,
-            default: { cols: '1.5', gutter: '8px', align: 'start' },
+            default: { cols: '1.6', gutter: '8px', align: 'start' },
         },
         breakpoints: {
             type: Object,
@@ -60,9 +60,12 @@ export default {
                 },
             },
         },
-        rowItems: {
-            type: Number,
-            default: 3,
+    },
+
+    computed: {
+        rowItems() {
+            const quantity = this.breakpoints.xl?.cols || this.breakpoints.lg?.cols || this.breakpoints.md?.cols
+            return Number(quantity)
         },
     },
 }
