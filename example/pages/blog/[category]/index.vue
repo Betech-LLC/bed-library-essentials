@@ -40,7 +40,7 @@ export default {
                         slug: 'hic-earum-vel-facilis',
                         image: { url: null, alt: 'Hic earum vel facilis.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                        url: '/blog/hic-earum-vel-facilis',
                     },
                     categories: [
                         {
@@ -49,11 +49,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Quae rerum non aut tenetur.' },
-                    url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis/quae-rerum-non-aut-tenetur',
+                    url: '/blog/hic-earum-vel-facilis/quae-rerum-non-aut-tenetur',
                 },
                 {
                     id: 77,
@@ -68,7 +68,7 @@ export default {
                         slug: 'sit-non',
                         image: { url: null, alt: 'Sit non.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/sit-non',
+                        url: '/blog/sit-non',
                     },
                     categories: [
                         {
@@ -77,7 +77,7 @@ export default {
                             slug: 'sit-non',
                             image: { url: null, alt: 'Sit non.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/sit-non',
+                            url: '/blog/sit-non',
                         },
                         {
                             id: 24,
@@ -85,11 +85,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Nam laboriosam.' },
-                    url: 'http://localhost:8000/tin-tuc/sit-non/nam-laboriosam',
+                    url: '/blog/sit-non/nam-laboriosam',
                 },
                 {
                     id: 44,
@@ -104,7 +104,7 @@ export default {
                         slug: 'odit-alias-pariatur',
                         image: { url: null, alt: 'Odit alias pariatur.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                        url: '/blog/odit-alias-pariatur',
                     },
                     categories: [
                         {
@@ -113,7 +113,7 @@ export default {
                             slug: 'odit-alias-pariatur',
                             image: { url: null, alt: 'Odit alias pariatur.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                            url: '/blog/odit-alias-pariatur',
                         },
                         {
                             id: 24,
@@ -121,11 +121,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Sit omnis sint vel.' },
-                    url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur/sit-omnis-sint-vel',
+                    url: '/blog/odit-alias-pariatur/sit-omnis-sint-vel',
                 },
                 {
                     id: 85,
@@ -140,7 +140,7 @@ export default {
                         slug: 'hic-earum-vel-facilis',
                         image: { url: null, alt: 'Hic earum vel facilis.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                        url: '/blog/hic-earum-vel-facilis',
                     },
                     categories: [
                         {
@@ -149,11 +149,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Quae rerum non aut tenetur.' },
-                    url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis/quae-rerum-non-aut-tenetur',
+                    url: '/blog/hic-earum-vel-facilis/quae-rerum-non-aut-tenetur',
                 },
                 {
                     id: 77,
@@ -168,7 +168,7 @@ export default {
                         slug: 'sit-non',
                         image: { url: null, alt: 'Sit non.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/sit-non',
+                        url: '/blog/sit-non',
                     },
                     categories: [
                         {
@@ -177,7 +177,7 @@ export default {
                             slug: 'sit-non',
                             image: { url: null, alt: 'Sit non.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/sit-non',
+                            url: '/blog/sit-non',
                         },
                         {
                             id: 24,
@@ -185,11 +185,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Nam laboriosam.' },
-                    url: 'http://localhost:8000/tin-tuc/sit-non/nam-laboriosam',
+                    url: '/blog/sit-non/nam-laboriosam',
                 },
                 {
                     id: 44,
@@ -204,7 +204,7 @@ export default {
                         slug: 'odit-alias-pariatur',
                         image: { url: null, alt: 'Odit alias pariatur.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                        url: '/blog/odit-alias-pariatur',
                     },
                     categories: [
                         {
@@ -213,7 +213,7 @@ export default {
                             slug: 'odit-alias-pariatur',
                             image: { url: null, alt: 'Odit alias pariatur.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                            url: '/blog/odit-alias-pariatur',
                         },
                         {
                             id: 24,
@@ -221,11 +221,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Sit omnis sint vel.' },
-                    url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur/sit-omnis-sint-vel',
+                    url: '/blog/odit-alias-pariatur/sit-omnis-sint-vel',
                 },
                 {
                     id: 44,
@@ -240,7 +240,7 @@ export default {
                         slug: 'odit-alias-pariatur',
                         image: { url: null, alt: 'Odit alias pariatur.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                        url: '/blog/odit-alias-pariatur',
                     },
                     categories: [
                         {
@@ -249,7 +249,7 @@ export default {
                             slug: 'odit-alias-pariatur',
                             image: { url: null, alt: 'Odit alias pariatur.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                            url: '/blog/odit-alias-pariatur',
                         },
                         {
                             id: 24,
@@ -257,11 +257,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Sit omnis sint vel.' },
-                    url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur/sit-omnis-sint-vel',
+                    url: '/blog/odit-alias-pariatur/sit-omnis-sint-vel',
                 },
                 {
                     id: 85,
@@ -276,7 +276,7 @@ export default {
                         slug: 'hic-earum-vel-facilis',
                         image: { url: null, alt: 'Hic earum vel facilis.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                        url: '/blog/hic-earum-vel-facilis',
                     },
                     categories: [
                         {
@@ -285,11 +285,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Quae rerum non aut tenetur.' },
-                    url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis/quae-rerum-non-aut-tenetur',
+                    url: '/blog/hic-earum-vel-facilis/quae-rerum-non-aut-tenetur',
                 },
                 {
                     id: 77,
@@ -304,7 +304,7 @@ export default {
                         slug: 'sit-non',
                         image: { url: null, alt: 'Sit non.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/sit-non',
+                        url: '/blog/sit-non',
                     },
                     categories: [
                         {
@@ -313,7 +313,7 @@ export default {
                             slug: 'sit-non',
                             image: { url: null, alt: 'Sit non.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/sit-non',
+                            url: '/blog/sit-non',
                         },
                         {
                             id: 24,
@@ -321,11 +321,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Nam laboriosam.' },
-                    url: 'http://localhost:8000/tin-tuc/sit-non/nam-laboriosam',
+                    url: '/blog/sit-non/nam-laboriosam',
                 },
                 {
                     id: 44,
@@ -340,7 +340,7 @@ export default {
                         slug: 'odit-alias-pariatur',
                         image: { url: null, alt: 'Odit alias pariatur.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                        url: '/blog/odit-alias-pariatur',
                     },
                     categories: [
                         {
@@ -349,7 +349,7 @@ export default {
                             slug: 'odit-alias-pariatur',
                             image: { url: null, alt: 'Odit alias pariatur.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur',
+                            url: '/blog/odit-alias-pariatur',
                         },
                         {
                             id: 24,
@@ -357,11 +357,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Sit omnis sint vel.' },
-                    url: 'http://localhost:8000/tin-tuc/odit-alias-pariatur/sit-omnis-sint-vel',
+                    url: '/blog/odit-alias-pariatur/sit-omnis-sint-vel',
                 },
             ],
 
@@ -386,7 +386,7 @@ export default {
                         slug: 'dolorem-cumque',
                         image: { url: null, alt: 'Dolorem cumque.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/dolorem-cumque',
+                        url: '/blog/dolorem-cumque',
                     },
                     categories: [
                         {
@@ -395,7 +395,7 @@ export default {
                             slug: 'dolorem-cumque',
                             image: { url: null, alt: 'Dolorem cumque.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/dolorem-cumque',
+                            url: '/blog/dolorem-cumque',
                         },
                         {
                             id: 24,
@@ -403,11 +403,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Dolorem non.' },
-                    url: 'http://localhost:8000/tin-tuc/dolorem-cumque/dolorem-non',
+                    url: '/blog/dolorem-cumque/dolorem-non',
                 },
                 {
                     id: 162,
@@ -422,7 +422,7 @@ export default {
                         slug: 'hic-earum-vel-facilis',
                         image: { url: null, alt: 'Hic earum vel facilis.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                        url: '/blog/hic-earum-vel-facilis',
                     },
                     categories: [
                         {
@@ -431,11 +431,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Inventore id ad.' },
-                    url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis/inventore-id-ad',
+                    url: '/blog/hic-earum-vel-facilis/inventore-id-ad',
                 },
                 {
                     id: 117,
@@ -450,7 +450,7 @@ export default {
                         slug: 'libero-ducimus-in',
                         image: { url: null, alt: 'Libero ducimus in.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/libero-ducimus-in',
+                        url: '/blog/libero-ducimus-in',
                     },
                     categories: [
                         {
@@ -459,7 +459,7 @@ export default {
                             slug: 'libero-ducimus-in',
                             image: { url: null, alt: 'Libero ducimus in.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/libero-ducimus-in',
+                            url: '/blog/libero-ducimus-in',
                         },
                         {
                             id: 24,
@@ -467,11 +467,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Officiis.' },
-                    url: 'http://localhost:8000/tin-tuc/libero-ducimus-in/officiis',
+                    url: '/blog/libero-ducimus-in/officiis',
                 },
                 {
                     id: 102,
@@ -486,7 +486,7 @@ export default {
                         slug: 'quidem-sit',
                         image: { url: null, alt: 'Quidem sit.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/quidem-sit',
+                        url: '/blog/quidem-sit',
                     },
                     categories: [
                         {
@@ -495,7 +495,7 @@ export default {
                             slug: 'quidem-sit',
                             image: { url: null, alt: 'Quidem sit.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/quidem-sit',
+                            url: '/blog/quidem-sit',
                         },
                         {
                             id: 24,
@@ -503,11 +503,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Voluptas est maiores.' },
-                    url: 'http://localhost:8000/tin-tuc/quidem-sit/voluptas-est-maiores',
+                    url: '/blog/quidem-sit/voluptas-est-maiores',
                 },
             ],
 
@@ -525,7 +525,7 @@ export default {
                         slug: 'dolorem-cumque',
                         image: { url: null, alt: 'Dolorem cumque.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/dolorem-cumque',
+                        url: '/blog/dolorem-cumque',
                     },
                     categories: [
                         {
@@ -534,7 +534,7 @@ export default {
                             slug: 'dolorem-cumque',
                             image: { url: null, alt: 'Dolorem cumque.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/dolorem-cumque',
+                            url: '/blog/dolorem-cumque',
                         },
                         {
                             id: 24,
@@ -542,11 +542,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Dolorem non.' },
-                    url: 'http://localhost:8000/tin-tuc/dolorem-cumque/dolorem-non',
+                    url: '/blog/dolorem-cumque/dolorem-non',
                 },
                 {
                     id: 162,
@@ -561,7 +561,7 @@ export default {
                         slug: 'hic-earum-vel-facilis',
                         image: { url: null, alt: 'Hic earum vel facilis.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                        url: '/blog/hic-earum-vel-facilis',
                     },
                     categories: [
                         {
@@ -570,11 +570,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Inventore id ad.' },
-                    url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis/inventore-id-ad',
+                    url: '/blog/hic-earum-vel-facilis/inventore-id-ad',
                 },
                 {
                     id: 117,
@@ -589,7 +589,7 @@ export default {
                         slug: 'libero-ducimus-in',
                         image: { url: null, alt: 'Libero ducimus in.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/libero-ducimus-in',
+                        url: '/blog/libero-ducimus-in',
                     },
                     categories: [
                         {
@@ -598,7 +598,7 @@ export default {
                             slug: 'libero-ducimus-in',
                             image: { url: null, alt: 'Libero ducimus in.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/libero-ducimus-in',
+                            url: '/blog/libero-ducimus-in',
                         },
                         {
                             id: 24,
@@ -606,11 +606,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Officiis.' },
-                    url: 'http://localhost:8000/tin-tuc/libero-ducimus-in/officiis',
+                    url: '/blog/libero-ducimus-in/officiis',
                 },
                 {
                     id: 102,
@@ -625,7 +625,7 @@ export default {
                         slug: 'quidem-sit',
                         image: { url: null, alt: 'Quidem sit.' },
                         icon: null,
-                        url: 'http://localhost:8000/tin-tuc/quidem-sit',
+                        url: '/blog/quidem-sit',
                     },
                     categories: [
                         {
@@ -634,7 +634,7 @@ export default {
                             slug: 'quidem-sit',
                             image: { url: null, alt: 'Quidem sit.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/quidem-sit',
+                            url: '/blog/quidem-sit',
                         },
                         {
                             id: 24,
@@ -642,11 +642,11 @@ export default {
                             slug: 'hic-earum-vel-facilis',
                             image: { url: null, alt: 'Hic earum vel facilis.' },
                             icon: null,
-                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                            url: '/blog/hic-earum-vel-facilis',
                         },
                     ],
                     image: { url: null, alt: 'Voluptas est maiores.' },
-                    url: 'http://localhost:8000/tin-tuc/quidem-sit/voluptas-est-maiores',
+                    url: '/blog/quidem-sit/voluptas-est-maiores',
                 },
             ],
 
