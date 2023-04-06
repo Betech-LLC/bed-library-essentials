@@ -27,9 +27,7 @@
                     :errors="errors"
                     class="form-notification-field-email"
                 />
-                <button @click="onSubmit()" class="btn btn-secondary btn-lg mt-4 md:mt-6 xl:mt-8 w-[220px]">
-                    Đăng ký
-                </button>
+                <button @click="onSubmit()" class="btn btn-secondary mt-4 md:mt-6 xl:mt-8 w-[220px]">Đăng ký</button>
             </div>
         </div>
         <div class="form-notification-right">
