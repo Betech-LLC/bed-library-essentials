@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="form-notification-right">
-            <JPicture src="../../images/notification-form.png" />
+            <JPicture :src="image && (image.url || image)" />
         </div>
     </div>
 
@@ -52,7 +52,7 @@ import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 
 export default {
     components: { JPicture, JModal, JNotify },
-    props: ['apiURL'],
+    props: ['apiURL', 'image'],
     data() {
         return {
             isShow: false,
