@@ -1,5 +1,11 @@
 <template>
-    <JPageBlogDetail :breadcrumb="breadcrumb" :post="post" :top_posts="top_posts" :banner="banner" />
+    <JPageBlogDetail
+        :breadcrumb="breadcrumb"
+        :post="post"
+        :top_posts="top_posts"
+        :related_posts="top_posts"
+        :banner="banner"
+    />
 </template>
 
 <script>

@@ -1,0 +1,30 @@
+.slider-items {
+    @apply py-8  md:py-11 xl:py-16 container;
+    .slider-title {
+        @apply mb-4 text-gray-700 xl:mb-8 md:mb-6 headline-2;
+    }
+    .slider {
+        @apply relative md:-mx-2 xl:-mx-4;
+    }
+}
+.btn-slide {
+    @apply md:flex hidden absolute top-1/2 -translate-y-1/2 z-20 w-9 h-9 lg:w-12 lg:h-12 text-gray-500 lg:hover:text-blue-400 lg:hover:border-primary bg-white items-center justify-center rounded-full duration-150 border border-gray-200;
+
+    &.btn-prev {
+        @apply left-0  md:-translate-x-1/3 xl:-translate-x-1/2;
+    }
+
+    &.btn-next {
+        @apply right-0  md:translate-x-1/3 xl:translate-x-1/2;
+    }
+
+    @media screen and (min-width: 1440px) {
+        &.btn-prev {
+            @apply -left-4 -translate-x-full;
+        }
+
+        &.btn-next {
+            @apply -right-4 translate-x-full;
+        }
+    }
+}
