@@ -11,6 +11,7 @@
                         label: 'Họ và tên',
                         placeholder: 'Nhập họ và tên',
                     }"
+                    z
                     :rules="rules"
                     :errors="errors"
                     class="form-notification-field-name"

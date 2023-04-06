@@ -1,0 +1,54 @@
+.page-contact {
+    @apply container pt-8 pb-12  md:pt-11 xl:pt-16 md:pb-16 xl:pb-24;
+}
+
+.page-contact-wrap {
+    @apply flex flex-col lg:flex-row lg:space-x-10 xl:space-x-16;
+}
+
+.page-contact-left {
+    @apply flex-1;
+}
+
+.page-contact-right {
+    @apply flex-1 mt-4 lg:mt-0;
+}
+
+.page-contact-banner {
+    @apply h-[420px] md:h-[520px] lg:h-[620px] xl:h-[800px];
+    img {
+        @apply object-cover w-full h-full;
+    }
+}
+
+.page-contact-right {
+    @apply mb-6 md:mb-8 xl:mb-12;
+}
+
+.page-contact-title {
+    @apply mb-2.5 md:mb-3.5 xl:mb-5 display-3;
+}
+
+.page-contact-description {
+    @apply mb-2.5 md:mb-3.5 xl:mb-5 display-3;
+}
+
+.page-contact-fields {
+    @apply grid grid-cols-2 md:gap-x-6 xl:gap-x-8 gap-y-4 xl:gap-y-6;
+}
+
+.page-contact-field-lastname,
+.page-contact-field-firstname {
+    @apply md:col-span-1 col-span-full;
+}
+
+.page-contact-field-email,
+.page-contact-field-phone,
+.page-contact-field-note {
+    @apply col-span-full;
+}
+
+//
+.page-contact-field-button {
+    @apply mt-4 md:mt-6 xl:mt-8;
+}
