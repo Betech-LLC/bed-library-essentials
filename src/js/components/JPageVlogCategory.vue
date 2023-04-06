@@ -14,7 +14,10 @@
         </JBanner>
         <section class="page-vlog-category">
             <div class="page-vlog-category-body">
-                <JListCardVlog @viewVideo="viewVideo" :items="vlogs_data" />
+                <JListCardVlog v-if="vlogs_data && vlogs_data.length" @viewVideo="viewVideo" :items="vlogs_data" />
+                <!-- TODO: Bổ sung layout -->
+                <div v-else>Chưa có vlog nào</div>
+
                 <div v-if="vlogs.current_page < vlogs.last_page" class="page-vlog-category-button">
                     <button @click.prevent="$emit('seeMore', vlogs.next_page_url)" class="btn-see-more">
                         <a :href="vlogs.next_page_url">

@@ -1,7 +1,9 @@
 <template>
     <div class="vlog-detail">
-        <div v-if="item.video_url" class="vlog-detail-video">
-            <JVideo :isPlay="isPlay" @change="change" :src="item.video_url" />
+        <div class="vlog-detail-video">
+            <JVideo v-if="item.video_url" :isPlay="isPlay" @change="change" :src="item.video_url" />
+            <!-- TODO: Bổ sung layout -->
+            <div v-else>Bổ sung layout khi chưa nhập video</div>
         </div>
         <div class="vlog-detail-title">{{ item.title }}</div>
         <div class="vlog-detail-information">

@@ -26,7 +26,11 @@
                     <p class="page-jobs-count">{{ jobs.total }} công việc</p>
 
                     <div class="page-jobs-list">
-                        <JCardJob v-for="(job, index) in jobs_data" :key="index" :item="job" />
+                        <template v-if="jobs_data && jobs_data.length">
+                            <JCardJob v-for="(job, index) in jobs_data" :key="index" :item="job" />
+                        </template>
+                        <!-- TODO: Bổ sung layout -->
+                        <div v-else>Không có công việc nào</div>
                     </div>
 
                     <div v-if="jobs.current_page < jobs.last_page" class="page-jobs-button">
