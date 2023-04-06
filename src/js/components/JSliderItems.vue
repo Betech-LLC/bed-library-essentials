@@ -1,5 +1,5 @@
 <template>
-    <div class="slider-items">
+    <div class="slider-items" v-if="items.length > 0">
         <h2 v-if="title" class="slider-title">{{ title }}</h2>
         <ClientOnly
             ><JSlider
