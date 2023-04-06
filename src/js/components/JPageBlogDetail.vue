@@ -72,6 +72,11 @@
                 </div>
             </div>
         </section>
+        <JSliderItems :items="related_posts" title="Bài viết liên quan">
+            <template #slide-item="{ item }">
+                <JCardBlog class="card-item" :item="item" />
+            </template>
+        </JSliderItems>
     </main>
 </template>
 
@@ -86,7 +91,7 @@ import JIconChevron from '@core/components/JIcon/ChevronDown.vue'
 import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import { toDate } from '@core/utils'
 import { useTransformContent } from '@core/utils'
-
+import JSliderItems from '@core/components/JSliderItems.vue'
 export default {
     components: {
         JCardBlog,
@@ -97,6 +102,7 @@ export default {
         JSocialShare,
         JIconArrowRight,
         JLink,
+        JSliderItems,
     },
 
     props: {
@@ -104,6 +110,7 @@ export default {
         banner: Object,
         post: Object,
         top_posts: Array,
+        related_posts: Array,
         language: String,
         staticContent: {
             type: Object,
