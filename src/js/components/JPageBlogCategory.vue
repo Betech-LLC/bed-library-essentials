@@ -68,7 +68,7 @@
                 </div>
             </div>
             <!-- FORM CONTACT -->
-            <JFormNotification />
+            <JFormNotification :urlApiForm="urlApiForm" />
         </section>
     </main>
 </template>
@@ -103,6 +103,8 @@ export default {
         posts: Object,
         categories: Array,
         currentPath: String,
+        urlApiForm: String,
+
         staticContent: {
             type: Object,
             default: () => {

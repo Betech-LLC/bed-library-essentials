@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="form-notification-right">
-            <JPicture :src="image && (image.url || image)" />
+            <img src="../../images/notification-form.png" />
         </div>
     </div>
 
@@ -52,7 +52,7 @@ import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 
 export default {
     components: { JPicture, JModal, JNotify },
-    props: ['apiURL', 'image'],
+    props: ['urlApiForm'],
     data() {
         return {
             isShow: false,
@@ -84,7 +84,7 @@ export default {
             this.form = useResetForm(this.form.contact.data)
 
             try {
-                const { data } = await useSubmitForm(this.apiURL, this.form)
+                const { data } = await useSubmitForm(this.urlApiForm, this.form)
                 if (data && data.status === 200) {
                     this.form = useResetForm(this.form.contact.data)
                     this.onSuccessApply()
