@@ -13,7 +13,7 @@
                 <JSlide v-for="(item, index) in items" :key="index">
                     <slot name="slide-item" :item="item" />
                 </JSlide>
-                <template #arrows="{ navigate }">
+                <template #arrows="{ navigate }" v-if="items.length > rowItems">
                     <button class="rotate-180 btn-slide btn-prev" @click="navigate('prev')">
                         <JIconChevronRight />
                     </button>
@@ -63,30 +63,6 @@ export default {
         rowItems: {
             type: Number,
             default: 3,
-        },
-    },
-    data() {
-        return {
-            COUNTER_INIT: this.rowItems,
-        }
-    },
-    mounted() {
-        this.setInitScreen()
-    },
-
-    methods: {
-        setInitScreen() {
-            const isScreenXL = window.matchMedia('(min-width: 1280px)').matches
-            const isScreenLG = window.matchMedia('(min-width: 1024px)').matches
-            if (isScreenXL) {
-                this.COUNTER_INIT = this.rowItems
-                return
-            } else if (isScreenLG) {
-                this.COUNTER_INIT = this.rowItems - 1
-                return
-            } else {
-                this.COUNTER_INIT = this.rowItems - 2
-            }
         },
     },
 }
