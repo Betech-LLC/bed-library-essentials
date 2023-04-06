@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="form-notification-right">
-            <JPicture />
+            <JPicture src="../../images/notification-form.png" />
         </div>
     </div>
 

@@ -1,8 +1,8 @@
 import { validateForm, validateField } from '@core/utils'
-import axios from 'axios'
+// import axios from 'axios'
 async function useSubmitForm(url, form) {
     try {
-        return await axios.post(url, form)
+        // return await axios.post(url, form)
     } catch (error) {
         return error
     }
