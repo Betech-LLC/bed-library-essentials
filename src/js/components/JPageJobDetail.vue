@@ -17,8 +17,6 @@
                     <div class="page-job-detail-content" v-html="job.content"></div>
 
                     <div class="page-job-detail-share">
-                        <button class="button">Nộp hồ sơ</button>
-
                         <JSocialShare class="social-share" zaloOAId="1111640952861619960" />
                     </div>
 
