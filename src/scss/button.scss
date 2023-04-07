@@ -7,25 +7,25 @@
 
 // VARIANTS
 .btn-primary {
-    @apply border border-blue-600 bg-blue-600 hover:bg-blue-700 hover:border-blue-700 text-white;
+    @apply border border-blue-600 bg-blue-600 lg:hover:bg-blue-700 lg:hover:border-blue-700 text-white;
     &.disable {
         @apply pointer-events-none border-blue-200 bg-blue-200 text-blue-300;
     }
 }
 .btn-secondary {
-    @apply border-gray-300 bg-white hover:bg-gray-50 hover:text-gray-800  text-gray-700;
+    @apply border-gray-300 bg-white lg:hover:bg-gray-50 lg:hover:text-gray-800  text-gray-700;
     &.disable {
         @apply pointer-events-none border-gray-200 bg-white text-gray-300;
     }
 }
 .btn-success {
-    @apply bg-green-600 hover:bg-green-700 text-white;
+    @apply bg-green-600 lg:hover:bg-green-700 text-white;
 }
 .btn-warning {
-    @apply border-yellow-500 bg-yellow-100 hover:bg-yellow-200 text-yellow-500;
+    @apply border-yellow-500 bg-yellow-100 lg:hover:bg-yellow-200 text-yellow-500;
 }
 .btn-danger {
-    @apply border-error-600 bg-error-600 hover:bg-error-700 hover:border-error-700 text-white;
+    @apply border-error-600 bg-error-600 lg:hover:bg-error-700 lg:hover:border-error-700 text-white;
     &.disable {
         @apply pointer-events-none border-error-200 bg-error-200 text-white;
     }
