@@ -1,6 +1,6 @@
 <template>
     <main>
-        <JBreadcrumb :items="breadcrumb" class="container mb-3 md:mb-4 xl:mb-6">
+        <JBreadcrumb :items="breadcrumb" class="container py-3 md:py-4 xl:py-6">
             <template #icon>
                 <JIconArrowRight />
             </template>
