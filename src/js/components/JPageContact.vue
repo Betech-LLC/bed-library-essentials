@@ -152,12 +152,7 @@ export default {
             if (Object.keys(this.errors).length > 0 || this.isLoading) {
                 return
             }
-
             this.isLoading = true
-            this.form.contact.data = useResetForm(this.form.contact.data)
-            this.onSuccessApply()
-            this.isLoading = false
-
             try {
                 const { data } = await useSubmitForm(this.urlApiForm, this.form)
                 if (data && data.success) {
