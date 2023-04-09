@@ -57,6 +57,13 @@
                 <div class="page-project-detail-content" v-html="item.content"></div>
             </div>
         </section>
+        <section class="page-project-detail-related">
+            <JSliderItems :items="related_projects" title="Dự án liên quan">
+                <template #slide-item="{ item }">
+                    <JCardProject class="card-item" :item="item" />
+                </template>
+            </JSliderItems>
+        </section>
     </main>
 </template>
 
@@ -66,16 +73,19 @@ import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JSocialShare from '@core/components/JSocialShare.vue'
 import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import JPicture from '@core/components/JPicture.vue'
+import JSliderItems from '@core/components/JSliderItems.vue'
 
 export default {
-    components: { JCardProject, JBreadcrumb, JSocialShare, JPicture, JIconArrowRight },
+    components: { JCardProject, JBreadcrumb, JSocialShare, JPicture, JIconArrowRight, JSliderItems },
 
-    props: ['item', 'breadcrumb'],
     props: {
         item: {
             type: Object,
         },
         breadcrumb: {
+            type: Array,
+        },
+        related_projects: {
             type: Array,
         },
         constructionProgress: {
