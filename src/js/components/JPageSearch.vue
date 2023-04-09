@@ -18,7 +18,7 @@
         </div>
         <div class="py-6 space-y-6 md:space-y-8 xl:space-y-12 md:py-8 xl:py-12">
             <div v-for="(option, index) in options" :key="index" :id="option.id">
-                <JPagination :title="option.title" :cols="option.cols" :items="option.items">
+                <JPagination :title="option.title" :cols="option.cols" :items="option.items" :class="option.type">
                     <template #card="{ item }">
                         <slot :name="option.type" :item="item" />
                     </template>

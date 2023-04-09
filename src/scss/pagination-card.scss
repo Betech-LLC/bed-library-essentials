@@ -1,0 +1,16 @@
+.pagination-card {
+    @apply container;
+    .pagination-card-title {
+        @apply mb-3 text-gray-900 headline-2;
+    }
+    .pagination-card-grid {
+        @apply grid grid-cols-2 lg:grid-cols-4 gap-y-3 md:gap-y-4 xl:gap-y-6 gap-x-4 md:gap-x-6 xl:gap-x-8;
+    }
+
+    .pagination-card-grid-item {
+        @apply col-span-1;
+    }
+    .pagination-card-button {
+        @apply flex justify-center mt-3 md:mt-4 xl:mt-6;
+    }
+}

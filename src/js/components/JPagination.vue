@@ -1,20 +1,13 @@
 <template>
-    <div class="container">
-        <h2 v-if="title" class="mb-3 text-gray-900 headline-2">{{ title }}</h2>
-        <div
-            class="grid grid-cols-2"
-            :class="{
-                'md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-1 md:gap-x-2 xl:gap-x-3 gap-y-3 md:gap-y-4 xl:gap-y-6':
-                    Number(cols) === 5,
-                'lg:grid-cols-4 gap-y-3 md:gap-y-4 xl:gap-y-6 gap-x-4 md:gap-x-6 xl:gap-x-8': Number(cols) === 4,
-            }"
-        >
-            <div class="col-span-1" v-for="(item, index) in items.slice(0, counter)" :key="index">
+    <div class="pagination-card">
+        <h2 v-if="title" class="pagination-card-title">{{ title }}</h2>
+        <div class="pagination-card-grid">
+            <div class="pagination-card-grid-item" v-for="(item, index) in items.slice(0, counter)" :key="index">
                 <slot name="card" :item="item" />
             </div>
         </div>
 
-        <div v-if="restItems > 0" class="flex justify-center mt-3 md:mt-4 xl:mt-6">
+        <div v-if="restItems > 0" class="pagination-card-button">
             <button @click="onPagination" class="btn btn-secondary">xem thêm {{ restItems }} {{ title }}</button>
         </div>
     </div>
