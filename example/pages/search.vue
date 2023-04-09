@@ -1,9 +1,9 @@
 <template>
-    <JPageSearch :posts="posts" :products="posts" :keyword="keyword" :breadcrumb="breadcrumb">
-        <template #card-product="{ item }">
+    <JPageSearch :keyword="keyword" :breadcrumb="breadcrumb" :options="items">
+        <template #[cardProduct]="{ item }">
             <JCardBlog class="card-item" :item="item" />
         </template>
-        <template #card-post="{ item }">
+        <template #[cardPost]="{ item }">
             <JCardBlog class="card-item" :item="item" />
         </template>
     </JPageSearch>
@@ -12,6 +12,8 @@
 export default {
     data() {
         return {
+            cardPost: 'card-post',
+            cardProduct: 'card-product',
             post: {
                 id: 85,
                 title: 'Quae rerum non aut tenetur.',
@@ -44,6 +46,24 @@ export default {
     },
 
     computed: {
+        items() {
+            return [
+                {
+                    title: 'Sản phẩm',
+                    id: 'search-product',
+                    type: this.cardProduct,
+                    items: this.posts,
+                    cols: 5,
+                },
+                {
+                    title: 'Bài viết',
+                    id: 'search-post',
+                    type: this.cardPost,
+                    items: this.posts,
+                    cols: 4,
+                },
+            ]
+        },
         posts() {
             return this.renderMultipleItems(this.post)
         },
