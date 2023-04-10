@@ -33,7 +33,9 @@
                 </div>
             </div>
             <div class="form-notification-banner">
-                <img src="../../images/notification-form.png" />
+                <slot>
+                    <img src="../../images/notification-form.png" />
+                </slot>
             </div>
         </div>
     </div>
