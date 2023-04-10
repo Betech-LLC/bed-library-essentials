@@ -23,12 +23,6 @@
                 </slot>
             </a>
 
-            <a v-if="instagram" :href="instagramUrl" target="_blank" class="social-share-item instagram">
-                <slot name="instagram">
-                    <img src="../../images/instagram.png" />
-                </slot>
-            </a>
-
             <div class="social-share-item zalo" v-if="zalo && zaloOAId">
                 <client-only>
                     <div
@@ -53,6 +47,12 @@
             <a v-if="twitter" :href="twitterUrl" target="_blank" class="social-share-item twitter">
                 <slot name="twitter">
                     <img src="../../images/twitter.png" />
+                </slot>
+            </a>
+
+            <a v-if="instagram" :href="instagramUrl" target="_blank" class="social-share-item instagram">
+                <slot name="instagram">
+                    <img src="../../images/instagram.png" />
                 </slot>
             </a>
 
@@ -119,7 +119,7 @@ export default {
         instagramUrl: {
             type: String,
             default: null,
-        }
+        },
     },
 
     data() {
