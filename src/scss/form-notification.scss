@@ -1,9 +1,10 @@
 .form-notification {
-    @apply bg-primary-darker mt-8;
+    @apply bg-primary-darker mt-6 md:mt-8;
 }
 
 .form-notification-wrap {
-    @apply max-w-[1920px] mx-auto relative;
+    @apply mx-auto relative;
+    max-width: 1920px;
 }
 
 .form-notification-title {
@@ -11,15 +12,25 @@
 }
 
 .form-notification-fields {
-    @apply py-6 md:py-8 md:max-w-[50%] xl:max-w-[494px];
+    @apply py-6 md:py-8;
+    @screen md {
+        max-width: 50%;
+    }
+    @screen xl {
+        max-width: 494px;
+    }
 }
 .form-notification-field-name {
     @apply mb-3 md:mb-4 xl:mb-6;
 }
 .form-notification-banner {
-    @apply md:absolute top-0 bottom-0 right-0 md:max-w-[50%] w-full;
+    @apply md:absolute top-0 bottom-0 right-0  w-full;
     img {
         @apply object-cover w-full h-full md:pl-5;
+    }
+
+    @screen md {
+        max-width: 50%;
     }
 }
 
