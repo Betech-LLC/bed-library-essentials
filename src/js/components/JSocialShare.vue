@@ -23,6 +23,12 @@
                 </slot>
             </a>
 
+            <a v-if="instagram" :href="instagramUrl" target="_blank" class="social-share-item instagram">
+                <slot name="instagram">
+                    <img src="../../images/instagram.png" />
+                </slot>
+            </a>
+
             <div class="social-share-item zalo" v-if="zalo && zaloOAId">
                 <client-only>
                     <div
@@ -86,6 +92,10 @@ export default {
             type: Boolean,
             default: false,
         },
+        instagram: {
+            type: Boolean,
+            default: null,
+        },
         copyLink: {
             type: Boolean,
             default: true,
@@ -106,6 +116,10 @@ export default {
             type: String,
             default: null,
         },
+        instagramUrl: {
+            type: String,
+            default: null,
+        }
     },
 
     data() {
