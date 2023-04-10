@@ -92,6 +92,10 @@ export default {
             type: Boolean,
             default: false,
         },
+        instagram: {
+            type: Boolean,
+            default: null,
+        },
         copyLink: {
             type: Boolean,
             default: true,
@@ -109,10 +113,6 @@ export default {
             default: null,
         },
         zaloOAId: {
-            type: String,
-            default: null,
-        },
-        instagram: {
             type: String,
             default: null,
         },
