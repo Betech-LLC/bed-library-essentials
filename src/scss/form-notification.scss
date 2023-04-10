@@ -1,30 +1,26 @@
 .form-notification {
-    @apply flex flex-col lg:flex-row mt-8 md:mt-12 xl:mt-16;
-    @screen lg {
-        height: 380px;
-    }
-    @screen xl {
-        height: 420px;
-    }
-}
-.form-notification-left {
-    @apply relative flex-1 bg-primary-darker;
+    @apply bg-primary-darker mt-8;
 }
 
-.form-notification-right {
-    @apply flex-1 hidden lg:block;
-    img {
-        @apply object-cover w-full h-full;
-    }
+.form-notification-wrap {
+    @apply max-w-[1920px] mx-auto relative;
 }
+
 .form-notification-title {
     @apply mb-3 text-white md:mb-4 xl:mb-6 headline-2;
 }
+
 .form-notification-fields {
-    @apply lg:max-w-[528px] w-full px-4 py-6 md:py-8 relative left-1/2 -translate-x-1/2;
+    @apply py-6 md:py-8 md:max-w-[50%] xl:max-w-[494px];
 }
 .form-notification-field-name {
     @apply mb-3 md:mb-4 xl:mb-6;
+}
+.form-notification-banner {
+    @apply md:absolute top-0 bottom-0 right-0 md:max-w-[50%] w-full;
+    img {
+        @apply object-cover w-full h-full md:pl-5;
+    }
 }
 
 .form-notification-field-name,

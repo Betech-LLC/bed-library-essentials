@@ -1,38 +1,40 @@
 <template>
     <div class="form-notification">
-        <div class="form-notification-left">
-            <div class="form-notification-fields">
-                <div class="form-notification-title">Nhận thông báo khi chúng tôi cập nhật bài viết mới nhất</div>
-                <JFormField
-                    v-model="form.contact.data['Họ và tên']"
-                    :field="{
-                        type: 'text',
-                        name: 'Họ và tên',
-                        label: 'Họ và tên',
-                        placeholder: 'Nhập họ và tên',
-                    }"
-                    z
-                    :rules="rules"
-                    :errors="errors"
-                    class="form-notification-field-name"
-                />
-                <JFormField
-                    v-model="form.contact.data.Email"
-                    :field="{
-                        type: 'email',
-                        name: 'Email',
-                        label: 'Email',
-                        placeholder: 'Nhập email',
-                    }"
-                    :rules="rules"
-                    :errors="errors"
-                    class="form-notification-field-email"
-                />
-                <button @click="onSubmit()" class="form-notification-field-button">Đăng ký</button>
+        <div class="form-notification-wrap">
+            <div class="container">
+                <div class="form-notification-fields">
+                    <div class="form-notification-title">Nhận thông báo khi chúng tôi cập nhật bài viết mới nhất</div>
+                    <JFormField
+                        v-model="form.contact.data['Họ và tên']"
+                        :field="{
+                            type: 'text',
+                            name: 'Họ và tên',
+                            label: 'Họ và tên',
+                            placeholder: 'Nhập họ và tên',
+                        }"
+                        z
+                        :rules="rules"
+                        :errors="errors"
+                        class="form-notification-field-name"
+                    />
+                    <JFormField
+                        v-model="form.contact.data.Email"
+                        :field="{
+                            type: 'email',
+                            name: 'Email',
+                            label: 'Email',
+                            placeholder: 'Nhập email',
+                        }"
+                        :rules="rules"
+                        :errors="errors"
+                        class="form-notification-field-email"
+                    />
+                    <button @click="onSubmit()" class="form-notification-field-button">Đăng ký</button>
+                </div>
             </div>
-        </div>
-        <div class="form-notification-right">
-            <img src="../../images/notification-form.png" />
+            <div class="form-notification-banner">
+                <img src="../../images/notification-form.png" />
+            </div>
         </div>
     </div>
 
