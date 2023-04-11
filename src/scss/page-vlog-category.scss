@@ -54,6 +54,10 @@
 
 .popup-vlog-body {
     @apply xl:p-8 md:p-6 p-4 bg-white md:rounded-lg;
+
+    @screen max-md {
+        min-height: calc(100vh - 40px);
+    }
 }
 
 .vlog-detail-title {
