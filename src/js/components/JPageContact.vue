@@ -78,7 +78,9 @@
                         />
                     </div>
                     <div class="page-contact-field-button">
-                        <button @click="onSubmit" class="w-full btn btn-primary btn-lg">Submit</button>
+                        <button @click="onSubmit" class="w-full btn btn-primary btn-lg">
+                            <slot name="button-title">Gửi ngay</slot>
+                        </button>
                     </div>
                 </div>
                 <div class="page-contact-right">
