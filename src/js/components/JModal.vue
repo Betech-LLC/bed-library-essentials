@@ -94,7 +94,6 @@ export default {
 
     methods: {
         close() {
-            console.log('close run')
             this.$emit('close')
         },
         closeOnEscape(e) {
