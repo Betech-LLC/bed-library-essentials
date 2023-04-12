@@ -94,23 +94,22 @@
             </div>
         </div>
 
-        <JModal :show="isShow" @close="isShow = false">
-            <JNotify
-                title="Yêu cầu thành công"
-                description="Hệ thống đã nhận thông tin yêu cầu của Quý khách. Chúng tôi sẽ liên hệ để tư vấn trong thời gian sớm nhất."
-            />
-        </JModal>
+        <JNotify
+            :show="isShow"
+            @close="isShow = false"
+            title="Yêu cầu thành công"
+            description="Hệ thống đã nhận thông tin yêu cầu của Quý khách. Chúng tôi sẽ liên hệ để tư vấn trong thời gian sớm nhất."
+        />
     </main>
 </template>
 <script>
 import JNotify from '@core/components/JNotify.vue'
-import JModal from '@core/components/JModal.vue'
 import JFormField from '@core/components/JFormField.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 export default {
-    components: { JNotify, JModal, JFormField, JBreadcrumb, JIconArrowRight },
+    components: { JNotify, JFormField, JBreadcrumb, JIconArrowRight },
     props: {
         title: {
             type: String,
@@ -171,9 +170,6 @@ export default {
         },
         onSuccessApply() {
             this.isShow = true
-            setTimeout(() => {
-                this.isShow = false
-            }, 2500)
         },
         onErrorApply() {
             console.log('error')
