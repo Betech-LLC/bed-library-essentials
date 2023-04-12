@@ -1,6 +1,6 @@
 <template>
     <main>
-        <JPageContact title="JAMstack Vietnam" :breadcrumb="breadcrumb" />
+        <JPageContact title="JAMstack Vietnam" description="description" :breadcrumb="breadcrumb" />
     </main>
 </template>
 
