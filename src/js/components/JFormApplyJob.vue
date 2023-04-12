@@ -59,20 +59,20 @@
         <button @click="onSubmit" class="form-apply-job-button">Gửi</button>
     </div>
 
-    <JNotify
+    <JPopupNotify
         :show="isShow"
         @close="isShow = false"
         title="Ứng tuyển thành công"
         description="Chúng tôi đã nhận hồ sơ ứng tuyển. Phòng Nhân sự sẽ liên hệ đến bạn trong thời gian sớm nhất."
-    ></JNotify>
+    ></JPopupNotify>
 </template>
 <script>
-import JNotify from '@core/components/JNotify.vue'
+import JPopupNotify from '@core/components/JPopupNotify.vue'
 import JIconUploadCloud from '@core/components/JIcon/UploadCloud.vue'
 import JFormField from '@core/components/JFormField.vue'
 import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 export default {
-    components: { JNotify, JIconUploadCloud, JFormField },
+    components: { JPopupNotify, JIconUploadCloud, JFormField },
     props: {
         job: {
             type: Object,

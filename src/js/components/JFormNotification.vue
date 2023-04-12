@@ -39,21 +39,21 @@
             </div>
         </div>
     </div>
-    <JNotify
+    <JPopupNotify
         :show="isShow"
         @close="isShow = false"
         title="Đăng ký thành công"
         description="Chúng tôi sẽ gửi thông báo đến email của bạn khi cập nhật bài viết mới nhất."
-    ></JNotify>
+    ></JPopupNotify>
 </template>
 <script>
 import JPicture from '@core/components/JPicture.vue'
-import JNotify from '@core/components/JNotify.vue'
+import JPopupNotify from '@core/components/JPopupNotify.vue'
 import JFormField from '@core/components/JFormField.vue'
 import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 
 export default {
-    components: { JPicture, JNotify, JFormField },
+    components: { JPicture, JPopupNotify, JFormField },
     props: ['urlApiForm'],
     data() {
         return {

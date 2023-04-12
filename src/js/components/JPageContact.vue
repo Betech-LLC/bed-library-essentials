@@ -94,7 +94,7 @@
             </div>
         </div>
 
-        <JNotify
+        <JPopupNotify
             :show="isShow"
             @close="isShow = false"
             title="Yêu cầu thành công"
@@ -103,13 +103,13 @@
     </main>
 </template>
 <script>
-import JNotify from '@core/components/JNotify.vue'
+import JPopupNotify from '@core/components/JPopupNotify.vue'
 import JFormField from '@core/components/JFormField.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 export default {
-    components: { JNotify, JFormField, JBreadcrumb, JIconArrowRight },
+    components: { JPopupNotify, JFormField, JBreadcrumb, JIconArrowRight },
     props: {
         title: {
             type: String,
