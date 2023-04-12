@@ -59,7 +59,7 @@
         <button @click="onSubmit" class="form-apply-job-button">Gửi</button>
     </div>
 
-    <JModal :show="isShow" @close="isShow = false">
+    <JModal :show="isShow" @close="isShow = false" modalClass="h-full">
         <JNotify
             title="Ứng tuyển thành công"
             description="Chúng tôi đã nhận hồ sơ ứng tuyển. Phòng Nhân sự sẽ liên hệ đến bạn trong thời gian sớm nhất."

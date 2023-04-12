@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <JModal :show="isShow" @close="isShow = false">
+    <JModal :show="isShow" @close="isShow = false" modalClass="h-full">
         <JNotify
             title="Đăng ký thành công"
             description="Chúng tôi sẽ gửi thông báo đến email của bạn khi cập nhật bài viết mới nhất."
