@@ -1,7 +1,11 @@
 .notify {
-    @apply flex flex-col items-center justify-center p-6 text-center bg-white rounded-xl;
+    @apply relative  flex flex-col items-center justify-center p-4 md:p-6 text-center bg-white rounded-xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+    width: 90%;
+    @screen md {
+        @apply w-fit;
+    }
     .notify-title {
-        @apply mt-5 mb-2 text-gray-900 title-1;
+        @apply mt-3 md:mt-5 mb-2 text-gray-900 title-1;
     }
     .notify-desc {
         @apply text-gray-700;

@@ -11,7 +11,7 @@
 }
 
 .modal-popup-body {
-    @apply my-auto overflow-hidden transform shadow-xl lg:transition-all sm:w-full sm:mx-auto;
+    @apply my-auto overflow-hidden transform shadow-xl lg:transition-all sm:w-full sm:mx-auto h-full;
 
     &.max-width-sm {
         @apply sm:max-w-sm;
