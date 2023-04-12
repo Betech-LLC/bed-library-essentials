@@ -59,21 +59,20 @@
         <button @click="onSubmit" class="form-apply-job-button">Gửi</button>
     </div>
 
-    <JModal :show="isShow" @close="isShow = false" modalClass="h-full">
-        <JNotify
-            title="Ứng tuyển thành công"
-            description="Chúng tôi đã nhận hồ sơ ứng tuyển. Phòng Nhân sự sẽ liên hệ đến bạn trong thời gian sớm nhất."
-        />
-    </JModal>
+    <JNotify
+        :show="isShow"
+        @close="isShow = false"
+        title="Ứng tuyển thành công"
+        description="Chúng tôi đã nhận hồ sơ ứng tuyển. Phòng Nhân sự sẽ liên hệ đến bạn trong thời gian sớm nhất."
+    ></JNotify>
 </template>
 <script>
 import JNotify from '@core/components/JNotify.vue'
-import JModal from '@core/components/JModal.vue'
 import JIconUploadCloud from '@core/components/JIcon/UploadCloud.vue'
 import JFormField from '@core/components/JFormField.vue'
 import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 export default {
-    components: { JModal, JNotify, JIconUploadCloud, JFormField },
+    components: { JNotify, JIconUploadCloud, JFormField },
     props: {
         job: {
             type: Object,
@@ -119,6 +118,7 @@ export default {
                 return
             }
             this.isLoading = true
+
             try {
                 const { data } = await useSubmitForm(this.apiURL, this.form)
                 if (data && data.success) {
@@ -136,9 +136,6 @@ export default {
 
         onSuccessApply() {
             this.isShow = true
-            setTimeout(() => {
-                this.isShow = false
-            }, 2000)
         },
         onErrorApply() {
             console.log('error')

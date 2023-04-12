@@ -39,23 +39,21 @@
             </div>
         </div>
     </div>
-
-    <JModal :show="isShow" @close="isShow = false" modalClass="h-full">
-        <JNotify
-            title="Đăng ký thành công"
-            description="Chúng tôi sẽ gửi thông báo đến email của bạn khi cập nhật bài viết mới nhất."
-        />
-    </JModal>
+    <JNotify
+        :show="isShow"
+        @close="isShow = false"
+        title="Đăng ký thành công"
+        description="Chúng tôi sẽ gửi thông báo đến email của bạn khi cập nhật bài viết mới nhất."
+    ></JNotify>
 </template>
 <script>
 import JPicture from '@core/components/JPicture.vue'
 import JNotify from '@core/components/JNotify.vue'
-import JModal from '@core/components/JModal.vue'
 import JFormField from '@core/components/JFormField.vue'
 import { useSubmitForm, useValidateForm, useResetForm } from '@core/composables'
 
 export default {
-    components: { JPicture, JModal, JNotify, JFormField },
+    components: { JPicture, JNotify, JFormField },
     props: ['urlApiForm'],
     data() {
         return {
@@ -85,7 +83,6 @@ export default {
                 return
             }
             this.isLoading = true
-
             try {
                 const { data } = await useSubmitForm(this.urlApiForm, this.form)
                 if (data && data.success) {
@@ -102,9 +99,6 @@ export default {
         },
         onSuccessApply() {
             this.isShow = true
-            setTimeout(() => {
-                this.isShow = false
-            }, 2500)
         },
         onErrorApply() {
             console.log('error')

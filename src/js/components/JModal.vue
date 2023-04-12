@@ -26,7 +26,11 @@
                 leave-to-class="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
             >
                 <div v-show="show" class="modal-popup-body" :class="[modalClass, maxWidthClass]">
-                    <slot />
+                    <div @click="close" class="modal-popup-close">
+                        <slot name="close-inner"></slot>
+                    </div>
+
+                    <slot @close="close" />
                 </div>
             </transition>
         </div>
@@ -90,6 +94,7 @@ export default {
 
     methods: {
         close() {
+            console.log('close run')
             this.$emit('close')
         },
         closeOnEscape(e) {
