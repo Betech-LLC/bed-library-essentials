@@ -6,17 +6,13 @@
                     <JIconArrowRight />
                 </template>
             </JBreadcrumb>
-            <div class="site-map-group">
+            <div class="site-map-wrap">
                 <h1 class="site-map-title">SITE MAP</h1>
-                <div class="site-map-group-config">
+                <div class="site-map-config">
                     <div v-for="(group, index) in groupConfig" :key="index">
-                        <h2 class="site-map-group-config-title">{{ group.title }}</h2>
+                        <h2 class="site-map-config-title">{{ group.title }}</h2>
                         <ul>
-                            <li
-                                v-for="(node, indexNode) in group.nodes"
-                                :key="indexNode"
-                                class="site-map-group-config-node"
-                            >
+                            <li v-for="(node, indexNode) in group.nodes" :key="indexNode" class="site-map-config-node">
                                 <JLink :href="node.link">
                                     <h3>{{ node.title }}</h3></JLink
                                 >
@@ -24,15 +20,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="site-map-group-options">
+                <div class="site-map-options">
                     <div v-for="(group, index) in groupOptions" :key="index">
-                        <h2 class="site-map-group-options-title">{{ group.title }}</h2>
-                        <ul class="site-map-group-options-list">
-                            <li
-                                v-for="(node, indexNode) in group.nodes"
-                                :key="indexNode"
-                                class="site-map-group-options-node"
-                            >
+                        <h2 class="site-map-options-title">{{ group.title }}</h2>
+                        <ul class="site-map-options-list">
+                            <li v-for="(node, indexNode) in group.nodes" :key="indexNode" class="site-map-options-node">
                                 <JLink :href="node.link">
                                     <h3>{{ node.title }}</h3>
                                 </JLink>
