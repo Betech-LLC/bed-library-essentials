@@ -30,12 +30,12 @@ export default {
         return {
             image: null,
             isLoading: false,
-            names: ['empty-vlog', 'empty-cart', 'empty-product', 'empty-search', 'empty-project', 'empty-job'],
+            namesDefault: ['empty-vlog', 'empty-cart', 'empty-product', 'empty-search', 'empty-project', 'empty-job'],
         }
     },
 
     created() {
-        if (this.names.includes(this.name)) {
+        if (this.namesDefault.includes(this.name)) {
             this.loadImage()
         }
     },
