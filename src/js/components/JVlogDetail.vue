@@ -2,8 +2,11 @@
     <div class="vlog-detail">
         <div class="vlog-detail-video">
             <JVideo v-if="item.video_url" :isPlay="isPlay" @change="change" :src="item.video_url" />
-            <!-- TODO: Bổ sung layout -->
-            <div v-else>Bổ sung layout khi chưa nhập video</div>
+            <JEmpty
+                v-else
+                name="empty-vlog"
+                description="Chúng tôi đang cập nhật video, quý khách vui lòng quay lại sau."
+            />
         </div>
         <div class="vlog-detail-title">{{ item.title }}</div>
         <div class="vlog-detail-information">
@@ -22,9 +25,9 @@
 <script>
 import { toDate } from '@core/utils'
 import JVideo from '@core/components/JVideo.vue'
-
+import JEmpty from '@core/components/JEmpty.vue'
 export default {
-    components: { JVideo },
+    components: { JVideo, JEmpty },
 
     props: {
         item: {
