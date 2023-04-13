@@ -14,4 +14,8 @@
     </JEmpty>
     <JEmpty name="empty-vlog" description="Chúng tôi đang cập nhật video, quý khách vui lòng quay lại sau." />
     <JEmpty name="empty-project" description="Chúng tôi đang cập nhật dự án, quý khách vui lòng quay lại sau." />
+    <JEmpty
+        name="empty-project-error"
+        description="Error Chúng tôi đang cập nhật dự án, quý khách vui lòng quay lại sau."
+    />
 </template>

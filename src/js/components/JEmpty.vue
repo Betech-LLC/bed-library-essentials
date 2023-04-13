@@ -2,7 +2,10 @@
     <div class="empty">
         <div class="empty-image">
             <slot name="image">
-                <JImageDynamic :name="name" />
+                <template v-if="!isLoading">
+                    <img v-if="image" :src="image" />
+                    <img v-else src="../../images/empty-search.webp" />
+                </template>
             </slot>
         </div>
         <div class="empty-description">
@@ -14,17 +17,34 @@
     </div>
 </template>
 <script>
-import JImageDynamic from '@core/components/JImageDynamic.vue'
-
 export default {
-    components: {
-        JImageDynamic,
-    },
     props: {
-        name: { type: String, default: 'empty-search' }, // empty-vlog | empty-cart | empty-product | empty-search | empty-project | empty-job
+        name: { type: String, default: null }, // empty-vlog | empty-cart | empty-product | empty-search | empty-project | empty-job
         description: {
             type: String,
             default: null,
+        },
+    },
+
+    data() {
+        return {
+            image: null,
+            isLoading: false,
+            names: ['empty-vlog', 'empty-cart', 'empty-product', 'empty-search', 'empty-project', 'empty-job'],
+        }
+    },
+
+    created() {
+        if (this.names.includes(this.name)) {
+            this.loadImage()
+        }
+    },
+    methods: {
+        async loadImage() {
+            this.isLoading = true
+            let response = await import(/* @vite-ignore */ `../../images/${this.name}.webp`)
+            this.image = response.default
+            this.isLoading = false
         },
     },
 }
