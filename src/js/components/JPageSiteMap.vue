@@ -10,9 +10,9 @@
                 <h1 class="site-map-title">SITE MAP</h1>
                 <div class="site-map-config">
                     <div v-for="(group, index) in groupConfig" :key="index">
-                        <h2 class="site-map-config-title">{{ group.title }}</h2>
-                        <ul>
-                            <li v-for="(node, indexNode) in group.nodes" :key="indexNode" class="site-map-config-node">
+                        <h2 class="site-map-sub-title">{{ group.title }}</h2>
+                        <ul class="site-map-config-list">
+                            <li v-for="(node, indexNode) in group.nodes" :key="indexNode" class="site-map-item">
                                 <JLink :href="node.link">
                                     <h3>{{ node.title }}</h3></JLink
                                 >
@@ -22,9 +22,12 @@
                 </div>
                 <div class="site-map-options">
                     <div v-for="(group, index) in groupOptions" :key="index">
-                        <h2 class="site-map-options-title">{{ group.title }}</h2>
+                        <JLink :href="group.link" class="site-map-sub-title">
+                            <h2>{{ group.title }}</h2>
+                        </JLink>
+
                         <ul class="site-map-options-list">
-                            <li v-for="(node, indexNode) in group.nodes" :key="indexNode" class="site-map-options-node">
+                            <li v-for="(node, indexNode) in group.nodes" :key="indexNode" class="site-map-item">
                                 <JLink :href="node.link">
                                     <h3>{{ node.title }}</h3>
                                 </JLink>
