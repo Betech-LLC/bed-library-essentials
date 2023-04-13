@@ -22,9 +22,11 @@
                 </div>
                 <div class="site-map-options">
                     <div v-for="(group, index) in groupOptions" :key="index">
-                        <JLink :href="group.link" class="site-map-sub-title">
-                            <h2>{{ group.title }}</h2>
-                        </JLink>
+                        <div class="site-map-sub-title">
+                            <JLink :href="group.link">
+                                <h2>{{ group.title }}</h2>
+                            </JLink>
+                        </div>
 
                         <ul class="site-map-options-list">
                             <li v-for="(node, indexNode) in group.nodes" :key="indexNode" class="site-map-item">
