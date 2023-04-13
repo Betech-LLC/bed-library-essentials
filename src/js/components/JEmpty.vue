@@ -42,7 +42,7 @@ export default {
     methods: {
         async loadImage() {
             this.isLoading = true
-            let response = await import(/* @vite-ignore */ `../../images/${this.name}.webp`)
+            const response = await import(/* @vite-ignore */ `../../images/${this.name}.webp`)
             this.image = response.default
             this.isLoading = false
         },
