@@ -15,8 +15,11 @@
         <section class="page-vlog-category">
             <div class="page-vlog-category-body">
                 <JListCardVlog v-if="vlogs_data && vlogs_data.length" @viewVideo="viewVideo" :items="vlogs_data" />
-                <!-- TODO: Bổ sung layout -->
-                <div v-else>Chưa có vlog nào</div>
+                <JEmpty
+                    v-else
+                    name="empty-vlog"
+                    description="Chúng tôi đang cập nhật video, quý khách vui lòng quay lại sau."
+                />
 
                 <div v-if="vlogs.current_page < vlogs.last_page" class="page-vlog-category-button">
                     <button @click.prevent="$emit('seeMore', vlogs.next_page_url)" class="btn-see-more">
@@ -50,9 +53,9 @@ import JListCardVlog from '@core/components/JListCardVlog.vue'
 import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JBanner from '@core/components/JBanner.vue'
-
+import JEmpty from '@core/components/JEmpty.vue'
 export default {
-    components: { JListCardVlog, JPopupVlog, JIconArrowRight, JBreadcrumb, JBanner },
+    components: { JEmpty, JListCardVlog, JPopupVlog, JIconArrowRight, JBreadcrumb, JBanner },
     props: ['vlogs', 'vlogs_data', 'breadcrumb', 'bannerTop'],
 
     props: {

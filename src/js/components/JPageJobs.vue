@@ -29,8 +29,11 @@
                         <template v-if="jobs_data && jobs_data.length">
                             <JCardJob v-for="(job, index) in jobs_data" :key="index" :item="job" />
                         </template>
-                        <!-- TODO: Bổ sung layout -->
-                        <div v-else>Không có công việc nào</div>
+                        <JEmpty
+                            v-else
+                            name="empty-job"
+                            description="Chưa có vị trí ứng tuyển, chúng tôi sẽ cập nhật thông tin tuyển dụng ngay khi có nhu cầu."
+                        />
                     </div>
 
                     <div v-if="jobs.current_page < jobs.last_page" class="page-jobs-button">
@@ -46,11 +49,12 @@
 
 <script>
 import JCardJob from '@core/components/JCardJob.vue'
+import JEmpty from '@core/components/JEmpty.vue'
 import JFieldCheckboxCustom from '@core/components/JField/CheckboxCustom.vue'
 import { serializeQuery, mappingOptions } from '@core/utils/filter-key'
 
 export default {
-    components: { JCardJob, JFieldCheckboxCustom },
+    components: { JEmpty, JCardJob, JFieldCheckboxCustom },
     props: ['jobs_data', 'jobs', 'options'],
 
     data() {
