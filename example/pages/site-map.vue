@@ -7,7 +7,8 @@ export default {
             groupConfig: [
                 {
                     title: 'Trang chủ',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Trang chủ', link: '/' },
                         { title: 'Về chúng tôi', link: '/ve-chung-toi' },
                         { title: 'Tuyển dụng', link: '/tuyển dụng' },
@@ -15,7 +16,8 @@ export default {
                 },
                 {
                     title: 'Tin tức',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tin nội bộ', link: '/' },
                         { title: 'Tin chuyên ngành', link: '/tin-chuyen-nganh' },
                         { title: 'Tin quốc tế', link: '/tuyển dụng' },
@@ -24,7 +26,8 @@ export default {
                 },
                 {
                     title: 'Dịch vụ',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tên dịch vụ a', link: '/' },
                         { title: 'Tên dịch vụ b', link: '/tin-chuyen-nganh' },
                         { title: 'Tên dịch vụ c', link: '/tuyển dụng' },
@@ -33,7 +36,8 @@ export default {
                 },
                 {
                     title: 'Chính sách',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Chính sách mua hàng', link: '/' },
                         { title: 'Chính sách vận chuyển', link: '/tin-chuyen-nganh' },
                         { title: 'Chính sách đổi trả', link: '/tuyển dụng' },
@@ -44,7 +48,8 @@ export default {
             groupOptions: [
                 {
                     title: 'Danh mục sản phẩm level 1 (1)',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
@@ -67,7 +72,8 @@ export default {
                 },
                 {
                     title: 'Danh mục sản phẩm level 1 (1)',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
@@ -90,7 +96,8 @@ export default {
                 },
                 {
                     title: 'Danh mục sản phẩm level 1 (1)',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
@@ -113,7 +120,8 @@ export default {
                 },
                 {
                     title: 'Danh mục sản phẩm level 1 (1)',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
@@ -136,7 +144,8 @@ export default {
                 },
                 {
                     title: 'Danh mục sản phẩm level 1 (1)',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
@@ -159,7 +168,8 @@ export default {
                 },
                 {
                     title: 'Danh mục sản phẩm level 1 (1)',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
@@ -182,7 +192,8 @@ export default {
                 },
                 {
                     title: 'Danh mục sản phẩm level 1 (1)',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
@@ -205,7 +216,8 @@ export default {
                 },
                 {
                     title: 'Danh mục sản phẩm level 1 (1)',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
@@ -228,7 +240,8 @@ export default {
                 },
                 {
                     title: 'Danh mục sản phẩm level 1 (1)',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
@@ -251,7 +264,8 @@ export default {
                 },
                 {
                     title: 'Danh mục sản phẩm level 1 (1)',
-                    nodes: [
+                    link: '/',
+                    items: [
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
                         { title: 'Tên sản phẩm (level 2)', link: '/' },
