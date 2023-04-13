@@ -1,41 +1,31 @@
 <template>
-    <div class="py-6 space-y-4 md:space-y-6 xl:space-y-8 xl:py-12 md:py-8">
-        <div class="w-[260px] md:w-[300px] mx-auto">
-            <img :src="image || images[type]" />
+    <div class="empty">
+        <div class="empty-image">
+            <slot name="image">
+                <JImageDynamic :name="name" />
+            </slot>
         </div>
-        <div class="max-w-[490px] w-full mx-auto text-center text-gray-700">
+        <div class="empty-description">
             {{ description }}
         </div>
-        <div class="flex justify-center">
-            <slot />
+        <div class="empty-cta">
+            <slot name="button" />
         </div>
     </div>
 </template>
 <script>
-import JPicture from '@core/components/JPicture.vue'
+import JImageDynamic from '@core/components/JImageDynamic.vue'
+
 export default {
     components: {
-        JPicture,
+        JImageDynamic,
     },
     props: {
-        type: { type: String, default: null }, // vlog | cart | product | faqs | project | job
-        image: { type: String, default: null },
+        name: { type: String, default: 'empty-search' }, // empty-vlog | empty-cart | empty-product | empty-search | empty-project | empty-job
         description: {
             type: String,
             default: null,
         },
-    },
-    data() {
-        return {
-            images: {
-                vlog: '../../images/empty-vlog.webp',
-                cart: '../../images/empty-cart.webp',
-                product: '../../images/empty-product.webp',
-                search: '../../images/empty-search.webp',
-                project: '../../images/empty-project.webp',
-                job: '../../images/empty-job.webp',
-            },
-        }
     },
 }
 </script>
