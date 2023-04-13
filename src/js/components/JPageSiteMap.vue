@@ -6,10 +6,8 @@
                     <JIconArrowRight />
                 </template>
             </JBreadcrumb>
-
-            <div class="site-map-wrapper">
+            <div class="site-map-group">
                 <h1 class="site-map-title">SITE MAP</h1>
-                <!-- Group Config -->
                 <div class="site-map-group-config">
                     <div v-for="(group, index) in groupConfig" :key="index">
                         <h2 class="site-map-group-config-title">{{ group.title }}</h2>
@@ -26,8 +24,6 @@
                         </ul>
                     </div>
                 </div>
-
-                <!-- Group Options -->
                 <div class="site-map-group-options">
                     <div v-for="(group, index) in groupOptions" :key="index">
                         <h2 class="site-map-group-options-title">{{ group.title }}</h2>
