@@ -24,6 +24,10 @@ export default {
             type: String,
             require: false,
         },
+        isResize: {
+            type: Boolean,
+            require: true,
+        },
         placeholderSrc: {
             type: String,
             default: '/placeholder.png',
@@ -43,11 +47,13 @@ export default {
         },
         originImageSourceSet() {
             const width = this.$attrs['width'] || '1000'
-            return encodeURI(`${this.originImageSource}?w=${width}`)
+            return this.isResize ? encodeURI(`${this.originImageSource}?w=${width}`) : encodeURI(this.originImageSource)
         },
         mobileImageSourceSet() {
             const width = this.$attrs['mobile-width'] || '500'
-            return encodeURI(`${this.mobileSrc || this.originImageSource}?w=${width}`)
+            return this.isResize
+                ? encodeURI(`${this.mobileSrc || this.originImageSource}?w=${width}`)
+                : encodeURI(this.mobileSrc || this.originImageSource)
         },
         altImage() {
             return removeAccent(toBasename(this.alt || this.originImageSource))
