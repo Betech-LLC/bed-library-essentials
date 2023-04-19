@@ -26,7 +26,7 @@ export default {
         },
         isResize: {
             type: Boolean,
-            require: true,
+            default: true,
         },
         placeholderSrc: {
             type: String,
