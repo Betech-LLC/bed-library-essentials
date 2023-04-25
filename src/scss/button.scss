@@ -2,7 +2,7 @@
     @apply inline-flex items-center justify-center outline-none focus:outline-none rounded-lg shadow-xs border;
 
     // DEFAULT MD
-    @apply label-2 h-9 px-3.5;
+    @apply label-2 h-9 md:h-10 px-4;
 }
 
 // VARIANTS
