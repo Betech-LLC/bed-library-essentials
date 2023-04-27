@@ -19,9 +19,7 @@
                     <button class="rotate-180 btn-slide btn-prev" @click="navigate('prev')">
                         <JIconChevronRight />
                     </button>
-                    <button class="btn-slide btn-next" @click="navigate('next')">
-                        <JIconChevronRight />
-                    </button>
+                    <button class="btn-slide btn-next" @click="navigate('next')"><JIconChevronRight /></button>
                 </template> </JSlider
         ></ClientOnly>
     </div>
@@ -43,7 +41,7 @@ export default {
         },
         config: {
             type: Object,
-            default: { cols: '1.6', gutter: '8px', align: 'start' },
+            default: { cols: '1.6', gutter: '8px', align: 'start', loop: true },
         },
         breakpoints: {
             type: Object,
@@ -64,7 +62,11 @@ export default {
         },
         autoplay: {
             type: [Number, Boolean, Object],
-            default: true,
+            default: false,
+        },
+        pagination: {
+            type: Boolean,
+            default: false,
         },
         slidesPerView: {
             type: Number,
