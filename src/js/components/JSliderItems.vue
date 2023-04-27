@@ -1,19 +1,21 @@
 <template>
-    <div class="slider-items" v-if="items.length > 0">
+    <div class="slider-items">
         <h2 v-if="title" class="slider-title">{{ title }}</h2>
         <ClientOnly
             ><JSlider
                 :config="{
                     ...config,
-                    total: items.length,
+                    total: total,
                 }"
                 :breakpoints="{ ...breakpoints }"
+                :autoplay="autoplay"
+                :slidesPerView="slidesPerView"
                 class="slider"
             >
                 <JSlide v-for="(item, index) in items" :key="index">
                     <slot name="slide-item" :item="item" />
                 </JSlide>
-                <template #arrows="{ navigate }" v-if="items.length > rowItems">
+                <template #arrows="{ navigate }" v-if="total > rowItems">
                     <button class="rotate-180 btn-slide btn-prev" @click="navigate('prev')">
                         <JIconChevronRight />
                     </button>
@@ -60,9 +62,20 @@ export default {
                 },
             },
         },
+        autoplay: {
+            type: [Number, Boolean, Object],
+            default: true,
+        },
+        slidesPerView: {
+            type: Number,
+            default: 1,
+        },
     },
 
     computed: {
+        total() {
+            return this.items.length
+        },
         rowItems() {
             const quantity = this.breakpoints.xl?.cols || this.breakpoints.lg?.cols || this.breakpoints.md?.cols
             return Number(quantity)

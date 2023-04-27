@@ -58,7 +58,7 @@
             </div>
         </section>
         <section class="page-project-detail-related">
-            <JSliderItems :items="related_projects" title="Dự án liên quan">
+            <JSliderItems :items="related_projects" title="Dự án liên quan" class="container">
                 <template #slide-item="{ item }">
                     <JCardProject class="card-item" :item="item" />
                 </template>
