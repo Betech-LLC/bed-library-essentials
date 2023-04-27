@@ -1,27 +1,5 @@
 <template>
     <div class="container py-10 space-y-10">
-        <JSliderItems
-            :items="[1, 2, 3, 4, 5, 6, 7]"
-            title="Bài viết liên quan"
-            :breakpoints="{
-                md: {
-                    cols: '3',
-                    gutter: '8px',
-                },
-                lg: {
-                    cols: '4',
-                    gutter: '108px',
-                },
-                xl: {
-                    cols: '5',
-                    gutter: '8px',
-                },
-            }"
-        >
-            <template #slide-item="{ item }">
-                <JPicture />
-            </template>
-        </JSliderItems>
         <div id="jam-button">
             <div class="mb-4 display-3">Button</div>
             <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
@@ -745,8 +723,6 @@
 </template>
 
 <script>
-import JPicture from './JPicture.vue'
-
 export default {
     data() {
         return {
@@ -945,7 +921,6 @@ export default {
             this.currentActive = this.currentActive !== index ? index : null
         },
     },
-    components: { JPicture },
 }
 </script>
 <style lang="scss">
