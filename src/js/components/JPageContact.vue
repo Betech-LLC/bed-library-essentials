@@ -1,29 +1,5 @@
 <template>
     <main>
-        <div class="container">
-            <JSliderItems
-                :items="[1, 2, 3, 4, 5, 6, 7]"
-                title="Bài viết liên quan"
-                :breakpoints="{
-                    md: {
-                        cols: '3',
-                        gutter: '8px',
-                    },
-                    lg: {
-                        cols: '4',
-                        gutter: '8px',
-                    },
-                    xl: {
-                        cols: '5',
-                        gutter: '8px',
-                    },
-                }"
-            >
-                <template #slide-item="{ item }">
-                    <JPicture />
-                </template>
-            </JSliderItems>
-        </div>
         <div class="page-contact">
             <JBreadcrumb :items="breadcrumb">
                 <template #icon>
