@@ -188,6 +188,42 @@ export default {
                     image: { url: null, alt: 'Nam laboriosam.' },
                     url: 'http://localhost:8000/tin-tuc/sit-non/nam-laboriosam',
                 },
+                {
+                    id: 77,
+                    title: 'Nam laboriosam.',
+                    slug: 'nam-laboriosam',
+                    published_at: '2023-03-08',
+                    description:
+                        'Eveniet maxime velit modi rerum molestiae. Accusantium qui sequi sunt commodi doloribus cum.',
+                    category: {
+                        id: 3,
+                        title: 'Sit non.',
+                        slug: 'sit-non',
+                        image: { url: null, alt: 'Sit non.' },
+                        icon: null,
+                        url: 'http://localhost:8000/tin-tuc/sit-non',
+                    },
+                    categories: [
+                        {
+                            id: 3,
+                            title: 'Sit non.',
+                            slug: 'sit-non',
+                            image: { url: null, alt: 'Sit non.' },
+                            icon: null,
+                            url: 'http://localhost:8000/tin-tuc/sit-non',
+                        },
+                        {
+                            id: 24,
+                            title: 'Hic earum vel facilis.',
+                            slug: 'hic-earum-vel-facilis',
+                            image: { url: null, alt: 'Hic earum vel facilis.' },
+                            icon: null,
+                            url: 'http://localhost:8000/tin-tuc/hic-earum-vel-facilis',
+                        },
+                    ],
+                    image: { url: null, alt: 'Nam laboriosam.' },
+                    url: 'http://localhost:8000/tin-tuc/sit-non/nam-laboriosam',
+                },
             ],
 
             post: {
