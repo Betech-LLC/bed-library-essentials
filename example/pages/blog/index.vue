@@ -9,6 +9,7 @@
         :banner="banner"
         :categories="categories"
         :currentPath="currentPath"
+        :layout="2"
     />
 </template>
 
@@ -509,6 +510,42 @@ export default {
                     image: { url: null, alt: 'Voluptas est maiores.' },
                     url: '/blog/quidem-sit/voluptas-est-maiores',
                 },
+                {
+                    id: 102,
+                    title: 'Static Site Generator: Trình tạo trang tĩnh được ứng dụng trong kiến trúc website Jamstack3',
+                    slug: 'voluptas-est-maiores',
+                    published_at: '2023-03-08',
+                    description:
+                        'Perspiciatis vel quaerat a in id voluptate. Voluptatem ad quia at esse blanditiis facere. Accusantium qui voluptas repudiandae et. Ad molestiae debitis ea.',
+                    category: {
+                        id: 8,
+                        title: 'Quidem sit.',
+                        slug: 'quidem-sit',
+                        image: { url: null, alt: 'Quidem sit.' },
+                        icon: null,
+                        url: '/blog/quidem-sit',
+                    },
+                    categories: [
+                        {
+                            id: 8,
+                            title: 'Quidem sit.',
+                            slug: 'quidem-sit',
+                            image: { url: null, alt: 'Quidem sit.' },
+                            icon: null,
+                            url: '/blog/quidem-sit',
+                        },
+                        {
+                            id: 24,
+                            title: 'Hic earum vel facilis.',
+                            slug: 'hic-earum-vel-facilis',
+                            image: { url: null, alt: 'Hic earum vel facilis.' },
+                            icon: null,
+                            url: '/blog/hic-earum-vel-facilis',
+                        },
+                    ],
+                    image: { url: null, alt: 'Voluptas est maiores.' },
+                    url: '/blog/quidem-sit/voluptas-est-maiores',
+                },
             ],
 
             top_views: [
@@ -611,6 +648,78 @@ export default {
                     ],
                     image: { url: null, alt: 'Officiis.' },
                     url: '/blog/libero-ducimus-in/officiis',
+                },
+                {
+                    id: 102,
+                    title: 'Voluptas est maiores.',
+                    slug: 'voluptas-est-maiores',
+                    published_at: '2023-03-08',
+                    description:
+                        'Perspiciatis vel quaerat a in id voluptate. Voluptatem ad quia at esse blanditiis facere. Accusantium qui voluptas repudiandae et. Ad molestiae debitis ea.',
+                    category: {
+                        id: 8,
+                        title: 'Quidem sit.',
+                        slug: 'quidem-sit',
+                        image: { url: null, alt: 'Quidem sit.' },
+                        icon: null,
+                        url: '/blog/quidem-sit',
+                    },
+                    categories: [
+                        {
+                            id: 8,
+                            title: 'Quidem sit.',
+                            slug: 'quidem-sit',
+                            image: { url: null, alt: 'Quidem sit.' },
+                            icon: null,
+                            url: '/blog/quidem-sit',
+                        },
+                        {
+                            id: 24,
+                            title: 'Hic earum vel facilis.',
+                            slug: 'hic-earum-vel-facilis',
+                            image: { url: null, alt: 'Hic earum vel facilis.' },
+                            icon: null,
+                            url: '/blog/hic-earum-vel-facilis',
+                        },
+                    ],
+                    image: { url: null, alt: 'Voluptas est maiores.' },
+                    url: '/blog/quidem-sit/voluptas-est-maiores',
+                },
+                {
+                    id: 102,
+                    title: 'Voluptas est maiores.',
+                    slug: 'voluptas-est-maiores',
+                    published_at: '2023-03-08',
+                    description:
+                        'Perspiciatis vel quaerat a in id voluptate. Voluptatem ad quia at esse blanditiis facere. Accusantium qui voluptas repudiandae et. Ad molestiae debitis ea.',
+                    category: {
+                        id: 8,
+                        title: 'Quidem sit.',
+                        slug: 'quidem-sit',
+                        image: { url: null, alt: 'Quidem sit.' },
+                        icon: null,
+                        url: '/blog/quidem-sit',
+                    },
+                    categories: [
+                        {
+                            id: 8,
+                            title: 'Quidem sit.',
+                            slug: 'quidem-sit',
+                            image: { url: null, alt: 'Quidem sit.' },
+                            icon: null,
+                            url: '/blog/quidem-sit',
+                        },
+                        {
+                            id: 24,
+                            title: 'Hic earum vel facilis.',
+                            slug: 'hic-earum-vel-facilis',
+                            image: { url: null, alt: 'Hic earum vel facilis.' },
+                            icon: null,
+                            url: '/blog/hic-earum-vel-facilis',
+                        },
+                    ],
+                    image: { url: null, alt: 'Voluptas est maiores.' },
+                    url: '/blog/quidem-sit/voluptas-est-maiores',
                 },
                 {
                     id: 102,
