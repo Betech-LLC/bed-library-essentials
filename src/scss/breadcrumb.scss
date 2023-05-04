@@ -8,6 +8,9 @@
             @apply text-gray-900;
         }
     }
+    h1.breadcrumb-item {
+        @apply inline;
+    }
     .icon {
         @apply pointer-events-none text-gray-700 mx-2 max-w-fit inline;
         *:first-child {
