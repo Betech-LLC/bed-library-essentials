@@ -495,7 +495,7 @@
                             title: 'Dép Cá Sấu cho người lớn',
                         },
                     ]"
-                    :hasH1="true"
+                    :isH1="true"
                 />
                 <hr />
                 <div class="body-2">Arrow ICON</div>
@@ -521,7 +521,7 @@
                 <hr />
                 <div class="body-2">Tick ICON - Nhúng Code SVG trực tiếp</div>
                 <JBreadcrumb
-                    :hasH1="true"
+                    :isH1="true"
                     :items="[
                         {
                             title: 'Trang chủ',
@@ -551,7 +551,7 @@
                 <hr />
                 <div class="body-2">Ký tự Dollar</div>
                 <JBreadcrumb
-                    :hasH1="true"
+                    :isH1="true"
                     :items="[
                         {
                             title: 'Trang chủ',
