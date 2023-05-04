@@ -521,6 +521,7 @@
                 <hr />
                 <div class="body-2">Tick ICON - Nhúng Code SVG trực tiếp</div>
                 <JBreadcrumb
+                    :hasH1="true"
                     :items="[
                         {
                             title: 'Trang chủ',
@@ -550,6 +551,7 @@
                 <hr />
                 <div class="body-2">Ký tự Dollar</div>
                 <JBreadcrumb
+                    :hasH1="true"
                     :items="[
                         {
                             title: 'Trang chủ',

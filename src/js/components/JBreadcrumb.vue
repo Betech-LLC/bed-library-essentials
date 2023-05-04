@@ -13,7 +13,7 @@
                 </span>
             </template>
             <template v-else>
-                <h1 v-if="hasH1" class="breadcrumb-item">{{ item.title }}</h1>
+                <h1 v-if="hasH1" class="breadcrumb-item is-heading">{{ item.title }}</h1>
                 <span v-else class="breadcrumb-item">
                     {{ item.title }}
                 </span></template
