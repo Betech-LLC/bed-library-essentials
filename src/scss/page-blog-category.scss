@@ -173,7 +173,7 @@
         @apply mb-0 xl:mt-12 lg:mt-8 md:mt-4 mt-3 xl:p-6 md:p-4 p-3 bg-white border-none xl:gap-x-8 md:gap-x-6 max-md:gap-y-4;
 
         .right {
-            @apply grid md:grid-cols-2 xl:gap-8 md:gap-6 gap-4 space-y-0;
+            @apply grid md:grid-cols-2 xl:gap-8 lg:gap-6 gap-4 space-y-0;
 
             .card-item {
                 @apply pb-0 border-none;
