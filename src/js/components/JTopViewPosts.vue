@@ -10,7 +10,7 @@
                 <JCardBlog
                     v-for="(post, index) in top_views.slice(1, 6)"
                     :key="index"
-                    class="card-item card-blog-no-description card-blog-no-image"
+                    class="card-item card-blog-sm card-blog-no-description card-blog-no-image"
                     :item="post"
                 />
             </div>
