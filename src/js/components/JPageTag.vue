@@ -1,5 +1,5 @@
 <template>
-    <main class="tag-page" v-if="tag">
+    <main class="tag-page" :class="`layout-${layout}`" v-if="tag">
         <section class="tag-page-banner">
             <div class="content">
                 <JBreadcrumb :items="breadcrumb">
@@ -23,7 +23,8 @@
                         <JCardBlog
                             v-for="(item, index) in posts_data"
                             :key="index"
-                            class="card-blog-row card-item"
+                            class="card-item"
+                            :class="{ 'card-blog-row': layout === 1 }"
                             :item="item"
                         />
                     </div>
@@ -70,6 +71,10 @@ export default {
                     type: 'bài viết',
                 }
             },
+        },
+        layout: {
+            type: Number,
+            default: 1,
         },
     },
 

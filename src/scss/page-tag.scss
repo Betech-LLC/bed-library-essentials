@@ -11,7 +11,7 @@
                 }
             }
             .title {
-                @apply text-gray-900 title-1;
+                @apply text-primary title-1;
             }
         }
     }
@@ -42,5 +42,23 @@
 
     .btn-see-more {
         @apply btn btn-md;
+    }
+}
+
+.tag-page.layout-2 {
+    .tag-page-body {
+        @apply xl:pt-6 md:pt-4 pt-3 xl:pb-12 md:pb-8 pb-6;
+    }
+    .tag-page-wrap {
+        .left {
+            @apply col-span-full;
+            .card-items {
+                @apply grid lg:grid-cols-3 grid-cols-2 xl:gap-6 md:gap-4 max-md:gap-x-2 max-md:gap-y-3 space-y-0;
+            }
+        }
+
+        .right {
+            @apply hidden;
+        }
     }
 }
