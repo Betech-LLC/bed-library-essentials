@@ -203,4 +203,8 @@
     .card-blog-date {
         @apply md:hidden;
     }
+
+    .form-notification {
+        @apply hidden;
+    }
 }
