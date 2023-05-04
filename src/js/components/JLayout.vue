@@ -1,5 +1,10 @@
 <template>
     <div class="container py-10 space-y-10">
+        <JSliderItems :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]" :autoplay="true">
+            <template #slide-item="{ item }">
+                <JPicture />
+            </template>
+        </JSliderItems>
         <div id="jam-button">
             <div class="mb-4 display-3">Button</div>
             <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
@@ -881,7 +886,6 @@ export default {
                 email: 'required|email',
                 company_name: '',
             },
-
             currentActive: 1,
         }
     },
@@ -914,7 +918,6 @@ export default {
             }
         },
     },
-
     methods: {
         onSubmitUser() {
             console.log('onSubmitUser')

@@ -72,7 +72,7 @@
                 </div>
             </div>
         </section>
-        <JSliderItems :items="related_posts" title="Bài viết liên quan">
+        <JSliderItems :items="related_posts" title="Bài viết liên quan" class="container">
             <template #slide-item="{ item }">
                 <JCardBlog class="card-item" :item="item" />
             </template>
