@@ -13,7 +13,7 @@
                 </span>
             </template>
             <template v-else>
-                <h1 v-if="hasH1" class="breadcrumb-item is-heading">{{ item.title }}</h1>
+                <h1 v-if="isH1" class="breadcrumb-item">{{ item.title }}</h1>
                 <span v-else class="breadcrumb-item">
                     {{ item.title }}
                 </span></template
@@ -32,7 +32,7 @@ export default {
             type: Array,
             required: true,
         },
-        hasH1: {
+        isH1: {
             type: Boolean,
             default: false,
         },

@@ -7,9 +7,9 @@
         &:last-child {
             @apply text-gray-900;
         }
-        &.is-heading {
-            @apply inline;
-        }
+    }
+    h1.breadcrumb-item {
+        @apply inline;
     }
     .icon {
         @apply pointer-events-none text-gray-700 mx-2 max-w-fit inline;
