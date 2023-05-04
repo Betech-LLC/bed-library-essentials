@@ -1,6 +1,6 @@
 <template>
     <div class="container py-10 space-y-10">
-        <JSliderItems :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]">
+        <JSliderItems :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]" :autoplay="true">
             <template #slide-item="{ item }">
                 <JPicture />
             </template>
