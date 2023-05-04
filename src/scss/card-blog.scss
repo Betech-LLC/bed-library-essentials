@@ -63,13 +63,13 @@
 
 // Direction
 .card-blog {
-    &:not(.card-blog-row) {
+    &:not(.card-blog-row, .card-blog-no-image) {
         .card-blog-body {
             @apply xl:mt-4 md:mt-3;
         }
     }
 
-    &:not(.card-blog-mobile-row) {
+    &:not(.card-blog-mobile-row, .card-blog-no-image) {
         .card-blog-body {
             @apply max-md:mt-1;
         }

@@ -1,6 +1,6 @@
 <template>
-    <main class="tag-page" v-if="tag">
-        <section class="tag-page-banner">
+    <main class="page-tag" :class="`layout-${layout}`" v-if="tag">
+        <section class="page-tag-banner">
             <div class="content">
                 <JBreadcrumb :items="breadcrumb">
                     <template #icon>
@@ -16,19 +16,20 @@
             </div>
         </section>
 
-        <section class="tag-page-body">
-            <div class="tag-page-wrap">
+        <section class="page-tag-body">
+            <div class="page-tag-wrap">
                 <div class="left">
                     <div class="card-items">
                         <JCardBlog
                             v-for="(item, index) in posts_data"
                             :key="index"
-                            class="card-blog-row card-item"
+                            class="card-item"
+                            :class="{ 'card-blog-row': layout === 1 }"
                             :item="item"
                         />
                     </div>
 
-                    <div v-if="posts.current_page < posts.last_page" class="tag-page-button">
+                    <div v-if="posts.current_page < posts.last_page" class="page-tag-button">
                         <button @click.prevent="$emit('seeMore', posts.next_page_url)" class="btn-see-more">
                             <a :href="posts.next_page_url">
                                 {{ staticContent.seeMore }} {{ posts.total - posts.to }}
@@ -70,6 +71,10 @@ export default {
                     type: 'bài viết',
                 }
             },
+        },
+        layout: {
+            type: Number,
+            default: 1,
         },
     },
 

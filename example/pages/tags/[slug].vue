@@ -1,5 +1,12 @@
 <template>
-    <JPageTag :breadcrumb="breadcrumb" :posts="posts" :posts_data="posts_data" :tag="tag" :banner="banner" />
+    <JPageTag
+        :breadcrumb="breadcrumb"
+        :posts="posts"
+        :posts_data="posts_data"
+        :tag="tag"
+        :banner="banner"
+        :layout="2"
+    />
 </template>
 
 <script>
