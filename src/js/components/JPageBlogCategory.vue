@@ -15,7 +15,7 @@
 
         <section class="page-blog-category-head">
             <div v-if="layout === 2" class="page-blog-category-breadcrumb">
-                <JBreadcrumb :items="breadcrumb">
+                <JBreadcrumb :isH1="true" :items="breadcrumb">
                     <template #icon>
                         <slot name="icon">
                             <JIconArrowRight />
