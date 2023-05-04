@@ -495,6 +495,7 @@
                             title: 'Dép Cá Sấu cho người lớn',
                         },
                     ]"
+                    :hasH1="true"
                 />
                 <hr />
                 <div class="body-2">Arrow ICON</div>
