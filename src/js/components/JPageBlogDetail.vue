@@ -72,11 +72,18 @@
                 </div>
             </div>
         </section>
-        <JSliderItems :items="related_posts" title="Bài viết liên quan" class="container">
-            <template #slide-item="{ item }">
-                <JCardBlog class="card-item" :item="item" />
-            </template>
-        </JSliderItems>
+        <section class="blog-detail-page-related" v-if="related_posts && related_posts.length > 0">
+            <div class="blog-detail-page-related-wrap">
+                <h2 v-if="titleRelated" class="blog-detail-page-related-title">
+                    {{ titleRelated }}
+                </h2>
+                <JSliderItems :items="related_posts">
+                    <template #slide-item="{ item }">
+                        <JCardBlog class="card-item" :item="item" />
+                    </template>
+                </JSliderItems>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -112,6 +119,10 @@ export default {
         top_posts: Array,
         related_posts: Array,
         language: String,
+        titleRelated: {
+            type: String,
+            default: 'Bài viết liên quan',
+        },
         staticContent: {
             type: Object,
             default: () => {
