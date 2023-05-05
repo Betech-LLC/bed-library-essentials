@@ -69,11 +69,18 @@
 .page-project-detail-content {
     @apply prose md:col-span-11 col-span-full lg:col-span-10;
 }
-
 .page-project-detail-related {
     @apply bg-gray-50;
 
+    .page-project-detail-related-wrap {
+        @apply container xl:py-16 md:py-11 py-8;
+    }
+
     .card-project-meta {
         @apply hidden;
+    }
+
+    .page-project-detail-related-title {
+        @apply headline-2 xl:mb-8 md:mb-6 mb-4 text-gray-700;
     }
 }

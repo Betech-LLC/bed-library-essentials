@@ -57,12 +57,18 @@
                 <div class="page-project-detail-content" v-html="item.content"></div>
             </div>
         </section>
-        <section class="page-project-detail-related">
-            <JSliderItems :items="related_projects" title="Dự án liên quan" class="container">
-                <template #slide-item="{ item }">
-                    <JCardProject class="card-item" :item="item" />
-                </template>
-            </JSliderItems>
+
+        <section class="page-project-detail-related" v-if="related_projects && related_projects.length > 0">
+            <div class="page-project-detail-related-wrap">
+                <h2 v-if="titleRelated" class="page-project-detail-related-title">
+                    {{ titleRelated }}
+                </h2>
+                <JSliderItems :items="related_projects">
+                    <template #slide-item="{ item }">
+                        <JCardProject class="card-item" :item="item" />
+                    </template>
+                </JSliderItems>
+            </div>
         </section>
     </main>
 </template>
@@ -87,6 +93,10 @@ export default {
         },
         related_projects: {
             type: Array,
+        },
+        titleRelated: {
+            type: String,
+            default: 'Dự án liên quan',
         },
         constructionProgress: {
             type: Object,
