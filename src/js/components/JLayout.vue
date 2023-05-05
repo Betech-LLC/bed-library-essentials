@@ -1,5 +1,10 @@
 <template>
     <div class="container py-10 space-y-10">
+        <div class="grid grid-cols-4 gap-1">
+            <div class="col-span-1" v-for="product in relatedProducts">
+                <JCardProductRelated :product="product" />
+            </div>
+        </div>
         <JSliderItems :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]" :autoplay="true">
             <template #slide-item="{ item }">
                 <JPicture />
@@ -731,9 +736,174 @@
 </template>
 
 <script>
+import JCardProductRelated from './JCardProductRelated.vue'
+
 export default {
     data() {
         return {
+            relatedProducts: [
+                {
+                    id: 3,
+                    variant_id: 3,
+                    title: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
+                    slug: 'vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
+                    free_shipping: false,
+                    type: 'PRODUCT',
+                    category: {
+                        id: 119,
+                        slug: 'vitamin-cho-tre',
+                        title: 'Vitamin cho trẻ',
+                        image: { url: null, alt: 'Vitamin cho trẻ' },
+                        image_mobile: { url: null, alt: 'Vitamin cho trẻ' },
+                        default_parent: null,
+                        url: 'http://localhost:8000/vitamin-cho-tre',
+                    },
+                    sku: 'PC1072',
+                    rate_score: 0,
+                    ratings_count: 0,
+                    tag: null,
+                    tag_by_position: { left: null, right: null },
+                    variant: {
+                        id: 3,
+                        title: '30 viên',
+                        image: {
+                            url: 'http://localhost:8000/static/Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
+                            alt: '30 viên',
+                        },
+                        images: [
+                            {
+                                url: 'http://localhost:8000/static/Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
+                                alt: '30 viên',
+                            },
+                        ],
+                        product_id: 3,
+                        sku: 'PC1072',
+                        price: '395000.00',
+                        old_price: null,
+                        default_price: '395000.00',
+                        percent: 0,
+                        option_name: '30 viên',
+                        option_values: ['Quy cách: 30 viên'],
+                        option_title: 'Quy cách 30 viên',
+                        primary_option: { id: 28, image: null },
+                        condition: 'STOCKING',
+                        selected: false,
+                        options: [{ id: 28, title: '30 viên', slug: '30-vien', icon: null }],
+                        video_urls: [],
+                        sale_quantity: 0,
+                        flash_sale_quantity: 0,
+                        is_flash_sale: false,
+                    },
+                    description: null,
+                    brand: {
+                        id: 8,
+                        slug: 'go-healthy',
+                        title: 'Go Healthy',
+                        image: { url: null, alt: 'Go Healthy' },
+                        url: 'http://localhost:8000/go-healthy',
+                    },
+                    origin: null,
+                    is_medicine: false,
+                    price: '395000.00',
+                    old_price: '495000.00',
+                    variant_title: '30 viên',
+                    sale_quantity: 0,
+                    flash_sale_quantity: 0,
+                    default_price: '395000.00',
+                    images: [
+                        {
+                            url: 'http://localhost:8000/static/Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
+                            alt: '30 viên',
+                        },
+                    ],
+                    image: {
+                        url: 'https://nhathuocphuongchinh.com/static/Product/blcare-max.jpg',
+                        path: 'Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
+                        alt: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
+                    },
+                    url: 'http://localhost:8000/vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
+                    options: [
+                        {
+                            id: 25,
+                            title: 'Quy cách',
+                            slug: 'quy-cach',
+                            position: 0,
+                            is_show_detail: null,
+                            nodes: [{ id: 28, title: '30 viên', slug: '30-vien', icon: null }],
+                            icon: null,
+                            show_name: true,
+                        },
+                    ],
+                    option_values: ['Quy cách: 30 viên'],
+                    variants: [
+                        {
+                            id: 3,
+                            title: '30 viên',
+                            image: {
+                                url: 'http://localhost:8000/static/Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
+                                alt: '30 viên',
+                            },
+                            images: [
+                                {
+                                    url: 'http://localhost:8000/static/Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
+                                    alt: '30 viên',
+                                },
+                            ],
+                            product_id: 3,
+                            sku: 'PC1072',
+                            price: '395000.00',
+                            old_price: null,
+                            default_price: '395000.00',
+                            percent: 0,
+                            option_name: '30 viên',
+                            option_values: ['Quy cách: 30 viên'],
+                            option_title: 'Quy cách 30 viên',
+                            primary_option: { id: 28, image: null },
+                            condition: 'STOCKING',
+                            selected: true,
+                            options: [{ id: 28, title: '30 viên', slug: '30-vien', icon: null }],
+                            video_urls: [],
+                            sale_quantity: 0,
+                            flash_sale_quantity: 0,
+                            is_flash_sale: false,
+                        },
+                    ],
+                    gift_products: { gifts: [], products: [] },
+                    promotion: {
+                        id: 1,
+                        slug: 'nhando',
+                        url: 'http://localhost:8000/promotions/nhando',
+                        title: 'Nhando',
+                        image: {
+                            url: 'http://localhost:8000/static/webp_700_700-950-33iconkhungphan_206.png',
+                            alt: 'Nhando',
+                        },
+                        image_card: {
+                            url: 'http://localhost:8000/static/webp_700_700-950-33iconkhungphan_206.png',
+                            alt: 'Nhando',
+                        },
+                    },
+                    promotions: [
+                        {
+                            id: 1,
+                            slug: 'nhando',
+                            url: 'http://localhost:8000/promotions/nhando',
+                            title: 'Nhando',
+                            image: {
+                                url: 'http://localhost:8000/static/webp_700_700-950-33iconkhungphan_206.png',
+                                alt: 'Nhando',
+                            },
+                            image_card: {
+                                url: 'http://localhost:8000/static/webp_700_700-950-33iconkhungphan_206.png',
+                                alt: 'Nhando',
+                            },
+                        },
+                    ],
+                    is_sale: false,
+                    flash_sale_to: null,
+                    flash_sale_from: null,
+                },
+            ],
             memberActive: null,
             paymentActive: 1,
             payments: [
@@ -929,6 +1099,7 @@ export default {
             this.currentActive = this.currentActive !== index ? index : null
         },
     },
+    components: { JCardProductRelated },
 }
 </script>
 <style lang="scss">

@@ -1,0 +1,23 @@
+.card-product-related {
+    @apply flex;
+}
+.card-product-related-thumbnail {
+    @apply block w-20 aspect-1 flex-none overflow-hidden;
+}
+
+.card-product-related-right {
+    @apply ml-1.5 space-y-0.5;
+}
+.card-product-related-title {
+    @apply body-2 font-medium line-clamp-2 text-gray-900;
+}
+
+.card-product-related-price {
+    @apply font-bold text-error-500;
+}
+.card-product-related-old-price {
+    @apply text-gray-400 line-through inline-block mr-1 label-3;
+}
+.card-product-related-discount {
+    @apply badge badge-primary badge-sm inline-block;
+}
