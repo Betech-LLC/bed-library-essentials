@@ -3,6 +3,18 @@
     .slider {
         @apply relative;
     }
+    .slider-dots {
+        @apply absolute w-full translate-y-full -bottom-2;
+    }
+    .slider-dots-wrap {
+        @apply flex items-center justify-center space-x-1 md:space-x-2;
+    }
+    .slider-dot-item {
+        @apply w-2 h-2 rounded-full bg-gray-300;
+        &.active {
+            @apply bg-primary;
+        }
+    }
 }
 .btn-slide {
     @apply flex absolute top-1/2 -translate-y-1/2 z-20 w-9 h-9 lg:w-12 lg:h-12 text-gray-500 lg:hover:text-blue-400 lg:hover:border-primary bg-white items-center justify-center rounded-full duration-150 border border-gray-200;
