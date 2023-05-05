@@ -50,6 +50,19 @@
                             :errors="errors"
                             class="page-contact-field-email"
                         />
+                        <!-- TODO -->
+                        <JFormField
+                            v-model="form.contact.data['Password']"
+                            :field="{
+                                type: 'password',
+                                name: 'Password',
+                                label: 'Password',
+                                placeholder: 'Nhập Password',
+                            }"
+                            :rules="rules"
+                            :errors="errors"
+                            class="page-contact-field-email"
+                        />
 
                         <JFormField
                             v-model="form.contact.data['Số điện thoại']"

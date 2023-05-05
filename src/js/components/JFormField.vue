@@ -16,7 +16,13 @@
                 </div>
 
                 <JFieldText
-                    v-if="!field.type || field.type === 'text' || field.type === 'email' || field.type === 'password'"
+                    v-if="!field.type || field.type === 'text' || field.type === 'email'"
+                    :field="field"
+                    :modelValue="modelValue"
+                    @update:modelValue="onInput"
+                />
+                <JFieldPassword
+                    v-else-if="field.type === 'password'"
                     :field="field"
                     :modelValue="modelValue"
                     @update:modelValue="onInput"
@@ -84,6 +90,8 @@ import JFieldTextarea from '@core/components/JField/Textarea.vue'
 import JFieldCheckbox from '@core/components/JField/Checkbox.vue'
 import JFieldCheckboxMultiple from '@core/components/JField/CheckboxMultiple.vue'
 import JFieldUploadFile from '@core/components/JField/UploadFile.vue'
+// TODO
+import JFieldPassword from '@core/components/JField/Password.vue'
 export default {
     components: {
         JFieldText,
@@ -93,6 +101,7 @@ export default {
         JFieldUploadFile,
         JFieldCheckbox,
         JFieldCheckboxMultiple,
+        JFieldPassword,
     },
     emits: ['update:modelValue'],
     props: {
