@@ -3,6 +3,7 @@
         :breadcrumb="breadcrumb"
         :post="post"
         :top_posts="top_posts"
+        :related_products="related_products"
         :related_posts="top_posts"
         :banner="banner"
     />
@@ -223,6 +224,80 @@ export default {
                     ],
                     image: { url: null, alt: 'Nam laboriosam.' },
                     url: 'http://localhost:8000/tin-tuc/sit-non/nam-laboriosam',
+                },
+            ],
+            related_products: [
+                {
+                    id: 3,
+                    variant_id: 3,
+                    title: 'Chao đèn hình túi xách quai da nâu DT250XT-TR/DT250XG đèn hình túi xách quai da nâu DT250XT-TR/DT250XG',
+                    slug: 'vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
+                    percent: 24,
+                    sku: 'PC1072',
+                    price: '395000.00',
+                    old_price: '495000.00',
+                    variant_title: '30 viên',
+                    default_price: '395000.00',
+                    image: {
+                        url: 'https://salt.tikicdn.com/ts/tmp/32/be/01/fa963664aa0461022e0a956e866507de.jpg',
+                        path: 'Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
+                        alt: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
+                    },
+                    url: 'http://localhost:8000/vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
+                },
+                {
+                    id: 3,
+                    variant_id: 3,
+                    title: 'Chao đèn hình túi xách quai da nâu DT250XT-TR/DT250XG đèn hình túi xách quai da nâu DT250XT-TR/DT250XG',
+                    slug: 'vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
+                    percent: 24,
+                    sku: 'PC1072',
+                    price: '395000.00',
+                    old_price: '495000.00',
+                    variant_title: '30 viên',
+                    default_price: '395000.00',
+                    image: {
+                        url: 'https://salt.tikicdn.com/ts/tmp/32/be/01/fa963664aa0461022e0a956e866507de.jpg',
+                        path: 'Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
+                        alt: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
+                    },
+                    url: 'http://localhost:8000/vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
+                },
+                {
+                    id: 3,
+                    variant_id: 3,
+                    title: 'Chao đèn hình túi xách quai da nâu DT250XT-TR/DT250XG đèn hình túi xách quai da nâu DT250XT-TR/DT250XG',
+                    slug: 'vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
+                    percent: 24,
+                    sku: 'PC1072',
+                    price: '395000.00',
+                    old_price: '495000.00',
+                    variant_title: '30 viên',
+                    default_price: '395000.00',
+                    image: {
+                        url: 'https://salt.tikicdn.com/ts/tmp/32/be/01/fa963664aa0461022e0a956e866507de.jpg',
+                        path: 'Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
+                        alt: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
+                    },
+                    url: 'http://localhost:8000/vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
+                },
+                {
+                    id: 3,
+                    variant_id: 3,
+                    title: 'Chao đèn hình túi xách quai da nâu DT250XT-TR/DT250XG đèn hình túi xách quai da nâu DT250XT-TR/DT250XG',
+                    slug: 'vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
+                    percent: 24,
+                    sku: 'PC1072',
+                    price: '395000.00',
+                    old_price: '495000.00',
+                    variant_title: '30 viên',
+                    default_price: '395000.00',
+                    image: {
+                        url: 'https://salt.tikicdn.com/ts/tmp/32/be/01/fa963664aa0461022e0a956e866507de.jpg',
+                        path: 'Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
+                        alt: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
+                    },
+                    url: 'http://localhost:8000/vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
                 },
             ],
 

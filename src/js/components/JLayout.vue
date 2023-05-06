@@ -1,7 +1,18 @@
 <template>
     <div class="container py-10 space-y-10">
-        <div class="grid grid-cols-4 gap-1">
-            <div class="col-span-1" v-for="product in relatedProducts">
+        <div class="grid grid-cols-1 gap-2 md:grid-cols-3">
+            <div
+                class="col-span-1 p-1 border border-gray-200 rounded"
+                v-for="product in [...relatedProducts, ...relatedProducts, ...relatedProducts]"
+            >
+                <JCardProductRelated :product="product" class="card-sm" />
+            </div>
+        </div>
+        <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
+            <div
+                class="col-span-1 p-1 border border-gray-200 rounded"
+                v-for="product in [...relatedProducts, ...relatedProducts]"
+            >
                 <JCardProductRelated :product="product" />
             </div>
         </div>
@@ -328,157 +339,6 @@
                         <button @click="onSubmitUser" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
-
-                <!-- ROW 2 -->
-                <!-- <JForm v-model="user_2" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFormField
-                        :field="{
-                            type: 'text',
-                            name: 'name',
-                            label: 'Họ và tên 2',
-                            help: 'This is a hint text to help user.',
-                        }"
-                    >
-                        <template #suffix>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="12"
-                                height="8"
-                                viewBox="0 0 12 8"
-                                fill="none"
-                            >
-                                <path
-                                    d="M1 1.5L6 6.5L11 1.5"
-                                    stroke="currentColor"
-                                    stroke-width="1.66667"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'email',
-                            name: 'email',
-                            label: 'Email',
-                            help: 'This is a hint text to help user.',
-                        }"
-                    >
-                        <template #prefix> <JIconEmail /> </template>
-                        <template #suffix> <JIconHelp /> </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'number',
-                            name: 'phone',
-                            label: 'Số điện thoại',
-                            help: 'This is a hint text to help user.',
-                        }"
-                    >
-                        <template #prefix> <JIconMobilePhone /> </template>
-                        <template #suffix> <JIconHelp /> </template
-                    ></JFormField>
-                </JForm> -->
-
-                <!-- ROW 3 -->
-                <!-- <JForm v-model="user_3" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFormField
-                        :field="{
-                            type: 'text',
-                            name: 'name',
-                            label: 'Họ và tên',
-                        }"
-                    >
-                        <template #suffix> <JIconHelp /> </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'email',
-                            label: 'Email',
-                            name: 'email',
-                        }"
-                    >
-                        <template #prefix> <JIconEmail /> </template>
-                        <template #suffix> <JIconHelp /> </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'number',
-                            label: 'Số điện thoại',
-                            name: 'phone',
-                        }"
-                    >
-                        <template #prefix> <JIconMobilePhone /> </template>
-                        <template #suffix> <JIconHelp /> </template
-                    ></JFormField>
-                </JForm> -->
-
-                <!-- ROW 4 -->
-                <!-- <JForm v-model="user_4" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFormField
-                        :field="{
-                            type: 'text',
-                            label: 'Họ và tên',
-                            name: 'name',
-                        }"
-                        :disabled="true"
-                    >
-                        <template #suffix> <JIconHelp /> </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'email',
-                            name: 'email',
-                            label: 'Email',
-                        }"
-                        :disabled="true"
-                    >
-                        <template #prefix> <JIconEmail /> </template>
-                        <template #suffix> <JIconHelp /> </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'number',
-                            name: 'phone',
-                            label: 'Số điện thoại',
-                        }"
-                        :disabled="true"
-                    >
-                        <template #prefix> <JIconMobilePhone /> </template>
-                        <template #suffix> <JIconHelp /> </template
-                    ></JFormField>
-                </JForm> -->
-                <!-- ROW 5 -->
-                <!-- <JForm v-model="user_5" :rules="rules" class="grid grid-cols-3 gap-4 mb-10">
-                    <JFormField
-                        :field="{
-                            type: 'textarea',
-                            name: 'note_1',
-                            label: 'Description',
-                        }"
-                    />
-
-                    <JFormField
-                        :field="{
-                            rows: 4,
-                            name: 'note_2',
-                            type: 'textarea',
-                            label: 'Description 2',
-
-                            help: 'This is a hint text to help user.',
-                        }"
-                    />
-                    <JFormField
-                        :field="{
-                            rows: 5,
-                            name: 'note_3',
-                            type: 'textarea',
-                            label: 'Description disabled',
-                        }"
-                        :disabled="true"
-                    />
-                </JForm> -->
             </div>
         </div>
         <!-- Breadcrumb -->
@@ -745,163 +605,20 @@ export default {
                 {
                     id: 3,
                     variant_id: 3,
-                    title: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
+                    title: 'Chao đèn hình túi xách quai da nâu DT250XT-TR/DT250XG đèn hình túi xách quai da nâu DT250XT-TR/DT250XG',
                     slug: 'vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
-                    free_shipping: false,
-                    type: 'PRODUCT',
-                    category: {
-                        id: 119,
-                        slug: 'vitamin-cho-tre',
-                        title: 'Vitamin cho trẻ',
-                        image: { url: null, alt: 'Vitamin cho trẻ' },
-                        image_mobile: { url: null, alt: 'Vitamin cho trẻ' },
-                        default_parent: null,
-                        url: 'http://localhost:8000/vitamin-cho-tre',
-                    },
+                    percent: 24,
                     sku: 'PC1072',
-                    rate_score: 0,
-                    ratings_count: 0,
-                    tag: null,
-                    tag_by_position: { left: null, right: null },
-                    variant: {
-                        id: 3,
-                        title: '30 viên',
-                        image: {
-                            url: 'http://localhost:8000/static/Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
-                            alt: '30 viên',
-                        },
-                        images: [
-                            {
-                                url: 'http://localhost:8000/static/Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
-                                alt: '30 viên',
-                            },
-                        ],
-                        product_id: 3,
-                        sku: 'PC1072',
-                        price: '395000.00',
-                        old_price: null,
-                        default_price: '395000.00',
-                        percent: 0,
-                        option_name: '30 viên',
-                        option_values: ['Quy cách: 30 viên'],
-                        option_title: 'Quy cách 30 viên',
-                        primary_option: { id: 28, image: null },
-                        condition: 'STOCKING',
-                        selected: false,
-                        options: [{ id: 28, title: '30 viên', slug: '30-vien', icon: null }],
-                        video_urls: [],
-                        sale_quantity: 0,
-                        flash_sale_quantity: 0,
-                        is_flash_sale: false,
-                    },
-                    description: null,
-                    brand: {
-                        id: 8,
-                        slug: 'go-healthy',
-                        title: 'Go Healthy',
-                        image: { url: null, alt: 'Go Healthy' },
-                        url: 'http://localhost:8000/go-healthy',
-                    },
-                    origin: null,
-                    is_medicine: false,
                     price: '395000.00',
                     old_price: '495000.00',
                     variant_title: '30 viên',
-                    sale_quantity: 0,
-                    flash_sale_quantity: 0,
                     default_price: '395000.00',
-                    images: [
-                        {
-                            url: 'http://localhost:8000/static/Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
-                            alt: '30 viên',
-                        },
-                    ],
                     image: {
-                        url: 'https://nhathuocphuongchinh.com/static/Product/blcare-max.jpg',
+                        url: 'https://salt.tikicdn.com/ts/tmp/32/be/01/fa963664aa0461022e0a956e866507de.jpg',
                         path: 'Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
                         alt: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
                     },
                     url: 'http://localhost:8000/vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
-                    options: [
-                        {
-                            id: 25,
-                            title: 'Quy cách',
-                            slug: 'quy-cach',
-                            position: 0,
-                            is_show_detail: null,
-                            nodes: [{ id: 28, title: '30 viên', slug: '30-vien', icon: null }],
-                            icon: null,
-                            show_name: true,
-                        },
-                    ],
-                    option_values: ['Quy cách: 30 viên'],
-                    variants: [
-                        {
-                            id: 3,
-                            title: '30 viên',
-                            image: {
-                                url: 'http://localhost:8000/static/Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
-                                alt: '30 viên',
-                            },
-                            images: [
-                                {
-                                    url: 'http://localhost:8000/static/Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
-                                    alt: '30 viên',
-                                },
-                            ],
-                            product_id: 3,
-                            sku: 'PC1072',
-                            price: '395000.00',
-                            old_price: null,
-                            default_price: '395000.00',
-                            percent: 0,
-                            option_name: '30 viên',
-                            option_values: ['Quy cách: 30 viên'],
-                            option_title: 'Quy cách 30 viên',
-                            primary_option: { id: 28, image: null },
-                            condition: 'STOCKING',
-                            selected: true,
-                            options: [{ id: 28, title: '30 viên', slug: '30-vien', icon: null }],
-                            video_urls: [],
-                            sale_quantity: 0,
-                            flash_sale_quantity: 0,
-                            is_flash_sale: false,
-                        },
-                    ],
-                    gift_products: { gifts: [], products: [] },
-                    promotion: {
-                        id: 1,
-                        slug: 'nhando',
-                        url: 'http://localhost:8000/promotions/nhando',
-                        title: 'Nhando',
-                        image: {
-                            url: 'http://localhost:8000/static/webp_700_700-950-33iconkhungphan_206.png',
-                            alt: 'Nhando',
-                        },
-                        image_card: {
-                            url: 'http://localhost:8000/static/webp_700_700-950-33iconkhungphan_206.png',
-                            alt: 'Nhando',
-                        },
-                    },
-                    promotions: [
-                        {
-                            id: 1,
-                            slug: 'nhando',
-                            url: 'http://localhost:8000/promotions/nhando',
-                            title: 'Nhando',
-                            image: {
-                                url: 'http://localhost:8000/static/webp_700_700-950-33iconkhungphan_206.png',
-                                alt: 'Nhando',
-                            },
-                            image_card: {
-                                url: 'http://localhost:8000/static/webp_700_700-950-33iconkhungphan_206.png',
-                                alt: 'Nhando',
-                            },
-                        },
-                    ],
-                    is_sale: false,
-                    flash_sale_to: null,
-                    flash_sale_from: null,
                 },
             ],
             memberActive: null,

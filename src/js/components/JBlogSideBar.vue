@@ -4,12 +4,11 @@
             <slot name="title"> Lượt xem nhiều nhất </slot>
         </h2>
         <div class="body">
-            <JCardBlog
-                v-for="(item, index) in items"
-                :key="index"
-                class="card-blog-xs card-blog-row card-item"
-                :item="item"
-            />
+            <template v-for="(item, index) in items" :key="index">
+                <slot name="card" :item="item">
+                    <JCardBlog class="card-blog-xs card-blog-row card-item" :item="item" />
+                </slot>
+            </template>
         </div>
     </div>
 </template>

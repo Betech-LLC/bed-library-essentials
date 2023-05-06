@@ -67,6 +67,11 @@
                     <template #title>{{ staticContent.topPosts }}</template>
                 </JBlogSideBar>
 
+                <JBlogSideBar :items="related_products">
+                    <template #title>{{ staticContent.relatedProduct }}</template>
+                    <template #card="{ item }"><JCardProductRelated :product="item" class="card-sm" /></template>
+                </JBlogSideBar>
+
                 <div v-if="banner" class="banner-ads-wrap">
                     <JBannerAds :item="banner" />
                 </div>
@@ -99,6 +104,7 @@ import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import { toDate } from '@core/utils'
 import { useTransformContent } from '@core/utils'
 import JSliderItems from '@core/components/JSliderItems.vue'
+import JCardProductRelated from '@core/components/JCardProductRelated.vue'
 export default {
     components: {
         JCardBlog,
@@ -110,6 +116,7 @@ export default {
         JIconArrowRight,
         JLink,
         JSliderItems,
+        JCardProductRelated,
     },
 
     props: {
@@ -118,6 +125,7 @@ export default {
         post: Object,
         top_posts: Array,
         related_posts: Array,
+        related_products: Array,
         language: String,
         titleRelated: {
             type: String,
@@ -130,6 +138,7 @@ export default {
                     toc: 'Nội dung bài viết',
                     share: 'Chia sẻ',
                     topPosts: 'Tin nổi bật',
+                    relatedProduct: 'Sản phẩm liên quan',
                 }
             },
         },

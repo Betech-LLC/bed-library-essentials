@@ -1,7 +1,7 @@
 <template>
     <div v-if="product" class="card-product-related">
         <JLink :href="product.url" class="card-product-related-thumbnail">
-            <JPicture :src="product.image.url" :alt="product.image.alt" />
+            <JPicture :src="product.image.url" :alt="product.image.alt" wrapperClass="picture-contain" />
         </JLink>
         <div class="card-product-related-right">
             <slot name="title">
