@@ -3,13 +3,13 @@
     .slider {
         @apply relative;
     }
-    .slider-dots {
+    .slider-pagination {
         @apply absolute w-full translate-y-full -bottom-2;
     }
-    .slider-dots-wrap {
+    .slider-pagination-wrap {
         @apply flex items-center justify-center space-x-1 md:space-x-2;
     }
-    .slider-dot-item {
+    .slider-pagination-item {
         @apply w-2 h-2 rounded-full bg-gray-300;
         &.active {
             @apply bg-primary;

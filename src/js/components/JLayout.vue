@@ -16,7 +16,7 @@
                 <JCardProductRelated :product="product" />
             </div>
         </div>
-        <JSliderItems :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]" :autoplay="true">
+        <JSliderItems :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]" :autoplay="true" :pagination="true">
             <template #slide-item="{ item }">
                 <JPicture />
             </template>
@@ -582,17 +582,6 @@
         </div>
         <ImageDynamic name="logo" alt="asd" />
     </div>
-
-    <!-- <div class="fixed top-0 bottom-0 left-0 w-[300px] bg-white shadow">
-        <div class="flex flex-col p-4">
-            <a href="#jam-breadcrumb" class="p-3">jam-breadcrumb</a>
-            <a href="#jam-dropdown" class="p-3">jam-dropdown</a>
-            <a href="#jam-fieldset" class="p-3">jam-fieldset</a>
-            <a href="#jam-button" class="p-3">jam-button</a>
-            <a href="#jam-accordion" class="p-3">jam-accordion</a>
-            <a href="#jam-prose" class="p-3"> jam-prose</a>
-        </div>
-    </div> -->
 </template>
 
 <script>
