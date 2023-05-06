@@ -1,6 +1,5 @@
 <template>
     <div class="slider-items">
-        <h2 v-if="title" class="slider-title">{{ title }}</h2>
         <ClientOnly
             ><JSlider
                 :config="{
@@ -20,6 +19,20 @@
                         <JIconChevronRight />
                     </button>
                     <button class="btn-slide btn-next" @click="navigate('next')"><JIconChevronRight /></button>
+                </template>
+
+                <template #dots="{ dots, current, navigate }">
+                    <div class="slider-dots">
+                        <div class="slider-dots-wrap">
+                            <div
+                                v-for="(_, index) in dots"
+                                :key="dot"
+                                @click="navigate(dot)"
+                                class="slider-dot-item"
+                                :class="current === index ? 'active' : ''"
+                            ></div>
+                        </div>
+                    </div>
                 </template> </JSlider
         ></ClientOnly>
     </div>
@@ -41,7 +54,7 @@ export default {
         },
         config: {
             type: Object,
-            default: { cols: '1.6', gutter: '8px', align: 'start', loop: true },
+            default: { cols: '1.2', gutter: '8px', align: 'start', loop: true },
         },
         breakpoints: {
             type: Object,
