@@ -239,7 +239,7 @@ export default {
                     variant_title: '30 viên',
                     default_price: '395000.00',
                     image: {
-                        url: 'https://salt.tikicdn.com/ts/tmp/32/be/01/fa963664aa0461022e0a956e866507de.jpg',
+                        url: null,
                         path: 'Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
                         alt: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
                     },
@@ -257,7 +257,7 @@ export default {
                     variant_title: '30 viên',
                     default_price: '395000.00',
                     image: {
-                        url: 'https://salt.tikicdn.com/ts/tmp/32/be/01/fa963664aa0461022e0a956e866507de.jpg',
+                        url: null,
                         path: 'Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
                         alt: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
                     },
@@ -275,7 +275,7 @@ export default {
                     variant_title: '30 viên',
                     default_price: '395000.00',
                     image: {
-                        url: 'https://salt.tikicdn.com/ts/tmp/32/be/01/fa963664aa0461022e0a956e866507de.jpg',
+                        url: null,
                         path: 'Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
                         alt: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
                     },
@@ -293,7 +293,7 @@ export default {
                     variant_title: '30 viên',
                     default_price: '395000.00',
                     image: {
-                        url: 'https://salt.tikicdn.com/ts/tmp/32/be/01/fa963664aa0461022e0a956e866507de.jpg',
+                        url: null,
                         path: 'Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
                         alt: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
                     },
