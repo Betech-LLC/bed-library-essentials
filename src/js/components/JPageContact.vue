@@ -58,6 +58,7 @@
                                 name: 'Password',
                                 label: 'Password',
                                 placeholder: 'Nhập Password',
+                                toggleMask: true,
                             }"
                             :rules="rules"
                             :errors="errors"

@@ -72,6 +72,9 @@ fieldset {
             @apply block w-10 h-full text-center text-gray-700 md:w-12 border-x-gray-300 border-x focus:outline-0 label-2;
         }
     }
+    .fieldset-password-toggle-mask {
+        @apply absolute z-10 text-gray-400 -translate-y-1/2 cursor-pointer right-2 top-1/2;
+    }
 }
 
 /* CONFIG DEFAULT */

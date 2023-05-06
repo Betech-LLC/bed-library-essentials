@@ -1,7 +1,8 @@
 <template>
-    <JFieldText :field="field" :modelValue="modelValue" @update:modelValue="$emit('update:modelValue', $event)" />
-    <div class="absolute left-0 text-gray-600">
-        <JIconEyeOpen />
+    <JFieldText :field="fieldCustom" :modelValue="modelValue" @update:modelValue="$emit('update:modelValue', $event)" />
+    <div v-if="fieldCustom.toggleMask" class="fieldset-password-toggle-mask" @click="toggleValue()">
+        <JIconEyeOpen v-if="type === 'password'" />
+        <JIconEyeClose v-else />
     </div>
 </template>
 
@@ -10,8 +11,30 @@ import JFieldText from '@core/components/JField/Text.vue'
 import JIconEyeOpen from '@core/components/JIcon/EyeOpen.vue'
 import JIconEyeClose from '@core/components/JIcon/EyeClose.vue'
 export default {
-    components: { JFieldText, JIconEyeOpen, JIconEyeClose },
+    props: ['field', 'modelValue'],
     emits: ['update:modelValue', 'update:togglePassword'],
-    props: ['modelValue', 'field'],
+    components: { JFieldText, JIconEyeOpen, JIconEyeClose },
+    data() {
+        return {
+            type: 'password',
+        }
+    },
+    computed: {
+        fieldCustom() {
+            return {
+                ...this.field,
+                type: this.type,
+            }
+        },
+    },
+    methods: {
+        toggleValue() {
+            if (this.type === 'password') {
+                this.type = 'text'
+            } else {
+                this.type = 'password'
+            }
+        },
+    },
 }
 </script>
