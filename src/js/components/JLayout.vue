@@ -1,6 +1,22 @@
 <template>
     <div class="container py-10 space-y-10">
-        <JSliderItems :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]" :autoplay="true">
+        <div class="grid grid-cols-1 gap-2 md:grid-cols-3">
+            <div
+                class="col-span-1 p-1 border border-gray-200 rounded"
+                v-for="product in [...relatedProducts, ...relatedProducts, ...relatedProducts]"
+            >
+                <JCardProductRelated :product="product" class="card-sm" />
+            </div>
+        </div>
+        <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
+            <div
+                class="col-span-1 p-1 border border-gray-200 rounded"
+                v-for="product in [...relatedProducts, ...relatedProducts]"
+            >
+                <JCardProductRelated :product="product" />
+            </div>
+        </div>
+        <JSliderItems :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]" :autoplay="true" :pagination="true">
             <template #slide-item="{ item }">
                 <JPicture />
             </template>
@@ -323,157 +339,6 @@
                         <button @click="onSubmitUser" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
-
-                <!-- ROW 2 -->
-                <!-- <JForm v-model="user_2" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFormField
-                        :field="{
-                            type: 'text',
-                            name: 'name',
-                            label: 'Họ và tên 2',
-                            help: 'This is a hint text to help user.',
-                        }"
-                    >
-                        <template #suffix>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="12"
-                                height="8"
-                                viewBox="0 0 12 8"
-                                fill="none"
-                            >
-                                <path
-                                    d="M1 1.5L6 6.5L11 1.5"
-                                    stroke="currentColor"
-                                    stroke-width="1.66667"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'email',
-                            name: 'email',
-                            label: 'Email',
-                            help: 'This is a hint text to help user.',
-                        }"
-                    >
-                        <template #prefix> <JIconEmail /> </template>
-                        <template #suffix> <JIconHelp /> </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'number',
-                            name: 'phone',
-                            label: 'Số điện thoại',
-                            help: 'This is a hint text to help user.',
-                        }"
-                    >
-                        <template #prefix> <JIconMobilePhone /> </template>
-                        <template #suffix> <JIconHelp /> </template
-                    ></JFormField>
-                </JForm> -->
-
-                <!-- ROW 3 -->
-                <!-- <JForm v-model="user_3" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFormField
-                        :field="{
-                            type: 'text',
-                            name: 'name',
-                            label: 'Họ và tên',
-                        }"
-                    >
-                        <template #suffix> <JIconHelp /> </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'email',
-                            label: 'Email',
-                            name: 'email',
-                        }"
-                    >
-                        <template #prefix> <JIconEmail /> </template>
-                        <template #suffix> <JIconHelp /> </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'number',
-                            label: 'Số điện thoại',
-                            name: 'phone',
-                        }"
-                    >
-                        <template #prefix> <JIconMobilePhone /> </template>
-                        <template #suffix> <JIconHelp /> </template
-                    ></JFormField>
-                </JForm> -->
-
-                <!-- ROW 4 -->
-                <!-- <JForm v-model="user_4" :rules="rules" class="grid grid-cols-1 gap-4 mb-10 lg:grid-cols-3">
-                    <JFormField
-                        :field="{
-                            type: 'text',
-                            label: 'Họ và tên',
-                            name: 'name',
-                        }"
-                        :disabled="true"
-                    >
-                        <template #suffix> <JIconHelp /> </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'email',
-                            name: 'email',
-                            label: 'Email',
-                        }"
-                        :disabled="true"
-                    >
-                        <template #prefix> <JIconEmail /> </template>
-                        <template #suffix> <JIconHelp /> </template>
-                    </JFormField>
-                    <JFormField
-                        :field="{
-                            type: 'number',
-                            name: 'phone',
-                            label: 'Số điện thoại',
-                        }"
-                        :disabled="true"
-                    >
-                        <template #prefix> <JIconMobilePhone /> </template>
-                        <template #suffix> <JIconHelp /> </template
-                    ></JFormField>
-                </JForm> -->
-                <!-- ROW 5 -->
-                <!-- <JForm v-model="user_5" :rules="rules" class="grid grid-cols-3 gap-4 mb-10">
-                    <JFormField
-                        :field="{
-                            type: 'textarea',
-                            name: 'note_1',
-                            label: 'Description',
-                        }"
-                    />
-
-                    <JFormField
-                        :field="{
-                            rows: 4,
-                            name: 'note_2',
-                            type: 'textarea',
-                            label: 'Description 2',
-
-                            help: 'This is a hint text to help user.',
-                        }"
-                    />
-                    <JFormField
-                        :field="{
-                            rows: 5,
-                            name: 'note_3',
-                            type: 'textarea',
-                            label: 'Description disabled',
-                        }"
-                        :disabled="true"
-                    />
-                </JForm> -->
             </div>
         </div>
         <!-- Breadcrumb -->
@@ -717,23 +582,34 @@
         </div>
         <ImageDynamic name="logo" alt="asd" />
     </div>
-
-    <!-- <div class="fixed top-0 bottom-0 left-0 w-[300px] bg-white shadow">
-        <div class="flex flex-col p-4">
-            <a href="#jam-breadcrumb" class="p-3">jam-breadcrumb</a>
-            <a href="#jam-dropdown" class="p-3">jam-dropdown</a>
-            <a href="#jam-fieldset" class="p-3">jam-fieldset</a>
-            <a href="#jam-button" class="p-3">jam-button</a>
-            <a href="#jam-accordion" class="p-3">jam-accordion</a>
-            <a href="#jam-prose" class="p-3"> jam-prose</a>
-        </div>
-    </div> -->
 </template>
 
 <script>
+import JCardProductRelated from './JCardProductRelated.vue'
+
 export default {
     data() {
         return {
+            relatedProducts: [
+                {
+                    id: 3,
+                    variant_id: 3,
+                    title: 'Chao đèn hình túi xách quai da nâu DT250XT-TR/DT250XG đèn hình túi xách quai da nâu DT250XT-TR/DT250XG',
+                    slug: 'vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
+                    percent: 24,
+                    sku: 'PC1072',
+                    price: '395000.00',
+                    old_price: '495000.00',
+                    variant_title: '30 viên',
+                    default_price: '395000.00',
+                    image: {
+                        url: 'https://salt.tikicdn.com/ts/tmp/32/be/01/fa963664aa0461022e0a956e866507de.jpg',
+                        path: 'Product/go-multi-teen-everyday-8820eb16d9214161b4c245cd49c71c3a.webp',
+                        alt: 'Vitamin tổng hợp cho tuổi teen Go Multi Teen Everyday',
+                    },
+                    url: 'http://localhost:8000/vitamin-tong-hop-cho-tuoi-teen-go-multi-teen-everyday',
+                },
+            ],
             memberActive: null,
             paymentActive: 1,
             payments: [
@@ -929,6 +805,7 @@ export default {
             this.currentActive = this.currentActive !== index ? index : null
         },
     },
+    components: { JCardProductRelated },
 }
 </script>
 <style lang="scss">
