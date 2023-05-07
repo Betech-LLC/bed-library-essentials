@@ -50,7 +50,7 @@
                             :errors="errors"
                             class="page-contact-field-email"
                         />
-                        <!-- TODO -->
+
                         <!-- <JFormField
                             v-model="form.contact.data['Password']"
                             :field="{
