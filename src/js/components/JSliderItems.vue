@@ -21,18 +21,19 @@
                     <button class="btn-slide btn-next" @click="navigate('next')"><JIconChevronRight /></button>
                 </template>
 
-                <template #dots="{ dots, current, navigate }">
-                    <div class="slider-dots">
-                        <div class="slider-dots-wrap">
-                            <div
-                                v-for="(_, index) in dots"
-                                :key="dot"
-                                @click="navigate(dot)"
-                                class="slider-dot-item"
-                                :class="current === index ? 'active' : ''"
-                            ></div>
-                        </div>
-                    </div>
+                <template v-if="pagination" #dots="{ dots, current, navigate }">
+                    <slot name="slide-pagination" :dots="dots" :current="current" :navigate="navigate">
+                        <div class="slider-pagination">
+                            <div class="slider-pagination-wrap">
+                                <div
+                                    v-for="(_, index) in dots"
+                                    :key="dot"
+                                    @click="navigate(dot)"
+                                    class="slider-pagination-item"
+                                    :class="current === index ? 'active' : ''"
+                                ></div>
+                            </div></div
+                    ></slot>
                 </template> </JSlider
         ></ClientOnly>
     </div>
