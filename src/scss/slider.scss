@@ -4,7 +4,7 @@
         @apply relative;
     }
     .slider-pagination {
-        @apply absolute w-full translate-y-full -bottom-2;
+        @apply mt-2;
     }
     .slider-pagination-wrap {
         @apply flex items-center justify-center space-x-1 md:space-x-2;
