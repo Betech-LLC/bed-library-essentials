@@ -27,8 +27,8 @@
                             <div class="slider-pagination-wrap">
                                 <div
                                     v-for="(_, index) in dots"
-                                    :key="dot"
-                                    @click="navigate(dot)"
+                                    :key="index"
+                                    @click="navigate(index)"
                                     class="slider-pagination-item"
                                     :class="current === index ? 'active' : ''"
                                 ></div>
