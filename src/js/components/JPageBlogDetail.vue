@@ -155,6 +155,9 @@ export default {
     },
 
     created() {
+        if (this.post.category && this.post.category.url && this.post.title) {
+            this.breadcrumb.push({ title: this.post.category.title, link: this.post.category.url })
+        }
         this.breadcrumb.push({ title: this.post.title })
     },
 
