@@ -19,10 +19,13 @@
 </template>
 <script>
 import { toMoney } from '@core/utils'
+import JLink from '@core/components/JLink.vue'
+import JPicture from '@core/components/JPicture.vue'
 export default {
     props: ['product'],
     methods: {
         toMoney,
     },
+    components: { JLink, JPicture },
 }
 </script>
