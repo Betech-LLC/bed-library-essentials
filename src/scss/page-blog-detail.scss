@@ -90,13 +90,11 @@
     }
 }
 
-.blog-detail-page-related {
-    .blog-detail-page-related-wrap {
-        @apply container xl:py-16 md:py-11 py-8;
-    }
-    .blog-detail-page-related-title {
-        @apply headline-2 xl:mb-8 md:mb-6 mb-4 text-gray-700;
-    }
+.blog-detail-page-related-wrap {
+    @apply container xl:py-16 md:py-11 py-8;
+}
+.blog-detail-page-related-title {
+    @apply headline-2 xl:mb-8 md:mb-6 mb-4 text-gray-700;
 }
 
 .blog-detail-page.layout-2 {
