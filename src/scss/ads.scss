@@ -1,3 +1,22 @@
 .slider-ads-image {
     @apply aspect-w-11 aspect-h-3;
 }
+
+.slider-ads {
+    .jam-slider__arrows {
+        @apply opacity-0 base-transition;
+    }
+
+    &:hover {
+        .jam-slider__arrows {
+            @apply opacity-100;
+        }
+    }
+
+    .btn-slide.btn-prev {
+        @apply left-0 -translate-x-1/2;
+    }
+    .btn-slide.btn-next {
+        @apply right-0 translate-x-1/2;
+    }
+}

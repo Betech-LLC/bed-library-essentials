@@ -4,8 +4,7 @@
         class="slider-ads"
         :items="items"
         :pagination="true"
-        :autoplay="true"
-        :config="{ cols: 1, gutter: '0px' }"
+        :config="{ cols: 1, gutter: '0px', loop: true }"
         :breakpoints="{}"
     >
         <template #slide-item="{ item }">

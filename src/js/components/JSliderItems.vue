@@ -34,8 +34,9 @@
                                 ></div>
                             </div></div
                     ></slot>
-                </template> </JSlider
-        ></ClientOnly>
+                </template>
+            </JSlider>
+        </ClientOnly>
     </div>
 </template>
 
@@ -93,7 +94,8 @@ export default {
             return this.items.length
         },
         rowItems() {
-            const quantity = this.breakpoints.xl?.cols || this.breakpoints.lg?.cols || this.breakpoints.md?.cols
+            const quantity =
+                this.breakpoints.xl?.cols || this.breakpoints.lg?.cols || this.breakpoints.md?.cols || this.config?.cols
             return Number(quantity)
         },
     },
