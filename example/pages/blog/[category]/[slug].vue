@@ -4,7 +4,6 @@
         :post="post"
         :top_posts="top_posts"
         :related_products="related_products"
-        :related_posts="top_posts"
         :banner="banner"
         :banners="banners"
         :layout="2"

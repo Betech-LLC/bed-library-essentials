@@ -128,7 +128,6 @@ export default {
         post: Object,
         banners: Array,
         top_posts: Array,
-        related_posts: Array,
         related_products: Array,
         language: String,
         staticContent: {
