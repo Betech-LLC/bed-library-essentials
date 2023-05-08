@@ -11,7 +11,7 @@
         <template #blog-related>
             <section>
                 <div class="container py-[24px] md:pt-[32px] xl:py-[48px]">
-                    <h2 class="headline-2 mb-[16px] md:mb-[24px] xl:mb-[32px]">Bài viết liên qua</h2>
+                    <h2 class="headline-2 mb-[16px] md:mb-[24px] xl:mb-[32px]">Bài viết liên quan</h2>
                     <JSliderItems
                         :items="top_posts"
                         :breakpoints="{
