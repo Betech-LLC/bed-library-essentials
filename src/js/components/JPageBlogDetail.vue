@@ -91,18 +91,7 @@
                 </div>
             </div>
         </section>
-        <section class="blog-detail-page-related" v-if="related_posts && related_posts.length > 0">
-            <div class="blog-detail-page-related-wrap">
-                <h2 v-if="titleRelated" class="blog-detail-page-related-title">
-                    {{ titleRelated }}
-                </h2>
-                <JSliderItems :items="related_posts">
-                    <template #slide-item="{ item }">
-                        <JCardBlog class="card-item" :item="item" />
-                    </template>
-                </JSliderItems>
-            </div>
-        </section>
+        <slot name="blog-related" />
     </main>
 </template>
 
@@ -117,7 +106,6 @@ import JIconChevron from '@core/components/JIcon/ChevronDown.vue'
 import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import { toDate } from '@core/utils'
 import { useTransformContent } from '@core/utils'
-import JSliderItems from '@core/components/JSliderItems.vue'
 import JSliderAds from '@core/components/JSliderAds.vue'
 import JCardProductRelated from '@core/components/JCardProductRelated.vue'
 export default {
@@ -130,7 +118,6 @@ export default {
         JSocialShare,
         JIconArrowRight,
         JLink,
-        JSliderItems,
         JSliderAds,
         JCardProductRelated,
     },
@@ -144,10 +131,6 @@ export default {
         related_posts: Array,
         related_products: Array,
         language: String,
-        titleRelated: {
-            type: String,
-            default: 'Bài viết liên quan',
-        },
         staticContent: {
             type: Object,
             default: () => {

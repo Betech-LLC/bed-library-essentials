@@ -8,7 +8,36 @@
         :banner="banner"
         :banners="banners"
         :layout="2"
-    />
+    >
+        <template #blog-related>
+            <section>
+                <div class="container py-[24px] md:pt-[32px] xl:py-[48px]">
+                    <h2 class="headline-2 mb-[16px] md:mb-[24px] xl:mb-[32px]">Bài viết liên qua</h2>
+                    <JSliderItems
+                        :items="top_posts"
+                        :breakpoints="{
+                            md: {
+                                cols: '2.5',
+                                gutter: '12px',
+                            },
+                            lg: {
+                                cols: '3',
+                                gutter: '16px',
+                            },
+                            xl: {
+                                cols: '3',
+                                gutter: '24px',
+                            },
+                        }"
+                    >
+                        <template #slide-item="{ item }">
+                            <JCardBlog class="card-item" :item="item" />
+                        </template>
+                    </JSliderItems>
+                </div>
+            </section>
+        </template>
+    </JPageBlogDetail>
 </template>
 
 <script>
