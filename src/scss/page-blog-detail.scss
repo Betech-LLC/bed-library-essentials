@@ -1,10 +1,10 @@
 .blog-detail-page {
-    @apply container xl:py-8 md:py-6 py-4 grid grid-cols-7 xl:gap-x-8 lg:gap-x-6 max-lg:gap-y-6;
+    @apply container xl:py-8 md:py-6 py-4 grid grid-cols-7 xl:gap-x-8 lg:gap-x-6;
     .left {
         @apply lg:col-span-5 col-span-full xl:space-y-8 md:space-y-6 space-y-4;
     }
     .right {
-        @apply lg:col-span-2 col-span-full xl:space-y-12 lg:space-y-8 space-y-6;
+        @apply lg:col-span-2 col-span-full xl:space-y-12 lg:space-y-8 space-y-6 max-lg:mt-6 max-md:hidden;
         .banner-ads-wrap {
             @apply max-lg:hidden;
         }
@@ -96,5 +96,11 @@
     }
     .blog-detail-page-related-title {
         @apply headline-2 xl:mb-8 md:mb-6 mb-4 text-gray-700;
+    }
+}
+
+.blog-detail-page.layout-2 {
+    .breadcrumb {
+        @apply col-span-full xl:mb-4 md:mb-3 mb-2;
     }
 }

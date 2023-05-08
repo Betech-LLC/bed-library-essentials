@@ -6,6 +6,8 @@
         :related_products="related_products"
         :related_posts="top_posts"
         :banner="banner"
+        :banners="banners"
+        :layout="2"
     />
 </template>
 
@@ -377,6 +379,29 @@ export default {
                 image: { url: 'https://via.placeholder.com/300x400', alt: 'Demo' },
                 image_mobile: { url: null, alt: 'Demo' },
             },
+
+            banners: [
+                {
+                    id: 2,
+                    title: '<p>Demo</p>',
+                    description: null,
+                    link: null,
+                    target: '_self',
+                    custom_fields: null,
+                    image: { url: 'https://via.placeholder.com/600x300', alt: 'Demo' },
+                    image_mobile: { url: null, alt: 'Demo' },
+                },
+                {
+                    id: 2,
+                    title: '<p>Demo</p>',
+                    description: null,
+                    link: null,
+                    target: '_self',
+                    custom_fields: null,
+                    image: { url: 'https://via.placeholder.com/600x300', alt: 'Demo' },
+                    image_mobile: { url: null, alt: 'Demo' },
+                },
+            ],
         }
     },
 }
