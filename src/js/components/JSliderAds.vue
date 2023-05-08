@@ -19,7 +19,7 @@
                     :src="item.image?.url || item.image_url"
                     :mobileSrc="item.image_mobile?.url || item.image_mobile_url"
                     :alt="item.image?.alt || item.alt || item.title"
-                    wrapperClass="slider-ads-image picture-cover aspect-w-11 aspect-h-3"
+                    wrapperClass="slider-ads-image picture-cover "
                 />
             </a>
         </template>
