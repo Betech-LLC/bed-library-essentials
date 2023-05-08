@@ -72,6 +72,13 @@
             <div class="right">
                 <JBlogSideBar :items="top_posts">
                     <template #title>{{ staticContent.topPosts }}</template>
+                    <template #card="{ item }">
+                        <JCardBlog
+                            class="card-blog-xs card-item"
+                            :class="layout === 1 ? 'card-blog-row' : 'card-blog-no-description'"
+                            :item="item"
+                        />
+                    </template>
                 </JBlogSideBar>
 
                 <JBlogSideBar :items="related_products">
