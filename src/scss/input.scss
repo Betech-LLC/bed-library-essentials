@@ -69,7 +69,7 @@ fieldset {
             }
         }
         .quantity-input {
-            @apply block w-10 h-full text-center text-gray-700 md:w-12 border-x-gray-300 border-x focus:outline-0 label-2;
+            @apply block w-10 h-full text-center text-gray-700 md:w-12 border-x-gray-300 border-x focus:outline-0 label-2 rounded-none;
         }
     }
     .fieldset-password-toggle-mask {
