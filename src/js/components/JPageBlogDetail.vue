@@ -1,8 +1,13 @@
 <template>
     <main>
-        <section class="blog-detail-page">
+        <section class="blog-detail-page" :class="`layout-${layout}`">
+            <JBreadcrumb v-if="layout === 2" :items="breadcrumb">
+                <template #icon>
+                    <JIconArrowRight />
+                </template>
+            </JBreadcrumb>
             <div class="left">
-                <JBreadcrumb :items="breadcrumb">
+                <JBreadcrumb v-if="layout === 1" :items="breadcrumb">
                     <template #icon>
                         <JIconArrowRight />
                     </template>
@@ -19,6 +24,8 @@
                 </div>
 
                 <div v-if="post.description" class="blog-detail-page-description" v-html="post.description"></div>
+
+                <JSliderAds :items="banners" />
 
                 <div
                     class="blog-detail-page-toc"
@@ -104,6 +111,7 @@ import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import { toDate } from '@core/utils'
 import { useTransformContent } from '@core/utils'
 import JSliderItems from '@core/components/JSliderItems.vue'
+import JSliderAds from '@core/components/JSliderAds.vue'
 import JCardProductRelated from '@core/components/JCardProductRelated.vue'
 export default {
     components: {
@@ -116,6 +124,7 @@ export default {
         JIconArrowRight,
         JLink,
         JSliderItems,
+        JSliderAds,
         JCardProductRelated,
     },
 
@@ -123,6 +132,7 @@ export default {
         breadcrumb: Object,
         banner: Object,
         post: Object,
+        banners: Array,
         top_posts: Array,
         related_posts: Array,
         related_products: Array,
@@ -141,6 +151,10 @@ export default {
                     relatedProduct: 'Sản phẩm liên quan',
                 }
             },
+        },
+        layout: {
+            type: Number,
+            default: 1,
         },
     },
 
