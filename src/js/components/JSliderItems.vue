@@ -10,6 +10,7 @@
                 :autoplay="autoplay"
                 :slidesPerView="slidesPerView"
                 class="slider"
+                @onSlide="onSlide"
             >
                 <JSlide v-for="(item, index) in items" :key="index">
                     <slot name="slide-item" :item="item" />
@@ -67,7 +68,7 @@ export default {
                 },
                 lg: {
                     cols: '3',
-                    gutter: '10px',
+                    gutter: '12px',
                 },
                 xl: {
                     cols: '3',
@@ -97,6 +98,12 @@ export default {
             const quantity =
                 this.breakpoints.xl?.cols || this.breakpoints.lg?.cols || this.breakpoints.md?.cols || this.config?.cols
             return Number(quantity)
+        },
+    },
+
+    methods: {
+        onSlide({ current }) {
+            this.$emit('onSlide', { current })
         },
     },
 }

@@ -222,10 +222,9 @@ export default {
 
         onScroll() {
             const closest = this.getClosest()
-            console.log('onScroll closest = ', closest)
             if (closest.index !== this.current) {
                 this.current = closest.index
-                this.$emit('onChangeSlide', this.current)
+                this.$emit('onSlide', { current: this.current })
             }
         },
 
