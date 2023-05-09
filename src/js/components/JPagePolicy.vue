@@ -2,11 +2,13 @@
     <main>
         <section class="page-policy">
             <div class="page-policy-wrap">
-                <JBreadcrumb :items="breadcrumb">
-                    <template #icon>
-                        <JIconArrowRight />
-                    </template>
-                </JBreadcrumb>
+                <slot name="breadcrumb">
+                    <JBreadcrumb :items="breadcrumb">
+                        <template #icon>
+                            <JIconArrowRight />
+                        </template>
+                    </JBreadcrumb>
+                </slot>
                 <div class="page-policy-head" v-if="staticContent.title">{{ staticContent.title }}</div>
 
                 <div class="page-policy-body">

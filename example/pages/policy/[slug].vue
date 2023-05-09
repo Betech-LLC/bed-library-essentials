@@ -1,5 +1,13 @@
 <template>
-    <JPagePolicy :list_sidebar="list_sidebar" :content="content" :breadcrumb="breadcrumb" :currentPath="currentPath" />
+    <JPagePolicy :list_sidebar="list_sidebar" :breadcrumb="breadcrumb" :content="content" :currentPath="currentPath">
+        <template #breadcrumb>
+            <JBreadcrumb :items="breadcrumb">
+                <template #icon>
+                    <JIconSlash />
+                </template>
+            </JBreadcrumb>
+        </template>
+    </JPagePolicy>
 </template>
 
 <script>
