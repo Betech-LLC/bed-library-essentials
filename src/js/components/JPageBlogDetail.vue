@@ -62,7 +62,7 @@
                             tag.title
                         }}</a>
                     </div>
-                    <JSocialShare zaloOAId="1111640952861619960">
+                    <JSocialShare :zaloOAId="staticContent.zaloOAId">
                         <template #title>
                             {{ staticContent.share }}
                         </template>
@@ -138,6 +138,7 @@ export default {
                     share: 'Chia sẻ',
                     topPosts: 'Tin nổi bật',
                     relatedProduct: 'Sản phẩm liên quan',
+                    zaloOAId: '1111640952861619960',
                 }
             },
         },
