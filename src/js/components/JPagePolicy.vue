@@ -106,7 +106,11 @@ export default {
                 document.body.classList.remove('overflow-hidden')
             }
         },
+        '$route.path': function () {
+            document.body.classList.remove('overflow-hidden')
+        },
     },
+
     methods: {
         checkActiveUrl,
         togglePolicyMobile() {
