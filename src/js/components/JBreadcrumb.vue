@@ -31,6 +31,7 @@ export default {
         items: {
             type: Array,
             required: true,
+            default: [],
         },
         isH1: {
             type: Boolean,
