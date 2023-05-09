@@ -5,15 +5,7 @@
         :breadcrumb="breadcrumb"
         :staticContent="staticContent"
         :currentPath="currentPath"
-    >
-        <template #breadcrumb>
-            <JBreadcrumb :items="breadcrumb">
-                <template #icon>
-                    <JIconSlash />
-                </template>
-            </JBreadcrumb>
-        </template>
-    </JPagePolicy>
+    />
 </template>
 
 <script>
