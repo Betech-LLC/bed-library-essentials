@@ -3,8 +3,8 @@
         v-if="items && items.length"
         class="slider-ads"
         :items="items"
-        :pagination="true"
-        :config="{ cols: 1, gutter: '0px', loop: true }"
+        :pagination="pagination"
+        :config="config"
         :breakpoints="{}"
     >
         <template #slide-item="{ item }">
@@ -36,6 +36,18 @@ export default {
         items: {
             type: Array,
             default: null,
+        },
+
+        pagination: {
+            type: Boolean,
+            default: true,
+        },
+
+        config: {
+            type: Object,
+            default: () => {
+                return { cols: 1, gutter: '0px', loop: true }
+            },
         },
     },
 }
