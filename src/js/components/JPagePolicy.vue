@@ -29,7 +29,6 @@
                                     :class="{
                                         active: checkActiveUrl(policy.url, currentPath),
                                     }"
-                                    @click="togglePolicyMobile"
                                 >
                                     <div v-if="policy.icon" class="nav-icon" v-html="policy.icon"></div>
                                     <div class="nav-icon" v-else>
@@ -105,9 +104,6 @@ export default {
             } else {
                 document.body.classList.remove('overflow-hidden')
             }
-        },
-        '$route.path': function () {
-            document.body.classList.remove('overflow-hidden')
         },
     },
 
