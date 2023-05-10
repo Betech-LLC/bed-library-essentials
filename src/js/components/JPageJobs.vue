@@ -51,7 +51,7 @@
 import JCardJob from '@core/components/JCardJob.vue'
 import JEmpty from '@core/components/JEmpty.vue'
 import JFieldCheckboxCustom from '@core/components/JField/CheckboxCustom.vue'
-import { serializeQuery, mappingOptions } from '@core/utils/filter-key'
+import { serializeQuery, mappingOptions } from '@core/utils'
 
 export default {
     components: { JEmpty, JCardJob, JFieldCheckboxCustom },
