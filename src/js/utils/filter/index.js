@@ -1,138 +1,123 @@
-"use strict";
-
+'use strict'
 function serializeQuery(oldQuery = {}, newQuery = {}) {
-    return { ...serializeOldQuery(oldQuery), ...serializeNewQuery(newQuery) };
+    return { ...serializeOldQuery(oldQuery), ...serializeNewQuery(newQuery) }
 }
 
 function serializeOldQuery(query = {}) {
-    return Object.fromEntries(
-        Object.entries(query).filter(([key]) => !key.includes("opt-"))
-    );
+    return Object.fromEntries(Object.entries(query).filter(([key]) => !key.includes('opt-') && key !== 'page'))
 }
 
 function serializeNewQuery(query = {}) {
     return {
         ...serializeOptions(query),
-        ...Object.fromEntries(
-            Object.entries(query).filter(([key, x]) => typeof x === "string")
-        ),
-    };
+        ...Object.fromEntries(Object.entries(query).filter(([key, x]) => typeof x === 'string')),
+    }
 }
 
 function serializeOptions(options) {
-    let queryOptions = [];
-    for (const option of options) {
-        const childIds = option.nodes
-            ? option.nodes.filter((c) => c.active).map((x) => x.id)
-            : [];
-
+    let queryOptions = {}
+    options.forEach(function (option) {
+        const childIds = option.nodes.filter((c) => c.active).map((x) => x.id)
         if (childIds.length > 0) {
-            queryOptions = [...queryOptions, ...childIds];
+            queryOptions[`opt-${option.slug}`] = childIds.join(',')
         }
-    }
-    return {
-        options: queryOptions.join(","),
-    };
+    })
+
+    return queryOptions
 }
 
 function unserializeOptions(value) {
     const options = Object.keys(value)
-        .filter((x) => x.includes("opt-"))
+        .filter((x) => x.includes('opt-'))
         .map((key) => {
-            const newKey = key.replace("opt-", "");
-            return { parent: newKey, child: value[key].split(",") };
-        });
-    return unGroupBy(options);
+            const newKey = key.replace('opt-', '')
+            return { parent: newKey, child: value[key].split(',') }
+        })
+    return unGroupBy(options)
 }
 
 function groupBy(xs, f) {
-    return xs.reduce(
-        (r, v, i, a, k = f(v)) => ((r[k] || (r[k] = [])).push(v), r),
-        {}
-    );
+    return xs.reduce((r, v, i, a, k = f(v)) => ((r[k] || (r[k] = [])).push(v), r), {})
 }
 
 function unGroupBy(value) {
-    let data = [];
+    let data = []
     for (const option of value) {
         for (const child of option.child) {
             data.push({
                 parent: option.parent,
                 child: child,
-            });
+            })
         }
     }
-    return data;
+    return data
 }
 
 function filteringOptionIds(value) {
-    return unserializeOptions(value).flatMap((x) => x.child.toString());
+    return unserializeOptions(value).flatMap((x) => x.child.toString())
 }
 
 function mappingPrice(query) {
-    const price = query.price ? query.price.split("-") : null;
-    const from = price && price[0] ? price[0] : null;
-    const to = price && price[1] ? price[1] : null;
-    return { from, to };
+    const price = query.price ? query.price.split('-') : null
+    const from = price && price[0] ? price[0] : null
+    const to = price && price[1] ? price[1] : null
+    return { from, to }
 }
 
 function mappingOptions(allOptions, query) {
-    const filteringIds = query["options"] ? query["options"].split(",") : [];
+    const filteringIds = unserializeOptions(query).flatMap((x) => x.child.toString())
+
     return allOptions.map((x) => {
-        x.nodes?.map((c) => {
-            c.active = !!filteringIds.includes(c.id.toString());
-            return c;
-        });
-        return x;
-    });
+        x.nodes.map((c) => {
+            c.active = !!filteringIds.includes(c.id.toString())
+            return c
+        })
+        return x
+    })
 }
 
 function mappingBrands(origin = {}, query = {}) {
-    const filteringIds = query["brands"] ? query["brands"].split(",") : [];
+    const filteringIds = query['brands'] ? query['brands'].split(',') : []
     const nodesFilter = origin.nodes?.map((c) => {
-        c.active = !!filteringIds.includes(c.id.toString());
-        return c;
-    });
+        c.active = !!filteringIds.includes(c.id.toString())
+        return c
+    })
     return {
         ...origin,
         nodes: nodesFilter,
-    };
+    }
+}
+function serializeBrands(origin) {
+    const childIds = origin.nodes ? origin.nodes.filter((c) => c.active).map((x) => x.id) : []
+
+    return {
+        brands: childIds.join(','),
+    }
 }
 
 function mappingOrigins(origin = {}, query = {}) {
-    const filteringIds = query["origins"] ? query["origins"].split(",") : [];
+    const filteringIds = query['origins'] ? query['origins'].split(',') : []
     const nodesFilter = origin.nodes?.map((c) => {
-        c.active = !!filteringIds.includes(c.id.toString());
-        return c;
-    });
+        c.active = !!filteringIds.includes(c.id.toString())
+        return c
+    })
     return {
         ...origin,
         nodes: nodesFilter,
-    };
+    }
 }
-
 function serializeOrigins(origin) {
-    const childIds = origin.nodes
-        ? origin.nodes.filter((c) => c.active).map((x) => x.id)
-        : [];
+    const childIds = origin.nodes ? origin.nodes.filter((c) => c.active).map((x) => x.id) : []
 
     return {
-        origins: childIds.join(","),
-    };
-}
-
-function serializeBrands(origin) {
-    const childIds = origin.nodes
-        ? origin.nodes.filter((c) => c.active).map((x) => x.id)
-        : [];
-
-    return {
-        brands: childIds.join(","),
-    };
+        origins: childIds.join(','),
+    }
 }
 
 export {
     serializeQuery,
+    mappingBrands,
+    serializeBrands,
     serializeOptions,
     unserializeOptions,
     filteringOptionIds,
@@ -140,6 +125,4 @@ export {
     mappingPrice,
     mappingOrigins,
     serializeOrigins,
-    mappingBrands,
-    serializeBrands,
-};
+}
