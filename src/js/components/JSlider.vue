@@ -2,7 +2,7 @@
     <div :id="`slider_${fieldId}`" :ref="`slider_${fieldId}`" class="jam-slider" :style="styleConfig">
         <div
             :ref="`slide-container_${fieldId}`"
-            class="jam-slider__container"
+            class="flex overflow-hidden jam-slider__container"
             @scroll="onScroll()"
             @mouseover="stopAutoPlay()"
             @mouseout="startAutoPlay()"
@@ -94,7 +94,12 @@ export default {
         },
 
         dots() {
-            return this.config.total / this.currentCols
+            const currentDotInit = 1
+            const currentDotsPerView =
+                this.breakpoints.xl?.cols || this.breakpoints.lg?.cols || this.breakpoints.md?.cols || this.config?.cols
+            const currentDots = this.config.total - Number(currentDotsPerView)
+            const totalDots = Math.floor(currentDots + currentDotInit)
+            return totalDots
         },
 
         autoplayDelay() {
@@ -156,7 +161,7 @@ export default {
                 x = scrollLeft + itemsPerScreenWidth
                 y = scrollLeft + itemsPerViewWidth
 
-                if (x >= scrollWidth) {
+                if (x + 10 >= scrollWidth) {
                     return 0
                 } else if (y <= maxScrollPerViewLeft) {
                     return y
@@ -203,6 +208,7 @@ export default {
                 top = slide.offsetTop - this.slider.offsetHeight + slide.offsetHeight
                 left = slide.offsetLeft - this.slider.offsetWidth + slide.offsetWidth
             }
+
             top = this.minmax(top, 0, this.slider.scrollHeight)
             left = this.minmax(left, 0, this.slider.scrollWidth)
             return { top, left }
@@ -218,7 +224,7 @@ export default {
             const closest = this.getClosest()
             if (closest.index !== this.current) {
                 this.current = closest.index
-                this.$emit('onChange', this.current)
+                this.$emit('onSlide', { current: this.current })
             }
         },
 
@@ -254,6 +260,13 @@ export default {
 body:before {
     content: 'sm';
     @apply absolute -left-full invisible;
+}
+
+.jam-slider.slide-product {
+    .jam-slider__container {
+        margin-left: -4px !important;
+        margin-right: -4px !important;
+    }
 }
 @screen md {
     body:before {

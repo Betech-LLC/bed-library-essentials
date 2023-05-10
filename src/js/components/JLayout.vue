@@ -16,7 +16,7 @@
                 <JCardProductRelated :product="product" />
             </div>
         </div>
-        <JSliderItems :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]" :autoplay="true" :pagination="true">
+        <JSliderItems :items="[1, 2, 3, 4, 5]" :autoplay="false" :pagination="true" @onSlide="onSlide">
             <template #slide-item="{ item }">
                 <JPicture />
             </template>
@@ -798,6 +798,9 @@ export default {
         },
     },
     methods: {
+        onSlide() {
+            console.log('onSlide runn')
+        },
         onSubmitUser() {
             console.log('onSubmitUser')
         },
