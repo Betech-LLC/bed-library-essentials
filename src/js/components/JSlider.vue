@@ -264,8 +264,8 @@ body:before {
 
 .jam-slider.slide-product {
     .jam-slider__container {
-        margin-left: -3px !important;
-        margin-right: -3px !important;
+        margin-left: -4px !important;
+        margin-right: -4px !important;
     }
 }
 @screen md {
