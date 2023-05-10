@@ -485,14 +485,13 @@
                     ]"
                 />
                 <JAccordion>
-                    <JAccordionItem
-                        :item="{
-                            title: 'Accordion item 1',
-                        }"
-                        @toggleItem="toggleItem"
-                        :index="1"
-                        :isActive="currentActive === 1"
-                    >
+                    <JAccordionItem @toggleItem="toggleItem" :index="1" :isActive="currentActive === 1">
+                        <template #title>
+                            <div class="flex items-center space-x-1">
+                                <JIconCalendar />
+                                <div>Title Custom</div>
+                            </div>
+                        </template>
                         <ul class="xl:pt-3 md:pt-2 pt-1.5">
                             <li>Subitem 1</li>
                             <li>Subitem 2</li>

@@ -2,7 +2,11 @@
     <div class="accordion-item" :class="{ active: isActiveItem }">
         <div class="accordion-header">
             <button @click="toggleItem()">
-                <span class="accordion-title">{{ item.title }}</span>
+                <div class="accordion-title">
+                    <slot name="title">
+                        {{ item.title }}
+                    </slot>
+                </div>
                 <span class="accordion-icon" :class="{ active: isActiveItem }">
                     <JIconChevronDown />
                 </span>
