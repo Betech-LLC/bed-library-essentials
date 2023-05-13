@@ -90,28 +90,7 @@ function mappingBrands(origin = {}, query = {}) {
 function serializeBrands(origin) {
     const childIds = origin.nodes ? origin.nodes.filter((c) => c.active).map((x) => x.id) : []
 
-    return {
-        brands: childIds.join(','),
-    }
-}
-
-function mappingOrigins(origin = {}, query = {}) {
-    const filteringIds = query['origins'] ? query['origins'].split(',') : []
-    const nodesFilter = origin.nodes?.map((c) => {
-        c.active = !!filteringIds.includes(c.id.toString())
-        return c
-    })
-    return {
-        ...origin,
-        nodes: nodesFilter,
-    }
-}
-function serializeOrigins(origin) {
-    const childIds = origin.nodes ? origin.nodes.filter((c) => c.active).map((x) => x.id) : []
-
-    return {
-        origins: childIds.join(','),
-    }
+    return childIds.join(',')
 }
 
 export {
@@ -123,6 +102,4 @@ export {
     filteringOptionIds,
     mappingOptions,
     mappingPrice,
-    mappingOrigins,
-    serializeOrigins,
 }
