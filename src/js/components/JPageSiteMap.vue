@@ -8,7 +8,7 @@
             </JBreadcrumb>
             <div class="page-site-map-wrap">
                 <h1 class="page-site-map-title">SITE MAP</h1>
-                <div class="page-site-map-config">
+                <div v-if="groupConfig && groupConfig.length" class="page-site-map-config">
                     <div v-for="(group, index) in groupConfig" :key="index">
                         <div class="page-site-map-sub-title">
                             <JLink :href="group.url">
@@ -24,7 +24,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="page-site-map-options">
+                <div v-if="groupOptions && groupOptions.length" class="page-site-map-options">
                     <div v-for="(group, index) in groupOptions" :key="index">
                         <div class="page-site-map-sub-title">
                             <JLink :href="group.url">
