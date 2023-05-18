@@ -76,10 +76,10 @@ function mappingOptions(allOptions, query) {
     })
 }
 
-function mappingArrayData(arrayData = [], query = {}, type = 'brands') {
-    const filteringIds = query[type] ? query[type].split(',') : []
+function mappingArrayData(arrayData = [], query = {}, type = 'brands', key = 'id') {
+    const filteringKeys = query[type] ? query[type].split(',') : []
     arrayData.map((b) => {
-        b.active = !!filteringIds.includes(b.id.toString())
+        b.active = !!filteringKeys.includes(b[key].toString())
         return b
     })
     return arrayData
