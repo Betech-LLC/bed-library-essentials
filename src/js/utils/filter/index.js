@@ -85,8 +85,8 @@ function mappingArrayData(arrayData = [], query = {}, type = 'brands', key = 'id
     return arrayData
 }
 
-function serializeArrayData(arrayData) {
-    const queryArrayData = arrayData.filter((b) => b.active).map((x) => x.id) || []
+function serializeArrayData(arrayData, key = 'id') {
+    const queryArrayData = arrayData.filter((b) => b.active).map((x) => x[key]) || []
 
     return queryArrayData.join(',')
 }
