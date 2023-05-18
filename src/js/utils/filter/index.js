@@ -98,7 +98,9 @@ function serializeArrayData(arrayData, type = 'brands', key = 'id') {
     let queryData = {}
     let queryArrayData = arrayData.filter((a) => a.active).map((x) => x[key]) || []
 
-    queryData[type] = queryArrayData.join(',')
+    if (queryArrayData.length) {
+        queryData[type] = queryArrayData.join(',')
+    }
 
     return queryData
 }
