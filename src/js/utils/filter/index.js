@@ -76,25 +76,25 @@ function mappingOptions(allOptions, query) {
     })
 }
 
-function mappingBrands(brands = [], query = {}) {
-    const filteringIds = query['brands'] ? query['brands'].split(',') : []
-    brands.map((b) => {
+function mappingArrayData(arrayData = [], query = {}, type = 'brands') {
+    const filteringIds = query[type] ? query[type].split(',') : []
+    arrayData.map((b) => {
         b.active = !!filteringIds.includes(b.id.toString())
         return b
     })
-    return brands
+    return arrayData
 }
 
-function serializeBrands(brands) {
-    const childIds = brands.filter((b) => b.active).map((x) => x.id) || []
+function serializeArrayData(arrayData) {
+    const queryArrayData = arrayData.filter((b) => b.active).map((x) => x.id) || []
 
-    return childIds.join(',')
+    return queryArrayData.join(',')
 }
 
 export {
     serializeQuery,
-    mappingBrands,
-    serializeBrands,
+    mappingArrayData,
+    serializeArrayData,
     serializeOptions,
     unserializeOptions,
     filteringOptionIds,
