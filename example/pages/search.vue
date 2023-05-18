@@ -1,5 +1,5 @@
 <template>
-    <JPageSearch :keyword="keyword" :breadcrumb="breadcrumb" :options="[productOption, postOption]">
+    <JPageSearch :keyword="`&quot;${keyword}&quot;`" :breadcrumb="breadcrumb" :options="[productOption, postOption]">
         <template #[productOption.type]="{ item }">
             <JCardBlog class="card-item" :item="item" />
         </template>

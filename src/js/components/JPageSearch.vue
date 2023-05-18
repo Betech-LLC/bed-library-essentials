@@ -1,22 +1,21 @@
 <template>
-    <main>
+    <main class="page-search">
         <JBreadcrumb :items="breadcrumb" class="container py-3 md:py-4 xl:py-6">
             <template #icon>
                 <JIconArrowRight />
             </template>
         </JBreadcrumb>
-        <div class="pb-3 border-b border-b-gray-300">
-            <div class="container text-gray-900 label-1">
+        <div class="page-search-founded">
+            <div class="container">
                 Tìm thấy
-                <template v-for="(option, index) in options" :key="index">
-                    <a :href="`#${option.id}`" class="text-primary hover:underline"
-                        >{{ option.items.length }} {{ option.title }}</a
-                    ><template v-if="index + 1 < options.length">, </template>
-                </template>
-                phù hợp với từ khóa “{{ keyword }}”
+                <span v-for="(option, index) in options" :key="index">
+                    <a :href="`#${option.id}`" class="search-option"> {{ option.items.length }} {{ option.title }} </a>
+                    <span v-if="index + 1 < options.length">, </span>
+                </span>
+                phù hợp với từ khóa <span class="search-keyword" v-html="keyword"> </span>
             </div>
         </div>
-        <div class="py-6 space-y-6 md:space-y-8 xl:space-y-12 md:py-8 xl:py-12">
+        <div class="page-search-contain">
             <div v-for="(option, index) in options" :key="index" :id="option.id">
                 <JPagination :title="option.title" :cols="option.cols" :items="option.items" :class="option.type">
                     <template #card="{ item }">
