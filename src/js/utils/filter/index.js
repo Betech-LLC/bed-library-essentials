@@ -9,7 +9,8 @@ function serializeOldQuery(query = {}, type = 'options') {
             ([key]) =>
                 (type === 'options' && !key.includes('opt-') && key !== 'page') ||
                 (type === 'brands' && key !== 'brands' && key !== 'page') ||
-                (type === 'prices' && key !== 'prices' && key !== 'page')
+                (type === 'prices' && key !== 'prices' && key !== 'page') ||
+                (type === 'price-range' && key !== 'price-range' && key !== 'page')
         )
     )
 }
@@ -114,4 +115,5 @@ export {
     filteringOptionIds,
     mappingOptions,
     mappingPrice,
+    serializeOldQuery,
 }
