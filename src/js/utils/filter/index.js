@@ -10,7 +10,8 @@ function serializeOldQuery(query = {}, type = 'options') {
                 (type === 'options' && !key.includes('opt-') && key !== 'page') ||
                 (type === 'brands' && key !== 'brands' && key !== 'page') ||
                 (type === 'prices' && key !== 'prices' && key !== 'page') ||
-                (type === 'price-range' && key !== 'price-range' && key !== 'page')
+                (type === 'price-range' && key !== 'price-range' && key !== 'page') ||
+                (type === 'categories' && key !== 'categories' && key !== 'page')
         )
     )
 }
