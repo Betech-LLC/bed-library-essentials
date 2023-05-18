@@ -1,15 +1,24 @@
 'use strict'
-function serializeQuery(oldQuery = {}, newQuery = {}) {
-    return { ...serializeOldQuery(oldQuery), ...serializeNewQuery(newQuery) }
+function serializeQuery(oldQuery = {}, newQuery = {}, type = 'options', key = 'id') {
+    return { ...serializeOldQuery(oldQuery, type), ...serializeNewQuery(newQuery, type, key) }
 }
 
-function serializeOldQuery(query = {}) {
-    return Object.fromEntries(Object.entries(query).filter(([key]) => !key.includes('opt-') && key !== 'page'))
+function serializeOldQuery(query = {}, type = 'options') {
+    return Object.fromEntries(
+        Object.entries(query).filter(
+            ([key]) =>
+                (type === 'options' && !key.includes('opt-') && key !== 'page') ||
+                (type === 'brands' && key !== 'page') ||
+                (type === 'prices' && key !== 'page')
+        )
+    )
 }
 
-function serializeNewQuery(query = {}) {
+function serializeNewQuery(query = {}, type, key) {
+    const queryOptions = type === 'options' ? serializeOptions(query) : serializeArrayData(query, type, key)
+
     return {
-        ...serializeOptions(query),
+        ...queryOptions,
         ...Object.fromEntries(Object.entries(query).filter(([key, x]) => typeof x === 'string')),
     }
 }
@@ -85,10 +94,13 @@ function mappingArrayData(arrayData = [], query = {}, type = 'brands', key = 'id
     return arrayData
 }
 
-function serializeArrayData(arrayData, key = 'id') {
-    const queryArrayData = arrayData.filter((b) => b.active).map((x) => x[key]) || []
+function serializeArrayData(arrayData, type = 'brands', key = 'id') {
+    let queryData = {}
+    let queryArrayData = arrayData.filter((a) => a.active).map((x) => x[key]) || []
 
-    return queryArrayData.join(',')
+    queryData[type] = queryArrayData.join(',')
+
+    return queryData
 }
 
 export {
