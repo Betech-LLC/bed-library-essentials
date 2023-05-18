@@ -8,8 +8,8 @@ function serializeOldQuery(query = {}, type = 'options') {
         Object.entries(query).filter(
             ([key]) =>
                 (type === 'options' && !key.includes('opt-') && key !== 'page') ||
-                (type === 'brands' && key !== 'page') ||
-                (type === 'prices' && key !== 'page')
+                (type === 'brands' && key !== 'brands' && key !== 'page') ||
+                (type === 'prices' && key !== 'prices' && key !== 'page')
         )
     )
 }
