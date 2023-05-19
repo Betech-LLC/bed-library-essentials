@@ -12,7 +12,9 @@
             </div>
 
             <h3 v-if="item.title" class="card-blog-title">
-                <JLink :href="item.url">{{ item.title }}</JLink>
+                <JLink :href="item.url">
+                    <span v-html="item.title"></span>
+                </JLink>
             </h3>
             <p v-if="item.description" class="card-blog-description" v-html="item.description"></p>
         </div>
