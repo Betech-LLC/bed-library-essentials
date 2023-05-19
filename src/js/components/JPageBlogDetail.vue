@@ -25,7 +25,7 @@
 
                 <div v-if="post.description" class="blog-detail-page-description" v-html="post.description"></div>
 
-                <JSliderAds :items="banners" />
+                <JSliderAds :items="banners" :pagination="banners && banners.length > 1 ? true : false" />
 
                 <div
                     class="blog-detail-page-toc"
