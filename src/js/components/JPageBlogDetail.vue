@@ -139,6 +139,7 @@ export default {
                     topPosts: 'Tin nổi bật',
                     relatedProduct: 'Sản phẩm liên quan',
                     zaloOAId: '1111640952861619960',
+                    tocHeadline: ['h3', 'h4'],
                 }
             },
         },
@@ -150,7 +151,7 @@ export default {
 
     data() {
         return {
-            content: this.useTransformContent(this.post.content, ['h3', 'h4']),
+            content: this.useTransformContent(this.post.content, this.staticContent.tocHeadline || ['h3', 'h4']),
             isOpenToc: true,
         }
     },
