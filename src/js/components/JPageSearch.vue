@@ -5,8 +5,8 @@
                 <JIconArrowRight />
             </template>
         </JBreadcrumb>
-        <div class="page-search-founded">
-            <div class="container">
+        <div class="container">
+            <div class="page-search-founded">
                 Tìm thấy
                 <span v-for="(option, index) in options" :key="index">
                     <a :href="`#${option.id}`" class="search-option"> {{ option.items.length }} {{ option.title }} </a>
