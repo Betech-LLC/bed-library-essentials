@@ -8,9 +8,7 @@
                 </template>
             </slot>
         </div>
-        <div class="empty-description">
-            {{ description }}
-        </div>
+        <div class="empty-description" v-html="description"></div>
         <div class="empty-cta">
             <slot name="button" />
         </div>
