@@ -14,7 +14,7 @@
                 </JBreadcrumb>
 
                 <div class="blog-detail-page-head">
-                    <h1 class="blog-detail-page-title">{{ post.title }}</h1>
+                    <h1 class="blog-detail-page-title" v-html="post.title"></h1>
                     <div class="blog-detail-page-meta">
                         <JLink :href="post.category.url" v-if="post.category" class="blog-detail-page-badge">{{
                             post.category.title
