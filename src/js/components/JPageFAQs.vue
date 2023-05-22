@@ -5,6 +5,7 @@
         :content="content"
         :breadcrumb="breadcrumb"
         :currentPath="currentPath"
+        :staticContent="staticContent"
     >
         <template #content>
             <JAccordion v-if="content" class="accordion-faqs">
