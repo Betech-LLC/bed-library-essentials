@@ -8,8 +8,9 @@
                 </template>
             </slot>
         </div>
-        <div class="empty-description" v-html="description"></div>
-        <div class="empty-cta">
+        <div v-if="description" class="empty-description" v-html="description"></div>
+
+        <div v-if="$slots.button" class="empty-cta">
             <slot name="button" />
         </div>
     </div>
