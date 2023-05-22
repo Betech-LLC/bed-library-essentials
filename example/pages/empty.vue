@@ -1,9 +1,5 @@
 <template>
-    <JEmpty name="empty-cart" description="Chưa có sản phẩm trong giỏ hàng.">
-        <template #button>
-            <button class="btn btn-primary">Mua sắm ngay</button>
-        </template>
-    </JEmpty>
+    <JEmpty name="empty-cart"> </JEmpty>
     <JEmpty name="empty-cart" description="Chưa có sản phẩm trong giỏ hàng.">
         <template #image>
             <img src="https://via.placeholder.com/200x200" />
