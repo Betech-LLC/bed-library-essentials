@@ -3,7 +3,7 @@
         <div class="empty-image">
             <slot name="image">
                 <template v-if="!isLoading">
-                    <img v-if="image" :src="image" />
+                    <img v-if="imageLinks[name]" :src="imageLinks[name]" />
                     <img v-else src="../../images/empty-search.webp" />
                 </template>
             </slot>
@@ -30,6 +30,14 @@ export default {
             image: null,
             isLoading: false,
             namesDefault: ['empty-vlog', 'empty-cart', 'empty-product', 'empty-search', 'empty-project', 'empty-job'],
+            imageLinks: {
+                'empty-vlog': '../../images/empty-vlog.webp',
+                'empty-cart': '../../images/empty-cart.webp',
+                'empty-product': '../../images/empty-product.webp',
+                'empty-search': '../../images/empty-search.webp',
+                'empty-project': '../../images/empty-project.webp',
+                'empty-job': '../../images/empty-job.webp',
+            },
         }
     },
 
