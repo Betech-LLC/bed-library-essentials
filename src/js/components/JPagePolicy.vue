@@ -11,7 +11,7 @@
                 </slot>
                 <div class="page-policy-head" v-if="staticContent.title">{{ staticContent.title }}</div>
 
-                <div class="page-policy-body">
+                <div v-if="list_sidebar && list_sidebar.length" class="page-policy-body">
                     <div class="page-policy-box">
                         <div @click="togglePolicyMobile" class="box-body">
                             <div class="box-title title-2">
@@ -54,6 +54,8 @@
                         </slot>
                     </div>
                 </div>
+
+                <JEmpty v-else :description="staticContent.emptyContent" />
             </div>
         </section>
     </main>
@@ -63,10 +65,11 @@ import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 import JIconPolicyDefault from '@core/components/JIcon/PolicyDefault.vue'
 import JBreadcrumb from '@core/components/JBreadcrumb.vue'
 import JLink from '@core/components/JLink.vue'
+import JEmpty from '@core/components/JEmpty.vue'
 import { checkActiveUrl } from '@core/utils'
 
 export default {
-    components: { JIconArrowRight, JIconPolicyDefault, JBreadcrumb, JLink },
+    components: { JIconArrowRight, JIconPolicyDefault, JBreadcrumb, JLink, JEmpty },
     props: {
         list_sidebar: {
             type: Array,
@@ -82,6 +85,7 @@ export default {
             default: () => {
                 return {
                     title: 'Hỗ trợ khách hàng',
+                    emptyContent: 'Chúng tôi đang cập nhật chính sách, <br /> quý khách vui lòng quay lại sau.',
                 }
             },
         },
@@ -95,7 +99,9 @@ export default {
         }
     },
     created() {
-        this.breadcrumb.push({ title: this.content.title })
+        if (this.content && this.content.title) {
+            this.breadcrumb.push({ title: this.content.title })
+        }
     },
     watch: {
         isOpenMobile: function () {

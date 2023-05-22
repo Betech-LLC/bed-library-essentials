@@ -5,6 +5,7 @@
         :content="content"
         :breadcrumb="breadcrumb"
         :currentPath="currentPath"
+        :staticContent="staticContent"
     >
         <template #content>
             <JAccordion v-if="content" class="accordion-faqs">
@@ -42,6 +43,15 @@ export default {
         },
         currentPath: {
             type: String,
+        },
+        staticContent: {
+            type: Object,
+            default: () => {
+                return {
+                    title: 'Câu hỏi thường gặp',
+                    emptyContent: 'Chúng tôi đang cập nhật câu hỏi, <br /> quý khách vui lòng quay lại sau.',
+                }
+            },
         },
     },
 }
