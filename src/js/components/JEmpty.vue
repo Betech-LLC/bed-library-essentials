@@ -2,10 +2,12 @@
     <div class="empty">
         <div class="empty-image">
             <slot name="image">
-                <template v-if="!isLoading">
-                    <img v-if="image" :src="image" />
-                    <img v-else src="../../images/empty-search.webp" />
-                </template>
+                <img v-if="name === 'empty-vlog'" src="../../images/empty-vlog.webp" />
+                <img v-else-if="name === 'empty-cart'" src="../../images/empty-cart.webp" />
+                <img v-else-if="name === 'empty-product'" src="../../images/empty-product.webp" />
+                <img v-else-if="name === 'empty-project'" src="../../images/empty-project.webp" />
+                <img v-else-if="name === 'empty-job'" src="../../images/empty-job.webp" />
+                <img v-else src="../../images/empty-search.webp" />
             </slot>
         </div>
         <div v-if="description" class="empty-description" v-html="description"></div>
@@ -18,32 +20,11 @@
 <script>
 export default {
     props: {
-        name: { type: String, default: null }, // empty-vlog | empty-cart | empty-product | empty-search | empty-project | empty-job
+        name: { type: String, default: null },
+        // empty-vlog | empty-cart | empty-product | empty-search | empty-project | empty-job
         description: {
             type: String,
             default: null,
-        },
-    },
-
-    data() {
-        return {
-            image: null,
-            isLoading: false,
-            namesDefault: ['empty-vlog', 'empty-cart', 'empty-product', 'empty-search', 'empty-project', 'empty-job'],
-        }
-    },
-
-    created() {
-        if (this.namesDefault.includes(this.name)) {
-            this.loadImage()
-        }
-    },
-    methods: {
-        async loadImage() {
-            this.isLoading = true
-            const response = await import(/* @vite-ignore */ `../../images/${this.name}.webp`)
-            this.image = response.default
-            this.isLoading = false
         },
     },
 }
