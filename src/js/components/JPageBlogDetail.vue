@@ -86,7 +86,7 @@
                     <template #card="{ item }"><JCardProductRelated :product="item" class="card-sm" /></template>
                 </JBlogSideBar>
 
-                <div v-if="banner" class="banner-ads-wrap">
+                <div v-if="banner" class="j-banner-ads-wrap">
                     <JBannerAds :item="banner" />
                 </div>
             </div>

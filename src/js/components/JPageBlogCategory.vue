@@ -60,7 +60,7 @@
                     <template #title>{{ staticContent.mostView }}</template></JBlogSideBar
                 >
 
-                <div v-if="banner" class="banner-ads-wrap">
+                <div v-if="banner" class="j-banner-ads-wrap">
                     <JBannerAds :item="banner" />
                 </div>
             </div>
