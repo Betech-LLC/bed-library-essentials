@@ -1,6 +1,6 @@
 <template>
     <a
-        class="banner-ads"
+        class="j-banner-ads"
         v-if="item"
         :href="item.link"
         :rel="item.target === '_blank' ? 'nofollow noreferrer' : ''"
