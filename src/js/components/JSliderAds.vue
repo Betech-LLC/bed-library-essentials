@@ -1,7 +1,7 @@
 <template>
     <JSliderItems
         v-if="items && items.length"
-        class="slider-ads"
+        class="j-slider-ads"
         :items="items"
         :pagination="pagination"
         :config="config"
@@ -12,13 +12,13 @@
                 :href="item.link"
                 :rel="item.target === '_blank' ? 'nofollow noreferrer' : ''"
                 :target="item.target || '_blank'"
-                class="slider-ads-link"
+                class="j-slider-ads-link"
             >
                 <JPicture
                     :src="item.image?.url || item.image_url"
                     :mobileSrc="item.image_mobile?.url || item.image_mobile_url"
                     :alt="item.image?.alt || item.alt || item.title"
-                    wrapperClass="slider-ads-image picture-cover "
+                    wrapperClass="j-slider-ads-image picture-cover "
                 />
             </a>
         </template>
