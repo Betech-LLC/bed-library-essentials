@@ -31,7 +31,7 @@
     }
     .right {
         @apply lg:col-span-2 col-span-full max-lg:hidden;
-        .banner-ads {
+        .j-banner-ads {
             @apply sticky top-0;
         }
     }
