@@ -32,12 +32,13 @@
 </template>
 <script>
 import JLink from '@core/components/JLink.vue'
+import JIconArrowRight from '@core/components/JIcon/ArrowRight.vue'
 
 import { scrollCenter, checkActiveUrl } from '@core/utils'
 
 export default {
     props: { categories: Array, currentPath: String },
-    components: { JLink },
+    components: { JLink, JIconArrowRight },
 
     data() {
         return {

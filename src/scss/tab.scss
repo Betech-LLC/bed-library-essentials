@@ -27,7 +27,7 @@
 .tabs-box {
     @apply col-span-full lg:hidden max-lg:mt-2;
     .box-body {
-        @apply relative overflow-hidden bg-white shadow-xs flex justify-between items-center py-2.5 px-3 md:px-4 border-l-4 border-blue-600;
+        @apply relative overflow-hidden bg-white shadow-xs flex justify-between items-center py-2.5 px-3 md:px-4 border-l-4 border-primary;
         .box-title {
             @apply w-full relative flex items-center  space-x-2 overflow-hidden text-gray-700;
         }
