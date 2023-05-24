@@ -19,7 +19,7 @@ function useValidateForm({ form = {}, rules = {} } = {}) {
 function useResetForm(form = {}) {
     const keyFields = Object.keys(form)
     keyFields.forEach((keyField) => {
-        if (typeof form[keyField] === 'object' && Object.keys(form[keyField]).length > 0) {
+        if (!!form[keyField] && typeof form[keyField] === 'object' && Object.keys(form[keyField]).length > 0) {
             form[keyField] = useResetForm(form[keyField])
         } else {
             form[keyField] = null
