@@ -1,17 +1,61 @@
 .tabs {
-    @apply flex justify-between xl:px-3 md:px-2 px-1.5 xl:py-2 md:py-1.5 py-1 xl:space-x-2 md:space-x-1.5 space-x-1 overflow-auto bg-white md:rounded-lg rounded shadow-md flex-nowrap;
+    @apply lg:relative;
+}
+
+.tab-list {
+    @apply lg:flex lg:justify-between xl:px-3 md:px-2 px-1.5 xl:py-2 md:py-1.5 py-1 xl:space-x-2 lg:space-x-1.5 overflow-auto bg-white lg:rounded-lg shadow-md flex-nowrap max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:duration-200 max-lg:w-5/12 max-md:w-9/12 max-lg:bg-white max-lg:shadow-sm max-lg:p-2 max-lg:z-50 max-lg:h-screen;
 
     &::-webkit-scrollbar {
         display: none;
     }
     -ms-overflow-style: none;
     scrollbar-width: none;
+
+    .tab {
+        @apply flex-1 xl:px-10 lg:px-7 xl:py-2 md:py-1.5 py-1 text-center text-gray-500 md:rounded-lg rounded hover:bg-primary hover:text-white base-transition title-2 whitespace-nowrap cursor-pointer max-lg:block max-lg:text-left max-lg:px-4 max-md:px-3;
+
+        &.active {
+            @apply bg-primary text-white;
+        }
+    }
 }
 
-.tab {
-    @apply flex-1 xl:px-10 md:px-7 px-5 xl:py-2 md:py-1.5 py-1 text-center text-gray-500 md:rounded-lg rounded hover:bg-primary hover:text-white base-transition title-2 whitespace-nowrap cursor-pointer;
+.tab-list.toggle {
+    @apply max-lg:transform max-lg:-translate-x-full;
+}
 
-    &.active {
-        @apply bg-primary text-white;
+.tabs-box {
+    @apply col-span-full lg:hidden max-lg:mt-2;
+    .box-body {
+        @apply relative overflow-hidden bg-white shadow-xs flex justify-between items-center py-2.5 px-3 md:px-4 border-l-4 border-blue-600;
+        .box-title {
+            @apply w-full relative flex items-center  space-x-2 overflow-hidden text-gray-700;
+        }
+        .box-icon {
+            @apply md:w-3.5 w-3 md:h-3.5 h-3 base-transition;
+
+            &.active {
+                @apply transform rotate-180;
+            }
+        }
+    }
+}
+
+.tabs-button {
+    @apply absolute flex items-center justify-center -translate-y-1/2 bg-white rounded-full shadow-sm w-6 h-6 lg:opacity-50 lg:hover:shadow top-1/2 lg:hover:opacity-100 lg:hover:scale-125 base-transition max-lg:hidden;
+
+    svg {
+        @apply scale-150;
+    }
+
+    &.prev {
+        @apply -translate-x-1/2 left-0;
+
+        svg {
+            @apply rotate-180;
+        }
+    }
+    &.next {
+        @apply translate-x-1/2 right-0;
     }
 }
