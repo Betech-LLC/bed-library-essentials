@@ -3,7 +3,7 @@
         <div class="tabs-box">
             <div @click="togglePolicyMobile" class="box-body">
                 <div class="box-title title-2">
-                    {{ tabActive.title }}
+                    {{ tabActive ? tabActive.title : 'Danh mục' }}
                 </div>
                 <JIconArrowRight class="box-icon" :class="{ active: isOpenMobile }" />
             </div>
