@@ -158,7 +158,7 @@
         @apply lg:rounded xl:mt-3 lg:mt-2 xl:space-x-4 lg:space-x-3 shadow-none;
 
         .tab {
-            @apply hover:bg-transparent hover:text-primary relative;
+            @apply lg:hover:bg-transparent lg:hover:text-primary relative;
             &.active {
                 @apply text-primary bg-transparent;
             }

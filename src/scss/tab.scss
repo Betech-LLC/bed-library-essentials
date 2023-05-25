@@ -12,7 +12,7 @@
     scrollbar-width: none;
 
     .tab {
-        @apply flex-1 xl:px-10 lg:px-7 xl:py-2 md:py-1.5 py-1 text-center text-gray-500 md:rounded-lg rounded hover:bg-primary hover:text-white base-transition title-2 whitespace-nowrap cursor-pointer max-lg:block max-lg:text-left max-lg:px-4 max-md:px-3;
+        @apply flex-1 xl:px-10 lg:px-7 xl:py-2 md:py-1.5 py-1 text-center text-gray-500 md:rounded-lg rounded lg:hover:bg-primary hover:text-white base-transition title-2 whitespace-nowrap cursor-pointer max-lg:block max-lg:text-left max-lg:px-4 max-md:px-3;
 
         &.active {
             @apply bg-primary text-white;
