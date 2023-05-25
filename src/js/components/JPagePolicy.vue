@@ -3,7 +3,7 @@
         <section class="page-policy">
             <div class="page-policy-wrap">
                 <slot name="breadcrumb">
-                    <JBreadcrumb :items="breadcrumb">
+                    <JBreadcrumb :items="breadcrumb" :isH1="true">
                         <template #icon>
                             <JIconArrowRight />
                         </template>
@@ -46,9 +46,9 @@
                     <div class="page-policy-content">
                         <slot name="content">
                             <template v-if="content">
-                                <h1 class="page-policy-title" v-if="content.title">
+                                <div class="page-policy-title" v-if="content.title">
                                     {{ content.title }}
-                                </h1>
+                                </div>
                                 <div v-html="content.content" class="page-policy-prose" />
                             </template>
                         </slot>

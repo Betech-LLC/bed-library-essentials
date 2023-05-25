@@ -1,6 +1,6 @@
 <template>
     <main class="page-search">
-        <JBreadcrumb :items="breadcrumb" class="container py-3 md:py-4 xl:py-6">
+        <JBreadcrumb :items="breadcrumb" :isH1="true" class="container py-3 md:py-4 xl:py-6">
             <template #icon>
                 <JIconArrowRight />
             </template>

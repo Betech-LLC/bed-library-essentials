@@ -17,9 +17,11 @@
                 </JSlide>
                 <template #arrows="{ navigate }" v-if="total > rowItems">
                     <button class="rotate-180 btn-slide btn-prev" @click="navigate('prev')">
-                        <JIconChevronRight />
+                        <slot name="icon-arrow"><JIconChevronRight /></slot>
                     </button>
-                    <button class="btn-slide btn-next" @click="navigate('next')"><JIconChevronRight /></button>
+                    <button class="btn-slide btn-next" @click="navigate('next')">
+                        <slot name="icon-arrow"><JIconChevronRight /></slot>
+                    </button>
                 </template>
 
                 <template v-if="pagination" #dots="{ dots, current, navigate }">
