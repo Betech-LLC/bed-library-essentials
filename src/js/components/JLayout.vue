@@ -20,6 +20,7 @@
             <template #slide-item="{ item }">
                 <JPicture />
             </template>
+            <template #icon-arrow> p </template>
         </JSliderItems>
         <div id="jam-button">
             <div class="mb-4 display-3">Button</div>
