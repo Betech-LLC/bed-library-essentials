@@ -8,7 +8,7 @@
                 {{ title }}
             </h1>
             <p class="page-error-description">
-                {{ description }}
+                <span v-html="description"></span>
                 <a :href="`tel:${toNumber(phone)}`"> {{ phone }} </a>
             </p>
             <JLink class="page-error-button" :href="link">{{ button }}</JLink>
