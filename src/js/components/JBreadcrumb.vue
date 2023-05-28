@@ -2,9 +2,7 @@
     <nav v-if="items && items.length > 0" class="breadcrumb">
         <template v-for="item in items">
             <template v-if="item.link">
-                <JLink :href="item.link" class="breadcrumb-item">
-                    {{ item.title }}
-                </JLink>
+                <JLink :href="item.link" class="breadcrumb-item" v-html="item.title"> </JLink>
                 <span v-if="$slots.icon" class="icon">
                     <slot name="icon"></slot>
                 </span>
@@ -13,11 +11,9 @@
                 </span>
             </template>
             <template v-else>
-                <h1 v-if="isH1" class="breadcrumb-item">{{ item.title }}</h1>
-                <span v-else class="breadcrumb-item">
-                    {{ item.title }}
-                </span></template
-            >
+                <h1 v-if="isH1" class="breadcrumb-item" v-html="item.title"></h1>
+                <span v-else class="breadcrumb-item" v-html="item.title"> </span
+            ></template>
         </template>
     </nav>
 </template>
