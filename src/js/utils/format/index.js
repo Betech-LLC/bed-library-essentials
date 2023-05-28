@@ -79,7 +79,7 @@ function toUrl(arr) {
 }
 
 function addLeadingZero(number) {
-    if (number < 10) {
+    if (number > 0 && number < 10) {
         return ('0' + number).slice(-2)
     }
     return number
