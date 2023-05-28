@@ -137,7 +137,8 @@ export default {
             return this.field.label + ` ${this.rules[this.field.name]?.includes('required') ? '*' : ''}`
         },
         message() {
-            return this.field.error || `${this.field.label} không hợp lệ`
+            const fieldError = Array.isArray(this.errors[this.field.name]) ? this.errors[this.field.name][0] : null
+            return fieldError || this.field.error || `${this.field.label} không hợp lệ`
         },
     },
     watch: {
