@@ -2,7 +2,7 @@
     <picture :class="wrapperClass">
         <source media="(max-width: 767px)" :srcset="mobileImageSourceSet" />
         <source media="(max-width: 1439px)" :srcset="originImageSourceSet" />
-        <img v-bind="$attrs" :src="originImageSource" :alt="altImage" :loading="loading" />
+        <img v-bind="$attrs" :src="originImageSource" :alt="altImage" :loading="loading" @error="onError" />
     </picture>
 </template>
 
@@ -57,6 +57,11 @@ export default {
         },
         altImage() {
             return removeAccent(toBasename(this.alt || this.originImageSource))
+        },
+    },
+    methods: {
+        onError(event) {
+            event.target.src = this.placeholderSrc
         },
     },
 }
