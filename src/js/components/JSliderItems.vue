@@ -13,7 +13,7 @@
                 @onSlide="onSlide"
             >
                 <JSlide v-for="(item, index) in items" :key="index">
-                    <slot name="slide-item" :item="item" />
+                    <slot name="slide-item" :item="item" :index="index" />
                 </JSlide>
                 <template #arrows="{ navigate }" v-if="total > rowItems">
                     <button class="rotate-180 btn-slide btn-prev" @click="navigate('prev')">
