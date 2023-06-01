@@ -224,10 +224,71 @@
         <!-- Dropdown  -->
         <div id="jam-dropdown">
             <div class="mb-4 display-3">Dropdown</div>
-            <div class="p-4 py-10 space-y-4 border border-gray-400 border-dashed rounded-lg">
+            <div
+                class="flex items-center justify-center p-4 py-10 space-x-2 border border-gray-400 border-dashed rounded-lg"
+            >
                 <!-- TODO -->
-
-                <div class="max-w-[400px] w-full mx-auto">
+                <div class="max-w-[160px] w-full">
+                    <JFormField
+                        v-model="memberActive"
+                        :field="{
+                            type: 'dropdown',
+                            name: 'member',
+                            placeholder: 'Select team member',
+                            options: members,
+                        }"
+                        class="z-100"
+                    >
+                        <template #suffix>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="8"
+                                viewBox="0 0 12 8"
+                                fill="none"
+                            >
+                                <path
+                                    d="M1 1.5L6 6.5L11 1.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.66667"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </template>
+                    </JFormField>
+                </div>
+                <div class="max-w-[160px] w-full">
+                    <JFormField
+                        v-model="memberActive"
+                        :field="{
+                            type: 'dropdown',
+                            name: 'member',
+                            placeholder: 'Select team member',
+                            options: members,
+                        }"
+                        class="z-100"
+                    >
+                        <template #suffix>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="8"
+                                viewBox="0 0 12 8"
+                                fill="none"
+                            >
+                                <path
+                                    d="M1 1.5L6 6.5L11 1.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.66667"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </template>
+                    </JFormField>
+                </div>
+                <div class="max-w-[160px] w-full">
                     <JFormField
                         v-model="memberActive"
                         :field="{
