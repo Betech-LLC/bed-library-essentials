@@ -1,5 +1,5 @@
 <template>
-    <div @click="$event.stopPropagation()" class="dropdown">
+    <div v-click-outside="closeMenuDropdown" class="dropdown">
         <input
             type="text"
             class="input"
@@ -45,12 +45,22 @@ export default {
             return this.field.placeholder || `Chọn ${this.field.label.toLowerCase()}`
         },
     },
-    mounted() {
-        document.addEventListener('click', this.closeMenuDropdown)
+    directives: {
+        'click-outside': {
+            beforeMount: (el, binding) => {
+                el.clickOutsideEvent = (event) => {
+                    if (!(el == event.target || el.contains(event.target))) {
+                        binding.value()
+                    }
+                }
+                document.addEventListener('click', el.clickOutsideEvent)
+            },
+            unmounted: (el) => {
+                document.removeEventListener('click', el.clickOutsideEvent)
+            },
+        },
     },
-    unmounted() {
-        document.removeEventListener('click', this.closeMenuDropdown)
-    },
+
     data() {
         return { isShow: false }
     },
