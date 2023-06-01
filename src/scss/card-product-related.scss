@@ -9,6 +9,10 @@
     @screen xl {
         min-width: 80px;
     }
+
+    picture {
+        @apply h-full;
+    }
 }
 
 .card-product-related-right {
