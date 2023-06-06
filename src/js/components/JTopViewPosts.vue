@@ -3,8 +3,7 @@
         <div class="left">
             <JCardBlog class="card-item" :item="top_views[0]" />
         </div>
-
-        <div class="right">
+        <div class="right" v-if="top_views && top_views.slice(1, 6).length > 0">
             <div class="title">Bài viết xem nhiều</div>
             <div class="list">
                 <JCardBlog
