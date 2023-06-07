@@ -1,45 +1,43 @@
 <template>
     <div class="slider-items">
-        <ClientOnly
-            ><JSlider
-                :config="{
-                    ...config,
-                    total: total,
-                }"
-                :breakpoints="{ ...breakpoints }"
-                :autoplay="autoplay"
-                :slidesPerView="slidesPerView"
-                class="slider"
-                @onSlide="onSlide"
-            >
-                <JSlide v-for="(item, index) in items" :key="index">
-                    <slot name="slide-item" :item="item" :index="index" />
-                </JSlide>
-                <template #arrows="{ navigate }" v-if="total > rowItems">
-                    <button class="rotate-180 btn-slide btn-prev" @click="navigate('prev')">
-                        <slot name="icon-arrow"><JIconChevronRight /></slot>
-                    </button>
-                    <button class="btn-slide btn-next" @click="navigate('next')">
-                        <slot name="icon-arrow"><JIconChevronRight /></slot>
-                    </button>
-                </template>
+        <JSlider
+            :config="{
+                ...config,
+                total: total,
+            }"
+            :breakpoints="{ ...breakpoints }"
+            :autoplay="autoplay"
+            :slidesPerView="slidesPerView"
+            class="slider"
+            @onSlide="onSlide"
+        >
+            <JSlide v-for="(item, index) in items" :key="index">
+                <slot name="slide-item" :item="item" :index="index" />
+            </JSlide>
+            <template #arrows="{ navigate }" v-if="total > rowItems">
+                <button class="rotate-180 btn-slide btn-prev" @click="navigate('prev')">
+                    <slot name="icon-arrow"><JIconChevronRight /></slot>
+                </button>
+                <button class="btn-slide btn-next" @click="navigate('next')">
+                    <slot name="icon-arrow"><JIconChevronRight /></slot>
+                </button>
+            </template>
 
-                <template v-if="pagination" #dots="{ dots, current, navigate }">
-                    <slot name="slide-pagination" :dots="dots" :current="current" :navigate="navigate">
-                        <div class="slider-pagination">
-                            <div class="slider-pagination-wrap">
-                                <div
-                                    v-for="(_, index) in dots"
-                                    :key="index"
-                                    @click="navigate(index)"
-                                    class="slider-pagination-item"
-                                    :class="current === index ? 'active' : ''"
-                                ></div>
-                            </div></div
-                    ></slot>
-                </template>
-            </JSlider>
-        </ClientOnly>
+            <template v-if="pagination" #dots="{ dots, current, navigate }">
+                <slot name="slide-pagination" :dots="dots" :current="current" :navigate="navigate">
+                    <div class="slider-pagination">
+                        <div class="slider-pagination-wrap">
+                            <div
+                                v-for="(_, index) in dots"
+                                :key="index"
+                                @click="navigate(index)"
+                                class="slider-pagination-item"
+                                :class="current === index ? 'active' : ''"
+                            ></div>
+                        </div></div
+                ></slot>
+            </template>
+        </JSlider>
     </div>
 </template>
 
