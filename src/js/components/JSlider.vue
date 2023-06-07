@@ -124,7 +124,7 @@ export default {
 
     mounted() {
         this.startAutoPlay()
-        // // this.setCurrentCols()
+        this.setCurrentCols()
         window.addEventListener('resize', this.setCurrentCols)
     },
 
@@ -239,9 +239,8 @@ export default {
         },
 
         setCurrentCols() {
-            const slider = document.getElementById(`slider_${this.fieldId}`)
+            const slider = this.$refs[`slider_${this.fieldId}`]
             const propertyName = `--slider-init-${this.getBreakpoint()}-cols`
-
             this.currentCols = parseFloat(this.getPropertyOf(slider, propertyName))
         },
 
