@@ -124,7 +124,7 @@ export default {
 
     mounted() {
         this.startAutoPlay()
-        this.setCurrentCols()
+        // // this.setCurrentCols()
         window.addEventListener('resize', this.setCurrentCols)
     },
 

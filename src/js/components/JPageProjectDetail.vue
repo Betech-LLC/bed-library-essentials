@@ -63,7 +63,10 @@
                 <h2 v-if="titleRelated" class="page-project-detail-related-title">
                     {{ titleRelated }}
                 </h2>
-                <JSliderItems :items="related_projects">
+                <JSliderItems
+                    :items="[...related_projects, ...related_projects]"
+                    :config="{ cols: '1.2', gutter: '8px', align: 'start', loop: true }"
+                >
                     <template #slide-item="{ item }">
                         <JCardProject class="card-item" :item="item" />
                     </template>
