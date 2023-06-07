@@ -411,12 +411,12 @@
                 <JBreadcrumb
                     :items="[
                         {
-                            title: 'Trang chủ',
+                            title: 'Trang chủ 2',
                             link: '/',
                         },
                         {
                             title: 'Thực phẩm chức năng',
-                            link: '/thuc-pham-chuc-nang',
+                            link: '',
                         },
                         {
                             title: 'Dép Cá Sấu cho người lớn',
