@@ -16,7 +16,7 @@
                 <JCardProductRelated :product="product" />
             </div>
         </div>
-        <JSliderItems :items="[1, 2, 3, 4, 5]" :autoplay="false" :pagination="true" @onSlide="onSlide">
+        <JSliderItems :items="[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]">
             <template #slide-item="{ item }">
                 <JPicture />
             </template>
