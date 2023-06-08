@@ -8,6 +8,7 @@
     >
         <JPicture
             wrapperClass="picture-contain"
+            :loading="loading"
             :src="item.image?.url || item.image_url"
             :mobileSrc="item.image_mobile?.url || item.image_mobile_url"
             :alt="item.image?.alt || item.alt || item.title"
@@ -25,6 +26,11 @@ export default {
         item: {
             type: Object,
             default: null,
+        },
+
+        loading: {
+            type: String,
+            default: 'lazy',
         },
     },
 }
