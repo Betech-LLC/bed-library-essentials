@@ -68,12 +68,29 @@ export default {
 
             Object.entries(this.sliderConfig).forEach((x) => {
                 config['--slider-init-' + x[0]] = x[1]
+                if (x[0] === 'cols') {
+                    config['--slider-init-odd-even'] = Number.isFinite(parseFloat(x[1])) ? 1 : 2
+                }
                 Object.entries(defaultBreakpoints).forEach((breakpoint) => {
                     const breakpointConfig = `${breakpoint[1]}-${x[0]}`
                     if (this.breakpoints && this.breakpoints[breakpoint[1]] && this.breakpoints[breakpoint[1]][x[0]]) {
                         config[`--slider-init-${breakpointConfig}`] = this.breakpoints[breakpoint[1]][x[0]]
+
+                        if (x[0] === 'cols') {
+                            config['--slider-init-' + breakpoint[1] + '-odd-even'] = Number.isFinite(
+                                parseFloat(this.breakpoints[breakpoint[1]][x[0]])
+                            )
+                                ? 1
+                                : 2
+                        }
                     } else {
                         config[`--slider-init-${breakpointConfig}`] = x[1]
+
+                        if (x[0] === 'cols') {
+                            config['--slider-init-' + breakpoint[1] + '-odd-even'] = Number.isFinite(parseFloat(x[1]))
+                                ? 1
+                                : 2
+                        }
                     }
                 })
             })
@@ -284,30 +301,44 @@ body:before {
 }
 
 .jam-slider {
-    @apply w-full;
+    width: calc(100% + var(--slider-init-gutter) / var(--slider-init-odd-even));
+    transform: translate(calc(var(--slider-init-gutter) / -2));
+
     --slider-align: var(--slider-init-align);
     --slider-cols: var(--slider-init-cols);
     --slider-gutter: var(--slider-init-gutter);
 
     @screen sm {
+        width: calc(100% + var(--slider-init-sm-gutter) / var(--slider-init-sm-odd-even));
+        transform: translate(calc(var(--slider-init-sm-gutter) / -2));
+
         --slider-align: var(--slider-init-sm-align, var(--slider-init-align));
         --slider-cols: var(--slider-init-sm-cols, var(--slider-init-cols));
         --slider-gutter: var(--slider-init-sm-gutter, var(--slider-init-gutter));
     }
 
     @screen md {
+        width: calc(100% + var(--slider-init-md-gutter) / var(--slider-init-md-odd-even));
+        transform: translate(calc(var(--slider-init-md-gutter) / -2));
+
         --slider-align: var(--slider-init-md-align, var(--slider-init-sm-align));
         --slider-cols: var(--slider-init-md-cols, var(--slider-init-sm-cols));
         --slider-gutter: var(--slider-init-md-gutter, var(--slider-init-sm-gutter));
     }
 
     @screen lg {
+        width: calc(100% + var(--slider-init-lg-gutter) / var(--slider-init-lg-odd-even));
+        transform: translate(calc(var(--slider-init-lg-gutter) / -2));
+
         --slider-align: var(--slider-init-lg-align, var(--slider-init-md-align));
         --slider-cols: var(--slider-init-lg-cols, var(--slider-init-md-cols));
         --slider-gutter: var(--slider-init-lg-gutter, var(--slider-init-md-gutter));
     }
 
     @screen xl {
+        width: calc(100% + var(--slider-init-xl-gutter) / var(--slider-init-xl-odd-even));
+        transform: translate(calc(var(--slider-init-xl-gutter) / -2));
+
         --slider-align: var(--slider-init-xl-align, var(--slider-init-lg-align));
         --slider-cols: var(--slider-init-xl-cols, var(--slider-init-lg-cols));
         --slider-gutter: var(--slider-init-xl-gutter, var(--slider-init-lg-gutter));

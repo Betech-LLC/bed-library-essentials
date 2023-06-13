@@ -16,9 +16,33 @@
                 <JCardProductRelated :product="product" />
             </div>
         </div>
-        <JSliderItems :items="[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]">
+        <JSliderItems
+            :breakpoints="{
+                sm: {
+                    cols: '1.4',
+                    gutter: '16px',
+                    align: 'start',
+                },
+                md: {
+                    cols: '2.5',
+                    gutter: '24px',
+                    align: 'start',
+                },
+                lg: {
+                    cols: '2.5',
+                    gutter: '24px',
+                    align: 'start',
+                },
+                xl: {
+                    cols: '3',
+                    gutter: '32px',
+                    align: 'start',
+                },
+            }"
+            :items="[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]"
+        >
             <template #slide-item="{ item }">
-                <JPicture />
+                <JPicture wrapperClass="picture-cover" />
             </template>
             <template #icon-arrow> p </template>
         </JSliderItems>
