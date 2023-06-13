@@ -8,6 +8,7 @@
     >
         <JPicture
             wrapperClass="picture-contain"
+            :isResize="isResize"
             :loading="loading"
             :src="item.image?.url || item.image_url"
             :mobileSrc="item.image_mobile?.url || item.image_mobile_url"
@@ -27,10 +28,13 @@ export default {
             type: Object,
             default: null,
         },
-
         loading: {
             type: String,
             default: 'lazy',
+        },
+        isResize: {
+            type: Boolean,
+            default: true,
         },
     },
 }
