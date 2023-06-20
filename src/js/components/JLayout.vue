@@ -436,11 +436,11 @@
                     :items="[
                         {
                             title: 'Trang chủ 2',
-                            link: '/',
+                            link: null,
                         },
                         {
                             title: 'Thực phẩm chức năng',
-                            link: '',
+                            link: null,
                         },
                         {
                             title: 'Dép Cá Sấu cho người lớn',
