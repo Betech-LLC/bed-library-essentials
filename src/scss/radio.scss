@@ -16,10 +16,6 @@
                     @apply opacity-100;
                 }
             }
-            &:focus ~ .checkmark {
-                @apply bg-blue-50 border-blue-600;
-                box-shadow: 0px 0px 0px 4px #d1e9ff;
-            }
         }
     }
 
