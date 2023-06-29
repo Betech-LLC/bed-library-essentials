@@ -1,6 +1,6 @@
 <template>
     <div class="container py-10 space-y-10">
-        <SeoAnalysis
+        <JSeoAnalysis
             :data="{
                 title: 'Công nghệ Single Page App: Tương lai Ecommerce cho SMEs',
                 description:
