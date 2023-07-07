@@ -36,7 +36,7 @@
 }
 
 .page-policy-nav {
-    @apply relative lg:col-span-3 max-lg:fixed max-lg:h-screen max-lg:top-0 max-lg:left-0 max-lg:duration-200 max-lg:w-5/12 max-md:w-9/12 max-lg:bg-white max-lg:shadow-sm max-lg:p-2 max-lg:z-50;
+    @apply relative lg:col-span-3 max-lg:fixed max-lg:h-screen max-lg:top-0 max-lg:left-0 max-lg:duration-200 max-lg:w-5/12 max-md:w-9/12 max-lg:bg-white max-lg:shadow-sm max-lg:p-2 max-lg:z-50 overflow-y-auto;
 
     .nav-list {
         @apply md:top-2.5 xl:space-y-3 md:space-y-2 space-y-1.5 md:sticky;
