@@ -111,10 +111,10 @@ export default {
                 document.body.classList.remove('overflow-hidden')
             }
         },
+    },
 
-        currentPath() {
-            this.isOpenMobile = false
-        },
+    unmounted() {
+        document.body.classList.remove('overflow-hidden')
     },
 
     methods: {
