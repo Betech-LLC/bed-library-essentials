@@ -8,7 +8,9 @@
                     </slot>
                 </div>
                 <span class="accordion-icon" :class="{ active: isActiveItem }">
-                    <JIconChevronDown />
+                    <slot name="icon">
+                        <JIconChevronDown />
+                    </slot>
                 </span>
             </button>
         </div>

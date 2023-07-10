@@ -591,6 +591,7 @@
                         :index="2"
                         :isActive="currentActive === 2"
                     >
+                        <template #icon> + </template>
                         <ul class="xl:pt-3 md:pt-2 pt-1.5">
                             <li>Subitem 1</li>
                             <li>Subitem 2</li>
