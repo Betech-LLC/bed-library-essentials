@@ -15,8 +15,8 @@ function scrollCenter(wrapperClass) {
     if (!scrollWrap) return
     const curItem = document.querySelector(`${wrapperClass} .active`)
 
-    if (curItem && curItem.offsetLeft + curItem.clientWidth / 2 > window.innerWidth / 2) {
-        const distance = curItem.offsetLeft - window.innerWidth / 2
+    if (curItem && curItem.offsetLeft + curItem.clientWidth / 2 > scrollWrap.clientWidth / 2) {
+        const distance = curItem.offsetLeft - scrollWrap.clientWidth / 2
 
         if (distance < scrollWrap.scrollWidth) {
             scrollWrap.scrollLeft = distance + curItem.clientWidth / 2
