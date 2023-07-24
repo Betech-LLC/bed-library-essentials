@@ -32,6 +32,7 @@
 }
 
 .social-share-item {
+    @apply cursor-pointer;
     svg,
     img {
         @apply w-6 h-6;
