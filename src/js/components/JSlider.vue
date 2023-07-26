@@ -301,16 +301,14 @@ body:before {
 }
 
 .jam-slider {
-    width: calc(100% + var(--slider-init-gutter) / var(--slider-init-odd-even));
-    transform: translate(calc(var(--slider-init-gutter) / -2));
+    width: calc(100%);
 
     --slider-align: var(--slider-init-align);
     --slider-cols: var(--slider-init-cols);
     --slider-gutter: var(--slider-init-gutter);
 
     @screen sm {
-        width: calc(100% + var(--slider-init-sm-gutter) / var(--slider-init-sm-odd-even));
-        transform: translate(calc(var(--slider-init-sm-gutter) / -2));
+        width: calc(100%);
 
         --slider-align: var(--slider-init-sm-align, var(--slider-init-align));
         --slider-cols: var(--slider-init-sm-cols, var(--slider-init-cols));
@@ -318,8 +316,7 @@ body:before {
     }
 
     @screen md {
-        width: calc(100% + var(--slider-init-md-gutter) / var(--slider-init-md-odd-even));
-        transform: translate(calc(var(--slider-init-md-gutter) / -2));
+        width: calc(100%);
 
         --slider-align: var(--slider-init-md-align, var(--slider-init-sm-align));
         --slider-cols: var(--slider-init-md-cols, var(--slider-init-sm-cols));
@@ -327,8 +324,7 @@ body:before {
     }
 
     @screen lg {
-        width: calc(100% + var(--slider-init-lg-gutter) / var(--slider-init-lg-odd-even));
-        transform: translate(calc(var(--slider-init-lg-gutter) / -2));
+        width: calc(100%);
 
         --slider-align: var(--slider-init-lg-align, var(--slider-init-md-align));
         --slider-cols: var(--slider-init-lg-cols, var(--slider-init-md-cols));
@@ -336,8 +332,7 @@ body:before {
     }
 
     @screen xl {
-        width: calc(100% + var(--slider-init-xl-gutter) / var(--slider-init-xl-odd-even));
-        transform: translate(calc(var(--slider-init-xl-gutter) / -2));
+        width: calc(100%);
 
         --slider-align: var(--slider-init-xl-align, var(--slider-init-lg-align));
         --slider-cols: var(--slider-init-xl-cols, var(--slider-init-lg-cols));
@@ -357,8 +352,13 @@ body:before {
 
     .jam-slide {
         scroll-snap-align: var(--slider-align);
-        width: calc(100% / var(--slider-cols));
-        padding: 0 calc(var(--slider-gutter) / 2);
+        width: calc((100% + var(--slider-gutter)) / var(--slider-cols));
+        padding-right: calc(var(--slider-gutter));
+
+        &:last-child {
+            padding-right: 0px;
+            width: calc((100% + var(--slider-gutter)) / var(--slider-cols) - var(--slider-gutter));
+        }
     }
 }
 </style>
