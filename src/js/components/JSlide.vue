@@ -1,5 +1,5 @@
 <template>
-    <div class="jam-slide shrink-0">
+    <div class="jam-slide">
         <slot />
     </div>
 </template>
