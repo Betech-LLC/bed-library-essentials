@@ -24,17 +24,16 @@ function calculateKeywordsRatioScore(keywords) {
     }
 
     const score = parseInt((keywordsCount / 5) * 100)
-    console.log(score);
 
     let message
     if (keywordsCount >= 5) {
-        message = `Tuyệt vời! Số lượng ký tự đặc biệt ở tiêu đề của bạn rất ít và rất tốt cho SEO!`
+        message = `Tuyệt vời! Số lượng từ khóa / keywords của bạn nhiều và rất tốt cho SEO!`
     } else if (keywordsCount >= 3) {
-        message = `Số lượng ký tự đặc biệt ở tiêu đề của bạn khá tốt, cần xóa bỏ để tốt hơn cho SEO!`
+        message = `Số lượng từ khóa / keywords của bạn khá ít, cần bổ sung thêm để tốt hơn cho SEO!`
     } else if (keywordsCount >= 1) {
-        message = `Số lượng ký tự đặc biệt ở tiêu đề của bạn khá tốt, cần xóa bỏ để tốt hơn cho SEO!`
+        message = `Số lượng từ khóa / keywords của bạn ít, cần bổ sung thêm để tốt hơn cho SEO!`
     } else {
-        message = `Số lượng ký tự đặc biệt ở tiêu đề của bạn chưa tốt, cần xóa bỏ để cải thiện SEO!`
+        message = `Từ khóa / keywords của bạn chưa có, cần bổ sung để cải thiện SEO!`
     }
 
     return { score, message }

@@ -86,7 +86,10 @@
                         </small>
                         <div class="bar">
                             <div class="line"></div>
-                            <div class="progress" :style="{ width: 100 - seoAnalysis.keywordsScore?.score + '%' }"></div>
+                            <div
+                                class="progress"
+                                :style="{ width: 100 - seoAnalysis.keywordsScore?.score + '%' }"
+                            ></div>
                             <div class="divide">
                                 <div></div>
                                 <div></div>
@@ -156,18 +159,18 @@
                 <div v-html="contentData.description" class="description-hidden" />
             </div>
             <div class="suggestion">
-                <template v-for="mainFactor of Object.keys(seoAnalysis)">
-                  <li
-                  v-for="(factor, index) in seoAnalysis[mainFactor]?.factors"
-                  :class="[
-                    { 'factor-good': factor.score >= 80 },
-                    { 'factor-warning': factor.score >= 50 && factor.score < 80 },
-                    { 'factor-error': factor.score < 50 },
-                  ]"
+                <div class="suggestion-group" v-for="mainFactor of Object.keys(seoAnalysis)">
+                    <li
+                        v-for="(factor, index) in seoAnalysis[mainFactor]?.factors"
+                        :class="[
+                            { 'factor-good': factor.score >= 80 },
+                            { 'factor-warning': factor.score >= 50 && factor.score < 80 },
+                            { 'factor-error': factor.score < 50 },
+                        ]"
                     >
                         {{ factor.message }}
                     </li>
-                </template>
+                </div>
             </div>
         </div>
     </div>
@@ -343,7 +346,7 @@ export default {
     }
 
     .suggestion {
-        @apply p-4 bg-gray-100 rounded-sm space-y-2 font-medium text-sm;
+        @apply rounded-sm font-medium text-sm space-y-0.5;
         .factor-good {
             @apply text-green-500;
         }
@@ -353,6 +356,10 @@ export default {
         .factor-error {
             @apply text-red-500;
         }
+    }
+
+    .suggestion-group {
+        @apply space-y-2 bg-gray-100 p-4;
     }
 
     .title-hidden {

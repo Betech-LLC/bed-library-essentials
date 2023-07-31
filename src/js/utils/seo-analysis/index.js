@@ -7,9 +7,10 @@ const seoAnalysis = ({ title = null, description = null, content = null, keyword
     const keywordsScore = calculateKeywordsScore(keywords)
     const titleScore = calculateTitleScore(title, keywords)
     const descriptionScore = calculateDescriptionScore(description, keywords)
-    const contentScore = calculateContentScore(content, keywords)
+    // const contentScore = calculateContentScore(content, keywords)
 
-    return { keywordsScore, titleScore, descriptionScore, contentScore  }
+    // return { keywordsScore, titleScore, descriptionScore, contentScore }
+    return { keywordsScore, titleScore, descriptionScore }
 }
 
 export { seoAnalysis }
