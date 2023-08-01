@@ -21,6 +21,12 @@
                     <template #card="{ item }">
                         <slot :name="option.type" :item="item" />
                     </template>
+
+                    <template #button="{ quantity, title }">
+                        <slot name="button" :quantity="quantity" :title="title">
+                            xem thêm {{ quantity }} {{ title }}
+                        </slot>
+                    </template>
                 </JPagination>
             </div>
         </div>

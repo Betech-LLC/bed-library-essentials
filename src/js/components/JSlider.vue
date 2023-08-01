@@ -114,8 +114,8 @@ export default {
             const currentDotInit = 1
             const currentDotsPerView =
                 this.breakpoints.xl?.cols || this.breakpoints.lg?.cols || this.breakpoints.md?.cols || this.config?.cols
-            const currentDots = this.config.total - Number(currentDotsPerView)
-            const totalDots = Math.floor(currentDots + currentDotInit)
+            const restOfDots = this.config.total - Number(currentDotsPerView)
+            const totalDots = Math.ceil(restOfDots) + currentDotInit
             return totalDots
         },
 
@@ -196,20 +196,40 @@ export default {
         // Ref code: https://github.com/tannerhodges/snap-slider/blob/main/src/snap-slider.js#L1013
         getClosest() {
             return Array.from(this.slides).reduce((prev, slide, index) => {
+                let hiddenSpace = 0
+                const quantityDotsPerView =
+                    this.breakpoints.xl?.cols ||
+                    this.breakpoints.lg?.cols ||
+                    this.breakpoints.md?.cols ||
+                    this.config?.cols
+                const floorInteger = Math.floor(quantityDotsPerView)
+                const restFloat = parseFloat(quantityDotsPerView) - floorInteger
+                if (restFloat > 0.5) {
+                    let surplusNumberFloat = 1 - (parseFloat(quantityDotsPerView) - floorInteger)
+                    if (surplusNumberFloat < 1) {
+                        hiddenSpace = slide.offsetWidth * surplusNumberFloat
+                    }
+                } else {
+                    hiddenSpace = 2
+                }
+                console.log('hiddenSpace', hiddenSpace)
                 const offset = this.getScrollOffset(slide)
                 const diff = {
                     top: Math.abs(this.slider.scrollTop - offset.top),
-                    left: Math.abs(this.slider.scrollLeft - offset.left),
+                    left: Math.abs(this.slider.scrollLeft - offset.left + hiddenSpace),
                 }
-                const next = { index, slide, diff }
 
+                const next = { index, slide, diff }
+                console.log('prev', prev)
+                console.log('next', next)
                 if (!prev) {
                     return next
                 }
 
-                if (next.diff.left <= prev.diff.left && next.diff.top <= prev.diff.top) {
+                if (Math.ceil(next.diff.left) <= Math.ceil(prev.diff.left) && next.diff.top <= prev.diff.top) {
                     return next
                 }
+
                 return prev
             }, false)
         },
@@ -239,6 +259,7 @@ export default {
 
         onScroll() {
             const closest = this.getClosest()
+
             if (closest.index !== this.current) {
                 this.current = closest.index
                 this.$emit('onSlide', { current: this.current })

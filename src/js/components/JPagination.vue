@@ -8,7 +8,9 @@
         </div>
 
         <div v-if="restItems > 0" class="pagination-card-button">
-            <button @click="onPagination" class="btn btn-secondary">xem thêm {{ restItems }} {{ title }}</button>
+            <button @click="onPagination" class="btn btn-secondary">
+                <slot name="button" :quantity="restItems" :title="title"> xem thêm {{ restItems }} {{ title }} </slot>
+            </button>
         </div>
     </div>
 </template>

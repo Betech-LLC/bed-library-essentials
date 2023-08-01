@@ -6,6 +6,12 @@
         <template #[postOption.type]="{ item }">
             <JCardBlog class="card-item" :item="item" />
         </template>
+        <template #button="{ title, quantity }">
+            <div class="flex items-center space-x-2">
+                <div>Xem thêm</div>
+                <span> > </span>
+            </div>
+        </template>
     </JPageSearch>
 </template>
 <script>

@@ -1,50 +1,39 @@
 <template>
     <div class="container py-10 space-y-10">
-        <div class="grid grid-cols-1 gap-2 md:grid-cols-3">
-            <div
-                class="col-span-1 p-1 border border-gray-200 rounded"
-                v-for="product in [...relatedProducts, ...relatedProducts, ...relatedProducts]"
-            >
-                <JCardProductRelated :product="product" class="card-sm" />
-            </div>
-        </div>
-        <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
-            <div
-                class="col-span-1 p-1 border border-gray-200 rounded"
-                v-for="product in [...relatedProducts, ...relatedProducts]"
-            >
-                <JCardProductRelated :product="product" />
-            </div>
-        </div>
         <JSliderItems
             :breakpoints="{
                 sm: {
-                    cols: '1.4',
-                    gutter: '16px',
+                    cols: '2',
+                    gutter: '12px',
                     align: 'start',
                 },
                 md: {
-                    cols: '2.5',
-                    gutter: '24px',
+                    cols: '3',
+                    gutter: '16px',
                     align: 'start',
                 },
                 lg: {
-                    cols: '2.5',
-                    gutter: '24px',
+                    cols: '3',
+                    gutter: '16px',
                     align: 'start',
                 },
                 xl: {
-                    cols: '3',
-                    gutter: '32px',
+                    cols: '4.7',
+                    gutter: '16px',
                     align: 'start',
                 },
             }"
-            :items="[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]"
+            :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]"
+            :pagination="true"
         >
             <template #slide-item="{ item }">
-                <JPicture wrapperClass="picture-cover" />
+                <div class="aspect-w-1 aspect-h-1">
+                    <JPicture
+                        src="https://images.unsplash.com/photo-1602351447937-745cb720612f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80"
+                        wrapperClass="picture-cover"
+                    />
+                </div>
             </template>
-            <template #icon-arrow> p </template>
         </JSliderItems>
         <div id="jam-button">
             <div class="mb-4 display-3">Button</div>
