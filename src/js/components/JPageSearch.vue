@@ -18,8 +18,14 @@
         <div class="page-search-contain">
             <div v-for="(option, index) in options" :key="index" :id="option.id">
                 <JPagination :title="option.title" :cols="option.cols" :items="option.items" :class="option.type">
-                    <template #card="{ item }">
-                        <slot :name="option.type" :item="item" />
+                    <template #card="{ item, index }">
+                        <slot :name="option.type" :item="item" :index="index" />
+                    </template>
+
+                    <template #button="{ quantity, title }">
+                        <slot name="button" :quantity="quantity" :title="title">
+                            xem thêm {{ quantity }} {{ title }}
+                        </slot>
                     </template>
                 </JPagination>
             </div>
