@@ -212,7 +212,6 @@ export default {
                 } else {
                     hiddenSpace = 2
                 }
-                console.log('hiddenSpace', hiddenSpace)
                 const offset = this.getScrollOffset(slide)
                 const diff = {
                     top: Math.abs(this.slider.scrollTop - offset.top),
@@ -220,8 +219,6 @@ export default {
                 }
 
                 const next = { index, slide, diff }
-                console.log('prev', prev)
-                console.log('next', next)
                 if (!prev) {
                     return next
                 }
