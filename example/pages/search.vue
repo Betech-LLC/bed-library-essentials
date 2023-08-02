@@ -1,10 +1,16 @@
 <template>
     <JPageSearch :keyword="`&quot;${keyword}&quot;`" :breadcrumb="breadcrumb" :options="[productOption, postOption]">
-        <template #[productOption.type]="{ item }">
-            <JCardBlog class="card-item" :item="item" />
+        <template #[productOption.type]="{ item, index }">
+            <div>
+                <div>Stt: {{ index }}</div>
+                <JCardBlog class="card-item" :item="item" />
+            </div>
         </template>
-        <template #[postOption.type]="{ item }">
-            <JCardBlog class="card-item" :item="item" />
+        <template #[postOption.type]="{ item, index }">
+            <div>
+                <div>Stt: {{ index }}</div>
+                <JCardBlog class="card-item" :item="item" />
+            </div>
         </template>
         <template #button="{ title, quantity }">
             <div class="flex items-center space-x-2">

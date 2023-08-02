@@ -3,7 +3,7 @@
         <h2 v-if="title" class="pagination-card-title">{{ title }}</h2>
         <div class="pagination-card-grid">
             <div class="pagination-card-grid-item" v-for="(item, index) in items.slice(0, counter)" :key="index">
-                <slot name="card" :item="item" />
+                <slot name="card" :item="item" :index="index" />
             </div>
         </div>
 
