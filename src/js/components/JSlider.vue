@@ -52,6 +52,7 @@ export default {
 
     data() {
         return {
+            dots: 0,
             current: 0,
             autoplayInterval: null,
             breakpoint: null,
@@ -109,16 +110,6 @@ export default {
         slides() {
             return this.slider.querySelectorAll('.jam-slide')
         },
-
-        dots() {
-            const currentDotInit = 1
-            const currentDotsPerView =
-                this.breakpoints.xl?.cols || this.breakpoints.lg?.cols || this.breakpoints.md?.cols || this.config?.cols
-            const restOfDots = this.config.total - Number(currentDotsPerView)
-            const totalDots = Math.ceil(restOfDots) + currentDotInit
-            return totalDots
-        },
-
         autoplayDelay() {
             const type = typeof this.autoplay
             const defaultDelay = 3000
@@ -142,14 +133,44 @@ export default {
     mounted() {
         this.startAutoPlay()
         this.setCurrentCols()
+        this.setTotalDots()
         window.addEventListener('resize', this.setCurrentCols)
+        window.addEventListener('resize', this.setTotalDots)
     },
 
     unmounted() {
         window.removeEventListener('resize', this.setCurrentCols)
+        window.addEventListener('resize', this.setTotalDots)
     },
 
     methods: {
+        setTotalDots() {
+            const currentDotInit = 1
+            let currentDotsPerView = this.getColsByScreen()
+            if (!currentDotsPerView) {
+                currentDotsPerView = this.config?.cols
+            }
+            const restOfDots = this.config.total - Number(currentDotsPerView)
+            const totalDots = Math.ceil(restOfDots) + currentDotInit
+            this.dots = totalDots
+            console.log('this.dots  =', this.dots)
+        },
+        getColsByScreen() {
+            const optionScreens = {
+                xl: '1280px',
+                lg: '1024px',
+                md: '768px',
+                sm: '640px',
+            }
+            if (this.breakpoints && Object.keys(this.breakpoints).length > 0) {
+                for (const key in optionScreens) {
+                    let isMatch = window.matchMedia(`(min-width: ${optionScreens[key]})`).matches
+                    if (isMatch) {
+                        return this.breakpoints[key].cols
+                    }
+                }
+            }
+        },
         navigate(arg) {
             this.$refs[`slide-container_${this.fieldId}`]?.scrollTo({
                 top: 0,
@@ -178,7 +199,7 @@ export default {
                 x = scrollLeft + itemsPerScreenWidth
                 y = scrollLeft + itemsPerViewWidth
 
-                if (x + 10 >= scrollWidth) {
+                if (x - 10 >= scrollWidth) {
                     return 0
                 } else if (y <= maxScrollPerViewLeft) {
                     return y
@@ -197,11 +218,7 @@ export default {
         getClosest() {
             return Array.from(this.slides).reduce((prev, slide, index) => {
                 let hiddenSpace = 0
-                const quantityDotsPerView =
-                    this.breakpoints.xl?.cols ||
-                    this.breakpoints.lg?.cols ||
-                    this.breakpoints.md?.cols ||
-                    this.config?.cols
+                const quantityDotsPerView = this.getColsByScreen()
                 const floorInteger = Math.floor(quantityDotsPerView)
                 const restFloat = parseFloat(quantityDotsPerView) - floorInteger
                 if (restFloat > 0.5) {
