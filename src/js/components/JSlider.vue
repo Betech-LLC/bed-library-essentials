@@ -153,7 +153,6 @@ export default {
             const restOfDots = this.config.total - Number(currentDotsPerView)
             const totalDots = Math.ceil(restOfDots) + currentDotInit
             this.dots = totalDots
-            console.log('this.dots  =', this.dots)
         },
         getColsByScreen() {
             const optionScreens = {
