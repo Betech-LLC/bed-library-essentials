@@ -21,7 +21,7 @@
     }
 
     &.active .accordion-icon {
-        @apply rotate-180;
+        @apply -rotate-180;
     }
 
     .accordion-content {
