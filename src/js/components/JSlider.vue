@@ -9,7 +9,7 @@
         >
             <slot :current="current" />
         </div>
-        <div class="jam-slider__dots">
+        <div class="jam-slider__dots" v-if="dots && dots > 1">
             <slot
                 v-if="$slots.dots"
                 name="dots"
