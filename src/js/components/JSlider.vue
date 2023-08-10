@@ -133,6 +133,7 @@ export default {
     mounted() {
         this.startAutoPlay()
         this.setCurrentCols()
+        this.setTotalDots()
         window.addEventListener('resize', this.setCurrentCols)
         window.addEventListener('resize', this.setTotalDots)
     },
