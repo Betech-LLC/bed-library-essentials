@@ -9,7 +9,7 @@
         >
             <slot :current="current" />
         </div>
-        <div class="jam-slider__dots" v-if="dots && dots > 1">
+        <div class="jam-slider__dots">
             <slot
                 v-if="$slots.dots"
                 name="dots"
@@ -141,6 +141,11 @@ export default {
     unmounted() {
         window.removeEventListener('resize', this.setCurrentCols)
         window.addEventListener('resize', this.setTotalDots)
+    },
+    watch: {
+        'config.total'() {
+            this.setTotalDots()
+        },
     },
 
     methods: {

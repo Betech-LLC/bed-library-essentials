@@ -25,7 +25,7 @@
 
             <template v-if="pagination" #dots="{ dots, current, navigate }">
                 <slot name="slide-pagination" :dots="dots" :current="current" :navigate="navigate">
-                    <div class="slider-pagination">
+                    <div class="slider-pagination" v-if="dots && dots > 0">
                         <div class="slider-pagination-wrap">
                             <div
                                 v-for="(_, index) in dots"
