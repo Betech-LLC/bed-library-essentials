@@ -156,7 +156,12 @@ export default {
                 rule: this.rules[this.field.name] || '',
             })
             this.isError = !isValid
-            this.isSuccess = isValid
+
+            if (fieldValue && isValid) {
+                this.isSuccess = true
+            } else {
+                this.isSuccess = false
+            }
         },
     },
 }
