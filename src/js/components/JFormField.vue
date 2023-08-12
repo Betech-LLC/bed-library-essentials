@@ -7,6 +7,7 @@
                 :class="{
                     'is-disabled': !!disabled,
                     'is-error': !!isError,
+                    'is-success': isSuccess,
                     'has-prefix': !!$slots.prefix,
                     'has-suffix': !!$slots.suffix,
                 }"
@@ -129,6 +130,7 @@ export default {
     data() {
         return {
             isError: false,
+            isSuccess: false,
         }
     },
 
@@ -154,6 +156,7 @@ export default {
                 rule: this.rules[this.field.name] || '',
             })
             this.isError = !isValid
+            this.isSuccess = isValid
         },
     },
 }
