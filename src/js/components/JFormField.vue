@@ -144,6 +144,11 @@ export default {
         },
     },
     watch: {
+        modelValue(newVal) {
+            if (!newVal && this.isSuccess) {
+                this.isSuccess = false
+            }
+        },
         errors(newErrors) {
             this.isError = newErrors.hasOwnProperty(this.field.name)
         },
