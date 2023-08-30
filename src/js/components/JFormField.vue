@@ -1,7 +1,7 @@
 <template>
     <fieldset>
         <label :for="field.name">
-            <span v-if="field.label" class="label"> {{ fieldLabel }}</span>
+            <span v-if="field.label" class="label" v-html="fieldLabel"></span>
             <div
                 class="field"
                 :class="{
@@ -136,7 +136,10 @@ export default {
 
     computed: {
         fieldLabel() {
-            return this.field.label + ` ${this.rules[this.field.name]?.includes('required') ? '*' : ''}`
+            return (
+                this.field.label +
+                ` ${this.rules[this.field.name]?.includes('required') ? '<span class="required">*</span>' : ''}`
+            )
         },
         message() {
             const fieldError = Array.isArray(this.errors[this.field.name]) ? this.errors[this.field.name][0] : null
