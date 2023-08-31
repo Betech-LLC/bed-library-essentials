@@ -55,3 +55,9 @@
 .page-contact-field-button {
     @apply mt-4 md:mt-6 xl:mt-8;
 }
+
+.page-contact-field-lastname {
+    .label .required {
+        @apply hidden;
+    }
+}
