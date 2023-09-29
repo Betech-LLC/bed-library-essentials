@@ -106,7 +106,7 @@ export default {
     },
     emits: ['update:modelValue'],
     props: {
-        modelValue: { type: Object },
+        modelValue: { type: [Object, String] },
         field: {
             type: Object,
             default: () => {
