@@ -1,8 +1,7 @@
 <template>
     <JFieldText :field="fieldCustom" :modelValue="modelValue" @update:modelValue="$emit('update:modelValue', $event)" />
     <div v-if="fieldCustom.toggleMask" class="fieldset-password-toggle-mask" @click="toggleValue()">
-        <JIconEyeOpen v-if="type === 'password'" />
-        <JIconEyeClose v-else />
+        <slot name="password-icon" :type="type"></slot>
     </div>
 </template>
 
