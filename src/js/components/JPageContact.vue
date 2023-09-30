@@ -51,25 +51,6 @@
                             class="page-contact-field-email"
                         />
 
-                        <!-- <JFormField
-                            v-model="form.contact.data['Password']"
-                            :field="{
-                                type: 'password',
-                                name: 'Password',
-                                label: 'Password',
-                                placeholder: 'Nhập Password',
-                                toggleMask: true,
-                            }"
-                            :rules="rules"
-                            :errors="errors"
-                            class="page-contact-field-email"
-                        >
-                            <template #password-icon="{ type }">
-                                <div v-if="type === 'password'">yes</div>
-                                <div v-else>no</div>
-                            </template>
-                        </JFormField> -->
-
                         <JFormField
                             v-model="form.contact.data['Số điện thoại']"
                             :field="{
@@ -83,32 +64,6 @@
                             class="page-contact-field-phone"
                         />
 
-                        <!-- <JFormField
-                            v-model="sizeBag"
-                            :field="{
-                                type: 'dropdown',
-                                name: 'size',
-                                label: 'Bag Size',
-                                keyBy: 'id',
-                                labelBy: 'title',
-                                placeholder: 'Select a size',
-                                options: [
-                                    {
-                                        id: 1,
-                                        title: 'size 1',
-                                    },
-                                    {
-                                        id: 2,
-                                        title: 'size 2',
-                                    },
-                                    {
-                                        id: 3,
-                                        title: 'size 3',
-                                    },
-                                ],
-                            }"
-                        >
-                        </JFormField> -->
                         <JFormField
                             v-model="form.contact.data['Lời nhắn']"
                             :field="{
