@@ -1,5 +1,5 @@
 <template>
-    <div v-click-outside="closeMenuDropdown" class="dropdown">
+    <div v-click-outside="closeMenuDropdown" class="dropdown" :class="isShow ? 'active' : ''">
         <input
             type="text"
             class="input"
