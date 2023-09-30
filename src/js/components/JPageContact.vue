@@ -51,20 +51,6 @@
                             class="page-contact-field-email"
                         />
 
-                        <!-- <JFormField
-                            v-model="form.contact.data['Password']"
-                            :field="{
-                                type: 'password',
-                                name: 'Password',
-                                label: 'Password',
-                                placeholder: 'Nhập Password',
-                                toggleMask: true,
-                            }"
-                            :rules="rules"
-                            :errors="errors"
-                            class="page-contact-field-email"
-                        /> -->
-
                         <JFormField
                             v-model="form.contact.data['Số điện thoại']"
                             :field="{
@@ -77,6 +63,7 @@
                             :errors="errors"
                             class="page-contact-field-phone"
                         />
+
                         <JFormField
                             v-model="form.contact.data['Lời nhắn']"
                             :field="{
@@ -137,6 +124,7 @@ export default {
     },
     data() {
         return {
+            sizeBag: null,
             isShow: false,
             isLoading: false,
             form: {

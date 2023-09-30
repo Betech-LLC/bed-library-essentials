@@ -27,7 +27,14 @@
                     :field="field"
                     :modelValue="modelValue"
                     @update:modelValue="onInput"
-                />
+                >
+                    <template #password-icon="{ type }">
+                        <slot name="password-icon" :type="type">
+                            <JIconEyeOpen v-if="type === 'password'" />
+                            <JIconEyeClose v-else />
+                        </slot>
+                    </template>
+                </JFieldPassword>
 
                 <JFieldCheckbox
                     v-else-if="field.type === 'checkbox'"
@@ -106,7 +113,7 @@ export default {
     },
     emits: ['update:modelValue'],
     props: {
-        modelValue: { type: Object },
+        modelValue: { type: [Object, String, Number] },
         field: {
             type: Object,
             default: () => {
