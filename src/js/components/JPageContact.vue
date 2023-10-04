@@ -59,6 +59,8 @@
                                 label: 'Số điện thoại',
                                 placeholder: 'Nhập số điện thoại',
                             }"
+                            :max="300"
+                            :min="200"
                             :rules="rules"
                             :errors="errors"
                             class="page-contact-field-phone"

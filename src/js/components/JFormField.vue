@@ -20,12 +20,14 @@
                     v-if="!field.type || field.type === 'text' || field.type === 'email'"
                     :field="field"
                     :modelValue="modelValue"
+                    v-bind="{ ...$attrs }"
                     @update:modelValue="onInput"
                 />
                 <JFieldPassword
                     v-else-if="field.type === 'password'"
                     :field="field"
                     :modelValue="modelValue"
+                    v-bind="{ ...$attrs }"
                     @update:modelValue="onInput"
                 >
                     <template #password-icon="{ type }">
@@ -56,10 +58,11 @@
                     :field="field"
                     @update:modelValue="onInput"
                 />
-                <JFieldPhone
+                <JFieldNumber
                     v-else-if="field.type === 'number'"
                     :modelValue="modelValue"
                     :field="field"
+                    v-bind="{ ...$attrs }"
                     @update:modelValue="onInput"
                 />
 
@@ -74,6 +77,7 @@
                     v-else-if="field.type === 'textarea'"
                     :field="field"
                     :modelValue="modelValue"
+                    v-bind="{ ...$attrs }"
                     @update:modelValue="onInput"
                 />
 
@@ -92,7 +96,7 @@
 <script>
 import { useValidateField } from '@core/composables'
 import JFieldText from '@core/components/JField/Text.vue'
-import JFieldPhone from '@core/components/JField/Phone.vue'
+import JFieldNumber from '@core/components/JField/Number.vue'
 import JFieldDropdown from '@core/components/JField/Dropdown.vue'
 import JFieldTextarea from '@core/components/JField/Textarea.vue'
 import JFieldCheckbox from '@core/components/JField/Checkbox.vue'
@@ -103,7 +107,7 @@ import JFieldPassword from '@core/components/JField/Password.vue'
 export default {
     components: {
         JFieldText,
-        JFieldPhone,
+        JFieldNumber,
         JFieldDropdown,
         JFieldTextarea,
         JFieldUploadFile,

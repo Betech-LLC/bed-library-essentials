@@ -6,6 +6,7 @@
         @update:modelValue="$emit('update:modelValue', $event)"
         onkeypress="return event.charCode >= 48 && event.charCode =< 57"
         onkeydown="return event.keyCode !== 69 && event.keyCode !== 190"
+        v-bind="{ ...$attrs }"
     />
 </template>
 
