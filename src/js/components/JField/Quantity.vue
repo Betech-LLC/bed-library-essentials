@@ -18,6 +18,7 @@
             onkeypress="return event.charCode >= 48 && event.charCode =< 57"
             onkeydown="return event.keyCode !== 69 && event.keyCode !== 190"
             class="quantity-input"
+            v-bind="{ ...$attrs }"
         />
         <button
             @click="increase"
