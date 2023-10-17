@@ -66,7 +66,11 @@ export default {
         },
 
         isPlay(value) {
-            if (!value) this.pause()
+            if (!value) {
+                this.pause()
+            } else {
+                this.play()
+            }
         },
     },
 
