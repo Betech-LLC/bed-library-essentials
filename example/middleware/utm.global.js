@@ -5,7 +5,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
         UTM.save(UTM.parse())
         const utmData = UTM.get()
 
-        if (utmData.is_initial_visit) {
+        if (utmData && utmData.is_initial_visit) {
             // Nếu là khởi tạo lần đầu thì lưu toàn bộ utmData vào User Details
         } else {
             // Nếu không phải là khởi tạo lần đầu thì cập nhật các biến không phải là initial

@@ -38,12 +38,24 @@ class UTM {
         try {
             const paramsToSave = {}
             const initialParams = {}
+            let isInitialVisit = false
 
             Object.assign(paramsToSave, params)
 
             const storedItems = storage.getItem('utmSavedParams')
+            const storedItemsJSON = JSON.parse(storedItems) || {}
 
-            if (storedItems) {
+            const notStored =
+                !Object.keys(storedItemsJSON).length ||
+                !Object.keys(storedItemsJSON).find((x) => x.includes('initial_') && storedItemsJSON[x])
+
+            if (notStored) {
+                Object.keys(paramsToSave).forEach((k) => {
+                    if (!k.includes('initial_')) {
+                        initialParams['initial_' + k] = paramsToSave[k]
+                    }
+                })
+            } else {
                 let existingParams = {}
                 existingParams = JSON.parse(storedItems)
 
@@ -54,21 +66,23 @@ class UTM {
                         initialParams[k] = existingParams[k]
                     }
                 })
-            } else {
-                Object.keys(paramsToSave).forEach((k) => {
-                    if (!k.includes('initial_')) {
-                        initialParams['initial_' + k] = paramsToSave[k]
-                    }
-                })
             }
 
             Object.assign(paramsToSave, initialParams)
 
-            const storedItemsJSON = JSON.parse(storedItems) || {}
-            const is_initial_visit = !Object.keys(storedItemsJSON).find(
-                (x) => x.includes('initial_') && storedItemsJSON[x].length > 0
-            )
-            paramsToSave.is_initial_visit = is_initial_visit
+            const hasUtmData =
+                paramsToSave &&
+                !!Object.keys(paramsToSave).find(
+                    (x) => !x.includes('initial_') && paramsToSave[x] && paramsToSave[x].length > 0
+                )
+
+            if (notStored && hasUtmData) {
+                isInitialVisit = true
+            } else {
+                isInitialVisit = false
+            }
+
+            paramsToSave.is_initial_visit = isInitialVisit
 
             storage.setItem('utmSavedParams', JSON.stringify(paramsToSave))
 
