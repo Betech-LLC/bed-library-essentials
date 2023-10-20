@@ -1,3 +1,4 @@
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const path = require('path')
 const parentDir = path.dirname(__dirname)
