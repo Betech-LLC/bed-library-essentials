@@ -3,7 +3,6 @@
         <input
             type="text"
             class="input"
-            :id="field.name"
             :readonly="true"
             :name="field.name"
             @click="onToggle"
