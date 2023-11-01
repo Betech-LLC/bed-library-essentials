@@ -133,7 +133,6 @@ export default {
             },
         },
         disabled: { type: Boolean, default: false },
-        class: { type: String, default: '' },
     },
     data() {
         return {
