@@ -10,7 +10,7 @@
         autocomplete="off"
         :readonly="fieldReadonly"
         :placeholder="fieldPlaceholder"
-        v-bind="{ ...$attrs }"
+        v-bind="fieldAttrs"
     />
 </template>
 <script>
@@ -31,6 +31,9 @@ export default {
         },
         fieldRows() {
             return this.field.rows || 3
+        },
+        fieldAttrs() {
+            return this.field.attrs || {}
         },
     },
 }

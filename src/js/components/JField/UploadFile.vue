@@ -2,7 +2,7 @@
     <div class="cursor-pointer pointer-events-none">
         <input class="input" type="text" autocomplete="off" :readonly="true" :placeholder="fieldPlaceholder" />
     </div>
-    <input type="file" @input="onInputFile" class="hidden" :id="field.name" :name="field.name" />
+    <input type="file" @input="onInputFile" class="hidden" :id="field.name" :name="field.name" v-bind="fieldAttrs" />
 </template>
 <script>
 export default {
@@ -35,6 +35,9 @@ export default {
         },
     },
     computed: {
+        fieldAttrs() {
+            return this.field.attrs || {}
+        },
         fieldPlaceholder() {
             if (this.modelValue) {
                 return this.modelValue.name || this.field.placeholder

@@ -8,6 +8,7 @@
             @click="onToggle"
             :value="selectedOption"
             :placeholder="fieldPlaceholder"
+            v-bind="fieldAttrs"
         />
         <div v-show="isShow && field.options && field.options.length > 0" class="dropdown-content">
             <ul class="dropdown-items">
@@ -43,6 +44,9 @@ export default {
         },
         fieldPlaceholder() {
             return this.field.placeholder || `Chọn ${this.field.label.toLowerCase()}`
+        },
+        fieldAttrs() {
+            return this.field.attrs || {}
         },
     },
     directives: {

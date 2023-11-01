@@ -8,6 +8,7 @@
                 :value="modelValue"
                 @input="onInput"
                 :checked="modelValue"
+                v-bind="fieldAttrs"
             />
             <template v-if="$slots.checkmark">
                 <slot name="checkmark" :label="field.label" />
@@ -32,6 +33,9 @@ export default {
     props: ['field', 'modelValue', 'disabled'],
     emits: ['update:modelValue'],
     computed: {
+        fieldAttrs() {
+            return this.field.attrs || {}
+        },
         fieldId() {
             return 'ID' + Math.random().toString(36).substr(2, 9).toUpperCase()
         },
