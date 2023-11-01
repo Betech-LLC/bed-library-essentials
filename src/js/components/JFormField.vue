@@ -20,14 +20,12 @@
                     v-if="!field.type || field.type === 'text' || field.type === 'email'"
                     :field="field"
                     :modelValue="modelValue"
-                    v-bind="{ ...$attrs }"
                     @update:modelValue="onInput"
                 />
                 <JFieldPassword
                     v-else-if="field.type === 'password'"
                     :field="field"
                     :modelValue="modelValue"
-                    v-bind="{ ...$attrs }"
                     @update:modelValue="onInput"
                 >
                     <template #password-icon="{ type }">
@@ -62,7 +60,6 @@
                     v-else-if="field.type === 'number'"
                     :modelValue="modelValue"
                     :field="field"
-                    v-bind="{ ...$attrs }"
                     @update:modelValue="onInput"
                 />
 
@@ -77,7 +74,6 @@
                     v-else-if="field.type === 'textarea'"
                     :field="field"
                     :modelValue="modelValue"
-                    v-bind="{ ...$attrs }"
                     @update:modelValue="onInput"
                 />
 
@@ -149,7 +145,7 @@ export default {
         fieldLabel() {
             return (
                 this.field.label +
-                ` ${this.rules[this.field.name]?.includes('required') ? '<span class="required">*</span>' : ''}`
+                `${this.rules[this.field.name]?.includes('required') ? '<span class="required">*</span>' : ''}`
             )
         },
         message() {
