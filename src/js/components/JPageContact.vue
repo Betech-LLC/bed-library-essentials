@@ -20,6 +20,7 @@
                                 name: 'Tên',
                                 label: 'Tên',
                                 placeholder: 'Nhập tên của bạn',
+                                attrs: { 'aria-label': 'name' },
                             }"
                             :rules="rules"
                             :errors="errors"
