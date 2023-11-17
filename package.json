@@ -7,7 +7,7 @@
     "main": "./src/js/utils/index.js",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/nhatkha1407/jam-library-essentials.git"
+        "url": "git+https://github.com/Betech-JSC/jam-library-essentials.git"
     },
     "author": "Whoosh <nhatkha1407@gmail.com>",
     "license": "MIT",
