@@ -38,3 +38,4 @@ yarn add --dev "nhatkha1407/jam-library-essentials#structure"
 1. Đảm bảo code mới đã có trong nhánh `main`
 
 2. Chạy câu lệnh `yarn release`
+# jam-library-essentials
