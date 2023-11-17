@@ -2,17 +2,17 @@
     "scripts": {
         "release": "yarn version --new-version \"1.0.$(date \"+%y%m%d%H%M%S\")\" && yarn publish"
     },
-    "name": "@nhatkha1407/jam-library-essentials",
+    "name": "@toannguyen112/jam-library-essentials",
     "version": "1.0.231024163746",
     "main": "./src/js/utils/index.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Betech-JSC/jam-library-essentials.git"
     },
-    "author": "Whoosh <nhatkha1407@gmail.com>",
+    "author": "Whoosh",
     "license": "MIT",
     "publishConfig": {
-        "@nhatkha1407:registry": "https://npm.pkg.github.com"
+        "@toannguyen112:registry": "https://npm.pkg.github.com"
     },
     "devDependencies": {
         "@tailwindcss/aspect-ratio": "^0.4.2",
