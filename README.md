@@ -10,7 +10,7 @@
 
 ### 2. Đăng nhập vào npm
 ```
-npm login --scope=@nhatkha1407 --registry=https://npm.pkg.github.com
+npm login --scope=@toannguyen112 --registry=https://npm.pkg.github.com
 ```
 ```
 > Username: [Nhập Username Github]
@@ -22,12 +22,12 @@ npm login --scope=@nhatkha1407 --registry=https://npm.pkg.github.com
 
 Cặt version cuối cùng
 ```
-yarn add --dev @nhatkha1407/jam-library-essentials@latest
+yarn add --dev @toannguyen112/jam-library-essentials@latest
 ```
 
 Cặt version theo nhánh để test
 ```
-yarn add --dev "nhatkha1407/jam-library-essentials#structure"
+yarn add --dev "toannguyen112/jam-library-essentials#structure"
 ```
 
 
