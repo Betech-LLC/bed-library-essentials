@@ -3,7 +3,7 @@
         "release": "yarn version --new-version \"1.0.$(date \"+%y%m%d%H%M%S\")\" && yarn publish"
     },
     "name": "@toannguyen112/betech-library-essentials",
-    "version": "1.0.231121084539",
+    "version": "1.0.231121084617",
     "main": "./src/js/utils/index.js",
     "author": "Whoosh",
     "license": "MIT",
