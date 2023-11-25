@@ -22,12 +22,12 @@ npm login --scope=@toannguyen112 --registry=https://npm.pkg.github.com
 
 Cặt version cuối cùng
 ```
-yarn add --dev @toannguyen112/betech-library-essentials@latest
+yarn add --dev @toannguyen112/bed-library-essentials@latest
 ```
 
 Cặt version theo nhánh để test
 ```
-yarn add --dev "toannguyen112/betech-library-essentials#structure"
+yarn add --dev "toannguyen112/bed-library-essentials#structure"
 ```
 
 
@@ -38,4 +38,4 @@ yarn add --dev "toannguyen112/betech-library-essentials#structure"
 1. Đảm bảo code mới đã có trong nhánh `main`
 
 2. Chạy câu lệnh `yarn release`
-# betech-library-essentials
+# bed-library-essentials

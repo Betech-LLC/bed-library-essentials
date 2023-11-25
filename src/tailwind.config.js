@@ -370,7 +370,7 @@ module.exports = {
     content: [
         './resources/Frontend/js/**/*.blade.php',
         './resources/Frontend/js/**/*.vue',
-        './node_modules/@nhatkha1407/betech-library-essentials/src/components/**/*.vue',
+        './node_modules/@nhatkha1407/bed-library-essentials/src/components/**/*.vue',
     ],
     theme: {
         screens: {
