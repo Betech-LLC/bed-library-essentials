@@ -2,12 +2,12 @@
     "scripts": {
         "release": "yarn version --new-version \"1.0.$(date \"+%y%m%d%H%M%S\")\" && yarn publish"
     },
-    "name": "@toannguyen112/jam-library-essentials",
+    "name": "@toannguyen112/betech-library-essentials",
     "version": "1.0.231121165842",
     "main": "./src/js/utils/index.js",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Betech-JSC/jam-library-essentials.git"
+        "url": "git+https://github.com/Betech-JSC/betech-library-essentials.git"
     },
     "author": "Whoosh",
     "license": "MIT",
